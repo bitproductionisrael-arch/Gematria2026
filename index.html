@@ -83,8 +83,8 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       </div>
     </div>
     <div class="top-actions">
-      <button id="copyAll" class="iconbtn" title="העתק את הטאב הנוכחי כטקסט">🧲</button>
-      <button id="saveView" class="iconbtn" title="צלם רק את הטאב הנוכחי ל-PNG">📸</button>
+      <button id="copyAll" class="iconbtn" title="העתק בחירה פעילה / טאב">🧲</button>
+      <button id="saveView" class="iconbtn" title="צלם בחירה פעילה / טאב">📸</button>
     </div>
   </header>
 
@@ -433,6 +433,14 @@ async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),900)}
 function safeFileName(s){return String(s||'gematria').replace(/[\\/:*?"<>|]+/g,' ').replace(/\s+/g,' ').trim().slice(0,70)||'gematria'}
 function activePanel(){return document.querySelector('.tab-panel.active > .panel')}
+function activeExportTarget(){
+ if(state.tab==='results'){
+  const selected=state.selectedMethods.map(k=>current.results.find(r=>r.method.key===k)).filter(Boolean);
+  if(state.selectionTouched&&selected.length>1)return document.getElementById('multiDetailGrid');
+  if(state.selectionTouched&&selected.length===1)return document.getElementById('detailPane');
+ }
+ return activePanel();
+}
 function exportVisibleLines(el){
  const title={results:'תוצאות',number:'מספר',relations:'קשרים',compare:'השוואה',repeat:'חזרות',forms:'מילוי / גבול'}[state.tab]||state.tab;
  const lines=[`${title} · ${document.getElementById('q').value}`,''];
@@ -542,7 +550,7 @@ document.getElementById('numSource').addEventListener('change',e=>{state.numKey=
 document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;renderRepeat()}));document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
-document.getElementById('copyAll').addEventListener('click',async()=>{const ok=await copyText(activeTabPlainText());toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{const el=activePanel();const ok=await savePanelAsPng(el,`${document.getElementById('q').value} - ${state.tab}`);if(ok)toast('נשמר צילום של הטאב בלבד')});
+document.getElementById('copyAll').addEventListener('click',async()=>{const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?(state.tab==='results'&&state.selectionTouched?'הבחירה הועתקה':'הטאב הועתק כטקסט'):'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{const el=activeExportTarget();const selectedOnly=state.tab==='results'&&state.selectionTouched;const name=document.getElementById('q').value+' - '+(selectedOnly?'selected':state.tab);const ok=await savePanelAsPng(el,name);if(ok)toast(selectedOnly?'נשמר צילום של הבחירה בלבד':'נשמר צילום של הטאב בלבד')});
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
