@@ -388,6 +388,7 @@ const METHODS={
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
   {key:'ratzo',cat:'ops',name:'רצוא ושוב / Running and Returning',map:HE_VAL,transform:pyramid,transformName:'prefixes out + return'},
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
+  {key:'cycleBkr',cat:'ops',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
   {key:'milui',cat:'ops',name:'מילוי רגיל / Standard Letter-name Milui',custom:'milui'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true}
@@ -414,7 +415,22 @@ function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
  }
  return {method:METHODS.he.find(m=>m.key===methodKey)||METHODS.he.find(m=>m.key==='milui'),total,words,milui:true,miluiDepth:depth,miluiProfile:profile};
 }
+function ayakCycleStepText(text){return Array.from(text).map(ch=>HE_AYAK_LETTER[ch]||ch).join('')}
+function ayakCycleTextValue(text){let total=0;for(const raw of wordsOf(text))total+=sum(tokensForWord(raw,'he',HE_SOFIT).map(x=>x.value));return total}
+function calculateCycleBkr(text){
+ const method=METHODS.he.find(m=>m.key==='cycleBkr');
+ const s0=text,s1=ayakCycleStepText(s0),s2=ayakCycleStepText(s1),s3=ayakCycleStepText(s2);
+ const cycleTexts=[s0,s1,s2],cycleTotals=cycleTexts.map(ayakCycleTextValue),closureValue=ayakCycleTextValue(s3);
+ const srcWords=wordsOf(text),w1=wordsOf(s1),w2=wordsOf(s2),w3=wordsOf(s3);
+ const words=srcWords.map((raw,i)=>{
+  const texts=[raw,w1[i]||'',w2[i]||'',w3[i]||''];
+  const values=texts.map(ayakCycleTextValue);
+  return {raw,cycleTexts:texts,cycleValues:values,subtotal:values[0]+values[1]+values[2]};
+ });
+ return {method,total:sum(cycleTotals),words,cycleBkr:true,cycleTexts,cycleTotals,closureText:s3,closureValue};
+}
 function calculate(text,script,m){
+ if(m.custom==='cycleBkr')return calculateCycleBkr(text);
  if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
@@ -527,13 +543,15 @@ function ratzoAnnotatedTerms(w){
  const terms=ratzoTextTerms(w);
  return terms.map((term,i)=>`${term}(${fmt(w.vals[i])})`)
 }
-function wordDescription(r,idx){if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
+function wordDescription(r,idx){if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal}`}
+if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
  const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
 function squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}
 function wordBreakdownHtml(r,w){
+ if(r.cycleBkr){const rows=[0,1,2].map(i=>`<div class="transform-note"><b>מצב ${i}:</b> ${esc(w.cycleTexts[i])} = <b>${fmt(w.cycleValues[i])}</b></div>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div>${rows}<div class="transform-note"><b>חזרה:</b> ${esc(w.cycleTexts[3])} = <b>${fmt(w.cycleValues[3])}</b></div><div class="word-total"><span>Σ3</span><b>${fmt(w.subtotal)}</b></div></div>`}
  if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}
  if(r.method.key==='perati'){
   const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip perati-chip"><b>${esc(t.label)}²</b><small>(${fmt(base)}²)</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
@@ -659,6 +677,7 @@ function magnetTokenText(r,w){
  }).join(' + ')
 }
 function magnetBreakdown(r){
+ if(r?.cycleBkr)return `${r.cycleTotals.join(' → ')} → ${r.closureValue} | Σ3=${r.total}`;
  if(r?.milui)return miluiResultExpansion(r);
  if(!r?.words?.length)return'';
  const multi=r.words.length>1;
@@ -724,7 +743,7 @@ function renderNumber(){ensureSelection();const src=document.getElementById('num
 
 function renderRelations(){const H=harmony(current.results),rels=buildRelations(current.results);state.relationRows=rels;document.getElementById('harmonyPct').textContent=H.pct+'%';document.getElementById('harmonyFill').style.width=H.pct+'%';document.getElementById('harmonyText').textContent=`${H.connected}/${H.pairs} זוגות מחוברים`;document.getElementById('strongCount').textContent=H.strong;const vals=current.results.map(r=>r.total);const repeated=CORPUS.filter(c=>vals.includes(c.value)).slice(0,8);document.getElementById('relationCorpus').innerHTML=repeated.map(c=>`<span class="badge gold">${esc(c.label)}=${c.value}</span>`).join('')||'<span class="tiny">אין התאמות קורפוס</span>';const per=6,pages=Math.max(1,Math.ceil(rels.length/per));state.relPage=Math.min(state.relPage,pages-1);const page=rels.slice(state.relPage*per,state.relPage*per+per);document.getElementById('relationList').innerHTML=Array.from({length:per},(_,i)=>{const x=page[i];if(!x)return'<div class="relation-row" style="opacity:.2"></div>';return `<div class="relation-row" data-relidx="${state.relPage*per+i}" title="לחץ לפירוט מלא"><div><div class="pair">${fmt(x.a.total)} ↔ ${fmt(x.b.total)}</div><div class="why">${esc(x.rels.map(r=>r[0]).join(' · '))}</div></div><div class="tiny">${esc(x.a.method.name)} ↔ ${esc(x.b.method.name)}</div></div>`}).join('');document.getElementById('relPage').textContent=`${state.relPage+1}/${pages}`;document.getElementById('relPrev').disabled=state.relPage===0;document.getElementById('relNext').disabled=state.relPage>=pages-1}
 
-function relationRuleText(r){const m=r.method;if(r.milui)return 'חוק: פירוק כל אות לשם המלא שלה וסכימת האותיות.';if(m.sub)return 'חוק: החלפת כל אות לפי טבלת הצופן של השיטה, ואז סכימת הערכים.';if(m.key==='positional')return 'חוק: ערך כל אות מוכפל במיקום שלה בתוך המילה.';if(m.transformName)return `חוק: ${m.transformName} על סדר ערכי האותיות.`;if(m.fold==='word')return 'חוק: סכום כל מילה ולאחר מכן צמצום של אותה מילה.';if(m.post)return 'חוק: סכום בסיס ולאחר מכן תוספת קבועה של השיטה.';return 'חוק: סכום ערכי האותיות לפי טבלת השיטה.'}
+function relationRuleText(r){const m=r.method;if(r.cycleBkr)return 'חוק: שלושה מצבי אי״ק בכ״ר מחזוריים; כל אות עוברת לחברה הבאה בלשכה, ולאחר שלושה צעדים חוזרת למקור. הערך המוצג הוא Σ3 של שלושת המצבים הייחודיים.';if(r.milui)return 'חוק: פירוק כל אות לשם המלא שלה וסכימת האותיות.';if(m.sub)return 'חוק: החלפת כל אות לפי טבלת הצופן של השיטה, ואז סכימת הערכים.';if(m.key==='positional')return 'חוק: ערך כל אות מוכפל במיקום שלה בתוך המילה.';if(m.transformName)return `חוק: ${m.transformName} על סדר ערכי האותיות.`;if(m.fold==='word')return 'חוק: סכום כל מילה ולאחר מכן צמצום של אותה מילה.';if(m.post)return 'חוק: סכום בסיס ולאחר מכן תוספת קבועה של השיטה.';return 'חוק: סכום ערכי האותיות לפי טבלת השיטה.'}
 function relationFullBreakdown(r){const out=[relationRuleText(r),''];if(!r.words?.length)return out.concat(['אין פירוק אותיות זמין.']).join('\n');for(let i=0;i<r.words.length;i++){out.push(wordDescription(r,i));if(i<r.words.length-1)out.push('')}return out.join('\n')}
 function openRelationDetail(idx){const x=state.relationRows[idx];if(!x)return;state.relationOpen=x;const exact=x.a.total===x.b.total;document.getElementById('relationDetailTitle').textContent=`${x.a.method.name} ↔ ${x.b.method.name}`;document.getElementById('relationDetailSub').textContent=`${fmt(x.a.total)} ↔ ${fmt(x.b.total)}`;document.getElementById('relationDetailWhy').innerHTML=`<span class="badge ${exact?'green':'cyan'}">✓ ${exact?'שוויון מאומת':'קשר מתמטי מאומת'}</span>`+x.rels.map(r=>`<span class="badge gold">${esc(r[0])}</span>`).join('');document.getElementById('relationLeftTitle').textContent=`${x.a.method.name} = ${fmt(x.a.total)}`;document.getElementById('relationRightTitle').textContent=`${x.b.method.name} = ${fmt(x.b.total)}`;document.getElementById('relationLeftBody').textContent=relationFullBreakdown(x.a);document.getElementById('relationRightBody').textContent=relationFullBreakdown(x.b);const modal=document.getElementById('relationModal');modal.classList.add('open');modal.setAttribute('aria-hidden','false')}
 function closeRelationDetail(){const modal=document.getElementById('relationModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');state.relationOpen=null}
@@ -972,6 +991,10 @@ console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal
 console.assert(compositeIndex(28)===18,'28 composite #18 = Chai');
 console.assert(T('רוב','he','ordinal')===28,'Rov ordinal 28');
 console.assert(T('רוב','he','ayak')===82,'Rov AIQ BKR 82');
+const __cycleAmit=calculateCycleBkr('עמית');console.assert(__cycleAmit.cycleTotals.join(',')==='520,1204,52'&&__cycleAmit.closureValue===520&&__cycleAmit.total===1776,'Cycle BKR Amit 520→1204→52→520; Σ3=1776');
+const __cycleMike=calculateCycleBkr('מייק');console.assert(__cycleMike.cycleTotals.join(',')==='160,601,16'&&__cycleMike.closureValue===160&&__cycleMike.total===777,'Cycle BKR Mike 160→601→16→160; Σ3=777');
+const __cycleRov=calculateCycleBkr('רוב');console.assert(__cycleRov.cycleTotals.join(',')==='208,82,820'&&__cycleRov.closureValue===208&&__cycleRov.total===1110,'Cycle BKR Rov 208→82→820→208; Σ3=1110');
+const __cycleFull=calculateCycleBkr('עמית מייק רוב');console.assert(__cycleFull.cycleTotals.join(',')==='888,1887,888'&&__cycleFull.closureValue===888&&__cycleFull.total===3663,'Cycle BKR full name 888→1887→888→888; Σ3=3663');
 console.assert(T('בלייז חי','he','regular')===77,'Blaze Chai regular 77');
 console.assert(T('בלייז חי','he','ordinal')===59,'Blaze Chai ordinal 59');
 console.assert(compositeIndex(77)===55,'77 composite #55 = Hakol');
