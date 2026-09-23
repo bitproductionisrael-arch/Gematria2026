@@ -1,0 +1,39 @@
+name: One-time Compact Top Magnet
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Make top magnet readable and keep detailed magnets local
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="function selectedPlainText(){return selectedResults().map(minimalResultText).join('\\n')}\nfunction selectedRichText(){return selectedResults().map(richMagnetText).join('\\n\\n')}\nfunction allResultsPlainText(){return current.results.map(minimalResultText).join('\\n')}\nfunction allResultsRichText(){return current.results.map(richMagnetText).join('\\n\\n')}"
+          new="function selectedPlainText(){return selectedResults().map(minimalResultText).join('\\n\\n')}\nfunction selectedRichText(){return selectedResults().map(richMagnetText).join('\\n\\n')}\nfunction summaryResultText(r){\n const q=document.getElementById('q').value.trim();\n return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`\n}\nfunction compactMathSummary(r){\n const a=analyzeNumber(r.total);if(!a)return summaryResultText(r);\n const bits=[`${summaryResultText(r)}`,`${fmtFactors(a.factors)}`];\n const direct=(a.forms||[]).concat(a.binom||[]).slice(0,2);\n if(direct.length)bits.push(direct.map(s=>shapeIcon(s)+' '+s).join(' · '));\n const hit=corpusHits(r.total)[0];if(hit)bits.push('◎ '+hit.label);\n return bits.join(' · ')\n}\nfunction allResultsPlainText(){return current.results.map(summaryResultText).join('\\n')}\nfunction allResultsRichText(){return current.results.map(compactMathSummary).join('\\n')}"
+          assert old in s, "missing anchor: compact top magnets"
+          s=s.replace(old,new,1)
+          old="console.assert(T('בלייז רוב חי','he','ratzo')===1369,'Blaze Rov Chai Ratzo 1369');"
+          new="console.assert(T('בלייז רוב חי','he','ratzo')===1369,'Blaze Rov Chai Ratzo 1369');\nconsole.assert(T('אשר א אהיה משה אשר','he','regular')===1369,'Asher Aleph Ehyeh Moshe Asher regular 1369');\nconsole.assert(T('אשר א אהיה משה אשר','he','reduced')===37,'Asher Aleph Ehyeh Moshe Asher reduced 37');"
+          assert old in s, "missing anchor: square phrase self-tests"
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Compact top magnet output and add 37 square self tests"
+          git push origin main
