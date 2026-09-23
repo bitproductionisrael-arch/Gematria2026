@@ -1,0 +1,39 @@
+name: One-time Milui Magnet Expansion
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Show actual milui expansion in magnet copy
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="function minimalMethodName(r){return String(r?.method?.name||'').split(' / ')[0].trim()}\nfunction minimalResultText(r){const q=document.getElementById('q').value.trim();return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`}"
+          new="function minimalMethodName(r){\n const k=r?.method?.key;\n if(k==='miluiMayim')return 'מילוי מים';\n if(k==='milui2')return 'מילוי דמילוי';\n if(k==='milui')return 'מילוי רגיל';\n return String(r?.method?.name||'').split(' / ')[0].trim()\n}\nfunction miluiResultExpansion(r){\n if(!r?.milui||!r.words?.length)return'';\n return r.words.map(w=>w.parts.map(p=>p.name).join(' ')).join(' | ')\n}\nfunction minimalResultText(r){\n const q=document.getElementById('q').value.trim();\n if(r?.milui){\n  const expansion=miluiResultExpansion(r);\n  return `${q} = ${expansion} = ${fmt(r.total)} (${minimalMethodName(r)})`\n }\n return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`\n}"
+          assert old in s, "minimal magnet anchor missing"
+          s=s.replace(old,new,1)
+          anchor="console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal 55');"
+          extra="console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen Milui Mayim 307');"
+          assert anchor in s, "self-test anchor missing"
+          s=s.replace(anchor,anchor+"\n"+extra,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Show actual milui expansion in magnet copy"
+          git push origin main
