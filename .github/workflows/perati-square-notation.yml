@@ -1,0 +1,55 @@
+name: One-time Perati Square Notation
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Show square notation for Perati everywhere
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="function wordBreakdownHtml(r,w){if(r.milui){const chips=w.parts.map(p=>`<span class=\"letter-chip\"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class=\"word-block\"><div class=\"word-title\">${esc(w.raw)}</div><div class=\"letter-grid\">${chips}</div><div class=\"word-total\"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class=\"letter-chip\"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class=\"transform-note\">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class=\"transform-note\">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class=\"word-block\"><div class=\"word-title\">${esc(w.raw)}</div><div class=\"letter-grid\">${chips}</div>${note}<div class=\"word-total\"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`}"
+          new="function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}\nfunction squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}\nfunction wordBreakdownHtml(r,w){\n if(r.milui){const chips=w.parts.map(p=>`<span class=\"letter-chip\"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class=\"word-block\"><div class=\"word-title\">${esc(w.raw)}</div><div class=\"letter-grid\">${chips}</div><div class=\"word-total\"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}\n if(r.method.key==='perati'){\n  const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class=\"letter-chip\"><b>${esc(t.label)}²</b><small>${fmt(base)}²</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');\n  return `<div class=\"word-block\"><div class=\"word-title\">${esc(squaredWordLabel(w))}</div><div class=\"letter-grid\">${chips}</div><div class=\"word-total\"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`\n }\n const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class=\"letter-chip\"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class=\"transform-note\">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class=\"transform-note\">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class=\"word-block\"><div class=\"word-title\">${esc(w.raw)}</div><div class=\"letter-grid\">${chips}</div>${note}<div class=\"word-total\"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`\n}"
+          assert old in s, "missing anchor: perati visual chips"
+          s=s.replace(old,new,1)
+          old="function magnetTokenText(r,w){\n const m=r.method;\n if(m.transform){\n  return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))\n }\n if(m.fold==='word'){\n  const base=w.toks.map((t,i)=>t.label+'='+fmt(w.baseVals[i])).join(' + ');\n  return base+' → '+fmt(w.folded)\n }\n return w.toks.map((t,i)=>{\n  const sub=m.sub&&m.sub[t.base]?(t.label+'→'+m.sub[t.base]):t.label;\n  return sub+'='+fmt(w.baseVals[i])\n }).join(' + ')\n}"
+          new="function magnetTokenText(r,w){\n const m=r.method;\n if(m.key==='perati'){\n  return w.toks.map((t,i)=>{const base=peratiBaseValue(t);return t.label+'²=('+fmt(base)+'²='+fmt(w.baseVals[i])+')'}).join(' ')\n }\n if(m.transform){\n  return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))\n }\n if(m.fold==='word'){\n  const base=w.toks.map((t,i)=>t.label+'='+fmt(w.baseVals[i])).join(' + ');\n  return base+' → '+fmt(w.folded)\n }\n return w.toks.map((t,i)=>{\n  const sub=m.sub&&m.sub[t.base]?(t.label+'→'+m.sub[t.base]):t.label;\n  return sub+'='+fmt(w.baseVals[i])\n }).join(' + ')\n}"
+          assert old in s, "missing anchor: perati magnet details"
+          s=s.replace(old,new,1)
+          old="function minimalResultText(r){\n const q=document.getElementById('q').value.trim();\n const breakdown=magnetBreakdown(r);\n return breakdown\n  ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`\n  : `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`\n}"
+          new="function minimalResultText(r){\n const q=document.getElementById('q').value.trim();\n if(r?.method?.key==='perati'&&r.words?.length){\n  const shape=r.words.map(squaredWordLabel).join(' ');\n  const details=r.words.map(w=>magnetTokenText(r,w)).join(' | ');\n  return `${shape} = ${fmt(r.total)} (${minimalMethodName(r)})\\n${details}`\n }\n const breakdown=magnetBreakdown(r);\n return breakdown\n  ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`\n  : `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`\n}"
+          assert old in s, "missing anchor: perati magnet headline"
+          s=s.replace(old,new,1)
+          old=" const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}});"
+          new=" const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):(r.method.key==='perati'?w.toks.map(function(t,i){const base=peratiBaseValue(t);return {letter:t.label+'²',value:w.baseVals[i],sub:fmt(base)+'²'}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}}));"
+          assert old in s, "missing anchor: perati poster chips"
+          s=s.replace(old,new,1)
+          old=" posterText(ctx,w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);"
+          new=" posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);"
+          assert old in s, "missing anchor: perati poster word title"
+          s=s.replace(old,new,1)
+          old="document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;await copyText(`${document.getElementById('q').value}\\n${r.method.name} = ${r.total}\\n${wordDescription(r,state.word)}`);toast('הועתק')});"
+          new="document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הועתק':'שגיאה בהעתקה')});"
+          assert old in s, "missing anchor: copyOne uses unified magnet"
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Show explicit square notation for Perati"
+          git push origin main
