@@ -547,13 +547,35 @@ function miluiResultExpansion(r){
  if(!r?.milui||!r.words?.length)return'';
  return r.words.map(w=>w.parts.map(p=>p.name).join(' ')).join(' | ')
 }
+function magnetTokenText(r,w){
+ const m=r.method;
+ if(m.transform){
+  return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
+ }
+ if(m.fold==='word'){
+  const base=w.toks.map((t,i)=>t.label+'='+fmt(w.baseVals[i])).join(' + ');
+  return base+' → '+fmt(w.folded)
+ }
+ return w.toks.map((t,i)=>{
+  const sub=m.sub&&m.sub[t.base]?(t.label+'→'+m.sub[t.base]):t.label;
+  return sub+'='+fmt(w.baseVals[i])
+ }).join(' + ')
+}
+function magnetBreakdown(r){
+ if(r?.milui)return miluiResultExpansion(r);
+ if(!r?.words?.length)return'';
+ const multi=r.words.length>1;
+ return r.words.map(w=>{
+  const expr=magnetTokenText(r,w);
+  return multi?(w.raw+' ['+expr+']'):expr
+ }).join(' + ')
+}
 function minimalResultText(r){
  const q=document.getElementById('q').value.trim();
- if(r?.milui){
-  const expansion=miluiResultExpansion(r);
-  return `${q} = ${expansion} = ${fmt(r.total)} (${minimalMethodName(r)})`
- }
- return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
+ const breakdown=magnetBreakdown(r);
+ return breakdown
+  ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`
+  : `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
 }
 function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(r.method.name)}px">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
@@ -793,6 +815,7 @@ console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal
 console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen Milui Mayim 307');
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','reverseOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
+console.assert(T('עמית','he','perati')===166600,'Amit Perati 166600');
 console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordinal 141');
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew one-step zero 96');
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
