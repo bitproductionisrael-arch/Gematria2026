@@ -1,0 +1,35 @@
+name: One-time Poster Word Spacing
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Compact poster word blocks to prevent footer overlap
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="function posterWord(ctx,r,w,x,y,width){\n posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);\n const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):(r.method.key==='perati'?w.toks.map(function(t,i){const base=peratiBaseValue(t);return {letter:t.label+'²',value:w.baseVals[i],sub:fmt(base)+'²'}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}}));\n const gap=8,inner=width-40,count=Math.max(1,items.length),chipW=Math.max(58,Math.min(92,(inner-gap*(count-1))/count)),chipH=72;\n let cx=x+width-20-chipW,cy=y+38;\n items.forEach(function(item){\n  if(cx<x+20){cx=x+width-20-chipW;cy+=chipH+8}\n  posterRound(ctx,cx,cy,chipW,chipH,12,'#091018','#273746');\n  posterText(ctx,item.letter,cx+chipW/2,cy+9,25,'800','#eef3f8','center','rtl',chipW-10);\n  if(item.sub)posterText(ctx,item.sub,cx+chipW/2,cy+35,11,'500','#8e9aa8','center','rtl',chipW-8);\n  posterText(ctx,item.value,cx+chipW/2,cy+(item.sub?50:42),17,'800','#bfe0ff','center','ltr',chipW-10);\n  cx-=chipW+gap\n });\n const totalY=cy+chipH+10;\n const subtotal=r.milui?w.subtotal:(r.method.fold==='word'?w.folded:(r.method.transform?sum(w.vals):sum(w.baseVals)));\n posterText(ctx,'סכום',x+width-64,totalY+2,16,'500','#8e9aa8','right','rtl',80);\n posterText(ctx,subtotal,x+width-20,totalY,22,'850','#eef3f8','right','ltr',80);\n if(r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+20,totalY+2,12,'500','#9fb0c2','left','rtl',width-150);\n else if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+20,totalY+2,13,'500','#9fb0c2','left','ltr',width-150);\n return totalY+38\n}"
+          new="function posterWord(ctx,r,w,x,y,width){\n posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-18,y,20,'800','#f3f7fb','right','rtl',width-36);\n const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):(r.method.key==='perati'?w.toks.map(function(t,i){const base=peratiBaseValue(t);return {letter:t.label+'²',value:w.baseVals[i],sub:fmt(base)+'²'}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}}));\n const gap=6,inner=width-36,count=Math.max(1,items.length),chipW=Math.max(52,Math.min(82,(inner-gap*(count-1))/count)),chipH=58;\n let cx=x+width-18-chipW,cy=y+28;\n items.forEach(function(item){\n  if(cx<x+18){cx=x+width-18-chipW;cy+=chipH+6}\n  posterRound(ctx,cx,cy,chipW,chipH,10,'#091018','#273746');\n  posterText(ctx,item.letter,cx+chipW/2,cy+7,21,'800','#eef3f8','center','rtl',chipW-8);\n  if(item.sub)posterText(ctx,item.sub,cx+chipW/2,cy+29,9,'500','#8e9aa8','center','rtl',chipW-6);\n  posterText(ctx,item.value,cx+chipW/2,cy+(item.sub?41:34),14,'800','#bfe0ff','center','ltr',chipW-8);\n  cx-=chipW+gap\n });\n const totalY=cy+chipH+5;\n const subtotal=r.milui?w.subtotal:(r.method.fold==='word'?w.folded:(r.method.transform?sum(w.vals):sum(w.baseVals)));\n posterText(ctx,'סכום',x+width-58,totalY+1,13,'500','#8e9aa8','right','rtl',70);\n posterText(ctx,subtotal,x+width-18,totalY,18,'850','#eef3f8','right','ltr',76);\n if(r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','rtl',width-132);\n else if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','ltr',width-132);\n return totalY+27\n}"
+          assert old in s, "posterWord anchor missing"
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Prevent poster word blocks from overlapping footer"
+          git push origin main
