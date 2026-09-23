@@ -125,6 +125,55 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   .relation-row .pair{font-size:17px}
 }
 
+
+/* Never split ordinary words in comparison cards.
+   Compact the type first; only truly long uninterrupted tokens may break. */
+.multi-detail-card .mn,
+.compact-facts,
+.fact-line,
+.badge,
+.word-title,
+.transform-note,
+.multi-breakdown{
+  hyphens:none;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+.multi-detail-card .mn{
+  white-space:nowrap;
+  line-height:1.12;
+  min-width:0;
+  overflow:visible;
+}
+.fact-line,.transform-note,.multi-breakdown{
+  white-space:normal;
+}
+.badge,.word-title{
+  white-space:nowrap;
+}
+@media(max-width:520px){
+  .multi-detail-card .mh{
+    grid-template-columns:auto minmax(0,1fr) auto;
+    gap:6px;
+    align-items:center;
+  }
+  .multi-detail-card .mv{
+    font-size:clamp(28px,8vw,38px);
+    white-space:nowrap;
+  }
+  .multi-detail-card .card-actions{gap:4px}
+  .multi-detail-card .remove-method,
+  .multi-detail-card .copy-method{
+    width:30px;height:30px;border-radius:9px;
+  }
+  .multi-detail-card .mn{
+    max-width:100%;
+    letter-spacing:-.01em;
+  }
+}
+/* Emergency rule: only long continuous tokens are allowed to break. */
+.long-token{overflow-wrap:anywhere;word-break:break-word}
+
 </style>
 </head>
 <body>
@@ -483,9 +532,13 @@ function compactFactsHtml(n){
  if(hits.length)html+=`<div class="fact-line corpus-line"><b>קורפוס:</b> ${hits.map(h=>esc(h.label)).join(' / ')}</div>`;
  html+='</div>';return html;
 }
+function compactMethodFont(name){
+ const len=Array.from(String(name||'')).length;
+ return len>34?9:len>26?10:len>20?11:len>14?12:14
+}
 function minimalMethodName(r){return String(r?.method?.name||'').split(' / ')[0].trim()}
 function minimalResultText(r){const q=document.getElementById('q').value.trim();return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`}
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(r.method.name)}px">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
  const selected=state.selectedMethods.map(k=>current.results.find(r=>r.method.key===k)).filter(Boolean);const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
