@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   upgrade:
-    if: github.actor != 'github-actions[bot]'
+    if: github.actor == 'bitproductionisrael-arch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
