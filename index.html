@@ -54,7 +54,14 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .multi-detail-card .mh{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:10px}.multi-detail-card .mn{font-size:14px;font-weight:850;line-height:1.35;min-width:0}.multi-detail-card .mv{font-size:clamp(38px,3vw,54px);font-weight:950;line-height:.95;direction:ltr;color:var(--blue);text-shadow:0 0 24px rgba(99,169,255,.14)}
 .multi-detail-card .card-actions{display:flex;gap:5px;align-items:center;z-index:2}
 .multi-detail-card .remove-method,.multi-detail-card .copy-method{width:34px;height:34px;padding:0;display:grid;place-items:center;border-radius:10px;z-index:2}
-.multi-detail-card .copy-method{border-color:#326c69;color:#bdf4f0}.multi-breakdown{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px;line-height:1.75;direction:rtl;text-align:right;color:#eef3f8}
+.multi-detail-card .copy-method{border-color:#326c69;color:#bdf4f0}
+.compact-facts{display:grid;gap:5px;padding:8px 10px;border:1px solid #263746;border-radius:12px;background:#0a1118}
+.fact-line{font-size:12px;line-height:1.45;color:#cbd7e3;overflow-wrap:anywhere}
+.fact-line b{color:#eef3f8}
+.fact-line.anchor-line{color:#ffe2a0}
+.fact-line.corpus-line{color:#bdf4f0}
+.fact-sep{color:#586777;padding:0 3px}
+@media(max-width:520px){.compact-facts{padding:7px 8px;gap:4px}.fact-line{font-size:11px;line-height:1.35}}.multi-breakdown{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px;line-height:1.75;direction:rtl;text-align:right;color:#eef3f8}
 .word-block{position:relative;border-top:1px solid #22303d;padding-top:10px;margin-top:2px}.word-block:first-child{border-top:0;padding-top:0}.word-title{font-size:14px;font-weight:850;margin-bottom:8px}.letter-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}.letter-chip{min-width:64px;background:#0a1118;border:1px solid #263746;border-radius:12px;padding:8px 9px;display:grid;grid-template-rows:auto auto;gap:3px;text-align:center}.letter-chip b{font-size:22px;line-height:1}.letter-chip strong{font-size:16px;direction:ltr;color:#bfe0ff}.letter-chip small{font-size:9px;color:var(--muted);line-height:1.15}.word-total{display:flex;justify-content:flex-end;gap:7px;align-items:center;margin-top:9px;font-size:12px;color:var(--muted)}.word-total b{font-size:19px;color:#eef3f8;direction:ltr}.transform-note{margin-top:8px;padding:7px 9px;border-radius:10px;background:#0a1017;border:1px dashed #314052;font-size:11px;color:#aebbc8;line-height:1.45}.transform-note b{color:#eaf2fa}
 @media(max-width:1280px){.results-layout{grid-template-columns:300px minmax(0,1fr)}.multi-detail-grid{grid-template-columns:1fr}.multi-detail-card{min-height:260px}}
 @media(max-width:900px){
@@ -445,9 +452,28 @@ function wordDescription(r,idx){if(r.milui){const w=r.words[idx];if(!w)return'א
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function wordBreakdownHtml(r,w){if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`}
 function richBreakdownHtml(r){return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join(''):'<div class="tiny">אין פירוק</div>'}
+const CARD_ANCHORS=[24,37,43,55,72,111,136,222];
+function anchorDecompositions(n){
+ const out=[];
+ for(const a of CARD_ANCHORS){if(n>a&&n%a===0)out.push(`${fmt(n/a)}×${a}`)}
+ return out;
+}
+function compactFactsHtml(n){
+ const a=analyzeNumber(n);if(!a)return'';
+ const idx=a.prime?`Prime #${a.primeIndex}`:(a.compositeIndex?`Composite #${a.compositeIndex}`:'');
+ const core=[idx, `פירוק: ${fmtFactors(a.factors)}`, `φ=${fmt(a.phi)}`, `τ=${fmt(a.tau)}`, `σ=${fmt(a.sigma)}`, `rad=${fmt(a.rad)}`].filter(Boolean);
+ const anchors=anchorDecompositions(n);
+ const forms=(a.forms||[]).concat(a.binom||[]).slice(0,4);
+ const hits=corpusHits(n);
+ let html=`<div class="compact-facts"><div class="fact-line">${core.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ if(anchors.length)html+=`<div class="fact-line anchor-line"><b>עוגנים:</b> ${anchors.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ if(forms.length)html+=`<div class="fact-line"><b>צורות:</b> ${forms.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ if(hits.length)html+=`<div class="fact-line corpus-line"><b>קורפוס:</b> ${hits.map(h=>esc(h.label)).join(' / ')}</div>`;
+ html+='</div>';return html;
+}
 function minimalMethodName(r){return String(r?.method?.name||'').split(' / ')[0].trim()}
 function minimalResultText(r){const q=document.getElementById('q').value.trim();return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`}
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div><div class="badges">${badgesFor(r.total)}</div><div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
  const selected=state.selectedMethods.map(k=>current.results.find(r=>r.method.key===k)).filter(Boolean);const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
@@ -630,8 +656,12 @@ function posterCard(ctx,r,x,y,w,h){
  const a=analyzeNumber(r.total);let bx=x+w-28,by=y+64;
  const idx=a.prime?('Prime #'+a.primeIndex):(a.compositeIndex?('Composite #'+a.compositeIndex):'');
  if(idx)bx-=posterBadge(ctx,idx,bx,by,a.prime?'#b9f4c8':'#d5dde6',a.prime?'#2c6240':'#344353')+8;
- const hit=corpusHits(r.total)[0];if(hit)bx-=posterBadge(ctx,hit.label,bx,by,'#ffe2a0','#6f5a2d')+8;
- let yy=y+118;
+ const hits=corpusHits(r.total);if(hits[0])bx-=posterBadge(ctx,hits[0].label,bx,by,'#ffe2a0','#6f5a2d')+8;
+ const facts=`פירוק: ${fmtFactors(a.factors)}   φ=${fmt(a.phi)}   τ=${fmt(a.tau)}   σ=${fmt(a.sigma)}   rad=${fmt(a.rad)}`;
+ posterText(ctx,facts,x+w-28,y+104,14,'650','#aebbc8','right','rtl',w-56);
+ const adec=anchorDecompositions(r.total);if(adec.length)posterText(ctx,'עוגנים: '+adec.join(' · '),x+w-28,y+126,14,'650','#ffe2a0','right','rtl',w-56);
+ if(hits.length>1)posterText(ctx,'קורפוס: '+hits.map(h=>h.label).join(' / '),x+w-28,y+148,13,'600','#bdf4f0','right','rtl',w-56);
+ let yy=y+(hits.length>1?182:adec.length?160:142);
  (r.words||[]).forEach(function(word){if(yy<=y+h-100)yy=posterWord(ctx,r,word,x+14,yy,w-28)});
  posterText(ctx,'✓ חישוב מאומת',x+w-26,y+h-34,15,'650','#b9f4c8','right','rtl',180);
 }
