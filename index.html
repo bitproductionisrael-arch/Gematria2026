@@ -53,8 +53,12 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .multi-detail-card:before{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;background:linear-gradient(120deg,rgba(99,169,255,.045),transparent 36%,rgba(216,173,85,.03))}
 .multi-detail-card .mh{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:10px}.multi-detail-card .mn{font-size:14px;font-weight:850;line-height:1.35;min-width:0}.multi-detail-card .mv{font-size:clamp(38px,3vw,54px);font-weight:950;line-height:.95;direction:ltr;color:var(--blue);text-shadow:0 0 24px rgba(99,169,255,.14)}
 .multi-detail-card .card-actions{display:flex;gap:5px;align-items:center;z-index:2}
-.multi-detail-card .remove-method,.multi-detail-card .copy-method{width:34px;height:34px;padding:0;display:grid;place-items:center;border-radius:10px;z-index:2}
+.multi-detail-card .remove-method,.multi-detail-card .copy-method,.multi-detail-card .copy-rich-method{width:34px;height:34px;padding:0;display:grid;place-items:center;border-radius:10px;z-index:2}
 .multi-detail-card .copy-method{border-color:#326c69;color:#bdf4f0}
+.multi-detail-card .copy-rich-method,.math-magnet{border-color:#6f5a2d;color:#ffe2a0;font-weight:850}
+.multi-detail-card .copy-rich-method{width:44px;font-size:11px}
+.stage-actions{display:flex;align-items:center;gap:5px}
+.stage-actions button{height:32px;min-width:36px;padding:0 7px;border-radius:9px;font-size:12px}
 .compact-facts{display:grid;gap:5px;padding:8px 10px;border:1px solid #263746;border-radius:12px;background:#0a1118}
 .fact-line{font-size:12px;line-height:1.45;color:#cbd7e3;overflow-wrap:anywhere}
 .fact-line b{color:#eef3f8}
@@ -163,9 +167,12 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   }
   .multi-detail-card .card-actions{gap:4px}
   .multi-detail-card .remove-method,
-  .multi-detail-card .copy-method{
+  .multi-detail-card .copy-method,
+  .multi-detail-card .copy-rich-method{
     width:30px;height:30px;border-radius:9px;
   }
+  .multi-detail-card .copy-rich-method{width:40px;font-size:10px}
+  .stage-actions button{height:30px;min-width:32px;font-size:10px}
   .multi-detail-card .mn{
     max-width:100%;
     letter-spacing:-.01em;
@@ -190,7 +197,8 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       </div>
     </div>
     <div class="top-actions">
-      <button id="copyAll" class="iconbtn" title="העתק בחירה פעילה / טאב">🧲</button>
+      <button id="copyAll" class="iconbtn" title="העתק את כל שיטות הגימטריה">🧲</button>
+      <button id="copyAllMath" class="iconbtn math-magnet" title="העתק את כל השיטות + פירוקים ותכונות מתמטיות">🧲∑</button>
       <button id="saveView" class="iconbtn" title="צלם בחירה פעילה / טאב">📸</button>
     </div>
   </header>
@@ -501,12 +509,33 @@ function wordDescription(r,idx){if(r.milui){const w=r.words[idx];if(!w)return'א
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function wordBreakdownHtml(r,w){if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`}
 function richBreakdownHtml(r){return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join(''):'<div class="tiny">אין פירוק</div>'}
-const CARD_ANCHORS=[24,37,43,55,72,111,136,222];
-function anchorDecompositions(n){
- const out=[];
- for(const a of CARD_ANCHORS){if(n>a&&n%a===0)out.push(`${fmt(n/a)}×${a}`)}
- return out;
+const CARD_ANCHORS=[1024,888,768,666,640,576,543,520,512,444,384,368,344,316,296,288,232,222,216,208,160,148,141,136,128,111,104,96,88,74,73,72,64,59,55,52,43,42,38,37,36,33,32,28,27,24,21,20,18,16,12,11,10,8,7,6,5,4,3,2];
+function shortCorpusLabel(v){
+ const h=corpusHits(v)[0];if(!h)return'';
+ return h.label.split(' / ')[0]
 }
+function interestingMultipleDetails(n,limit=8){
+ const anchorSet=new Set(CARD_ANCHORS),seen=new Set(),rows=[];
+ for(const a of CARD_ANCHORS){
+  if(n<=a||n%a!==0)continue;
+  const q=n/a,lo=Math.min(a,q),hi=Math.max(a,q),key=lo+'x'+hi;
+  if(seen.has(key))continue;seen.add(key);
+  const loForms=shapes(lo).slice(0,1),hiForms=shapes(hi).slice(0,1);
+  const loHit=shortCorpusLabel(lo),hiHit=shortCorpusLabel(hi);
+  let score=0;
+  if(anchorSet.has(lo))score+=18;if(anchorSet.has(hi))score+=18;
+  if(loForms.length)score+=14;if(hiForms.length)score+=14;
+  if(loHit)score+=18;if(hiHit)score+=18;
+  if(lo===24||hi===24||lo===37||hi===37||lo===136||hi===136||lo===222||hi===222)score+=24;
+  let notes=[];
+  if(loHit)notes.push(fmt(lo)+'='+loHit);else if(loForms.length)notes.push(fmt(lo)+'='+loForms[0]);
+  if(hiHit)notes.push(fmt(hi)+'='+hiHit);else if(hiForms.length)notes.push(fmt(hi)+'='+hiForms[0]);
+  rows.push({text:`${fmt(lo)}×${fmt(hi)}${notes.length?' ('+notes.join(' · ')+')':''}`,score});
+ }
+ return rows.sort((x,y)=>y.score-x.score||x.text.length-y.text.length).slice(0,limit).map(x=>x.text)
+}
+function anchorDecompositions(n){return interestingMultipleDetails(n,8)}
+
 function divisorsOf(n){
  const ds=[];for(const [a,b] of factorPairs(n)){ds.push(a);if(b!==a)ds.push(b)}
  return ds.sort((x,y)=>x-y)
@@ -525,10 +554,9 @@ function compactFactsHtml(n){
  const hits=corpusHits(n);
  const props=[a.aliquot,a.squarefree?'Squarefree':'',a.powerful?'Powerful':'',`DR=${a.root}`].filter(Boolean);
  let html=`<div class="compact-facts"><div class="fact-line">${core.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
- html+=`<div class="fact-line"><b>מחלקים (${a.tau}):</b> ${esc(compactDivisorText(n))}</div>`;
  if(props.length)html+=`<div class="fact-line"><b>תכונות:</b> ${props.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
- if(anchors.length)html+=`<div class="fact-line anchor-line"><b>עוגנים:</b> ${anchors.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
- if(forms.length)html+=`<div class="fact-line"><b>צורות:</b> ${forms.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ if(anchors.length)html+=`<div class="fact-line anchor-line"><b>כפולות מעניינות:</b> ${anchors.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ if(forms.length)html+=`<div class="fact-line"><b>צורות / כוחות:</b> ${forms.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
  if(hits.length)html+=`<div class="fact-line corpus-line"><b>קורפוס:</b> ${hits.map(h=>esc(h.label)).join(' / ')}</div>`;
  html+='</div>';return html;
 }
@@ -577,7 +605,21 @@ function minimalResultText(r){
   ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`
   : `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
 }
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-count">${rows.length} בחירות</div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(r.method.name)}px">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
+function richMagnetText(r){
+ const base=minimalResultText(r),a=analyzeNumber(r.total);if(!a)return base;
+ const lines=[base];
+ const idx=a.prime?`Prime #${a.primeIndex}`:(a.compositeIndex?`Composite #${a.compositeIndex}`:'');
+ lines.push([`פירוק: ${fmtFactors(a.factors)}`,idx,`φ=${fmt(a.phi)}`,`τ=${fmt(a.tau)}`,`σ=${fmt(a.sigma)}`,`rad=${fmt(a.rad)}`,`DR=${a.root}`].filter(Boolean).join(' · '));
+ const mult=interestingMultipleDetails(r.total,10);if(mult.length)lines.push('כפולות מעניינות: '+mult.join(' · '));
+ const forms=(a.forms||[]).concat(a.binom||[]);if(forms.length)lines.push('צורות / כוחות: '+forms.join(' · '));
+ const hits=corpusHits(r.total);if(hits.length)lines.push('קורפוס: '+hits.map(h=>h.label).join(' / '));
+ return lines.join('\n')
+}
+function selectedPlainText(){return selectedResults().map(minimalResultText).join('\n')}
+function selectedRichText(){return selectedResults().map(richMagnetText).join('\n\n')}
+function allResultsPlainText(){return current.results.map(minimalResultText).join('\n')}
+function allResultsRichText(){return current.results.map(richMagnetText).join('\n\n')}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+rows.map(r=>`<div class="multi-detail-card" data-detail-method="${r.method.key}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${r.method.key}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${r.method.key}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${r.method.key}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(r.method.name)}px">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`).join('')}
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
  const selected=state.selectedMethods.map(k=>current.results.find(r=>r.method.key===k)).filter(Boolean);const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
@@ -763,12 +805,12 @@ function posterCard(ctx,r,x,y,w,h){
  const hits=corpusHits(r.total);if(hits[0])bx-=posterBadge(ctx,hits[0].label,bx,by,'#ffe2a0','#6f5a2d')+8;
  const facts=`פירוק: ${fmtFactors(a.factors)}   φ=${fmt(a.phi)}   τ=${fmt(a.tau)}   σ=${fmt(a.sigma)}   rad=${fmt(a.rad)}`;
  posterText(ctx,facts,x+w-28,y+104,14,'650','#aebbc8','right','rtl',w-56);
- posterText(ctx,'מחלקים: '+compactDivisorText(r.total),x+w-28,y+126,13,'600','#cbd7e3','right','rtl',w-56);
  const props=[a.aliquot,a.squarefree?'Squarefree':'',a.powerful?'Powerful':'','DR='+a.root].filter(Boolean).join(' · ');
- posterText(ctx,'תכונות: '+props,x+w-28,y+146,13,'600','#cbd7e3','right','rtl',w-56);
- const adec=anchorDecompositions(r.total);if(adec.length)posterText(ctx,'עוגנים: '+adec.join(' · '),x+w-28,y+166,14,'650','#ffe2a0','right','rtl',w-56);
+ posterText(ctx,'תכונות: '+props,x+w-28,y+126,13,'600','#cbd7e3','right','rtl',w-56);
+ const adec=interestingMultipleDetails(r.total,6);if(adec.length)posterText(ctx,'כפולות: '+adec.join(' · '),x+w-28,y+146,13,'650','#ffe2a0','right','rtl',w-56);
+ const forms=(a.forms||[]).concat(a.binom||[]);if(forms.length)posterText(ctx,'צורות: '+forms.slice(0,4).join(' · '),x+w-28,y+166,13,'600','#cbd7e3','right','rtl',w-56);
  if(hits.length>1)posterText(ctx,'קורפוס: '+hits.map(h=>h.label).join(' / '),x+w-28,y+186,13,'600','#bdf4f0','right','rtl',w-56);
- let yy=y+(hits.length>1?218:adec.length?198:178);
+ let yy=y+(hits.length>1?218:forms.length?198:adec.length?178:158);
  (r.words||[]).forEach(function(word){if(yy<=y+h-100)yy=posterWord(ctx,r,word,x+14,yy,w-28)});
  posterText(ctx,'✓ חישוב מאומת',x+w-26,y+h-34,15,'650','#b9f4c8','right','rtl',180);
 }
@@ -799,13 +841,21 @@ document.getElementById('categoryTabs').addEventListener('click',e=>{const b=e.t
 document.getElementById('methodGrid').addEventListener('click',e=>{const b=e.target.closest('[data-method]');if(!b)return;const key=b.dataset.method;if(!state.selectionTouched)state.selectionTouched=true;const i=state.selectedMethods.indexOf(key);if(i>=0&&state.selectedMethods.length>1){state.selectedMethods.splice(i,1);state.methodKey=state.selectedMethods[state.selectedMethods.length-1]}else if(i<0){state.selectedMethods.push(key);state.methodKey=key}else state.methodKey=key;state.word=0;renderResults();if(state.compareAuto){refreshAutoCompareTarget();renderCompare()}});
 document.getElementById('mobileMethod').addEventListener('change',e=>{state.methodKey=e.target.value;state.selectedMethods=[e.target.value];state.selectionTouched=true;state.word=0;const r=methodByKey(state.methodKey);if(r)state.category=r.method.cat;renderResults();if(state.compareAuto){refreshAutoCompareTarget();renderCompare()}});
 document.getElementById('wordPrev').addEventListener('click',()=>{const r=methodByKey(state.methodKey);state.word=Math.max(0,state.word-1);renderResults()});document.getElementById('wordNext').addEventListener('click',()=>{const r=methodByKey(state.methodKey);state.word=Math.min(Math.max(0,(r?.words.length||1)-1),state.word+1);renderResults()});
-document.getElementById('multiDetailGrid').addEventListener('click',async e=>{const c=e.target.closest('[data-copy-method]');if(c){const r=current.results.find(x=>x.method.key===c.dataset.copyMethod);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הבחירה הועתקה':'שגיאה בהעתקה');return}const b=e.target.closest('[data-remove-method]');if(!b)return;const key=b.dataset.removeMethod;state.selectedMethods=state.selectedMethods.filter(k=>k!==key);if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];state.methodKey=state.selectedMethods[state.selectedMethods.length-1]||state.methodKey;renderResults()});
+document.getElementById('multiDetailGrid').addEventListener('click',async e=>{
+ const selMath=e.target.closest('[data-copy-selected-math]');if(selMath){const ok=await copyText(selectedRichText());toast(ok?'כל הבחירות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}
+ const sel=e.target.closest('[data-copy-selected]');if(sel){const ok=await copyText(selectedPlainText());toast(ok?'כל הבחירות הועתקו':'שגיאה בהעתקה');return}
+ const rich=e.target.closest('[data-copy-rich-method]');if(rich){const r=current.results.find(x=>x.method.key===rich.dataset.copyRichMethod);if(!r)return;const ok=await copyText(richMagnetText(r));toast(ok?'הבחירה + מתמטיקה הועתקה':'שגיאה בהעתקה');return}
+ const c=e.target.closest('[data-copy-method]');if(c){const r=current.results.find(x=>x.method.key===c.dataset.copyMethod);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הבחירה הועתקה':'שגיאה בהעתקה');return}
+ const b=e.target.closest('[data-remove-method]');if(!b)return;const key=b.dataset.removeMethod;state.selectedMethods=state.selectedMethods.filter(k=>k!==key);if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];state.methodKey=state.selectedMethods[state.selectedMethods.length-1]||state.methodKey;renderResults()
+});
 document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;await copyText(`${document.getElementById('q').value}\n${r.method.name} = ${r.total}\n${wordDescription(r,state.word)}`);toast('הועתק')});
 document.getElementById('numSource').addEventListener('change',e=>{state.numKey=e.target.value;renderNumber()});document.getElementById('numberSubtabs').addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;state.numSub=b.dataset.sub;document.querySelectorAll('#numberSubtabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.analysis-page').forEach(x=>x.hidden=x.dataset.page!==state.numSub)});
 document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;renderRepeat()}));document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
-document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await copyText(selectedResults().map(minimalResultText).join('\n'));toast(ok?'הבחירות הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
+document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
+document.getElementById('copyAllMath').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsRichText());toast(ok?'כל השיטות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
+document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
