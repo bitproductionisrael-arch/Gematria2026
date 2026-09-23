@@ -547,6 +547,68 @@ async function savePanelAsPng(el,name){
   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(name)+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true;
  }catch(e){console.error(e);toast('שגיאה בצילום הטאב');return false}
 }
+function posterRound(ctx,x,y,w,h,r,fill,stroke){
+ ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);else{ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
+ if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1.5;ctx.stroke()}
+}
+function posterText(ctx,text,x,y,size,weight,color,align,dir,maxWidth){
+ weight=weight||'500';color=color||'#eef3f8';align=align||'right';dir=dir||'rtl';
+ ctx.save();ctx.font=weight+' '+size+'px system-ui,-apple-system,Segoe UI,Arial,sans-serif';ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='top';ctx.direction=dir;ctx.fillText(String(text),x,y,maxWidth);ctx.restore()
+}
+function posterBadge(ctx,text,x,y,color,border){
+ color=color||'#9fb0c2';border=border||'#344353';ctx.save();ctx.font='600 19px system-ui,-apple-system,Segoe UI,Arial,sans-serif';const w=Math.ceil(ctx.measureText(text).width)+28;posterRound(ctx,x-w,y,w,34,17,'#0b1219',border);posterText(ctx,text,x-14,y+6,19,'600',color,'right','rtl',w-22);ctx.restore();return w
+}
+function selectedResults(){return state.selectedMethods.map(function(k){return current.results.find(function(r){return r.method.key===k})}).filter(Boolean)}
+function posterWord(ctx,r,w,x,y,width){
+ posterText(ctx,w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);
+ const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}});
+ const gap=8,inner=width-40,count=Math.max(1,items.length),chipW=Math.max(58,Math.min(92,(inner-gap*(count-1))/count)),chipH=72;
+ let cx=x+width-20-chipW,cy=y+38;
+ items.forEach(function(item){
+  if(cx<x+20){cx=x+width-20-chipW;cy+=chipH+8}
+  posterRound(ctx,cx,cy,chipW,chipH,12,'#091018','#273746');
+  posterText(ctx,item.letter,cx+chipW/2,cy+9,25,'800','#eef3f8','center','rtl',chipW-10);
+  if(item.sub)posterText(ctx,item.sub,cx+chipW/2,cy+35,11,'500','#8e9aa8','center','rtl',chipW-8);
+  posterText(ctx,item.value,cx+chipW/2,cy+(item.sub?50:42),17,'800','#bfe0ff','center','ltr',chipW-10);
+  cx-=chipW+gap
+ });
+ const totalY=cy+chipH+10;
+ const subtotal=r.milui?w.subtotal:(r.method.fold==='word'?w.folded:(r.method.transform?sum(w.vals):sum(w.baseVals)));
+ posterText(ctx,'סכום',x+width-64,totalY+2,16,'500','#8e9aa8','right','rtl',80);
+ posterText(ctx,subtotal,x+width-20,totalY,22,'850','#eef3f8','right','ltr',80);
+ if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+20,totalY+2,13,'500','#9fb0c2','left','ltr',width-150);
+ return totalY+38
+}
+function posterCard(ctx,r,x,y,w,h){
+ posterRound(ctx,x,y,w,h,24,'#101821','#314052');
+ posterText(ctx,r.method.name,x+w-28,y+22,22,'800','#e9f1f8','right','rtl',w-150);
+ posterText(ctx,r.total,x+28,y+18,54,'900','#63a9ff','left','ltr',160);
+ const a=analyzeNumber(r.total);let bx=x+w-28,by=y+64;
+ const idx=a.prime?('Prime #'+a.primeIndex):(a.compositeIndex?('Composite #'+a.compositeIndex):'');
+ if(idx)bx-=posterBadge(ctx,idx,bx,by,a.prime?'#b9f4c8':'#d5dde6',a.prime?'#2c6240':'#344353')+8;
+ const hit=corpusHits(r.total)[0];if(hit)bx-=posterBadge(ctx,hit.label,bx,by,'#ffe2a0','#6f5a2d')+8;
+ let yy=y+118;
+ (r.words||[]).forEach(function(word){if(yy<=y+h-100)yy=posterWord(ctx,r,word,x+14,yy,w-28)});
+ posterText(ctx,'✓ חישוב מאומת',x+w-26,y+h-34,15,'650','#b9f4c8','right','rtl',180);
+}
+async function saveSelectedPoster(){
+ const rows=selectedResults();if(!rows.length)return false;
+ try{
+  const n=rows.length,cols=n<=3?n:3,rowCount=Math.ceil(n/cols);
+  const W=1800,H=rowCount===1?1000:1380,pad=70,header=150,gap=26;
+  const c=document.createElement('canvas');c.width=W;c.height=H;const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');
+  const g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,'#081018');g.addColorStop(.55,'#0c141d');g.addColorStop(1,'#080d13');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='#1c2a37';ctx.lineWidth=1;for(let i=0;i<9;i++){ctx.beginPath();ctx.moveTo(0,110+i*120);ctx.lineTo(W,20+i*120);ctx.stroke()}
+  const q=document.getElementById('q').value;
+  posterText(ctx,q,W-pad,38,58,'900','#f4f7fb','right','rtl',W-2*pad);
+  posterText(ctx,'השוואת גימטריה',W-pad,105,20,'650','#8e9aa8','right','rtl',220);
+  posterText(ctx,'Gematria Research Engine',pad,108,18,'600','#5fd3cf','left','ltr',300);
+  const availW=W-2*pad-gap*(cols-1),cardW=availW/cols,availH=H-header-pad-gap*(rowCount-1),cardH=availH/rowCount;
+  rows.forEach(function(r,i){const col=i%cols,row=Math.floor(i/cols),x=pad+col*(cardW+gap),y=header+row*(cardH+gap);posterCard(ctx,r,x,y,cardW,cardH)});
+  const blob=await new Promise(function(resolve){c.toBlob(resolve,'image/png',1)});if(!blob)throw new Error('PNG blob failed');
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(q+' - selected')+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},2500);return true;
+ }catch(e){console.error(e);toast('שגיאה ביצירת תמונת ההשוואה');return false}
+}
 
 /* ---------- events ---------- */
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
@@ -562,10 +624,13 @@ document.getElementById('numSource').addEventListener('change',e=>{state.numKey=
 document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;renderRepeat()}));document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
-document.getElementById('copyAll').addEventListener('click',async()=>{const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?(state.tab==='results'&&state.selectionTouched?'הבחירה הועתקה':'הטאב הועתק כטקסט'):'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{const el=activeExportTarget();const selectedOnly=state.tab==='results'&&state.selectionTouched;const name=document.getElementById('q').value+' - '+(selectedOnly?'selected':state.tab);const ok=await savePanelAsPng(el,name);if(ok)toast(selectedOnly?'נשמר צילום של הבחירה בלבד':'נשמר צילום של הטאב בלבד')});
+document.getElementById('copyAll').addEventListener('click',async()=>{const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?(state.tab==='results'&&state.selectionTouched?'הבחירה הועתקה':'הטאב הועתק כטקסט'):'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
+console.assert(T('חכמה','he','regular')===73,'Hokhmah regular 73');
+console.assert(T('חכמה','he','ordinal')===37,'Hokhmah ordinal 37');
+console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal 55');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
 console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordinal 141');
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew one-step zero 96');
