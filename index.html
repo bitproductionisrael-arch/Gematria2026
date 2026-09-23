@@ -458,6 +458,15 @@ function anchorDecompositions(n){
  for(const a of CARD_ANCHORS){if(n>a&&n%a===0)out.push(`${fmt(n/a)}×${a}`)}
  return out;
 }
+function divisorsOf(n){
+ const ds=[];for(const [a,b] of factorPairs(n)){ds.push(a);if(b!==a)ds.push(b)}
+ return ds.sort((x,y)=>x-y)
+}
+function compactDivisorText(n){
+ const ds=divisorsOf(n);
+ if(ds.length<=16)return ds.map(fmt).join(', ');
+ return ds.slice(0,9).map(fmt).join(', ')+' … '+ds.slice(-5).map(fmt).join(', ')
+}
 function compactFactsHtml(n){
  const a=analyzeNumber(n);if(!a)return'';
  const idx=a.prime?`Prime #${a.primeIndex}`:(a.compositeIndex?`Composite #${a.compositeIndex}`:'');
@@ -465,7 +474,10 @@ function compactFactsHtml(n){
  const anchors=anchorDecompositions(n);
  const forms=(a.forms||[]).concat(a.binom||[]).slice(0,4);
  const hits=corpusHits(n);
+ const props=[a.aliquot,a.squarefree?'Squarefree':'',a.powerful?'Powerful':'',`DR=${a.root}`].filter(Boolean);
  let html=`<div class="compact-facts"><div class="fact-line">${core.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
+ html+=`<div class="fact-line"><b>מחלקים (${a.tau}):</b> ${esc(compactDivisorText(n))}</div>`;
+ if(props.length)html+=`<div class="fact-line"><b>תכונות:</b> ${props.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
  if(anchors.length)html+=`<div class="fact-line anchor-line"><b>עוגנים:</b> ${anchors.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
  if(forms.length)html+=`<div class="fact-line"><b>צורות:</b> ${forms.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
  if(hits.length)html+=`<div class="fact-line corpus-line"><b>קורפוס:</b> ${hits.map(h=>esc(h.label)).join(' / ')}</div>`;
@@ -659,9 +671,12 @@ function posterCard(ctx,r,x,y,w,h){
  const hits=corpusHits(r.total);if(hits[0])bx-=posterBadge(ctx,hits[0].label,bx,by,'#ffe2a0','#6f5a2d')+8;
  const facts=`פירוק: ${fmtFactors(a.factors)}   φ=${fmt(a.phi)}   τ=${fmt(a.tau)}   σ=${fmt(a.sigma)}   rad=${fmt(a.rad)}`;
  posterText(ctx,facts,x+w-28,y+104,14,'650','#aebbc8','right','rtl',w-56);
- const adec=anchorDecompositions(r.total);if(adec.length)posterText(ctx,'עוגנים: '+adec.join(' · '),x+w-28,y+126,14,'650','#ffe2a0','right','rtl',w-56);
- if(hits.length>1)posterText(ctx,'קורפוס: '+hits.map(h=>h.label).join(' / '),x+w-28,y+148,13,'600','#bdf4f0','right','rtl',w-56);
- let yy=y+(hits.length>1?182:adec.length?160:142);
+ posterText(ctx,'מחלקים: '+compactDivisorText(r.total),x+w-28,y+126,13,'600','#cbd7e3','right','rtl',w-56);
+ const props=[a.aliquot,a.squarefree?'Squarefree':'',a.powerful?'Powerful':'','DR='+a.root].filter(Boolean).join(' · ');
+ posterText(ctx,'תכונות: '+props,x+w-28,y+146,13,'600','#cbd7e3','right','rtl',w-56);
+ const adec=anchorDecompositions(r.total);if(adec.length)posterText(ctx,'עוגנים: '+adec.join(' · '),x+w-28,y+166,14,'650','#ffe2a0','right','rtl',w-56);
+ if(hits.length>1)posterText(ctx,'קורפוס: '+hits.map(h=>h.label).join(' / '),x+w-28,y+186,13,'600','#bdf4f0','right','rtl',w-56);
+ let yy=y+(hits.length>1?218:adec.length?198:178);
  (r.words||[]).forEach(function(word){if(yy<=y+h-100)yy=posterWord(ctx,r,word,x+14,yy,w-28)});
  posterText(ctx,'✓ חישוב מאומת',x+w-26,y+h-34,15,'650','#b9f4c8','right','rtl',180);
 }
