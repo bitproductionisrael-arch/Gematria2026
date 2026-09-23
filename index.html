@@ -141,7 +141,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <section id="tab-forms" class="tab-panel"><div class="panel forms-layout">
       <div class="sectionbar"><div class="grow"><b>טרנספורמציות של הביטוי</b><div class="tiny">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui">מילוי</button><button data-form="boundary">גבול</button><button data-form="finals">סופיות</button></div></div></div>
       <div class="forms-grid">
-        <div class="form-card active" data-formcard="milui"><h3>מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל / Standard</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
+        <div class="form-card active" data-formcard="milui"><h3>מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל / Standard</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
         <div class="form-card" data-formcard="boundary"><h3>אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
         <div class="form-card" data-formcard="finals"><h3>סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
@@ -192,7 +192,7 @@ const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={};AYAK_CHAMBERS.forEach(triad=>{c
 const MILUI_NAMES={
   'א':'אלף','ב':'בית','ג':'גימל','ד':'דלת','ה':'הא','ו':'ואו','ז':'זין','ח':'חית','ט':'טית','י':'יוד','כ':'כף','ל':'למד','מ':'מם','נ':'נון','ס':'סמך','ע':'עין','פ':'פא','צ':'צדי','ק':'קוף','ר':'ריש','ש':'שין','ת':'תו'
 };
-const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ת':'תיו'}; // מחקר: מ→מים ות→תיו; נשמר בנפרד מן המילוי הסטנדרטי.
+const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ו':'ויו','ת':'תיו'}; // מחקר: מ→מים, ו→ויו, ת→תיו; נשמר בנפרד מן המילוי הסטנדרטי.
 function miluiNameForLetter(ch,names=MILUI_NAMES){return names[FINAL_TO_BASE[ch]||ch]||''}
 function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLetter(ch,names);for(let d=1;d<depth;d++)out=Array.from(out).map(c=>miluiNameForLetter(c,names)).join('');return out}
 
@@ -234,7 +234,7 @@ const METHODS={
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'milui',cat:'ops',name:'מילוי רגיל / Standard Letter-name Milui',custom:'milui'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
-  {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים) / Research',custom:'miluiMayim',research:true}
+  {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true}
  ],
  el:[
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},{key:'ordinal',cat:'base',name:'Greek Ordinal',map:GR_ORD},{key:'building',cat:'ops',name:'Greek Building',map:GR_VAL,transform:cumulative,transformName:'prefix sums'},{key:'ladder',cat:'ops',name:'Greek Ladder (κλίμαξ)',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes'}
