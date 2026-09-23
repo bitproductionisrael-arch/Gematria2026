@@ -1,0 +1,43 @@
+name: One-time Selected Export Fix
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Export only selected result cards
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="function activePanel(){return document.querySelector('.tab-panel.active > .panel')}"
+          new="function activePanel(){return document.querySelector('.tab-panel.active > .panel')}\nfunction activeExportTarget(){\n if(state.tab==='results'){\n  const selected=state.selectedMethods.map(k=>current.results.find(r=>r.method.key===k)).filter(Boolean);\n  if(state.selectionTouched&&selected.length>1)return document.getElementById('multiDetailGrid');\n  if(state.selectionTouched&&selected.length===1)return document.getElementById('detailPane');\n }\n return activePanel();\n}"
+          assert old in s
+          s=s.replace(old,new,1)
+          old="document.getElementById('copyAll').addEventListener('click',async()=>{const ok=await copyText(activeTabPlainText());toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{const el=activePanel();const ok=await savePanelAsPng(el,`${document.getElementById('q').value} - ${state.tab}`);if(ok)toast('נשמר צילום של הטאב בלבד')});"
+          new="document.getElementById('copyAll').addEventListener('click',async()=>{const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\\n'));toast(ok?(state.tab==='results'&&state.selectionTouched?'הבחירה הועתקה':'הטאב הועתק כטקסט'):'שגיאה בהעתקה')});document.getElementById('saveView').addEventListener('click',async()=>{const el=activeExportTarget();const selectedOnly=state.tab==='results'&&state.selectionTouched;const name=document.getElementById('q').value+' - '+(selectedOnly?'selected':state.tab);const ok=await savePanelAsPng(el,name);if(ok)toast(selectedOnly?'נשמר צילום של הבחירה בלבד':'נשמר צילום של הטאב בלבד')});"
+          assert old in s
+          s=s.replace(old,new,1)
+          old="      <button id=\"copyAll\" class=\"iconbtn\" title=\"העתק את הטאב הנוכחי כטקסט\">🧲</button>\n      <button id=\"saveView\" class=\"iconbtn\" title=\"צלם רק את הטאב הנוכחי ל-PNG\">📸</button>"
+          new="      <button id=\"copyAll\" class=\"iconbtn\" title=\"העתק בחירה פעילה / טאב\">🧲</button>\n      <button id=\"saveView\" class=\"iconbtn\" title=\"צלם בחירה פעילה / טאב\">📸</button>"
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Export only selected result cards when selection is active"
+          git push origin main
