@@ -880,25 +880,25 @@ function selectedResults(){
  return base.concat(state.derivedSelections||[])
 }
 function posterWord(ctx,r,w,x,y,width){
- posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);
+ posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-18,y,20,'800','#f3f7fb','right','rtl',width-36);
  const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):(r.method.key==='perati'?w.toks.map(function(t,i){const base=peratiBaseValue(t);return {letter:t.label+'²',value:w.baseVals[i],sub:fmt(base)+'²'}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}}));
- const gap=8,inner=width-40,count=Math.max(1,items.length),chipW=Math.max(58,Math.min(92,(inner-gap*(count-1))/count)),chipH=72;
- let cx=x+width-20-chipW,cy=y+38;
+ const gap=6,inner=width-36,count=Math.max(1,items.length),chipW=Math.max(52,Math.min(82,(inner-gap*(count-1))/count)),chipH=58;
+ let cx=x+width-18-chipW,cy=y+28;
  items.forEach(function(item){
-  if(cx<x+20){cx=x+width-20-chipW;cy+=chipH+8}
-  posterRound(ctx,cx,cy,chipW,chipH,12,'#091018','#273746');
-  posterText(ctx,item.letter,cx+chipW/2,cy+9,25,'800','#eef3f8','center','rtl',chipW-10);
-  if(item.sub)posterText(ctx,item.sub,cx+chipW/2,cy+35,11,'500','#8e9aa8','center','rtl',chipW-8);
-  posterText(ctx,item.value,cx+chipW/2,cy+(item.sub?50:42),17,'800','#bfe0ff','center','ltr',chipW-10);
+  if(cx<x+18){cx=x+width-18-chipW;cy+=chipH+6}
+  posterRound(ctx,cx,cy,chipW,chipH,10,'#091018','#273746');
+  posterText(ctx,item.letter,cx+chipW/2,cy+7,21,'800','#eef3f8','center','rtl',chipW-8);
+  if(item.sub)posterText(ctx,item.sub,cx+chipW/2,cy+29,9,'500','#8e9aa8','center','rtl',chipW-6);
+  posterText(ctx,item.value,cx+chipW/2,cy+(item.sub?41:34),14,'800','#bfe0ff','center','ltr',chipW-8);
   cx-=chipW+gap
  });
- const totalY=cy+chipH+10;
+ const totalY=cy+chipH+5;
  const subtotal=r.milui?w.subtotal:(r.method.fold==='word'?w.folded:(r.method.transform?sum(w.vals):sum(w.baseVals)));
- posterText(ctx,'סכום',x+width-64,totalY+2,16,'500','#8e9aa8','right','rtl',80);
- posterText(ctx,subtotal,x+width-20,totalY,22,'850','#eef3f8','right','ltr',80);
- if(r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+20,totalY+2,12,'500','#9fb0c2','left','rtl',width-150);
- else if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+20,totalY+2,13,'500','#9fb0c2','left','ltr',width-150);
- return totalY+38
+ posterText(ctx,'סכום',x+width-58,totalY+1,13,'500','#8e9aa8','right','rtl',70);
+ posterText(ctx,subtotal,x+width-18,totalY,18,'850','#eef3f8','right','ltr',76);
+ if(r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','rtl',width-132);
+ else if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','ltr',width-132);
+ return totalY+27
 }
 function posterCard(ctx,r,x,y,w,h){
  posterRound(ctx,x,y,w,h,24,'#101821','#314052');
