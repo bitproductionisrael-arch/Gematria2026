@@ -507,7 +507,16 @@ function wordDescription(r,idx){if(r.milui){const w=r.words[idx];if(!w)return'א
  const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
-function wordBreakdownHtml(r,w){if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`}
+function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
+function squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}
+function wordBreakdownHtml(r,w){
+ if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}
+ if(r.method.key==='perati'){
+  const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip"><b>${esc(t.label)}²</b><small>${fmt(base)}²</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
+  return `<div class="word-block"><div class="word-title">${esc(squaredWordLabel(w))}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`
+ }
+ const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
+}
 function richBreakdownHtml(r){return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join(''):'<div class="tiny">אין פירוק</div>'}
 const CARD_ANCHORS=[1024,888,768,666,640,576,543,520,512,444,384,368,344,316,296,288,232,222,216,208,160,148,141,136,128,111,104,96,88,74,73,72,64,59,55,52,43,42,38,37,36,33,32,28,27,24,21,20,18,16,12,11,10,8,7,6,5,4,3,2];
 function shortCorpusLabel(v){
@@ -577,6 +586,9 @@ function miluiResultExpansion(r){
 }
 function magnetTokenText(r,w){
  const m=r.method;
+ if(m.key==='perati'){
+  return w.toks.map((t,i)=>{const base=peratiBaseValue(t);return t.label+'²=('+fmt(base)+'²='+fmt(w.baseVals[i])+')'}).join(' ')
+ }
  if(m.transform){
   return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
  }
@@ -600,6 +612,11 @@ function magnetBreakdown(r){
 }
 function minimalResultText(r){
  const q=document.getElementById('q').value.trim();
+ if(r?.method?.key==='perati'&&r.words?.length){
+  const shape=r.words.map(squaredWordLabel).join(' ');
+  const details=r.words.map(w=>magnetTokenText(r,w)).join(' | ');
+  return `${shape} = ${fmt(r.total)} (${minimalMethodName(r)})\n${details}`
+ }
  const breakdown=magnetBreakdown(r);
  return breakdown
   ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`
@@ -776,8 +793,8 @@ function posterBadge(ctx,text,x,y,color,border){
 }
 function selectedResults(){return state.selectedMethods.map(function(k){return current.results.find(function(r){return r.method.key===k})}).filter(Boolean)}
 function posterWord(ctx,r,w,x,y,width){
- posterText(ctx,w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);
- const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}});
+ posterText(ctx,r.method.key==='perati'?squaredWordLabel(w):w.raw,x+width-20,y,24,'800','#f3f7fb','right','rtl',width-40);
+ const items=r.milui?w.parts.map(function(p){return {letter:p.letter,value:p.value,sub:p.name}}):(r.method.key==='perati'?w.toks.map(function(t,i){const base=peratiBaseValue(t);return {letter:t.label+'²',value:w.baseVals[i],sub:fmt(base)+'²'}}):w.toks.map(function(t,i){return {letter:t.label,value:w.baseVals[i],sub:r.method.sub&&r.method.sub[t.base]?(t.label+'→'+r.method.sub[t.base]):''}}));
  const gap=8,inner=width-40,count=Math.max(1,items.length),chipW=Math.max(58,Math.min(92,(inner-gap*(count-1))/count)),chipH=72;
  let cx=x+width-20-chipW,cy=y+38;
  items.forEach(function(item){
@@ -848,7 +865,7 @@ document.getElementById('multiDetailGrid').addEventListener('click',async e=>{
  const c=e.target.closest('[data-copy-method]');if(c){const r=current.results.find(x=>x.method.key===c.dataset.copyMethod);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הבחירה הועתקה':'שגיאה בהעתקה');return}
  const b=e.target.closest('[data-remove-method]');if(!b)return;const key=b.dataset.removeMethod;state.selectedMethods=state.selectedMethods.filter(k=>k!==key);if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];state.methodKey=state.selectedMethods[state.selectedMethods.length-1]||state.methodKey;renderResults()
 });
-document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;await copyText(`${document.getElementById('q').value}\n${r.method.name} = ${r.total}\n${wordDescription(r,state.word)}`);toast('הועתק')});
+document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הועתק':'שגיאה בהעתקה')});
 document.getElementById('numSource').addEventListener('change',e=>{state.numKey=e.target.value;renderNumber()});document.getElementById('numberSubtabs').addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;state.numSub=b.dataset.sub;document.querySelectorAll('#numberSubtabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.analysis-page').forEach(x=>x.hidden=x.dataset.page!==state.numSub)});
 document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
