@@ -358,6 +358,14 @@ GR_ORDER.forEach((L,i)=>{GR_VAL[L]=tiered(i);GR_ORD[L]=i+1;GR_VAL[L.toUpperCase(
 
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
 const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
+const EN_PERATI={},EN_KIDMI={},EN_ZERO_STEP={};let _enkid=0;EN_ORDER.forEach(L=>{EN_PERATI[L]=EN_REG[L]**2;EN_PERATI[L.toUpperCase()]=EN_PERATI[L];_enkid+=EN_REG[L];EN_KIDMI[L]=_enkid;EN_KIDMI[L.toUpperCase()]=_enkid;const v=EN_REG[L];EN_ZERO_STEP[L]=(v>=10&&v%10===0)?v/10:v;EN_ZERO_STEP[L.toUpperCase()]=EN_ZERO_STEP[L]});
+const EN_ATBASH={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LETTER={},EN_AVGAD={},EN_AVGAD_LETTER={};
+EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
+for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;EN_ALBAM_LETTER[a.toUpperCase()]=b.toUpperCase();EN_ALBAM_LETTER[b]=a;EN_ALBAM_LETTER[b.toUpperCase()]=a.toUpperCase();EN_ALBAM[a]=EN_REG[b];EN_ALBAM[a.toUpperCase()]=EN_REG[b];EN_ALBAM[b]=EN_REG[a];EN_ALBAM[b.toUpperCase()]=EN_REG[a]}
+
+const LATIN_MILUI_USER_V0={
+ 'א':'Alf','ב':'Bet','ג':'Gml','ד':'Dlt','ה':'Hey','ו':'Vav','ז':'Zin','ח':'Het','ט':'Tet','י':'Yod','כ':'Kaf','ך':'Kaf','ל':'Lmd','מ':'Mem','ם':'Mem','נ':'Nun','ן':'Nun','ס':'Smk','ע':'Ayn','פ':'Peh','ף':'Peh','צ':'Zdk','ץ':'Zdk','ק':'Kuf','ר':'Res','ש':'Sin','ת':'Tav'
+};
 const AGR={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:600,K:10,L:20,M:30,N:40,O:50,P:60,Q:70,R:80,S:90,T:100,U:200,V:700,W:900,X:300,Y:400,Z:500};Object.keys(AGR).forEach(k=>AGR[k.toLowerCase()]=AGR[k]);const AGR_RED={};Object.entries(AGR).forEach(([k,v])=>AGR_RED[k]=dr(v));
 
 function detectScript(t){if(/[֐-׿]/.test(t))return'he';if(/[Ͱ-Ͽἀ-῿]/.test(t))return'el';if(/[A-Za-z]/.test(t))return'en';return'en'}
@@ -389,6 +397,9 @@ const METHODS={
   {key:'ratzo',cat:'ops',name:'רצוא ושוב / Running and Returning',map:HE_VAL,transform:pyramid,transformName:'prefixes out + return'},
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'cycleBkr',cat:'ops',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
+  {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
+  {key:'latinMiluiUserReduced',cat:'ops',name:'מילוי לטיני v0 → English Reduced / Research',custom:'latinMiluiUserReduced',research:true},
+  {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
   {key:'milui',cat:'ops',name:'מילוי רגיל / Standard Letter-name Milui',custom:'milui'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true}
@@ -397,7 +408,30 @@ const METHODS={
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},{key:'ordinal',cat:'base',name:'Greek Ordinal',map:GR_ORD},{key:'building',cat:'ops',name:'Greek Building',map:GR_VAL,transform:cumulative,transformName:'prefix sums'},{key:'ladder',cat:'ops',name:'Greek Ladder (κλίμαξ)',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes'}
  ],
  en:[
-  {key:'ordinal',cat:'base',name:'English Simple / Ordinal',map:EN_ORD},{key:'regular',cat:'base',name:'English Regular / Tiered',map:EN_REG},{key:'pythagorean',cat:'base',name:'English Pythagorean / Reduced',map:EN_RED},{key:'sumerian',cat:'base',name:'English Sumerian',map:EN_SUM},{key:'reverse',cat:'base',name:'English Reverse Ordinal',map:EN_REV},{key:'building',cat:'ops',name:'English Building Ordinal',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},{key:'buildingSumerian',cat:'ops',name:'English Building Sumerian',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},{key:'agrippa',cat:'cipher',name:'Agrippa Latin (1533) / Jewish',map:AGR,agrippa:true},{key:'agrippaReduced',cat:'cipher',name:'Agrippa Reduced',map:AGR_RED,agrippa:true},{key:'agrippaWordReduced',cat:'cipher',name:'Agrippa Word Reduced',map:AGR,fold:'word',agrippa:true}
+  {key:'ordinal',cat:'base',name:'English Simple / Ordinal',map:EN_ORD},
+  {key:'regular',cat:'base',name:'English Regular / Tiered',map:EN_REG},
+  {key:'pythagorean',cat:'base',name:'English Pythagorean / Reduced',map:EN_RED},
+  {key:'wordReduced',cat:'base',name:'English Word Reduced',map:EN_RED,fold:'word'},
+  {key:'sumerian',cat:'base',name:'English Sumerian',map:EN_SUM},
+  {key:'reverse',cat:'base',name:'English Reverse Ordinal',map:EN_REV},
+  {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular / Research',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
+  {key:'albamRegular',cat:'cipher',name:'English ALBaM analogue / ROT13 → Regular / Research',map:EN_ALBAM,sub:EN_ALBAM_LETTER,research:true},
+  {key:'avgadRegular',cat:'cipher',name:'English AVGaD analogue / +1 → Regular / Research',map:EN_AVGAD,sub:EN_AVGAD_LETTER,research:true},
+  {key:'kidmiEnglish',cat:'cipher',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
+  {key:'peratiEnglish',cat:'cipher',name:'English Squared Regular / Perati analogue / Research',map:EN_PERATI,research:true},
+  {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
+  {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
+  {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
+  {key:'building',cat:'ops',name:'English Building / Achorayim (Simple)',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},
+  {key:'achorayimRegular',cat:'ops',name:'English Achorayim / Building (Regular)',map:EN_REG,transform:cumulative,transformName:'prefix sums'},
+  {key:'buildingSumerian',cat:'ops',name:'English Building Sumerian',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
+  {key:'positionalRegular',cat:'ops',name:'English Positional / מיקום',map:EN_REG,transform:positional,transformName:'position × value'},
+  {key:'equivalenceRegular',cat:'ops',name:'English Equivalence / שיווי',map:EN_REG,transform:balanced,transformName:'balanced weight'},
+  {key:'ratzoRegular',cat:'ops',name:'English Running & Returning / רצוא ושוב',map:EN_REG,transform:pyramid,transformName:'prefixes out + return'},
+  {key:'addsubRegular',cat:'ops',name:'English Addition & Subtraction / תוספת ומגרעת',map:EN_REG,transform:ladder,transformName:'prefixes + suffixes'},
+  {key:'agrippa',cat:'cipher',name:'Agrippa Latin (1533) / Jewish',map:AGR,agrippa:true},
+  {key:'agrippaReduced',cat:'cipher',name:'Agrippa Reduced',map:AGR_RED,agrippa:true},
+  {key:'agrippaWordReduced',cat:'cipher',name:'Agrippa Word Reduced',map:AGR,fold:'word',agrippa:true}
  ]
 };
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
@@ -441,8 +475,26 @@ function calculateCycleBkr(text){
  });
  return {method,total:sum(cycleTotals),words,cycleBkr:true,cycleTexts,cycleTotals,cycleVectors,chamberSum,closureText:s3,closureValue};
 }
+function calculateLatinMiluiUser(text,mode,methodKey){
+ const emap=mode==='simple'?EN_ORD:mode==='reduced'?EN_RED:EN_REG;
+ const method=METHODS.he.find(m=>m.key===methodKey);
+ const words=[];let total=0;
+ for(const raw of wordsOf(text)){
+  const parts=[];let subtotal=0;
+  for(const ch of Array.from(raw)){
+   const name=LATIN_MILUI_USER_V0[ch];if(!name)continue;
+   const value=sum(tokensForWord(name,'en',emap).map(x=>x.value));
+   parts.push({letter:ch,name,value});subtotal+=value;
+  }
+  if(parts.length){words.push({raw,parts,subtotal});total+=subtotal}
+ }
+ return {method,total,words,milui:true,latinMilui:true,latinMiluiMode:mode,latinMiluiProfile:'User v0: Smk / Ayn / Peh'};
+}
 function calculate(text,script,m){
  if(m.custom==='cycleBkr')return calculateCycleBkr(text);
+ if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
+ if(m.custom==='latinMiluiUserReduced')return calculateLatinMiluiUser(text,'reduced','latinMiluiUserReduced');
+ if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
  if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
@@ -1024,6 +1076,20 @@ console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew one-st
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
 console.assert(T('Amit Mike Rov','en','sumerian')===816,'English Sumerian 816');
 console.assert(T('Amit Mike Rov','en','regular')===874,'English Regular 874');
+console.assert(T('Amit Mike Rov','en','wordReduced')===10,'English Word Reduced 10');
+console.assert(T('Amit Mike Rov','en','achorayimRegular')===1364,'English Achorayim Regular 1364');
+console.assert(T('Amit Mike Rov','en','positionalRegular')===2456,'English Positional Regular 2456');
+console.assert(T('Amit Mike Rov','en','equivalenceRegular')===1910,'English Equivalence Regular 1910');
+console.assert(T('Amit Mike Rov','en','ratzoRegular')===1854,'English Ratzo Regular 1854');
+console.assert(T('Amit Mike Rov','en','addsubRegular')===3820,'English Add/Sub Regular 3820');
+console.assert(T('Amit Mike Rov','en','kolelRegular')===875,'English Kolel Regular 875');
+console.assert(T('Amit Mike Rov','en','musafiRegular')===885,'English Musafi Regular 885');
+console.assert(T('Amit Mike Rov','en','kidmiEnglish')===3511,'English Kidmi analogue 3511');
+console.assert(T('Amit Mike Rov','en','peratiEnglish')===215488,'English Perati analogue 215488');
+console.assert(T('Amit Mike Rov','en','zeroStepEnglish')===109,'English One-step Zero 109');
+console.assert(calculateLatinMiluiUser('עמית מייק רוב','simple','latinMiluiUserSimple').total===429,'Latin Milui v0 Simple 429');
+console.assert(calculateLatinMiluiUser('עמית מייק רוב','reduced','latinMiluiUserReduced').total===141,'Latin Milui v0 Reduced 141');
+console.assert(calculateLatinMiluiUser('עמית מייק רוב','regular','latinMiluiUserRegular').total===5343,'Latin Milui v0 Regular 5343');
 console.assert(T('Amit Mike Rov','en','agrippa')===1024,'Agrippa 1024');
 console.assert(calculateMilui('עמית').total===636,'Milui Amit 636');
 console.assert(calculateMilui('מייק').total===306,'Milui Mike 306');
