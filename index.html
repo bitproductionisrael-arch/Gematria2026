@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Gematria Research Engine V4.4</title>
+<title>Gematria Research Engine V4.5</title>
 <style>
 :root{
   --bg:#0b0f14;--panel:#111720;--panel2:#0d131b;--line:#2a3440;--text:#eef3f8;--muted:#8e9aa8;
@@ -203,7 +203,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><h1>Gematria Research Engine V4.4</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
+    <div class="brand"><h1>Gematria Research Engine V4.5</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <div class="queryside">
@@ -398,7 +398,7 @@ const METHODS={
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
   {key:'positional',cat:'ops',name:'גימטריה מיקום · מגרעת / Positional',map:HE_VAL,transform:positional,transformName:'position × value'},
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
-  {key:'ratzo',cat:'ops',name:'רצוא ושוב / Running and Returning',map:HE_VAL,transform:pyramid,transformName:'prefixes out + return'},
+  {key:'ratzo',cat:'ops',name:'רצוא ושוב / Running and Returning',map:HE_VAL,transform:pyramid,transformName:'prefixes out + return',ratzo:true},
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'cycleBkr',cat:'ops',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
   {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
@@ -433,7 +433,7 @@ const METHODS={
   {key:'buildingSumerian',cat:'ops',name:'English Building Sumerian',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
   {key:'positionalRegular',cat:'ops',name:'English Positional / מיקום',map:EN_REG,transform:positional,transformName:'position × value'},
   {key:'equivalenceRegular',cat:'ops',name:'English Equivalence / שיווי',map:EN_REG,transform:balanced,transformName:'balanced weight'},
-  {key:'ratzoRegular',cat:'ops',name:'English Running & Returning / רצוא ושוב',map:EN_REG,transform:pyramid,transformName:'prefixes out + return'},
+  {key:'ratzoRegular',cat:'ops',name:'English Running & Returning / רצוא ושוב',map:EN_REG,transform:pyramid,transformName:'prefixes out + return',ratzo:true},
   {key:'addsubRegular',cat:'ops',name:'English Addition & Subtraction / תוספת ומגרעת',map:EN_REG,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'agrippa',cat:'cipher',name:'Agrippa Latin (1533) / Jewish',map:AGR,agrippa:true},
   {key:'agrippaReduced',cat:'cipher',name:'Agrippa Reduced',map:AGR_RED,agrippa:true},
@@ -615,7 +615,7 @@ function ratzoAnnotatedTerms(w){
 }
 function wordDescription(r,idx){if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
 if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
- const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
+ const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
@@ -627,7 +627,7 @@ function wordBreakdownHtml(r,w){
   const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip perati-chip"><b>${esc(t.label)}²</b><small>(${fmt(base)}²)</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
   return `<div class="word-block"><div class="word-title perati-word-title">${esc(squaredWordLabel(w))}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`
  }
- const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.key==='ratzo')note=`<div class="transform-note"><b>רצוא ושוב:</b> ${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
+ const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
 }
 function richBreakdownHtml(r){
  if(r?.repeatMeta)return `<div class="transform-note"><b>${esc(r.repeatMeta.phrase)}</b> ×${r.repeatMeta.count} · ${esc(r.repeatMeta.methodName)} = <b>${fmt(r.total)}</b></div>`;
@@ -731,7 +731,7 @@ function magnetTokenText(r,w){
  if(m.perati||m.key==='perati'){
   return w.toks.map((t,i)=>{const base=peratiBaseValue(t);return t.label+'²=('+fmt(base)+'²='+fmt(w.baseVals[i])+')'}).join(' ')
  }
- if(m.key==='ratzo'){
+ if(m.ratzo||m.key==='ratzo'){
   return ratzoAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
  }
  if(m.transform){
