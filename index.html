@@ -358,7 +358,7 @@ GR_ORDER.forEach((L,i)=>{GR_VAL[L]=tiered(i);GR_ORD[L]=i+1;GR_VAL[L.toUpperCase(
 
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
 const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
-const EN_PERATI={},EN_KIDMI={},EN_ZERO_STEP={};let _enkid=0;EN_ORDER.forEach(L=>{EN_PERATI[L]=EN_REG[L]**2;EN_PERATI[L.toUpperCase()]=EN_PERATI[L];_enkid+=EN_REG[L];EN_KIDMI[L]=_enkid;EN_KIDMI[L.toUpperCase()]=_enkid;const v=EN_REG[L];EN_ZERO_STEP[L]=(v>=10&&v%10===0)?v/10:v;EN_ZERO_STEP[L.toUpperCase()]=EN_ZERO_STEP[L]});
+const EN_PERATI_SIMPLE={},EN_PERATI={},EN_KIDMI={},EN_ZERO_STEP={};let _enkid=0;EN_ORDER.forEach(L=>{EN_PERATI_SIMPLE[L]=EN_ORD[L]**2;EN_PERATI_SIMPLE[L.toUpperCase()]=EN_PERATI_SIMPLE[L];EN_PERATI[L]=EN_REG[L]**2;EN_PERATI[L.toUpperCase()]=EN_PERATI[L];_enkid+=EN_REG[L];EN_KIDMI[L]=_enkid;EN_KIDMI[L.toUpperCase()]=_enkid;const v=EN_REG[L];EN_ZERO_STEP[L]=(v>=10&&v%10===0)?v/10:v;EN_ZERO_STEP[L.toUpperCase()]=EN_ZERO_STEP[L]});
 const EN_ATBASH={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LETTER={},EN_AVGAD={},EN_AVGAD_LETTER={};
 EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
 for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;EN_ALBAM_LETTER[a.toUpperCase()]=b.toUpperCase();EN_ALBAM_LETTER[b]=a;EN_ALBAM_LETTER[b.toUpperCase()]=a.toUpperCase();EN_ALBAM[a]=EN_REG[b];EN_ALBAM[a.toUpperCase()]=EN_REG[b];EN_ALBAM[b]=EN_REG[a];EN_ALBAM[b.toUpperCase()]=EN_REG[a]}
@@ -366,7 +366,7 @@ for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;
 const LATIN_MILUI_USER_V0={
  'א':'Alf','ב':'Bet','ג':'Gml','ד':'Dlt','ה':'Hey','ו':'Vav','ז':'Zin','ח':'Het','ט':'Tet','י':'Yod','כ':'Kaf','ך':'Kaf','ל':'Lmd','מ':'Mem','ם':'Mem','נ':'Nun','ן':'Nun','ס':'Smk','ע':'Ayn','פ':'Peh','ף':'Peh','צ':'Zdk','ץ':'Zdk','ק':'Kuf','ר':'Res','ש':'Sin','ת':'Tav'
 };
-const AGR={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:600,K:10,L:20,M:30,N:40,O:50,P:60,Q:70,R:80,S:90,T:100,U:200,V:700,W:900,X:300,Y:400,Z:500};Object.keys(AGR).forEach(k=>AGR[k.toLowerCase()]=AGR[k]);const AGR_RED={};Object.entries(AGR).forEach(([k,v])=>AGR_RED[k]=dr(v));
+const AGR={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:600,K:10,L:20,M:30,N:40,O:50,P:60,Q:70,R:80,S:90,T:100,U:200,V:700,W:900,X:300,Y:400,Z:500};Object.keys(AGR).forEach(k=>AGR[k.toLowerCase()]=AGR[k]);const AGR_RED={},AGR_PERATI={};Object.entries(AGR).forEach(([k,v])=>{AGR_RED[k]=dr(v);AGR_PERATI[k]=v**2});
 
 function detectScript(t){if(/[֐-׿]/.test(t))return'he';if(/[Ͱ-Ͽἀ-῿]/.test(t))return'el';if(/[A-Za-z]/.test(t))return'en';return'en'}
 function tokensForWord(word,script,map){const out=[];for(const raw of Array.from(word)){let c=raw;if(script==='he'&&!(c in map)&&FINAL_TO_BASE[c]&&FINAL_TO_BASE[c] in map)c=FINAL_TO_BASE[c];if(c in map)out.push({label:raw,value:map[c],base:raw})}return out}
@@ -388,7 +388,7 @@ const METHODS={
   {key:'avgad',cat:'cipher',name:'אבג״ד / AVGaD',map:HE_AVGAD,sub:HE_AVGAD_LETTER},
   {key:'ayak',cat:'cipher',name:'אי״ק בכ״ר / AIQ BKR',map:HE_AYAK,sub:HE_AYAK_LETTER,family:HE_CHAMBER},
   {key:'kidmi',cat:'cipher',name:'מספר קדמי / Kidmi',map:HE_KIDMI},
-  {key:'perati',cat:'cipher',name:'מספר פרטי / Perati',map:HE_PERATI},
+  {key:'perati',cat:'cipher',name:'מספר פרטי / Perati',map:HE_PERATI,perati:true},
   {key:'kolel',cat:'cipher',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
   {key:'musafi',cat:'cipher',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
@@ -418,7 +418,9 @@ const METHODS={
   {key:'albamRegular',cat:'cipher',name:'English ALBaM analogue / ROT13 → Regular / Research',map:EN_ALBAM,sub:EN_ALBAM_LETTER,research:true},
   {key:'avgadRegular',cat:'cipher',name:'English AVGaD analogue / +1 → Regular / Research',map:EN_AVGAD,sub:EN_AVGAD_LETTER,research:true},
   {key:'kidmiEnglish',cat:'cipher',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
-  {key:'peratiEnglish',cat:'cipher',name:'English Squared Regular / Perati analogue / Research',map:EN_PERATI,research:true},
+  {key:'peratiSimple',cat:'cipher',name:'English Perati — Simple² / Research',map:EN_PERATI_SIMPLE,perati:true,research:true},
+  {key:'peratiEnglish',cat:'cipher',name:'English Perati — Regular² / Research',map:EN_PERATI,perati:true,research:true},
+  {key:'peratiAgrippa',cat:'cipher',name:'English Perati — Agrippa² / Research',map:AGR_PERATI,perati:true,research:true,agrippa:true},
   {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
   {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
   {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
@@ -617,7 +619,7 @@ function squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}
 function wordBreakdownHtml(r,w){
  if(r.cycleBkr){const rows=[0,1,2].map(i=>`<div class="transform-note"><b>מצב ${i}:</b> [${esc(w.cycleVectors[i].join('|'))}] · ${esc(w.cycleTexts[i])} = <b>${fmt(w.cycleValues[i])}</b></div>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div>${rows}<div class="transform-note"><b>חזרה:</b> ${esc(w.cycleTexts[3])} = <b>${fmt(w.cycleValues[3])}</b></div><div class="transform-note"><b>זהות:</b> Σ3 = 111×${fmt(w.chamberSum)}</div><div class="word-total"><span>Σ3</span><b>${fmt(w.subtotal)}</b></div></div>`}
  if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}
- if(r.method.key==='perati'){
+ if(r.method.perati||r.method.key==='perati'){
   const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip perati-chip"><b>${esc(t.label)}²</b><small>(${fmt(base)}²)</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
   return `<div class="word-block"><div class="word-title perati-word-title">${esc(squaredWordLabel(w))}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`
  }
@@ -722,7 +724,7 @@ function miluiResultExpansion(r){
 }
 function magnetTokenText(r,w){
  const m=r.method;
- if(m.key==='perati'){
+ if(m.perati||m.key==='perati'){
   return w.toks.map((t,i)=>{const base=peratiBaseValue(t);return t.label+'²=('+fmt(base)+'²='+fmt(w.baseVals[i])+')'}).join(' ')
  }
  if(m.key==='ratzo'){
@@ -753,7 +755,7 @@ function magnetBreakdown(r){
 function minimalResultText(r){
  const q=document.getElementById('q').value.trim();
  if(r?.repeatMeta)return `${r.repeatMeta.phrase} ×${r.repeatMeta.count} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
- if(r?.method?.key==='perati'&&r.words?.length){
+ if((r?.method?.perati||r?.method?.key==='perati')&&r.words?.length){
   const shape=r.words.map(squaredWordLabel).join(' ');
   const details=r.words.map(w=>magnetTokenText(r,w)).join(' | ');
   return `${shape} = ${fmt(r.total)} (${minimalMethodName(r)})\n${details}`
@@ -795,7 +797,7 @@ function allResultsRichText(){return current.results.map(compactMathSummary).joi
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
 function resultDisplayName(r){return r?.displayName||r?.method?.name||''}
 function selectedResultByKey(key){return selectedResults().find(r=>resultSelectionKey(r)===key)}
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}</div><div class="mv">${fmt(r.total)}</div></div>${methodDeltaBadge(r)}${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')}
 function methodDeltaBadge(r){
  if(r?.method?.key!=='agrippa')return '';
  const simple=current?.results?.find(x=>x.method.key==='ordinal');
@@ -811,7 +813,7 @@ function methodDeltaBadge(r){
  return prior+`<div class="method-delta ${exact?'ok':'no'}">Δ Jewish−Simple = ${fmt(d)} ${exact?'✓':'✕'}</div>`;
 }
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div>${methodDeltaBadge(r)}</button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
- const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
+ const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=methodDeltaBadge(r)+badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
 function renderNumber(){ensureSelection();const src=document.getElementById('numSource');src.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.numKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');const r=methodByKey(state.numKey);if(!r)return;const a=analyzeNumber(r.total);document.getElementById('numHeadline').textContent=fmt(r.total);if(!a)return;
  const hits=corpusHits(a.n).map(h=>h.label).join(' · ')||'—';document.getElementById('numCore').innerHTML=[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('λ(n) (מחזור הכפל המינימלי)',fmt(a.lambda)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('σ(n) (סכום כל המחלקים)',fmt(a.sigma)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('ω(n) (מספר ראשוניים שונים)',fmt(a.omega)),kv('Ω(n) (ראשוניים כולל חזרות)',fmt(a.Omega)),kv('Corpus',hits),kv('קרוב בקורפוס',nearestCorpus(a.n,2).map(x=>`${x.label} (${x.value})`).join(' · ')||'—'),kv('φ-chain (שרשרת φ עד 1)',a.phiChain.join(' → ')),kv('Class (סיווג סכום מחלקים)',a.aliquot),kv('Squarefree (בלי גורם בריבוע)',a.squarefree?'כן':'לא'),kv('Powerful (כל ראשוני בריבוע)',a.powerful?'כן':'לא')].join('');
@@ -1099,7 +1101,9 @@ console.assert(T('Amit Mike Rov','en','addsubRegular')===3820,'English Add/Sub R
 console.assert(T('Amit Mike Rov','en','kolelRegular')===875,'English Kolel Regular 875');
 console.assert(T('Amit Mike Rov','en','musafiRegular')===885,'English Musafi Regular 885');
 console.assert(T('Amit Mike Rov','en','kidmiEnglish')===3511,'English Kidmi analogue 3511');
-console.assert(T('Amit Mike Rov','en','peratiEnglish')===215488,'English Perati analogue 215488');
+console.assert(T('Amit Mike Rov','en','peratiSimple')===2080,'English Perati Simple 2080');
+console.assert(T('Amit Mike Rov','en','peratiEnglish')===215488,'English Perati Regular 215488');
+console.assert(T('Amit Mike Rov','en','peratiAgrippa')===510988,'English Perati Agrippa 510988');
 console.assert(T('Amit Mike Rov','en','zeroStepEnglish')===109,'English One-step Zero 109');
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','simple','latinMiluiUserSimple').total===429,'Latin Milui v0 Simple 429');
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','reduced','latinMiluiUserReduced').total===141,'Latin Milui v0 Reduced 141');
