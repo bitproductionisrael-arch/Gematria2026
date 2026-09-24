@@ -327,9 +327,9 @@ const fmt=n=>Number.isInteger(n)?n.toLocaleString('en-US'):String(n);
 const HE_ORDER=Array.from('אבגדהוזחטיכלמנסעפצקרשת');
 const FINAL_TO_BASE={'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
 const FINAL_ORDER=Array.from('ךםןףץ');
-const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_REV_ORD={},HE_KIDMI={},HE_PERATI={};
-HE_ORDER.forEach((L,i)=>{HE_VAL[L]=tiered(i);HE_ORD[L]=i+1;HE_KATAN[L]=(i%9)+1;HE_REV_ORD[L]=22-i;HE_PERATI[L]=HE_VAL[L]**2});
-Object.entries(FINAL_TO_BASE).forEach(([f,b])=>{for(const m of [HE_VAL,HE_ORD,HE_KATAN,HE_REV_ORD,HE_PERATI])m[f]=m[b]});
+const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_REV_ORD={},HE_KIDMI={},HE_PERATI={},HE_PERATI_ORD={};
+HE_ORDER.forEach((L,i)=>{HE_VAL[L]=tiered(i);HE_ORD[L]=i+1;HE_KATAN[L]=(i%9)+1;HE_REV_ORD[L]=22-i;HE_PERATI[L]=HE_VAL[L]**2;HE_PERATI_ORD[L]=HE_ORD[L]**2});
+Object.entries(FINAL_TO_BASE).forEach(([f,b])=>{for(const m of [HE_VAL,HE_ORD,HE_KATAN,HE_REV_ORD,HE_PERATI,HE_PERATI_ORD])m[f]=m[b]});
 Object.assign(HE_SOFIT,HE_VAL);FINAL_ORDER.forEach((L,i)=>HE_SOFIT[L]=tiered(22+i));
 Object.assign(HE_KATAN_SOFIT,HE_KATAN);FINAL_ORDER.forEach((L,i)=>HE_KATAN_SOFIT[L]=((22+i)%9)+1);
 let _kid=0;HE_ORDER.forEach(L=>{_kid+=HE_VAL[L];HE_KIDMI[L]=_kid});Object.entries(FINAL_TO_BASE).forEach(([f,b])=>HE_KIDMI[f]=HE_KIDMI[b]);
@@ -388,7 +388,8 @@ const METHODS={
   {key:'avgad',cat:'cipher',name:'אבג״ד / AVGaD',map:HE_AVGAD,sub:HE_AVGAD_LETTER},
   {key:'ayak',cat:'cipher',name:'אי״ק בכ״ר / AIQ BKR',map:HE_AYAK,sub:HE_AYAK_LETTER,family:HE_CHAMBER},
   {key:'kidmi',cat:'cipher',name:'מספר קדמי / Kidmi',map:HE_KIDMI},
-  {key:'perati',cat:'cipher',name:'מספר פרטי / Perati',map:HE_PERATI,perati:true},
+  {key:'peratiOrdinal',cat:'cipher',name:'פרטי סדרי / Hebrew Perati — Ordinal²',map:HE_PERATI_ORD,perati:true,research:true},
+  {key:'perati',cat:'cipher',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
   {key:'kolel',cat:'cipher',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
   {key:'musafi',cat:'cipher',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
@@ -1087,6 +1088,7 @@ console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','reverseOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
 console.assert(T('עמית','he','perati')===166600,'Amit Perati 166600');
+console.assert(T('עמית מייק רוב','he','peratiOrdinal')===2179,'Hebrew Perati Ordinal full name 2179');
 console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordinal 141');
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew one-step zero 96');
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
