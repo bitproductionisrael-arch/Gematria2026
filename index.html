@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Gematria Research Engine V4.6</title>
+<title>Gematria Research Engine V4.7</title>
 <style>
 :root{
   --bg:#0b0f14;--panel:#111720;--panel2:#0d131b;--line:#2a3440;--text:#eef3f8;--muted:#8e9aa8;
@@ -62,20 +62,24 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .multi-detail-card .copy-rich-method{width:44px;font-size:11px}
 .stage-actions{display:flex;align-items:center;gap:5px}
 .stage-actions button{height:32px;min-width:36px;padding:0 7px;border-radius:9px;font-size:12px}
-.compact-facts{display:grid;gap:5px;padding:8px 10px;border:1px solid #263746;border-radius:12px;background:#0a1118}
-.fact-line{font-size:12px;line-height:1.45;color:#cbd7e3;overflow-wrap:anywhere}
+.compact-facts{display:grid;gap:8px;padding:10px 12px;border:1px solid #263746;border-radius:12px;background:#0a1118}
+.fact-line{font-size:13px;line-height:1.55;color:#cbd7e3;overflow-wrap:anywhere}
 .fact-line b{color:#eef3f8}
 .fact-line.anchor-line{color:#ffe2a0}
 .fact-line.corpus-line{color:#bdf4f0}
 .fact-sep{color:#586777;padding:0 3px}
-.math-chip-row{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
-.math-chip{display:inline-flex;align-items:center;gap:4px;border:1px solid #344353;border-radius:999px;padding:3px 7px;font-size:11px;line-height:1.15;white-space:nowrap;background:#0b1219;color:#d8e2ec}
-.math-chip.anchor{border-color:#6f5a2d;color:#ffe2a0}
-.math-chip.shape{border-color:#57467d;color:#dfd0ff}
+.math-chip-row{display:grid;gap:4px;align-items:start}
+.math-chip{display:block;border:0;border-radius:0;padding:0;font-size:13px;line-height:1.45;white-space:normal;background:transparent;color:#d8e2ec}
+.math-chip.anchor{color:#ffe2a0}
+.math-chip.shape{color:#dfd0ff}
 .perati-word-title{font-size:17px;letter-spacing:.02em}
 .perati-chip b{font-size:24px}.perati-chip small{font-size:11px;color:#ffe2a0}
 @media(max-width:520px){.compact-facts{padding:7px 8px;gap:4px}.fact-line{font-size:11px;line-height:1.35}}.multi-breakdown{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px;line-height:1.75;direction:rtl;text-align:right;color:#eef3f8}
 .word-block{position:relative;border-top:1px solid #22303d;padding-top:10px;margin-top:2px}.word-block:first-child{border-top:0;padding-top:0}.word-title{font-size:14px;font-weight:850;margin-bottom:8px}.letter-grid{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch}.letter-chip{min-width:64px;background:#0a1118;border:1px solid #263746;border-radius:12px;padding:8px 9px;display:grid;grid-template-rows:auto auto;gap:3px;text-align:center}.letter-chip b{font-size:22px;line-height:1}.letter-chip strong{font-size:16px;direction:ltr;color:#bfe0ff}.letter-chip small{font-size:9px;color:var(--muted);line-height:1.15}.word-total{display:flex;justify-content:flex-end;gap:7px;align-items:center;margin-top:9px;font-size:12px;color:var(--muted)}.word-total b{font-size:19px;color:#eef3f8;direction:ltr}.transform-note{margin-top:8px;padding:7px 9px;border-radius:10px;background:#0a1017;border:1px dashed #314052;font-size:11px;color:#aebbc8;line-height:1.45}.transform-note b{color:#eaf2fa}
+.delta-match{margin-top:4px;padding:10px 12px;border:1px solid #314052;border-radius:10px;background:#0a1017;font-size:14px;line-height:1.65;direction:ltr;text-align:left}
+.delta-match .delta-title{font-size:15px;font-weight:950;color:#ffe2a0;margin-bottom:4px}
+.delta-match .delta-sep{height:8px}
+.delta-match .delta-result{font-size:17px;font-weight:950;color:#b9f4c8}
 @media(max-width:1280px){.results-layout{grid-template-columns:300px minmax(0,1fr)}.multi-detail-grid{grid-template-columns:1fr}.multi-detail-card{min-height:260px}}
 @media(max-width:900px){
  html,body{height:auto;min-height:100%;overflow:auto}
@@ -201,7 +205,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><h1>Gematria Research Engine V4.6</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
+    <div class="brand"><h1>Gematria Research Engine V4.7</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <div class="queryside">
@@ -636,7 +640,7 @@ function wordBreakdownHtml(r,w){
  const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
 }
 function richBreakdownHtml(r){
- if(r?.deltaMeta)return `<div class="transform-note"><b>${esc(r.deltaMeta.left)}</b> ${fmt(r.deltaMeta.leftValue)} ${esc(r.deltaMeta.operation)} <b>${esc(r.deltaMeta.right)}</b> ${fmt(r.deltaMeta.rightValue)} = <b>${fmt(r.total)}</b></div>`;
+ if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
  if(r?.repeatMeta)return `<div class="transform-note"><b>${esc(r.repeatMeta.phrase)}</b> ×${r.repeatMeta.count} · ${esc(r.repeatMeta.methodName)} = <b>${fmt(r.total)}</b></div>`;
  return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join(''):'<div class="tiny">אין פירוק</div>'
 }
@@ -705,16 +709,15 @@ function compactFactsHtml(n){
  const idx=a.prime?`Prime #${a.primeIndex}`:(a.compositeIndex?`Composite #${a.compositeIndex}`:'');
  const core=[idx, `פירוק: ${fmtFactors(a.factors)}`, `φ=${fmt(a.phi)}`, `τ=${fmt(a.tau)}`, `σ=${fmt(a.sigma)}`, `rad=${fmt(a.rad)}`].filter(Boolean);
  const anchors=interestingMultipleDetails(n,4);
- const factorShapes=interestingFactorShapes(n,5);
- const directForms=(a.forms||[]).concat(a.binom||[]).slice(0,3).map(s=>({icon:shapeIcon(s),text:s}));
- const formMap=new Map();[...directForms,...factorShapes].forEach(x=>formMap.set(x.icon+'|'+x.text,x));
- const formChips=[...formMap.values()].slice(0,6);
+ const factorShapes=interestingFactorShapes(n,5).map(x=>x.text);
+ const directForms=(a.forms||[]).concat(a.binom||[]).slice(0,3);
+ const forms=[...new Set([...directForms,...factorShapes])].slice(0,6);
  const hits=corpusHits(n);
  const props=[a.aliquot,`DR=${a.root}`].filter(Boolean);
  let html=`<div class="compact-facts"><div class="fact-line">${core.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
  if(props.length)html+=`<div class="fact-line"><b>תכונות:</b> ${props.map(x=>esc(x)).join('<span class="fact-sep">·</span>')}</div>`;
- if(anchors.length)html+=`<div class="math-chip-row">${anchors.map(x=>`<span class="math-chip anchor">✦ ${esc(x)}</span>`).join('')}</div>`;
- if(formChips.length)html+=`<div class="math-chip-row">${formChips.map(x=>`<span class="math-chip shape">${esc(x.icon)} ${esc(x.text)}</span>`).join('')}</div>`;
+ if(anchors.length)html+=`<div class="fact-line anchor-line"><b>פירוקי עוגן:</b> ${anchors.map(esc).join(' · ')}</div>`;
+ if(forms.length)html+=`<div class="fact-line"><b>צורות / מבנים:</b> ${forms.map(esc).join(' · ')}</div>`;
  if(hits.length)html+=`<div class="fact-line corpus-line"><b>קורפוס:</b> ${hits.map(h=>esc(h.label)).join(' / ')}</div>`;
  html+='</div>';return html;
 }
@@ -766,6 +769,7 @@ function magnetBreakdown(r){
 }
 function minimalResultText(r){
  const q=document.getElementById('q').value.trim();
+ if(r?.deltaMeta)return `Δ MATCH:\nJewish: ${fmt(r.deltaMeta.leftValue)}\nSimple: ${fmt(r.deltaMeta.rightValue)}\n\nΔ:\n${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}`;
  if(r?.repeatMeta)return `${r.repeatMeta.phrase} ×${r.repeatMeta.count} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
  if((r?.method?.perati||r?.method?.key==='perati')&&r.words?.length){
   const shape=r.words.map(squaredWordLabel).join(' ');
@@ -779,15 +783,16 @@ function minimalResultText(r){
 }
 function richMagnetText(r){
  const base=minimalResultText(r),a=analyzeNumber(r.total);if(!a)return base;
- const lines=[base];
+ const lines=[base,''];
  const idx=a.prime?`Prime #${a.primeIndex}`:(a.compositeIndex?`Composite #${a.compositeIndex}`:'');
- lines.push('🔢 '+[`${fmtFactors(a.factors)}`,idx,`φ=${fmt(a.phi)}`,`τ=${fmt(a.tau)}`,`σ=${fmt(a.sigma)}`,`rad=${fmt(a.rad)}`,`DR=${a.root}`].filter(Boolean).join(' · '));
- const mult=interestingMultipleDetails(r.total,4);if(mult.length)lines.push('✦ '+mult.join(' · '));
- const direct=(a.forms||[]).concat(a.binom||[]).slice(0,3).map(s=>({icon:shapeIcon(s),text:s}));
- const forms=[...direct,...interestingFactorShapes(r.total,5)];const seen=new Set(),compact=[];
- for(const x of forms){const k=x.icon+'|'+x.text;if(seen.has(k))continue;seen.add(k);compact.push(x);if(compact.length>=6)break}
- if(compact.length)lines.push(compact.map(x=>x.icon+' '+x.text).join(' · '));
- const hits=corpusHits(r.total);if(hits.length)lines.push('◎ '+hits.map(h=>h.label).join(' / '));
+ lines.push(`RESULT: ${fmt(r.total)}`);
+ lines.push('Number signature: '+[`${fmtFactors(a.factors)}`,idx,`φ=${fmt(a.phi)}`,`τ=${fmt(a.tau)}`,`σ=${fmt(a.sigma)}`,`rad=${fmt(a.rad)}`,`DR=${a.root}`].filter(Boolean).join(' · '));
+ const mult=interestingMultipleDetails(r.total,4);if(mult.length)lines.push('Anchor factorizations: '+mult.join(' · '));
+ const direct=(a.forms||[]).concat(a.binom||[]).slice(0,3);
+ const factorForms=interestingFactorShapes(r.total,5).map(x=>x.text);
+ const forms=[...new Set([...direct,...factorForms])].slice(0,6);
+ if(forms.length)lines.push('Forms / structures: '+forms.join(' · '));
+ const hits=corpusHits(r.total);if(hits.length)lines.push('Corpus: '+hits.map(h=>h.label).join(' / '));
  return lines.join('\n')
 }
 function selectedPlainText(){return selectedResults().map(minimalResultText).join('\n\n')}
@@ -800,8 +805,8 @@ function compactMathSummary(r){
  const a=analyzeNumber(r.total);if(!a)return summaryResultText(r);
  const bits=[`${summaryResultText(r)}`,`${fmtFactors(a.factors)}`];
  const direct=(a.forms||[]).concat(a.binom||[]).slice(0,2);
- if(direct.length)bits.push(direct.map(s=>shapeIcon(s)+' '+s).join(' · '));
- const hit=corpusHits(r.total)[0];if(hit)bits.push('◎ '+hit.label);
+ if(direct.length)bits.push('Forms: '+direct.join(' · '));
+ const hit=corpusHits(r.total)[0];if(hit)bits.push('Corpus: '+hit.label);
  return bits.join(' · ')
 }
 function allResultsPlainText(){return current.results.map(summaryResultText).join('\n')}
