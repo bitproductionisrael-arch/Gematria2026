@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Gematria Research Engine V4.3</title>
+<title>Gematria Research Engine V4.4</title>
 <style>
 :root{
   --bg:#0b0f14;--panel:#111720;--panel2:#0d131b;--line:#2a3440;--text:#eef3f8;--muted:#8e9aa8;
@@ -42,9 +42,11 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .badges{display:flex;gap:5px;flex-wrap:wrap}.badge{border:1px solid var(--line);border-radius:999px;padding:3px 7px;font-size:11px;color:#cfd7df}.badge.gold{border-color:#6f5a2d;color:#ffe2a0}.badge.green{border-color:#2c6240;color:#b9f4c8}.badge.violet{border-color:#57467d;color:#dfd0ff}.badge.cyan{border-color:#326c69;color:#bdf4f0}.badge.red{border-color:#7b3936;color:#ffc1bd}
 .kvgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.kv{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px;min-width:0}.kv .k{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kv .v{font-size:17px;font-weight:850;direction:ltr;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .results-layout{height:100%;display:grid;grid-template-columns:clamp(320px,24vw,390px) minmax(0,1fr);gap:14px;min-height:0}
-.method-pane,.detail-pane{min-height:0;overflow:hidden}.method-pane{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:10px;padding:12px;border:1px solid #253444;border-radius:18px;background:radial-gradient(circle at 80% 0%,rgba(99,169,255,.11),transparent 32%),linear-gradient(180deg,#0d151f,#0a1017);box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 14px 40px rgba(0,0,0,.18)}
+.method-pane,.detail-pane{min-height:0;overflow:hidden}.method-pane{display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:10px;padding:12px;border:1px solid #253444;border-radius:18px;background:radial-gradient(circle at 80% 0%,rgba(99,169,255,.11),transparent 32%),linear-gradient(180deg,#0d151f,#0a1017);box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 14px 40px rgba(0,0,0,.18)}
 .dock-title{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}.dock-title b{font-size:15px}.dock-title span{font-size:10px;color:var(--muted)}
 .category-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.category-tabs button{font-size:12px;padding:9px 5px;border-radius:12px}
+.agrippa-bridge{display:none;border:1px solid #6f5a2d;background:linear-gradient(90deg,rgba(216,173,85,.12),rgba(99,169,255,.08));border-radius:13px;padding:8px 10px;line-height:1.35}
+.agrippa-bridge.show{display:block}.agrippa-bridge .bridge-title{font-size:10px;color:#ffe2a0;font-weight:800;margin-bottom:3px}.agrippa-bridge .bridge-line{font-size:12px;font-weight:850;direction:ltr;text-align:left;white-space:normal}.agrippa-bridge .bridge-ok{color:#b9f4c8}.agrippa-bridge .bridge-no{color:#ffc1bd}
 .method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(68px,auto);gap:8px;min-height:0;overflow:auto;padding-inline-end:2px;align-content:start}.method-btn{text-align:right;padding:9px 10px;min-width:0;border-radius:13px;background:#0b121a}.method-btn:hover{background:#101b27}.method-btn .mn{font-size:11px;line-height:1.25;white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.method-btn .mv{font-size:24px;font-weight:900;direction:ltr;color:var(--blue);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.method-btn.active{box-shadow:0 0 0 1px rgba(216,173,85,.28),0 0 22px rgba(216,173,85,.08)}.method-btn.active .mv{color:#ffe2a0}.method-delta{margin-top:4px;font-size:9px;line-height:1.2;color:var(--muted);white-space:normal}.method-delta.ok{color:#b9f4c8}.method-delta.no{color:#ffc1bd}
 .mobile-method{display:none;width:100%;height:42px;padding:6px}
 .detail-pane{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:8px}.detail-head{display:flex;align-items:flex-start;gap:10px;justify-content:space-between}.detail-title{min-width:0}.detail-title .biglabel{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-title .tiny{margin-top:3px}.detail-actions{display:flex;gap:5px}
@@ -84,7 +86,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
  .tab-panel,.tab-panel.active{height:auto;min-height:0;overflow:visible}
  .panel{height:auto;min-height:0;overflow:visible}
  .results-layout{height:auto;grid-template-columns:1fr;grid-template-rows:auto auto;align-content:start}
- .method-pane{max-height:280px}
+ .method-pane{max-height:360px}
  .category-tabs{display:grid!important}
  .method-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));max-height:190px;overflow:auto}
  .mobile-method{display:none!important}
@@ -201,7 +203,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><h1>Gematria Research Engine V4.3</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
+    <div class="brand"><h1>Gematria Research Engine V4.4</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <div class="queryside">
@@ -232,6 +234,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <div class="method-pane">
         <div class="dock-title"><b>בחר מה להוסיף למרכז</b><span>לחיצה מוסיפה · ✕ מסיר</span></div>
         <div class="category-tabs" id="categoryTabs"></div>
+        <div id="agrippaBridge" class="agrippa-bridge" aria-live="polite"></div>
         <select id="mobileMethod" class="mobile-method" aria-label="בחר שיטה"></select>
         <div class="method-grid" id="methodGrid"></div>
       </div>
@@ -813,7 +816,25 @@ function methodDeltaBadge(r){
  }
  return prior+`<div class="method-delta ${exact?'ok':'no'}">Δ Jewish−Simple = ${fmt(d)} ${exact?'✓':'✕'}</div>`;
 }
-function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div>${methodDeltaBadge(r)}</button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
+function renderAgrippaBridge(){
+ const el=document.getElementById('agrippaBridge');if(!el)return;
+ if(current?.script!=='en'){el.className='agrippa-bridge';el.innerHTML='';return}
+ const agr=current.results.find(x=>x.method.key==='agrippa');
+ const simple=current.results.find(x=>x.method.key==='ordinal');
+ const wr=current.results.find(x=>x.method.key==='agrippaWordReduced');
+ if(!agr||!simple){el.className='agrippa-bridge';el.innerHTML='';return}
+ const d=agr.total-simple.total,ad=Math.abs(d);
+ const deltaHit=corpusHits(ad).length>0||CARD_ANCHORS.includes(ad);
+ let priorText='WR —';let priorOk=false;
+ if(wr){
+   const t=wr.total*(wr.total+1)/2;
+   priorOk=t===simple.total;
+   priorText=`WR ${fmt(wr.total)} → T${fmt(wr.total)} = ${fmt(t)} ${priorOk?'✓':'✕'}`;
+ }
+ el.className='agrippa-bridge show';
+ el.innerHTML=`<div class="bridge-title">AGRIPPA BRIDGE · תמיד מוצג באנגלית</div><div class="bridge-line">Jewish ${fmt(agr.total)} · Simple ${fmt(simple.total)}</div><div class="bridge-line ${priorOk?'bridge-ok':'bridge-no'}">${priorText}</div><div class="bridge-line ${deltaHit?'bridge-ok':'bridge-no'}">Δ(Jewish−Simple) = ${fmt(d)} ${deltaHit?'✓':'✕'}</div>`;
+}
+function renderResults(){ensureSelection();renderAgrippaBridge();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}</div><div class="mv">${fmt(r.total)}</div>${methodDeltaBadge(r)}</button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
  const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'';document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=methodDeltaBadge(r)+badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
 function renderNumber(){ensureSelection();const src=document.getElementById('numSource');src.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.numKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');const r=methodByKey(state.numKey);if(!r)return;const a=analyzeNumber(r.total);document.getElementById('numHeadline').textContent=fmt(r.total);if(!a)return;
