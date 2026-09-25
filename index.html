@@ -623,9 +623,19 @@ function ratzoAnnotatedTerms(w){
  const terms=ratzoTextTerms(w);
  return terms.map((term,i)=>`${term}(${fmt(w.vals[i])})`)
 }
+function buildingTextTerms(w){
+ const letters=w.toks.map(t=>t.label),prefix=[];
+ for(let i=0;i<letters.length;i++)prefix.push(letters.slice(0,i+1).join(''));
+ return prefix
+}
+function buildingAnnotatedTerms(w){
+ const terms=buildingTextTerms(w);
+ return terms.map((term,i)=>`${term}(${fmt(w.vals[i])})`)
+}
+function isBuildingMethod(m){return !!m&&m.transform===cumulative}
 function wordDescription(r,idx){if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
 if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
- const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
+ const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(isBuildingMethod(m))out+=`\nבניין / Building: ${buildingAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
@@ -637,7 +647,7 @@ function wordBreakdownHtml(r,w){
   const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip perati-chip"><b>${esc(t.label)}²</b><small>(${fmt(base)}²)</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
   return `<div class="word-block"><div class="word-title perati-word-title">${esc(squaredWordLabel(w))}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`
  }
- const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
+ const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(isBuildingMethod(m)){const bt=buildingTextTerms(w);note=`<div class="transform-note"><b>בניין / Building:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${bt.map(esc).join(' → ')}</div><div>${buildingAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
 }
 function richBreakdownHtml(r){
  if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
@@ -743,6 +753,9 @@ function magnetTokenText(r,w){
  }
  if(m.ratzo||m.key==='ratzo'){
   return ratzoAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
+ }
+ if(isBuildingMethod(m)){
+  return buildingAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
  }
  if(m.transform){
   return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
@@ -998,7 +1011,8 @@ function posterWord(ctx,r,w,x,y,width){
  const subtotal=r.milui?w.subtotal:(r.method.fold==='word'?w.folded:(r.method.transform?sum(w.vals):sum(w.baseVals)));
  posterText(ctx,'סכום',x+width-58,totalY+1,13,'500','#8e9aa8','right','rtl',70);
  posterText(ctx,subtotal,x+width-18,totalY,18,'850','#eef3f8','right','ltr',76);
- if(r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','rtl',width-132);
+ if(r.method.ratzo||r.method.key==='ratzo')posterText(ctx,'רצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','rtl',width-132);
+ else if(isBuildingMethod(r.method))posterText(ctx,'Building: '+buildingAnnotatedTerms(w).join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','ltr',width-132);
  else if(r.method.transform)posterText(ctx,r.method.transformName+': '+w.vals.join(' + ')+' = '+sum(w.vals),x+18,totalY+1,10,'500','#9fb0c2','left','ltr',width-132);
  return totalY+27
 }
@@ -1122,6 +1136,9 @@ console.assert(calculateMilui('עמית','mayim',1,'miluiMayim').total===656,'Mi
 console.assert(calculateMilui('משה','mayim',1,'miluiMayim').total===456,'Milui Mayim Moshe 456');
 console.assert(compositeIndex(456)===368,'456 composite #368');
 console.assert(T('מייק רוב','he','regular')===368,'Mike Rov regular 368');
+const _malBuilding=calculate('Malchisedec','en',METHODS.en.find(m=>m.key==='building'));
+console.assert(_malBuilding.total===535,'Malchisedec English Building 535');
+console.assert(_malBuilding.words[0].vals.join(',')==='13,14,26,29,37,46,65,70,74,79,82','Malchisedec Building prefix sums');
 console.assert(totient(888)===288,'phi 888');console.assert(tau(888)===16,'tau 888');console.assert(totient(314)===156&&totient(316)===156,'same phi 314 316');
 console.assert(compositeIndex(636)===520,'636 composite #520');console.assert(primeIndex(1877)===288,'1877 prime #288');console.assert(nthPrime(520)===3727,'Prime #520 = 3727');console.assert(prevNextPrime(520).prev===509,'Prime before 520 = 509');
 console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze Achorayim 1024');
