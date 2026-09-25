@@ -834,7 +834,11 @@ function richMagnetText(r){
 }
 function selectedPlainText(){return selectedResults().map(minimalResultText).join('\n\n')}
 function selectedRichText(){return selectedResults().map(richMagnetText).join('\n\n')}
-function brokenResultText(r){return `${fmt(r.total)} (${minimalMethodName(r)})`}
+function brokenResultText(r){
+ const q=document.getElementById('q').value.trim();
+ if(r?.repeatMeta)return `${r.repeatMeta.phrase} ×${r.repeatMeta.count} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
+ return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
+}
 function selectedBrokenText(){return selectedResults().map(brokenResultText).join('\n')}
 function summaryResultText(r){
  const q=document.getElementById('q').value.trim();
