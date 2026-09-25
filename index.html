@@ -636,12 +636,12 @@ function isBuildingMethod(m){return !!m&&m.transform===cumulative}
 function buildingMilestones(w){
  const n=w?.vals?.length||0;if(!n)return[];
  const picks=[
-  {i:0,label:'פוזיציה 1'},
-  {i:1,label:'פוזיציה 2'},
-  {i:2,label:'פוזיציה 3'},
-  {i:4,label:'פוזיציה 5'},
-  {i:n-3,label:'שתיים לפני האחרונה'},
-  {i:n-1,label:'האחרונה'}
+  {i:0,label:'①'},
+  {i:1,label:'②'},
+  {i:2,label:'③'},
+  {i:4,label:'⑤'},
+  {i:n-3,label:'◀²'},
+  {i:n-1,label:'Ω'}
  ];
  const seen=new Set(),out=[];
  for(const p of picks){
@@ -1162,7 +1162,7 @@ console.assert(T('מייק רוב','he','regular')===368,'Mike Rov regular 368')
 const _malBuilding=calculate('Malchisedec','en',METHODS.en.find(m=>m.key==='building'));
 console.assert(_malBuilding.total===535,'Malchisedec English Building 535');
 console.assert(_malBuilding.words[0].vals.join(',')==='13,14,26,29,37,46,65,70,74,79,82','Malchisedec Building prefix sums');
-console.assert(buildingMilestoneText(_malBuilding.words[0])==='אבני דרך: פוזיציה 1 13=אחד · פוזיציה 2 14=דוד · פוזיציה 3 26=יהוה · פוזיציה 5 37=יחידה · שתיים לפני האחרונה 74=Mike · האחרונה 82=בראשית א:א','Malchisedec milestone anchors');
+console.assert(buildingMilestoneText(_malBuilding.words[0])==='אבני דרך: ① 13=אחד · ② 14=דוד · ③ 26=יהוה · ⑤ 37=יחידה · ◀² 74=Mike · Ω 82=בראשית א:א','Malchisedec milestone anchors');
 console.assert(totient(888)===288,'phi 888');console.assert(tau(888)===16,'tau 888');console.assert(totient(314)===156&&totient(316)===156,'same phi 314 316');
 console.assert(compositeIndex(636)===520,'636 composite #520');console.assert(primeIndex(1877)===288,'1877 prime #288');console.assert(nthPrime(520)===3727,'Prime #520 = 3727');console.assert(prevNextPrime(520).prev===509,'Prime before 520 = 509');
 console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze Achorayim 1024');
