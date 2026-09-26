@@ -464,11 +464,11 @@ const METHODS={
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},{key:'ordinal',cat:'base',name:'Greek Ordinal',map:GR_ORD},{key:'building',cat:'ops',name:'Greek Building',map:GR_VAL,transform:cumulative,transformName:'prefix sums'},{key:'ladder',cat:'ops',name:'Greek Ladder (κλίμαξ)',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes'}
  ],
  en:[
-  {key:'ordinal',cat:'base',name:'English Simple / Ordinal',map:EN_ORD},
+  {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
   {key:'regular',cat:'base',name:'English Regular / Tiered',map:EN_REG},
-  {key:'pythagorean',cat:'base',name:'English Pythagorean / Reduced',map:EN_RED},
+  {key:'pythagorean',cat:'base',name:'English Pythagorean',map:EN_RED},
   {key:'wordReduced',cat:'base',name:'English Word Reduced',map:EN_RED,fold:'word'},
-  {key:'sumerian',cat:'base',name:'English Sumerian',map:EN_SUM},
+  {key:'sumerian',cat:'base',name:'English Gematria',map:EN_SUM},
   {key:'reverse',cat:'base',name:'English Reverse Ordinal',map:EN_REV},
   {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular / Research',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
   {key:'albamRegular',cat:'cipher',name:'English ALBaM analogue / ROT13 → Regular / Research',map:EN_ALBAM,sub:EN_ALBAM_LETTER,research:true},
@@ -476,21 +476,21 @@ const METHODS={
   {key:'kidmiEnglish',cat:'cipher',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
   {key:'peratiSimple',cat:'cipher',name:'English Perati — Simple² / Research',map:EN_PERATI_SIMPLE,perati:true,research:true},
   {key:'peratiEnglish',cat:'cipher',name:'English Perati — Regular² / Research',map:EN_PERATI,perati:true,research:true},
-  {key:'peratiAgrippa',cat:'cipher',name:'English Perati — Agrippa² / Research',map:AGR_PERATI,perati:true,research:true,agrippa:true},
+  {key:'peratiAgrippa',cat:'cipher',name:'English Perati — Jewish² / Research',map:AGR_PERATI,perati:true,research:true,agrippa:true},
   {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
   {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
   {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
   {key:'building',cat:'ops',name:'English Building / Achorayim (Simple)',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},
   {key:'achorayimRegular',cat:'ops',name:'English Achorayim / Building (Regular)',map:EN_REG,transform:cumulative,transformName:'prefix sums'},
-  {key:'buildingSumerian',cat:'ops',name:'English Building Sumerian',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
+  {key:'buildingSumerian',cat:'ops',name:'English Building Gematria',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
   {key:'positionalRegular',cat:'ops',name:'English Positional / מיקום',map:EN_REG,transform:positional,transformName:'position × value'},
   {key:'equivalenceRegular',cat:'ops',name:'English Equivalence / שיווי',map:EN_REG,transform:balanced,transformName:'balanced weight'},
   {key:'ratzoRegular',cat:'ops',name:'English Running & Returning / רצוא ושוב',map:EN_REG,transform:pyramid,transformName:'prefixes out + return',ratzo:true},
   {key:'addsubRegular',cat:'ops',name:'English Addition & Subtraction / תוספת ומגרעת',map:EN_REG,transform:ladder,transformName:'prefixes + suffixes'},
-  {key:'agrippa',cat:'cipher',name:'Agrippa Latin (1533) / Jewish',map:AGR,agrippa:true},
-  {key:'agrippaDeltaSimple',cat:'cipher',name:'Agrippa Δ Simple / Jewish − Simple',custom:'agrippaDeltaSimple',research:true},
-  {key:'agrippaReduced',cat:'cipher',name:'Agrippa Reduced',map:AGR_RED,agrippa:true},
-  {key:'agrippaWordReduced',cat:'cipher',name:'Agrippa Word Reduced',map:AGR,fold:'word',agrippa:true}
+  {key:'agrippa',cat:'cipher',name:'Jewish Gematria',map:AGR,agrippa:true},
+  {key:'agrippaDeltaSimple',cat:'cipher',name:'Jewish∆Simple',custom:'agrippaDeltaSimple',research:true},
+  {key:'agrippaReduced',cat:'cipher',name:'Jewish Reduced',map:AGR_RED,agrippa:true},
+  {key:'agrippaWordReduced',cat:'cipher',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
  ]
 };
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
@@ -755,7 +755,7 @@ function magnetQueryPrefix(r){
 }
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
-function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinal']:['ordinal','pythagorean','regular'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
+function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinal']:['pythagorean','ordinal','sumerian','agrippa','agrippaDeltaSimple'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
 function ensureSelection(){const cats=categories();if(!cats.includes(state.category))state.category=cats[0]||'base';const inCat=current.results.filter(r=>r.method.cat===state.category);if(!current.results.some(r=>r.method.key===state.methodKey)||!inCat.some(r=>r.method.key===state.methodKey))state.methodKey=(inCat[0]||current.results[0])?.method.key||null;const valid=new Set(current.results.map(r=>r.method.key));state.selectedMethods=(state.selectedMethods||[]).filter(k=>valid.has(k));if(!state.selectionTouched){state.selectedMethods=defaultBaseKeys(current.script)}if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];if(!current.results.some(r=>r.method.key===state.numKey))state.numKey=state.methodKey}
 
 /* ---------- render helpers ---------- */
@@ -1464,7 +1464,7 @@ console.assert(T('בראשית ברא אלהים את השמים ואת הארץ
 console.assert(!syncRelevantMethods('תור',METHODS.he).some(m=>m.key==='final'||m.key==='smallFinals'),'No final-letter comparison methods without finals');
 console.assert(syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='final')&&syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='smallFinals'),'Final-letter methods active when finals exist');
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
-console.assert(T('Amit Mike Rov','en','sumerian')===816,'English Sumerian 816');
+console.assert(T('Amit Mike Rov','en','sumerian')===816,'English Gematria 816');
 console.assert(T('Amit Mike Rov','en','regular')===874,'English Regular 874');
 console.assert(T('Amit Mike Rov','en','wordReduced')===10,'English Word Reduced 10');
 console.assert(T('Amit Mike Rov','en','achorayimRegular')===1364,'English Achorayim Regular 1364');
@@ -1482,8 +1482,8 @@ console.assert(T('Amit Mike Rov','en','zeroStepEnglish')===109,'English One-step
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','simple','latinMiluiUserSimple').total===429,'Latin Milui v0 Simple 429');
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','reduced','latinMiluiUserReduced').total===141,'Latin Milui v0 Reduced 141');
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','regular','latinMiluiUserRegular').total===5343,'Latin Milui v0 Regular 5343');
-console.assert(T('Amit Mike Rov','en','agrippa')===1024,'Agrippa 1024');
-console.assert(T('Amit Mike Rov','en','agrippaDeltaSimple')===888,'Agrippa minus Simple delta 888');
+console.assert(T('Amit Mike Rov','en','agrippa')===1024,'Jewish Gematria 1024');
+console.assert(T('Amit Mike Rov','en','agrippaDeltaSimple')===888,'Jewish∆Simple 888');
 console.assert(calculateMilui('עמית').total===636,'Milui Amit 636');
 console.assert(calculateMilui('מייק').total===306,'Milui Mike 306');
 console.assert(calculateMilui('רוב').total===935,'Milui Rov 935');
