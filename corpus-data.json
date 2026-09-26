@@ -1929,6 +1929,168 @@
       "label": "Alphabet",
       "method": "English ALBaM analogue = 1000 + 10×26",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 38,
+      "label": "Alpha",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
+      "label": "Alpha",
+      "method": "Jewish Δ Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 110,
+      "label": "Alpha",
+      "method": "English Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 28,
+      "label": "Beta",
+      "method": "English Simple / English One-step Zero",
+      "classification": "canonical"
+    },
+    {
+      "value": 208,
+      "label": "Beta",
+      "method": "English Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 108,
+      "label": "Beta",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
+      "label": "Beta",
+      "method": "English Equivalence",
+      "classification": "canonical"
+    },
+    {
+      "value": 424,
+      "label": "Beta",
+      "method": "English Achorayim",
+      "classification": "canonical"
+    },
+    {
+      "value": 64,
+      "label": "Beta",
+      "method": "English Building",
+      "classification": "canonical"
+    },
+    {
+      "value": 640,
+      "label": "Beta",
+      "method": "English Running & Returning",
+      "classification": "canonical"
+    },
+    {
+      "value": 66,
+      "label": "AlphaBeta",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 198,
+      "label": "AlphaBeta",
+      "method": "Jewish Gematria = 3×66",
+      "classification": "canonical"
+    },
+    {
+      "value": 444,
+      "label": "AlphaBeta",
+      "method": "English AVGaD analogue",
+      "classification": "canonical"
+    },
+    {
+      "value": 396,
+      "label": "AlphaBeta",
+      "method": "English Gematria = 6×66 = 33×12",
+      "classification": "canonical"
+    },
+    {
+      "value": 86,
+      "label": "×2 Alphaomega",
+      "method": "English One-step Zero",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 208,
+      "label": "×2 Alphaomega",
+      "method": "Jewish Δ Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "×5 Alphaomega",
+      "method": "Jewish Δ Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1480,
+      "label": "omega",
+      "method": "English Atbash → Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "omega",
+      "method": "English AVGaD analogue",
+      "classification": "canonical"
+    },
+    {
+      "value": 444,
+      "label": "omega",
+      "method": "English Cumulative Alphabet",
+      "classification": "canonical"
+    },
+    {
+      "value": 93,
+      "label": "omega",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
+      "label": "omega",
+      "method": "Jewish Δ Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 21,
+      "label": "omega",
+      "method": "Jewish Reduced",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
+      "label": "Alpha ↔ omega",
+      "method": "Same Jewish Δ Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 104,
+      "label": "Alphaomega",
+      "method": "Jewish Δ Simple = 52+52",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 358,
+      "label": "AlphaBeta − Alpha",
+      "method": "396 − 38 = 358",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 66,
+      "label": "AlphaBeta 1–3–6 ladder",
+      "method": "66×T1=66; 66×T2=198; 66×T3=396",
+      "classification": "BRIDGE"
     }
   ]
 }
