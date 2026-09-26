@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-26",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Site reads this file automatically; ChatGPT can read the same GitHub source. 64-layer distinguishes gematria encodings, Buddhist 48+16 structure, and the I Ching 64-hexagram structure.",
+  "note": "Canonical shared corpus. Includes Genesis 1:1 multi-method anchors, Talmudic Milui 5476=74², Standard Milui 5467=74²−3², and derived cross-method bridges.",
   "entries": [
     {
       "value": 13,
@@ -591,6 +591,96 @@
       "label": "2701×1072 / 37² Collapse source",
       "method": "Research · Number",
       "classification": "canonical"
+    },
+    {
+      "value": 37,
+      "label": "בראשית א:א",
+      "method": "Hebrew Word Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 82,
+      "label": "בראשית א:א",
+      "method": "Hebrew Reduced / Small",
+      "classification": "ENCODING"
+    },
+    {
+      "value": 86,
+      "label": "בראשית א:א",
+      "method": "Hebrew Small Finals",
+      "classification": "ENCODING"
+    },
+    {
+      "value": 298,
+      "label": "בראשית א:א",
+      "method": "Reduction №1",
+      "classification": "ENCODING"
+    },
+    {
+      "value": 7200,
+      "label": "בראשית א:א",
+      "method": "Equivalence / Balanced",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 5467,
+      "label": "בראשית א:א · מילוי רגיל",
+      "method": "Standard Milui · 71×77 = 74²−3²",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 5476,
+      "label": "בראשית א:א · מילוי תלמודי",
+      "method": "Talmudic Milui · 74² = 4×37²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 148,
+      "label": "φ(298) · בלייז גילוי Reverse Ordinal",
+      "method": "Totient / Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 104,
+      "label": "8×בראשית",
+      "method": "Hebrew Reduced · 8×13 · φ=48",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 32,
+      "label": "8×בראשית",
+      "method": "Hebrew Word Reduced · 8×4",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 496,
+      "label": "8×בראשית",
+      "method": "Reverse Ordinal · perfect number",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 730,
+      "label": "10×בראשית",
+      "method": "Latin Milui v0 → English Reduced · 10×73",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 33660,
+      "label": "10×בראשית",
+      "method": "Milui of Milui · 36×935",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1221,
+      "label": "קבלה",
+      "method": "Cycle BKR · 33×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 15873,
+      "label": "11×בראשית",
+      "method": "Cycle BKR · 13×1221 = 3×11×13×37",
+      "classification": "RESEARCH"
     }
   ]
 }
