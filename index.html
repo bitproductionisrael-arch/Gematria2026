@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .app{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
 .topbar{min-height:var(--top);display:grid;grid-template-columns:minmax(150px,220px) minmax(260px,1fr) auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:#0d1219}
 .brand{min-width:0}.brand h1{font-size:18px;margin:0 0 3px}.brand .sub{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}
+.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}.query-mult{height:54px;display:grid;grid-template-columns:28px 42px 28px;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1016}.query-mult button{border:0;border-radius:0;padding:0;font-size:20px;font-weight:900;background:#0c1219}.query-mult button:first-child{border-inline-end:1px solid var(--line)}.query-mult button:last-child{border-inline-start:1px solid var(--line)}#queryMultValue{display:grid;place-items:center;font-weight:950;font-size:13px;direction:ltr;color:#ffe2a0;white-space:nowrap}
 #q{height:54px;resize:none;padding:8px 10px;font-size:18px;line-height:1.35;min-width:0}
 .queryside{display:grid;grid-template-rows:1fr 1fr;gap:5px;min-width:115px}
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
@@ -158,7 +158,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
 }
 @media(max-width:480px){
-  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto}.queryside{display:none}.query-quick{width:38px;height:58px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
+  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto auto}.queryside{display:none}.query-quick{width:36px;height:58px}.query-mult{height:58px;grid-template-columns:24px 36px 24px}.query-mult button{font-size:18px}#queryMultValue{font-size:12px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
 @media(min-width:1400px){.workspace{padding:14px}.topbar{padding:12px 18px}.main-tabs{padding-inline:14px}.panel{padding:12px}.detail-pane.multi-mode{padding:18px}.multi-detail-grid{gap:16px}.multi-detail-card{min-height:330px}.letter-chip{min-width:70px}}
 
 /* Mobile relations: grow naturally with content instead of squeezing 6 rows into the viewport */
@@ -240,6 +240,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <div class="brand"><h1>Gematria Research Engine V4.9</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
+      <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><div id="queryMultValue">x1</div><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
       <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
@@ -684,7 +685,7 @@ function syncRelevantResults(text,results,otherText=''){const allowed=new Set(sy
 function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(textB);if(a.script!==b.script)return[];const active=syncRelevantResults(textA,a.results,textB),byB=Object.fromEntries(b.results.map(r=>[r.method.key,r]));return active.map(x=>({method:x.method,a:x.total,b:byB[x.method.key]?.total??null,delta:byB[x.method.key]!=null?byB[x.method.key].total-x.total:null})).filter(x=>x.b!=null)}
 
 /* ---------- state ---------- */
-const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
+const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
 
 const SAVED_STORE_KEY='gematria2026.saved.v1';
@@ -737,6 +738,17 @@ function demoteSaved(id){const x=savedItem(id);if(!x)return;x.kind='match';x.upd
 function deleteSaved(id){SAVED_ITEMS=SAVED_ITEMS.filter(x=>x.id!==id);persistSavedItems();renderSavedManager()}
 function corpusSyncPayload(){return {schema:'gematria2026-local-corpus-sync-v2',generated_at:new Date().toISOString(),shared_corpus_version:SHARED_CORPUS_META.updated_at||null,canonical_overrides:CORPUS_OVERRIDES,items:SAVED_ITEMS.filter(x=>x.kind==='corpus').map(x=>({id:x.id,text:x.text,script:x.script,corpus:x.corpusName||'כללי',snapshot:x.snapshot||[]}))}}
 
+function queryMultiplier(){return Math.max(1,Math.trunc(Number(state.queryMultiplier)||1))}
+function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el)el.textContent='x'+queryMultiplier();const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=queryMultiplier()<=1}
+function scaleCurrentResults(data){
+ const n=queryMultiplier();if(n===1)return data;
+ return {script:data.script,results:data.results.map(r=>({...r,baseTotal:r.total,total:r.total*n,queryMultiplier:n}))}
+}
+function magnetQueryPrefix(r){
+ if(r?.repeatMeta)return 'x'+r.repeatMeta.count+' '+r.repeatMeta.phrase;
+ const q=document.getElementById('q').value.trim(),n=r?.queryMultiplier||queryMultiplier();
+ return 'x'+n+' '+q
+}
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
 function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinal']:['ordinal','pythagorean','regular'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
@@ -935,18 +947,21 @@ function magnetBreakdown(r){
  }).join(' + ')
 }
 function minimalResultText(r){
- const q=document.getElementById('q').value.trim();
- if(r?.deltaMeta)return `Δ MATCH:\nJewish: ${fmt(r.deltaMeta.leftValue)}\nSimple: ${fmt(r.deltaMeta.rightValue)}\n\nΔ:\n${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}`;
- if(r?.repeatMeta)return `${r.repeatMeta.phrase} ×${r.repeatMeta.count} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
+ const prefix=magnetQueryPrefix(r);
+ if(r?.deltaMeta)return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\nΔ MATCH: Jewish ${fmt(r.deltaMeta.leftValue)} − Simple ${fmt(r.deltaMeta.rightValue)}`;
+ if(r?.repeatMeta)return `${prefix} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
  if((r?.method?.perati||r?.method?.key==='perati')&&r.words?.length){
-  const shape=r.words.map(squaredWordLabel).join(' ');
   const details=r.words.map(w=>magnetTokenText(r,w)).join(' | ');
-  return `${shape} = ${fmt(r.total)} (${minimalMethodName(r)})\n${details}`
+  return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${details}`
+ }
+ if((r?.queryMultiplier||1)>1){
+  const base=Number.isFinite(r.baseTotal)?r.baseTotal:(r.total/(r.queryMultiplier||1));
+  return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${fmt(base)} × ${r.queryMultiplier} = ${fmt(r.total)}`
  }
  const breakdown=magnetBreakdown(r);
  return breakdown
-  ? `${q} = ${breakdown} = ${fmt(r.total)} (${minimalMethodName(r)})`
-  : `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
+  ? `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${magnetBreakdown(r)}`
+  : `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})`
 }
 function richMagnetText(r){
  const base=minimalResultText(r),a=analyzeNumber(r.total);if(!a)return base;
@@ -965,15 +980,11 @@ function richMagnetText(r){
 function selectedPlainText(){return selectedResults().map(minimalResultText).join('\n\n')}
 function selectedRichText(){return selectedResults().map(richMagnetText).join('\n\n')}
 function brokenResultText(r){
- const q=document.getElementById('q').value.trim();
- if(r?.repeatMeta)return `${r.repeatMeta.phrase} ×${r.repeatMeta.count} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
- return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
+ if(r?.repeatMeta)return `${magnetQueryPrefix(r)} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
+ return `${magnetQueryPrefix(r)} = ${fmt(r.total)} (${minimalMethodName(r)})`
 }
 function selectedBrokenText(){return selectedResults().map(brokenResultText).join('\n')}
-function summaryResultText(r){
- const q=document.getElementById('q').value.trim();
- return `${q} = ${fmt(r.total)} (${minimalMethodName(r)})`
-}
+function summaryResultText(r){return `${magnetQueryPrefix(r)} = ${fmt(r.total)} (${minimalMethodName(r)})`}
 function compactMathSummary(r){
  const a=analyzeNumber(r.total);if(!a)return summaryResultText(r);
  const bits=[`${summaryResultText(r)}`,`${fmtFactors(a.factors)}`];
@@ -983,14 +994,7 @@ function compactMathSummary(r){
  return bits.join(' · ')
 }
 function allResultsPlainText(){return current.results.map(summaryResultText).join('\n')}
-function allResultsBrokenText(){
- const q=document.getElementById('q').value.trim();
- const rows=current.results.map(r=>{
-  if(r?.repeatMeta)return `${fmt(r.total)} (${r.repeatMeta.methodName})`;
-  return `${fmt(r.total)} (${minimalMethodName(r)})`
- });
- return [q,'',...rows].join('\n')
-}
+function allResultsBrokenText(){return current.results.map(brokenResultText).join('\n')}
 function allResultsRichText(){return current.results.map(compactMathSummary).join('\n')}
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
 function resultDisplayName(r){return r?.displayName||r?.method?.name||''}
@@ -1168,7 +1172,7 @@ function renderForms(){const text=document.getElementById('q').value,script=dete
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
  }else{document.getElementById('miluiValue').textContent='—';document.getElementById('milui2Value').textContent='—';document.getElementById('miluiMayimValue').textContent='—';document.getElementById('miluiText').textContent='מילוי פעיל בעברית';document.getElementById('miluiMeta').innerHTML='';document.getElementById('yhvhMilui').textContent='';document.getElementById('boundaryTitle').textContent='אפקט גבול זמין בכל שפה';document.getElementById('boundaryDiffs').innerHTML=diffRows(text,boundaryless(text));document.getElementById('finalTitle').textContent='אותיות סופיות רלוונטיות לעברית';document.getElementById('finalDiffs').innerHTML=''} }
 
-function renderAll(){const text=document.getElementById('q').value;current=calculateAll(text);if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names={he:'עברית · Hebrew',el:'יוונית · Greek',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
+function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names={he:'עברית · Hebrew',el:'יוונית · Greek',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
 
 /* ---------- report / export ---------- */
 function buildReport(text,data){const out=[text,''];for(const r of data.results){out.push(`${r.method.name} = ${r.total}`);const a=analyzeNumber(r.total);if(a){out.push(`φ=${a.phi} | τ=${a.tau} | σ=${a.sigma} | λ=${a.lambda} | rad=${a.rad}`);out.push(`${a.prime?'Prime #'+a.primeIndex:'Composite #'+(a.compositeIndex??'—')} | factors: ${fmtFactors(a.factors)}`);if(a.forms.length||a.binom.length)out.push(`Forms: ${a.forms.concat(a.binom).join(' | ')}`);const h=corpusHits(r.total);if(h.length)out.push(`Corpus: ${h.map(x=>x.label+' ['+x.method+']').join(' | ')}`)}out.push('')}return out.join('\n')}
@@ -1356,6 +1360,8 @@ async function saveSelectedPoster(){
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
 document.getElementById('q').addEventListener('input',()=>{document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
+document.getElementById('queryMultMinus').addEventListener('click',()=>{state.queryMultiplier=Math.max(1,queryMultiplier()-1);renderAll()});
+document.getElementById('queryMultPlus').addEventListener('click',()=>{state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
 
 document.getElementById('saveQuery').addEventListener('click',saveCurrentQuery);
 document.getElementById('openSaved').addEventListener('click',()=>openSavedManager('match'));
@@ -1430,6 +1436,7 @@ console.assert(T('משה משה משה משה משה משה משה משה','he',
 console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen Milui Mayim 307');
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','reverseOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
+console.assert(T('עמית מייק רוב','he','regular')*2===1776,'Query multiplier arithmetic 888×2=1776');
 console.assert(T('עמית','he','perati')===166600,'Amit Perati 166600');
 console.assert(T('עמית מייק רוב','he','peratiOrdinal')===2179,'Hebrew Perati Ordinal full name 2179');
 console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordinal 141');
