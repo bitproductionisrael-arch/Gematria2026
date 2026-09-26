@@ -1143,6 +1143,48 @@
       "label": "×4 דברים",
       "method": "Hebrew Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 746,
+      "label": "שמות",
+      "method": "Hebrew Regular · 2×373",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 17,
+      "label": "שמות",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1998,
+      "label": "שמות",
+      "method": "Positional · 2×3^3×37",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1887,
+      "label": "שמות",
+      "method": "Cycle BKR · 111×17",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3730,
+      "label": "שמות",
+      "method": "Addition & Subtraction · 5×746",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "שמות",
+      "method": "Milui Mayim · 24×37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1202,
+      "label": "שמות",
+      "method": "Milui of Milui",
+      "classification": "RESEARCH"
     }
   ]
 }
