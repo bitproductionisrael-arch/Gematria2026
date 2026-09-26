@@ -855,6 +855,24 @@
       "label": "Talmudic lift of 656",
       "method": "2x656+48 = 10x136 · phi=512",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 1360,
+      "label": "עין מים יוד תיו · מילוי תלמודי",
+      "method": "phi=512; 2phi=1024; 2phi-136=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
+      "label": "phi(1360)",
+      "method": "2^9; doubled=1024",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1024,
+      "label": "2phi(1360)",
+      "method": "2^10; 16x64; 1024-136=888",
+      "classification": "BRIDGE"
     }
   ]
 }
