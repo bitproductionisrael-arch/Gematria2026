@@ -2109,6 +2109,30 @@
       "label": "Alphaomega → Beta",
       "method": "5×Δ(Alphaomega)=520 = Beta English Equivalence",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 4,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 24,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Gematria = 6×Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 77,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Reverse Ordinal = English Atbash Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 160,
+      "label": "Aba / אופרטור אבא",
+      "method": "English ALBaM analogue",
+      "classification": "canonical"
     }
   ]
 }
