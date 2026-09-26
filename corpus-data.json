@@ -885,6 +885,60 @@
       "label": "Talmudic lift of Amit Mayim expansion",
       "method": "Talmudic Milui; 10x136; phi=512",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 288,
+      "label": "קומפוזיציית מייק · דרגה 2 ביט / מם יד יד קף",
+      "method": "Hebrew Regular · 16×18 · phi=96",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 306,
+      "label": "קומפוזיציית מייק · דרגה 2.5 רגילה / מם יוד יוד קוף",
+      "method": "Standard Milui · 17×18 · phi=96",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 316,
+      "label": "קומפוזיציית מייק · דרגה מלאה מים / מים יוד יוד קוף",
+      "method": "Milui Mayim expansion · 306+10 · 288+28",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 424,
+      "label": "מם יוד יוד קוף",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "מם יוד יוד קוף",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "מים יוד יוד קוף",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 19,
+      "label": "מים יוד יוד קוף",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 590,
+      "label": "מים יוד יוד קוף",
+      "method": "Atbash · 10×59",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1441,
+      "label": "מים יוד יוד קוף",
+      "method": "Milui Mayim",
+      "classification": "RESEARCH"
     }
   ]
 }
