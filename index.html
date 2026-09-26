@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .app{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
 .topbar{min-height:var(--top);display:grid;grid-template-columns:minmax(150px,220px) minmax(260px,1fr) auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:#0d1219}
 .brand{min-width:0}.brand h1{font-size:18px;margin:0 0 3px}.brand .sub{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.querybox{display:grid;grid-template-columns:1fr auto;gap:8px;min-width:0}
+.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}
 #q{height:54px;resize:none;padding:8px 10px;font-size:18px;line-height:1.35;min-width:0}
 .queryside{display:grid;grid-template-rows:1fr 1fr;gap:5px;min-width:115px}
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
@@ -122,6 +122,13 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .repeat-add{position:absolute;left:6px;top:5px;font-size:13px;color:#8e9aa8;line-height:1}
 .repeat-cell.selected .repeat-add{color:#ffe2a0}.repeat-n{font-size:11px;color:var(--muted)}.repeat-v{font-size:clamp(17px,3vw,23px);font-weight:900;direction:ltr;align-self:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.repeat-hit{font-size:10px;color:var(--gold);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .forms-layout{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr);gap:8px}.form-tabs{display:none;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:6px}.form-tabs button{font-size:11px;padding:6px 4px}.forms-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;min-height:0;min-width:0}.form-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:9px;min-width:0;overflow:hidden}.form-card h3{font-size:13px;margin:0 0 7px}.form-main{font-size:clamp(22px,5vw,30px);font-weight:900;direction:ltr;color:var(--cyan);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.milui-rows{display:grid;gap:5px;margin:7px 0}.milui-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border:1px solid #202a35;border-radius:8px;padding:6px}.milui-row b{direction:ltr;color:var(--cyan);font-size:18px}.milui-row .tiny{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.form-text{font-size:12px;line-height:1.55;overflow-wrap:anywhere}.diff-list{display:grid;gap:5px;margin-top:7px}.diff-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;font-size:11px;padding:5px;border:1px solid #202a35;border-radius:7px}.diff-row span:nth-child(2),.diff-row span:nth-child(3){direction:ltr}
+
+.saved-modal{position:fixed;inset:0;z-index:70;background:rgba(2,6,10,.82);display:none;align-items:center;justify-content:center;padding:12px}
+.saved-modal.open{display:flex}.saved-card{width:min(860px,97vw);height:min(760px,94vh);background:#0f151d;border:1px solid #566273;border-radius:16px;padding:12px;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:9px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.5)}
+.saved-head{display:flex;gap:8px;align-items:center}.saved-head .grow{flex:1;min-width:0}.saved-title{font-size:18px;font-weight:900}.saved-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px}.saved-tabs button.active{border-color:var(--gold);color:#ffe2a0}
+.saved-list{overflow:auto;display:grid;align-content:start;gap:7px}.saved-row{border:1px solid var(--line);border-radius:11px;background:#0b121a;padding:9px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}.saved-text{font-weight:850;font-size:14px;white-space:normal;overflow-wrap:anywhere}.saved-meta{font-size:10px;color:var(--muted);margin-top:3px}.saved-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.saved-actions button{font-size:11px;padding:6px 8px}.saved-empty{border:1px dashed var(--line);border-radius:11px;padding:18px;text-align:center;color:var(--muted)}
+@media(max-width:560px){.saved-card{width:99vw;height:96vh;padding:9px}.saved-row{grid-template-columns:1fr}.saved-actions{justify-content:flex-start}}
+
 .relation-row{cursor:pointer;transition:.15s}.relation-row:hover{border-color:#5b6a7c;background:#121b25}
 .relation-modal{position:fixed;inset:0;z-index:50;background:rgba(2,6,10,.78);display:none;align-items:center;justify-content:center;padding:18px}
 .relation-modal.open{display:flex}.relation-card{width:min(1180px,96vw);height:min(760px,92vh);background:#0f151d;border:1px solid #566273;border-radius:16px;padding:12px;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:9px;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.45)}
@@ -140,7 +147,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
 }
 @media(max-width:480px){
-  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:1fr}.queryside{display:none}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
+  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto}.queryside{display:none}.query-quick{width:38px;height:58px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
 @media(min-width:1400px){.workspace{padding:14px}.topbar{padding:12px 18px}.main-tabs{padding-inline:14px}.panel{padding:12px}.detail-pane.multi-mode{padding:18px}.multi-detail-grid{gap:16px}.multi-detail-card{min-height:330px}.letter-chip{min-width:70px}}
 
 /* Mobile relations: grow naturally with content instead of squeezing 6 rows into the viewport */
@@ -222,6 +229,8 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <div class="brand"><h1>Gematria Research Engine V4.9</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
+      <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
+      <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
         <select id="sampleSelect" aria-label="דוגמאות">
           <option value="">דוגמאות</option><option>עמית מייק רוב</option><option>Amit Mike Rov</option><option>ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ</option><option>משיח מייק</option><option>אלהימ</option><option>מיכאל בלייז</option>
@@ -295,7 +304,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     </div></section>
 
     <section id="tab-repeat" class="tab-panel"><div class="panel repeat-layout">
-      <div class="repeat-controls"><input id="repeatPhrase" aria-label="ביטוי לחזרה"><select id="repeatMethod"></select><select id="repeatMax" aria-label="מספר חזרות"><option>8</option><option selected>12</option><option>16</option><option>24</option></select><button id="repeatMatrixToggle" title="פתח מטריקס של כל שיטות הגימטריה וכל דרגות ההכפלה">▦ מטריקס</button><button id="repeatMatrixDouble" title="הכפל את כל דרגות המטריקס פי 2" hidden>×2</button><button id="saveRepeatMatrix" title="שמור את כל המטריקס כתמונה" hidden>📸</button></div>
+      <div class="repeat-controls"><input id="repeatPhrase" aria-label="ביטוי לחזרה"><select id="repeatMethod"></select><select id="repeatMax" aria-label="מספר חזרות"><option>8</option><option selected>12</option><option>16</option><option>24</option></select><button id="repeatMatrixToggle" title="הפק דוח מטריקס מלא כתמונה">📸 מטריקס</button><button id="repeatMatrixDouble" title="קפוץ את דרגות דוח המטריקס פי 2">×2</button><button id="saveRepeatMatrix" title="הפק מטריקס התאמות: רק פגיעות בקורפוס">📸✓ התאמות</button></div>
       <div id="repeatGrid" class="repeat-grid"></div>
       <div class="pager"><button id="repeatPrev">‹</button><span id="repeatPage">1/1</span><button id="repeatNext">›</button><span id="repeatNote" class="tiny"></span></div>
     </div></section>
@@ -309,6 +318,18 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       </div>
     </div></section>
   </main>
+
+  <div id="savedModal" class="saved-modal" aria-hidden="true">
+    <div class="saved-card">
+      <div class="saved-head">
+        <div class="grow"><div class="saved-title">שמורים</div><div id="savedSharedMeta" class="tiny"></div></div>
+        <button id="copyCorpusSync" class="iconbtn" title="העתק חבילת סנכרון של פריטי קורפוס מקומיים">🧲</button>
+        <button id="closeSaved" class="iconbtn" title="סגור">✕</button>
+      </div>
+      <div id="savedTabs" class="saved-tabs"><button class="active" data-saved-tab="match">התאמות</button><button data-saved-tab="corpus">קורפוסים</button></div>
+      <div id="savedList" class="saved-list"></div>
+    </div>
+  </div>
   <div id="relationModal" class="relation-modal" aria-hidden="true">
     <div id="relationCard" class="relation-card">
       <div class="relation-card-head">
@@ -576,9 +597,25 @@ function analyzeNumber(n){if(!Number.isInteger(n)||n<1)return null;const f=facto
 const supers={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'};const sup=n=>String(n).split('').map(c=>supers[c]||c).join('');const fmtFactors=f=>f.length?f.map(([p,e])=>e>1?`${p}${sup(e)}`:`${p}`).join(' × '):'1';
 
 /* ---------- corpus / central reference bank ---------- */
-const CORPUS=[
+const BUILTIN_CORPUS=[
  [13,'אחד','Hebrew Regular'],[14,'דוד','Hebrew Reduced / Regular'],[18,'חי','Hebrew Regular'],[21,'אהיה','Hebrew Regular'],[24,'דויד','Hebrew Regular'],[26,'יהוה','Hebrew Regular'],[27,'יהוה עם הכולל','Hebrew Kolel'],[28,'רוב','Hebrew Ordinal · Composite #18'],[32,'לב','Hebrew Regular'],[37,'יחידה','Hebrew Regular / Ordinal'],[38,'Mike','English Simple'],[41,'אלי / אלהה / אלהימ','Hebrew Regular / Ordinal'],[42,'φ(אלהים=86)','Totient'],[43,'Amit','English Simple'],[52,'משיח / מייק','Hebrew Ordinal'],[55,'Rov / הכל','English Simple / Hebrew Regular'],[58,'Atbash(עמית) / מחיקת יהוה','Research'],[59,'בלייז','Hebrew Regular'],[61,'אני','Hebrew Regular'],[64,'אוזן / ΑΛΗΘΕΙΑ','Hebrew / Greek'],[65,'אדני','Hebrew Regular'],[72,'יהוה באחוריים','Hebrew Achorayim'],[74,'Mike','English Regular'],[77,'מזל / בלייז חי','Hebrew Regular'],[82,'בראשית א:א / רוב','Hebrew Reduced / AIQ BKR'],[86,'אלהים / אלהימ','Hebrew Regular'],[88,'מיכאל בלייז','Hebrew Ordinal'],[96,'צמצום אפס ראשון של 888 / φ(306)','Research / Totient'],[101,'מיכאל','Hebrew Regular'],[104,'יהוה×4','Hebrew Regular'],[111,'Amit M. Rov','English Simple'],[128,'אני בינה','Hebrew Regular'],[130,'יהוה×5','Hebrew Regular'],[136,'Amit Mike Rov / קול','English Simple / Hebrew Regular'],[140,'Amit','Agrippa'],[141,'עמית מייק רוב','Hebrew Ordinal'],[160,'מייק / מיכאל בלייז','Hebrew Regular'],[172,'ΡΟΒ','Greek Isopsephy'],[177,'עמית מיכאל בלייז רוב','Hebrew Ordinal'],[208,'רוב','Hebrew Regular'],[216,'φ(666)','Totient'],[232,'ΑΜΙΘ ΡΟΒ / יהי אור','Greek / Hebrew'],[258,'Amit / אלהימ','English Sumerian / Equivalence'],[267,'רוב בלייז / מרכבה','Hebrew Regular'],[288,'φ(888) / רפ״ח','Totient'],[314,'שדי / אלהימ','Hebrew Regular / Ratzo'],[316,'ישו / אלהימ','Hebrew Regular / Positional'],[344,'ΟΔΟΣ','Greek Isopsephy'],[345,'משה / השם','Hebrew Regular'],[358,'משיח','Hebrew Regular'],[361,'הנוצרי','Hebrew Regular'],[368,'מייק רוב / משיחי','Hebrew Regular'],[370,'10×37 / 37² Collapse · second base-1000 block sum','Research · Number'],[384,'משיח יהוה','Hebrew Regular'],[385,'שכינה / רוב בלייז','Hebrew Regular / Positional'],[441,'אמת / אהיה²','Hebrew Regular / Number'],[456,'משה','Milui Mayim · Composite #368'],[518,'מייק משיח / דוד×יחידה','Hebrew Regular / Number'],[520,'עמית / אהיה שלחני אליכם / יהוה באלב״ם','Hebrew Regular / ALBaM'],[528,'BLAZE / מייק רוב מייק','Agrippa / Hebrew Regular'],[543,'אהיה אשר אהיה','Hebrew Regular'],[576,'רוב מייק רוב','Hebrew Regular'],[636,'מילוי עמית','Standard Milui'],[640,'שמש / φ(935)','Hebrew Regular / Totient'],[656,'ΜΑΙΧΕ / ΜΕΣΣΙΑΣ','Greek Isopsephy'],[666,'Amit M. Rov','English Sumerian'],[768,'עמית מ. רוב','Hebrew Regular'],[800,'ΚΥΡΙΟΣ','Greek Isopsephy'],[815,'ΖΩΗ','Greek Isopsephy'],[816,'Amit Mike Rov','English Sumerian'],[874,'Amit Mike Rov','English Regular'],[888,'עמית מייק רוב / עמית משיחי / ΙΗΣΟΥΣ','Hebrew / Greek'],[935,'מילוי רוב','Standard Milui'],[960,'φ(ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ)','Totient'],[1008,'פתח עמית','Hebrew Regular'],[1024,'Amit Mike Rov / מיכאלבלייז','Agrippa / Achorayim'],[1072,'1073−1 / 1000+72 · 37² Collapse factor','Research · Number'],[1073,'29×37 / 1000+73','Research · Number'],[1152,'φ(2368)','Totient'],[1177,'תיקון תורה','Hebrew Regular'],[1316,'אלהימ','Addition & Subtraction'],[1369,'37² / בלייז רוב חי / 37² Collapse · first base-1000 block sum','Number / Ratzo VaShov / Research'],[1408,'ΣΩΤΗΡ','Greek Isopsephy'],[1480,'ΧΡΙΣΤΟΣ','Greek Isopsephy'],[1760,'מיכאלבלייז','Addition & Subtraction'],[1776,'2×888','Number'],[1877,'מילוי עמית מייק רוב','Standard Milui · Prime #288'],[1888,'אני תיקון תורה / מיכאלבלייז','Final / Ratzo'],[1998,'עמית מיכאל בלייז','Ratzo'],[2368,'ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ','Greek Isopsephy'],[2701,'בראשית א:א','Hebrew Regular'],[3168,'ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ','Greek Isopsephy'],[2895472,'2701×1072 / 37² Collapse source','Research · Number']
-].map(([value,label,method])=>({value,label,method}));
+].map(([value,label,method])=>({value,label,method,classification:'canonical'}));
+let CORPUS=[...BUILTIN_CORPUS];
+let SHARED_CORPUS_META={source:'built-in fallback',updated_at:null};
+async function syncSharedCorpus(){
+ try{
+  const res=await fetch('corpus-data.json?v='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const data=await res.json(),entries=Array.isArray(data)?data:data.entries;
+  if(!Array.isArray(entries)||!entries.length)throw new Error('empty corpus');
+  const clean=entries.filter(x=>Number.isFinite(Number(x.value))&&String(x.label||'').trim()).map(x=>({value:Number(x.value),label:String(x.label),method:String(x.method||''),classification:String(x.classification||'canonical')}));
+  if(!clean.length)throw new Error('no valid entries');
+  CORPUS=clean;SHARED_CORPUS_META={source:data.source||'corpus-data.json',updated_at:data.updated_at||null,schema:data.schema||null};
+  window.__gematriaSharedCorpus={meta:SHARED_CORPUS_META,entries:CORPUS};
+  if(document.getElementById('q'))renderAll();
+  if(document.getElementById('savedModal')&&document.getElementById('savedModal').classList.contains('open'))renderSavedManager();
+ }catch(e){console.warn('Shared corpus fallback:',e)}
+}
 function corpusHits(n){return CORPUS.filter(x=>x.value===n)}
 function nearestCorpus(n,limit=3){return CORPUS.filter(x=>x.value!==n).slice().sort((a,b)=>Math.abs(a.value-n)-Math.abs(b.value-n)||a.value-b.value).slice(0,limit)}
 
@@ -621,6 +658,37 @@ function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(
 /* ---------- state ---------- */
 const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
+
+const SAVED_STORE_KEY='gematria2026.saved.v1';
+let SAVED_ITEMS=[],savedTab='match';
+function loadSavedItems(){try{const x=JSON.parse(localStorage.getItem(SAVED_STORE_KEY)||'[]');SAVED_ITEMS=Array.isArray(x)?x:[]}catch(_){SAVED_ITEMS=[]}}
+function persistSavedItems(){try{localStorage.setItem(SAVED_STORE_KEY,JSON.stringify(SAVED_ITEMS))}catch(e){console.warn(e)}}
+function savedSnapshot(text){const data=calculateAll(text);return data.results.map(r=>({methodKey:r.method.key,methodName:r.method.name,total:r.total}))}
+function saveCurrentQuery(){
+ const text=document.getElementById('q').value.trim();if(!text){toast('אין מה לשמור');return}
+ const key=detectScript(text)+'|'+normText(text),now=new Date().toISOString();
+ let item=SAVED_ITEMS.find(x=>x.key===key);
+ if(item){item.text=text;item.updatedAt=now;item.snapshot=savedSnapshot(text)}
+ else{item={id:'s'+Date.now().toString(36),key,text,script:detectScript(text),kind:'match',corpusName:'כללי',createdAt:now,updatedAt:now,snapshot:savedSnapshot(text)};SAVED_ITEMS.unshift(item)}
+ persistSavedItems();toast('נשמר בהתאמות');if(document.getElementById('savedModal')&&document.getElementById('savedModal').classList.contains('open'))renderSavedManager()
+}
+function openSavedManager(tab='match'){savedTab=tab;const m=document.getElementById('savedModal');m.classList.add('open');m.setAttribute('aria-hidden','false');renderSavedManager()}
+function closeSavedManager(){const m=document.getElementById('savedModal');m.classList.remove('open');m.setAttribute('aria-hidden','true')}
+function savedItem(id){return SAVED_ITEMS.find(x=>x.id===id)}
+function renderSavedManager(){
+ document.querySelectorAll('#savedTabs [data-saved-tab]').forEach(b=>b.classList.toggle('active',b.dataset.savedTab===savedTab));
+ const shared=document.getElementById('savedSharedMeta');if(shared)shared.textContent='קורפוס משותף: '+CORPUS.length+' עוגנים'+(SHARED_CORPUS_META.updated_at?' · '+SHARED_CORPUS_META.updated_at:'');
+ const rows=SAVED_ITEMS.filter(x=>x.kind===savedTab),list=document.getElementById('savedList');
+ if(!rows.length){list.innerHTML='<div class="saved-empty">'+(savedTab==='match'?'אין התאמות שמורות עדיין':'אין פריטים בקורפוסים המקומיים עדיין')+'</div>';return}
+ list.innerHTML=rows.map(x=>'<div class="saved-row"><div><div class="saved-text">'+esc(x.text)+'</div><div class="saved-meta">'+(x.kind==='corpus'?'קורפוס: '+esc(x.corpusName||'כללי'):'התאמה · ברירת מחדל')+' · '+esc(x.script||'')+'</div></div><div class="saved-actions"><button data-saved-open="'+esc(x.id)+'">פתח</button>'+(x.kind==='match'?'<button data-saved-promote="'+esc(x.id)+'">→ קורפוס</button>':'<button data-saved-move="'+esc(x.id)+'">⇄ העבר</button><button data-saved-demote="'+esc(x.id)+'">← התאמות</button>')+'<button data-saved-delete="'+esc(x.id)+'">✕</button></div></div>').join('')
+}
+function jumpSaved(id){const x=savedItem(id);if(!x)return;document.getElementById('q').value=x.text;document.getElementById('compareA').value=x.text;document.getElementById('repeatPhrase').value=x.text;closeSavedManager();renderAll()}
+function promoteSaved(id){const x=savedItem(id);if(!x)return;const name=prompt('שם הקורפוס',x.corpusName||'כללי');if(name===null)return;x.kind='corpus';x.corpusName=name.trim()||'כללי';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
+function moveSavedCorpus(id){const x=savedItem(id);if(!x)return;const name=prompt('העבר לקורפוס',x.corpusName||'כללי');if(name===null)return;x.corpusName=name.trim()||'כללי';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
+function demoteSaved(id){const x=savedItem(id);if(!x)return;x.kind='match';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
+function deleteSaved(id){SAVED_ITEMS=SAVED_ITEMS.filter(x=>x.id!==id);persistSavedItems();renderSavedManager()}
+function corpusSyncPayload(){return {schema:'gematria2026-local-corpus-sync-v1',generated_at:new Date().toISOString(),shared_corpus_version:SHARED_CORPUS_META.updated_at||null,items:SAVED_ITEMS.filter(x=>x.kind==='corpus').map(x=>({id:x.id,text:x.text,script:x.script,corpus:x.corpusName||'כללי',snapshot:x.snapshot||[]}))}}
+
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
 function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinal']:['ordinal','pythagorean','regular'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
@@ -921,9 +989,9 @@ function renderRepeat(){
  const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
  const grid=document.getElementById('repeatGrid'),prev=document.getElementById('repeatPrev'),next=document.getElementById('repeatNext'),page=document.getElementById('repeatPage'),note=document.getElementById('repeatNote');
  const matrixBtn=document.getElementById('repeatMatrixToggle'),doubleBtn=document.getElementById('repeatMatrixDouble'),saveBtn=document.getElementById('saveRepeatMatrix');
- matrixBtn.classList.toggle('active',state.repeatMatrixView);
- doubleBtn.hidden=!state.repeatMatrixView;
- saveBtn.hidden=!state.repeatMatrixView;
+ matrixBtn.classList.remove('active');
+ doubleBtn.hidden=false;
+ saveBtn.hidden=false;
  doubleBtn.title=`הכפל את כל דרגות המטריקס: ×${state.repeatMatrixScale} → ×${state.repeatMatrixScale*2}`;
  sel.disabled=state.repeatMatrixView;
  grid.classList.toggle('matrix-mode',state.repeatMatrixView);
@@ -957,37 +1025,45 @@ function renderRepeat(){
  page.textContent=`${state.repeatPage+1}/${pages}`;prev.disabled=state.repeatPage===0;next.disabled=state.repeatPage>=pages-1;note.textContent=`${m.name} · ${phrase}`
 }
 
-async function saveRepeatMatrixImage(){
+
+async function saveRepeatMatrixImage(hitOnly=false){
  const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value;
  const script=detectScript(phrase),methods=METHODS[script];
  const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
- const cols=Array.from({length:max},(_,i)=>(i+1)*state.repeatMatrixScale);
- const pad=28,titleH=104,headH=54,rowH=54,methodW=238,cellW=102;
- const W=pad*2+methodW+cellW*cols.length,H=pad*2+titleH+headH+rowH*methods.length;
+ const baseCols=Array.from({length:max},(_,i)=>(i+1)*state.repeatMatrixScale);
+ const rows=methods.map(m=>({m,cells:baseCols.map(n=>{const r=makeRepeatSelection(phrase,script,m,n),hits=corpusHits(r.total);return {n,r,hits}})}));
+ const activeRows=hitOnly?rows.filter(row=>row.cells.some(c=>c.hits.length)):rows;
+ const cols=hitOnly?baseCols.filter(n=>activeRows.some(row=>row.cells.some(c=>c.n===n&&c.hits.length))):baseCols;
+ if(hitOnly&&!activeRows.length){toast('אין פגיעות קורפוס בטווח הזה');return false}
+ const pad=28,titleH=116,headH=54,rowH=60,methodW=250,cellW=116;
+ const W=pad*2+methodW+cellW*cols.length,H=pad*2+titleH+headH+rowH*activeRows.length;
  try{
-  const c=document.createElement('canvas');c.width=W;c.height=H;
-  const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');
+  const c=document.createElement('canvas');c.width=W;c.height=H;const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');
   ctx.fillStyle='#081018';ctx.fillRect(0,0,W,H);
   ctx.fillStyle='#f4f7fb';ctx.font='900 30px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(phrase,W-pad,pad+34,W-pad*2);
-  ctx.fillStyle='#8e9aa8';ctx.font='600 14px system-ui';ctx.fillText(`מטריקס חזרות · ${methods.length} שיטות · דרגה ×${state.repeatMatrixScale}`,W-pad,pad+62,W-pad*2);
-  const x0=pad,y0=pad+titleH;
-  ctx.strokeStyle='#33404d';ctx.lineWidth=1;
-  ctx.fillStyle='#121b25';ctx.fillRect(x0,y0,methodW,headH);
+  ctx.fillStyle=hitOnly?'#ffe2a0':'#8e9aa8';ctx.font='700 14px system-ui';ctx.fillText(hitOnly?('📸✓ מטריקס התאמות · פגיעות קורפוס · '+activeRows.length+' שיטות'):('📸 מטריקס חזרות מלא · '+activeRows.length+' שיטות · דרגה ×'+state.repeatMatrixScale),W-pad,pad+66,W-pad*2);
+  ctx.fillStyle='#6f7d8b';ctx.font='600 11px system-ui';ctx.fillText('עמודות: '+cols.map(n=>'×'+n).join('  '),W-pad,pad+88,W-pad*2);
+  const x0=pad,y0=pad+titleH;ctx.strokeStyle='#33404d';ctx.lineWidth=1;
+  ctx.fillStyle='#121b25';ctx.fillRect(x0,y0,methodW,headH);ctx.strokeRect(x0,y0,methodW,headH);
   ctx.fillStyle='#ffe2a0';ctx.font='800 14px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText('שיטה',x0+methodW-12,y0+33,methodW-24);
   cols.forEach((n,j)=>{const x=x0+methodW+j*cellW;ctx.fillStyle='#121b25';ctx.fillRect(x,y0,cellW,headH);ctx.strokeRect(x,y0,cellW,headH);ctx.fillStyle='#ffe2a0';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText('×'+n,x+cellW/2,y0+33)});
-  methods.forEach((m,i)=>{
-   const y=y0+headH+i*rowH,short=String(m.name||'').split(' / ')[0].trim();
+  activeRows.forEach((row,i)=>{
+   const y=y0+headH+i*rowH,short=String(row.m.name||'').split(' / ')[0].trim();
    ctx.fillStyle='#0f1822';ctx.fillRect(x0,y,methodW,rowH);ctx.strokeRect(x0,y,methodW,rowH);
-   ctx.fillStyle='#dce6f0';ctx.font='700 12px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(short,x0+methodW-10,y+31,methodW-20);
+   ctx.fillStyle='#dce6f0';ctx.font='700 12px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(short,x0+methodW-10,y+34,methodW-20);
    cols.forEach((n,j)=>{
-    const x=x0+methodW+j*cellW,r=makeRepeatSelection(phrase,script,m,n),hit=corpusHits(r.total)[0];
-    ctx.fillStyle='#0b121a';ctx.fillRect(x,y,cellW,rowH);ctx.strokeRect(x,y,cellW,rowH);
-    ctx.fillStyle='#f2f6fa';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText(fmt(r.total),x+cellW/2,y+24,cellW-10);
-    if(hit){ctx.fillStyle='#d8ad55';ctx.font='600 8px system-ui';ctx.fillText(String(hit.label).slice(0,18),x+cellW/2,y+40,cellW-8)}
+    const x=x0+methodW+j*cellW,cell=row.cells.find(c=>c.n===n),hit=cell&&cell.hits&&cell.hits[0];
+    ctx.fillStyle=hitOnly?(hit?'#17180f':'#0a0f14'):'#0b121a';ctx.fillRect(x,y,cellW,rowH);ctx.strokeRect(x,y,cellW,rowH);
+    if(hitOnly&&!hit)return;
+    if(hit){
+      ctx.fillStyle='#b9f4c8';ctx.font='900 14px system-ui';ctx.direction='ltr';ctx.textAlign='left';ctx.fillText('✓',x+8,y+20);
+    }
+    ctx.fillStyle=hit?'#ffe2a0':'#f2f6fa';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText(fmt(cell.r.total),x+cellW/2,y+27,cellW-22);
+    if(hit){ctx.fillStyle='#d8ad55';ctx.font='600 8px system-ui';ctx.direction='rtl';ctx.fillText(String(hit.label).slice(0,20),x+cellW/2,y+46,cellW-8)}
    })
   });
   const blob=await new Promise(resolve=>c.toBlob(resolve,'image/png',1));if(!blob)throw new Error('PNG blob failed');
-  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(phrase+' - repeat matrix')+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(phrase+(hitOnly?' - matches matrix':' - repeat matrix report'))+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true
  }catch(e){console.error(e);return false}
 }
 
@@ -1189,6 +1265,21 @@ async function saveSelectedPoster(){
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
 document.getElementById('q').addEventListener('input',()=>{document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
+
+document.getElementById('saveQuery').addEventListener('click',saveCurrentQuery);
+document.getElementById('openSaved').addEventListener('click',()=>openSavedManager('match'));
+document.getElementById('closeSaved').addEventListener('click',closeSavedManager);
+document.getElementById('savedModal').addEventListener('click',e=>{if(e.target.id==='savedModal')closeSavedManager()});
+document.getElementById('savedTabs').addEventListener('click',e=>{const b=e.target.closest('[data-saved-tab]');if(!b)return;savedTab=b.dataset.savedTab;renderSavedManager()});
+document.getElementById('savedList').addEventListener('click',e=>{
+ const o=e.target.closest('[data-saved-open]');if(o){jumpSaved(o.dataset.savedOpen);return}
+ const p=e.target.closest('[data-saved-promote]');if(p){promoteSaved(p.dataset.savedPromote);return}
+ const m=e.target.closest('[data-saved-move]');if(m){moveSavedCorpus(m.dataset.savedMove);return}
+ const d=e.target.closest('[data-saved-demote]');if(d){demoteSaved(d.dataset.savedDemote);return}
+ const x=e.target.closest('[data-saved-delete]');if(x){deleteSaved(x.dataset.savedDelete)}
+});
+document.getElementById('copyCorpusSync').addEventListener('click',async()=>{const ok=await copyText(JSON.stringify(corpusSyncPayload(),null,2));toast(ok?'חבילת הסנכרון הועתקה':'שגיאה בהעתקה')});
+
 document.getElementById('categoryTabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;state.category=b.dataset.cat;state.methodKey=null;state.word=0;renderResults()});
 document.getElementById('methodGrid').addEventListener('click',e=>{const b=e.target.closest('[data-method]');if(!b)return;const key=b.dataset.method;if(!state.selectionTouched)state.selectionTouched=true;const i=state.selectedMethods.indexOf(key);if(i>=0&&state.selectedMethods.length>1){state.selectedMethods.splice(i,1);state.methodKey=state.selectedMethods[state.selectedMethods.length-1]}else if(i<0){state.selectedMethods.push(key);state.methodKey=key}else state.methodKey=key;state.word=0;renderResults();if(state.compareAuto){refreshAutoCompareTarget();renderCompare()}});
 document.getElementById('mobileMethod').addEventListener('change',e=>{state.methodKey=e.target.value;state.selectedMethods=[e.target.value];state.selectionTouched=true;state.word=0;const r=methodByKey(state.methodKey);if(r)state.category=r.method.cat;renderResults();if(state.compareAuto){refreshAutoCompareTarget();renderCompare()}});
@@ -1208,15 +1299,15 @@ document.getElementById('numSource').addEventListener('change',e=>{state.numKey=
 document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;if(id==='repeatPhrase')state.repeatMatrixScale=1;renderRepeat()}));
-document.getElementById('repeatMatrixToggle').addEventListener('click',()=>{state.repeatMatrixView=!state.repeatMatrixView;state.repeatPage=0;renderRepeat()});
-document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;renderRepeat()});
-document.getElementById('saveRepeatMatrix').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס')});
+document.getElementById('repeatMatrixToggle').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage(false);toast(ok?'דוח המטריקס הופק':'שגיאה בהפקת הדוח')});
+document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;renderRepeat();toast('דרגת דוח המטריקס ×'+state.repeatMatrixScale)});
+document.getElementById('saveRepeatMatrix').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage(true);if(ok)toast('מטריקס ההתאמות הופק')});
 document.getElementById('repeatGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-repeat-n]');if(!cell)return;const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),methods=METHODS[script],methodKey=cell.dataset.repeatMethod||document.getElementById('repeatMethod').value,m=methods.find(x=>x.key===methodKey)||methods[0],n=Number(cell.dataset.repeatN),r=makeRepeatSelection(phrase,script,m,n),i=state.derivedSelections.findIndex(x=>x.selectionKey===r.selectionKey);if(i>=0){state.derivedSelections.splice(i,1);toast('הוסר ממרכז ההשוואה')}else{state.derivedSelections.push(r);state.selectionTouched=true;toast('נוסף להשוואה: '+m.name+' ×'+n)}renderRepeat();renderResults()});
 document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
 document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllBroken').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsBrokenText());toast(ok?'הפתגם + כל התוצאות הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllMath').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsRichText());toast(ok?'כל השיטות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
-document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}if(state.tab==='repeat'&&state.repeatMatrixView){const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
+document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}if(state.tab==='repeat'){const ok=await saveRepeatMatrixImage(false);toast(ok?'דוח המטריקס הופק':'שגיאה בהפקת הדוח');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
@@ -1285,7 +1376,7 @@ console.assert(compositeIndex(636)===520,'636 composite #520');console.assert(pr
 console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze Achorayim 1024');
 console.assert(T('מיכאל בלייז','he','regular')===160,'Michael Blaze regular 160');
 console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');console.assert(T('אלהימ','he','positional')===316,'Elohim open positional 316');console.assert(T('אלהימ','he','ratzo')===314,'Elohim open ratzo 314');console.assert(T('יהוה','he','albam')===520,'YHWH ALBaM 520');console.assert(T('יהוה','he','kolel')===27,'YHWH Kolel 27');console.assert(T('יהוה','he','achorayim')===72,'YHWH Achorayim 72');
-renderAll();
+loadSavedItems();renderAll();syncSharedCorpus();
 </script>
 </body>
 </html>
