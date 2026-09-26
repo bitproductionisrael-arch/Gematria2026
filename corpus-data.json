@@ -1869,6 +1869,48 @@
       "label": "×64 Rov",
       "method": "English ALBaM analogue · 64×16",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 65,
+      "label": "עמית ÷ 8 = אדני",
+      "method": "520 ÷ 8 = 65",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 20,
+      "label": "מייק ÷ 8 = י״י",
+      "method": "160 ÷ 8 = 20",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 26,
+      "label": "רוב ÷ 8 = יהוה",
+      "method": "208 ÷ 8 = 26",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 111,
+      "label": "אדני י״י יהוה",
+      "method": "65 + 20 + 26 = 111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 111,
+      "label": "אלף",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 1000,
+      "label": "אלף",
+      "method": "Semantic value: thousand",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 1000,
+      "label": "Amit M. Rov",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
     }
   ]
 }
