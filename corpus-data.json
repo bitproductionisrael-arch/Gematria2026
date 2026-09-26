@@ -1587,6 +1587,18 @@
       "label": "משולש א",
       "method": "Addition & Subtraction",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 13520,
+      "label": "יהוה×עמית = אדני×רוב",
+      "method": "26×520 = 65×208 = 80×13²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 13,
+      "label": "אחד / common factor",
+      "method": "יהוה=2×13; אדני=5×13; עמית=40×13; רוב=16×13",
+      "classification": "FOUNDATION"
     }
   ]
 }
