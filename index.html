@@ -413,8 +413,8 @@ GR_ORDER.forEach((L,i)=>{GR_VAL[L]=tiered(i);GR_ORD[L]=i+1;GR_VAL[L.toUpperCase(
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
 const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
 const EN_PERATI_SIMPLE={},EN_PERATI={},EN_KIDMI={},EN_ZERO_STEP={};let _enkid=0;EN_ORDER.forEach(L=>{EN_PERATI_SIMPLE[L]=EN_ORD[L]**2;EN_PERATI_SIMPLE[L.toUpperCase()]=EN_PERATI_SIMPLE[L];EN_PERATI[L]=EN_REG[L]**2;EN_PERATI[L.toUpperCase()]=EN_PERATI[L];_enkid+=EN_REG[L];EN_KIDMI[L]=_enkid;EN_KIDMI[L.toUpperCase()]=_enkid;const v=EN_REG[L];EN_ZERO_STEP[L]=(v>=10&&v%10===0)?v/10:v;EN_ZERO_STEP[L.toUpperCase()]=EN_ZERO_STEP[L]});
-const EN_ATBASH={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LETTER={},EN_AVGAD={},EN_AVGAD_LETTER={};
-EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
+const EN_ATBASH={},EN_ATBASH_ORD={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LETTER={},EN_AVGAD={},EN_AVGAD_LETTER={};
+EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_ATBASH_ORD[L]=EN_ORD[mirror];EN_ATBASH_ORD[a]=EN_ORD[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
 for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;EN_ALBAM_LETTER[a.toUpperCase()]=b.toUpperCase();EN_ALBAM_LETTER[b]=a;EN_ALBAM_LETTER[b.toUpperCase()]=a.toUpperCase();EN_ALBAM[a]=EN_REG[b];EN_ALBAM[a.toUpperCase()]=EN_REG[b];EN_ALBAM[b]=EN_REG[a];EN_ALBAM[b.toUpperCase()]=EN_REG[a]}
 
 const LATIN_MILUI_USER_V0={
@@ -465,12 +465,13 @@ const METHODS={
  ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
-  {key:'regular',cat:'base',name:'English Regular / Tiered',map:EN_REG},
+  {key:'regular',cat:'base',name:'English Isopsephy',map:EN_REG},
   {key:'pythagorean',cat:'base',name:'English Pythagorean',map:EN_RED},
   {key:'wordReduced',cat:'base',name:'English Word Reduced',map:EN_RED,fold:'word'},
   {key:'sumerian',cat:'base',name:'English Gematria',map:EN_SUM},
   {key:'reverse',cat:'base',name:'English Reverse Ordinal',map:EN_REV},
-  {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular / Research',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
+  {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
+  {key:'atbashOrdinal',cat:'cipher',name:'English Atbash Ordinal',map:EN_ATBASH_ORD,sub:EN_ATBASH_LETTER,research:true},
   {key:'albamRegular',cat:'cipher',name:'English ALBaM analogue / ROT13 → Regular / Research',map:EN_ALBAM,sub:EN_ALBAM_LETTER,research:true},
   {key:'avgadRegular',cat:'cipher',name:'English AVGaD analogue / +1 → Regular / Research',map:EN_AVGAD,sub:EN_AVGAD_LETTER,research:true},
   {key:'kidmiEnglish',cat:'cipher',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
@@ -1016,7 +1017,66 @@ function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
 function resultDisplayName(r){return r?.displayName||r?.method?.name||''}
 function methodAliasNote(r){return r?.method?.aliasNote||''}
 function selectedResultByKey(key){return selectedResults().find(r=>resultSelectionKey(r)===key)}
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button data-copy-selected-broken title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="copy-method" data-copy-broken-method="${esc(sk)}" title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}${methodAliasNote(r)?`<div class="tiny" style="margin-top:3px;opacity:.72">${esc(methodAliasNote(r))}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')}
+function canonicalIdentitySeriesText(q){
+ const n=normText(q);
+ if(n!=='rov'&&n!=='amitmikerov')return'';
+ return [
+'Rov = 55 (English Simple)',
+'R=18 o=15 v=22',
+'',
+'Rov = 55 (English One-step Zero)',
+'R=9 o=6 v=40',
+'',
+'Rov = 550 (English Isopsephy)',
+'R=90 o=60 v=400',
+'',
+'Rov = 330 (English Sumerian)',
+'R=108 o=90 v=132',
+'',
+'Rov = 44 (English Atbash → Regular)',
+'R→I=9 o→l=30 v→e=5',
+'',
+'Rov = 26 (English Atbash Ordinal)',
+'R=9 o=12 v=5',
+'',
+'Amit Mike Rov = 55 (English Pythagorean)',
+'',
+'Amit Mike Rov = 136 (English Simple)',
+'',
+'Amit Mike Rov = 816 (English Gematria)',
+'',
+'Amit Mike Rov = 1,024 (Jewish Gematria)',
+'',
+'Amit Mike Rov = 888 (Jewish Δ Simple)',
+'1,024 − 136 = 888',
+'1024 - 816 = 208',
+'',
+'Amit Mike Rov = 2080 (Simple² Squared)',
+'Amit: 1²+13²+9²+20² = 651',
+'Mike: 13²+9²+11²+5² = 396',
+'Rov: 18²+15²+22² = 1,033',
+'651+396+1,033 = 2,080',
+'',
+'Common:',
+'עמית, מייק, רוב (LCM) = 2080',
+'LCM(520,160,208) = 2080',
+'',
+'×8 Rov = 208 (English Reverse Ordinal)',
+'R=9 o=12 v=5 = 26',
+'',
+'×20 Rov = 520 (English Reverse Ordinal)',
+'R=9 o=12 v=5 = 26',
+'',
+'×64 Rov = 1,024',
+'(English ALBaM analogue)',
+'R→E=5 o→b=2 v→i=9'
+ ].join('\n');
+}
+function canonicalIdentitySeriesHtml(q){
+ const t=canonicalIdentitySeriesText(q);if(!t)return'';
+ return '<div class="box" style="grid-column:1/-1"><h3>Canonical Series</h3><pre style="margin:0;white-space:pre-wrap;direction:ltr;text-align:left;font:600 14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace">'+esc(t)+'</pre></div>';
+}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button data-copy-selected-broken title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+canonicalIdentitySeriesHtml(q)+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="copy-method" data-copy-broken-method="${esc(sk)}" title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}${methodAliasNote(r)?`<div class="tiny" style="margin-top:3px;opacity:.72">${esc(methodAliasNote(r))}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')}
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}${r.method.aliasNote?`<div class="tiny" style="margin-top:2px;opacity:.7">${esc(r.method.aliasNote)}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
  const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.aliasNote?r.method.aliasNote:(r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'');document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
@@ -1463,6 +1523,7 @@ console.assert(T('תור','he','reduced')===12,'תור traditional Reduced = 12 
 console.assert(T('בראשית ברא אלהים את השמים ואת הארץ','he','miluiTalmudic')===5476,'Talmudic Milui Genesis 1:1 = 5476 = 74²');
 console.assert(!syncRelevantMethods('תור',METHODS.he).some(m=>m.key==='final'||m.key==='smallFinals'),'No final-letter comparison methods without finals');
 console.assert(syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='final')&&syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='smallFinals'),'Final-letter methods active when finals exist');
+console.assert(T('Rov','en','atbashOrdinal')===26,'Rov English Atbash Ordinal 26');
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
 console.assert(T('Amit Mike Rov','en','sumerian')===816,'English Gematria 816');
 console.assert(T('Amit Mike Rov','en','regular')===874,'English Regular 874');
