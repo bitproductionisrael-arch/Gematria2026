@@ -1731,6 +1731,36 @@
       "label": "פרמוטציות של 520",
       "method": "520+502+250+205+052+025 = 222×7",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 222,
+      "label": "עמית / מייק / רוב · אינווריאנט פרמוטציות",
+      "method": "520 perms÷7 = 160 perms÷7 = 208 perms÷10 = 222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "סכום ממוצעי פרמוטציות של 520,160,208",
+      "method": "259+259+370 = 37×(7+7+10) = 24×37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 5328,
+      "label": "סכום כל 18 הפרמוטציות של 520,160,208",
+      "method": "6×888 = 24×222 = 144×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 24,
+      "label": "סכום ספרות 520+160+208",
+      "method": "7+7+10 = 24",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 111,
+      "label": "סכום האינווריאנטים הממוצעים",
+      "method": "37+37+37 = 111",
+      "classification": "BRIDGE"
     }
   ]
 }
