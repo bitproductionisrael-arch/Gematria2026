@@ -1527,6 +1527,66 @@
       "label": "×2 יחד",
       "method": "Perati",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 676,
+      "label": "חתימת יוצר המשולש / משולש = עמיתי",
+      "method": "Regular(משולש) = Regular(עין מים יוד תיו יוד) = 26²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 676,
+      "label": "משולש מתוך תיבת עמית-מייק-רוב",
+      "method": "520×208÷160 = 676 = 26²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "משולש",
+      "method": "Hebrew Ordinal = Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 74,
+      "label": "משולש א",
+      "method": "Hebrew Ordinal = Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 208,
+      "label": "משולש א",
+      "method": "Latin Milui v0 → English Simple · רוב",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 73,
+      "label": "משולש א",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
+      "label": "משולש א",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1778,
+      "label": "משולש",
+      "method": "Achorayim",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1779,
+      "label": "משולש א",
+      "method": "Achorayim",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 4058,
+      "label": "משולש א",
+      "method": "Addition & Subtraction",
+      "classification": "RESEARCH"
     }
   ]
 }
