@@ -1215,6 +1215,114 @@
       "label": "ויקרא",
       "method": "Hebrew Regular · central Torah book (3 of 5)",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 248,
+      "label": "במדבר",
+      "method": "Hebrew Regular · אברהם",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 14,
+      "label": "במדבר",
+      "method": "Hebrew Reduced · דוד",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 41,
+      "label": "במדבר",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 74,
+      "label": "במדבר",
+      "method": "Reverse Ordinal · 2×37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 361,
+      "label": "במדבר",
+      "method": "AVGaD · 19²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 163,
+      "label": "במדבר",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "במדבר",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 386,
+      "label": "במדבר",
+      "method": "Achorayim · ישוע Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 19,
+      "label": "איוב",
+      "method": "Hebrew Regular = Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "איוב",
+      "method": "Reverse Ordinal · 4×23−19",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 10,
+      "label": "איוב",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 141,
+      "label": "איוב",
+      "method": "Perati Ordinal · 1²+10²+6²+2²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 135,
+      "label": "איוב",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 77,
+      "label": "איוב",
+      "method": "Ratzo Vashov",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 28,
+      "label": "ספר משה",
+      "method": "Hebrew Reduced · T7",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 91,
+      "label": "ספר משה",
+      "method": "Hebrew Ordinal · 7×13 = T13",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "ספר משה",
+      "method": "Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 10,
+      "label": "ספר משה",
+      "method": "Word Reduced · T4",
+      "classification": "BRIDGE"
     }
   ]
 }
