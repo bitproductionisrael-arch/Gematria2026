@@ -913,56 +913,67 @@ function miluiResultExpansion(r){
  if(!r?.milui||!r.words?.length)return'';
  return r.words.map(w=>w.parts.map(p=>p.name).join(' ')).join(' | ')
 }
-function magnetTokenText(r,w){
+function baseLetterValueText(r,w){
  const m=r.method;
+ if(r?.milui){
+  return (w.parts||[]).map(p=>p.letter+'→'+p.name+'='+fmt(p.value)).join(' ')
+ }
+ if(!w?.toks?.length)return'';
  if(m.perati||m.key==='perati'){
   return w.toks.map((t,i)=>{const base=peratiBaseValue(t);return t.label+'²=('+fmt(base)+'²='+fmt(w.baseVals[i])+')'}).join(' ')
- }
- if(m.ratzo||m.key==='ratzo'){
-  return ratzoAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
- }
- if(isBuildingMethod(m)){
-  const ms=buildingMilestoneText(w);
-  return buildingAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))+(ms?' | '+ms:'')
- }
- if(m.transform){
-  return w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
- }
- if(m.fold==='word'){
-  const base=w.toks.map((t,i)=>t.label+'='+fmt(w.baseVals[i])).join(' + ');
-  return base+' → '+fmt(w.folded)
  }
  return w.toks.map((t,i)=>{
   const sub=m.sub&&m.sub[t.base]?(t.label+'→'+m.sub[t.base]):t.label;
   return sub+'='+fmt(w.baseVals[i])
- }).join(' + ')
+ }).join(' ')
+}
+function magnetTokenText(r,w){
+ const m=r.method,letters=baseLetterValueText(r,w);
+ if(r?.milui)return letters;
+ if(m.ratzo||m.key==='ratzo'){
+  return letters+'\nרצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
+ }
+ if(isBuildingMethod(m)){
+  const ms=buildingMilestoneText(w);
+  return letters+'\nבניין / Building: '+buildingAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))+(ms?' | '+ms:'')
+ }
+ if(m.transform){
+  return letters+'\n'+m.transformName+': '+w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
+ }
+ if(m.fold==='word'){
+  return letters+' → '+fmt(w.folded)
+ }
+ return letters
 }
 function magnetBreakdown(r){
  if(r?.deltaMeta)return `${r.deltaMeta.leftValue} − ${r.deltaMeta.rightValue} = ${r.total}`;
  if(r?.cycleBkr)return `[${r.cycleVectors.map(v=>v.join('|')).join(' → ')}] · ${r.cycleTotals.join(' → ')} → ${r.closureValue} | Σ3=${r.total}=111×${r.chamberSum}`;
- if(r?.milui)return miluiResultExpansion(r);
  if(!r?.words?.length)return'';
  const multi=r.words.length>1;
- return r.words.map(w=>{
+ let out=r.words.map(w=>{
   const expr=magnetTokenText(r,w);
-  return multi?(w.raw+' ['+expr+']'):expr
- }).join(' + ')
+  return multi?(w.raw+': '+expr):expr
+ }).join('\n');
+ if(r.method?.post){
+  const base=r.words.reduce((acc,w)=>acc+(r.method.fold==='word'?Number(w.folded||0):sum(w.vals||w.baseVals||[])),0);
+  out+='\nבסיס='+fmt(base)+' → '+minimalMethodName(r)+'='+fmt(r.total)
+ }
+ return out
 }
 function minimalResultText(r){
  const prefix=magnetQueryPrefix(r);
  if(r?.deltaMeta)return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\nΔ MATCH: Jewish ${fmt(r.deltaMeta.leftValue)} − Simple ${fmt(r.deltaMeta.rightValue)}`;
- if(r?.repeatMeta)return `${prefix} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
- if((r?.method?.perati||r?.method?.key==='perati')&&r.words?.length){
-  const details=r.words.map(w=>magnetTokenText(r,w)).join(' | ');
-  return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${details}`
- }
- if((r?.queryMultiplier||1)>1){
-  const base=Number.isFinite(r.baseTotal)?r.baseTotal:(r.total/(r.queryMultiplier||1));
-  return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${fmt(base)} × ${r.queryMultiplier} = ${fmt(r.total)}`
+ if(r?.repeatMeta){
+  const script=detectScript(r.repeatMeta.phrase),m=(METHODS[script]||[]).find(x=>x.key===r.repeatMeta.methodKey);
+  const baseR=m?calculate(r.repeatMeta.phrase,script,m):null;
+  const breakdown=baseR?magnetBreakdown(baseR):'';
+  return breakdown
+   ? `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${breakdown}`
+   : `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})`
  }
  const breakdown=magnetBreakdown(r);
  return breakdown
-  ? `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${magnetBreakdown(r)}`
+  ? `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\n${breakdown}`
   : `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})`
 }
 function richMagnetText(r){
@@ -995,7 +1006,7 @@ function compactMathSummary(r){
  const hit=corpusHits(r.total)[0];if(hit)bits.push('Corpus: '+hit.label);
  return bits.join(' · ')
 }
-function allResultsPlainText(){return current.results.map(summaryResultText).join('\n')}
+function allResultsPlainText(){return current.results.map(minimalResultText).join('\n\n')}
 function allResultsBrokenText(){return current.results.map(brokenResultText).join('\n')}
 function allResultsRichText(){return current.results.map(compactMathSummary).join('\n')}
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
