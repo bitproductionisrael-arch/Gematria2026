@@ -1779,6 +1779,96 @@
       "label": "מנרמל פרמוטציות רוב",
       "method": "6 permutations × digit-sum(208)=6×10=60",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "Rov",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "Rov",
+      "method": "English One-step Zero",
+      "classification": "canonical"
+    },
+    {
+      "value": 550,
+      "label": "Rov",
+      "method": "English Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 330,
+      "label": "Rov",
+      "method": "English Sumerian",
+      "classification": "canonical"
+    },
+    {
+      "value": 44,
+      "label": "Rov",
+      "method": "English Atbash → Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 26,
+      "label": "Rov",
+      "method": "English Atbash Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "Amit Mike Rov",
+      "method": "English Pythagorean",
+      "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "Amit Mike Rov",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 1024,
+      "label": "Amit Mike Rov",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 888,
+      "label": "Amit Mike Rov",
+      "method": "Jewish Δ Simple · 1024−136",
+      "classification": "canonical"
+    },
+    {
+      "value": 2080,
+      "label": "Amit Mike Rov",
+      "method": "Simple² Squared",
+      "classification": "canonical"
+    },
+    {
+      "value": 2080,
+      "label": "עמית, מייק, רוב",
+      "method": "LCM(520,160,208)",
+      "classification": "canonical"
+    },
+    {
+      "value": 208,
+      "label": "×8 Rov",
+      "method": "English Reverse Ordinal · 8×26",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "×20 Rov",
+      "method": "English Reverse Ordinal · 20×26",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "×64 Rov",
+      "method": "English ALBaM analogue · 64×16",
+      "classification": "FOUNDATION"
     }
   ]
 }
