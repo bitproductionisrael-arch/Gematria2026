@@ -1911,6 +1911,24 @@
       "label": "Amit M. Rov",
       "method": "Jewish Gematria",
       "classification": "canonical"
+    },
+    {
+      "value": 65,
+      "label": "Alphabet",
+      "method": "English Simple = אדני",
+      "classification": "canonical"
+    },
+    {
+      "value": 26,
+      "label": "Alphabet",
+      "method": "Jewish Reduced = יהוה",
+      "classification": "canonical"
+    },
+    {
+      "value": 1260,
+      "label": "Alphabet",
+      "method": "English ALBaM analogue = 1000 + 10×26",
+      "classification": "BRIDGE"
     }
   ]
 }
