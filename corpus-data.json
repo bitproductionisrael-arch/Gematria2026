@@ -831,6 +831,30 @@
       "label": "φ(קומפוזיציה מפתח=646) / φ(888)",
       "method": "Totient",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 656,
+      "label": "עין מים יוד תיו",
+      "method": "Composition family · 16x41",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1320,
+      "label": "Talmudic lift of 636",
+      "method": "2x636+48",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1340,
+      "label": "Talmudic lift of 646",
+      "method": "2x646+48",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1360,
+      "label": "Talmudic lift of 656",
+      "method": "2x656+48 = 10x136 · phi=512",
+      "classification": "BRIDGE"
     }
   ]
 }
