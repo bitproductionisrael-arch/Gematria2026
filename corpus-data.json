@@ -729,6 +729,84 @@
       "label": "8×בראשית",
       "method": "Reverse Ordinal · Perfect number · T31",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 128,
+      "label": "שלושים ושבע / שבעים ושלוש",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 543,
+      "label": "שלושים ושבע / שבעים ושלוש",
+      "method": "Atbash",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 256,
+      "label": "שלושים ושבע שבעים ושלוש",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3700,
+      "label": "שלושים ושבע שבעים ושלוש",
+      "method": "Milui Mayim",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 3680,
+      "label": "שלושים ושבע שבעים ושלוש",
+      "method": "Talmudic Milui",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1024,
+      "label": "×4 שלושים ושבע שבעים ושלוש",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 816,
+      "label": "×4 שלושים ושבע שבעים ושלוש",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "כפול",
+      "method": "Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1208,
+      "label": "×4 שלושים ושבע כפול שבעים ושלוש",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1000,
+      "label": "×4 שלושים ושבע כפול שבעים ושלוש",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 27072,
+      "label": "×8 שלושים ושבע כפול שבעים ושלוש",
+      "method": "Final Letters",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 368,
+      "label": "×16 שלושים ושבע כפול שבעים ושלוש",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 4816,
+      "label": "×16 שלושים ושבע כפול שבעים ושלוש",
+      "method": "Latin Milui v0 Reduced",
+      "classification": "BRIDGE"
     }
   ]
 }
