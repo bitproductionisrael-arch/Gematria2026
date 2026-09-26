@@ -1054,7 +1054,70 @@ function renderRepeat(){
  document.getElementById('repeatPage').textContent=(state.repeatPage+1)+'/'+pages;document.getElementById('repeatPrev').style.display='';document.getElementById('repeatNext').style.display='';document.getElementById('repeatPrev').disabled=state.repeatPage===0;document.getElementById('repeatNext').disabled=state.repeatPage>=pages-1;
  document.getElementById('repeatNote').textContent=(m?m.name:'')+' · '+phrase
 }
+
+async function saveRepeatMatchesPresentation(){
+ const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value;
+ const script=detectScript(phrase),max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
+ const hits=repeatCorpusHits(phrase,script,max);
+ if(!hits.length){toast('אין פגיעות קורפוס בטווח הזה');return false}
+ const groups=[];
+ for(const x of hits){
+  let g=groups.find(y=>y.key===x.m.key);
+  if(!g){g={key:x.m.key,name:String(x.m.name||'').split(' / ')[0].trim(),items:[]};groups.push(g)}
+  g.items.push(x)
+ }
+ const unique=[];
+ for(const x of hits){if(!unique.some(u=>u.value===x.r.total))unique.push({value:x.r.total,label:x.hits[0]?.label||'',count:hits.filter(y=>y.r.total===x.r.total).length})}
+ unique.sort((a,b)=>b.count-a.count||a.value-b.value);
+ const top=unique.slice(0,6);
+ const W=1600,pad=34,headerH=170,topH=170,gap=18,colGap=18,colW=(W-pad*2-colGap)/2;
+ function groupH(g){const perRow=3,rows=Math.ceil(g.items.length/perRow);return 74+rows*102+18}
+ const cols=[[],[]],heights=[0,0];
+ for(const g of groups){const i=heights[0]<=heights[1]?0:1;cols[i].push(g);heights[i]+=groupH(g)+gap}
+ const bodyH=Math.max(...heights),H=pad+headerH+topH+bodyH+90;
+ try{
+  const c=document.createElement('canvas');c.width=W;c.height=H;const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');
+  ctx.fillStyle='#071019';ctx.fillRect(0,0,W,H);
+  const grad=ctx.createLinearGradient(0,0,W,H);grad.addColorStop(0,'#0a1723');grad.addColorStop(.52,'#071019');grad.addColorStop(1,'#10130c');ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#f5f7fb';ctx.font='900 54px system-ui';ctx.textAlign='right';ctx.direction='rtl';ctx.fillText(phrase,W-pad,pad+58,W-pad*2);
+  ctx.fillStyle='#d8ad55';ctx.font='800 22px system-ui';ctx.fillText('✓ תקציר התאמות קורפוס',W-pad,pad+96,W-pad*2);
+  ctx.fillStyle='#8e9aa8';ctx.font='600 15px system-ui';ctx.fillText(hits.length+' פגיעות · '+groups.length+' שיטות · דרגה ×'+state.repeatMatrixScale,W-pad,pad+126,W-pad*2);
+
+  const cardGap=12,cardW=(W-pad*2-cardGap*(top.length-1))/Math.max(1,top.length),ty=pad+headerH;
+  top.forEach((u,i)=>{
+   const x=pad+i*(cardW+cardGap);
+   ctx.fillStyle='#0d1823';ctx.strokeStyle='#6f5a2d';ctx.lineWidth=2;ctx.beginPath();ctx.roundRect(x,ty,cardW,126,16);ctx.fill();ctx.stroke();
+   ctx.fillStyle='#b9f4c8';ctx.font='900 20px system-ui';ctx.direction='ltr';ctx.textAlign='left';ctx.fillText('✓',x+14,ty+28);
+   ctx.fillStyle='#7fc8ff';ctx.font='950 36px system-ui';ctx.textAlign='center';ctx.fillText(fmt(u.value),x+cardW/2,ty+54,cardW-28);
+   ctx.fillStyle='#ffe2a0';ctx.font='700 12px system-ui';ctx.direction='rtl';ctx.fillText(String(u.label).slice(0,28),x+cardW/2,ty+83,cardW-22);
+   if(u.count>1){ctx.fillStyle='#8e9aa8';ctx.font='600 10px system-ui';ctx.fillText('×'+u.count+' פגיעות',x+cardW/2,ty+105)}
+  });
+
+  function drawGroup(g,x,y,w){
+   const h=groupH(g);ctx.fillStyle='#0a141e';ctx.strokeStyle='#275070';ctx.lineWidth=2;ctx.beginPath();ctx.roundRect(x,y,w,h,18);ctx.fill();ctx.stroke();
+   ctx.fillStyle='#f1f5f8';ctx.font='900 24px system-ui';ctx.direction='ltr';ctx.textAlign='left';ctx.fillText(g.name,x+22,y+40,w-44);
+   ctx.fillStyle='#6f7d8b';ctx.font='600 11px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(g.items.length+' התאמות',x+w-22,y+39);
+   const perRow=3,innerGap=10,cw=(w-44-innerGap*(perRow-1))/perRow;
+   g.items.forEach((it,j)=>{
+    const col=j%perRow,row=Math.floor(j/perRow),cx=x+22+col*(cw+innerGap),cy=y+62+row*102;
+    ctx.fillStyle='#0d1a26';ctx.strokeStyle='#2b5b7d';ctx.lineWidth=1;ctx.beginPath();ctx.roundRect(cx,cy,cw,88,12);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#b9f4c8';ctx.font='900 15px system-ui';ctx.direction='ltr';ctx.textAlign='left';ctx.fillText('✓',cx+10,cy+21);
+    ctx.fillStyle='#5fd3cf';ctx.font='850 14px system-ui';ctx.fillText('×'+it.n,cx+32,cy+21);
+    ctx.fillStyle='#eaf2fa';ctx.font='950 24px system-ui';ctx.textAlign='center';ctx.fillText(fmt(it.r.total),cx+cw/2,cy+48,cw-20);
+    ctx.fillStyle='#d8ad55';ctx.font='650 10px system-ui';ctx.direction='rtl';ctx.fillText(String(it.hits[0]?.label||'').slice(0,26),cx+cw/2,cy+70,cw-18)
+   });
+   return h
+  }
+  const by=pad+headerH+topH;
+  for(let ci=0;ci<2;ci++){let y=by;const x=pad+ci*(colW+colGap);for(const g of cols[ci]){y+=drawGroup(g,x,y,colW)+gap}}
+  ctx.fillStyle='#6f7d8b';ctx.font='600 12px system-ui';ctx.textAlign='center';ctx.direction='rtl';ctx.fillText('רק פגיעות משמעותיות בקורפוס · ללא תאים ריקים',W/2,H-32);
+  const blob=await new Promise(resolve=>c.toBlob(resolve,'image/png',1));if(!blob)throw new Error('PNG blob failed');
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(phrase+' - corpus matches presentation')+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true
+ }catch(e){console.error(e);return false}
+}
+
 async function saveRepeatMatrixImage(hitOnly=false){
+ if(hitOnly)return saveRepeatMatchesPresentation();
  const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value;
  const script=detectScript(phrase),methods=syncRelevantMethods(phrase,METHODS[script]);
  const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
