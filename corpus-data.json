@@ -1599,6 +1599,72 @@
       "label": "אחד / common factor",
       "method": "יהוה=2×13; אדני=5×13; עמית=40×13; רוב=16×13",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 962,
+      "label": "אחד×Mike = יהוה×יחידה",
+      "method": "13×74 = 26×37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1118,
+      "label": "אחד×אלהים = יהוה×Amit",
+      "method": "13×86 = 26×43",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "אחד×מייק = לב×אדני",
+      "method": "13×160 = 32×65",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1924,
+      "label": "יהוה×Mike = יחידה×משיח/מייק",
+      "method": "26×74 = 37×52",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2368,
+      "label": "לב×Mike = יחידה×אוזן",
+      "method": "32×74 = 37×64",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "יהוה×מייק = אוזן×אדני",
+      "method": "26×160 = 64×65 · Tevah product",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3182,
+      "label": "יחידה×אלהים = Amit×Mike",
+      "method": "37×86 = 43×74",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2664,
+      "label": "דויד×Amit M. Rov = יחידה×יהוה באחוריים",
+      "method": "24×111 = 37×72 = phi(5476)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3744,
+      "label": "אחד×φ(888) = חי×רוב = משיח/מייק×יהוה באחוריים",
+      "method": "13×288 = 18×208 = 52×72",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2236,
+      "label": "אחד×ΡΟΒ = יהוה×אלהים = Amit×משיח/מייק",
+      "method": "13×172 = 26×86 = 43×52",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4992,
+      "label": "אחד×משיח יהוה = דויד×רוב",
+      "method": "13×384 = 24×208",
+      "classification": "FOUNDATION"
     }
   ]
 }
