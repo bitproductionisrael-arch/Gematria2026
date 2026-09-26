@@ -1185,6 +1185,36 @@
       "label": "שמות",
       "method": "Milui of Milui",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 316,
+      "label": "ויקר / ויקרא−א",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
+      "label": "ויקר / ויקרא−א",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "ויקר / ויקרא−א",
+      "method": "Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 10,
+      "label": "ויקר / ויקרא−א",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 317,
+      "label": "ויקרא",
+      "method": "Hebrew Regular · central Torah book (3 of 5)",
+      "classification": "BRIDGE"
     }
   ]
 }
