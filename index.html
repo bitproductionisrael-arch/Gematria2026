@@ -401,6 +401,7 @@ const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={},HE_AYAK_TIER={},HE_AYAK_DIGIT={
 const MILUI_NAMES={
   'א':'אלף','ב':'בית','ג':'גימל','ד':'דלת','ה':'הא','ו':'ואו','ז':'זין','ח':'חית','ט':'טית','י':'יוד','כ':'כף','ל':'למד','מ':'מם','נ':'נון','ס':'סמך','ע':'עין','פ':'פא','צ':'צדי','ק':'קוף','ר':'ריש','ש':'שין','ת':'תו'
 };
+const MILUI_NAMES_TALMUDIC={...MILUI_NAMES,'ו':'ויו'}; // מילוי תלמודי: ו→ויו; בראשית א:א = 5476 = 74².
 const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ו':'ויו','ת':'תיו'}; // מחקר: מ→מים, ו→ויו, ת→תיו; נשמר בנפרד מן המילוי הסטנדרטי.
 function miluiNameForLetter(ch,names=MILUI_NAMES){return names[FINAL_TO_BASE[ch]||ch]||''}
 function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLetter(ch,names);for(let d=1;d<depth;d++)out=Array.from(out).map(c=>miluiNameForLetter(c,names)).join('');return out}
@@ -455,6 +456,7 @@ const METHODS={
   {key:'latinMiluiUserReduced',cat:'ops',name:'מילוי לטיני v0 → English Reduced / Research',custom:'latinMiluiUserReduced',research:true},
   {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
   {key:'milui',cat:'ops',name:'מילוי רגיל / Standard Letter-name Milui',custom:'milui'},
+  {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי / Talmudic Milui',custom:'miluiTalmudic'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true}
  ],
@@ -494,7 +496,7 @@ const METHODS={
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
- const names=profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;
+ const names=profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES);
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
@@ -560,7 +562,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
  if(m.custom==='latinMiluiUserReduced')return calculateLatinMiluiUser(text,'reduced','latinMiluiUserReduced');
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
- if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
+ if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
   const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
@@ -906,6 +908,7 @@ function minimalMethodName(r){
  const k=r?.method?.key;
  if(k==='miluiMayim')return 'מילוי מים';
  if(k==='milui2')return 'מילוי דמילוי';
+ if(k==='miluiTalmudic')return 'מילוי תלמודי';
  if(k==='milui')return 'מילוי רגיל';
  return String(r?.method?.name||'').split(' / ')[0].trim()
 }
@@ -1457,6 +1460,7 @@ console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordina
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew Reduction №1 96');
 console.assert(T('תור','he','zeroStep')===66,'תור Reduction №1 = 66');
 console.assert(T('תור','he','reduced')===12,'תור traditional Reduced = 12 = Reduction №2');
+console.assert(T('בראשית ברא אלהים את השמים ואת הארץ','he','miluiTalmudic')===5476,'Talmudic Milui Genesis 1:1 = 5476 = 74²');
 console.assert(!syncRelevantMethods('תור',METHODS.he).some(m=>m.key==='final'||m.key==='smallFinals'),'No final-letter comparison methods without finals');
 console.assert(syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='final')&&syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='smallFinals'),'Final-letter methods active when finals exist');
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
