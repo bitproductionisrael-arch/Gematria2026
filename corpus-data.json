@@ -1323,6 +1323,60 @@
       "label": "ספר משה",
       "method": "Word Reduced · T4",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 711,
+      "label": "ספר משה יהוה",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 117,
+      "label": "ספר משה יהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1202,
+      "label": "ספר משה יהוה",
+      "method": "Standard Milui",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1211,
+      "label": "ספר משה יהוה",
+      "method": "Talmudic Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1221,
+      "label": "ספר משה יהוה",
+      "method": "Milui Mayim",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 28,
+      "label": "בראשית א:א",
+      "method": "Letter count",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 22,
+      "label": "בבאאהוה",
+      "method": "Genesis word initials Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1080,
+      "label": "בבאאהוה",
+      "method": "Genesis initials Talmudic/Mayim Milui",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 141,
+      "label": "1221-1080",
+      "method": "Cross-structure difference",
+      "classification": "BRIDGE"
     }
   ]
 }
