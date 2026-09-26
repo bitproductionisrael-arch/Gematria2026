@@ -1479,6 +1479,54 @@
       "label": "א יהוה ברא באות במראה א",
       "method": "18 letters; word initials regular also 18",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 202,
+      "label": "×2 יחד",
+      "method": "Kidmi",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 202,
+      "label": "×2 מיכאל",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "×2 מיכאל",
+      "method": "Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "×2 אני פה",
+      "method": "Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
+      "label": "×2 אני פה",
+      "method": "Latin Milui v0 Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 358,
+      "label": "×2 אני פה",
+      "method": "Latin Milui v0 Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "×2 יחד",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 360,
+      "label": "×2 יחד",
+      "method": "Perati",
+      "classification": "BRIDGE"
     }
   ]
 }
