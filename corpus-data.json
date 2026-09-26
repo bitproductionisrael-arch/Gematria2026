@@ -807,6 +807,30 @@
       "label": "×16 שלושים ושבע כפול שבעים ושלוש",
       "method": "Latin Milui v0 Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 636,
+      "label": "קומפוזיציה עמית / עין מם יוד תו",
+      "method": "Standard Milui · φ=208",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 646,
+      "label": "קומפוזיציה מפתח / עין מם יוד תיו",
+      "method": "Milui variant (תיו) · φ=288",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 208,
+      "label": "φ(קומפוזיציה עמית=636) / רוב",
+      "method": "Totient / Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 288,
+      "label": "φ(קומפוזיציה מפתח=646) / φ(888)",
+      "method": "Totient",
+      "classification": "BRIDGE"
     }
   ]
 }
