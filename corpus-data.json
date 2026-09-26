@@ -2157,6 +2157,24 @@
       "label": "A.B.A MIKE ROV",
       "method": "English Small/Pythagorean = Amit English Simple",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 43,
+      "label": "A.B.A MIKE ROV ↔ Amit",
+      "method": "Small/Pythagorean = Amit English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 97,
+      "label": "A.B.A MIKE ROV",
+      "method": "English Simple; 43+97=140 (Amit Jewish), 97−43=54 (Mike Jewish)",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 582,
+      "label": "A.B.A MIKE ROV",
+      "method": "English Gematria = 6×97; paired with Amit 258 = 6×43",
+      "classification": "BRIDGE"
     }
   ]
 }
