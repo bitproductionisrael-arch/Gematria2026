@@ -1,6 +1,6 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
   "note": "Canonical shared corpus. Includes Genesis 1:1 multi-method anchors, Talmudic Milui 5476=74², Standard Milui 5467=74²−3², and derived cross-method bridges.",
   "entries": [
@@ -1713,6 +1713,24 @@
       "label": "12+21 / לב מייק",
       "method": "Small + Reduction №1",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 222,
+      "label": "אינווריאנט פרמוטציות תלת-ספרתי בבסיס 10",
+      "method": "sum(all 6 digit permutations) / digit-sum = 222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "ממוצע פרמוטציות תלת-ספרתי",
+      "method": "average(all 6 permutations) / digit-sum = 37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1554,
+      "label": "פרמוטציות של 520",
+      "method": "520+502+250+205+052+025 = 222×7",
+      "classification": "BRIDGE"
     }
   ]
 }
