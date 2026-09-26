@@ -2145,6 +2145,18 @@
       "label": "ABA pattern",
       "method": "A-B-A encoded as 1-0-1 (same-different-same)",
       "classification": "REPRESENTATION"
+    },
+    {
+      "value": 888,
+      "label": "A.B.A MIKE ROV",
+      "method": "Jewish Gematria",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 43,
+      "label": "A.B.A MIKE ROV",
+      "method": "English Small/Pythagorean = Amit English Simple",
+      "classification": "BRIDGE"
     }
   ]
 }
