@@ -1431,6 +1431,54 @@
       "label": "במראה",
       "method": "Hebrew Regular · equals במדבר",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "א יהוה ברא באות במראה א",
+      "method": "Hebrew Regular · 4×222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 123,
+      "label": "א יהוה ברא באות במראה א",
+      "method": "Hebrew Ordinal = Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3399,
+      "label": "א יהוה ברא באות במראה א",
+      "method": "Milui Mayim · phi=2040",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 345,
+      "label": "123+222",
+      "method": "Cross-method sum · משה Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 666,
+      "label": "888−222",
+      "method": "Cross-method difference · 18×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2040,
+      "label": "phi(3399)",
+      "method": "15×136 · phi=512",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 512,
+      "label": "phi(phi(3399))",
+      "method": "Converges with phi(1360) · 2^9",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 18,
+      "label": "א יהוה ברא באות במראה א",
+      "method": "18 letters; word initials regular also 18",
+      "classification": "RESEARCH"
     }
   ]
 }
