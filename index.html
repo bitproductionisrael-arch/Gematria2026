@@ -853,7 +853,14 @@ function compactMathSummary(r){
  return bits.join(' · ')
 }
 function allResultsPlainText(){return current.results.map(summaryResultText).join('\n')}
-function allResultsBrokenText(){return current.results.map(brokenResultText).join('\n')}
+function allResultsBrokenText(){
+ const q=document.getElementById('q').value.trim();
+ const rows=current.results.map(r=>{
+  if(r?.repeatMeta)return `${fmt(r.total)} (${r.repeatMeta.methodName})`;
+  return `${fmt(r.total)} (${minimalMethodName(r)})`
+ });
+ return [q,'',...rows].join('\n')
+}
 function allResultsRichText(){return current.results.map(compactMathSummary).join('\n')}
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
 function resultDisplayName(r){return r?.displayName||r?.method?.name||''}
@@ -1112,7 +1119,7 @@ document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=
 document.getElementById('repeatGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-repeat-n]');if(!cell)return;const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),methods=METHODS[script],m=methods.find(x=>x.key===document.getElementById('repeatMethod').value)||methods[0],n=Number(cell.dataset.repeatN),r=makeRepeatSelection(phrase,script,m,n),i=state.derivedSelections.findIndex(x=>x.selectionKey===r.selectionKey);if(i>=0){state.derivedSelections.splice(i,1);toast('הוסר ממרכז ההשוואה')}else{state.derivedSelections.push(r);state.selectionTouched=true;toast('נוסף להשוואה: '+m.name+' ×'+n)}renderRepeat();renderResults()});
 document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
 document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
-document.getElementById('copyAllBroken').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsBrokenText());toast(ok?'המגנט השבור הועתק':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
+document.getElementById('copyAllBroken').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsBrokenText());toast(ok?'הפתגם + כל התוצאות הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllMath').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsRichText());toast(ok?'כל השיטות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
