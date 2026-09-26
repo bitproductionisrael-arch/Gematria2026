@@ -1029,6 +1029,24 @@
       "label": "ריש ויו בית רובא",
       "method": "AIQ BKR · ישראל Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "עזרה עמית יהוה א",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 163,
+      "label": "עזרה עמית יהוה א",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "עזרה עמית יהוה א",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
     }
   ]
 }
