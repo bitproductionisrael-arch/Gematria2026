@@ -1047,6 +1047,24 @@
       "label": "עזרה עמית יהוה א",
       "method": "Hebrew Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 135,
+      "label": "סיוע",
+      "method": "Atbash",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 111,
+      "label": "אני לידך עוזר",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "אני לידך עוזר",
+      "method": "Hebrew Final Letters",
+      "classification": "FOUNDATION"
     }
   ]
 }
