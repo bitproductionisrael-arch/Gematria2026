@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-26",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Site reads this file automatically; ChatGPT can read the same GitHub source.",
+  "note": "Canonical shared corpus. Site reads this file automatically; ChatGPT can read the same GitHub source. 64-layer distinguishes gematria encodings, Buddhist 48+16 structure, and the I Ching 64-hexagram structure.",
   "entries": [
     {
       "value": 13,
@@ -120,9 +120,33 @@
     },
     {
       "value": 64,
+      "label": "Amitābha: 48 vows + 16 contemplations",
+      "method": "Buddhist structure",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
+      "label": "Gautama",
+      "method": "English Ordinal",
+      "classification": "ENCODING"
+    },
+    {
+      "value": 64,
+      "label": "I Ching: 64 hexagrams",
+      "method": "Book of Changes structure",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 64,
       "label": "אוזן / ΑΛΗΘΕΙΑ",
       "method": "Hebrew / Greek",
       "classification": "canonical"
+    },
+    {
+      "value": 64,
+      "label": "ישראל / Israel",
+      "method": "Hebrew Ordinal / English Ordinal",
+      "classification": "ENCODING"
     },
     {
       "value": 65,
@@ -537,6 +561,12 @@
       "label": "עמית מיכאל בלייז",
       "method": "Ratzo",
       "classification": "canonical"
+    },
+    {
+      "value": 2080,
+      "label": "T64 / ×4 Amit / 32×65 / 80×26",
+      "method": "Triangular / English Regular scaling / Buddhist body-number bridge",
+      "classification": "BRIDGE"
     },
     {
       "value": 2368,
