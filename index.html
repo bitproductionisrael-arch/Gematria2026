@@ -739,15 +739,15 @@ function deleteSaved(id){SAVED_ITEMS=SAVED_ITEMS.filter(x=>x.id!==id);persistSav
 function corpusSyncPayload(){return {schema:'gematria2026-local-corpus-sync-v2',generated_at:new Date().toISOString(),shared_corpus_version:SHARED_CORPUS_META.updated_at||null,canonical_overrides:CORPUS_OVERRIDES,items:SAVED_ITEMS.filter(x=>x.kind==='corpus').map(x=>({id:x.id,text:x.text,script:x.script,corpus:x.corpusName||'כללי',snapshot:x.snapshot||[]}))}}
 
 function queryMultiplier(){return Math.max(1,Math.trunc(Number(state.queryMultiplier)||1))}
-function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el)el.textContent='x'+queryMultiplier();const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=queryMultiplier()<=1}
+function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el)el.textContent='×'+queryMultiplier();const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=queryMultiplier()<=1}
 function scaleCurrentResults(data){
  const n=queryMultiplier();if(n===1)return data;
  return {script:data.script,results:data.results.map(r=>({...r,baseTotal:r.total,total:r.total*n,queryMultiplier:n}))}
 }
 function magnetQueryPrefix(r){
- if(r?.repeatMeta)return 'x'+r.repeatMeta.count+' '+r.repeatMeta.phrase;
+ if(r?.repeatMeta)return '×'+r.repeatMeta.count+' '+r.repeatMeta.phrase;
  const q=document.getElementById('q').value.trim(),n=r?.queryMultiplier||queryMultiplier();
- return 'x'+n+' '+q
+ return '×'+n+' '+q
 }
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
