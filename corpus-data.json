@@ -2091,6 +2091,24 @@
       "label": "AlphaBeta 1–3–6 ladder",
       "method": "66×T1=66; 66×T2=198; 66×T3=396",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 444,
+      "label": "AlphaBeta ↔ omega",
+      "method": "AVGaD(AlphaBeta) = Cumulative Alphabet(omega)",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 208,
+      "label": "Alphaomega → Beta",
+      "method": "2×Δ(Alphaomega)=208 = Beta English Isopsephy",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "Alphaomega → Beta",
+      "method": "5×Δ(Alphaomega)=520 = Beta English Equivalence",
+      "classification": "BRIDGE"
     }
   ]
 }
