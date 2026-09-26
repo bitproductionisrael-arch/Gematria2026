@@ -107,13 +107,14 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .repeat-cell.selected{border-color:var(--gold);box-shadow:0 0 0 1px rgba(216,173,85,.2),0 0 18px rgba(216,173,85,.08)}
 #repeatMatrixToggle.active{border-color:var(--gold);color:#ffe2a0;box-shadow:0 0 0 1px rgba(216,173,85,.18)}
 #repeatMatrixDouble{font-weight:900;font-size:16px;min-width:54px}
-.repeat-grid.matrix-mode{display:block;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#080d12;padding:0}
-.repeat-matrix{border-collapse:separate;border-spacing:0;min-width:max-content;width:max-content;direction:rtl;font-size:11px}
-.repeat-matrix th,.repeat-matrix td{border-inline-start:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 9px;min-width:96px;height:48px;background:#0b121a;text-align:center;vertical-align:middle}
+#saveRepeatMatrix{font-size:16px;min-width:46px}
+.repeat-grid.matrix-mode{display:block;direction:ltr;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#080d12;padding:0;scrollbar-gutter:stable}
+.repeat-matrix{border-collapse:separate;border-spacing:0;min-width:max-content;width:max-content;direction:ltr;font-size:11px;table-layout:fixed}
+.repeat-matrix th,.repeat-matrix td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 8px;width:86px;min-width:86px;height:48px;background:#0b121a;text-align:center;vertical-align:middle}
 .repeat-matrix thead th{position:sticky;top:0;z-index:4;background:#121b25;color:#ffe2a0;font-weight:900}
-.repeat-matrix .repeat-matrix-corner{position:sticky;right:0;z-index:6;min-width:190px;text-align:right;padding-inline:12px;background:#121b25}
-.repeat-matrix .repeat-matrix-method{position:sticky;right:0;z-index:3;min-width:190px;max-width:240px;text-align:right;padding-inline:12px;background:#0f1822;color:#dce6f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.repeat-matrix-cell{cursor:pointer;transition:.12s}
+.repeat-matrix .repeat-matrix-corner{position:sticky;left:0;z-index:6;width:154px;min-width:154px;max-width:154px;text-align:right;direction:rtl;padding-inline:10px;background:#121b25}
+.repeat-matrix .repeat-matrix-method{position:sticky;left:0;z-index:3;width:154px;min-width:154px;max-width:154px;text-align:right;direction:rtl;padding-inline:10px;background:#0f1822;color:#dce6f0;white-space:normal;line-height:1.15;overflow:hidden}
+.repeat-matrix-cell{cursor:pointer;transition:.12s;direction:ltr}
 .repeat-matrix-cell:hover{background:#142131}
 .repeat-matrix-cell.selected{background:#2a2417;box-shadow:inset 0 0 0 1px var(--gold)}
 .repeat-matrix-cell b{display:block;font-size:14px;direction:ltr;color:#f2f6fa;white-space:nowrap}
@@ -136,7 +137,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   .main-tabs button{font-size:11px;padding:5px 3px}
   .workspace{padding:6px}.results-layout{grid-template-columns:1fr;grid-template-rows:auto auto}
   .method-pane{display:grid}.category-tabs,.method-grid{display:grid}.mobile-method{display:none}
-  .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.repeat-controls input{display:none}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
+  .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
 }
 @media(max-width:480px){
   :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:1fr}.queryside{display:none}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
@@ -294,7 +295,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     </div></section>
 
     <section id="tab-repeat" class="tab-panel"><div class="panel repeat-layout">
-      <div class="repeat-controls"><input id="repeatPhrase" aria-label="ביטוי לחזרה"><select id="repeatMethod"></select><select id="repeatMax" aria-label="מספר חזרות"><option>8</option><option selected>12</option><option>16</option><option>24</option></select><button id="repeatMatrixToggle" title="פתח מטריקס של כל שיטות הגימטריה וכל דרגות ההכפלה">▦ מטריקס</button><button id="repeatMatrixDouble" title="הכפל את כל דרגות המטריקס פי 2" hidden>×2</button></div>
+      <div class="repeat-controls"><input id="repeatPhrase" aria-label="ביטוי לחזרה"><select id="repeatMethod"></select><select id="repeatMax" aria-label="מספר חזרות"><option>8</option><option selected>12</option><option>16</option><option>24</option></select><button id="repeatMatrixToggle" title="פתח מטריקס של כל שיטות הגימטריה וכל דרגות ההכפלה">▦ מטריקס</button><button id="repeatMatrixDouble" title="הכפל את כל דרגות המטריקס פי 2" hidden>×2</button><button id="saveRepeatMatrix" title="שמור את כל המטריקס כתמונה" hidden>📸</button></div>
       <div id="repeatGrid" class="repeat-grid"></div>
       <div class="pager"><button id="repeatPrev">‹</button><span id="repeatPage">1/1</span><button id="repeatNext">›</button><span id="repeatNote" class="tiny"></span></div>
     </div></section>
@@ -919,9 +920,10 @@ function renderRepeat(){
  const m=methods.find(x=>x.key===sel.value)||methods[0];
  const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
  const grid=document.getElementById('repeatGrid'),prev=document.getElementById('repeatPrev'),next=document.getElementById('repeatNext'),page=document.getElementById('repeatPage'),note=document.getElementById('repeatNote');
- const matrixBtn=document.getElementById('repeatMatrixToggle'),doubleBtn=document.getElementById('repeatMatrixDouble');
+ const matrixBtn=document.getElementById('repeatMatrixToggle'),doubleBtn=document.getElementById('repeatMatrixDouble'),saveBtn=document.getElementById('saveRepeatMatrix');
  matrixBtn.classList.toggle('active',state.repeatMatrixView);
  doubleBtn.hidden=!state.repeatMatrixView;
+ saveBtn.hidden=!state.repeatMatrixView;
  doubleBtn.title=`הכפל את כל דרגות המטריקס: ×${state.repeatMatrixScale} → ×${state.repeatMatrixScale*2}`;
  sel.disabled=state.repeatMatrixView;
  grid.classList.toggle('matrix-mode',state.repeatMatrixView);
@@ -939,6 +941,7 @@ function renderRepeat(){
   }
   html+='</tbody></table>';
   grid.innerHTML=html;
+  grid.scrollLeft=0;grid.scrollTop=0;
   prev.style.display='none';next.style.display='none';page.textContent='מטריקס';
   note.textContent=`${phrase} · ${methods.length} שיטות · דרגה ×${state.repeatMatrixScale}`;
   return
@@ -952,6 +955,40 @@ function renderRepeat(){
  const per=12,pages=Math.max(1,Math.ceil(max/per));state.repeatPage=Math.min(state.repeatPage,pages-1);
  grid.innerHTML=cells.slice(state.repeatPage*per,state.repeatPage*per+per).join('');
  page.textContent=`${state.repeatPage+1}/${pages}`;prev.disabled=state.repeatPage===0;next.disabled=state.repeatPage>=pages-1;note.textContent=`${m.name} · ${phrase}`
+}
+
+async function saveRepeatMatrixImage(){
+ const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value;
+ const script=detectScript(phrase),methods=METHODS[script];
+ const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));
+ const cols=Array.from({length:max},(_,i)=>(i+1)*state.repeatMatrixScale);
+ const pad=28,titleH=104,headH=54,rowH=54,methodW=238,cellW=102;
+ const W=pad*2+methodW+cellW*cols.length,H=pad*2+titleH+headH+rowH*methods.length;
+ try{
+  const c=document.createElement('canvas');c.width=W;c.height=H;
+  const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');
+  ctx.fillStyle='#081018';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#f4f7fb';ctx.font='900 30px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(phrase,W-pad,pad+34,W-pad*2);
+  ctx.fillStyle='#8e9aa8';ctx.font='600 14px system-ui';ctx.fillText(`מטריקס חזרות · ${methods.length} שיטות · דרגה ×${state.repeatMatrixScale}`,W-pad,pad+62,W-pad*2);
+  const x0=pad,y0=pad+titleH;
+  ctx.strokeStyle='#33404d';ctx.lineWidth=1;
+  ctx.fillStyle='#121b25';ctx.fillRect(x0,y0,methodW,headH);
+  ctx.fillStyle='#ffe2a0';ctx.font='800 14px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText('שיטה',x0+methodW-12,y0+33,methodW-24);
+  cols.forEach((n,j)=>{const x=x0+methodW+j*cellW;ctx.fillStyle='#121b25';ctx.fillRect(x,y0,cellW,headH);ctx.strokeRect(x,y0,cellW,headH);ctx.fillStyle='#ffe2a0';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText('×'+n,x+cellW/2,y0+33)});
+  methods.forEach((m,i)=>{
+   const y=y0+headH+i*rowH,short=String(m.name||'').split(' / ')[0].trim();
+   ctx.fillStyle='#0f1822';ctx.fillRect(x0,y,methodW,rowH);ctx.strokeRect(x0,y,methodW,rowH);
+   ctx.fillStyle='#dce6f0';ctx.font='700 12px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(short,x0+methodW-10,y+31,methodW-20);
+   cols.forEach((n,j)=>{
+    const x=x0+methodW+j*cellW,r=makeRepeatSelection(phrase,script,m,n),hit=corpusHits(r.total)[0];
+    ctx.fillStyle='#0b121a';ctx.fillRect(x,y,cellW,rowH);ctx.strokeRect(x,y,cellW,rowH);
+    ctx.fillStyle='#f2f6fa';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText(fmt(r.total),x+cellW/2,y+24,cellW-10);
+    if(hit){ctx.fillStyle='#d8ad55';ctx.font='600 8px system-ui';ctx.fillText(String(hit.label).slice(0,18),x+cellW/2,y+40,cellW-8)}
+   })
+  });
+  const blob=await new Promise(resolve=>c.toBlob(resolve,'image/png',1));if(!blob)throw new Error('PNG blob failed');
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(phrase+' - repeat matrix')+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true
+ }catch(e){console.error(e);return false}
 }
 
 function diffRows(aText,bText){const rows=compareResults(aText,bText);return rows.filter(x=>x.a!==x.b).slice(0,7).map(x=>`<div class="diff-row"><span>${esc(x.method.name)}</span><span>${fmt(x.a)}</span><span>${fmt(x.b)}</span></div>`).join('')||'<div class="tiny">אין שינוי בשיטות הפעילות.</div>'}
@@ -1173,12 +1210,13 @@ document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;if(id==='repeatPhrase')state.repeatMatrixScale=1;renderRepeat()}));
 document.getElementById('repeatMatrixToggle').addEventListener('click',()=>{state.repeatMatrixView=!state.repeatMatrixView;state.repeatPage=0;renderRepeat()});
 document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;renderRepeat()});
+document.getElementById('saveRepeatMatrix').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס')});
 document.getElementById('repeatGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-repeat-n]');if(!cell)return;const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),methods=METHODS[script],methodKey=cell.dataset.repeatMethod||document.getElementById('repeatMethod').value,m=methods.find(x=>x.key===methodKey)||methods[0],n=Number(cell.dataset.repeatN),r=makeRepeatSelection(phrase,script,m,n),i=state.derivedSelections.findIndex(x=>x.selectionKey===r.selectionKey);if(i>=0){state.derivedSelections.splice(i,1);toast('הוסר ממרכז ההשוואה')}else{state.derivedSelections.push(r);state.selectionTouched=true;toast('נוסף להשוואה: '+m.name+' ×'+n)}renderRepeat();renderResults()});
 document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
 document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllBroken').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsBrokenText());toast(ok?'הפתגם + כל התוצאות הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllMath').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsRichText());toast(ok?'כל השיטות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
-document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
+document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}if(state.tab==='repeat'&&state.repeatMatrixView){const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
