@@ -681,6 +681,54 @@
       "label": "11×בראשית",
       "method": "Cycle BKR · 13×1221 = 3×11×13×37",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 752,
+      "label": "8×בראשית",
+      "method": "Reduction №1 · Composite #618 · φ=368",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 130,
+      "label": "10×בראשית",
+      "method": "Hebrew Reduced · φ=48",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 760,
+      "label": "10×בראשית",
+      "method": "Hebrew Ordinal · φ=288",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 7304,
+      "label": "8×בראשית",
+      "method": "Hebrew Regular · φ=3280",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 9130,
+      "label": "10×בראשית",
+      "method": "Hebrew Regular · φ=3280",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 5968,
+      "label": "8×בראשית",
+      "method": "Atbash · φ=2976",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 7460,
+      "label": "10×בראשית",
+      "method": "Atbash · φ=2976",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 496,
+      "label": "8×בראשית",
+      "method": "Reverse Ordinal · Perfect number · T31",
+      "classification": "FOUNDATION"
     }
   ]
 }
