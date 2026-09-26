@@ -939,6 +939,96 @@
       "label": "מים יוד יוד קוף",
       "method": "Milui Mayim",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 914,
+      "label": "קומפוזיציית רוב · 2 ביטים / רש וו בת",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 77,
+      "label": "קומפוזיציית רוב · 2 ביטים / רש וו בת",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 104,
+      "label": "קומפוזיציית רוב · 2 ביטים / רש וו בת",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 935,
+      "label": "קומפוזיציית רוב · 2.5 ביטים / ריש ואו בית",
+      "method": "Hebrew Regular · מילוי רוב",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 944,
+      "label": "קומפוזיציית רוב · מלאה / ריש ויו בית",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 107,
+      "label": "ריש ויו בית",
+      "method": "Hebrew Ordinal = Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1888,
+      "label": "ריש ויו בית",
+      "method": "Equivalence · 2×944",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2386,
+      "label": "ריש ויו בית",
+      "method": "Positional",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 135,
+      "label": "ריש ויו בית רוב",
+      "method": "Hebrew Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 148,
+      "label": "ריש ויו בית רוב",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 141,
+      "label": "ריש ויו בית רוב",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "ריש ויו בית רובא",
+      "method": "Hebrew Ordinal = Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "ריש ויו בית רובא",
+      "method": "Hebrew Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1369,
+      "label": "ריש ויו בית רובא",
+      "method": "Atbash · 37²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 541,
+      "label": "ריש ויו בית רובא",
+      "method": "AIQ BKR · ישראל Regular",
+      "classification": "BRIDGE"
     }
   ]
 }
