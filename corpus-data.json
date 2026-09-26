@@ -1761,6 +1761,24 @@
       "label": "סכום האינווריאנטים הממוצעים",
       "method": "37+37+37 = 111",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 2220,
+      "label": "פרמוטציות רוב 208",
+      "method": "208+802+028+082+280+820 = 37×60 = 37:00 base60",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "פרמוטציות רוב בבסיס 60",
+      "method": "2220 decimal = 37:00 sexagesimal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 60,
+      "label": "מנרמל פרמוטציות רוב",
+      "method": "6 permutations × digit-sum(208)=6×10=60",
+      "classification": "BRIDGE"
     }
   ]
 }
