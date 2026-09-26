@@ -2133,6 +2133,18 @@
       "label": "Aba / אופרטור אבא",
       "method": "English ALBaM analogue",
       "classification": "canonical"
+    },
+    {
+      "value": 77,
+      "label": "Aba → Rov composition bridge",
+      "method": "Aba=77; 77=Composite #55; Rov=55",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 101,
+      "label": "ABA pattern",
+      "method": "A-B-A encoded as 1-0-1 (same-different-same)",
+      "classification": "REPRESENTATION"
     }
   ]
 }
