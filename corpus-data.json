@@ -1665,6 +1665,54 @@
       "label": "אחד×משיח יהוה = דויד×רוב",
       "method": "13×384 = 24×208",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 12,
+      "label": "לב מייק",
+      "method": "Hebrew Reduced / Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 21,
+      "label": "לב מייק",
+      "method": "Reduction №1 · אהיה Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 66,
+      "label": "לב מייק",
+      "method": "Hebrew Ordinal · T11",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 72,
+      "label": "לב מייק",
+      "method": "Reverse Ordinal · 6×23−66 · יהוה באחוריים",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 333,
+      "label": "לב מייק",
+      "method": "AVGaD · 9×37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 192,
+      "label": "לב מייק",
+      "method": "Hebrew Regular · 3×64",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
+      "label": "φ(לב מייק=192)",
+      "method": "Totient · אוזן / ΑΛΗΘΕΙΑ",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 33,
+      "label": "12+21 / לב מייק",
+      "method": "Small + Reduction №1",
+      "classification": "RESEARCH"
     }
   ]
 }
