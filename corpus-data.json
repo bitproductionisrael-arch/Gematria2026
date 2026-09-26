@@ -873,6 +873,18 @@
       "label": "2phi(1360)",
       "method": "2^10; 16x64; 1024-136=888",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 656,
+      "label": "Amit Mayim expansion",
+      "method": "Milui Mayim result equals regular value of expanded text",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1360,
+      "label": "Talmudic lift of Amit Mayim expansion",
+      "method": "Talmudic Milui; 10x136; phi=512",
+      "classification": "FOUNDATION"
     }
   ]
 }
