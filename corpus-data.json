@@ -1,0 +1,566 @@
+{
+  "schema": "gematria2026-corpus-v1",
+  "updated_at": "2026-09-26",
+  "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
+  "note": "Canonical shared corpus. Site reads this file automatically; ChatGPT can read the same GitHub source.",
+  "entries": [
+    {
+      "value": 13,
+      "label": "אחד",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 14,
+      "label": "דוד",
+      "method": "Hebrew Reduced / Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 18,
+      "label": "חי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 21,
+      "label": "אהיה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 24,
+      "label": "דויד",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 26,
+      "label": "יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 27,
+      "label": "יהוה עם הכולל",
+      "method": "Hebrew Kolel",
+      "classification": "canonical"
+    },
+    {
+      "value": 28,
+      "label": "רוב",
+      "method": "Hebrew Ordinal · Composite #18",
+      "classification": "canonical"
+    },
+    {
+      "value": 32,
+      "label": "לב",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 37,
+      "label": "יחידה",
+      "method": "Hebrew Regular / Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "Mike",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 41,
+      "label": "אלי / אלהה / אלהימ",
+      "method": "Hebrew Regular / Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 42,
+      "label": "φ(אלהים=86)",
+      "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 43,
+      "label": "Amit",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
+      "label": "משיח / מייק",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "Rov / הכל",
+      "method": "English Simple / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 58,
+      "label": "Atbash(עמית) / מחיקת יהוה",
+      "method": "Research",
+      "classification": "canonical"
+    },
+    {
+      "value": 59,
+      "label": "בלייז",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 61,
+      "label": "אני",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 64,
+      "label": "אוזן / ΑΛΗΘΕΙΑ",
+      "method": "Hebrew / Greek",
+      "classification": "canonical"
+    },
+    {
+      "value": 65,
+      "label": "אדני",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 72,
+      "label": "יהוה באחוריים",
+      "method": "Hebrew Achorayim",
+      "classification": "canonical"
+    },
+    {
+      "value": 74,
+      "label": "Mike",
+      "method": "English Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 77,
+      "label": "מזל / בלייז חי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 82,
+      "label": "בראשית א:א / רוב",
+      "method": "Hebrew Reduced / AIQ BKR",
+      "classification": "canonical"
+    },
+    {
+      "value": 86,
+      "label": "אלהים / אלהימ",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 88,
+      "label": "מיכאל בלייז",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 96,
+      "label": "צמצום אפס ראשון של 888 / φ(306)",
+      "method": "Research / Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 101,
+      "label": "מיכאל",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 104,
+      "label": "יהוה×4",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 111,
+      "label": "Amit M. Rov",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 128,
+      "label": "אני בינה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 130,
+      "label": "יהוה×5",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "Amit Mike Rov / קול",
+      "method": "English Simple / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 140,
+      "label": "Amit",
+      "method": "Agrippa",
+      "classification": "canonical"
+    },
+    {
+      "value": 141,
+      "label": "עמית מייק רוב",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 160,
+      "label": "מייק / מיכאל בלייז",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 172,
+      "label": "ΡΟΒ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 177,
+      "label": "עמית מיכאל בלייז רוב",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 208,
+      "label": "רוב",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 216,
+      "label": "φ(666)",
+      "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 232,
+      "label": "ΑΜΙΘ ΡΟΒ / יהי אור",
+      "method": "Greek / Hebrew",
+      "classification": "canonical"
+    },
+    {
+      "value": 258,
+      "label": "Amit / אלהימ",
+      "method": "English Sumerian / Equivalence",
+      "classification": "canonical"
+    },
+    {
+      "value": 267,
+      "label": "רוב בלייז / מרכבה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 288,
+      "label": "φ(888) / רפ״ח",
+      "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 314,
+      "label": "שדי / אלהימ",
+      "method": "Hebrew Regular / Ratzo",
+      "classification": "canonical"
+    },
+    {
+      "value": 316,
+      "label": "ישו / אלהימ",
+      "method": "Hebrew Regular / Positional",
+      "classification": "canonical"
+    },
+    {
+      "value": 344,
+      "label": "ΟΔΟΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 345,
+      "label": "משה / השם",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 358,
+      "label": "משיח",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 361,
+      "label": "הנוצרי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 368,
+      "label": "מייק רוב / משיחי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 370,
+      "label": "10×37 / 37² Collapse · second base-1000 block sum",
+      "method": "Research · Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 384,
+      "label": "משיח יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 385,
+      "label": "שכינה / רוב בלייז",
+      "method": "Hebrew Regular / Positional",
+      "classification": "canonical"
+    },
+    {
+      "value": 441,
+      "label": "אמת / אהיה²",
+      "method": "Hebrew Regular / Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 456,
+      "label": "משה",
+      "method": "Milui Mayim · Composite #368",
+      "classification": "canonical"
+    },
+    {
+      "value": 518,
+      "label": "מייק משיח / דוד×יחידה",
+      "method": "Hebrew Regular / Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
+      "label": "עמית / אהיה שלחני אליכם / יהוה באלב״ם",
+      "method": "Hebrew Regular / ALBaM",
+      "classification": "canonical"
+    },
+    {
+      "value": 528,
+      "label": "BLAZE / מייק רוב מייק",
+      "method": "Agrippa / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 543,
+      "label": "אהיה אשר אהיה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 576,
+      "label": "רוב מייק רוב",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 636,
+      "label": "מילוי עמית",
+      "method": "Standard Milui",
+      "classification": "canonical"
+    },
+    {
+      "value": 640,
+      "label": "שמש / φ(935)",
+      "method": "Hebrew Regular / Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 656,
+      "label": "ΜΑΙΧΕ / ΜΕΣΣΙΑΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 666,
+      "label": "Amit M. Rov",
+      "method": "English Sumerian",
+      "classification": "canonical"
+    },
+    {
+      "value": 768,
+      "label": "עמית מ. רוב",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 800,
+      "label": "ΚΥΡΙΟΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 815,
+      "label": "ΖΩΗ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 816,
+      "label": "Amit Mike Rov",
+      "method": "English Sumerian",
+      "classification": "canonical"
+    },
+    {
+      "value": 874,
+      "label": "Amit Mike Rov",
+      "method": "English Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 888,
+      "label": "עמית מייק רוב / עמית משיחי / ΙΗΣΟΥΣ",
+      "method": "Hebrew / Greek",
+      "classification": "canonical"
+    },
+    {
+      "value": 935,
+      "label": "מילוי רוב",
+      "method": "Standard Milui",
+      "classification": "canonical"
+    },
+    {
+      "value": 960,
+      "label": "φ(ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ)",
+      "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 1008,
+      "label": "פתח עמית",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 1024,
+      "label": "Amit Mike Rov / מיכאלבלייז",
+      "method": "Agrippa / Achorayim",
+      "classification": "canonical"
+    },
+    {
+      "value": 1072,
+      "label": "1073−1 / 1000+72 · 37² Collapse factor",
+      "method": "Research · Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 1073,
+      "label": "29×37 / 1000+73",
+      "method": "Research · Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 1152,
+      "label": "φ(2368)",
+      "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 1177,
+      "label": "תיקון תורה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 1316,
+      "label": "אלהימ",
+      "method": "Addition & Subtraction",
+      "classification": "canonical"
+    },
+    {
+      "value": 1369,
+      "label": "37² / בלייז רוב חי / 37² Collapse · first base-1000 block sum",
+      "method": "Number / Ratzo VaShov / Research",
+      "classification": "canonical"
+    },
+    {
+      "value": 1408,
+      "label": "ΣΩΤΗΡ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 1480,
+      "label": "ΧΡΙΣΤΟΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 1760,
+      "label": "מיכאלבלייז",
+      "method": "Addition & Subtraction",
+      "classification": "canonical"
+    },
+    {
+      "value": 1776,
+      "label": "2×888",
+      "method": "Number",
+      "classification": "canonical"
+    },
+    {
+      "value": 1877,
+      "label": "מילוי עמית מייק רוב",
+      "method": "Standard Milui · Prime #288",
+      "classification": "canonical"
+    },
+    {
+      "value": 1888,
+      "label": "אני תיקון תורה / מיכאלבלייז",
+      "method": "Final / Ratzo",
+      "classification": "canonical"
+    },
+    {
+      "value": 1998,
+      "label": "עמית מיכאל בלייז",
+      "method": "Ratzo",
+      "classification": "canonical"
+    },
+    {
+      "value": 2368,
+      "label": "ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 2701,
+      "label": "בראשית א:א",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 3168,
+      "label": "ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 2895472,
+      "label": "2701×1072 / 37² Collapse source",
+      "method": "Research · Number",
+      "classification": "canonical"
+    }
+  ]
+}
