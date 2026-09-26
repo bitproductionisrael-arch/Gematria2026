@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .app{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
 .topbar{min-height:var(--top);display:grid;grid-template-columns:minmax(150px,220px) minmax(260px,1fr) auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:#0d1219}
 .brand{min-width:0}.brand h1{font-size:18px;margin:0 0 3px}.brand .sub{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}.query-mult{height:54px;display:grid;grid-template-columns:28px 42px 28px;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1016}.query-mult button{border:0;border-radius:0;padding:0;font-size:20px;font-weight:900;background:#0c1219}.query-mult button:first-child{border-inline-end:1px solid var(--line)}.query-mult button:last-child{border-inline-start:1px solid var(--line)}#queryMultValue{display:grid;place-items:center;font-weight:950;font-size:13px;direction:ltr;color:#ffe2a0;white-space:nowrap}
+.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}.query-mult{height:54px;display:grid;grid-template-columns:28px 42px 28px;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1016}.query-mult button{border:0;border-radius:0;padding:0;font-size:20px;font-weight:900;background:#0c1219}.query-mult button:first-child{border-inline-end:1px solid var(--line)}.query-mult button:last-child{border-inline-start:1px solid var(--line)}#queryMultValue{display:grid;place-items:center;font-weight:950;font-size:13px;direction:ltr;color:#7f8a96;white-space:nowrap;background:#0a1016}#queryMultValue.active{color:#ffe2a0;background:#17140d}
 #q{height:54px;resize:none;padding:8px 10px;font-size:18px;line-height:1.35;min-width:0}
 .queryside{display:grid;grid-template-rows:1fr 1fr;gap:5px;min-width:115px}
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
@@ -240,7 +240,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <div class="brand"><h1>Gematria Research Engine V4.9</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
-      <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><div id="queryMultValue">x1</div><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
+      <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><button id="queryMultValue" aria-label="הפעל מכפיל">×1</button><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
       <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
@@ -685,7 +685,7 @@ function syncRelevantResults(text,results,otherText=''){const allowed=new Set(sy
 function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(textB);if(a.script!==b.script)return[];const active=syncRelevantResults(textA,a.results,textB),byB=Object.fromEntries(b.results.map(r=>[r.method.key,r]));return active.map(x=>({method:x.method,a:x.total,b:byB[x.method.key]?.total??null,delta:byB[x.method.key]!=null?byB[x.method.key].total-x.total:null})).filter(x=>x.b!=null)}
 
 /* ---------- state ---------- */
-const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
+const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,queryMultiplierActive:false,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
 
 const SAVED_STORE_KEY='gematria2026.saved.v1';
@@ -739,15 +739,17 @@ function deleteSaved(id){SAVED_ITEMS=SAVED_ITEMS.filter(x=>x.id!==id);persistSav
 function corpusSyncPayload(){return {schema:'gematria2026-local-corpus-sync-v2',generated_at:new Date().toISOString(),shared_corpus_version:SHARED_CORPUS_META.updated_at||null,canonical_overrides:CORPUS_OVERRIDES,items:SAVED_ITEMS.filter(x=>x.kind==='corpus').map(x=>({id:x.id,text:x.text,script:x.script,corpus:x.corpusName||'כללי',snapshot:x.snapshot||[]}))}}
 
 function queryMultiplier(){return Math.max(1,Math.trunc(Number(state.queryMultiplier)||1))}
-function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el)el.textContent='×'+queryMultiplier();const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=queryMultiplier()<=1}
+function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el){el.textContent='×'+queryMultiplier();el.classList.toggle('active',!!state.queryMultiplierActive)}const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=!state.queryMultiplierActive||queryMultiplier()<=1}
 function scaleCurrentResults(data){
- const n=queryMultiplier();if(n===1)return data;
+ const n=queryMultiplier();if(!state.queryMultiplierActive||n===1)return data;
  return {script:data.script,results:data.results.map(r=>({...r,baseTotal:r.total,total:r.total*n,queryMultiplier:n}))}
 }
 function magnetQueryPrefix(r){
  if(r?.repeatMeta)return '×'+r.repeatMeta.count+' '+r.repeatMeta.phrase;
- const q=document.getElementById('q').value.trim(),n=r?.queryMultiplier||queryMultiplier();
- return '×'+n+' '+q
+ const q=document.getElementById('q').value.trim();
+ if(!r?.queryMultiplier&&!state.queryMultiplierActive)return q;
+ const n=r?.queryMultiplier||queryMultiplier();
+ return n>1?'×'+n+' '+q:q
 }
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
@@ -1360,8 +1362,9 @@ async function saveSelectedPoster(){
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
 document.getElementById('q').addEventListener('input',()=>{document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
-document.getElementById('queryMultMinus').addEventListener('click',()=>{state.queryMultiplier=Math.max(1,queryMultiplier()-1);renderAll()});
-document.getElementById('queryMultPlus').addEventListener('click',()=>{state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
+document.getElementById('queryMultMinus').addEventListener('click',()=>{if(!state.queryMultiplierActive)return;state.queryMultiplier=Math.max(1,queryMultiplier()-1);if(state.queryMultiplier<=1){state.queryMultiplier=1;state.queryMultiplierActive=false}renderAll()});
+document.getElementById('queryMultValue').addEventListener('click',()=>{if(!state.queryMultiplierActive){state.queryMultiplierActive=true;state.queryMultiplier=2}else state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
+document.getElementById('queryMultPlus').addEventListener('click',()=>{if(!state.queryMultiplierActive){state.queryMultiplierActive=true;state.queryMultiplier=2}else state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
 
 document.getElementById('saveQuery').addEventListener('click',saveCurrentQuery);
 document.getElementById('openSaved').addEventListener('click',()=>openSavedManager('match'));
