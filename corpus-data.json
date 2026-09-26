@@ -1065,6 +1065,84 @@
       "label": "אני לידך עוזר",
       "method": "Hebrew Final Letters",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 256,
+      "label": "דברים",
+      "method": "Hebrew Regular · 2^8",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 816,
+      "label": "דברים",
+      "method": "Hebrew Final Letters · 256+560",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 13,
+      "label": "דברים",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 66,
+      "label": "דברים",
+      "method": "Reverse Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1008,
+      "label": "דברים",
+      "method": "Kidmi · matches פתח עמית",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 768,
+      "label": "דברים",
+      "method": "Equivalence · 3×Regular for 5-letter word",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
+      "label": "×2 דברים",
+      "method": "Hebrew Regular · 2^9",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "×2 דברים",
+      "method": "Hebrew Reduced · יהוה",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1536,
+      "label": "×2 דברים",
+      "method": "Equivalence",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 768,
+      "label": "×3 דברים",
+      "method": "Hebrew Regular · equals Equivalence(דברים)",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2304,
+      "label": "×3 דברים",
+      "method": "Equivalence",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1024,
+      "label": "×4 דברים",
+      "method": "Hebrew Regular · 2^10 · 1024−816=208",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 52,
+      "label": "×4 דברים",
+      "method": "Hebrew Reduced",
+      "classification": "BRIDGE"
     }
   ]
 }
