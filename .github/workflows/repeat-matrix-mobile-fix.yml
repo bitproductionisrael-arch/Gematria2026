@@ -1,0 +1,63 @@
+name: One-time Repeat Matrix Mobile Fix
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Fix matrix viewport and add full image export
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          old="#repeatMatrixDouble{font-weight:900;font-size:16px;min-width:54px}\n.repeat-grid.matrix-mode{display:block;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#080d12;padding:0}\n.repeat-matrix{border-collapse:separate;border-spacing:0;min-width:max-content;width:max-content;direction:rtl;font-size:11px}\n.repeat-matrix th,.repeat-matrix td{border-inline-start:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 9px;min-width:96px;height:48px;background:#0b121a;text-align:center;vertical-align:middle}\n.repeat-matrix thead th{position:sticky;top:0;z-index:4;background:#121b25;color:#ffe2a0;font-weight:900}\n.repeat-matrix .repeat-matrix-corner{position:sticky;right:0;z-index:6;min-width:190px;text-align:right;padding-inline:12px;background:#121b25}\n.repeat-matrix .repeat-matrix-method{position:sticky;right:0;z-index:3;min-width:190px;max-width:240px;text-align:right;padding-inline:12px;background:#0f1822;color:#dce6f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n.repeat-matrix-cell{cursor:pointer;transition:.12s}"
+          new="#repeatMatrixDouble{font-weight:900;font-size:16px;min-width:54px}\n#saveRepeatMatrix{font-size:16px;min-width:46px}\n.repeat-grid.matrix-mode{display:block;direction:ltr;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#080d12;padding:0;scrollbar-gutter:stable}\n.repeat-matrix{border-collapse:separate;border-spacing:0;min-width:max-content;width:max-content;direction:ltr;font-size:11px;table-layout:fixed}\n.repeat-matrix th,.repeat-matrix td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 8px;width:86px;min-width:86px;height:48px;background:#0b121a;text-align:center;vertical-align:middle}\n.repeat-matrix thead th{position:sticky;top:0;z-index:4;background:#121b25;color:#ffe2a0;font-weight:900}\n.repeat-matrix .repeat-matrix-corner{position:sticky;left:0;z-index:6;width:154px;min-width:154px;max-width:154px;text-align:right;direction:rtl;padding-inline:10px;background:#121b25}\n.repeat-matrix .repeat-matrix-method{position:sticky;left:0;z-index:3;width:154px;min-width:154px;max-width:154px;text-align:right;direction:rtl;padding-inline:10px;background:#0f1822;color:#dce6f0;white-space:normal;line-height:1.15;overflow:hidden}\n.repeat-matrix-cell{cursor:pointer;transition:.12s;direction:ltr}"
+          assert old in s, "missing anchor: matrix layout base"
+          s=s.replace(old,new,1)
+          old="  .method-pane{display:grid}.category-tabs,.method-grid{display:grid}.mobile-method{display:none}\n  .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.repeat-controls input{display:none}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}\n}"
+          new="  .method-pane{display:grid}.category-tabs,.method-grid{display:grid}.mobile-method{display:none}\n  .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}\n}"
+          assert old in s, "missing anchor: mobile matrix fit"
+          s=s.replace(old,new,1)
+          old="<button id=\"repeatMatrixToggle\" title=\"פתח מטריקס של כל שיטות הגימטריה וכל דרגות ההכפלה\">▦ מטריקס</button><button id=\"repeatMatrixDouble\" title=\"הכפל את כל דרגות המטריקס פי 2\" hidden>×2</button>"
+          new="<button id=\"repeatMatrixToggle\" title=\"פתח מטריקס של כל שיטות הגימטריה וכל דרגות ההכפלה\">▦ מטריקס</button><button id=\"repeatMatrixDouble\" title=\"הכפל את כל דרגות המטריקס פי 2\" hidden>×2</button><button id=\"saveRepeatMatrix\" title=\"שמור את כל המטריקס כתמונה\" hidden>📸</button>"
+          assert old in s, "missing anchor: matrix save button"
+          s=s.replace(old,new,1)
+          old=" const matrixBtn=document.getElementById('repeatMatrixToggle'),doubleBtn=document.getElementById('repeatMatrixDouble');\n matrixBtn.classList.toggle('active',state.repeatMatrixView);\n doubleBtn.hidden=!state.repeatMatrixView;"
+          new=" const matrixBtn=document.getElementById('repeatMatrixToggle'),doubleBtn=document.getElementById('repeatMatrixDouble'),saveBtn=document.getElementById('saveRepeatMatrix');\n matrixBtn.classList.toggle('active',state.repeatMatrixView);\n doubleBtn.hidden=!state.repeatMatrixView;\n saveBtn.hidden=!state.repeatMatrixView;"
+          assert old in s, "missing anchor: render save visibility"
+          s=s.replace(old,new,1)
+          old="  grid.innerHTML=html;\n  prev.style.display='none';next.style.display='none';page.textContent='מטריקס';"
+          new="  grid.innerHTML=html;\n  grid.scrollLeft=0;grid.scrollTop=0;\n  prev.style.display='none';next.style.display='none';page.textContent='מטריקס';"
+          assert old in s, "missing anchor: matrix initial scroll"
+          s=s.replace(old,new,1)
+          old="function diffRows(aText,bText){const rows=compareResults(aText,bText);"
+          new="async function saveRepeatMatrixImage(){\n const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value;\n const script=detectScript(phrase),methods=METHODS[script];\n const max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));\n const cols=Array.from({length:max},(_,i)=>(i+1)*state.repeatMatrixScale);\n const pad=28,titleH=104,headH=54,rowH=54,methodW=238,cellW=102;\n const W=pad*2+methodW+cellW*cols.length,H=pad*2+titleH+headH+rowH*methods.length;\n try{\n  const c=document.createElement('canvas');c.width=W;c.height=H;\n  const ctx=c.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas unavailable');\n  ctx.fillStyle='#081018';ctx.fillRect(0,0,W,H);\n  ctx.fillStyle='#f4f7fb';ctx.font='900 30px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(phrase,W-pad,pad+34,W-pad*2);\n  ctx.fillStyle='#8e9aa8';ctx.font='600 14px system-ui';ctx.fillText(`מטריקס חזרות · ${methods.length} שיטות · דרגה ×${state.repeatMatrixScale}`,W-pad,pad+62,W-pad*2);\n  const x0=pad,y0=pad+titleH;\n  ctx.strokeStyle='#33404d';ctx.lineWidth=1;\n  ctx.fillStyle='#121b25';ctx.fillRect(x0,y0,methodW,headH);\n  ctx.fillStyle='#ffe2a0';ctx.font='800 14px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText('שיטה',x0+methodW-12,y0+33,methodW-24);\n  cols.forEach((n,j)=>{const x=x0+methodW+j*cellW;ctx.fillStyle='#121b25';ctx.fillRect(x,y0,cellW,headH);ctx.strokeRect(x,y0,cellW,headH);ctx.fillStyle='#ffe2a0';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText('×'+n,x+cellW/2,y0+33)});\n  methods.forEach((m,i)=>{\n   const y=y0+headH+i*rowH,short=String(m.name||'').split(' / ')[0].trim();\n   ctx.fillStyle='#0f1822';ctx.fillRect(x0,y,methodW,rowH);ctx.strokeRect(x0,y,methodW,rowH);\n   ctx.fillStyle='#dce6f0';ctx.font='700 12px system-ui';ctx.direction='rtl';ctx.textAlign='right';ctx.fillText(short,x0+methodW-10,y+31,methodW-20);\n   cols.forEach((n,j)=>{\n    const x=x0+methodW+j*cellW,r=makeRepeatSelection(phrase,script,m,n),hit=corpusHits(r.total)[0];\n    ctx.fillStyle='#0b121a';ctx.fillRect(x,y,cellW,rowH);ctx.strokeRect(x,y,cellW,rowH);\n    ctx.fillStyle='#f2f6fa';ctx.font='800 13px system-ui';ctx.direction='ltr';ctx.textAlign='center';ctx.fillText(fmt(r.total),x+cellW/2,y+24,cellW-10);\n    if(hit){ctx.fillStyle='#d8ad55';ctx.font='600 8px system-ui';ctx.fillText(String(hit.label).slice(0,18),x+cellW/2,y+40,cellW-8)}\n   })\n  });\n  const blob=await new Promise(resolve=>c.toBlob(resolve,'image/png',1));if(!blob)throw new Error('PNG blob failed');\n  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=safeFileName(phrase+' - repeat matrix')+'.png';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2500);return true\n }catch(e){console.error(e);return false}\n}\n\nfunction diffRows(aText,bText){const rows=compareResults(aText,bText);"
+          assert old in s, "missing anchor: matrix image export function"
+          s=s.replace(old,new,1)
+          old="document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;renderRepeat()});\ndocument.getElementById('repeatGrid').addEventListener('click',e=>{"
+          new="document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;renderRepeat()});\ndocument.getElementById('saveRepeatMatrix').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס')});\ndocument.getElementById('repeatGrid').addEventListener('click',e=>{"
+          assert old in s, "missing anchor: matrix save event"
+          s=s.replace(old,new,1)
+          old="document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});"
+          new="document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}if(state.tab==='repeat'&&state.repeatMatrixView){const ok=await saveRepeatMatrixImage();toast(ok?'המטריקס נשמר כתמונה':'שגיאה בשמירת המטריקס');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});"
+          assert old in s, "missing anchor: global camera matrix save"
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding="utf-8")
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Fix repeat matrix mobile layout and add image export"
+          git push origin main
