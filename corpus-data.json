@@ -2175,6 +2175,30 @@
       "label": "A.B.A MIKE ROV",
       "method": "English Gematria = 6×97; paired with Amit 258 = 6×43",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 106,
+      "label": "קו",
+      "method": "Hebrew Regular; qere form in I Kings 7:23",
+      "classification": "canonical"
+    },
+    {
+      "value": 111,
+      "label": "קוה",
+      "method": "Hebrew Regular; ketiv form in I Kings 7:23",
+      "classification": "canonical"
+    },
+    {
+      "value": 424,
+      "label": "קו / קוה → 424/888",
+      "method": "424=4×106; 888=8×111; therefore 888/424=2×(111/106)",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2664,
+      "label": "קו / קוה π bridge",
+      "method": "with π*=3×111/106=333/106, circumference at r=424 is exactly 2664=3×888",
+      "classification": "BRIDGE"
     }
   ]
 }
