@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-29",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati, Tevah, Greek dual ordinal methods, π/e/φ operators, Torah/YHWH/Tov=17, Song of the Sea cipher/key structures, Psalm 145:16 פי/פאי bridges, Father/Mother bridges, Revelation 2320, C₉₉₉ power classes, mod-37 name residues, and the קבלה–חכמה–בראשית Private/Squared Gematria anchor.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati, Tevah, Greek dual ordinal methods, π/e/φ operators, Torah/YHWH/Tov=17, Song of the Sea cipher/key structures, Psalm 145:16 פי/פאי bridges, Father/Mother bridges, Revelation 2320, C₉₉₉ power classes, mod-37 name residues, and the קבלה–חכמה–בראשית Private/Squared Gematria anchor. Default research protocol now includes π Power scan on Fibonacci exponents P1/P2/P3/P5 (Aleph/Bet/Gimel/He), with raw and Fold1000 outputs.",
   "entries": [
     {
       "value": 13,
@@ -3999,6 +3999,189 @@
       "label": "יהי קדם הנוצר",
       "method": "Hebrew Word Reduced · 7+9+9 = 25 = יהי Hebrew Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 2701,
+      "label": "π: P₂(82)=2701",
+      "method": "Power-of-Bet · exact raw hit: sum of squares of first 82 fractional digits of π = 2701 = בראשית א:א Regular; H₂(82)=703",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 703,
+      "label": "π: H₂(82)→703",
+      "method": "P₂^π(82)=2701; Fold₁₀₀₀: 2|701 → 703 = ואת הארץ Regular = T37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2368,
+      "label": "π: P₁(534)=2368",
+      "method": "Power-of-Aleph · exact raw hit from 534 = ק²ב²ל²ה²; equals ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ Greek Isopsephy",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 370,
+      "label": "π: H₁(534)→370",
+      "method": "P₁^π(534)=2368; Fold₁₀₀₀: 2|368 → 370 = 10×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "π: H₂(534)→888",
+      "method": "Power-of-Bet · P₂^π(534)=14874; Fold₁₀₀₀: 14|874 → 888 = עמית מייק רוב",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "π: H₅(534)→520",
+      "method": "Power-of-He · P₅^π(534)=6396118; Fold₁₀₀₀: 6|396|118 → 520 = עמית",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 666,
+      "label": "π: P₁(144)=666",
+      "method": "Power-of-Aleph · n=144 = קדם Regular; exact raw hit = Amit M. Rov English Gematria",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 111,
+      "label": "π: H₃(144)→111",
+      "method": "Power-of-Gimel · P₃^π(144)=31080; Fold₁₀₀₀: 31|080 → 111 = Amit M. Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "π: H₅(2)→26",
+      "method": "Power-of-He · P₅^π(2)=1^5+4^5=1025; Fold₁₀₀₀: 1|025 → 26 = יהוה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 874,
+      "label": "π: H₅(25)→874",
+      "method": "Power-of-He · P₅^π(25)=296578; Fold₁₀₀₀: 296|578 → 874 = Amit Mike Rov English Regular; n=25 = יהי Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 43,
+      "label": "π: H₅(33)→43",
+      "method": "Power-of-He · P₅^π(33)=408634; Fold₁₀₀₀: 408|634=1042 → 1|042=43 = Amit English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 208,
+      "label": "π: H₅(1888)→208",
+      "method": "Power-of-He · P₅^π(1888)=23442742; Fold₁₀₀₀ → 208 = רוב Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
+      "label": "π: H₅(888)→16",
+      "method": "Power-of-He · P₅^π(888)=10802203; Fold₁₀₀₀ → 16 = עמית Hebrew Small / ×4 Father Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 130,
+      "label": "π: H₅(520)→130",
+      "method": "Power-of-He · P₅^π(520)=6164959; Fold₁₀₀₀ → 130 = יהוה×5",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 760,
+      "label": "π: H₅(703)→760",
+      "method": "Power-of-He · P₅^π(703)=8362390; Fold₁₀₀₀ → 760 = 10×בראשית Hebrew Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 444,
+      "label": "π: H₃(543)→444",
+      "method": "Power-of-Gimel · P₃^π(543)=107337; Fold₁₀₀₀: 107|337 → 444; n=543 = אהיה אשר אהיה",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 60,
+      "label": "π: H₂(850)→60",
+      "method": "Power-of-Bet · P₂^π(850)=24036; Fold₁₀₀₀: 24|036 → 60 = ΑΜΙΘ Greek Isopsephy; n=850 = ὢν",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
+      "label": "π: H₃(850)→222",
+      "method": "Power-of-Gimel · P₃^π(850)=172050; Fold₁₀₀₀: 172|050 → 222",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 815,
+      "label": "π: H₃(2048)→815",
+      "method": "Power-of-Gimel · P₃^π(2048)=425390; Fold₁₀₀₀: 425|390 → 815 = ΖΩΗ Greek Isopsephy",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "π: H₁(2701)→520",
+      "method": "Power-of-Aleph · P₁^π(2701)=12508; Fold₁₀₀₀: 12|508 → 520 = עמית",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
+      "label": "π: H₁(232)→55",
+      "method": "Power-of-Aleph · P₁^π(232)=1054; Fold₁₀₀₀: 1|054 → 55 = Rov English Simple / הכל",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 112,
+      "label": "π: H₃(232)→112",
+      "method": "Power-of-Gimel · P₃^π(232)=48064; Fold₁₀₀₀: 48|064 → 112 = פאי AVGaD/Positional",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 88,
+      "label": "π: H₅(232)→88",
+      "method": "Power-of-He · P₅^π(232)=2941144; Fold₁₀₀₀: 2|941|144=1087 → 1|087=88 = מיכאל בלייז Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 636,
+      "label": "π: P₂(20)=636",
+      "method": "Power-of-Bet · exact raw hit; n=20 = י״י Regular / ×5 Father Word Reduced; 636 = מילוי עמית",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 43,
+      "label": "π: P₂(4)=43",
+      "method": "Power-of-Bet · first 4 fractional digits: 1²+4²+1²+5²=43 = Amit English Simple; n=4 = ד Regular from ב²",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 288,
+      "label": "π: P₁(58)=288",
+      "method": "Power-of-Aleph · n=58 = Father English Simple; exact raw hit 288 = φ(888)",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 177,
+      "label": "π: H₅(58)→177",
+      "method": "Power-of-He · P₅^π(58)=928248; Fold₁₀₀₀: 928|248=1176 → 1|176=177 = עמית מיכאל בלייז רוב Ordinal",
+      "classification": "BRIDGE"
     }
-  ]
+  ],
+  "operator_protocols": {
+    "pi_power_fibonacci": {
+      "added_at": "2026-09-29",
+      "powers": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "names": {
+        "1": "Power-of-Aleph",
+        "2": "Power-of-Bet",
+        "3": "Power-of-Gimel",
+        "5": "Power-of-He"
+      },
+      "definition": "For π=3.d1d2..., P_k^π(n)=Σ_{i=1..n} d_i^k using fractional digits only.",
+      "fold": "H_k^π(n)=Fold_1000(P_k^π(n)): split into 3-digit blocks from the right, sum blocks, and repeat until <1000.",
+      "rationale": "Fibonacci exponent lane 1,2,3,5. P4/Dalet is intentionally not part of this lane.",
+      "default_policy": "Run P1, P2, P3 and P5 on every newly established positive-integer corpus anchor. Preserve raw values and folded values; promote exact/raw hits, corpus hits, fixed points, cycles and structural bridges."
+    }
+  }
 }
