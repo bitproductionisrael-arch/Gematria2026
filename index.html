@@ -60,7 +60,7 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 </section>
 
 <section class="section" id="research"><div class="wrap">
-  <div class="section-head"><h2>המערכת</h2><p>כל כלי עומד בפני עצמו, אבל כולם משתמשים באותה שפה מחקרית ובאותו קורפוס. עובדה חשבונית, מקור היסטורי ופרשנות נשמרים כשכבות נפרדות.</p></div>
+  <div class="section-head"><h2>המערכת</h2><p>כל כלי עומד בפני עצמו, אבל כולם משתמשים באותה שפה מחקרית ובאותו קורפוס. החישוב נותן את המבנה, המקור נותן את ההקשר, והפרשנות מסבירה מה המבנה מבטא בתוך המודל.</p></div>
   <div class="grid">
     <a class="card tool-card gold" href="calculator.html"><div class="num">Σ</div><h3>מחשבון גימטריה</h3><p>עברית, יוונית ואנגלית; שיטות בסיס, צמצומים, צופנים, מילויים ואופרטורים.</p><div class="go">פתח כלי ←</div></a>
     <a class="card tool-card" href="calculator.html#methods"><div class="num">ƒ</div><h3>ספר השיטות</h3><p>כל סייפר עם מיפוי ברור, נוסחה, דוגמה, שם מסורתי/מקורי ומעמד היסטורי.</p><div class="go">פתח ספר ←</div></a>
@@ -79,7 +79,7 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 </div></section>
 
 <section class="section"><div class="wrap">
-  <div class="section-head"><h2>Notes אחרונים</h2><p>דפי המחקר הם גרסאות קריאות של עבודה מתוך הקורפוס — עם נוסחאות קצרות וגבול ברור בין חישוב לפרשנות.</p></div>
+  <div class="section-head"><h2>Notes אחרונים</h2><p>דפי המחקר הם גרסאות קריאות של העבודה מתוך הקורפוס — נוסחה, מבנה, קשר ומשמעות. המטרה היא לראות לא רק מה המספר, אלא למה הוא מופיע כאן ומה הוא מחבר.</p></div>
   <div class="notes">
     <a class="note" href="blog.html#makom"><div class="date">2026·09·29</div><div><h3>מקום · 104 → 512 → 1024</h3><p>Atbash(מקום)=104, P₁ᵉ(104)=512, Boneh(מקום)=512, ואז ×2=1024.</p></div><div class="arrow">←</div></a>
     <a class="note" href="blog.html#space-wisdom"><div class="date">2026·09·29</div><div><h3>החלל = חכמה · וקטור 73/37/55/19</h3><p>ארבע שיטות בלתי תלויות מחזירות אותו וקטור לשתי המילים.</p></div><div class="arrow">←</div></a>
@@ -92,7 +92,7 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 </div></section>
 </main>
 
-<footer><div class="wrap">Gematria2026 הוא כלי מחקר. חישובים ניתנים לשחזור; פרשנות אינה הופכת התאמה מספרית לבדה להוכחה היסטורית, מדעית או תאולוגית. © 2026.</div></footer>
+<footer><div class="wrap">Gematria2026 הוא כלי מחקר למבנים של אותיות, מספרים, צורות וקשרים. החישובים ניתנים לשחזור, והפרשנות נועדה לחשוף את משמעות המבנה בתוך המערכת. © 2026.</div></footer>
 <script>
 fetch('corpus-data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{const a=Array.isArray(d)?d:d.entries;document.getElementById('corpusCount').textContent=Array.isArray(a)?a.length.toLocaleString('en-US'):'—'}).catch(()=>document.getElementById('corpusCount').textContent='—');
 </script>
