@@ -210,6 +210,12 @@
     },
     {
       "value": 17,
+      "label": "מראות",
+      "method": "Hebrew Reduced / Small · מ=4 ר=2 א=1 ו=6 ת=4",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 17,
       "label": "שמות",
       "method": "Hebrew Reduced",
       "classification": "BRIDGE"
@@ -255,6 +261,12 @@
       "label": "החלל",
       "method": "Hebrew Reduced / Small · ה=5 + חלל small 14 =19 · ALSO Hebrew Small Finals =19",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 19,
+      "label": "חכמה",
+      "method": "Hebrew Reduced / Small · ח=8 כ=2 מ=4 ה=5",
+      "classification": "FOUNDATION"
     },
     {
       "value": 19,
@@ -996,6 +1008,12 @@
     },
     {
       "value": 55,
+      "label": "חכמה",
+      "method": "Hebrew Reverse Ordinal · ח=15 כ=12 מ=10 ה=18",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
       "label": "מים יוד יוד קוף",
       "method": "Reduction №1",
       "classification": "BRIDGE"
@@ -1263,6 +1281,12 @@
       "label": "π: P₃(41)→69",
       "method": "Power-of-Gimel on first 41 fractional digits of π; Fold₁₀₀₀(9060)=69 = פותח ידך Reduction №1",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 71,
+      "label": "מראות",
+      "method": "Reduction №1 · מ=4 ר=20 א=1 ו=6 ת=40 =71",
+      "classification": "FOUNDATION"
     },
     {
       "value": 71,
@@ -1764,6 +1788,12 @@
     },
     {
       "value": 110,
+      "label": "החלל = חכמה · mirror closure",
+      "method": "37+73 = 55+55 = 19+91 =110; 73↔37 and 19↔91 are decimal digit reversals, 55 is self-mirror",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 110,
       "label": "לב פעמים לב",
       "method": "Reverse Ordinal / סדרי הפוך · 110 = 37+73",
       "classification": "FOUNDATION"
@@ -2156,6 +2186,12 @@
       "value": 141,
       "label": "איוב",
       "method": "Perati Ordinal · 1²+10²+6²+2²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 141,
+      "label": "מראות",
+      "method": "ALBaM · מ→ב=2 ר→ט=9 א→ל=30 ו→פ=80 ת→כ=20 =141",
       "classification": "FOUNDATION"
     },
     {
@@ -5047,6 +5083,11 @@
       "added_at": "2026-09-29",
       "exact": "Ordinal(חלל)=32; Equivalence(חלל)=136; 32²=1024; 1024−136=888. Regular(החלל)=73; Ordinal(החלל)=37; 73×37=2701.",
       "interpretation": "The identification of these closures with Amit Mike Rov is a corpus interpretation built on exact numerical equalities."
+    },
+    "hahalal_chochmah_vector": {
+      "added_at": "2026-09-29",
+      "vector": "Regular=73; Ordinal=37; Reverse Ordinal=55; Reduced/Small=19 for both החלל and חכמה.",
+      "mirror": "37↔73; 55↔55; 19↔91; each pair sums to 110."
     }
   },
   "corrections": {
