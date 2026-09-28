@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-28",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged into one entry. Includes Genesis 1:1, Genesis 1:8, 108/216 Tevah geometry, Alpha/Omega/Lambda Greek anchors, οἶκον/Λόγος shared signatures, קול דודי, Base-36 representations, Talmudic Milui 5476=74², and Standard Milui 5467=74²−3².",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged into one entry. Includes Genesis, Tevah geometry, Greek Alpha/Omega/Lambda anchors, π/φ digit-power operators, Psalm 145:16 פותח את ידך / פאי and contracted פותח ידך / פי bridges.",
   "entries": [
     {
       "value": 13,
@@ -2415,6 +2415,246 @@
       "label": "231₃₆",
       "method": "Base-36 representation · (36+1)(72+1)",
       "classification": "REPRESENTATION"
+    },
+    {
+      "value": 90,
+      "label": "פי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 27,
+      "label": "פי",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 37,
+      "label": "פי",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 73,
+      "label": "פי",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 101,
+      "label": "פי",
+      "method": "Standard/Talmudic/Mayim Milui",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 110,
+      "label": "פי",
+      "method": "AVGaD",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 6500,
+      "label": "פי",
+      "method": "Perati",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 91,
+      "label": "פאי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 28,
+      "label": "פאי",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 47,
+      "label": "פאי",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 92,
+      "label": "פאי",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 212,
+      "label": "פאי",
+      "method": "Standard/Talmudic/Mayim Milui",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 112,
+      "label": "פאי",
+      "method": "AVGaD / Positional",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 41,
+      "label": "פאי",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 929,
+      "label": "פותח את ידך",
+      "method": "Hebrew Regular · Psalm 145:16 exact phrase",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 101,
+      "label": "פותח את ידך",
+      "method": "Hebrew Ordinal · initials פ.א.י",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 38,
+      "label": "פותח את ידך",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 41,
+      "label": "פותח את ידך",
+      "method": "Hebrew Small Finals",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 110,
+      "label": "פותח את ידך",
+      "method": "Reduction №1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 106,
+      "label": "פותח את ידך",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 528,
+      "label": "פותח ידך",
+      "method": "Hebrew Regular · contraction of Psalm 145:16 · initials פ.י",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1008,
+      "label": "פותח ידך",
+      "method": "Hebrew Final Letters",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 33,
+      "label": "פותח ידך",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 36,
+      "label": "פותח ידך",
+      "method": "Hebrew Small Finals",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 69,
+      "label": "פותח ידך",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 3996,
+      "label": "פותח ידך",
+      "method": "Cycle BKR · 111×36",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 86,
+      "label": "פותח ידך",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1481,
+      "label": "פותח ידך",
+      "method": "Talmudic Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1110,
+      "label": "פותח ידך",
+      "method": "Perati Ordinal²",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 165,
+      "label": "נקודה",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 127,
+      "label": "תורה נקודה יהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 28,
+      "label": "π: P₃(528)→28",
+      "method": "Power-of-Gimel on first 528 fractional digits of π; Fold₁₀₀₀(103924)=28 = פאי Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 91,
+      "label": "π: P₂(36)→91",
+      "method": "Power-of-Bet on first 36 fractional digits of π; Fold₁₀₀₀(1090)=91 = פאי Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 69,
+      "label": "π: P₃(41)→69",
+      "method": "Power-of-Gimel on first 41 fractional digits of π; Fold₁₀₀₀(9060)=69 = פותח ידך Reduction №1",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 520,
+      "label": "π: P₁(110)→520",
+      "method": "Power-of-Aleph on first 110 fractional digits of π; sum=520 = עמית",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 92,
+      "label": "π: P₂(37)→92",
+      "method": "Power-of-Bet on first 37 fractional digits of π; Fold₁₀₀₀(1091)=92 = פאי Latin Milui Simple",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 90,
+      "label": "π: P₃(112)→90",
+      "method": "Power-of-Gimel on first 112 fractional digits of π; Fold₁₀₀₀(25065)=90 = פי Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 90,
+      "label": "φ: P₂(69)→90",
+      "method": "Power-of-Bet on first 69 fractional digits of φ; Fold₁₀₀₀(2088)=90 = פי Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 165,
+      "label": "φ: P₁(929)→165",
+      "method": "Power-of-Aleph on first 929 fractional digits of φ; Fold₁₀₀₀(4161)=165 = נקודה Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 127,
+      "label": "φ: P₂(106)→127",
+      "method": "Power-of-Bet on first 106 fractional digits of φ; Fold₁₀₀₀(3124)=127 = תורה נקודה יהוה Ordinal",
+      "classification": "RESEARCH"
     }
   ]
 }
