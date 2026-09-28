@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Gematria Research Engine V4.9</title>
+<title>Gematria Research Engine V4.10</title>
 <style>
 :root{
   --bg:#0b0f14;--panel:#111720;--panel2:#0d131b;--line:#2a3440;--text:#eef3f8;--muted:#8e9aa8;
@@ -229,6 +229,29 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     letter-spacing:-.01em;
   }
 }
+
+/* ---------- method book / transparent naming ---------- */
+.methodbook-modal{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.88);display:none;color:var(--text)}
+.methodbook-modal.open{display:grid}.methodbook-shell{width:100vw;height:100vh;background:#0a0f15;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
+.methodbook-head{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);background:#0e151e}.methodbook-head .grow{flex:1;min-width:0}.methodbook-title{font-size:clamp(20px,3vw,30px);font-weight:950}.methodbook-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.methodbook-disclaimer{padding:10px 14px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(216,173,85,.08),rgba(95,211,207,.04));font-size:12px;line-height:1.65;max-height:27vh;overflow:auto}
+.methodbook-disclaimer b{color:#ffe2a0}.methodbook-disclaimer .vision{margin-top:7px;color:#cbd6e2}.methodbook-disclaimer .eng{direction:ltr;text-align:left;color:#93a2b3;margin-top:7px;font-size:11px}
+.methodbook-main{min-height:0;display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr)}
+.methodbook-nav{min-height:0;border-inline-end:1px solid var(--line);background:#0c1219;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:8px;padding:10px}
+.methodbook-langs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.methodbook-langs button.active{border-color:var(--gold);color:#ffe2a0;background:#18150e}
+#methodBookSearch{height:40px;padding:7px 9px;min-width:0}.methodbook-list{overflow:auto;display:grid;align-content:start;gap:5px;padding-inline-end:2px}
+.methodbook-item{text-align:start;padding:8px 9px;border:1px solid #202b37;border-radius:9px;background:#0b1118;display:grid;gap:2px}.methodbook-item.active{border-color:var(--gold);background:#18150e}.methodbook-item .n{font-weight:850;font-size:12px}.methodbook-item .k{font-size:9px;color:var(--muted);direction:ltr;text-align:left}
+.methodbook-doc{min-height:0;overflow:auto;padding:clamp(12px,2vw,24px);display:grid;align-content:start;gap:12px}
+.methodbook-name{font-size:clamp(26px,5vw,48px);font-weight:950;line-height:1.08}.methodbook-alias{color:var(--muted);font-size:13px}.methodbook-badges{display:flex;flex-wrap:wrap;gap:6px}.methodbook-badge{border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:10px}.methodbook-badge.trad{border-color:#75602e;color:#ffe2a0}.methodbook-badge.modern{border-color:#365d7c;color:#9fd1ff}.methodbook-badge.conflict{border-color:#82413e;color:#ffaaa4}
+.methodbook-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.methodbook-box{border:1px solid var(--line);border-radius:13px;background:#0d141c;padding:12px;min-width:0}.methodbook-box h3{margin:0 0 7px;font-size:12px;color:#aebdcb}.methodbook-bigformula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(15px,2vw,22px);line-height:1.55;direction:ltr;text-align:left;overflow-wrap:anywhere;color:#d9f5f3}
+.methodbook-flow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;direction:ltr}.methodbook-node{border:1px solid #334252;border-radius:9px;background:#091018;padding:7px 9px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}.methodbook-arrow{color:var(--gold);font-weight:900}.methodbook-example-title{font-weight:900;margin-bottom:8px}.methodbook-note{font-size:12px;line-height:1.65;color:#cbd6e2}.methodbook-origin{display:grid;gap:5px;font-size:12px}.methodbook-origin b{color:#ffe2a0}
+.methodbook-select{display:none;width:100%;height:42px;padding:6px 8px}
+@media(max-width:800px){
+ .methodbook-main{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+ .methodbook-nav{border-inline-end:0;border-bottom:1px solid var(--line);grid-template-rows:auto auto;grid-template-columns:1fr;max-height:none}
+ .methodbook-list{display:none}.methodbook-select{display:block}.methodbook-grid{grid-template-columns:1fr}.methodbook-disclaimer{max-height:24vh}
+}
+
 /* Emergency rule: only long continuous tokens are allowed to break. */
 .long-token{overflow-wrap:anywhere;word-break:break-word}
 
@@ -237,7 +260,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><h1>Gematria Research Engine V4.9</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
+    <div class="brand"><h1>Gematria Research Engine V4.10</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <button id="rabbatiBtn" class="query-quick rabbati-btn" title="רבתי · הכפל את האות שלפני הסמן ב־1000" aria-label="רבתי פי אלף"><span class="ancient-aleph">𐤀</span></button>
@@ -256,6 +279,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <button id="copyAllBroken" class="iconbtn" title="מגנט שבור — העתק רק תוצאה (שיטה)">🧲½</button>
       <button id="copyAllMath" class="iconbtn math-magnet" title="העתק את כל השיטות + פירוקים ותכונות מתמטיות">🧲∑</button>
       <button id="saveView" class="iconbtn" title="צלם בחירה פעילה / טאב">📸</button>
+      <button id="openMethodBook" class="iconbtn" title="ספר השיטות · שמות, מקור ואלגוריתם">📖</button>
     </div>
   </header>
 
@@ -357,6 +381,37 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       </div>
     </div>
   </div>
+
+  <div id="methodBookModal" class="methodbook-modal" aria-hidden="true">
+    <div class="methodbook-shell">
+      <div class="methodbook-head">
+        <div class="grow">
+          <div class="methodbook-title">ספר השיטות · Cipher Book</div>
+          <div class="methodbook-sub">שם נגיש · שם מקורי/מסורתי · אלגוריתם · דוגמה · מקור ותיארוך</div>
+        </div>
+        <button id="closeMethodBook" class="iconbtn" title="סגור">✕</button>
+      </div>
+      <div class="methodbook-disclaimer">
+        <b>שפה ברורה לכולם.</b> השמות הקצרים שמופיעים במחשבון נועדו להיות מובנים גם למי שאינו מכיר את הספרות המסורתית. ספר השיטות שומר לצד כל שם נגיש את השם ההיסטורי או המקורי כאשר הוא ידוע, שמות מקבילים במנועים נפוצים, האלגוריתם המדויק ומעמד המקור. שיטות מסורתיות נשמרות ומתועדות; שיטות חדשות מסומנות במפורש כ<strong>פיתוח האתר</strong> ואינן מוצגות כמסורת עתיקה. כל שיטה כאן היא כלל חישובי שניתן להסביר, לשחזר ולהעמיד למבחן. תוצאה מספרית לבדה אינה הוכחה לקשר היסטורי, מדעי או רוחני; הפרשנות והמסקנות הן באחריות המשתמש.
+        <div class="vision">אנחנו מזמינים אתכם לקפוץ מדרגה בניתוח: לא להסתפק בהתאמה אחת, אלא לבדוק איך מספר נבנה, באילו מסלולים עצמאיים הוא חוזר, ועד כמה הקשר נשאר יציב כאשר משנים שיטה. הצלילה לאותיות ולמספרים היא למעשה צלילה למרחב גדול מאוד של מבנים אפשריים; הכלי נועד לעזור להבחין בין צירוף מקרים לבין קשר שחוזר תחת בדיקות שונות. ברובד הרעיוני אנחנו מציעים שפה מתמטית לחקר אותיות, אותות, מילים, רעיונות ומבנים. חזון האתר הוא עולם ברור יותר ומלא באהבה ובאחדות. כעוגן מספרי בלבד: אחד=13, אהבה=13, ולכן אחד+אחד=26=יהוה בגימטריה הכרחית.</div>
+        <div class="eng"><b>Plain Language for Everyone.</b> Calculator labels are modern, readable names. This book preserves traditional/original names where documented, engine aliases, exact algorithms, historical status and examples. New methods are explicitly marked as site-developed. Numeric matches are reproducible calculations, not by themselves proof of historical, scientific or spiritual claims.</div>
+      </div>
+      <div class="methodbook-main">
+        <aside class="methodbook-nav">
+          <div class="methodbook-langs">
+            <button data-methodbook-script="he" class="active">עברית</button>
+            <button data-methodbook-script="el">Ελληνικά</button>
+            <button data-methodbook-script="en">English</button>
+          </div>
+          <input id="methodBookSearch" type="search" placeholder="חיפוש שיטה / cipher…" aria-label="חיפוש שיטה">
+          <select id="methodBookSelect" class="methodbook-select" aria-label="בחר שיטה"></select>
+          <div id="methodBookList" class="methodbook-list"></div>
+        </aside>
+        <article id="methodBookDoc" class="methodbook-doc"></article>
+      </div>
+    </div>
+  </div>
+
   <div id="toast" class="toast" aria-live="polite"></div>
 </div>
 <script>
@@ -656,6 +711,121 @@ function calculate(text,script,m){
  return {method:m,total,words:wordRows};
 }
 function calculateAll(text){const script=detectScript(text);return {script,results:METHODS[script].map(m=>calculate(text,script,m))}}
+
+/* ---------- method book / transparent naming ---------- */
+const METHOD_BOOK_DOCS={
+ 'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
+ 'he:final':{plain:'גימטריה סופית',original:'Final-letter values / Mispar Gadol variant',status:'traditional',history:'וריאנט מסורתי שבו ךםןףץ מקבלות ערכים מורחבים. שם ותיארוך מדויק יסומנו לאחר אימות מקור ראשוני.',formula:'Regular values, but ך=500, ם=600, ן=700, ף=800, ץ=900.'},
+ 'he:ordinal':{plain:'גימטריה סדרית',original:'מספר סידורי / Mispar Siduri',status:'traditional',history:'שיטה מסורתית המבוססת על מיקום האות באלפבית.',formula:'א=1, ב=2, …, ת=22; sum the letter positions.'},
+ 'he:reduced':{plain:'גימטריה קטנה',original:'מספר קטן / Mispar Katan',status:'traditional',history:'שיטת צמצום מסורתית: כל אות מצטמצמת לספרה 1–9 לפני הסכימה.',formula:'Reduce each standard Hebrew letter value to its non-zero decimal digit, then sum.'},
+ 'he:smallFinals':{plain:'גימטריה קטנה סופית',original:'Reduced extended finals',status:'mixed',history:'וריאנט שבו ערכי הסופיות המורחבים 500–900 מצטמצמים ל־5–9. נשמר בנפרד מן המספר הקטן הרגיל.',formula:'Use extended finals first; then reduce each letter value to 1–9.'},
+ 'he:wordReduced':{plain:'צמצום לפי מילה',original:'Wordwise reduction',status:'modern',history:'אופרטור מודרני של האתר. אינו מוצג כשם קבלי עתיק. כל מילה מצטמצמת בנפרד ואז תוצאות המילים מתחברות.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
+ 'he:reverseOrdinal':{plain:'סדרי הפוך',original:'Reverse Ordinal / Atbash-Ordinal equivalent',status:'derived',history:'הגדרה אלגוריתמית שקולה לסידורי של אות המראה באתב״ש: position → 23−position.',formula:'For Hebrew ordinal position n, use 23−n; then sum.'},
+ 'he:zeroStep':{plain:'צמצום עשרוני חד־שלבי',original:'שם מסורתי: לא נטען',status:'modern',history:'פיתוח מחקרי של האתר (2026). השם הישן באתר היה “צמצום №1”. השיטה מורידה שכבת עשרות אחת בלבד מערכים עשרוניים שמסתיימים באפס.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1'],conflict:true},
+ 'he:achorayim':{plain:'בניין קידומות',original:'Mispar Boneh-like prefix building',status:'conflict',history:'קונפליקט שם פתוח: הקוד מבצע סכומי קידומות מצטברים. התווית הישנה “מספר האחור · תוספת” אינה מתארת היטב את האלגוריתם.',formula:'For letters a₁…aₙ: sum (a₁)+(a₁+a₂)+…+(a₁+…+aₙ).',aliases:['מספר האחור · תוספת / Achorayim'],conflict:true},
+ 'he:positional':{plain:'ערך × מיקום',original:'Mispar Ha-Achor candidate',status:'conflict',history:'קונפליקט שם פתוח. האלגוריתם עצמו חד: כל ערך אות מוכפל במיקומו במילה.',formula:'Σ i·aᵢ, with positions i=1…n.',aliases:['גימטריה מיקום · מגרעת / Positional'],conflict:true},
+ 'el:isopsephy':{plain:'Greek Isopsephy',original:'ἰσοψηφία / isopsephy',status:'traditional',history:'שיטת המספרים האלפביתיים היוונית העתיקה; תיעוד כרונולוגי מפורט יתווסף עם מקורות.',formula:'Sum traditional Greek alphabetic numeral values.'},
+ 'el:reduced':{plain:'Reduced Isopsephy',original:'Modern reduced analogue',status:'modern',history:'אנלוג מודרני לצמצום 1–9 המופעל על ערכי האיזופספיה; אינו מוצג כאן כשיטה יוונית עתיקה.',formula:'Digital-root each isopsephy letter value to 1–9, then sum.'},
+ 'el:wordReduced':{plain:'Wordwise Isopsephy Reduction',original:'Modern wordwise reduction',status:'modern',history:'אופרטור מחקרי מודרני: כל מילה מצטמצמת בנפרד.',formula:'For each word: digital-root(sum(isopsephy values)); then sum the word results.'},
+ 'en:ordinal':{plain:'English Ordinal',original:'A1Z26 / Simple',status:'modern-standard',history:'מיפוי לטיני מודרני נפוץ. מנועים שונים משתמשים בכינויים Simple או Ordinal.',formula:'A=1, B=2, …, Z=26; then sum.',aliases:['English Simple']},
+ 'en:pythagorean':{plain:'English Full Reduction',original:'Pythagorean / Reduction',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
+ 'en:wordReduced':{plain:'English Wordwise Reduction',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(Pythagorean letter values)); then sum words.'},
+ 'en:sumerian':{plain:'English ×6',original:'Gematrix “English” / commonly called Sumerian in some engines',status:'engine',history:'שם מנוע מודרני; האלגוריתם הוא פשוט פי 6 מ־A1Z26.',formula:'6×English Ordinal letter value; then sum.',aliases:['English Gematria']},
+ 'en:regular':{plain:'English Extended',original:'Extended / Standard in modern engines',status:'engine',history:'מיפוי מודרני מדורג 1–9, 10–90, 100–800. “English Isopsephy” הוא שם עבודה ישן באתר ודורש החלפה.',formula:'A–I=1–9; J–R=10–90; S–Z=100–800.',aliases:['English Isopsephy'],conflict:true},
+ 'en:agrippa':{plain:'Agrippa Latin',original:'Agrippa cipher / Latin alphabetic values',status:'historical-modern',history:'מיפוי לטיני המזוהה עם מסורת אגריפה; תיעוד ביבליוגרפי מדויק יתווסף. הכינוי “Jewish Gematria” נשמר כ־engine alias בלבד.',formula:'Use the Agrippa Latin value table defined by the engine.',aliases:['Jewish Gematria'],conflict:true}
+};
+let METHOD_BOOK_STATE={script:'he',key:'regular',filter:''};
+function methodBookId(script,key){return script+':'+key}
+function methodBookStatus(doc,m){
+ if(doc&&doc.status==='traditional')return['מסורתי','trad'];
+ if(doc&&doc.status==='conflict')return['קונפליקט שם','conflict'];
+ if(doc&&doc.status==='modern')return['פיתוח האתר / מודרני','modern'];
+ if(doc&&doc.status==='derived')return['נגזר מתמטית','modern'];
+ if(m&&m.research)return['מחקר / מודרני','modern'];
+ return['ממתין לתיעוד','modern'];
+}
+function methodBookFormula(script,m){
+ const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];if(d&&d.formula)return d.formula;
+ if(m.fold==='word')return 'For each word: digital-root(sum(letter values)); then sum word results.';
+ if(m.transform===cumulative)return 'Σ prefix sums: (a₁)+(a₁+a₂)+…+(a₁+…+aₙ).';
+ if(m.transform===positional)return 'Σ i·aᵢ.';
+ if(m.transform===balanced)return 'For a word of length n: multiply every letter value by (n+1)/2, then sum.';
+ if(m.transform===pyramid)return 'Prefix sums outward, then the same prefixes return in reverse order.';
+ if(m.transform===ladder)return 'Sum every prefix and every suffix.';
+ if(m.post)return 'Base letter sum followed by the method-specific post-operation.';
+ if(m.sub)return 'Substitute each letter by the cipher map, evaluate the substituted letter, then sum.';
+ if(m.perati)return 'Square each method base value, then sum.';
+ if(m.custom)return 'Custom deterministic operator; the live example below shows the exact expansion produced by the engine.';
+ return 'Σ value(letter).';
+}
+function methodBookHistory(script,m){
+ const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];if(d&&d.history)return d.history;
+ return m.research?'שיטת מחקר/אנלוג מודרני באתר. מקור היסטורי אינו נטען עד לאימות.':'התיעוד ההיסטורי המדויק של השיטה נמצא בתהליך אימות; האלגוריתם המופיע כאן הוא הקוד המחייב.';
+}
+function methodBookPlain(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return d&&d.plain?d.plain:m.name}
+function methodBookOriginal(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return d&&d.original?d.original:'שם מקור/מסורת: בבדיקה'}
+function methodBookAliases(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return (d&&d.aliases)||[]}
+function methodBookSample(script){
+ const q=document.getElementById('q');const t=q&&q.value.trim();
+ if(t&&detectScript(t)===script)return t;
+ return script==='he'?'מראות':script==='el'?'ΛΟΓΟΣ':'Amit';
+}
+function methodBookExample(script,m){
+ const text=methodBookSample(script);let r;
+ try{r=calculate(text,script,m)}catch(e){return '<div class="methodbook-note">לא ניתן להפיק דוגמה חיה לשיטה זו כרגע.</div>'}
+ const w=r.words&&r.words[0];let nodes=[];
+ if(w&&w.toks&&w.toks.length){
+  const vals=w.baseVals||w.toks.map(x=>x.value);
+  nodes.push('<span class="methodbook-node">'+esc(w.raw)+'</span>');
+  nodes.push('<span class="methodbook-arrow">→</span>');
+  const parts=w.toks.map((t,i)=>esc(t.label)+(m.sub&&m.sub[t.base]?'→'+esc(m.sub[t.base]):'')+'='+fmt(vals[i])).join(' · ');
+  nodes.push('<span class="methodbook-node">'+parts+'</span>');
+  if(w.vals&&m.transform){
+   nodes.push('<span class="methodbook-arrow">→</span>');
+   nodes.push('<span class="methodbook-node">['+w.vals.map(fmt).join(', ')+']</span>');
+  }
+  if(w.folded!=null){
+   nodes.push('<span class="methodbook-arrow">→</span>');
+   nodes.push('<span class="methodbook-node">DR='+fmt(w.folded)+'</span>');
+  }
+ }else if(w&&w.parts){
+  nodes.push('<span class="methodbook-node">'+esc(w.raw)+'</span><span class="methodbook-arrow">→</span><span class="methodbook-node">'+w.parts.map(p=>esc(p.letter)+'→'+esc(p.name)+'='+fmt(p.value)).join(' · ')+'</span>');
+ }
+ nodes.push('<span class="methodbook-arrow">→</span><span class="methodbook-node"><b>'+fmt(r.total)+'</b></span>');
+ return '<div class="methodbook-example-title">'+esc(text)+' · '+esc(methodBookPlain(script,m))+'</div><div class="methodbook-flow">'+nodes.join('')+'</div>';
+}
+function renderMethodBook(){
+ const script=METHOD_BOOK_STATE.script,methods=METHODS[script]||[];
+ document.querySelectorAll('[data-methodbook-script]').forEach(b=>b.classList.toggle('active',b.dataset.methodbookScript===script));
+ const filter=(METHOD_BOOK_STATE.filter||'').trim().toLowerCase();
+ const visible=methods.filter(m=>!filter||m.name.toLowerCase().includes(filter)||m.key.toLowerCase().includes(filter)||methodBookPlain(script,m).toLowerCase().includes(filter));
+ if(!visible.some(m=>m.key===METHOD_BOOK_STATE.key))METHOD_BOOK_STATE.key=(visible[0]||methods[0]||{}).key||null;
+ const list=document.getElementById('methodBookList'),sel=document.getElementById('methodBookSelect');
+ list.innerHTML=visible.map(m=>'<button class="methodbook-item '+(m.key===METHOD_BOOK_STATE.key?'active':'')+'" data-methodbook-key="'+esc(m.key)+'"><span class="n">'+esc(methodBookPlain(script,m))+'</span><span class="k">'+esc(m.key)+'</span></button>').join('');
+ sel.innerHTML=visible.map(m=>'<option value="'+esc(m.key)+'" '+(m.key===METHOD_BOOK_STATE.key?'selected':'')+'>'+esc(methodBookPlain(script,m))+'</option>').join('');
+ const m=methods.find(x=>x.key===METHOD_BOOK_STATE.key)||methods[0];if(!m){document.getElementById('methodBookDoc').innerHTML='';return}
+ const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)]||{},st=methodBookStatus(d,m),aliases=methodBookAliases(script,m);
+ const statusClass=st[1],conflict=d.conflict||d.status==='conflict';
+ document.getElementById('methodBookDoc').innerHTML=
+  '<div><div class="methodbook-name">'+esc(methodBookPlain(script,m))+'</div><div class="methodbook-alias">במחשבון כרגע: '+esc(m.name)+'</div></div>'+
+  '<div class="methodbook-badges"><span class="methodbook-badge '+statusClass+'">'+esc(st[0])+'</span><span class="methodbook-badge">'+esc(script==='he'?'עברית':script==='el'?'Greek':'English')+'</span>'+(m.research?'<span class="methodbook-badge modern">Research</span>':'')+(conflict?'<span class="methodbook-badge conflict">דורש הכרעת שם</span>':'')+'</div>'+
+  '<div class="methodbook-grid">'+
+   '<section class="methodbook-box"><h3>שם מקורי / מסורתי</h3><div class="methodbook-note"><b>'+esc(methodBookOriginal(script,m))+'</b>'+(aliases.length?'<br>Aliases: '+aliases.map(esc).join(' · '):'')+'</div></section>'+
+   '<section class="methodbook-box"><h3>אלגוריתם מדויק</h3><div class="methodbook-bigformula">'+esc(methodBookFormula(script,m))+'</div></section>'+
+  '</div>'+
+  '<section class="methodbook-box"><h3>דוגמה חיה מהמנוע</h3>'+methodBookExample(script,m)+'</section>'+
+  '<div class="methodbook-grid">'+
+   '<section class="methodbook-box"><h3>מקור / תיארוך</h3><div class="methodbook-origin"><div>'+esc(methodBookHistory(script,m))+'</div><div><b>כלל:</b> כשאין מקור ראשוני מאומת, האתר אומר “בבדיקה” ולא מייחס את השיטה למסורת.</div></div></section>'+
+   '<section class="methodbook-box"><h3>איך להסביר את זה לאדם אחר</h3><div class="methodbook-note">מתחילים מהאותיות, מפעילים בדיוק את הכלל שמופיע בנוסחה, ומחברים. אין שלב נסתר. אם שתי שיטות נותנות אותו מספר — זו התאמה שניתנת לשחזור; המשמעות שלה נבחנת בנפרד.</div></section>'+
+  '</div>';
+}
+function openMethodBook(script){
+ if(script&&METHODS[script])METHOD_BOOK_STATE.script=script;else{const t=document.getElementById('q').value;METHOD_BOOK_STATE.script=detectScript(t)}
+ const ms=METHODS[METHOD_BOOK_STATE.script]||[];if(!ms.some(m=>m.key===METHOD_BOOK_STATE.key))METHOD_BOOK_STATE.key=(ms[0]||{}).key||null;
+ const modal=document.getElementById('methodBookModal');modal.classList.add('open');modal.setAttribute('aria-hidden','false');renderMethodBook()
+}
+function closeMethodBook(){const modal=document.getElementById('methodBookModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
+
 
 /* ---------- number theory ---------- */
 const _factorCache=new Map(),_primeCache=new Map(),_primeCountCache=new Map(),_pIndexCache=new Map(),_cIndexCache=new Map(),_nthPrimeCache=new Map(),_nthCompositeCache=new Map();
@@ -1549,6 +1719,15 @@ document.getElementById('queryMultPlus').addEventListener('click',()=>{if(!state
 
 document.getElementById('saveQuery').addEventListener('click',saveCurrentQuery);
 document.getElementById('openSaved').addEventListener('click',()=>openSavedManager('match'));
+
+document.getElementById('openMethodBook').addEventListener('click',()=>openMethodBook());
+document.getElementById('closeMethodBook').addEventListener('click',closeMethodBook);
+document.getElementById('methodBookModal').addEventListener('click',e=>{if(e.target.id==='methodBookModal')closeMethodBook()});
+document.querySelector('.methodbook-langs').addEventListener('click',e=>{const b=e.target.closest('[data-methodbook-script]');if(!b)return;METHOD_BOOK_STATE.script=b.dataset.methodbookScript;METHOD_BOOK_STATE.key=(METHODS[METHOD_BOOK_STATE.script][0]||{}).key||null;renderMethodBook()});
+document.getElementById('methodBookSearch').addEventListener('input',e=>{METHOD_BOOK_STATE.filter=e.target.value;renderMethodBook()});
+document.getElementById('methodBookList').addEventListener('click',e=>{const b=e.target.closest('[data-methodbook-key]');if(!b)return;METHOD_BOOK_STATE.key=b.dataset.methodbookKey;renderMethodBook()});
+document.getElementById('methodBookSelect').addEventListener('change',e=>{METHOD_BOOK_STATE.key=e.target.value;renderMethodBook()});
+
 document.getElementById('closeSaved').addEventListener('click',closeSavedManager);
 document.getElementById('savedModal').addEventListener('click',e=>{if(e.target.id==='savedModal')closeSavedManager()});
 document.getElementById('savedTabs').addEventListener('click',e=>{const b=e.target.closest('[data-saved-tab]');if(!b)return;savedTab=b.dataset.savedTab;renderSavedManager()});
