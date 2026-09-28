@@ -253,7 +253,7 @@
     {
       "value": 19,
       "label": "החלל",
-      "method": "Hebrew Reduced / Small · ה=5 + חלל small 14 =19",
+      "method": "Hebrew Reduced / Small · ה=5 + חלל small 14 =19 · ALSO Hebrew Small Finals =19",
       "classification": "BRIDGE"
     },
     {
@@ -655,7 +655,7 @@
     {
       "value": 37,
       "label": "חלל",
-      "method": "Hebrew Reverse Ordinal · ח=15 ל=11 ל=11",
+      "method": "Hebrew Reverse Ordinal · ח=15 ל=11 ל=11 · ALSO Latin Milui v0 → English Reduced =37",
       "classification": "FOUNDATION"
     },
     {
