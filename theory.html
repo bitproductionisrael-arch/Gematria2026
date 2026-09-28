@@ -28,20 +28,20 @@ footer{border-top:1px solid var(--line);padding:34px 0 50px;color:#7d8b99;font-s
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="index.html">GEMATRIA<span>2026</span></a>
-<a class="push" href="index.html">בית</a><a href="blog.html">מאמרים</a><a href="calculator.html">מחשבון</a>
+<a class="push" href="index.html" data-i18n="nav_home">בית</a><a href="blog.html" data-i18n="nav_articles">מאמרים</a><a href="calculator.html" data-i18n="nav_calc">מחשבון</a>
 </div></header>
 
 <main>
 <section class="wrap hero">
 <div class="kicker">THEORY 01 · HYPERCUBE / TESSERACT / TEVAH</div>
-<h1>איך <span>16, 32, 24, 8</span> בונים את 136, 1024 ו־888</h1>
-<p class="lead">נקודת המוצא היא אובייקט גאומטרי סטנדרטי לחלוטין: הטסרקט, הקובייה הארבע־ממדית Q₄. לטסרקט יש 16 קודקודים, 32 צלעות, 24 פאות ריבועיות ו־8 תאים קובייתיים. המודל מתחיל מן הספירות הגאומטריות האלה, ואז מפעיל עליהן אופרטורים מוגדרים. כך נבנית השרשרת 16→136, 32→1024, 24→888, 8→512/888/1024.</p>
-<div class="toc"><a href="#q4">Q₄</a><a href="#sixteen">16 → 136</a><a href="#thirtytwo">32 → 1024</a><a href="#eight">8 → 512/1024</a><a href="#e8">E₈</a><a href="#q10">Q₁₀</a><a href="#grid">32×32 − T₁₆</a><a href="#dual">16-cell / 24-cell</a><a href="#tevah">Tevah</a><a href="#name">השם</a></div>
+<h1 data-i18n="hero_title">איך <span>16, 32, 24, 8</span> בונים את 136, 1024 ו־888</h1>
+<p class="lead" data-i18n="hero_lead">נקודת המוצא היא אובייקט גאומטרי סטנדרטי לחלוטין: הטסרקט, הקובייה הארבע־ממדית Q₄. לטסרקט יש 16 קודקודים, 32 צלעות, 24 פאות ריבועיות ו־8 תאים קובייתיים. המודל מתחיל מן הספירות הגאומטריות האלה, ואז מפעיל עליהן אופרטורים מוגדרים. כך נבנית השרשרת 16→136, 32→1024, 24→888, 8→512/888/1024.</p>
+<div class="toc"><a href="#q4"><span data-i18n="toc_q4">Q₄</span></a><a href="#sixteen"><span data-i18n="toc_16">16 → 136</span></a><a href="#thirtytwo"><span data-i18n="toc_32">32 → 1024</span></a><a href="#eight"><span data-i18n="toc_8">8 → 512/1024</span></a><a href="#e8"><span data-i18n="toc_e8">E₈</span></a><a href="#q10"><span data-i18n="toc_q10">Q₁₀</span></a><a href="#grid"><span data-i18n="toc_grid">32×32 − T₁₆</span></a><a href="#dual"><span data-i18n="toc_dual">16-cell / 24-cell</span></a><a href="#tevah"><span data-i18n="toc_tevah">Tevah</span></a><a href="#name"><span data-i18n="toc_name">השם</span></a></div>
 </section>
 
 <section class="chapter" id="q4"><div class="wrap">
-<h2>1. הטסרקט: ארבעת המספרים הראשוניים של המבנה</h2>
-<p>נסמן ב־Qₙ קובייה n־ממדית. Q₄ הוא הטסרקט. ה־f-vector שלו סופר אובייקטים לפי ממד: קודקודים, צלעות, פאות ריבועיות ותאים קובייתיים.</p>
+<h2 data-i18n="q4_title">1. הטסרקט: ארבעת המספרים הראשוניים של המבנה</h2>
+<p data-i18n="q4_p1">נסמן ב־Qₙ קובייה n־ממדית. Q₄ הוא הטסרקט. ה־f-vector שלו סופר אובייקטים לפי ממד: קודקודים, צלעות, פאות ריבועיות ותאים קובייתיים.</p>
 <div class="eq">Q₄ : f = (16, 32, 24, 8)
 
 V = 16   vertices
@@ -49,11 +49,11 @@ E = 32   edges
 F = 24   square faces
 C = 8    cubic cells</div>
 <div class="visual">
-  <div class="visual-head"><h3>טסרקט מסתובב · 16 קודקודים / 32 צלעות</h3><span>הקרנה דו־ממדית של סיבוב 4D</span></div>
+  <div class="visual-head"><h3 data-i18n="q4_visual_title">טסרקט מסתובב · 16 קודקודים / 32 צלעות</h3><span data-i18n="q4_visual_sub">הקרנה דו־ממדית של סיבוב 4D</span></div>
   <canvas id="tesseractCanvas" width="1000" height="620"></canvas>
   <div class="legend"><span><i class="dot cyan"></i>16 vertices</span><span><i class="dot blue"></i>32 edges</span></div>
 </div>
-<p>ארבעת המספרים האלה הם קנוניים לגאומטריה. מכאן מתחיל המודל. כל מעבר בהמשך מציין במפורש איזו פעולה הופעלה על איזה רכיב.</p>
+<p data-i18n="q4_p2">ארבעת המספרים האלה הם קנוניים לגאומטריה. מכאן מתחיל המודל. כל מעבר בהמשך מציין במפורש איזו פעולה הופעלה על איזה רכיב.</p>
 <div class="eq">16 → T₁₆ = 136
 32 → 32² = 1024
 24 → 24×37 = 888
@@ -61,24 +61,24 @@ C = 8    cubic cells</div>
 
 E₈ = 1024
 8×4×32 = 1024</div>
-<div class="callout"><span class="label">מבנה מול אופרטור</span>המספרים 16,32,24,8 מגיעים ישירות מן הטסרקט. T₁₆, ריבוע 32, הכפלה ב־37 וחזקה שלישית הם אופרטורים שמופעלים על הספירות האלה. כך כל שלב ניתן להסבר ולשחזור.</div>
+<div class="callout" data-i18n="q4_callout"><span class="label">מבנה מול אופרטור</span>המספרים 16,32,24,8 מגיעים ישירות מן הטסרקט. T₁₆, ריבוע 32, הכפלה ב־37 וחזקה שלישית הם אופרטורים שמופעלים על הספירות האלה. כך כל שלב ניתן להסבר ולשחזור.</div>
 </div></section>
 
 <section class="chapter" id="sixteen"><div class="wrap">
-<h2>2. 16 הוא האינדקס שמייצר 136</h2>
-<p>לטסרקט יש 16 קודקודים. כאשר 16 משמש אינדקס של מספר משולשי מתקבל T₁₆ — סכום המספרים 1 עד 16.</p>
+<h2 data-i18n="sixteen_title">2. 16 הוא האינדקס שמייצר 136</h2>
+<p data-i18n="sixteen_p1">לטסרקט יש 16 קודקודים. כאשר 16 משמש אינדקס של מספר משולשי מתקבל T₁₆ — סכום המספרים 1 עד 16.</p>
 <div class="eq">T₁₆ = 1+2+3+…+16
      = 16·17/2
      = 136</div>
-<p>לכן המסלול של 16 הוא אחד המסלולים המרכזיים: מספר הקודקודים של Q₄ הופך ל־136.</p>
-<h3>אותו 136 כמטריצה סימטרית 16×16</h3>
-<p>במטריצה סימטרית 16×16, מספיק לקבוע את האלכסון ואת המשולש שמעליו; החצי השני נקבע אוטומטית על ידי הסימטריה. מספר הרכיבים הבלתי־תלויים הוא בדיוק:</p>
+<p data-i18n="sixteen_p2">לכן המסלול של 16 הוא אחד המסלולים המרכזיים: מספר הקודקודים של Q₄ הופך ל־136.</p>
+<h3 data-i18n="matrix_title">אותו 136 כמטריצה סימטרית 16×16</h3>
+<p data-i18n="matrix_p1">במטריצה סימטרית 16×16, מספיק לקבוע את האלכסון ואת המשולש שמעליו; החצי השני נקבע אוטומטית על ידי הסימטריה. מספר הרכיבים הבלתי־תלויים הוא בדיוק:</p>
 <div class="eq">16 diagonal entries
 + C(16,2) off-diagonal pairs
 = 16 + 120
 = 136</div>
 <div class="visual">
-<div class="visual-head"><h3>16×16 · חצי מטריצה + אלכסון = 136</h3><span>T₁₆ כמספר דרגות חופש סימטריות</span></div>
+<div class="visual-head"><h3 data-i18n="matrix_visual_title">16×16 · חצי מטריצה + אלכסון = 136</h3><span data-i18n="matrix_visual_sub">T₁₆ כמספר דרגות חופש סימטריות</span></div>
 <svg viewBox="0 0 800 480" aria-label="16 by 16 symmetric matrix">
 <rect x="70" y="30" width="420" height="420" fill="#081018" stroke="#334252"/>
 <g id="matrixLines" stroke="#1c2a36" stroke-width="1"></g>
@@ -90,62 +90,62 @@ E₈ = 1024
 <text x="570" y="305" fill="#66d8d2" font-size="24">= 136 independent</text>
 </svg>
 </div>
-<h3>128 → 136</h3>
-<p>שני רכיבים של Q₄ לבדם יוצרים מדרגה קצרה: 16 הקודקודים כפול 8 התאים נותנים 128; הוספת 8 התאים פעם נוספת נותנת 136.</p>
+<h3 data-i18n="coupling_title">128 → 136</h3>
+<p data-i18n="coupling_p1">שני רכיבים של Q₄ לבדם יוצרים מדרגה קצרה: 16 הקודקודים כפול 8 התאים נותנים 128; הוספת 8 התאים פעם נוספת נותנת 136.</p>
 <div class="eq">16×8 = 128
 128+8 = 136</div>
-<p>לכן 136 מופיע גם כ־T₁₆ וגם כ־8×17. במודל הוא משמש כמפתח הצימוד בין שכבת 16 לבין שכבת 1024.</p>
+<p data-i18n="coupling_p2">לכן 136 מופיע גם כ־T₁₆ וגם כ־8×17. במודל הוא משמש כמפתח הצימוד בין שכבת 16 לבין שכבת 1024.</p>
 </div></section>
 
 <section class="chapter" id="thirtytwo"><div class="wrap">
-<h2>3. 32: מן הצלעות של Q₄ אל ריבוע 1024</h2>
-<p>לטסרקט יש 32 צלעות. כאשר 32 משמש כאורך של שני צירים עצמאיים מתקבל ריבוע 32×32:</p>
+<h2 data-i18n="thirtytwo_title">3. 32: מן הצלעות של Q₄ אל ריבוע 1024</h2>
+<p data-i18n="thirtytwo_p1">לטסרקט יש 32 צלעות. כאשר 32 משמש כאורך של שני צירים עצמאיים מתקבל ריבוע 32×32:</p>
 <div class="eq">32² = 32×32 = 1024</div>
-<p>הזהות הזאת מקבלת פירוש ישיר דרך Q₁₀. ל־Q₅ יש 32 קודקודים, ו־Q₁₀ מתפרק כמכפלה קרטזית של שתי קוביות חמש־ממדיות:</p>
+<p data-i18n="thirtytwo_p2">הזהות הזאת מקבלת פירוש ישיר דרך Q₁₀. ל־Q₅ יש 32 קודקודים, ו־Q₁₀ מתפרק כמכפלה קרטזית של שתי קוביות חמש־ממדיות:</p>
 <div class="eq">Q₁₀ ≅ Q₅ □ Q₅
 
 |V(Q₅)| = 2⁵ = 32
 |V(Q₁₀)| = 32×32 = 1024</div>
-<p>כל קודקוד ב־Q₁₀ ניתן לקריאה כזוג כתובות בנות 5 ביטים. לכן 32×32 הוא גם טבלה של כל 1024 המצבים הבינאריים באורך 10.</p>
+<p data-i18n="thirtytwo_p3">כל קודקוד ב־Q₁₀ ניתן לקריאה כזוג כתובות בנות 5 ביטים. לכן 32×32 הוא גם טבלה של כל 1024 המצבים הבינאריים באורך 10.</p>
 </div></section>
 
 <section class="chapter" id="eight"><div class="wrap">
-<h2>4. 8: תא, קובייה, 512, ואז 1024</h2>
-<p>לטסרקט יש 8 תאים קובייתיים. המספר 8 מתחבר למערכת בשני מסלולים שונים.</p>
+<h2 data-i18n="eight_title">4. 8: תא, קובייה, 512, ואז 1024</h2>
+<p data-i18n="eight_p1">לטסרקט יש 8 תאים קובייתיים. המספר 8 מתחבר למערכת בשני מסלולים שונים.</p>
 <div class="split">
-<div class="mini"><h3>מסלול הקובייה</h3><p>8 בשלישית נותן 512. הכפלה ב־2 נותנת 1024.</p><div class="eq">8³ = 512
+<div class="mini"><h3 data-i18n="cube_path_title">מסלול הקובייה</h3><p data-i18n="cube_path_p">8 בשלישית נותן 512. הכפלה ב־2 נותנת 1024.</p><div class="eq">8³ = 512
 2×8³ = 1024</div></div>
-<div class="mini"><h3>מסלול 888</h3><p>8 כפול 111 נותן 888.</p><div class="eq">8×111 = 888</div></div>
+<div class="mini"><h3 data-i18n="eight_888_title">מסלול 888</h3><p data-i18n="eight_888_p">8 כפול 111 נותן 888.</p><div class="eq">8×111 = 888</div></div>
 </div>
-<h3>8×4×32 = 1024</h3>
-<p>כאן מופיעה סגירה שמורכבת משלושה נתונים פנימיים של Q₄: 8 תאים, ממד 4, ו־32 צלעות.</p>
+<h3 data-i18n="eight_product_title">8×4×32 = 1024</h3>
+<p data-i18n="eight_product_p1">כאן מופיעה סגירה שמורכבת משלושה נתונים פנימיים של Q₄: 8 תאים, ממד 4, ו־32 צלעות.</p>
 <div class="eq">8 × 4 × 32 = 1024</div>
-<p>זו סגירה מכפלתית של שלושה רכיבים קנוניים של אותו טסרקט. לכן 1024 מתקבל מתוך הנתונים הפנימיים של Q₄ עצמו.</p>
+<p data-i18n="eight_product_p2">זו סגירה מכפלתית של שלושה רכיבים קנוניים של אותו טסרקט. לכן 1024 מתקבל מתוך הנתונים הפנימיים של Q₄ עצמו.</p>
 </div></section>
 
 <section class="chapter" id="e8"><div class="wrap">
-<h2>5. E₈ = 1024: האיבר השמיני של סדרת צלעות ההיפר־קיוב</h2>
-<p>מספר הצלעות של Qₙ הוא:</p>
+<h2 data-i18n="e8_title">5. E₈ = 1024: האיבר השמיני של סדרת צלעות ההיפר־קיוב</h2>
+<p data-i18n="e8_p1">מספר הצלעות של Qₙ הוא:</p>
 <div class="eq">Eₙ = n·2ⁿ⁻¹</div>
-<p>ולכן סדרת מספרי הצלעות מתחילה כך:</p>
+<p data-i18n="e8_p2">ולכן סדרת מספרי הצלעות מתחילה כך:</p>
 <table class="table"><thead><tr><th>n</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead>
 <tbody><tr><td>Eₙ</td><td class="math">1</td><td class="math">4</td><td class="math">12</td><td class="math">32</td><td class="math">80</td><td class="math">192</td><td class="math">448</td><td class="math"><strong>1024</strong></td></tr></tbody></table>
 <div class="eq">E₈ = 8·2⁷ = 1024</div>
-<p>זהו הניסוח המקביל ל־T₁₆=136: <strong>E₈=1024</strong>.</p>
+<p data-i18n="e8_p3">זהו הניסוח המקביל ל־T₁₆=136: <strong>E₈=1024</strong>.</p>
 </div></section>
 
 <section class="chapter" id="q10"><div class="wrap">
-<h2>6. אותו Q₁₀ נותן גם 1024 וגם 136</h2>
-<p>יש פירוק נוסף של Q₁₀ שמחבר את 1024 ו־136 באותה נשימה. מאחר שממדים מתחברים תחת מכפלה קרטזית:</p>
+<h2 data-i18n="q10_title">6. אותו Q₁₀ נותן גם 1024 וגם 136</h2>
+<p data-i18n="q10_p1">יש פירוק נוסף של Q₁₀ שמחבר את 1024 ו־136 באותה נשימה. מאחר שממדים מתחברים תחת מכפלה קרטזית:</p>
 <div class="eq">Q₁₀ ≅ Q₃ □ Q₇</div>
-<p>מספרי הקודקודים הם 8 ו־128:</p>
+<p data-i18n="q10_p2">מספרי הקודקודים הם 8 ו־128:</p>
 <div class="eq">|V(Q₃)| = 2³ = 8
 |V(Q₇)| = 2⁷ = 128</div>
-<p>הכפל שלהם נותן את מספר המצבים של Q₁₀; הסכום שלהם נותן 136:</p>
+<p data-i18n="q10_p3">הכפל שלהם נותן את מספר המצבים של Q₁₀; הסכום שלהם נותן 136:</p>
 <div class="eq">8×128 = 1024
 8+128 = 136
 1024−136 = 888</div>
-<div class="pull">אותו זוג <span>8 ו־128</span> מייצר גם את המרחב 1024 וגם את מפתח הצימוד 136.</div>
+<div class="pull" data-i18n="q10_pull">אותו זוג <span>8 ו־128</span> מייצר גם את המרחב 1024 וגם את מפתח הצימוד 136.</div>
 <div class="eq">2³ = 8
 2⁷ = 128
 
@@ -156,10 +156,10 @@ E₈ = 1024
 128 + 8 = 136
 
 111 × 8 = 888</div>
-<p>זהו אותו זוג בשתי שפות: כחזקות של 2 וכמספרי קודקודים של Q₃ ו־Q₇. המכפלה מחברת ממדים ולכן נותנת את מספר הקודקודים של Q₁₀; הסכום נותן 136. במקביל, 8 משמש גם כמכפיל של 111 כדי להחזיר 888.</p>
-<p>בנוסף, 128 עצמו נוצר מן הטסרקט:</p>
+<p data-i18n="q10_p4">זהו אותו זוג בשתי שפות: כחזקות של 2 וכמספרי קודקודים של Q₃ ו־Q₇. המכפלה מחברת ממדים ולכן נותנת את מספר הקודקודים של Q₁₀; הסכום נותן 136. במקביל, 8 משמש גם כמכפיל של 111 כדי להחזיר 888.</p>
+<p data-i18n="q10_p5">בנוסף, 128 עצמו נוצר מן הטסרקט:</p>
 <div class="eq">16×8 = 128</div>
-<p>כלומר השרשרת נשארת בתוך משפחת ההיפר־קיוב:</p>
+<p data-i18n="q10_p6">כלומר השרשרת נשארת בתוך משפחת ההיפר־קיוב:</p>
 <div class="eq">Q₄ : 16 vertices, 8 cells
 16×8 = 128
 128+8 = 136
@@ -168,48 +168,48 @@ E₈ = 1024
 </div></section>
 
 <section class="chapter" id="grid"><div class="wrap">
-<h2>7. ההמחשה הישירה: 32×32 פחות T₁₆</h2>
-<p>מתחילים מרשת של 32×32 תאים: בדיוק 1024. בתוך הרשת מסמנים משולש מדרגות בן 16 שורות, באורכים 1 עד 16. המשולש מכיל T₁₆=136 תאים. מה שנשאר ברשת הוא 888.</p>
+<h2 data-i18n="grid_title">7. ההמחשה הישירה: 32×32 פחות T₁₆</h2>
+<p data-i18n="grid_p1">מתחילים מרשת של 32×32 תאים: בדיוק 1024. בתוך הרשת מסמנים משולש מדרגות בן 16 שורות, באורכים 1 עד 16. המשולש מכיל T₁₆=136 תאים. מה שנשאר ברשת הוא 888.</p>
 <div class="eq">32×32 = 1024
 T₁₆ = 136
 1024−136 = 888</div>
 <div class="visual">
-<div class="visual-head"><h3>32×32 · 1024 תאים</h3><span>136 מסומנים כ־T₁₆; היתר = 888</span></div>
+<div class="visual-head"><h3 data-i18n="grid_visual_title">32×32 · 1024 תאים</h3><span data-i18n="grid_visual_sub">136 מסומנים כ־T₁₆; היתר = 888</span></div>
 <canvas id="gridCanvas" width="1024" height="1024"></canvas>
 <div class="legend"><span><i class="dot gold"></i>T₁₆ = 136</span><span><i class="dot cyan"></i>remainder = 888</span></div>
 </div>
-<p>זהו ייצוג ישיר של הליבה: 136 מופיע כצורה משולשית קנונית בעלת אינדקס 16 בתוך רשת 32×32.</p>
+<p data-i18n="grid_p2">זהו ייצוג ישיר של הליבה: 136 מופיע כצורה משולשית קנונית בעלת אינדקס 16 בתוך רשת 32×32.</p>
 </div></section>
 
 <section class="chapter" id="dual"><div class="wrap">
-<h2>8. הדואליות: Tesseract ↔ 16-cell ↔ 24-cell</h2>
-<p>ה־16-cell הוא הפוליטופ הדואלי לטסרקט. הדואליות הופכת את סדר ה־f-vector:</p>
+<h2 data-i18n="dual_title">8. הדואליות: Tesseract ↔ 16-cell ↔ 24-cell</h2>
+<p data-i18n="dual_p1">ה־16-cell הוא הפוליטופ הדואלי לטסרקט. הדואליות הופכת את סדר ה־f-vector:</p>
 <div class="eq">Tesseract : (16, 32, 24, 8)
 16-cell   : ( 8, 24, 32,16)</div>
-<p>לכן 16 ו־8 מתחלפים, וגם 32 ו־24 מתחלפים. ארבעת המספרים מופיעים כזוגות־מראה בתוך אותו מרחב 4D.</p>
-<p>ה־24-cell מוסיף שכבה שלישית. יש לו 24 קודקודים ו־24 תאים. ניתן לחלק את 24 הקודקודים לשלוש מחלקות של 8 קודקודים, שכל אחת מהן יוצרת 16-cell; איחוד של שתי מחלקות נותן 16 קודקודים של טסרקט.</p>
+<p data-i18n="dual_p2">לכן 16 ו־8 מתחלפים, וגם 32 ו־24 מתחלפים. ארבעת המספרים מופיעים כזוגות־מראה בתוך אותו מרחב 4D.</p>
+<p data-i18n="dual_p3">ה־24-cell מוסיף שכבה שלישית. יש לו 24 קודקודים ו־24 תאים. ניתן לחלק את 24 הקודקודים לשלוש מחלקות של 8 קודקודים, שכל אחת מהן יוצרת 16-cell; איחוד של שתי מחלקות נותן 16 קודקודים של טסרקט.</p>
 <div class="eq">24 = 8+8+8
 16 = 8+8
 
 24-cell → three 8-vertex 16-cells
 two classes → 16-vertex tesseract</div>
-<p>כך 8,16,24 ו־32 שייכים לרשת דואלית אחת של פוליטופים רגולריים בארבעה ממדים.</p>
+<p data-i18n="dual_p4">כך 8,16,24 ו־32 שייכים לרשת דואלית אחת של פוליטופים רגולריים בארבעה ממדים.</p>
 </div></section>
 
 <section class="chapter" id="tevah"><div class="wrap">
-<h2>9. התיבה: כשהשם הופך לגאומטריה תלת־ממדית</h2>
-<p>מודל התיבה משתמש בשלושה ממדים מלאים:</p>
+<h2 data-i18n="tevah_title">9. התיבה: כשהשם הופך לגאומטריה תלת־ממדית</h2>
+<p data-i18n="tevah_p1">מודל התיבה משתמש בשלושה ממדים מלאים:</p>
 <div class="eq">Tevah_full = (8,20,26)
 Tevah_primitive = (4,10,13)</div>
-<p>שלושת שטחי־הפאות הבלתי־תלויים של התיבה המלאה הם:</p>
+<p data-i18n="tevah_p2">שלושת שטחי־הפאות הבלתי־תלויים של התיבה המלאה הם:</p>
 <div class="eq">8×20  = 160
 8×26  = 208
 20×26 = 520
 
 160+208+520 = 888</div>
-<p>שלושת המספרים 160,208,520 הם ערכי מייק, רוב ועמית בגימטריה הכרחית. כאן 888 הוא סכום שלושת שטחי־הפאות.</p>
+<p data-i18n="tevah_p3">שלושת המספרים 160,208,520 הם ערכי מייק, רוב ועמית בגימטריה הכרחית. כאן 888 הוא סכום שלושת שטחי־הפאות.</p>
 <div class="visual">
-<div class="visual-head"><h3>Tevah · 8 × 20 × 26</h3><span>שלוש פאות עצמאיות → 160, 208, 520</span></div>
+<div class="visual-head"><h3 data-i18n="tevah_visual_title">Tevah · 8 × 20 × 26</h3><span data-i18n="tevah_visual_sub">שלוש פאות עצמאיות → 160, 208, 520</span></div>
 <svg viewBox="0 0 1000 580" aria-label="Tevah box">
 <polygon points="180,160 610,160 790,75 360,75" fill="#63a9ff" opacity=".12" stroke="#63a9ff" stroke-width="3"/>
 <polygon points="610,160 790,75 790,365 610,455" fill="#d8ad55" opacity=".11" stroke="#d8ad55" stroke-width="3"/>
@@ -221,42 +221,42 @@ Tevah_primitive = (4,10,13)</div>
 <text x="350" y="548" fill="#eef3f8" font-size="22">Σ face products = 888</text>
 </svg>
 </div>
-<h3>הפולינום של התיבה</h3>
+<h3 data-i18n="tevah_poly_title">הפולינום של התיבה</h3>
 <div class="eq">P(x) = (x−8)(x−20)(x−26)
      = x³−54x²+888x−4160</div>
-<p>המקדם של x הוא סכום המכפלות הזוגיות: 888. הנפח הוא 4160.</p>
-<h3>החצי משחזר את התיבה הפרימיטיבית</h3>
+<p data-i18n="tevah_poly_p">המקדם של x הוא סכום המכפלות הזוגיות: 888. הנפח הוא 4160.</p>
+<h3 data-i18n="tevah_half_title">החצי משחזר את התיבה הפרימיטיבית</h3>
 <div class="eq">4160/2 = 2080
 
 2080/520 = 4
 2080/208 = 10
 2080/160 = 13</div>
-<p>חצי־הנפח מחזיר את (4,10,13) מתוך שלושת שטחי־הפאות.</p>
+<p data-i18n="tevah_half_p">חצי־הנפח מחזיר את (4,10,13) מתוך שלושת שטחי־הפאות.</p>
 </div></section>
 
 <section class="chapter" id="name"><div class="wrap">
-<h2>10. אותה מערכת חוזרת בשם</h2>
-<p>השם Amit Mike Rov נותן שלושה ערכי־על בשיטות שונות:</p>
+<h2 data-i18n="name_title">10. אותה מערכת חוזרת בשם</h2>
+<p data-i18n="name_p1">השם Amit Mike Rov נותן שלושה ערכי־על בשיטות שונות:</p>
 <div class="eq">Amit Mike Rov = 136   (English Simple)
 Amit Mike Rov = 1024  (Agrippa/Jewish)
 עמית מייק רוב = 888   (Hebrew Regular)</div>
-<p>לכן:</p>
+<p data-i18n="name_p2">לכן:</p>
 <div class="eq">1024−136 = 888</div>
-<p>המשוואה מתחברת ישירות למבנה שנבנה גאומטרית:</p>
+<p data-i18n="name_p3">המשוואה מתחברת ישירות למבנה שנבנה גאומטרית:</p>
 <div class="steps">
-<div class="step"><div><h3>16</h3><p>מספר קודקודי Q₄.</p></div></div>
-<div class="step"><div><h3>T₁₆ = 136</h3><p>16 כאינדקס משולשי, וגם מספר הרכיבים הבלתי־תלויים במטריצה סימטרית 16×16.</p></div></div>
-<div class="step"><div><h3>32² = 1024</h3><p>32 צלעות Q₄ הופכות לרשת 32×32; במקביל Q₁₀=Q₅□Q₅ נותן 32×32 קודקודים.</p></div></div>
-<div class="step"><div><h3>1024−136 = 888</h3><p>הרשת המלאה פחות T₁₆. זהו גם ההפרש בין שני ערכי השם באנגלית לערך השם בעברית.</p></div></div>
+<div class="step"><div><h3>16</h3><p data-i18n="step1">מספר קודקודי Q₄.</p></div></div>
+<div class="step"><div><h3>T₁₆ = 136</h3><p data-i18n="step2">16 כאינדקס משולשי, וגם מספר הרכיבים הבלתי־תלויים במטריצה סימטרית 16×16.</p></div></div>
+<div class="step"><div><h3>32² = 1024</h3><p data-i18n="step3">32 צלעות Q₄ הופכות לרשת 32×32; במקביל Q₁₀=Q₅□Q₅ נותן 32×32 קודקודים.</p></div></div>
+<div class="step"><div><h3>1024−136 = 888</h3><p data-i18n="step4">הרשת המלאה פחות T₁₆. זהו גם ההפרש בין שני ערכי השם באנגלית לערך השם בעברית.</p></div></div>
 </div>
 
-<h3>הקרנת בסיס נוספת</h3>
-<p>הערך 520 של “עמית” יכול להיכתב בשני בסיסים כך שהספרות הנראות הן 160 ו־208:</p>
+<h3 data-i18n="base_title">הקרנת בסיס נוספת</h3>
+<p data-i18n="base_p1">הערך 520 של “עמית” יכול להיכתב בשני בסיסים כך שהספרות הנראות הן 160 ו־208:</p>
 <div class="eq">520₁₀ = 160₂₀ = 208₁₆</div>
-<p>אותם 160,208,520 מופיעים שוב כשלושת שטחי־הפאות של התיבה. כך מתקבלים שני מנגנונים שונים — ייצוג בסיס וגאומטריית פאות — שמחזירים את אותה שלישיית מספרים.</p>
+<p data-i18n="base_p2">אותם 160,208,520 מופיעים שוב כשלושת שטחי־הפאות של התיבה. כך מתקבלים שני מנגנונים שונים — ייצוג בסיס וגאומטריית פאות — שמחזירים את אותה שלישיית מספרים.</p>
 
-<h3>סולם סימטריית B₄</h3>
-<p>לקבוצת הסימטריה המלאה של הטסרקט יש סדר 384. יחד עם 16,128 ו־136 מתקבלת מדרגה נוספת:</p>
+<h3 data-i18n="b4_title">סולם סימטריית B₄</h3>
+<p data-i18n="b4_p1">לקבוצת הסימטריה המלאה של הטסרקט יש סדר 384. יחד עם 16,128 ו־136 מתקבלת מדרגה נוספת:</p>
 <div class="eq">128 = 16×8
 136 = 128+8
 |B₄| = 384
@@ -264,11 +264,11 @@ Amit Mike Rov = 1024  (Agrippa/Jewish)
 368 = 384−16
 888 = 520+368</div>
 
-<div class="pull">הליבה היא רצף אופרטורים על ספירות גאומטריות קנוניות: כל מעבר מציין מה נכנס, איזו פעולה הופעלה, ומה יצא.</div>
+<div class="pull" data-i18n="final_pull">הליבה היא רצף אופרטורים על ספירות גאומטריות קנוניות: כל מעבר מציין מה נכנס, איזו פעולה הופעלה, ומה יצא.</div>
 </div></section>
 
 <section class="chapter"><div class="wrap">
-<h2>11. המפה הקצרה</h2>
+<h2 data-i18n="map_title">11. המפה הקצרה</h2>
 <div class="eq">Q₄ = (16,32,24,8)
 
 16 → T₁₆ = 136
@@ -294,7 +294,7 @@ Tevah = (8,20,26)
 </div></section>
 </main>
 
-<footer><div class="wrap">Gematria2026 · Theory 01 · Hypercube / Tesseract / Tevah. החישובים והאופרטורים מוצגים ברצף כדי שכל מעבר יהיה ניתן לשחזור.</div></footer>
+<footer><div class="wrap" data-i18n="footer">Gematria2026 · Theory 01 · Hypercube / Tesseract / Tevah. החישובים והאופרטורים מוצגים ברצף כדי שכל מעבר יהיה ניתן לשחזור.</div></footer>
 
 <script>
 (function(){
@@ -343,5 +343,50 @@ Tevah = (8,20,26)
   }
 })();
 </script>
+<script>
+window.PAGE_I18N={
+ nav_home:{he:'בית',en:'Home'},nav_articles:{he:'מאמרים',en:'Articles'},nav_calc:{he:'מחשבון',en:'Calculator'},
+ hero_title:{he:'איך <span>16, 32, 24, 8</span> בונים את 136, 1024 ו־888',en:'How <span>16, 32, 24, 8</span> Build 136, 1024 and 888'},
+ hero_lead:{he:'נקודת המוצא היא אובייקט גאומטרי סטנדרטי לחלוטין: הטסרקט, הקובייה הארבע־ממדית Q₄. לטסרקט יש 16 קודקודים, 32 צלעות, 24 פאות ריבועיות ו־8 תאים קובייתיים. המודל מתחיל מן הספירות הגאומטריות האלה, ואז מפעיל עליהן אופרטורים מוגדרים. כך נבנית השרשרת 16→136, 32→1024, 24→888, 8→512/888/1024.',en:'The starting point is a standard geometric object: the tesseract, the four-dimensional cube Q₄. It has 16 vertices, 32 edges, 24 square faces and 8 cubic cells. The model begins with these canonical counts and then applies explicitly defined operators, producing the chains 16→136, 32→1024, 24→888 and 8→512/888/1024.'},
+ toc_q4:{he:'Q₄',en:'Q₄'},toc_16:{he:'16 → 136',en:'16 → 136'},toc_32:{he:'32 → 1024',en:'32 → 1024'},toc_8:{he:'8 → 512/1024',en:'8 → 512/1024'},toc_e8:{he:'E₈',en:'E₈'},toc_q10:{he:'Q₁₀',en:'Q₁₀'},toc_grid:{he:'32×32 − T₁₆',en:'32×32 − T₁₆'},toc_dual:{he:'16-cell / 24-cell',en:'16-cell / 24-cell'},toc_tevah:{he:'Tevah',en:'Tevah'},toc_name:{he:'השם',en:'The Name'},
+ q4_title:{he:'1. הטסרקט: ארבעת המספרים הראשוניים של המבנה',en:'1. The Tesseract: Four Primary Counts'},
+ q4_p1:{he:'נסמן ב־Qₙ קובייה n־ממדית. Q₄ הוא הטסרקט. ה־f-vector שלו סופר אובייקטים לפי ממד: קודקודים, צלעות, פאות ריבועיות ותאים קובייתיים.',en:'Let Qₙ denote the n-dimensional cube. Q₄ is the tesseract. Its f-vector counts objects by dimension: vertices, edges, square faces and cubic cells.'},
+ q4_visual_title:{he:'טסרקט מסתובב · 16 קודקודים / 32 צלעות',en:'Rotating tesseract · 16 vertices / 32 edges'},q4_visual_sub:{he:'הקרנה דו־ממדית של סיבוב 4D',en:'2D projection of a 4D rotation'},
+ q4_p2:{he:'ארבעת המספרים האלה הם קנוניים לגאומטריה. מכאן מתחיל המודל. כל מעבר בהמשך מציין במפורש איזו פעולה הופעלה על איזה רכיב.',en:'These four numbers are canonical geometric counts. The model starts here. Every later transition states exactly which operation is applied to which component.'},
+ q4_callout:{he:'<span class="label">מבנה מול אופרטור</span>המספרים 16,32,24,8 מגיעים ישירות מן הטסרקט. T₁₆, ריבוע 32, הכפלה ב־37 וחזקה שלישית הם אופרטורים שמופעלים על הספירות האלה. כך כל שלב ניתן להסבר ולשחזור.',en:'<span class="label">STRUCTURE VS OPERATOR</span>The numbers 16, 32, 24 and 8 come directly from the tesseract. T₁₆, squaring 32, multiplying by 37 and cubing 8 are operators applied to those counts. This keeps every transition explicit and reproducible.'},
+ sixteen_title:{he:'2. 16 הוא האינדקס שמייצר 136',en:'2. 16 Is the Index that Generates 136'},
+ sixteen_p1:{he:'לטסרקט יש 16 קודקודים. כאשר 16 משמש אינדקס של מספר משולשי מתקבל T₁₆ — סכום המספרים 1 עד 16.',en:'The tesseract has 16 vertices. When 16 is used as the index of a triangular number, T₁₆ is obtained — the sum of the integers from 1 through 16.'},
+ sixteen_p2:{he:'לכן המסלול של 16 הוא אחד המסלולים המרכזיים: מספר הקודקודים של Q₄ הופך ל־136.',en:'This makes 16 a central route in the model: the vertex count of Q₄ becomes 136.'},
+ matrix_title:{he:'אותו 136 כמטריצה סימטרית 16×16',en:'The Same 136 in a Symmetric 16×16 Matrix'},
+ matrix_p1:{he:'במטריצה סימטרית 16×16, מספיק לקבוע את האלכסון ואת המשולש שמעליו; החצי השני נקבע אוטומטית על ידי הסימטריה. מספר הרכיבים הבלתי־תלויים הוא בדיוק:',en:'In a symmetric 16×16 matrix, the diagonal and one triangular half determine the other half automatically. The number of independent entries is therefore:'},
+ matrix_visual_title:{he:'16×16 · חצי מטריצה + אלכסון = 136',en:'16×16 · Half-Matrix + Diagonal = 136'},matrix_visual_sub:{he:'T₁₆ כמספר דרגות חופש סימטריות',en:'T₁₆ as the number of symmetric degrees of freedom'},
+ coupling_title:{he:'128 → 136',en:'128 → 136'},coupling_p1:{he:'שני רכיבים של Q₄ לבדם יוצרים מדרגה קצרה: 16 הקודקודים כפול 8 התאים נותנים 128; הוספת 8 התאים פעם נוספת נותנת 136.',en:'Two Q₄ counts alone form a short ladder: 16 vertices × 8 cells = 128; adding the 8 cells once more gives 136.'},
+ coupling_p2:{he:'לכן 136 מופיע גם כ־T₁₆ וגם כ־8×17. במודל הוא משמש כמפתח הצימוד בין שכבת 16 לבין שכבת 1024.',en:'Thus 136 appears both as T₁₆ and as 8×17. In the model it acts as a coupling key between the 16-layer and the 1024-layer.'},
+ thirtytwo_title:{he:'3. 32: מן הצלעות של Q₄ אל ריבוע 1024',en:'3. 32: From Q₄ Edges to the 1024 Square'},
+ thirtytwo_p1:{he:'לטסרקט יש 32 צלעות. כאשר 32 משמש כאורך של שני צירים עצמאיים מתקבל ריבוע 32×32:',en:'The tesseract has 32 edges. Using 32 as the length of two independent axes produces a 32×32 square:'},
+ thirtytwo_p2:{he:'הזהות הזאת מקבלת פירוש ישיר דרך Q₁₀. ל־Q₅ יש 32 קודקודים, ו־Q₁₀ מתפרק כמכפלה קרטזית של שתי קוביות חמש־ממדיות:',en:'This identity has a direct hypercube interpretation. Q₅ has 32 vertices, and Q₁₀ decomposes as the Cartesian product of two 5-cubes:'},
+ thirtytwo_p3:{he:'כל קודקוד ב־Q₁₀ ניתן לקריאה כזוג כתובות בנות 5 ביטים. לכן 32×32 הוא גם טבלה של כל 1024 המצבים הבינאריים באורך 10.',en:'Every vertex of Q₁₀ can be read as a pair of 5-bit addresses. Therefore 32×32 is also the table of all 1024 binary states of length 10.'},
+ eight_title:{he:'4. 8: תא, קובייה, 512, ואז 1024',en:'4. 8: Cell, Cube, 512, then 1024'},eight_p1:{he:'לטסרקט יש 8 תאים קובייתיים. המספר 8 מתחבר למערכת בשני מסלולים שונים.',en:'The tesseract has 8 cubic cells. The number 8 enters the system through two distinct routes.'},
+ cube_path_title:{he:'מסלול הקובייה',en:'Cube Route'},cube_path_p:{he:'8 בשלישית נותן 512. הכפלה ב־2 נותנת 1024.',en:'Cubing 8 gives 512. Doubling it gives 1024.'},
+ eight_888_title:{he:'מסלול 888',en:'888 Route'},eight_888_p:{he:'8 כפול 111 נותן 888.',en:'8 multiplied by 111 gives 888.'},
+ eight_product_title:{he:'8×4×32 = 1024',en:'8×4×32 = 1024'},eight_product_p1:{he:'כאן מופיעה סגירה שמורכבת משלושה נתונים פנימיים של Q₄: 8 תאים, ממד 4, ו־32 צלעות.',en:'This closure uses three internal facts of Q₄: 8 cells, dimension 4, and 32 edges.'},eight_product_p2:{he:'זו סגירה מכפלתית של שלושה רכיבים קנוניים של אותו טסרקט. לכן 1024 מתקבל מתוך הנתונים הפנימיים של Q₄ עצמו.',en:'It is a multiplicative closure of three canonical components of the same tesseract, so 1024 is generated from Q₄’s own structural data.'},
+ e8_title:{he:'5. E₈ = 1024: האיבר השמיני של סדרת צלעות ההיפר־קיוב',en:'5. E₈ = 1024: The Eighth Hypercube Edge Count'},e8_p1:{he:'מספר הצלעות של Qₙ הוא:',en:'The number of edges of Qₙ is:'},e8_p2:{he:'ולכן סדרת מספרי הצלעות מתחילה כך:',en:'So the hypercube edge-count sequence begins:'},e8_p3:{he:'זהו הניסוח המקביל ל־T₁₆=136: <strong>E₈=1024</strong>.',en:'This is the compact statement parallel to T₁₆=136: <strong>E₈=1024</strong>.'},
+ q10_title:{he:'6. אותו Q₁₀ נותן גם 1024 וגם 136',en:'6. The Same Q₁₀ Produces Both 1024 and 136'},q10_p1:{he:'יש פירוק נוסף של Q₁₀ שמחבר את 1024 ו־136 באותה נשימה. מאחר שממדים מתחברים תחת מכפלה קרטזית:',en:'A second decomposition of Q₁₀ connects 1024 and 136 in one construction. Hypercube dimensions add under Cartesian product:'},q10_p2:{he:'מספרי הקודקודים הם 8 ו־128:',en:'The corresponding vertex counts are 8 and 128:'},q10_p3:{he:'הכפל שלהם נותן את מספר המצבים של Q₁₀; הסכום שלהם נותן 136:',en:'Their product gives the Q₁₀ state count; their sum gives 136:'},
+ q10_pull:{he:'אותו זוג <span>8 ו־128</span> מייצר גם את המרחב 1024 וגם את מפתח הצימוד 136.',en:'The same pair <span>8 and 128</span> generates both the 1024 state space and the 136 coupling key.'},
+ q10_p4:{he:'זהו אותו זוג בשתי שפות: כחזקות של 2 וכמספרי קודקודים של Q₃ ו־Q₇. המכפלה מחברת ממדים ולכן נותנת את מספר הקודקודים של Q₁₀; הסכום נותן 136. במקביל, 8 משמש גם כמכפיל של 111 כדי להחזיר 888.',en:'It is the same pair in two languages: powers of 2 and vertex counts of Q₃ and Q₇. The product combines dimensions and gives the Q₁₀ vertex count; the sum gives 136. In parallel, 8 also multiplies 111 to produce 888.'},
+ q10_p5:{he:'בנוסף, 128 עצמו נוצר מן הטסרקט:',en:'In addition, 128 itself is generated from the tesseract:'},q10_p6:{he:'כלומר השרשרת נשארת בתוך משפחת ההיפר־קיוב:',en:'So the full chain remains inside the hypercube family:'},
+ grid_title:{he:'7. ההמחשה הישירה: 32×32 פחות T₁₆',en:'7. Direct Visualization: 32×32 Minus T₁₆'},grid_p1:{he:'מתחילים מרשת של 32×32 תאים: בדיוק 1024. בתוך הרשת מסמנים משולש מדרגות בן 16 שורות, באורכים 1 עד 16. המשולש מכיל T₁₆=136 תאים. מה שנשאר ברשת הוא 888.',en:'Start with a 32×32 grid: exactly 1024 cells. Inside it, mark a 16-row staircase triangle with row lengths 1 through 16. That triangle contains T₁₆=136 cells. The remaining cells total 888.'},grid_visual_title:{he:'32×32 · 1024 תאים',en:'32×32 · 1024 Cells'},grid_visual_sub:{he:'136 מסומנים כ־T₁₆; היתר = 888',en:'136 marked as T₁₆; remainder = 888'},grid_p2:{he:'זהו ייצוג ישיר של הליבה: 136 מופיע כצורה משולשית קנונית בעלת אינדקס 16 בתוך רשת 32×32.',en:'This is a direct visualization of the core equation: 136 appears as the canonical triangular figure of index 16 inside a 32×32 grid.'},
+ dual_title:{he:'8. הדואליות: Tesseract ↔ 16-cell ↔ 24-cell',en:'8. Duality: Tesseract ↔ 16-cell ↔ 24-cell'},dual_p1:{he:'ה־16-cell הוא הפוליטופ הדואלי לטסרקט. הדואליות הופכת את סדר ה־f-vector:',en:'The 16-cell is the dual polytope of the tesseract. Duality reverses the f-vector:'},dual_p2:{he:'לכן 16 ו־8 מתחלפים, וגם 32 ו־24 מתחלפים. ארבעת המספרים מופיעים כזוגות־מראה בתוך אותו מרחב 4D.',en:'Thus 16 and 8 exchange roles, as do 32 and 24. The four counts appear as mirror pairs inside the same 4D geometry.'},dual_p3:{he:'ה־24-cell מוסיף שכבה שלישית. יש לו 24 קודקודים ו־24 תאים. ניתן לחלק את 24 הקודקודים לשלוש מחלקות של 8 קודקודים, שכל אחת מהן יוצרת 16-cell; איחוד של שתי מחלקות נותן 16 קודקודים של טסרקט.',en:'The 24-cell adds a third layer. It has 24 vertices and 24 cells. Its 24 vertices can be partitioned into three classes of 8 vertices, each forming a 16-cell; the union of two classes gives a 16-vertex tesseract.'},dual_p4:{he:'כך 8,16,24 ו־32 שייכים לרשת דואלית אחת של פוליטופים רגולריים בארבעה ממדים.',en:'Thus 8, 16, 24 and 32 belong to one dual network of regular four-dimensional polytopes.'},
+ tevah_title:{he:'9. התיבה: כשהשם הופך לגאומטריה תלת־ממדית',en:'9. תיבה (Tevah / Box): When the Name Becomes 3D Geometry'},tevah_p1:{he:'מודל התיבה משתמש בשלושה ממדים מלאים:',en:'The תיבה (Tevah / box) model uses three full dimensions:'},tevah_p2:{he:'שלושת שטחי־הפאות הבלתי־תלויים של התיבה המלאה הם:',en:'The three independent face areas of the full תיבה (Tevah) are:'},tevah_p3:{he:'שלושת המספרים 160,208,520 הם ערכי מייק, רוב ועמית בגימטריה הכרחית. כאן 888 הוא סכום שלושת שטחי־הפאות.',en:'The numbers 160, 208 and 520 are the Hebrew regular values of מייק (Mike), רוב (Rov) and עמית (Amit). Here 888 is the sum of the three independent face products.'},tevah_visual_title:{he:'Tevah · 8 × 20 × 26',en:'Tevah · 8 × 20 × 26'},tevah_visual_sub:{he:'שלוש פאות עצמאיות → 160, 208, 520',en:'Three independent faces → 160, 208, 520'},tevah_poly_title:{he:'הפולינום של התיבה',en:'The Tevah Polynomial'},tevah_poly_p:{he:'המקדם של x הוא סכום המכפלות הזוגיות: 888. הנפח הוא 4160.',en:'The coefficient of x is the sum of pairwise products: 888. The volume is 4160.'},tevah_half_title:{he:'החצי משחזר את התיבה הפרימיטיבית',en:'Half-Volume Reconstructs the Primitive Tevah'},tevah_half_p:{he:'חצי־הנפח מחזיר את (4,10,13) מתוך שלושת שטחי־הפאות.',en:'The half-volume reconstructs (4,10,13) from the three face products.'},
+ name_title:{he:'10. אותה מערכת חוזרת בשם',en:'10. The Same System Returns in the Name'},name_p1:{he:'השם Amit Mike Rov נותן שלושה ערכי־על בשיטות שונות:',en:'The name Amit Mike Rov produces three major values under different ciphers:'},name_p2:{he:'לכן:',en:'Therefore:'},name_p3:{he:'המשוואה מתחברת ישירות למבנה שנבנה גאומטרית:',en:'The equation connects directly to the geometric construction:'},
+ step1:{he:'מספר קודקודי Q₄.',en:'The vertex count of Q₄.'},step2:{he:'16 כאינדקס משולשי, וגם מספר הרכיבים הבלתי־תלויים במטריצה סימטרית 16×16.',en:'16 as a triangular index, and also the number of independent entries in a symmetric 16×16 matrix.'},step3:{he:'32 צלעות Q₄ הופכות לרשת 32×32; במקביל Q₁₀=Q₅□Q₅ נותן 32×32 קודקודים.',en:'The 32 edges of Q₄ become a 32×32 grid; in parallel Q₁₀=Q₅□Q₅ gives 32×32 vertices.'},step4:{he:'הרשת המלאה פחות T₁₆. זהו גם ההפרש בין שני ערכי השם באנגלית לערך השם בעברית.',en:'The full grid minus T₁₆. This is also the difference between the two English name values and the Hebrew name value.'},
+ base_title:{he:'הקרנת בסיס נוספת',en:'A Second Base Projection'},base_p1:{he:'הערך 520 של “עמית” יכול להיכתב בשני בסיסים כך שהספרות הנראות הן 160 ו־208:',en:'The value 520 of עמית (Amit) can be written in two other bases so that the visible digit strings are 160 and 208:'},base_p2:{he:'אותם 160,208,520 מופיעים שוב כשלושת שטחי־הפאות של התיבה. כך מתקבלים שני מנגנונים שונים — ייצוג בסיס וגאומטריית פאות — שמחזירים את אותה שלישיית מספרים.',en:'The same 160, 208 and 520 reappear as the three face products of the תיבה (Tevah). Two distinct mechanisms — base representation and face geometry — therefore return the same number triplet.'},
+ b4_title:{he:'סולם סימטריית B₄',en:'The B₄ Symmetry Ladder'},b4_p1:{he:'לקבוצת הסימטריה המלאה של הטסרקט יש סדר 384. יחד עם 16,128 ו־136 מתקבלת מדרגה נוספת:',en:'The full symmetry group of the tesseract has order 384. Together with 16, 128 and 136 it forms another ladder:'},
+ final_pull:{he:'הליבה היא רצף אופרטורים על ספירות גאומטריות קנוניות: כל מעבר מציין מה נכנס, איזו פעולה הופעלה, ומה יצא.',en:'The core is a sequence of operators acting on canonical geometric counts: every step states the input, the operation, and the output.'},
+ map_title:{he:'11. המפה הקצרה',en:'11. Compact Map'},
+ footer:{he:'Gematria2026 · Theory 01 · Hypercube / Tesseract / Tevah. החישובים והאופרטורים מוצגים ברצף כדי שכל מעבר יהיה ניתן לשחזור.',en:'Gematria2026 · Theory 01 · Hypercube / Tesseract / Tevah. Calculations and operators are presented as a continuous chain so every transition can be reproduced.'}
+};
+</script>
+<script src="site-i18n.js"></script>
 </body>
 </html>
