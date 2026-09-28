@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-28",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati and Fold₁₀₀₀ mod-999 invariants, Tevah LCM decoder, π/e/φ digit-power operators, Torah/point/YHWH anchors, and Psalm 145:16 פי/פאי bridges.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati, Tevah, Greek dual ordinal methods, π/e/φ operators, Torah/YHWH/Tov=17, Song of the Sea cipher/key structures, and Psalm 145:16 פי/פאי bridges.",
   "entries": [
     {
       "value": 13,
@@ -3297,6 +3297,354 @@
       "label": "ΑΛΦΑ ΩΜΕΓΑ",
       "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · 37+48",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 17,
+      "label": "תורה / יהוה / טוב",
+      "method": "תורה Hebrew Small = 17; יהוה Hebrew Small = 17; טוב Hebrew Regular = 17",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "זה צופן",
+      "method": "Hebrew Final Letters · זה=12 + צופן(final)=876",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 231,
+      "label": "הצופן",
+      "method": "Hebrew Regular · T21 = C(22,2)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 33,
+      "label": "הצופן",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "הצופן",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 528,
+      "label": "אז ישיר",
+      "method": "Hebrew Regular · T32",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 555,
+      "label": "אז ישיר",
+      "method": "Atbash",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 69,
+      "label": "אז ישיר",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "אז ישיר השם יה",
+      "method": "Hebrew Regular · 528+345+15",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 33,
+      "label": "אז ישיר השם יה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 123,
+      "label": "אז ישיר השם יה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 222000,
+      "label": "אז ישיר השם יה",
+      "method": "Perati / sum of squared Regular letter values",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 520,
+      "label": "ישיר / עמית / כשר",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 528,
+      "label": "אז עמית",
+      "method": "Hebrew Regular = Atbash",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 496,
+      "label": "מלכות",
+      "method": "Hebrew Regular · T31",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "מפתח + מלכות / בראשית + אלף",
+      "method": "528+496 = 913+111 = 1024 = 32² = T31+T32",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 231,
+      "label": "הצופן · triangular index",
+      "method": "231=T21; 21=אהיה; also C(22,2), the 22-letter pair count",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 528,
+      "label": "מפתח / אז ישיר · triangular index",
+      "method": "528=T32; 32=לב",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 496,
+      "label": "מלכות · triangular index",
+      "method": "496=T31; 31=אל",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 7,
+      "label": "הצופן decoder → עמית",
+      "method": "231/33=7 = עמית Word Reduced",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 16,
+      "label": "אז ישיר decoder → עמית",
+      "method": "528/33=16 = עמית Hebrew Small",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 297,
+      "label": "אז ישיר−הצופן",
+      "method": "528−231=297=11×27; 27=פי Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 759,
+      "label": "אז ישיר+הצופן",
+      "method": "528+231=759=11×69; 69=אז ישיר Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 873,
+      "label": "אז ישיר משה / מפתח השם",
+      "method": "Hebrew Regular · 528+345",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "הזאת ליהוה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "הזאת ליהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 127,
+      "label": "זה אלי ואנוהו",
+      "method": "Hebrew Regular · זה אלי=53 + ואנוהו=74",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "זה אלי ואנוהו",
+      "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2701,
+      "label": "בראשית ↔ זה אלי ואנוהו",
+      "method": "2701=37×73 = 37×Ordinal(זה אלי ואנוהו)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4699,
+      "label": "בראשית רבתי ↔ זה אלי ואנוהו",
+      "method": "4699=37×127 = 37×Regular(זה אלי ואנוהו)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 127,
+      "label": "53+74 bridge",
+      "method": "זה אלי=53; ואנוהו=74; תורה Ordinal=53; נקודה יהוה Ordinal=74; sum=127",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 768,
+      "label": "π: H₃(231)→768",
+      "method": "P₃^π(231)=47721; Fold₁₀₀₀→768 = עמית מ. רוב",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 58,
+      "label": "φ: H₁(231)→58",
+      "method": "P₁^φ(231)=1057; Fold₁₀₀₀→58 = Atbash(עמית)",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 160,
+      "label": "φ: H₃(231)→160",
+      "method": "P₃^φ(231)=49111; Fold₁₀₀₀→160 = מייק",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 12,
+      "label": "e: H₁(873)→12",
+      "method": "P₁^e(873)=4008; Fold₁₀₀₀→12 = זה",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 876,
+      "label": "φ: H₁(873)→876",
+      "method": "P₁^φ(873)=3873; Fold₁₀₀₀→876 = צופן Final",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 888,
+      "label": "873 constant pair → זה צופן",
+      "method": "H₁^e(873)=12 and H₁^φ(873)=876; 12+876=888 = זה צופן Final",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 4008,
+      "label": "e: P₁(873) and Exodus 15:1 prefix",
+      "method": "P₁^e(873)=4008 = Hebrew Regular sum of first 14 words of Exodus 15:1 (אז…כי)",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 543,
+      "label": "e: H₁(345)→543",
+      "method": "P₁^e(345)=1542; Fold₁₀₀₀→543 = אהיה אשר אהיה",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 528,
+      "label": "מפתח",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 873,
+      "label": "מפתח השם",
+      "method": "Hebrew Regular · equals אז ישיר משה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "מפתח השם יה",
+      "method": "Hebrew Regular · 873+15",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1888,
+      "label": "מפתח השם יה",
+      "method": "Achorayim / backward addition",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2888,
+      "label": "מפתח השם יה",
+      "method": "Ratzo VaShov",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 899,
+      "label": "מפתח השם יהוה",
+      "method": "Hebrew Regular · 528+345+26",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "מפתח השם יהוה",
+      "method": "Hebrew Small Finals",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 128,
+      "label": "מפתח השם יהוה",
+      "method": "Reverse Ordinal · = אני בינה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 17,
+      "label": "מפתח השם יהוה",
+      "method": "Word Reduced · = תורה Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 730,
+      "label": "מפתח השם יהוה",
+      "method": "ALBaM · = 10×73 = חכמה×י",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 169,
+      "label": "מפתח השם יהוה",
+      "method": "Latin Milui v0 → English Reduced · 13²",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 116,
+      "label": "מפתח השם יהוה",
+      "method": "Reduction №1 · = תורה AIQ BKR",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "×8 מפתח השם יהוה",
+      "method": "Word Reduced · 8×17 = Amit Mike Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "×8 מפתח השם יהוה",
+      "method": "Reverse Ordinal · 8×128 = Amit Mike Rov Jewish",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 676,
+      "label": "×4 מפתח השם יהוה",
+      "method": "Latin Milui v0 → English Reduced · 4×169=(2×13)²=26²=יהוה²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 232,
+      "label": "×2 מפתח השם יהוה",
+      "method": "Reduction №1 · 2×116 = יהי אור",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 111,
+      "label": "מפתח השם יהוה · difference",
+      "method": "128−17=111 = Amit M. Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "מפתח השם יהוה · scaled difference",
+      "method": "8×(128−17)=1024−136=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
+      "label": "55 key cluster",
+      "method": "מפתח השם יהוה Small Finals = הכל Hebrew Regular = Amit Mike Rov Small = Rov English Simple",
+      "classification": "BRIDGE"
     }
   ]
 }
