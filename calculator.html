@@ -287,7 +287,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><h1>Gematria Calculator</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
+    <div class="brand"><h1>Gematria Calculator</h1><div class="sub" data-i18n="brand_sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <button id="rabbatiBtn" class="query-quick rabbati-btn" title="רבתי · הכפל את האות שלפני הסמן ב־1000" aria-label="רבתי פי אלף"><span class="ancient-aleph">𐤀</span></button>
@@ -296,7 +296,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
         <select id="sampleSelect" aria-label="דוגמאות">
-          <option value="">דוגמאות</option><option>עמית מייק רוב</option><option>Amit Mike Rov</option><option>ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ</option><option>משיח מייק</option><option>אלהימ</option><option>מיכאל בלייז</option>
+          <option value="" data-i18n="samples">דוגמאות</option><option>עמית מייק רוב</option><option>Amit Mike Rov</option><option>ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ</option><option>משיח מייק</option><option>אלהימ</option><option>מיכאל בלייז</option>
         </select>
         <div id="scriptBadge">עברית · Hebrew</div>
       </div>
@@ -312,18 +312,18 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   </header>
 
   <nav class="main-tabs" aria-label="ניווט ראשי">
-    <button class="active" data-tab="results">תוצאות</button>
-    <button data-tab="number">מספר</button>
-    <button data-tab="relations">קשרים</button>
-    <button data-tab="compare">השוואה</button>
-    <button data-tab="repeat">חזרות</button>
-    <button data-tab="forms">מילוי / גבול</button>
+    <button class="active" data-tab="results" data-i18n="tab_results">תוצאות</button>
+    <button data-tab="number" data-i18n="tab_number">מספר</button>
+    <button data-tab="relations" data-i18n="tab_relations">קשרים</button>
+    <button data-tab="compare" data-i18n="tab_compare">השוואה</button>
+    <button data-tab="repeat" data-i18n="tab_repeat">חזרות</button>
+    <button data-tab="forms" data-i18n="tab_forms">מילוי / גבול</button>
   </nav>
 
   <main class="workspace">
     <section id="tab-results" class="tab-panel active"><div class="panel results-layout">
       <div class="method-pane">
-        <div class="dock-title"><b>בחר מה להוסיף למרכז</b><span>לחיצה מוסיפה · ✕ מסיר</span></div>
+        <div class="dock-title"><b data-i18n="pick_methods">בחר מה להוסיף למרכז</b><span data-i18n="pick_hint">לחיצה מוסיפה · ✕ מסיר</span></div>
         <div class="category-tabs" id="categoryTabs"></div>
         <select id="mobileMethod" class="mobile-method" aria-label="בחר שיטה"></select>
         <div class="method-grid" id="methodGrid"></div>
@@ -337,15 +337,15 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
         </div>
         <div id="detailBadges" class="badges"></div>
         <div class="detail-body">
-          <div class="box"><h3>חתימת מספר</h3><div id="detailStats" class="kvgrid"></div></div>
-          <div class="box"><h3>פירוק החישוב</h3><div class="wordnav"><button id="wordPrev">‹</button><div id="wordLabel" class="grow"></div><button id="wordNext">›</button></div><div id="wordBreak" class="mono"></div></div>
+          <div class="box"><h3 data-i18n="number_signature">חתימת מספר</h3><div id="detailStats" class="kvgrid"></div></div>
+          <div class="box"><h3 data-i18n="calculation_breakdown">פירוק החישוב</h3><div class="wordnav"><button id="wordPrev">‹</button><div id="wordLabel" class="grow"></div><button id="wordNext">›</button></div><div id="wordBreak" class="mono"></div></div>
         </div>
       </div>
     </div></section>
 
     <section id="tab-number" class="tab-panel"><div class="panel analysis-shell">
       <div class="sectionbar"><select id="numSource" class="grow"></select><div id="numHeadline" class="bigvalue">0</div></div>
-      <div class="subtabs" id="numberSubtabs"><button class="active" data-sub="core">ליבה</button><button data-sub="div">מחלקים</button><button data-sub="index">אינדקסים</button><button data-sub="digits">ספרות / מוד</button></div>
+      <div class="subtabs" id="numberSubtabs"><button class="active" data-sub="core" data-i18n="sub_core">ליבה</button><button data-sub="div" data-i18n="sub_div">מחלקים</button><button data-sub="index" data-i18n="sub_index">אינדקסים</button><button data-sub="digits" data-i18n="sub_digits">ספרות / מוד</button></div>
       <div class="analysis-page" data-page="core"><div id="numCore" class="analysis-grid"></div></div>
       <div class="analysis-page" data-page="div" hidden><div id="numDiv" class="analysis-grid"></div></div>
       <div class="analysis-page" data-page="index" hidden><div id="numIndex" class="analysis-grid"></div></div>
@@ -354,33 +354,33 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 
     <section id="tab-relations" class="tab-panel"><div class="panel relations-layout">
       <div class="relation-summary">
-        <div class="box"><h3>הרמוניה</h3><div id="harmonyPct" class="bigvalue">0%</div><div class="meter"><div id="harmonyFill"></div></div><div id="harmonyText" class="tiny" style="margin-top:6px"></div></div>
-        <div class="box"><h3>קשרים חזקים</h3><div id="strongCount" class="bigvalue">0</div><div class="tiny">φ, אינדקסים, שוויון, +1000, zero-strip</div></div>
-        <div class="box"><h3>חתימות חוזרות</h3><div id="relationCorpus" class="chiprow"></div></div>
+        <div class="box"><h3 data-i18n="harmony">הרמוניה</h3><div id="harmonyPct" class="bigvalue">0%</div><div class="meter"><div id="harmonyFill"></div></div><div id="harmonyText" class="tiny" style="margin-top:6px"></div></div>
+        <div class="box"><h3 data-i18n="strong_relations">קשרים חזקים</h3><div id="strongCount" class="bigvalue">0</div><div class="tiny">φ, אינדקסים, שוויון, +1000, zero-strip</div></div>
+        <div class="box"><h3 data-i18n="repeated_signatures">חתימות חוזרות</h3><div id="relationCorpus" class="chiprow"></div></div>
       </div>
       <div style="display:grid;grid-template-rows:minmax(0,1fr) auto;gap:7px;min-height:0"><div id="relationList" class="relation-list"></div><div class="pager"><button id="relPrev">‹</button><span id="relPage">1/1</span><button id="relNext">›</button></div></div>
     </div></section>
 
     <section id="tab-compare" class="tab-panel"><div class="panel compare-layout">
       <div class="compare-head"><textarea id="compareA" dir="auto" aria-label="ביטוי א"></textarea><textarea id="compareB" dir="auto" aria-label="ביטוי ב"></textarea><button id="autoCompare" class="auto-btn active" title="בחר אוטומטית ביטוי קרוב מבנק העוגנים">🎯</button><button id="swapCompare" title="החלף">⇄</button></div>
-      <div id="compareHint" class="tiny compare-hint">🎯 השוואה אוטומטית לעוגן הקרוב ביותר באותה שיטה</div>
+      <div id="compareHint" class="tiny compare-hint" data-i18n="compare_hint">🎯 השוואה אוטומטית לעוגן הקרוב ביותר באותה שיטה</div>
       <div id="compareTable" class="compare-table"></div>
       <div class="pager"><button id="cmpPrev">‹</button><span id="cmpPage">1/1</span><button id="cmpNext">›</button></div>
     </div></section>
 
     <section id="tab-repeat" class="tab-panel"><div class="panel repeat-layout">
       <div class="repeat-controls"><input id="repeatPhrase" aria-label="ביטוי לחזרה"><select id="repeatMethod"></select><select id="repeatMax" aria-label="מספר חזרות"><option>8</option><option selected>12</option><option>16</option><option>24</option></select><button id="repeatMatrixToggle" title="הפק דוח מטריקס מלא כתמונה">📸</button><button id="repeatMatrixDouble" title="קפוץ את דרגות המטריקס פי 2">×2</button><button id="saveRepeatMatrix" title="שמור צילום של מטריקס ההתאמות">📸✓</button></div>
-      <div id="repeatHitPanel" class="repeat-hit-panel"><div class="repeat-hit-head"><div class="grow"><div class="repeat-hit-title">✓ מטריקס התאמות קורפוס</div><div id="repeatHitSub" class="repeat-hit-sub"></div></div><div class="repeat-hit-actions"><button id="repeatHitAll">✓ הכל</button><button id="repeatHitClear">נקה</button><button id="repeatHitAdd">＋ להשוואה</button></div></div><div id="repeatHitGrid" class="repeat-hit-grid"></div></div>
+      <div id="repeatHitPanel" class="repeat-hit-panel"><div class="repeat-hit-head"><div class="grow"><div class="repeat-hit-title" data-i18n="repeat_hits">✓ מטריקס התאמות קורפוס</div><div id="repeatHitSub" class="repeat-hit-sub"></div></div><div class="repeat-hit-actions"><button id="repeatHitAll" data-i18n="all">✓ הכל</button><button id="repeatHitClear" data-i18n="clear">נקה</button><button id="repeatHitAdd" data-i18n="add_compare">＋ להשוואה</button></div></div><div id="repeatHitGrid" class="repeat-hit-grid"></div></div>
       <div id="repeatGrid" class="repeat-grid"></div>
       <div class="pager"><button id="repeatPrev">‹</button><span id="repeatPage">1/1</span><button id="repeatNext">›</button><span id="repeatNote" class="tiny"></span></div>
     </div></section>
 
     <section id="tab-forms" class="tab-panel"><div class="panel forms-layout">
-      <div class="sectionbar"><div class="grow"><b>טרנספורמציות של הביטוי</b><div class="tiny">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui">מילוי</button><button data-form="boundary">גבול</button><button data-form="finals">סופיות</button></div></div></div>
+      <div class="sectionbar"><div class="grow"><b data-i18n="transformations">טרנספורמציות של הביטוי</b><div class="tiny" data-i18n="transformations_sub">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui" data-i18n="form_milui">מילוי</button><button data-form="boundary" data-i18n="form_boundary">גבול</button><button data-form="finals" data-i18n="form_finals">סופיות</button></div></div></div>
       <div class="forms-grid">
-        <div class="form-card active" data-formcard="milui"><h3>מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל / Standard</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
-        <div class="form-card" data-formcard="boundary"><h3>אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
-        <div class="form-card" data-formcard="finals"><h3>סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
+        <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל / Standard</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
+        <div class="form-card" data-formcard="boundary"><h3 data-i18n="boundary_title">אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
+        <div class="form-card" data-formcard="finals"><h3 data-i18n="finals_title">סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
     </div></section>
   </main>
@@ -388,11 +388,11 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   <div id="savedModal" class="saved-modal" aria-hidden="true">
     <div class="saved-card">
       <div class="saved-head">
-        <div class="grow"><div class="saved-title">שמורים</div><div id="savedSharedMeta" class="tiny"></div></div>
+        <div class="grow"><div class="saved-title" data-i18n="saved_title">שמורים</div><div id="savedSharedMeta" class="tiny"></div></div>
         <button id="copyCorpusSync" class="iconbtn" title="העתק חבילת סנכרון של פריטי קורפוס מקומיים">🧲</button>
         <button id="closeSaved" class="iconbtn" title="סגור">✕</button>
       </div>
-      <div id="savedTabs" class="saved-tabs"><button class="active" data-saved-tab="match">התאמות</button><button data-saved-tab="corpus">קורפוסים</button></div>
+      <div id="savedTabs" class="saved-tabs"><button class="active" data-saved-tab="match" data-i18n="saved_matches">התאמות</button><button data-saved-tab="corpus" data-i18n="saved_corpora">קורפוסים</button></div>
       <div id="savedList" class="saved-list"></div>
     </div>
   </div>
@@ -414,12 +414,12 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <div class="methodbook-shell">
       <div class="methodbook-head">
         <div class="grow">
-          <div class="methodbook-title">ספר השיטות · Cipher Book</div>
-          <div class="methodbook-sub">שם נגיש · שם מקורי/מסורתי · אלגוריתם · דוגמה · מקור ותיארוך</div>
+          <div class="methodbook-title" data-i18n="book_title">ספר השיטות · Cipher Book</div>
+          <div class="methodbook-sub" data-i18n="book_sub">שם נגיש · שם מקורי/מסורתי · אלגוריתם · דוגמה · מקור ותיארוך</div>
         </div>
         <button id="closeMethodBook" class="iconbtn" title="סגור">✕</button>
       </div>
-      <div class="methodbook-disclaimer">
+      <div class="methodbook-disclaimer" data-i18n="book_disclaimer">
         <b>שפה ברורה לכולם.</b> השמות הקצרים שמופיעים במחשבון נועדו להיות מובנים גם למי שאינו מכיר את הספרות המסורתית. ספר השיטות שומר לצד כל שם נגיש את השם ההיסטורי או המקורי כאשר הוא ידוע, שמות מקבילים במנועים נפוצים, האלגוריתם המדויק ומעמד המקור. שיטות מסורתיות נשמרות ומתועדות; שיטות חדשות מסומנות במפורש כ<strong>פיתוח האתר</strong> ואינן מוצגות כמסורת עתיקה. כל שיטה כאן היא כלל חישובי שניתן להסביר, לשחזר ולהעמיד למבחן. תוצאה מספרית היא נקודת הפתיחה. חוזק הקשר נבחן לפי חזרתיות, עצמאות בין שיטות, סימטריה, מבנה והשתלבות בעוגנים נוספים.
         <div class="vision">אנחנו מזמינים אתכם לקפוץ מדרגה בניתוח: לא להסתפק בהתאמה אחת, אלא לבדוק איך מספר נבנה, באילו מסלולים עצמאיים הוא חוזר, ועד כמה הקשר נשאר יציב כאשר משנים שיטה. הצלילה לאותיות ולמספרים היא למעשה צלילה למרחב גדול מאוד של מבנים אפשריים; הכלי נועד לעזור להבחין בין צירוף מקרים לבין קשר שחוזר תחת בדיקות שונות. ברובד הרעיוני אנחנו מציעים שפה מתמטית לחקר אותיות, אותות, מילים, רעיונות ומבנים. חזון האתר הוא עולם ברור יותר ומלא באהבה ובאחדות. כעוגן מספרי בלבד: אחד=13, אהבה=13, ולכן אחד+אחד=26=יהוה בגימטריה הכרחית.</div>
         <div class="eng"><b>Plain Language for Everyone.</b> Calculator labels are modern, readable names. This book preserves traditional/original names where documented, engine aliases, exact algorithms, historical status and examples. New methods are explicitly marked as site-developed. Numeric matches are reproducible calculations; their strength is evaluated by recurrence, independence across methods, symmetry and structural integration.</div>
@@ -427,7 +427,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <div class="methodbook-main">
         <aside class="methodbook-nav">
           <div class="methodbook-langs">
-            <button data-methodbook-script="he" class="active">עברית</button>
+            <button data-methodbook-script="he" class="active" data-i18n="lang_hebrew">עברית</button>
             <button data-methodbook-script="el">Ελληνικά</button>
             <button data-methodbook-script="en">English</button>
           </div>
@@ -656,6 +656,37 @@ const METHODS={
  ]
 };
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
+const METHOD_EN_NAMES={
+ regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
+ smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Reverse Ordinal',zeroStep:'One-Step Decimal Reduction',
+ atbash:'Atbash',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
+ kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
+ equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
+ latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
+ milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim'
+};
+const METHOD_EN_HISTORY={
+ regular:'Traditional Hebrew gematria using the standard letter-value scale. Exact primary-source chronology is being documented separately.',
+ final:'A traditional extended-final-letter variant in which ךםןףץ receive 500–900. Exact historical naming is being source-checked.',
+ ordinal:'Traditional ordinal counting by Hebrew alphabet position.',
+ reduced:'Traditional reduction in which each Hebrew letter is reduced to a 1–9 value before summation.',
+ smallFinals:'Extended final-letter values are applied first and then reduced to 1–9; kept distinct from ordinary Mispar Katan.',
+ wordReduced:'A modern site operator: each word is reduced separately and the resulting word values are summed.',
+ reverseOrdinal:'A derived operator equivalent to taking the ordinal value after the Atbash mirror: position → 23−position.',
+ zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
+ achorayim:'Naming conflict under review: the code computes cumulative prefix sums. The older Achorayim label does not describe this algorithm precisely.',
+ positional:'Naming conflict under review. The algorithm is unambiguous: multiply each letter value by its position in the word.'
+};
+function calcLang(){try{return window.SiteI18n?.get?.()||localStorage.getItem('gematria2026.lang')||'he'}catch(_){return'he'}}
+function L(he,en){return calcLang()==='en'?en:he}
+function methodUiName(m){
+ if(!m)return'';
+ if(calcLang()!=='en')return m.name||'';
+ if(METHOD_EN_NAMES[m.key])return METHOD_EN_NAMES[m.key];
+ return m.name||'';
+}
+function categoryUiName(c){return calcLang()==='en'?({base:'Base',cipher:'Ciphers / Extensions',ops:'Operators'}[c]||c):(CAT_LABELS[c]||c)}
+
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
  const names=profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES);
@@ -763,12 +794,12 @@ const METHOD_BOOK_DOCS={
 let METHOD_BOOK_STATE={script:'he',key:'regular'};
 function methodBookId(script,key){return script+':'+key}
 function methodBookStatus(doc,m){
- if(doc&&doc.status==='traditional')return['מסורתי','trad'];
- if(doc&&doc.status==='conflict')return['קונפליקט שם','conflict'];
- if(doc&&doc.status==='modern')return['פיתוח האתר / מודרני','modern'];
- if(doc&&doc.status==='derived')return['נגזר מתמטית','modern'];
- if(m&&m.research)return['מחקר / מודרני','modern'];
- return['ממתין לתיעוד','modern'];
+ if(doc&&doc.status==='traditional')return[L('מסורתי','Traditional'),'trad'];
+ if(doc&&doc.status==='conflict')return[L('קונפליקט שם','Naming conflict'),'conflict'];
+ if(doc&&doc.status==='modern')return[L('פיתוח האתר / מודרני','Site-developed / Modern'),'modern'];
+ if(doc&&doc.status==='derived')return[L('נגזר מתמטית','Mathematically derived'),'modern'];
+ if(m&&m.research)return[L('מחקר / מודרני','Research / Modern'),'modern'];
+ return[L('ממתין לתיעוד','Documentation pending'),'modern'];
 }
 function methodBookFormula(script,m){
  const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];if(d&&d.formula)return d.formula;
@@ -785,10 +816,15 @@ function methodBookFormula(script,m){
  return 'Σ value(letter).';
 }
 function methodBookHistory(script,m){
- const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];if(d&&d.history)return d.history;
+ const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];
+ if(calcLang()==='en'){
+   if(METHOD_EN_HISTORY[m.key])return METHOD_EN_HISTORY[m.key];
+   return m.research?'Modern/research operator in this engine; no historical attribution is claimed until a source is verified.':'Historical documentation is being verified; the displayed algorithm is the operative definition.';
+ }
+ if(d&&d.history)return d.history;
  return m.research?'שיטת מחקר/אנלוג מודרני באתר. מקור היסטורי אינו נטען עד לאימות.':'התיעוד ההיסטורי המדויק של השיטה נמצא בתהליך אימות; האלגוריתם המופיע כאן הוא הקוד המחייב.';
 }
-function methodBookPlain(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return d&&d.plain?d.plain:m.name}
+function methodBookPlain(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return calcLang()==='en'?methodUiName(m):(d&&d.plain?d.plain:m.name)}
 function methodBookOriginal(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return d&&d.original?d.original:'שם מקור/מסורת: בבדיקה'}
 function methodBookAliases(script,m){const d=METHOD_BOOK_DOCS[methodBookId(script,m.key)];return (d&&d.aliases)||[]}
 function methodBookSample(script){
@@ -798,7 +834,7 @@ function methodBookSample(script){
 }
 function methodBookExample(script,m){
  const text=methodBookSample(script);let r;
- try{r=calculate(text,script,m)}catch(e){return '<div class="methodbook-note">לא ניתן להפיק דוגמה חיה לשיטה זו כרגע.</div>'}
+ try{r=calculate(text,script,m)}catch(e){return '<div class="methodbook-note">'+L('לא ניתן להפיק דוגמה חיה לשיטה זו כרגע.','A live example is not available for this method right now.')+'</div>'}
  const w=r.words&&r.words[0];let nodes=[];
  if(w&&w.toks&&w.toks.length){
   const vals=w.baseVals||w.toks.map(x=>x.value);
@@ -831,7 +867,7 @@ function methodBookAlphabet(script,m){
  return [...EN_ORDER];
 }
 function methodBookCipherBoard(script,m){
- if(!m.map)return '<div class="methodbook-note">אופרטור דינמי — המבנה מוצג בדוגמה החיה ובנוסחה.</div>';
+ if(!m.map)return '<div class="methodbook-note">'+L('אופרטור דינמי — המבנה מוצג בדוגמה החיה ובנוסחה.','Dynamic operator — its structure is shown in the live example and formula.')+'</div>';
  const letters=methodBookAlphabet(script,m);
  const cells=letters.map(L=>{
    const v=m.map[L]??m.map[L.toUpperCase()];
@@ -854,11 +890,11 @@ function renderMethodBook(){
   '<div><div class="methodbook-name">'+esc(methodBookPlain(script,m))+'</div><div class="methodbook-alias">'+esc(m.name)+'</div></div>'+
   '<div class="methodbook-badges"><span class="methodbook-badge '+statusClass+'">'+esc(st[0])+'</span><span class="methodbook-badge">'+esc(script==='he'?'עברית':script==='el'?'Greek':'English')+'</span>'+(conflict?'<span class="methodbook-badge conflict">שם בבדיקה</span>':'')+'</div>'+
   '<div class="methodbook-grid primary">'+
-   '<section class="methodbook-box"><h3>הסייפר</h3>'+methodBookCipherBoard(script,m)+'</section>'+
-   '<section class="methodbook-box formula-box"><h3>הנוסחה</h3><div class="methodbook-bigformula">'+esc(methodBookFormula(script,m))+'</div></section>'+
+   '<section class="methodbook-box"><h3>'+L('הסייפר','Cipher')+'</h3>'+methodBookCipherBoard(script,m)+'</section>'+
+   '<section class="methodbook-box formula-box"><h3>'+L('הנוסחה','Formula')+'</h3><div class="methodbook-bigformula">'+esc(methodBookFormula(script,m))+'</div></section>'+
   '</div>'+
-  '<section class="methodbook-box"><h3>דוגמה</h3>'+methodBookExample(script,m)+'</section>'+
-  '<section class="methodbook-box"><h3>שם מקורי / מקור</h3><div class="methodbook-note"><b>'+esc(methodBookOriginal(script,m))+'</b>'+(aliases.length?'<br>Aliases: '+aliases.map(esc).join(' · '):'')+'</div><div class="methodbook-history">'+esc(methodBookHistory(script,m))+'</div></section>';
+  '<section class="methodbook-box"><h3>'+L('דוגמה','Example')+'</h3>'+methodBookExample(script,m)+'</section>'+
+  '<section class="methodbook-box"><h3>'+L('שם מקורי / מקור','Original Name / Source')+'</h3><div class="methodbook-note"><b>'+esc(methodBookOriginal(script,m))+'</b>'+(aliases.length?'<br>Aliases: '+aliases.map(esc).join(' · '):'')+'</div><div class="methodbook-history">'+esc(methodBookHistory(script,m))+'</div></section>';
 }
 function openMethodBook(script){
  if(script&&METHODS[script])METHOD_BOOK_STATE.script=script;else{const t=document.getElementById('q').value;METHOD_BOOK_STATE.script=detectScript(t)}
@@ -1314,7 +1350,7 @@ function allResultsPlainText(){return current.results.map(minimalResultText).joi
 function allResultsBrokenText(){return current.results.map(brokenResultText).join('\n')}
 function allResultsRichText(){return current.results.map(compactMathSummary).join('\n')}
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
-function resultDisplayName(r){return r?.displayName||r?.method?.name||''}
+function resultDisplayName(r){return r?.displayName||methodUiName(r?.method)||''}
 function methodAliasNote(r){return r?.method?.aliasNote||''}
 function selectedResultByKey(key){return selectedResults().find(r=>resultSelectionKey(r)===key)}
 function canonicalIdentitySeriesText(q){
@@ -1393,8 +1429,8 @@ function canonicalIdentitySeriesHtml(q){
  return '<div class="box" style="grid-column:1/-1"><h3>Canonical Series</h3><pre style="margin:0;white-space:pre-wrap;direction:ltr;text-align:left;font:600 14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace">'+esc(t)+'</pre></div>';
 }
 function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button data-copy-selected-broken title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length} בחירות</div></div></div>`+canonicalIdentitySeriesHtml(q)+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="copy-method" data-copy-broken-method="${esc(sk)}" title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}${methodAliasNote(r)?`<div class="tiny" style="margin-top:3px;opacity:.72">${esc(methodAliasNote(r))}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')}
-function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${CAT_LABELS[c]||c}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(r.method.name)}${r.method.aliasNote?`<div class="tiny" style="margin-top:2px;opacity:.7">${esc(r.method.aliasNote)}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');
- const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=r.method.name;document.getElementById('detailHint').textContent=r.method.aliasNote?r.method.aliasNote:(r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'');document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
+function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${categoryUiName(c)}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(methodUiName(r.method))}${r.method.aliasNote?`<div class="tiny" style="margin-top:2px;opacity:.7">${esc(r.method.aliasNote)}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(methodUiName(r.method))} = ${fmt(r.total)}</option>`).join('');
+ const selected=selectedResults();const pane=document.getElementById('detailPane');if(selected.length){renderMultiDetails(selected);return}else pane.classList.remove('multi-mode');const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=methodUiName(r.method);document.getElementById('detailHint').textContent=r.method.aliasNote?r.method.aliasNote:(r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'');document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
 function renderNumber(){ensureSelection();const src=document.getElementById('numSource');src.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.numKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');const r=methodByKey(state.numKey);if(!r)return;const a=analyzeNumber(r.total);document.getElementById('numHeadline').textContent=fmt(r.total);if(!a)return;
  const hits=corpusHits(a.n).map(h=>h.label).join(' · ')||'—';document.getElementById('numCore').innerHTML=[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('λ(n) (מחזור הכפל המינימלי)',fmt(a.lambda)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('σ(n) (סכום כל המחלקים)',fmt(a.sigma)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('ω(n) (מספר ראשוניים שונים)',fmt(a.omega)),kv('Ω(n) (ראשוניים כולל חזרות)',fmt(a.Omega)),kv('Corpus',hits),kv('קרוב בקורפוס',nearestCorpus(a.n,2).map(x=>`${x.label} (${x.value})`).join(' · ')||'—'),kv('φ-chain (שרשרת φ עד 1)',a.phiChain.join(' → ')),kv('Class (סיווג סכום מחלקים)',a.aliquot),kv('Squarefree (בלי גורם בריבוע)',a.squarefree?'כן':'לא'),kv('Powerful (כל ראשוני בריבוע)',a.powerful?'כן':'לא')].join('');
@@ -1564,7 +1600,7 @@ function renderForms(){const text=document.getElementById('q').value,script=dete
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
  }else{document.getElementById('miluiValue').textContent='—';document.getElementById('milui2Value').textContent='—';document.getElementById('miluiMayimValue').textContent='—';document.getElementById('miluiText').textContent='מילוי פעיל בעברית';document.getElementById('miluiMeta').innerHTML='';document.getElementById('yhvhMilui').textContent='';document.getElementById('boundaryTitle').textContent='אפקט גבול זמין בכל שפה';document.getElementById('boundaryDiffs').innerHTML=diffRows(text,boundaryless(text));document.getElementById('finalTitle').textContent='אותיות סופיות רלוונטיות לעברית';document.getElementById('finalDiffs').innerHTML=''} }
 
-function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names={he:'עברית · Hebrew',el:'יוונית · Greek',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
+function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
 
 /* ---------- report / export ---------- */
 function buildReport(text,data){const out=[text,''];for(const r of data.results){out.push(`${r.method.name} = ${r.total}`);const a=analyzeNumber(r.total);if(a){out.push(`φ=${a.phi} | τ=${a.tau} | σ=${a.sigma} | λ=${a.lambda} | rad=${a.rad}`);out.push(`${a.prime?'Prime #'+a.primeIndex:'Composite #'+(a.compositeIndex??'—')} | factors: ${fmtFactors(a.factors)}`);if(a.forms.length||a.binom.length)out.push(`Forms: ${a.forms.concat(a.binom).join(' | ')}`);const h=corpusHits(r.total);if(h.length)out.push(`Corpus: ${h.map(x=>x.label+' ['+x.method+']').join(' | ')}`)}out.push('')}return out.join('\n')}
@@ -1907,5 +1943,49 @@ console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');con
 loadSavedItems();loadCorpusOverrides();applyCorpusOverrides();renderAll();syncSharedCorpus();
 if(location.hash==='#methods')setTimeout(()=>openMethodBook(),0);
 </script>
+
+<script>
+window.PAGE_I18N={
+ brand_sub:{he:'מחשבון גימטריה + מנוע גילוי קשרים',en:'Gematria calculator + connection discovery engine'},
+ samples:{he:'דוגמאות',en:'Examples'},
+ tab_results:{he:'תוצאות',en:'Results'},tab_number:{he:'מספר',en:'Number'},tab_relations:{he:'קשרים',en:'Relations'},tab_compare:{he:'השוואה',en:'Compare'},tab_repeat:{he:'חזרות',en:'Repeats'},tab_forms:{he:'מילוי / גבול',en:'Expansion / Boundary'},
+ pick_methods:{he:'בחר מה להוסיף למרכז',en:'Choose methods for the comparison stage'},pick_hint:{he:'לחיצה מוסיפה · ✕ מסיר',en:'Click to add · ✕ removes'},
+ number_signature:{he:'חתימת מספר',en:'Number Signature'},calculation_breakdown:{he:'פירוק החישוב',en:'Calculation Breakdown'},
+ sub_core:{he:'ליבה',en:'Core'},sub_div:{he:'מחלקים',en:'Divisors'},sub_index:{he:'אינדקסים',en:'Indices'},sub_digits:{he:'ספרות / מוד',en:'Digits / Mod'},
+ harmony:{he:'הרמוניה',en:'Harmony'},strong_relations:{he:'קשרים חזקים',en:'Strong Relations'},repeated_signatures:{he:'חתימות חוזרות',en:'Repeated Signatures'},
+ compare_hint:{he:'🎯 השוואה אוטומטית לעוגן הקרוב ביותר באותה שיטה',en:'🎯 Automatic comparison with the nearest corpus anchor under the same method'},
+ repeat_hits:{he:'✓ מטריקס התאמות קורפוס',en:'✓ Corpus Match Matrix'},all:{he:'✓ הכל',en:'✓ All'},clear:{he:'נקה',en:'Clear'},add_compare:{he:'＋ להשוואה',en:'＋ Add to compare'},
+ transformations:{he:'טרנספורמציות של הביטוי',en:'Expression Transformations'},transformations_sub:{he:'מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח',en:'Letter-name expansion, space as boundary, and closed↔open final letters'},
+ form_milui:{he:'מילוי',en:'Milui'},form_boundary:{he:'גבול',en:'Boundary'},form_finals:{he:'סופיות',en:'Finals'},
+ milui_title:{he:'מילויים · שמות האותיות',en:'Milui · Letter Names'},boundary_title:{he:'אפקט הגבול · עם/בלי רווח',en:'Boundary Effect · With/Without Space'},finals_title:{he:'סגור ↔ פתוח · אותיות סופיות',en:'Closed ↔ Open · Final Letters'},
+ saved_title:{he:'שמורים',en:'Saved'},saved_matches:{he:'התאמות',en:'Matches'},saved_corpora:{he:'קורפוסים',en:'Corpora'},
+ book_title:{he:'ספר השיטות · Cipher Book',en:'Cipher Book'},book_sub:{he:'שם נגיש · שם מקורי/מסורתי · אלגוריתם · דוגמה · מקור ותיארוך',en:'Readable name · original/traditional name · algorithm · example · source & dating'},
+ lang_hebrew:{he:'עברית',en:'Hebrew'},
+ book_disclaimer:{
+   he:'<b>שפה ברורה לכולם.</b> השמות הקצרים שמופיעים במחשבון נועדו להיות מובנים גם למי שאינו מכיר את הספרות המסורתית. ספר השיטות שומר לצד כל שם נגיש את השם ההיסטורי או המקורי כאשר הוא ידוע, שמות מקבילים במנועים נפוצים, האלגוריתם המדויק ומעמד המקור. שיטות מסורתיות נשמרות ומתועדות; שיטות חדשות מסומנות במפורש כ<strong>פיתוח האתר</strong> ואינן מוצגות כמסורת עתיקה. כל שיטה כאן היא כלל חישובי שניתן להסביר, לשחזר ולהעמיד למבחן. תוצאה מספרית היא נקודת הפתיחה. חוזק הקשר נבחן לפי חזרתיות, עצמאות בין שיטות, סימטריה, מבנה והשתלבות בעוגנים נוספים.<div class="vision">אנחנו מזמינים אתכם לקפוץ מדרגה בניתוח: לא להסתפק בהתאמה אחת, אלא לבדוק איך מספר נבנה, באילו מסלולים עצמאיים הוא חוזר, ועד כמה הקשר נשאר יציב כאשר משנים שיטה. הצלילה לאותיות ולמספרים היא למעשה צלילה למרחב גדול מאוד של מבנים אפשריים; הכלי נועד לעזור להבחין בין צירוף מקרים לבין קשר שחוזר תחת בדיקות שונות. ברובד הרעיוני אנחנו מציעים שפה מתמטית לחקר אותיות, אותות, מילים, רעיונות ומבנים. חזון האתר הוא עולם ברור יותר ומלא באהבה ובאחדות. כעוגן מספרי בלבד: אחד=13, אהבה=13, ולכן אחד+אחד=26=יהוה בגימטריה הכרחית.</div><div class="eng"><b>Plain Language for Everyone.</b> Calculator labels are modern, readable names. This book preserves traditional/original names where documented, engine aliases, exact algorithms, historical status and examples. New methods are explicitly marked as site-developed. Numeric matches are reproducible calculations; their strength is evaluated by recurrence, independence across methods, symmetry and structural integration.</div>',
+   en:'<b>Plain Language for Everyone.</b> Calculator labels use readable modern language while the Cipher Book preserves documented traditional/original names, engine aliases, exact algorithms and source status. Traditional methods remain identified as traditional; new methods are explicitly marked as <strong>site-developed</strong>. Every method is a reproducible computational rule. A numerical result is the starting point; connection strength is evaluated through recurrence, independence across methods, symmetry, structure and integration with other anchors.<div class="vision">The goal is to move beyond a single match and examine how a number is built, how many independent routes return it, and how stable the connection remains when the method changes. Letters and numbers open a very large space of possible structures; the engine is designed to make those structures testable. At the conceptual layer, the project provides a mathematical language for letters, signals, words, ideas and forms. Numeric anchor preserved in the original Hebrew: אחד (Echad / One)=13, אהבה (Ahavah / Love)=13, therefore אחד+אחד=26=יהוה under Hebrew Regular.</div>'
+ }
+};
+const CALC_TEXT_EN={
+ 'בסיס':'Base','תמורות / הרחבות':'Ciphers / Extensions','אופרטורים':'Operators',
+ 'מרכז השוואה':'Comparison Stage','חתימת מספר':'Number Signature','פירוק החישוב':'Calculation Breakdown',
+ 'שמורים':'Saved','התאמות':'Matches','קורפוסים':'Corpora','פתח':'Open','ערוך':'Edit','הסתר':'Hide','מקור':'Source',
+ 'סגור':'Close','נקה':'Clear','הכל':'All','השוואה':'Compare','תוצאות':'Results','מספר':'Number','קשרים':'Relations','חזרות':'Repeats'
+};
+function translateCalculatorLeafUi(lang){
+ if(lang!=='en')return;
+ const sels='button,h3,.saved-title,.stage-title,.dock-title b,.dock-title span,.tiny';
+ document.querySelectorAll(sels).forEach(el=>{
+   if(el.children.length)return;
+   const t=el.textContent.trim();
+   if(CALC_TEXT_EN[t])el.textContent=CALC_TEXT_EN[t];
+ });
+}
+window.onSiteLanguageChange=function(lang){
+ try{renderAll();if(document.getElementById('methodBookModal')?.classList.contains('open'))renderMethodBook()}catch(_){}
+ translateCalculatorLeafUi(lang);
+};
+</script>
+<script src="site-i18n.js"></script>
 </body>
 </html>
