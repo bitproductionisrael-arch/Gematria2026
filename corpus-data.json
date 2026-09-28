@@ -4562,6 +4562,10 @@
       "O3": "Sum cubes of first n fractional digits of π, then Fold₁₀₀₀.",
       "O4": "Carmichael λ(n).",
       "source": "YHWH_54_148_Corpus"
+    },
+    "home_power": {
+      "canonical_name": "HomePower / כוח בית",
+      "anchored_at": "2026-09-28"
     }
   }
 }
