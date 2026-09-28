@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-29",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati, Tevah, Greek dual ordinal methods, π/e/φ operators, Torah/YHWH/Tov=17, Song of the Sea cipher/key structures, and Psalm 145:16 פי/פאי bridges.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati, Tevah, Greek dual ordinal methods, π/e/φ operators, Torah/YHWH/Tov=17, Song of the Sea cipher/key structures, Psalm 145:16 פי/פאי bridges, Father/Mother bridges, Revelation 2320, C₉₉₉ power classes, mod-37 name residues, and the קבלה–חכמה–בראשית Private/Squared Gematria anchor.",
   "entries": [
     {
       "value": 13,
@@ -3644,6 +3644,360 @@
       "value": 55,
       "label": "55 key cluster",
       "method": "מפתח השם יהוה Small Finals = הכל Hebrew Regular = Amit Mike Rov Small = Rov English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 20,
+      "label": "י״י",
+      "method": "Hebrew Regular · 10+10",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "י״י",
+      "method": "Atbash → Hebrew Ordinal · י→מ; 13+13",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "י״י × אתב״ש־סדרי(י״י)",
+      "method": "20×26 = 520 = עמית Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 58,
+      "label": "Father",
+      "method": "English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 232,
+      "label": "×4 Father",
+      "method": "English Simple · 4×58; also 72+63+45+52 (ע״ב+ס״ג+מ״ה+ב״ן)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 800,
+      "label": "×4 Father",
+      "method": "Jewish Gematria",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 16,
+      "label": "×4 Father",
+      "method": "English Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 416,
+      "label": "×4 Father",
+      "method": "English Atbash Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 3860,
+      "label": "×4 Father",
+      "method": "English Achorayim · 10×386",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 290,
+      "label": "×5 Father",
+      "method": "English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1000,
+      "label": "×5 Father",
+      "method": "Jewish Gematria",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 20,
+      "label": "×5 Father",
+      "method": "English Word Reduced · matches י״י Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "×5 Father",
+      "method": "English Atbash Ordinal · 20×26 = עמית Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 8080,
+      "label": "×5 Father",
+      "method": "English Atbash → Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 174,
+      "label": "137+37 / ×3 Father",
+      "method": "p33 + חכמה Ordinal = 137+37 = 3×58",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 79,
+      "label": "Mother",
+      "method": "English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 316,
+      "label": "×4 Mother",
+      "method": "English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
+      "label": "×4 Mother",
+      "method": "English Small/Pythagorean · matches Amit Mike Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 208,
+      "label": "×4 Mother",
+      "method": "English One-step Zero · matches רוב Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 28,
+      "label": "×4 Mother",
+      "method": "English Word Reduced · matches רוב Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 120,
+      "label": "×4 Mother",
+      "method": "Jewish Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 12,
+      "label": "×4 Mother",
+      "method": "Jewish Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 52,
+      "label": "Mother",
+      "method": "English One-step Zero",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 535,
+      "label": "Mother",
+      "method": "English AVGaD analogue",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1410.5,
+      "label": "Mother",
+      "method": "English Equivalence",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 232,
+      "label": "ע״ב+ס״ג+מ״ה+ב״ן",
+      "method": "72+63+45+52 = 232 · four principal YHWH fillings",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 232,
+      "label": "232 palindrome",
+      "method": "Number structure · 232 reversed = 232",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2320,
+      "label": "ὁ ὢν καὶ ὁ ἦν καὶ ὁ ἐρχόμενος / ὁ ἦν καὶ ὁ ὢν καὶ ὁ ἐρχόμενος",
+      "method": "Greek Isopsephy · Revelation 1:8 / 4:8 · 10×232 = 2×(1024+136)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2048,
+      "label": "ὢν + ἦν + ἐρχόμενος",
+      "method": "Greek Isopsephy · 850+58+1140 = 2×1024",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 272,
+      "label": "ὁ + καὶ + ὁ + καὶ + ὁ",
+      "method": "Greek Isopsephy · 70+31+70+31+70 = 2×136",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 36,
+      "label": "ord₉₉₉(2)",
+      "method": "Multiplicative order · 2^36 ≡ 1 mod 999; C₉₉₉(n)=2^(n−1) mod 999 depends on n mod 36",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 251,
+      "label": "C₉₉₉(ὢν=850) = C₉₉₉(ἦν=58)",
+      "method": "850≡58≡22 mod 36",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 5,
+      "label": "C₉₉₉(ἐρχόμενος=1140) = C₉₉₉(ΑΜΙΘ=60) = C₉₉₉(888)",
+      "method": "1140≡60≡888≡24 mod 36",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 80,
+      "label": "C₉₉₉(ΡΟΒ=172) = C₉₉₉(136)",
+      "method": "172≡136≡28 mod 36",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 800,
+      "label": "C₉₉₉(232) = C₉₉₉(1024) = C₉₉₉(2320)",
+      "method": "232≡1024≡2320≡16 mod 36",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 73,
+      "label": "Revelation phrase · letterwise C₉₉₉ fold",
+      "method": "Σ C₉₉₉(letter)=5068; Fold₁₀₀₀: 5+068=73",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 37,
+      "label": "37^n mod 999 cycle",
+      "method": "n≡1 mod 3 → 37; includes 37^37 mod 999 = 37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 370,
+      "label": "37^n mod 999 cycle",
+      "method": "n≡2 mod 3 → 370",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 703,
+      "label": "37^n mod 999 cycle / ואת הארץ",
+      "method": "n≡0 mod 3 → 703 = T37 = ואת הארץ Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2,
+      "label": "עמית mod 37",
+      "method": "520 mod 37 = 2",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 12,
+      "label": "מייק mod 37",
+      "method": "160 mod 37 = 12",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 23,
+      "label": "רוב mod 37",
+      "method": "208 mod 37 = 23",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "שאריות השם mod 37",
+      "method": "(520 mod37)+(160 mod37)+(208 mod37)=2+12+23=37; also 2×12=24 and 24×37=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 137,
+      "label": "קבלה",
+      "method": "Hebrew Regular · p33",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "חכמה / הנוצרי",
+      "method": "חכמה Hebrew Regular / הנוצרי Hebrew Ordinal · p21",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "חכמה",
+      "method": "Hebrew Ordinal · p12",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 33,
+      "label": "אינדקסי 37 ו־73",
+      "method": "37=p12; 73=p21; 12+21=33; p33=137=קבלה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2701,
+      "label": "37×73 / p12×p21",
+      "method": "37×73 = בראשית א:א Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 534,
+      "label": "ק²ב²ל²ה²",
+      "method": "Private/Squared Gematria on Hebrew Ordinal values · 19²+2²+12²+5² = 361+4+144+25",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 379,
+      "label": "ח²כ²מ²ה²",
+      "method": "Private/Squared Gematria on Hebrew Ordinal values · 8²+11²+13²+5² = 64+121+169+25",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 913,
+      "label": "ק²ב²ל²ה² ח²כ²מ²ה² / בראשית",
+      "method": "Private/Squared Gematria (Ordinal squares) · 534+379=913 = בראשית Hebrew Regular; also 888+25 and 370+543",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 361,
+      "label": "ק² / הנוצרי",
+      "method": "Ordinal-square: ק=19 → 19²=361 = הנוצרי Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 4,
+      "label": "ב² / ד",
+      "method": "Ordinal-square: ב=2 → 2²=4 = ד Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 144,
+      "label": "ל² / קדם",
+      "method": "Ordinal-square: ל=12 → 12²=144 = קדם Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 25,
+      "label": "ה² / יהי",
+      "method": "Ordinal-square: ה=5 → 5²=25 = יהי Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Regular · 25+144+351 = 520 = עמית",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1080,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Final Letters · קדם final ם=600; total 1080",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 43,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Small / Reduced-letter values · 7+9+27 = 43 = Amit English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 25,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Word Reduced · 7+9+9 = 25 = יהי Hebrew Regular",
       "classification": "BRIDGE"
     }
   ]
