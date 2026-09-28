@@ -3279,6 +3279,24 @@
       "label": "φ: P₁(110)→507",
       "method": "sum first 110 fractional digits of φ =507; control against π/e n=110 pair",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 37,
+      "label": "ΑΛΦΑ",
+      "method": "Greek Ordinal — Ancient 27-sign positional method · Α=1 Λ=12 Φ=23 Α=1",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 48,
+      "label": "ΩΜΕΓΑ",
+      "method": "Greek Ordinal — Ancient 27-sign positional method · Ω=26 Μ=13 Ε=5 Γ=3 Α=1",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 85,
+      "label": "ΑΛΦΑ ΩΜΕΓΑ",
+      "method": "Greek Ordinal — Ancient 27-sign positional method · 37+48",
+      "classification": "RESEARCH"
     }
   ]
 }
