@@ -474,6 +474,12 @@
     },
     {
       "value": 32,
+      "label": "32 נתיבות חכמה",
+      "method": "Traditional Sefer Yetzirah structure · 10 sefirot belimah + 22 Hebrew foundation letters = 32",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 32,
       "label": "8×בראשית",
       "method": "Hebrew Word Reduced · 8×4",
       "classification": "BRIDGE"
@@ -620,6 +626,12 @@
       "value": 37,
       "label": "ישו",
       "method": "Hebrew Ordinal · י=10 ש=21 ו=6",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Small Finals · 4 + 5 + 11 + 17 = 37",
       "classification": "FOUNDATION"
     },
     {
@@ -2850,6 +2862,18 @@
     },
     {
       "value": 512,
+      "label": "888 → 8×8×8 visual cube cue",
+      "method": "REPRESENTATION only: three visible 8s are read as factors 8×8×8=512=8³; not the numerical equality 888=512",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 512,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Regular · 40 + 140 + 146 + 186 = 512 · Mispar Boneh / prefix-building expansion of מקום",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
       "label": "מקום",
       "method": "Prefix cumulative sum (site legacy: מספר האחור · תוספת / Achorayim) · 40+(40+100)+(40+100+6)+(40+100+6+40)=512",
       "classification": "FOUNDATION"
@@ -3804,6 +3828,12 @@
     },
     {
       "value": 1024,
+      "label": "32² / 2¹⁰ / מקום–חלל model",
+      "method": "Exact arithmetic: 32²=1024=2¹⁰. SYMBOLIC MODEL: interpreted as space/חלל and linked to מקום; traditional layer supplies 32 paths =10 sefirot+22 letters, not the physical-space identification.",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1024,
       "label": "דין · סגירת 1024 בשתי שיטות",
       "method": "16×64 (Regular) = 8×128 (Equivalence) = 1024 = 32²",
       "classification": "FOUNDATION"
@@ -3812,6 +3842,12 @@
       "value": 1024,
       "label": "מפתח + מלכות / בראשית + אלף",
       "method": "528+496 = 913+111 = 1024 = 32² = T31+T32",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "מקום · complete 104→512→1024 chain",
+      "method": "Atbash(מקום)=104; P₁^e(104)=512; Boneh(מקום)=512; 2×512=1024=32²=2¹⁰",
       "classification": "FOUNDATION"
     },
     {
@@ -3843,6 +3879,12 @@
       "label": "1073−1 / 1000+72 · 37² Collapse factor",
       "method": "Research · Number",
       "classification": "canonical"
+    },
+    {
+      "value": 1072,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Final Letters · 40 + 140 + 146 + 746 = 1072",
+      "classification": "FOUNDATION"
     },
     {
       "value": 1073,
@@ -4344,6 +4386,12 @@
     },
     {
       "value": 2701,
+      "label": "1072 ↔ 2701",
+      "method": "Decimal digit reversal / mirror representation · 1072 reversed = 2701 = בראשית א:א Hebrew Regular",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 2701,
       "label": "231₃₆",
       "method": "Base-36 representation · (36+1)(72+1)",
       "classification": "REPRESENTATION"
@@ -4734,6 +4782,14 @@
         "ישו = 32 (Hebrew Reverse Ordinal)"
       ],
       "anti_spam": "Do not append this note to unrelated occurrences of 32."
+    },
+    "makom_104_512_1024": {
+      "added_at": "2026-09-29",
+      "exact_chain": "Atbash(מקום)=104; P₁^e(104)=512; Boneh(מקום)=512; 2×P₁^e(104)=1024=32²=2¹⁰",
+      "correction": "Do not write 2×P₁^e(208)=1024; P₁^e(208) is not 512. The correct doubling is 2×P₁^e(104).",
+      "traditional_context": "Sefer Yetzirah: 32 paths; 10 sefirot belimah + 22 foundation letters.",
+      "symbolic_context": "User model interprets 1024 as space/חלל and connects it to מקום.",
+      "mirror_context": "Boneh expansion מ מק מקו מקום =1072 in Final Letters, whose decimal reversal is 2701."
     }
   },
   "corrections": {
