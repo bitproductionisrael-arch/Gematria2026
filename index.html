@@ -28,9 +28,9 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 <header class="top"><div class="wrap nav">
   <a class="brand" href="index.html">GEMATRIA<span>2026</span></a>
   <nav class="links">
-    <a href="theory.html">Theory</a><a href="#research">מחקר</a><a href="#geometry">צורות</a><a href="blog.html">Notes</a>
-    <a href="calculator.html#methods">ספר השיטות</a>
-    <a class="cta" href="calculator.html">מחשבון גימטריה</a>
+    <a href="theory.html">Theory</a><a href="#research" data-i18n="nav_research">מחקר</a><a href="#geometry" data-i18n="nav_geometry">צורות</a><a href="blog.html">Notes</a>
+    <a href="calculator.html#methods" data-i18n="nav_methods">ספר השיטות</a>
+    <a class="cta" href="calculator.html" data-i18n="nav_calc">מחשבון גימטריה</a>
   </nav>
 </div></header>
 
@@ -38,9 +38,9 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 <section class="wrap hero">
   <div>
     <div class="eyebrow">Mathematics · Language · Structure</div>
-    <h1>מפת מחקר<br><span>לאותיות ומספרים.</span></h1>
-    <div class="lead">מפעל המחקר של Gematria2026: טסרקט והיפר־קיוב, תיבת 8×20×26, צורות פיגורטיביות, לאטיסים, אופרטורים מתמטיים, קבועים, קורפוס עוגנים ויומן מחקר. המחשבון הוא כלי אחד בתוך מערכת גדולה יותר.</div>
-    <div class="hero-actions"><a class="btn primary" href="theory.html">פתח את התאוריה</a><a class="btn" href="calculator.html">מחשבון</a><a class="btn" href="blog.html">יומן מחקר</a></div>
+    <h1 data-i18n="hero_title">מפת מחקר<br><span>לאותיות ומספרים.</span></h1>
+    <div class="lead" data-i18n="hero_lead">מפעל המחקר של Gematria2026: טסרקט והיפר־קיוב, תיבת 8×20×26, צורות פיגורטיביות, לאטיסים, אופרטורים מתמטיים, קבועים, קורפוס עוגנים ויומן מחקר. המחשבון הוא כלי אחד בתוך מערכת גדולה יותר.</div>
+    <div class="hero-actions"><a class="btn primary" href="theory.html" data-i18n="hero_theory">פתח את התאוריה</a><a class="btn" href="calculator.html" data-i18n="hero_calc">מחשבון</a><a class="btn" href="blog.html" data-i18n="hero_blog">יומן מחקר</a></div>
   </div>
   <div class="orbit" aria-label="תרשים גיאומטרי">
     <svg class="geo" viewBox="0 0 520 520" role="img" aria-label="שילוב משושה, ריבוע וקובייה">
@@ -60,42 +60,67 @@ footer{padding:32px 0 46px;color:#7f8d9c;font-size:11px;line-height:1.7;border-t
 </section>
 
 <section class="section" id="research"><div class="wrap">
-  <div class="section-head"><h2>המערכת</h2><p>כל כלי עומד בפני עצמו, אבל כולם משתמשים באותה שפה מחקרית ובאותו קורפוס. החישוב נותן את המבנה, המקור נותן את ההקשר, והפרשנות מסבירה מה המבנה מבטא בתוך המודל.</p></div>
+  <div class="section-head"><h2 data-i18n="system_title">המערכת</h2><p data-i18n="system_desc">כל כלי עומד בפני עצמו, אבל כולם משתמשים באותה שפה מחקרית ובאותו קורפוס. החישוב נותן את המבנה, המקור נותן את ההקשר, והפרשנות מסבירה מה המבנה מבטא בתוך המודל.</p></div>
   <div class="grid">
-    <a class="card tool-card gold" href="theory.html"><div class="num">Q₄</div><h3>Core Theory</h3><p>16→32→24→8, טסרקט/16-cell, Q₄×Q₄, 1024, 136, 888 והתיבה 8×20×26.</p><div class="go">פתח תאוריה ←</div></a>
-    <a class="card tool-card" href="calculator.html"><div class="num">Σ</div><h3>מחשבון גימטריה</h3><p>עברית, יוונית ואנגלית; שיטות בסיס, צמצומים, צופנים, מילויים ואופרטורים.</p><div class="go">פתח כלי ←</div></a>
-    <a class="card tool-card" href="calculator.html#methods"><div class="num">ƒ</div><h3>ספר השיטות</h3><p>כל סייפר עם מיפוי ברור, נוסחה, דוגמה, שם מסורתי/מקורי ומעמד היסטורי.</p><div class="go">פתח ספר ←</div></a>
-    <a class="card tool-card" href="blog.html"><div class="num">∞</div><h3>Research Notes</h3><p>יומן עבודה מסודר: ממצאים, הוכחות, ניסויים, תיקונים והפרדה בין exact math לבין interpretation.</p><div class="go">פתח Notes ←</div></a>
+    <a class="card tool-card gold" href="theory.html"><div class="num">Q₄</div><h3 data-i18n="card_theory_title">Core Theory</h3><p data-i18n="card_theory_desc">16→32→24→8, טסרקט/16-cell, Q₄×Q₄, 1024, 136, 888 והתיבה 8×20×26.</p><div class="go" data-i18n="open_theory">פתח תאוריה ←</div></a>
+    <a class="card tool-card" href="calculator.html"><div class="num">Σ</div><h3 data-i18n="card_calc_title">מחשבון גימטריה</h3><p data-i18n="card_calc_desc">עברית, יוונית ואנגלית; שיטות בסיס, צמצומים, צופנים, מילויים ואופרטורים.</p><div class="go" data-i18n="open_tool">פתח כלי ←</div></a>
+    <a class="card tool-card" href="calculator.html#methods"><div class="num">ƒ</div><h3 data-i18n="card_methods_title">ספר השיטות</h3><p data-i18n="card_methods_desc">כל סייפר עם מיפוי ברור, נוסחה, דוגמה, שם מסורתי/מקורי ומעמד היסטורי.</p><div class="go" data-i18n="open_book">פתח ספר ←</div></a>
+    <a class="card tool-card" href="blog.html"><div class="num">∞</div><h3 data-i18n="card_notes_title">Research Notes</h3><p data-i18n="card_notes_desc">יומן עבודה מסודר: ממצאים, הוכחות, ניסויים, תיקונים והפרדה בין exact math לבין interpretation.</p><div class="go" data-i18n="open_notes">פתח Notes ←</div></a>
   </div>
 </div></section>
 
 <section class="section" id="geometry"><div class="wrap">
-  <div class="section-head"><h2>צורות פיגורטיביות</h2><p>סקיצות מבניות מתוך צירי המחקר. אלה תרשימי ניווט; כאשר מוצגת ספירת נקודות קנונית, היא מתועדת בנפרד כהוכחה.</p></div>
+  <div class="section-head"><h2 data-i18n="fig_title">צורות פיגורטיביות</h2><p data-i18n="fig_desc">סקיצות מבניות מתוך צירי המחקר. אלה תרשימי ניווט; כאשר מוצגת ספירת נקודות קנונית, היא מתועדת בנפרד כהוכחה.</p></div>
   <div class="shape-row">
-    <div class="shape"><svg viewBox="0 0 220 180"><polygon points="110,18 195,158 25,158" fill="none" stroke="#d8ad55" stroke-width="3"/><circle cx="110" cy="18" r="5" fill="#5fd3cf"/><circle cx="195" cy="158" r="5" fill="#5fd3cf"/><circle cx="25" cy="158" r="5" fill="#5fd3cf"/><text x="110" y="105" text-anchor="middle" fill="#eef3f8" font-size="24">T₇₃</text><text x="110" y="132" text-anchor="middle" fill="#5fd3cf">2701</text></svg><b>משולש / Genesis</b><span>H₃₇ = T₇₃ = 2701.</span></div>
-    <div class="shape"><svg viewBox="0 0 220 180"><polygon points="110,14 193,157 27,157" fill="none" stroke="#d8ad55" stroke-width="2.5"/><polygon points="110,166 27,23 193,23" fill="none" stroke="#d8ad55" stroke-width="2.5"/><text x="110" y="92" text-anchor="middle" fill="#eef3f8" font-size="24">37 ↔ 73</text></svg><b>A₂ / Hexagram</b><span>שני משולשים הפוכים על סריג A₂.</span></div>
-    <div class="shape"><svg viewBox="0 0 220 180"><rect x="42" y="42" width="112" height="112" fill="none" stroke="#5fd3cf" stroke-width="2.5"/><rect x="68" y="18" width="112" height="112" fill="none" stroke="#63a9ff" stroke-width="2.5"/><path d="M42 42L68 18M154 42L180 18M154 154L180 130M42 154L68 130" stroke="#63a9ff"/><text x="111" y="101" text-anchor="middle" fill="#eef3f8" font-size="22">8×20×26</text></svg><b>תיבה</b><span>המבנה המלא (8,20,26); סכום מכפלות זוגיות = 888.</span></div>
-    <div class="shape"><svg viewBox="0 0 220 180"><rect x="27" y="18" width="166" height="144" fill="none" stroke="#5fd3cf" stroke-width="2"/><path d="M27 54H193M27 90H193M27 126H193M68.5 18V162M110 18V162M151.5 18V162" stroke="#263443"/><text x="110" y="85" text-anchor="middle" fill="#eef3f8" font-size="30">32²</text><text x="110" y="114" text-anchor="middle" fill="#d8ad55" font-size="20">1024</text></svg><b>ריבוע 32</b><span>32² = 1024 = 2¹⁰.</span></div>
+    <div class="shape"><svg viewBox="0 0 220 180"><polygon points="110,18 195,158 25,158" fill="none" stroke="#d8ad55" stroke-width="3"/><circle cx="110" cy="18" r="5" fill="#5fd3cf"/><circle cx="195" cy="158" r="5" fill="#5fd3cf"/><circle cx="25" cy="158" r="5" fill="#5fd3cf"/><text x="110" y="105" text-anchor="middle" fill="#eef3f8" font-size="24">T₇₃</text><text x="110" y="132" text-anchor="middle" fill="#5fd3cf">2701</text></svg><b data-i18n="shape_triangle">משולש / Genesis</b><span data-i18n="shape_triangle_desc">H₃₇ = T₇₃ = 2701.</span></div>
+    <div class="shape"><svg viewBox="0 0 220 180"><polygon points="110,14 193,157 27,157" fill="none" stroke="#d8ad55" stroke-width="2.5"/><polygon points="110,166 27,23 193,23" fill="none" stroke="#d8ad55" stroke-width="2.5"/><text x="110" y="92" text-anchor="middle" fill="#eef3f8" font-size="24">37 ↔ 73</text></svg><b data-i18n="shape_hex">A₂ / Hexagram</b><span data-i18n="shape_hex_desc">שני משולשים הפוכים על סריג A₂.</span></div>
+    <div class="shape"><svg viewBox="0 0 220 180"><rect x="42" y="42" width="112" height="112" fill="none" stroke="#5fd3cf" stroke-width="2.5"/><rect x="68" y="18" width="112" height="112" fill="none" stroke="#63a9ff" stroke-width="2.5"/><path d="M42 42L68 18M154 42L180 18M154 154L180 130M42 154L68 130" stroke="#63a9ff"/><text x="111" y="101" text-anchor="middle" fill="#eef3f8" font-size="22">8×20×26</text></svg><b data-i18n="shape_tevah">תיבה</b><span data-i18n="shape_tevah_desc">המבנה המלא (8,20,26); סכום מכפלות זוגיות = 888.</span></div>
+    <div class="shape"><svg viewBox="0 0 220 180"><rect x="27" y="18" width="166" height="144" fill="none" stroke="#5fd3cf" stroke-width="2"/><path d="M27 54H193M27 90H193M27 126H193M68.5 18V162M110 18V162M151.5 18V162" stroke="#263443"/><text x="110" y="85" text-anchor="middle" fill="#eef3f8" font-size="30">32²</text><text x="110" y="114" text-anchor="middle" fill="#d8ad55" font-size="20">1024</text></svg><b data-i18n="shape_square">ריבוע 32</b><span data-i18n="shape_square_desc">32² = 1024 = 2¹⁰.</span></div>
   </div>
 </div></section>
 
 <section class="section"><div class="wrap">
-  <div class="section-head"><h2>Notes אחרונים</h2><p>דפי המחקר הם גרסאות קריאות של העבודה מתוך הקורפוס — נוסחה, מבנה, קשר ומשמעות. המטרה היא לראות לא רק מה המספר, אלא למה הוא מופיע כאן ומה הוא מחבר.</p></div>
+  <div class="section-head"><h2 data-i18n="notes_title">Notes אחרונים</h2><p data-i18n="notes_desc">דפי המחקר הם גרסאות קריאות של העבודה מתוך הקורפוס — נוסחה, מבנה, קשר ומשמעות. המטרה היא לראות לא רק מה המספר, אלא למה הוא מופיע כאן ומה הוא מחבר.</p></div>
   <div class="notes">
-    <a class="note" href="blog.html#makom"><div class="date">2026·09·29</div><div><h3>מקום · 104 → 512 → 1024</h3><p>Atbash(מקום)=104, P₁ᵉ(104)=512, Boneh(מקום)=512, ואז ×2=1024.</p></div><div class="arrow">←</div></a>
-    <a class="note" href="blog.html#space-wisdom"><div class="date">2026·09·29</div><div><h3>החלל = חכמה · וקטור 73/37/55/19</h3><p>ארבע שיטות בלתי תלויות מחזירות אותו וקטור לשתי המילים.</p></div><div class="arrow">←</div></a>
-    <a class="note" href="blog.html#genesis"><div class="date">2026·09</div><div><h3>2701 · 37×73</h3><p>פקטוריזציה, צורות משולש/משושה, ונתיבי בקרה נפרדים.</p></div><div class="arrow">←</div></a>
+    <a class="note" href="blog.html#makom"><div class="date">2026·09·29</div><div><h3 data-i18n="note_makom_title">מקום · 104 → 512 → 1024</h3><p data-i18n="note_makom_desc">Atbash(מקום)=104, P₁ᵉ(104)=512, Boneh(מקום)=512, ואז ×2=1024.</p></div><div class="arrow">←</div></a>
+    <a class="note" href="blog.html#space-wisdom"><div class="date">2026·09·29</div><div><h3 data-i18n="note_space_title">החלל = חכמה · וקטור 73/37/55/19</h3><p data-i18n="note_space_desc">ארבע שיטות בלתי תלויות מחזירות אותו וקטור לשתי המילים.</p></div><div class="arrow">←</div></a>
+    <a class="note" href="blog.html#genesis"><div class="date">2026·09</div><div><h3 data-i18n="note_gen_title">2701 · 37×73</h3><p>פקטוריזציה, צורות משולש/משושה, ונתיבי בקרה נפרדים.</p></div><div class="arrow">←</div></a>
   </div>
 </div></section>
 
 <section class="section"><div class="wrap">
-  <div class="corpus-band"><div id="corpusCount" class="corpus-count">…</div><div class="corpus-text"><h3>Canonical Corpus</h3><p>בנק העוגנים המשותף של האתר. המחשבון, ספר השיטות ודפי המחקר עובדים מול אותו מקור. התאמות נשמרות עם שיטה וסיווג כדי להבדיל בין FOUNDATION, BRIDGE, RESEARCH ו־REPRESENTATION.</p></div></div>
+  <div class="corpus-band"><div id="corpusCount" class="corpus-count">…</div><div class="corpus-text"><h3 data-i18n="corpus_title">Canonical Corpus</h3><p data-i18n="corpus_desc">בנק העוגנים המשותף של האתר. המחשבון, ספר השיטות ודפי המחקר עובדים מול אותו מקור. התאמות נשמרות עם שיטה וסיווג כדי להבדיל בין FOUNDATION, BRIDGE, RESEARCH ו־REPRESENTATION.</p></div></div>
 </div></section>
 </main>
 
-<footer><div class="wrap">Gematria2026 הוא כלי מחקר למבנים של אותיות, מספרים, צורות וקשרים. החישובים ניתנים לשחזור, והפרשנות נועדה לחשוף את משמעות המבנה בתוך המערכת. © 2026.</div></footer>
+<footer><div class="wrap" data-i18n="footer">Gematria2026 הוא כלי מחקר למבנים של אותיות, מספרים, צורות וקשרים. החישובים ניתנים לשחזור, והפרשנות נועדה לחשוף את משמעות המבנה בתוך המערכת. © 2026.</div></footer>
 <script>
 fetch('corpus-data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{const a=Array.isArray(d)?d:d.entries;document.getElementById('corpusCount').textContent=Array.isArray(a)?a.length.toLocaleString('en-US'):'—'}).catch(()=>document.getElementById('corpusCount').textContent='—');
 </script>
+<script>
+window.PAGE_I18N={
+ nav_research:{he:'מחקר',en:'Research'},nav_geometry:{he:'צורות',en:'Geometry'},nav_methods:{he:'ספר השיטות',en:'Cipher Book'},nav_calc:{he:'מחשבון גימטריה',en:'Gematria Calculator'},
+ hero_title:{he:'מפת מחקר<br><span>לאותיות ומספרים.</span>',en:'Research Atlas<br><span>for Letters & Numbers.</span>'},
+ hero_lead:{he:'מפעל המחקר של Gematria2026: טסרקט והיפר־קיוב, תיבת 8×20×26, צורות פיגורטיביות, לאטיסים, אופרטורים מתמטיים, קבועים, קורפוס עוגנים ויומן מחקר. המחשבון הוא כלי אחד בתוך מערכת גדולה יותר.',en:'The Gematria2026 research workshop: tesseract and hypercubes, the 8×20×26 Tevah, figurate geometry, lattices, mathematical operators, constants, a canonical corpus and research articles. The calculator is one tool inside the larger system.'},
+ hero_theory:{he:'פתח את התאוריה',en:'Open the Theory'},hero_calc:{he:'מחשבון',en:'Calculator'},hero_blog:{he:'יומן מחקר',en:'Research Articles'},
+ system_title:{he:'המערכת',en:'The System'},system_desc:{he:'כל כלי עומד בפני עצמו, אבל כולם משתמשים באותה שפה מחקרית ובאותו קורפוס. החישוב נותן את המבנה, המקור נותן את ההקשר, והפרשנות מסבירה מה המבנה מבטא בתוך המודל.',en:'Each tool stands on its own, but all of them use the same research language and the same corpus. Calculation supplies structure, sources supply context, and interpretation explains what the structure expresses inside the model.'},
+ card_theory_title:{he:'Core Theory',en:'Core Theory'},card_theory_desc:{he:'16→32→24→8, טסרקט/16-cell, Q₄×Q₄, 1024, 136, 888 והתיבה 8×20×26.',en:'16→32→24→8, the tesseract / 16-cell, Q₄×Q₄, 1024, 136, 888 and the 8×20×26 Tevah.'},open_theory:{he:'פתח תאוריה ←',en:'Open theory →'},
+ card_calc_title:{he:'מחשבון גימטריה',en:'Gematria Calculator'},card_calc_desc:{he:'עברית, יוונית ואנגלית; שיטות בסיס, צמצומים, צופנים, מילויים ואופרטורים.',en:'Hebrew, Greek and English; base systems, reductions, ciphers, letter-name expansions and operators.'},open_tool:{he:'פתח כלי ←',en:'Open tool →'},
+ card_methods_title:{he:'ספר השיטות',en:'Cipher Book'},card_methods_desc:{he:'כל סייפר עם מיפוי ברור, נוסחה, דוגמה, שם מסורתי/מקורי ומעמד היסטורי.',en:'Every cipher with a clear mapping, formula, example, traditional/original name and historical status.'},open_book:{he:'פתח ספר ←',en:'Open book →'},
+ card_notes_title:{he:'Research Notes',en:'Research Articles'},card_notes_desc:{he:'יומן עבודה מסודר: ממצאים, הוכחות, ניסויים, תיקונים והפרדה בין exact math לבין interpretation.',en:'A structured research log: findings, proofs, experiments and corrections, with exact mathematics and interpretation made explicit.'},open_notes:{he:'פתח Notes ←',en:'Open articles →'},
+ fig_title:{he:'צורות פיגורטיביות',en:'Figurate Geometry'},fig_desc:{he:'סקיצות מבניות מתוך צירי המחקר. אלה תרשימי ניווט; כאשר מוצגת ספירת נקודות קנונית, היא מתועדת בנפרד כהוכחה.',en:'Structural sketches from the main research axes. These are navigation diagrams; whenever a canonical point count is claimed, it is documented separately.'},
+ shape_triangle:{he:'משולש / Genesis',en:'Triangle / Genesis'},shape_triangle_desc:{he:'H₃₇ = T₇₃ = 2701.',en:'H₃₇ = T₇₃ = 2701.'},
+ shape_hex:{he:'A₂ / Hexagram',en:'A₂ / Hexagram'},shape_hex_desc:{he:'שני משולשים הפוכים על סריג A₂.',en:'Two opposite triangles on the A₂ lattice.'},
+ shape_tevah:{he:'תיבה',en:'תיבה (Tevah / Box)'},shape_tevah_desc:{he:'המבנה המלא (8,20,26); סכום מכפלות זוגיות = 888.',en:'Full structure (8,20,26); sum of pairwise products = 888.'},
+ shape_square:{he:'ריבוע 32',en:'32-Square'},shape_square_desc:{he:'32² = 1024 = 2¹⁰.',en:'32² = 1024 = 2¹⁰.'},
+ notes_title:{he:'Notes אחרונים',en:'Latest Research'},notes_desc:{he:'דפי המחקר הם גרסאות קריאות של העבודה מתוך הקורפוס — נוסחה, מבנה, קשר ומשמעות. המטרה היא לראות לא רק מה המספר, אלא למה הוא מופיע כאן ומה הוא מחבר.',en:'Research pages turn corpus work into readable arguments: formula, structure, connection and meaning. The goal is to see not only the number, but why it appears and what it connects.'},
+ note_makom_title:{he:'מקום · 104 → 512 → 1024',en:'מקום (Makom / Place) · 104 → 512 → 1024'},note_makom_desc:{he:'Atbash(מקום)=104, P₁ᵉ(104)=512, Boneh(מקום)=512, ואז ×2=1024.',en:'Atbash(מקום / Makom)=104, P₁ᵉ(104)=512, Boneh(מקום / Makom)=512, then ×2=1024.'},
+ note_space_title:{he:'החלל = חכמה · וקטור 73/37/55/19',en:'החלל (HaHalal / the Space) = חכמה (Chokhmah / Wisdom) · vector 73/37/55/19'},note_space_desc:{he:'ארבע שיטות בלתי תלויות מחזירות אותו וקטור לשתי המילים.',en:'Four independent methods return the same vector for both original Hebrew words.'},
+ note_gen_title:{he:'2701 · 37×73',en:'2701 · 37×73'},
+ corpus_title:{he:'Canonical Corpus',en:'Canonical Corpus'},corpus_desc:{he:'בנק העוגנים המשותף של האתר. המחשבון, ספר השיטות ודפי המחקר עובדים מול אותו מקור. התאמות נשמרות עם שיטה וסיווג כדי להבדיל בין FOUNDATION, BRIDGE, RESEARCH ו־REPRESENTATION.',en:'The site-wide anchor bank. The calculator, Cipher Book and research pages use the same source. Matches retain their method and classification: FOUNDATION, BRIDGE, RESEARCH or REPRESENTATION.'},
+ footer:{he:'Gematria2026 הוא כלי מחקר למבנים של אותיות, מספרים, צורות וקשרים. החישובים ניתנים לשחזור, והפרשנות נועדה לחשוף את משמעות המבנה בתוך המערכת. © 2026.',en:'Gematria2026 is a research tool for structures of letters, numbers, forms and connections. Calculations are reproducible; interpretation explains what those structures mean inside the system. © 2026.'}
+};
+</script>
+<script src="site-i18n.js"></script>
 </body>
 </html>
