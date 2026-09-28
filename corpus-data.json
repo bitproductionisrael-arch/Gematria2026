@@ -2173,13 +2173,13 @@
     {
       "value": 34,
       "label": "ΑΛΦΑ",
-      "method": "Greek Ordinal (24-letter)",
+      "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
       "classification": "canonical"
     },
     {
       "value": 45,
       "label": "ΩΜΕΓΑ",
-      "method": "Greek Ordinal (24-letter)",
+      "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
       "classification": "canonical"
     },
     {
@@ -2299,7 +2299,7 @@
     {
       "value": 62,
       "label": "οἶκον / Λόγος",
-      "method": "Greek Ordinal (24-letter)",
+      "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
       "classification": "FOUNDATION"
     },
     {
@@ -3283,19 +3283,19 @@
     {
       "value": 37,
       "label": "ΑΛΦΑ",
-      "method": "Greek Ordinal — Ancient 27-sign positional method · Α=1 Λ=12 Φ=23 Α=1",
+      "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · Α=1 Λ=12 Φ=23 Α=1",
       "classification": "RESEARCH"
     },
     {
       "value": 48,
       "label": "ΩΜΕΓΑ",
-      "method": "Greek Ordinal — Ancient 27-sign positional method · Ω=26 Μ=13 Ε=5 Γ=3 Α=1",
+      "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · Ω=26 Μ=13 Ε=5 Γ=3 Α=1",
       "classification": "RESEARCH"
     },
     {
       "value": 85,
       "label": "ΑΛΦΑ ΩΜΕΓΑ",
-      "method": "Greek Ordinal — Ancient 27-sign positional method · 37+48",
+      "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · 37+48",
       "classification": "RESEARCH"
     }
   ]
