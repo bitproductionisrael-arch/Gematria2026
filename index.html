@@ -25,7 +25,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .app{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
 .topbar{min-height:var(--top);display:grid;grid-template-columns:minmax(150px,220px) minmax(260px,1fr) auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:#0d1219}
 .brand{min-width:0}.brand h1{font-size:18px;margin:0 0 3px}.brand .sub{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}.query-mult{height:54px;display:grid;grid-template-columns:28px 42px 28px;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1016}.query-mult button{border:0;border-radius:0;padding:0;font-size:20px;font-weight:900;background:#0c1219}.query-mult button:first-child{border-inline-end:1px solid var(--line)}.query-mult button:last-child{border-inline-start:1px solid var(--line)}#queryMultValue{display:grid;place-items:center;font-weight:950;font-size:13px;direction:ltr;color:#7f8a96;white-space:nowrap;background:#0a1016}#queryMultValue.active{color:#ffe2a0;background:#17140d}
+.querybox{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto auto auto;gap:8px;min-width:0}.query-quick{width:42px;height:54px;padding:0;display:grid;place-items:center;font-size:17px}.rabbati-btn{position:relative;font-size:23px;font-weight:900;color:#ffe2a0;border-color:#6f5a2d;background:radial-gradient(circle at 50% 42%,rgba(216,173,85,.13),transparent 65%),#0c1219}.rabbati-btn .ancient-aleph{font-family:"Noto Sans Phoenician","Segoe UI Historic","Noto Sans Symbols 2",serif;line-height:1}.rabbati-btn:after{content:"ר";position:absolute;inset-inline-end:3px;inset-block-start:2px;font-size:8px;color:#d8ad55;opacity:.9}.query-mult{height:54px;display:grid;grid-template-columns:28px 42px 28px;align-items:stretch;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1016}.query-mult button{border:0;border-radius:0;padding:0;font-size:20px;font-weight:900;background:#0c1219}.query-mult button:first-child{border-inline-end:1px solid var(--line)}.query-mult button:last-child{border-inline-start:1px solid var(--line)}#queryMultValue{display:grid;place-items:center;font-weight:950;font-size:13px;direction:ltr;color:#7f8a96;white-space:nowrap;background:#0a1016}#queryMultValue.active{color:#ffe2a0;background:#17140d}
 #q{height:54px;resize:none;padding:8px 10px;font-size:18px;line-height:1.35;min-width:0}
 .queryside{display:grid;grid-template-rows:1fr 1fr;gap:5px;min-width:115px}
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
@@ -158,7 +158,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
 }
 @media(max-width:480px){
-  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto auto}.queryside{display:none}.query-quick{width:36px;height:58px}.query-mult{height:58px;grid-template-columns:24px 36px 24px}.query-mult button{font-size:18px}#queryMultValue{font-size:12px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
+  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto auto auto}.queryside{display:none}.query-quick{width:36px;height:58px}.query-mult{height:58px;grid-template-columns:24px 36px 24px}.query-mult button{font-size:18px}#queryMultValue{font-size:12px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
 @media(min-width:1400px){.workspace{padding:14px}.topbar{padding:12px 18px}.main-tabs{padding-inline:14px}.panel{padding:12px}.detail-pane.multi-mode{padding:18px}.multi-detail-grid{gap:16px}.multi-detail-card{min-height:330px}.letter-chip{min-width:70px}}
 
 /* Mobile relations: grow naturally with content instead of squeezing 6 rows into the viewport */
@@ -240,6 +240,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <div class="brand"><h1>Gematria Research Engine V4.9</h1><div class="sub">מחשבון גימטריה + מנוע גילוי קשרים</div></div>
     <div class="querybox">
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
+      <button id="rabbatiBtn" class="query-quick rabbati-btn" title="רבתי · הכפל את האות שלפני הסמן ב־1000" aria-label="רבתי פי אלף"><span class="ancient-aleph">𐤀</span></button>
       <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><button id="queryMultValue" aria-label="הפעל מכפיל">×1</button><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
       <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
@@ -407,8 +408,34 @@ function miluiNameForLetter(ch,names=MILUI_NAMES){return names[FINAL_TO_BASE[ch]
 function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLetter(ch,names);for(let d=1;d<depth;d++)out=Array.from(out).map(c=>miluiNameForLetter(c,names)).join('');return out}
 
 
-const GR_ORDER=Array.from('αβγδεϝζηθικλμνξοπϙρστυφχψωϡ'),GR_EQ={'ς':'σ','ϛ':'ϝ'},GR_VAL={},GR_ORD={};
-GR_ORDER.forEach((L,i)=>{GR_VAL[L]=tiered(i);GR_ORD[L]=i+1;GR_VAL[L.toUpperCase()]=GR_VAL[L];GR_ORD[L.toUpperCase()]=GR_ORD[L]});Object.entries(GR_EQ).forEach(([v,b])=>{GR_VAL[v]=GR_VAL[b];GR_ORD[v]=GR_ORD[b];GR_VAL[v.toUpperCase()]=GR_VAL[b];GR_ORD[v.toUpperCase()]=GR_ORD[b]});
+const GR_NUMERIC_ORDER=Array.from('αβγδεϝζηθικλμνξοπϙρστυφχψωϡ');
+const GR_MODERN_ORDER=Array.from('αβγδεζηθικλμνξοπρστυφχψω');
+const GR_VAL={},GR_VAL_RED={},GR_ORD={},GR_ORD_RED={},GR_REV_ORD={},GR_ZERO_STEP={},GR_KIDMI={},GR_PERATI={},GR_PERATI_ORD={};
+const GR_ATBASH={},GR_ATBASH_LETTER={},GR_HALFSHIFT={},GR_HALFSHIFT_LETTER={},GR_AVGAD={},GR_AVGAD_LETTER={};
+function grPut(map,L,v){map[L]=v;map[L.toUpperCase()]=v}
+function grPutSub(map,L,v){map[L]=v;map[L.toUpperCase()]=v.toUpperCase()}
+GR_NUMERIC_ORDER.forEach((L,i)=>{const v=tiered(i);grPut(GR_VAL,L,v);grPut(GR_VAL_RED,L,dr(v));grPut(GR_ZERO_STEP,L,(v>=10&&v%10===0)?v/10:v);grPut(GR_PERATI,L,v**2)});
+// Traditional numeric aliases: stigma/digamma = 6, both koppa glyphs = 90; final sigma = sigma.
+for(const [alias,base] of [['ϛ','ϝ'],['ϟ','ϙ'],['ς','σ']]){
+  for(const map of [GR_VAL,GR_VAL_RED,GR_ZERO_STEP,GR_PERATI]){if(base in map)grPut(map,alias,map[base])}
+}
+let _grKidmi=0;
+GR_MODERN_ORDER.forEach((L,i)=>{
+  const ord=i+1,rev=24-i;
+  grPut(GR_ORD,L,ord);grPut(GR_ORD_RED,L,dr(ord));grPut(GR_REV_ORD,L,rev);grPut(GR_PERATI_ORD,L,ord**2);
+  _grKidmi+=GR_VAL[L];grPut(GR_KIDMI,L,_grKidmi);
+  const mirror=GR_MODERN_ORDER[23-i],half=GR_MODERN_ORDER[(i+12)%24],next=GR_MODERN_ORDER[(i+1)%24];
+  grPut(GR_ATBASH,L,GR_VAL[mirror]);grPutSub(GR_ATBASH_LETTER,L,mirror);
+  grPut(GR_HALFSHIFT,L,GR_VAL[half]);grPutSub(GR_HALFSHIFT_LETTER,L,half);
+  grPut(GR_AVGAD,L,GR_VAL[next]);grPutSub(GR_AVGAD_LETTER,L,next);
+});
+for(const map of [GR_ORD,GR_ORD_RED,GR_REV_ORD,GR_PERATI_ORD,GR_KIDMI,GR_ATBASH,GR_HALFSHIFT,GR_AVGAD]){
+  if('σ' in map)grPut(map,'ς',map['σ']);
+}
+for(const map of [GR_ATBASH_LETTER,GR_HALFSHIFT_LETTER,GR_AVGAD_LETTER]){
+  if('σ' in map){map['ς']=map['σ'];map['Σ']=map['σ'].toUpperCase()}
+}
+function normalizeGreekChar(ch){const base=String(ch).normalize('NFD').replace(/[\u0300-\u036f]/g,'');return base.charAt(0)||ch}
 
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
 const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
@@ -423,7 +450,22 @@ const LATIN_MILUI_USER_V0={
 const AGR={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:600,K:10,L:20,M:30,N:40,O:50,P:60,Q:70,R:80,S:90,T:100,U:200,V:700,W:900,X:300,Y:400,Z:500};Object.keys(AGR).forEach(k=>AGR[k.toLowerCase()]=AGR[k]);const AGR_RED={},AGR_PERATI={};Object.entries(AGR).forEach(([k,v])=>{AGR_RED[k]=dr(v);AGR_PERATI[k]=v**2});
 
 function detectScript(t){if(/[֐-׿]/.test(t))return'he';if(/[Ͱ-Ͽἀ-῿]/.test(t))return'el';if(/[A-Za-z]/.test(t))return'en';return'en'}
-function tokensForWord(word,script,map){const out=[];for(const raw of Array.from(word)){let c=raw;if(script==='he'&&!(c in map)&&FINAL_TO_BASE[c]&&FINAL_TO_BASE[c] in map)c=FINAL_TO_BASE[c];if(c in map)out.push({label:raw,value:map[c],base:raw})}return out}
+const SUPER_DIGIT={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
+function tokensForWord(word,script,map){
+ const out=[],chars=Array.from(word);
+ for(let i=0;i<chars.length;i++){
+  const raw=chars[i];let c=raw;
+  if(script==='el'&&!(c in map))c=normalizeGreekChar(c);
+  if(script==='he'&&!(c in map)&&FINAL_TO_BASE[c]&&FINAL_TO_BASE[c] in map)c=FINAL_TO_BASE[c];
+  if(!(c in map))continue;
+  let j=i+1,digits='',suffix='';
+  while(j<chars.length&&SUPER_DIGIT[chars[j]]!=null){digits+=SUPER_DIGIT[chars[j]];suffix+=chars[j];j++}
+  const multiplier=digits?Math.max(1,Number(digits)||1):1,rawValue=map[c],value=rawValue*multiplier;
+  if(suffix)i=j-1;
+  out.push({label:raw+suffix,value,rawValue,multiplier,base:c,rawBase:raw});
+ }
+ return out
+}
 function letterCount(text,script,map){return wordsOf(text).flatMap(w=>tokensForWord(w,script,map)).length}
 
 /* ---------- methods ---------- */
@@ -461,7 +503,33 @@ const METHODS={
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true}
  ],
  el:[
-  {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},{key:'ordinal',cat:'base',name:'Greek Ordinal',map:GR_ORD},{key:'building',cat:'ops',name:'Greek Building',map:GR_VAL,transform:cumulative,transformName:'prefix sums'},{key:'ladder',cat:'ops',name:'Greek Ladder (κλίμαξ)',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes'}
+  {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},
+  {key:'reduced',cat:'base',name:'Greek Isopsephy Reduced / Small',map:GR_VAL_RED},
+  {key:'wordReduced',cat:'base',name:'Greek Word Reduced',map:GR_VAL,fold:'word',research:true},
+  {key:'ordinal',cat:'base',name:'Greek Ordinal (24-letter)',map:GR_ORD},
+  {key:'ordinalReduced',cat:'base',name:'Greek Ordinal Reduced',map:GR_ORD_RED,research:true},
+  {key:'reverseOrdinal',cat:'base',name:'Greek Reverse Ordinal',map:GR_REV_ORD,research:true},
+  {key:'zeroStep',cat:'base',name:'Greek Reduction №1 / One-step Zero',map:GR_ZERO_STEP,research:true},
+
+  {key:'atbash',cat:'cipher',name:'Greek Atbash analogue / Alphabet Mirror → Isopsephy',map:GR_ATBASH,sub:GR_ATBASH_LETTER,research:true},
+  {key:'halfShift',cat:'cipher',name:'Greek 12+12 Half-shift / ALBaM analogue → Isopsephy',map:GR_HALFSHIFT,sub:GR_HALFSHIFT_LETTER,research:true},
+  {key:'avgad',cat:'cipher',name:'Greek +1 / AVGaD analogue → Isopsephy',map:GR_AVGAD,sub:GR_AVGAD_LETTER,research:true},
+  {key:'kidmi',cat:'cipher',name:'Greek Cumulative Alphabet / Kidmi analogue',map:GR_KIDMI,research:true},
+  {key:'perati',cat:'cipher',name:'Greek Perati — Isopsephy²',map:GR_PERATI,perati:true,research:true},
+  {key:'peratiOrdinal',cat:'cipher',name:'Greek Perati — Ordinal²',map:GR_PERATI_ORD,perati:true,research:true},
+  {key:'kolel',cat:'cipher',name:'Greek Isopsephy + Kolel (+1)',map:GR_VAL,post:(t,v)=>v+1,research:true},
+  {key:'musafi',cat:'cipher',name:'Greek Isopsephy + Musafi (+letters)',map:GR_VAL,post:(t,v,s)=>v+letterCount(t,s,GR_VAL),research:true},
+
+  {key:'building',cat:'ops',name:'Greek Building / Achorayim — Isopsephy',map:GR_VAL,transform:cumulative,transformName:'prefix sums',research:true},
+  {key:'buildingOrdinal',cat:'ops',name:'Greek Building / Achorayim — Ordinal',map:GR_ORD,transform:cumulative,transformName:'prefix sums',research:true},
+  {key:'positional',cat:'ops',name:'Greek Positional / מיקום — Isopsephy',map:GR_VAL,transform:positional,transformName:'position × value',research:true},
+  {key:'positionalOrdinal',cat:'ops',name:'Greek Positional / מיקום — Ordinal',map:GR_ORD,transform:positional,transformName:'position × value',research:true},
+  {key:'equivalence',cat:'ops',name:'Greek Equivalence / שיווי — Isopsephy',map:GR_VAL,transform:balanced,transformName:'balanced weight',research:true},
+  {key:'equivalenceOrdinal',cat:'ops',name:'Greek Equivalence / שיווי — Ordinal',map:GR_ORD,transform:balanced,transformName:'balanced weight',research:true},
+  {key:'ratzo',cat:'ops',name:'Greek Running & Returning / רצוא ושוב — Isopsephy',map:GR_VAL,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
+  {key:'ratzoOrdinal',cat:'ops',name:'Greek Running & Returning / רצוא ושוב — Ordinal',map:GR_ORD,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
+  {key:'ladder',cat:'ops',name:'Greek Ladder / κλίμαξ — Isopsephy',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes',research:true},
+  {key:'ladderOrdinal',cat:'ops',name:'Greek Ladder / κλίμαξ — Ordinal',map:GR_ORD,transform:ladder,transformName:'prefixes + suffixes',research:true}
  ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
@@ -741,6 +809,14 @@ function demoteSaved(id){const x=savedItem(id);if(!x)return;x.kind='match';x.upd
 function deleteSaved(id){SAVED_ITEMS=SAVED_ITEMS.filter(x=>x.id!==id);persistSavedItems();renderSavedManager()}
 function corpusSyncPayload(){return {schema:'gematria2026-local-corpus-sync-v2',generated_at:new Date().toISOString(),shared_corpus_version:SHARED_CORPUS_META.updated_at||null,canonical_overrides:CORPUS_OVERRIDES,items:SAVED_ITEMS.filter(x=>x.kind==='corpus').map(x=>({id:x.id,text:x.text,script:x.script,corpus:x.corpusName||'כללי',snapshot:x.snapshot||[]}))}}
 
+const RABBATI_SUFFIX='¹⁰⁰⁰';
+function insertRabbatiMark(){
+ const q=document.getElementById('q');if(!q)return;
+ q.focus();
+ const pos=Number.isInteger(q.selectionEnd)?q.selectionEnd:q.value.length;
+ q.setRangeText(RABBATI_SUFFIX,pos,pos,'end');
+ q.dispatchEvent(new Event('input',{bubbles:true}));
+}
 function queryMultiplier(){return Math.max(1,Math.trunc(Number(state.queryMultiplier)||1))}
 function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el){el.textContent='×'+queryMultiplier();el.classList.toggle('active',!!state.queryMultiplierActive)}const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=!state.queryMultiplierActive||queryMultiplier()<=1}
 function scaleCurrentResults(data){
@@ -805,7 +881,7 @@ function buildingMilestoneText(w){
 }
 function wordDescription(r,idx){if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
 if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
- const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;return `${lab}(${w.baseVals[i]})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(isBuildingMethod(m)){out+=`\nבניין / Building: ${buildingAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;const ms=buildingMilestoneText(w);if(ms)out+=`\n${ms}`}else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
+ const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;const v=t.multiplier>1?`${fmt(t.rawValue)}×${fmt(t.multiplier)}=${fmt(w.baseVals[i])}`:fmt(w.baseVals[i]);return `${lab}(${v})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(isBuildingMethod(m)){out+=`\nבניין / Building: ${buildingAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;const ms=buildingMilestoneText(w);if(ms)out+=`\n${ms}`}else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
 function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
@@ -817,7 +893,7 @@ function wordBreakdownHtml(r,w){
   const chips=w.toks.map((t,i)=>{const base=peratiBaseValue(t);return `<span class="letter-chip perati-chip"><b>${esc(t.label)}²</b><small>(${fmt(base)}²)</small><strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');
   return `<div class="word-block"><div class="word-title perati-word-title">${esc(squaredWordLabel(w))}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(sum(w.baseVals))}</b></div></div>`
  }
- const m=r.method;const chips=w.toks.map((t,i)=>{const sub=m.sub&&m.sub[t.base]?`<small>${esc(t.label)}→${esc(m.sub[t.base])}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(isBuildingMethod(m)){const bt=buildingTextTerms(w),ms=buildingMilestoneText(w);note=`<div class="transform-note"><b>בניין / Building:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${bt.map(esc).join(' → ')}</div><div>${buildingAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div>${ms?`<div style="font-size:11px;opacity:.72;margin-top:5px">${esc(ms)}</div>`:''}</div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
+ const m=r.method;const chips=w.toks.map((t,i)=>{const meta=[];if(m.sub&&m.sub[t.base])meta.push(`${t.label}→${m.sub[t.base]}`);if(t.multiplier>1)meta.push(`${fmt(t.rawValue)}×${fmt(t.multiplier)}`);const sub=meta.length?`<small>${esc(meta.join(' · '))}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(isBuildingMethod(m)){const bt=buildingTextTerms(w),ms=buildingMilestoneText(w);note=`<div class="transform-note"><b>בניין / Building:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${bt.map(esc).join(' → ')}</div><div>${buildingAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div>${ms?`<div style="font-size:11px;opacity:.72;margin-top:5px">${esc(ms)}</div>`:''}</div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
 }
 function richBreakdownHtml(r){
  if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
@@ -1452,6 +1528,7 @@ async function saveSelectedPoster(){
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
 document.getElementById('q').addEventListener('input',()=>{document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
+document.getElementById('rabbatiBtn').addEventListener('click',insertRabbatiMark);
 document.getElementById('queryMultMinus').addEventListener('click',()=>{if(!state.queryMultiplierActive)return;state.queryMultiplier=Math.max(1,queryMultiplier()-1);if(state.queryMultiplier<=1){state.queryMultiplier=1;state.queryMultiplierActive=false}renderAll()});
 document.getElementById('queryMultValue').addEventListener('click',()=>{if(!state.queryMultiplierActive){state.queryMultiplierActive=true;state.queryMultiplier=2}else state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
 document.getElementById('queryMultPlus').addEventListener('click',()=>{if(!state.queryMultiplierActive){state.queryMultiplierActive=true;state.queryMultiplier=2}else state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
@@ -1508,6 +1585,20 @@ document.getElementById('saveView').addEventListener('click',async()=>{if(state.
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
+console.assert(T('ΑΛ','el','isopsephy')===31,'Greek AL isopsephy 31');
+console.assert(T('ΑΛΦ','el','isopsephy')===531,'Greek ALPH isopsephy 531');
+console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','isopsephy')===1381,'Greek Alpha Omega isopsephy 1381');
+console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','reduced')===31,'Greek Alpha Omega reduced 31');
+console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','ordinal')===79,'Greek Alpha Omega ordinal 79');
+console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','ordinalReduced')===25,'Greek Alpha Omega ordinal reduced 25');
+console.assert(T('ΙΗΣΟΥΣ','el','isopsephy')===888,'Greek Iesous isopsephy 888');
+console.assert(T('ΙΗΣΟΥΣ','el','reduced')===24,'Greek Iesous reduced 24');
+console.assert(T('ΙΗΣΟΥΣ','el','ordinal')===87,'Greek Iesous ordinal 87');
+console.assert(T('ΚΥΡΙΟΣ','el','isopsephy')===800&&T('ΚΥΡΙΟΣ','el','reduced')===17&&T('ΚΥΡΙΟΣ','el','ordinal')===89,'Greek Kyrios 800 / 17 / 89');
+console.assert(T('ΠΙΣΤΙΣ','el','isopsephy')===800&&T('ΠΙΣΤΙΣ','el','reduced')===17&&T('ΠΙΣΤΙΣ','el','ordinal')===89,'Greek Pistis 800 / 17 / 89');
+console.assert(T('τὸ Ἄλφα καὶ τὸ Ὦ','el','isopsephy')===2103,'Greek polytonic normalization 2103');
+console.assert(T('τὸ Ἄλφα καὶ τὸ Ὦ','el','reduced')===42,'Greek polytonic reduced 42');
+console.assert(T('ב¹⁰⁰⁰','he','regular')===2000,'Rabbati superscript multiplier: Bet ×1000 = 2000');
 console.assert(T('חכמה','he','regular')===73,'Hokhmah regular 73');
 console.assert(T('חכמה','he','ordinal')===37,'Hokhmah ordinal 37');
 console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal 55');
