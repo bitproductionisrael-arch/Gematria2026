@@ -2154,8 +2154,20 @@
     },
     {
       "value": 136,
+      "label": "128+8 closure",
+      "method": "128+8 =136 =2⁷+2³ =T₁₆",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
       "label": "16×16 symmetric state matrix",
       "method": "Independent entries =16·17/2=T₁₆=136 = Amit Mike Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "2³+2⁷ hypercube coupling",
+      "method": "2³+2⁷ =8+128 =136 =T₁₆",
       "classification": "FOUNDATION"
     },
     {
@@ -3774,6 +3786,12 @@
     },
     {
       "value": 888,
+      "label": "111×8 closure",
+      "method": "111×8 =888; 8 is the Q₄ cubic-cell count and |V(Q₃)|",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
       "label": "873 constant pair → זה צופן",
       "method": "H₁^e(873)=12 and H₁^φ(873)=876; 12+876=888 = זה צופן Final",
       "classification": "RESEARCH"
@@ -4134,8 +4152,20 @@
     },
     {
       "value": 1024,
+      "label": "128×8 closure",
+      "method": "128×8 =1024 =2⁷×2³ =2¹⁰",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "2×8³ / 32²",
       "method": "2×512 = 1024 = 32² · links ×2 מקום",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "2³×2⁷ hypercube product",
+      "method": "2³×2⁷ =8×128 =2¹⁰ =1024; equivalently |V(Q₃)|×|V(Q₇)|=|V(Q₁₀)|",
       "classification": "FOUNDATION"
     },
     {
@@ -5260,6 +5290,12 @@
       "q10": "Q₁₀≅Q₅□Q₅ gives 32×32=1024; Q₁₀≅Q₃□Q₇ gives 8×128=1024 and 8+128=136.",
       "e8": "E₈=8·2⁷=1024, eighth term in hypercube edge-count sequence.",
       "closure": "8×4×32=1024 uses Q₄ cell count, dimension, and edge count as an explicit model operator."
+    },
+    "hypercube_3_7_pair": {
+      "added_at": "2026-09-29",
+      "powers": "2³=8; 2⁷=128; 2³×2⁷=2¹⁰=1024; 2³+2⁷=136.",
+      "hypercube": "8=|V(Q₃)|; 128=|V(Q₇)|; Q₃□Q₇≅Q₁₀.",
+      "parallel": "111×8=888; 128×8=1024; 128+8=136."
     }
   },
   "corrections": {
