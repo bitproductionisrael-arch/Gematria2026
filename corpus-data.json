@@ -180,6 +180,12 @@
     },
     {
       "value": 16,
+      "label": "Iso",
+      "method": "English Small/Pythagorean · 9+1+6 · = Amit English Small = עמית Hebrew Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
       "label": "π: H₅(888)→16",
       "method": "Power-of-He · P₅^π(888)=10802203; Fold₁₀₀₀ → 16 = עמית Hebrew Small / ×4 Father Word Reduced",
       "classification": "BRIDGE"
@@ -474,6 +480,12 @@
     },
     {
       "value": 32,
+      "label": "ישו",
+      "method": "Hebrew Reverse Ordinal · equivalent to Atbash letter mirror followed by Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 32,
       "label": "לב",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -600,6 +612,12 @@
     },
     {
       "value": 37,
+      "label": "ישו",
+      "method": "Hebrew Ordinal · י=10 ש=21 ו=6",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
       "label": "ממוצע פרמוטציות תלת-ספרתי",
       "method": "average(all 6 permutations) / digit-sum = 37",
       "classification": "FOUNDATION"
@@ -663,6 +681,12 @@
       "label": "Alpha",
       "method": "English Simple",
       "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "Iso",
+      "method": "English Atbash Ordinal · = Mike English Simple",
+      "classification": "FOUNDATION"
     },
     {
       "value": 38,
@@ -741,6 +765,12 @@
       "label": "Amit",
       "method": "English Simple",
       "classification": "canonical"
+    },
+    {
+      "value": 43,
+      "label": "Iso",
+      "method": "English Simple · I=9 S=19 O=15 · = Amit English Simple",
+      "classification": "FOUNDATION"
     },
     {
       "value": 43,
@@ -1362,6 +1392,12 @@
     },
     {
       "value": 86,
+      "label": "×2 Iso",
+      "method": "English Simple · 2×43 = 86 = אלהים Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 86,
       "label": "אלהים / אלהימ",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -1830,6 +1866,12 @@
     },
     {
       "value": 128,
+      "label": "Iso",
+      "method": "English Atbash → Regular · = אני בינה Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 128,
       "label": "π: H₂(808)→128",
       "method": "P₂^π(808)=23105; 23|105→128 = נקודה יהוה Latin Milui Reduced",
       "classification": "RESEARCH"
@@ -2013,6 +2055,12 @@
       "label": "×2 אני פה",
       "method": "Latin Milui v0 Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 160,
+      "label": "×2 Iso",
+      "method": "English Building / Achorayim (Simple) · 2×80 = 160 = מייק Hebrew Regular",
+      "classification": "FOUNDATION"
     },
     {
       "value": 160,
@@ -2367,6 +2415,12 @@
       "label": "Amit / אלהימ",
       "method": "English Gematria / Equivalence",
       "classification": "canonical"
+    },
+    {
+      "value": 258,
+      "label": "Iso",
+      "method": "English Gematria · 6×43 · = Amit English Gematria",
+      "classification": "FOUNDATION"
     },
     {
       "value": 267,
@@ -3095,6 +3149,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 676,
+      "label": "Iso",
+      "method": "English Addition & Subtraction · = 26² = יהוה²",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 697,
       "label": "איזון בראשית 697",
       "method": "השמים+והארץ = את+הארץ = 697 = 17×41; paired ±6 exchange",
@@ -3279,6 +3339,12 @@
       "label": "π: H₃(2048)→815",
       "method": "Power-of-Gimel · P₃^π(2048)=425390; Fold₁₀₀₀: 425|390 → 815 = ΖΩΗ Greek Isopsephy",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 816,
+      "label": "×2 Iso",
+      "method": "English ALBaM analogue / ROT13 → Regular · 2×408 = 816 = Amit Mike Rov English Gematria",
+      "classification": "FOUNDATION"
     },
     {
       "value": 816,
@@ -3638,6 +3704,12 @@
       "value": 1024,
       "label": "×8 מפתח השם יהוה",
       "method": "Reverse Ordinal · 8×128 = Amit Mike Rov Jewish",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "×8 Iso",
+      "method": "English Atbash → Regular · 8×128 = 1024 = Amit Mike Rov Jewish Gematria",
       "classification": "FOUNDATION"
     },
     {
@@ -4566,6 +4638,18 @@
     "home_power": {
       "canonical_name": "HomePower / כוח בית",
       "anchored_at": "2026-09-28"
+    }
+  },
+  "context_rules": {
+    "jesus_32_triplet": {
+      "added_at": "2026-09-29",
+      "trigger": "Use only when 32 is structurally relevant to a Jesus/ישו anchor, especially when 32 and 32²=1024 occur in the same argument, or when the ישו 316/37/32 triad itself is being discussed.",
+      "append_last": [
+        "ישו = 316 (Hebrew Regular)",
+        "ישו = 37 (Hebrew Ordinal)",
+        "ישו = 32 (Hebrew Reverse Ordinal)"
+      ],
+      "anti_spam": "Do not append this note to unrelated occurrences of 32."
     }
   }
 }
