@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-09-28",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged into one entry. Includes Genesis, Tevah geometry, Greek Alpha/Omega/Lambda anchors, π/φ digit-power operators, Psalm 145:16 פותח את ידך / פאי and contracted פותח ידך / פי bridges.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Includes Genesis/Rabbati and Fold₁₀₀₀ mod-999 invariants, Tevah LCM decoder, π/e/φ digit-power operators, Torah/point/YHWH anchors, and Psalm 145:16 פי/פאי bridges.",
   "entries": [
     {
       "value": 13,
@@ -2654,6 +2654,630 @@
       "value": 127,
       "label": "φ: P₂(106)→127",
       "method": "Power-of-Bet on first 106 fractional digits of φ; Fold₁₀₀₀(3124)=127 = תורה נקודה יהוה Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 52,
+      "label": "עמית",
+      "method": "Reduction №1 · ע=7 מ=4 י=1 ת=40",
+      "classification": "canonical"
+    },
+    {
+      "value": 16,
+      "label": "עמית",
+      "method": "Hebrew Reduced / Small · ע=7 מ=4 י=1 ת=4",
+      "classification": "canonical"
+    },
+    {
+      "value": 61,
+      "label": "עמית",
+      "method": "Hebrew Ordinal · ע=16 מ=13 י=10 ת=22",
+      "classification": "canonical"
+    },
+    {
+      "value": 31,
+      "label": "עמית",
+      "method": "Reverse Ordinal · ע=7 מ=10 י=13 ת=1",
+      "classification": "canonical"
+    },
+    {
+      "value": 1040,
+      "label": "עמית עמית",
+      "method": "Hebrew Regular · 2×520",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 104,
+      "label": "עמית עמית",
+      "method": "Reduction №1 · 2×52",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 14,
+      "label": "עמית עמית",
+      "method": "Word Reduced · 2×7",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1024,
+      "label": "×64 עמית",
+      "method": "Hebrew Reduced / Small · 64×16",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "×4 עמית",
+      "method": "Hebrew Regular · 4×520",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "×8 עמית",
+      "method": "Hebrew Regular · 8×520",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1008,
+      "label": "×144 עמית",
+      "method": "Word Reduced · 144×7",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2080,
+      "label": "×40 עמית",
+      "method": "Reduction №1 · 40×52",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "×80 עמית",
+      "method": "Reduction №1 · 80×52",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 30,
+      "label": "עמית · Ordinal−Reverse",
+      "method": "61−31=30 = Λ Greek Isopsephy",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 222,
+      "label": "תיבה פרימיטיבית · שטחי פאות",
+      "method": "(4×10)+(10×13)+(13×4)=40+130+52=222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "תיבה פרימיטיבית · נפח",
+      "method": "4×10×13=520",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "תיבה מלאה · שטחי פאות",
+      "method": "8×20+20×26+26×8=160+520+208=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "תיבה מלאה · נפח",
+      "method": "8×20×26=4160",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "LCM decoder · תיבה",
+      "method": "LCM(160,520,208)=2080; 2080/520=4, 2080/208=10, 2080/160=13",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "משפט LCM של התיבה",
+      "method": "For primitive (a,b,c), doubled faces (4ab,4bc,4ca): LCM=4abc/gcd(a,b,c); quotients recover a:g, b:g, c:g",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
+      "label": "תיבה פרימיטיבית · quotient identity",
+      "method": "40×52÷130=16=4² = עמית Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 64,
+      "label": "תיבה מלאה · quotient identity",
+      "method": "160×208÷520=64=8²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "סולם התיבה 520→1040→2080→4160",
+      "method": "520×(1,2,4,8); primitive volume→double→LCM→full volume",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4699,
+      "label": "ב¹⁰⁰⁰ראשית ברא אלהים את השמים ואת הארץ",
+      "method": "Hebrew Regular · 2701+(2000−2)=4699 =37×127",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "ב¹⁰⁰⁰ראשית ברא אלהים את השמים ואת הארץ",
+      "method": "Hebrew Reduced / Small · 82+(2000−2)=2080",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2296,
+      "label": "ב¹⁰⁰⁰ראשית ברא אלהים את השמים ואת הארץ",
+      "method": "Hebrew Ordinal · 298+(2000−2)=2296 =28×82",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "ב¹⁰⁰⁰ראשית ברא אלהים את השמים ואת הארץ",
+      "method": "Word Reduced · unchanged mod 9 under Bet×1000",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1998,
+      "label": "ב׳ רבתי · תוספת",
+      "method": "2000−2 = 2×999 =3×666 =888+222+888 =777+444+777",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 3996,
+      "label": "חמש המילים הראשונות · בראשית א:א רבתי",
+      "method": "ordinary first five=1998; Rabbati first five=3996=4×999=37×108",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4699,
+      "label": "פירוק בראשית רבתי",
+      "method": "4699=3996+703=37×(108+19)=37×127",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4699,
+      "label": "4699 · Milui bridge",
+      "method": "4699=5476−777=5467−768=74²−7×111",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 127,
+      "label": "127 בתוך 4699",
+      "method": "4699=37×127; 127=prime #31=C₆(7) centered hexagonal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 4536,
+      "label": "φ(4699)",
+      "method": "Euler totient · 4536=42×108",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 4864,
+      "label": "σ(4699)",
+      "method": "Divisor sum · (37+1)(127+1)=38×128=4864",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 4064,
+      "label": "Composite index of 4699",
+      "method": "4699 is composite #4064; 4064=32×127",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 14097,
+      "label": "×3 בראשית רבתי",
+      "method": "Hebrew Regular · 3×4699=14097=111×127; Fold₁₀₀₀: 14|097→111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 6888,
+      "label": "×3 בראשית רבתי",
+      "method": "Hebrew Ordinal · 3×2296=6888=84×82=4×41×42",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 6240,
+      "label": "×3 בראשית רבתי",
+      "method": "Hebrew Reduced / Small · 3×2080=6240=12×520",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 111,
+      "label": "×3 בראשית רבתי",
+      "method": "Word Reduced · 3×37=111",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 999,
+      "label": "Fold₁₀₀₀ invariant",
+      "method": "1000≡1 (mod 999); repeated 3-digit block-sum preserves residue mod 999",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 703,
+      "label": "Genesis/Rabbati Fold₁₀₀₀ invariant",
+      "method": "2701=2×999+703; 4699=4×999+703; both fold to 703",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 111,
+      "label": "×3 Genesis/Rabbati Fold₁₀₀₀ invariant",
+      "method": "8103 and 14097 both fold to 111; follows from 3×703≡111 (mod999)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 99937,
+      "label": "999|37",
+      "method": "concat(999,37)=99937=37×2701=37²×73; decimal digit sum=37",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 37,
+      "label": "37×Genesis Fold₁₀₀₀ invariant",
+      "method": "37×2701=99937→1036→37; 37×4699=173863→1036→37",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1000,
+      "label": "Hₖᶜ operator frame",
+      "method": "Pₖᶜ(n)=Σ first n fractional digits of constant c raised to k; Hₖᶜ(n)=Fold₁₀₀₀(Pₖᶜ(n))",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 111,
+      "label": "π: H₃(82)→111",
+      "method": "P₃^π(82)=20091; 20|091→111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 82,
+      "label": "π: H₃(111)→82",
+      "method": "P₃^π(111)=25057; 25|057→82; closes cycle 82↔111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 82,
+      "label": "π: P₁(17)→82",
+      "method": "sum first 17 fractional digits of π =82 = Genesis 1:1 Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "π: P₂(17)→520",
+      "method": "sum of squares of first 17 fractional digits of π =520 = עמית Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 776,
+      "label": "תורה נקודה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "תורה נקודה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 101,
+      "label": "תורה נקודה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 106,
+      "label": "תורה נקודה",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 777,
+      "label": "תורה נקודה",
+      "method": "With Kolel",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 802,
+      "label": "תורה נקודה יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "תורה נקודה יהוה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 172,
+      "label": "תורה נקודה יהוה",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 191,
+      "label": "נקודה יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "נקודה יהוה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 11,
+      "label": "נקודה יהוה",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 47,
+      "label": "נקודה יהוה",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 74,
+      "label": "נקודה יהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 128,
+      "label": "נקודה יהוה",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 808,
+      "label": "נקודה יהוה",
+      "method": "Talmudic Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 637,
+      "label": "תורה יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 34,
+      "label": "תורה יהוה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 16,
+      "label": "תורה יהוה",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 88,
+      "label": "תורה יהוה",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 79,
+      "label": "תורה יהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 333,
+      "label": "תורה יהוה",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 998,
+      "label": "תורה יהוה",
+      "method": "Talmudic Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1008,
+      "label": "תורה יהוה",
+      "method": "Milui Mayim",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 353,
+      "label": "תורה יהוה",
+      "method": "AVGaD",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 611,
+      "label": "תורה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 17,
+      "label": "תורה",
+      "method": "Hebrew Reduced / Small / Small Finals",
+      "classification": "canonical"
+    },
+    {
+      "value": 8,
+      "label": "תורה",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 53,
+      "label": "תורה",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 944,
+      "label": "תורה",
+      "method": "Talmudic Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 954,
+      "label": "תורה",
+      "method": "Milui Mayim",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 314,
+      "label": "תורה",
+      "method": "AVGaD",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 71,
+      "label": "תורה",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1887,
+      "label": "תורה",
+      "method": "Cycle BKR",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 116,
+      "label": "תורה",
+      "method": "AIQ BKR",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 79,
+      "label": "π: P₁(16)→79",
+      "method": "sum first 16 fractional digits of π =79 = תורה יהוה Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 128,
+      "label": "π: H₂(808)→128",
+      "method": "P₂^π(808)=23105; 23|105→128 = נקודה יהוה Latin Milui Reduced",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 637,
+      "label": "π: H₃(116)→637",
+      "method": "P₃^π(116)=25612; 25|612→637 = תורה יהוה Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 212,
+      "label": "π: H₂(777)→212",
+      "method": "P₂^π(777)=22190; 22|190→212 = פאי Milui",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 776,
+      "label": "π window 611×165",
+      "method": "sum of 165 fractional π digits starting at position 611 =776 = תורה נקודה Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 101,
+      "label": "פתח אות ידך",
+      "method": "Hebrew Ordinal · פתח 47 + אות 29 + ידך 25",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 915,
+      "label": "פותח את ידו",
+      "method": "Hebrew Regular",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 96,
+      "label": "פותח את ידו",
+      "method": "Hebrew Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 111,
+      "label": "פותח את ידו",
+      "method": "Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 42,
+      "label": "פותח את ידו",
+      "method": "Hebrew Reduced / Small / Small Finals",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 15,
+      "label": "פותח את ידו",
+      "method": "Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 114,
+      "label": "פותח את ידו",
+      "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 768,
+      "label": "פותח את ידו",
+      "method": "Atbash",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 101,
+      "label": "פאי/פי · תהילים קמה:טז",
+      "method": "פותח את ידך Ordinal=101 = פי Standard/Talmudic/Mayim Milui",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 110,
+      "label": "פאי/פי · תהילים קמה:טז",
+      "method": "פותח את ידך Reduction №1=110 = פי AVGaD =37+73",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 41,
+      "label": "פאי · תהילים קמה:טז",
+      "method": "פותח את ידך Small Finals=41 = פאי Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 543,
+      "label": "e: P₁(110)→543",
+      "method": "sum first 110 fractional digits of e =543 = אהיה אשר אהיה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 110,
+      "label": "π/e paired index · שמות ג:יד",
+      "method": "P₁^π(110)=520=אהיה שלחני אליכם; P₁^e(110)=543=אהיה אשר אהיה",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 23,
+      "label": "e−π at n=110",
+      "method": "543−520=23 = את Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 888,
+      "label": "אהיה אשר אהיה משה",
+      "method": "543+345=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 507,
+      "label": "φ: P₁(110)→507",
+      "method": "sum first 110 fractional digits of φ =507; control against π/e n=110 pair",
       "classification": "RESEARCH"
     }
   ]
