@@ -12,15 +12,15 @@
     },
     {
       "value": 4,
-      "label": "Aba / אופרטור אבא",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 4,
       "label": "ב² / ד",
       "method": "Ordinal-square: ב=2 → 2²=4 = ד Hebrew Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 4,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Simple",
+      "classification": "canonical"
     },
     {
       "value": 5,
@@ -60,14 +60,14 @@
     },
     {
       "value": 11,
-      "label": "ΚΑΙ",
-      "method": "Greek Ordinal Reduced",
+      "label": "נקודה יהוה",
+      "method": "Word Reduced",
       "classification": "BRIDGE"
     },
     {
       "value": 11,
-      "label": "נקודה יהוה",
-      "method": "Word Reduced",
+      "label": "ΚΑΙ",
+      "method": "Greek Ordinal Reduced",
       "classification": "BRIDGE"
     },
     {
@@ -75,12 +75,6 @@
       "label": "×4 Mother",
       "method": "Jewish Word Reduced",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 12,
-      "label": "e: H₁(873)→12",
-      "method": "P₁^e(873)=4008; Fold₁₀₀₀→12 = זה",
-      "classification": "RESEARCH"
     },
     {
       "value": 12,
@@ -93,6 +87,12 @@
       "label": "מייק mod 37",
       "method": "160 mod 37 = 12",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 12,
+      "label": "e: H₁(873)→12",
+      "method": "P₁^e(873)=4008; Fold₁₀₀₀→12 = זה",
+      "classification": "RESEARCH"
     },
     {
       "value": 13,
@@ -150,18 +150,6 @@
     },
     {
       "value": 16,
-      "label": "Iso",
-      "method": "English Small/Pythagorean · 9+1+6 · = Amit English Small = עמית Hebrew Small",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 16,
-      "label": "π: H₅(888)→16",
-      "method": "Power-of-He · P₅^π(888)=10802203; Fold₁₀₀₀ → 16 = עמית Hebrew Small / ×4 Father Word Reduced",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 16,
       "label": "אז ישיר decoder → עמית",
       "method": "528/33=16 = עמית Hebrew Small",
       "classification": "RESEARCH"
@@ -189,6 +177,18 @@
       "label": "תיבה פרימיטיבית · quotient identity",
       "method": "40×52÷130=16=4² = עמית Small",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
+      "label": "Iso",
+      "method": "English Small/Pythagorean · 9+1+6 · = Amit English Small = עמית Hebrew Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
+      "label": "π: H₅(888)→16",
+      "method": "Power-of-He · P₅^π(888)=10802203; Fold₁₀₀₀ → 16 = עמית Hebrew Small / ×4 Father Word Reduced",
+      "classification": "BRIDGE"
     },
     {
       "value": 17,
@@ -264,12 +264,6 @@
     },
     {
       "value": 21,
-      "label": "omega",
-      "method": "Jewish Reduced",
-      "classification": "canonical"
-    },
-    {
-      "value": 21,
       "label": "אהיה",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -281,10 +275,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 22,
-      "label": "οἶκον / Λόγος",
-      "method": "Greek Isopsephy Reduced",
-      "classification": "FOUNDATION"
+      "value": 21,
+      "label": "omega",
+      "method": "Jewish Reduced",
+      "classification": "canonical"
     },
     {
       "value": 22,
@@ -293,10 +287,10 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 23,
-      "label": "e−π at n=110",
-      "method": "543−520=23 = את Ordinal",
-      "classification": "RESEARCH"
+      "value": 22,
+      "label": "οἶκον / Λόγος",
+      "method": "Greek Isopsephy Reduced",
+      "classification": "FOUNDATION"
     },
     {
       "value": 23,
@@ -305,10 +299,10 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 24,
-      "label": "Aba / אופרטור אבא",
-      "method": "English Gematria = 6×Simple",
-      "classification": "canonical"
+      "value": 23,
+      "label": "e−π at n=110",
+      "method": "543−520=23 = את Ordinal",
+      "classification": "RESEARCH"
     },
     {
       "value": 24,
@@ -327,6 +321,12 @@
       "label": "קשר עמוק",
       "method": "Hebrew Reduced · 24×37=888",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 24,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Gematria = 6×Simple",
+      "classification": "canonical"
     },
     {
       "value": 25,
@@ -354,6 +354,24 @@
     },
     {
       "value": 26,
+      "label": "י״י",
+      "method": "Atbash → Hebrew Ordinal · י→מ; 13+13",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 26,
+      "label": "יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 26,
+      "label": "רוב ÷ 8 = יהוה",
+      "method": "208 ÷ 8 = 26",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 26,
       "label": "Alphabet",
       "method": "Jewish Reduced = יהוה",
       "classification": "canonical"
@@ -377,24 +395,6 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 26,
-      "label": "י״י",
-      "method": "Atbash → Hebrew Ordinal · י→מ; 13+13",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 26,
-      "label": "יהוה",
-      "method": "Hebrew Regular",
-      "classification": "canonical"
-    },
-    {
-      "value": 26,
-      "label": "רוב ÷ 8 = יהוה",
-      "method": "208 ÷ 8 = 26",
-      "classification": "BRIDGE"
-    },
-    {
       "value": 27,
       "label": "יהוה עם הכולל",
       "method": "Hebrew Kolel",
@@ -411,18 +411,6 @@
       "label": "×4 Mother",
       "method": "English Word Reduced · matches רוב Ordinal",
       "classification": "FOUNDATION"
-    },
-    {
-      "value": 28,
-      "label": "Beta",
-      "method": "English Simple / English One-step Zero",
-      "classification": "canonical"
-    },
-    {
-      "value": 28,
-      "label": "π: P₃(528)→28",
-      "method": "Power-of-Gimel on first 528 fractional digits of π; Fold₁₀₀₀(103924)=28 = פאי Ordinal",
-      "classification": "RESEARCH"
     },
     {
       "value": 28,
@@ -449,16 +437,22 @@
       "classification": "canonical"
     },
     {
+      "value": 28,
+      "label": "Beta",
+      "method": "English Simple / English One-step Zero",
+      "classification": "canonical"
+    },
+    {
+      "value": 28,
+      "label": "π: P₃(528)→28",
+      "method": "Power-of-Gimel on first 528 fractional digits of π; Fold₁₀₀₀(103924)=28 = פאי Ordinal",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 30,
       "label": "עמית · Ordinal−Reverse",
       "method": "61−31=30 = Λ Greek Isopsephy",
       "classification": "RESEARCH"
-    },
-    {
-      "value": 31,
-      "label": "ΑΛ / אל / ΚΑΙ / ΑΛΦΑ+ΩΜΕΓΑ",
-      "method": "Greek Isopsephy / Hebrew Regular / Greek Isopsephy Reduced",
-      "classification": "FOUNDATION"
     },
     {
       "value": 31,
@@ -473,16 +467,16 @@
       "classification": "canonical"
     },
     {
+      "value": 31,
+      "label": "ΑΛ / אל / ΚΑΙ / ΑΛΦΑ+ΩΜΕΓΑ",
+      "method": "Greek Isopsephy / Hebrew Regular / Greek Isopsephy Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 32,
       "label": "8×בראשית",
       "method": "Hebrew Word Reduced · 8×4",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 32,
-      "label": "Iso Amit",
-      "method": "English Small/Pythagorean · Iso=16 + Amit=16 = 32 = ישו Hebrew Reverse Ordinal",
-      "classification": "FOUNDATION"
     },
     {
       "value": 32,
@@ -497,16 +491,16 @@
       "classification": "canonical"
     },
     {
+      "value": 32,
+      "label": "Iso Amit",
+      "method": "English Small/Pythagorean · Iso=16 + Amit=16 = 32 = ישו Hebrew Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 33,
       "label": "12+21 / לב מייק",
       "method": "Small + Reduction №1",
       "classification": "RESEARCH"
-    },
-    {
-      "value": 33,
-      "label": "ΛΛΛ",
-      "method": "Greek Ordinal · 11+11+11; Λ Isopsephy 30 + Reduced 3",
-      "classification": "BRIDGE"
     },
     {
       "value": 33,
@@ -539,10 +533,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 34,
-      "label": "ΑΛΦΑ",
-      "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
-      "classification": "canonical"
+      "value": 33,
+      "label": "ΛΛΛ",
+      "method": "Greek Ordinal · 11+11+11; Λ Isopsephy 30 + Reduced 3",
+      "classification": "BRIDGE"
     },
     {
       "value": 34,
@@ -551,16 +545,22 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 36,
-      "label": "ord₉₉₉(2)",
-      "method": "Multiplicative order · 2^36 ≡ 1 mod 999; C₉₉₉(n)=2^(n−1) mod 999 depends on n mod 36",
-      "classification": "FOUNDATION"
+      "value": 34,
+      "label": "ΑΛΦΑ",
+      "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
+      "classification": "canonical"
     },
     {
       "value": 36,
       "label": "פותח ידך",
       "method": "Hebrew Small Finals",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 36,
+      "label": "ord₉₉₉(2)",
+      "method": "Multiplicative order · 2^36 ≡ 1 mod 999; C₉₉₉(n)=2^(n−1) mod 999 depends on n mod 36",
+      "classification": "FOUNDATION"
     },
     {
       "value": 37,
@@ -578,24 +578,6 @@
       "value": 37,
       "label": "37×Genesis Fold₁₀₀₀ invariant",
       "method": "37×2701=99937→1036→37; 37×4699=173863→1036→37",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 37,
-      "label": "Iso Amit",
-      "method": "Jewish Reduced · = 37 = ישו Hebrew Ordinal / יחידה Hebrew Regular",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 37,
-      "label": "project x",
-      "method": "Agrippa Reduced",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 37,
-      "label": "ΑΛΦΑ",
-      "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · Α=1 Λ=12 Φ=23 Α=1",
       "classification": "RESEARCH"
     },
     {
@@ -671,22 +653,22 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 38,
-      "label": "Alpha",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 38,
-      "label": "Iso",
-      "method": "English Atbash Ordinal · = Mike English Simple",
+      "value": 37,
+      "label": "Iso Amit",
+      "method": "Jewish Reduced · = 37 = ישו Hebrew Ordinal / יחידה Hebrew Regular",
       "classification": "FOUNDATION"
     },
     {
-      "value": 38,
-      "label": "Mike",
-      "method": "English Simple",
-      "classification": "canonical"
+      "value": 37,
+      "label": "project x",
+      "method": "Agrippa Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 37,
+      "label": "ΑΛΦΑ",
+      "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · Α=1 Λ=12 Φ=23 Α=1",
+      "classification": "RESEARCH"
     },
     {
       "value": 38,
@@ -707,6 +689,24 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 38,
+      "label": "Alpha",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "Iso",
+      "method": "English Atbash Ordinal · = Mike English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 38,
+      "label": "Mike",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
       "value": 41,
       "label": "אלי / אלהה / אלהימ",
       "method": "Hebrew Regular / Ordinal",
@@ -717,6 +717,12 @@
       "label": "במדבר",
       "method": "Hebrew Ordinal",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 41,
+      "label": "מקום",
+      "method": "Reverse Ordinal · identical to Ordinal(Atbash(מקום)) · ידפי Ordinal=10+4+17+10",
+      "classification": "FOUNDATION"
     },
     {
       "value": 41,
@@ -738,6 +744,12 @@
     },
     {
       "value": 42,
+      "label": "פותח את ידו",
+      "method": "Hebrew Reduced / Small / Small Finals",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 42,
       "label": "τὸ Ἄλφα καὶ τὸ Ὦ",
       "method": "Greek Isopsephy Reduced · exact Revelation 22:13 wording",
       "classification": "BRIDGE"
@@ -749,9 +761,9 @@
       "classification": "canonical"
     },
     {
-      "value": 42,
-      "label": "פותח את ידו",
-      "method": "Hebrew Reduced / Small / Small Finals",
+      "value": 43,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Small / Reduced-letter values · 7+9+27 = 43 = Amit English Simple",
       "classification": "BRIDGE"
     },
     {
@@ -791,22 +803,16 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 43,
-      "label": "יהי קדם הנוצר",
-      "method": "Hebrew Small / Reduced-letter values · 7+9+27 = 43 = Amit English Simple",
-      "classification": "BRIDGE"
+      "value": 44,
+      "label": "יהוה חי",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
     },
     {
       "value": 44,
       "label": "Rov",
       "method": "English Atbash → Regular",
       "classification": "canonical"
-    },
-    {
-      "value": 44,
-      "label": "יהוה חי",
-      "method": "Hebrew Regular",
-      "classification": "FOUNDATION"
     },
     {
       "value": 45,
@@ -846,6 +852,18 @@
     },
     {
       "value": 52,
+      "label": "משיח / מייק",
+      "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
+      "label": "עמית",
+      "method": "Reduction №1 · ע=7 מ=4 י=1 ת=40",
+      "classification": "canonical"
+    },
+    {
+      "value": 52,
       "label": "Alpha",
       "method": "Jewish Δ Simple",
       "classification": "canonical"
@@ -869,28 +887,10 @@
       "classification": "canonical"
     },
     {
-      "value": 52,
-      "label": "משיח / מייק",
-      "method": "Hebrew Ordinal",
-      "classification": "canonical"
-    },
-    {
-      "value": 52,
-      "label": "עמית",
-      "method": "Reduction №1 · ע=7 מ=4 י=1 ת=40",
-      "classification": "canonical"
-    },
-    {
       "value": 53,
       "label": "תורה",
       "method": "Hebrew Ordinal",
       "classification": "canonical"
-    },
-    {
-      "value": 54,
-      "label": "e: H₂(37)→54",
-      "method": "P₂^e(37)=1053; Fold₁₀₀₀: 1|053→54",
-      "classification": "RESEARCH"
     },
     {
       "value": 54,
@@ -899,45 +899,15 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 54,
+      "label": "e: H₂(37)→54",
+      "method": "P₂^e(37)=1053; Fold₁₀₀₀: 1|053→54",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 55,
       "label": "55 key cluster",
       "method": "מפתח השם יהוה Small Finals = הכל Hebrew Regular = Amit Mike Rov Small = Rov English Simple",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 55,
-      "label": "Amit Mike Rov",
-      "method": "English Small/Pythagorean",
-      "classification": "canonical"
-    },
-    {
-      "value": 55,
-      "label": "Rov",
-      "method": "English Simple = English One-step Zero",
-      "classification": "canonical"
-    },
-    {
-      "value": 55,
-      "label": "Rov / הכל",
-      "method": "English Simple / Hebrew Regular",
-      "classification": "canonical"
-    },
-    {
-      "value": 55,
-      "label": "ΚΑΙ",
-      "method": "Greek Reverse Ordinal",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 55,
-      "label": "π: H₁(232)→55",
-      "method": "Power-of-Aleph · P₁^π(232)=1054; Fold₁₀₀₀: 1|054 → 55 = Rov English Simple / הכל",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 55,
-      "label": "τὸ ΑΛΦΑ ΚΑΙ τὸ ΩΜΕΓΑ",
-      "method": "Greek Isopsephy Reduced · expanded letter names",
       "classification": "BRIDGE"
     },
     {
@@ -989,6 +959,48 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 55,
+      "label": "Amit Mike Rov",
+      "method": "English Small/Pythagorean",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "Rov",
+      "method": "English Simple = English One-step Zero",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "Rov / הכל",
+      "method": "English Simple / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 55,
+      "label": "ΚΑΙ",
+      "method": "Greek Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "π: H₁(232)→55",
+      "method": "Power-of-Aleph · P₁^π(232)=1054; Fold₁₀₀₀: 1|054 → 55 = Rov English Simple / הכל",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "τὸ ΑΛΦΑ ΚΑΙ τὸ ΩΜΕΓΑ",
+      "method": "Greek Isopsephy Reduced · expanded letter names",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 58,
+      "label": "פתח עמית בבאאהוה",
+      "method": "Hebrew Small · controlled ו׳ intervention: 52→58 (+6)",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 58,
       "label": "Atbash(עמית) / מחיקת יהוה",
       "method": "Research",
@@ -1007,10 +1019,10 @@
       "classification": "RESEARCH"
     },
     {
-      "value": 58,
-      "label": "פתח עמית בבאאהוה",
-      "method": "Hebrew Small · controlled ו׳ intervention: 52→58 (+6)",
-      "classification": "RESEARCH"
+      "value": 59,
+      "label": "בלייז",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
     },
     {
       "value": 59,
@@ -1019,22 +1031,16 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 59,
-      "label": "בלייז",
-      "method": "Hebrew Regular",
-      "classification": "canonical"
+      "value": 60,
+      "label": "מנרמל פרמוטציות רוב",
+      "method": "6 permutations × digit-sum(208)=6×10=60",
+      "classification": "BRIDGE"
     },
     {
       "value": 60,
       "label": "π: H₂(850)→60",
       "method": "Power-of-Bet · P₂^π(850)=24036; Fold₁₀₀₀: 24|036 → 60 = ΑΜΙΘ Greek Isopsephy; n=850 = ὢν",
       "classification": "FOUNDATION"
-    },
-    {
-      "value": 60,
-      "label": "מנרמל פרמוטציות רוב",
-      "method": "6 permutations × digit-sum(208)=6×10=60",
-      "classification": "BRIDGE"
     },
     {
       "value": 61,
@@ -1059,36 +1065,6 @@
       "label": "οἶκον / Λόγος",
       "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
       "classification": "FOUNDATION"
-    },
-    {
-      "value": 64,
-      "label": "Amitābha: 48 vows + 16 contemplations",
-      "method": "Buddhist structure",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 64,
-      "label": "Beta",
-      "method": "English Building",
-      "classification": "canonical"
-    },
-    {
-      "value": 64,
-      "label": "Gautama",
-      "method": "English Ordinal",
-      "classification": "ENCODING"
-    },
-    {
-      "value": 64,
-      "label": "I Ching: 64 hexagrams",
-      "method": "Book of Changes structure",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 64,
-      "label": "φ(לב מייק=192)",
-      "method": "Totient · אוזן / ΑΛΗΘΕΙΑ",
-      "classification": "BRIDGE"
     },
     {
       "value": 64,
@@ -1127,10 +1103,34 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 65,
-      "label": "Alphabet",
-      "method": "English Simple = אדני",
+      "value": 64,
+      "label": "Amitābha: 48 vows + 16 contemplations",
+      "method": "Buddhist structure",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
+      "label": "Beta",
+      "method": "English Building",
       "classification": "canonical"
+    },
+    {
+      "value": 64,
+      "label": "Gautama",
+      "method": "English Ordinal",
+      "classification": "ENCODING"
+    },
+    {
+      "value": 64,
+      "label": "I Ching: 64 hexagrams",
+      "method": "Book of Changes structure",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 64,
+      "label": "φ(לב מייק=192)",
+      "method": "Totient · אוזן / ΑΛΗΘΕΙΑ",
+      "classification": "BRIDGE"
     },
     {
       "value": 65,
@@ -1145,16 +1145,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 66,
-      "label": "AlphaBeta",
-      "method": "English Simple",
+      "value": 65,
+      "label": "Alphabet",
+      "method": "English Simple = אדני",
       "classification": "canonical"
-    },
-    {
-      "value": 66,
-      "label": "AlphaBeta 1–3–6 ladder",
-      "method": "66×T1=66; 66×T2=198; 66×T3=396",
-      "classification": "BRIDGE"
     },
     {
       "value": 66,
@@ -1169,10 +1163,16 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 69,
-      "label": "π: P₃(41)→69",
-      "method": "Power-of-Gimel on first 41 fractional digits of π; Fold₁₀₀₀(9060)=69 = פותח ידך Reduction №1",
-      "classification": "RESEARCH"
+      "value": 66,
+      "label": "AlphaBeta",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 66,
+      "label": "AlphaBeta 1–3–6 ladder",
+      "method": "66×T1=66; 66×T2=198; 66×T3=396",
+      "classification": "BRIDGE"
     },
     {
       "value": 69,
@@ -1187,16 +1187,16 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 69,
+      "label": "π: P₃(41)→69",
+      "method": "Power-of-Gimel on first 41 fractional digits of π; Fold₁₀₀₀(9060)=69 = פותח ידך Reduction №1",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 71,
       "label": "תורה",
       "method": "Reduction №1",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 72,
-      "label": "e: P₁(15)→72",
-      "method": "sum first 15 fractional digits of e =72",
-      "classification": "RESEARCH"
     },
     {
       "value": 72,
@@ -1223,16 +1223,16 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 72,
+      "label": "e: P₁(15)→72",
+      "method": "sum first 15 fractional digits of e =72",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 73,
       "label": "21₃₆",
       "method": "Base-36 representation",
       "classification": "REPRESENTATION"
-    },
-    {
-      "value": 73,
-      "label": "Revelation phrase · letterwise C₉₉₉ fold",
-      "method": "Σ C₉₉₉(letter)=5068; Fold₁₀₀₀: 5+068=73",
-      "classification": "RESEARCH"
     },
     {
       "value": 73,
@@ -1283,10 +1283,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 74,
-      "label": "Mike",
-      "method": "English Regular",
-      "classification": "canonical"
+      "value": 73,
+      "label": "Revelation phrase · letterwise C₉₉₉ fold",
+      "method": "Σ C₉₉₉(letter)=5068; Fold₁₀₀₀: 5+068=73",
+      "classification": "RESEARCH"
     },
     {
       "value": 74,
@@ -1307,16 +1307,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 77,
-      "label": "Aba / אופרטור אבא",
-      "method": "English Reverse Ordinal = English Atbash Ordinal",
+      "value": 74,
+      "label": "Mike",
+      "method": "English Regular",
       "classification": "canonical"
-    },
-    {
-      "value": 77,
-      "label": "Aba → Rov composition bridge",
-      "method": "Aba=77; 77=Composite #55; Rov=55",
-      "classification": "BRIDGE"
     },
     {
       "value": 77,
@@ -1337,6 +1331,24 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 77,
+      "label": "Aba / אופרטור אבא",
+      "method": "English Reverse Ordinal = English Atbash Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 77,
+      "label": "Aba → Rov composition bridge",
+      "method": "Aba=77; 77=Composite #55; Rov=55",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 79,
+      "label": "תורה יהוה",
+      "method": "Hebrew Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 79,
       "label": "Mother",
       "method": "English Simple",
@@ -1347,12 +1359,6 @@
       "label": "π: P₁(16)→79",
       "method": "sum first 16 fractional digits of π =79 = תורה יהוה Ordinal",
       "classification": "RESEARCH"
-    },
-    {
-      "value": 79,
-      "label": "תורה יהוה",
-      "method": "Hebrew Ordinal",
-      "classification": "BRIDGE"
     },
     {
       "value": 80,
@@ -1368,15 +1374,9 @@
     },
     {
       "value": 82,
-      "label": "π: H₃(111)→82",
-      "method": "P₃^π(111)=25057; 25|057→82; closes cycle 82↔111",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 82,
-      "label": "π: P₁(17)→82",
-      "method": "sum first 17 fractional digits of π =82 = Genesis 1:1 Small",
-      "classification": "FOUNDATION"
+      "label": "×2 מקום",
+      "method": "Reverse Ordinal · 2×41 = 82",
+      "classification": "BRIDGE"
     },
     {
       "value": 82,
@@ -1395,6 +1395,18 @@
       "label": "דין",
       "method": "Achorayim + Addition / מספר האחור · תוספת · ×8=656",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 82,
+      "label": "π: H₃(111)→82",
+      "method": "P₃^π(111)=25057; 25|057→82; closes cycle 82↔111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 82,
+      "label": "π: P₁(17)→82",
+      "method": "sum first 17 fractional digits of π =82 = Genesis 1:1 Small",
+      "classification": "FOUNDATION"
     },
     {
       "value": 85,
@@ -1416,12 +1428,6 @@
     },
     {
       "value": 86,
-      "label": "Iso Amit",
-      "method": "English Simple · Iso=43 + Amit=43 = 86 = אלהים Hebrew Regular",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 86,
       "label": "אלהים / אלהימ",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -1439,10 +1445,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 88,
-      "label": "π: H₅(232)→88",
-      "method": "Power-of-He · P₅^π(232)=2941144; Fold₁₀₀₀: 2|941|144=1087 → 1|087=88 = מיכאל בלייז Ordinal",
-      "classification": "BRIDGE"
+      "value": 86,
+      "label": "Iso Amit",
+      "method": "English Simple · Iso=43 + Amit=43 = 86 = אלהים Hebrew Regular",
+      "classification": "FOUNDATION"
     },
     {
       "value": 88,
@@ -1454,6 +1460,24 @@
       "value": 88,
       "label": "תורה יהוה",
       "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 88,
+      "label": "π: H₅(232)→88",
+      "method": "Power-of-He · P₅^π(232)=2941144; Fold₁₀₀₀: 2|941|144=1087 → 1|087=88 = מיכאל בלייז Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 90,
+      "label": "פי",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 90,
+      "label": "שמונה מאות שמונים ושמונה",
+      "method": "Hebrew Small",
       "classification": "BRIDGE"
     },
     {
@@ -1469,24 +1493,6 @@
       "classification": "RESEARCH"
     },
     {
-      "value": 90,
-      "label": "פי",
-      "method": "Hebrew Regular",
-      "classification": "canonical"
-    },
-    {
-      "value": 90,
-      "label": "שמונה מאות שמונים ושמונה",
-      "method": "Hebrew Small",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 91,
-      "label": "π: P₂(36)→91",
-      "method": "Power-of-Bet on first 36 fractional digits of π; Fold₁₀₀₀(1090)=91 = פאי Regular",
-      "classification": "RESEARCH"
-    },
-    {
       "value": 91,
       "label": "ספר משה",
       "method": "Hebrew Ordinal · 7×13 = T13",
@@ -1499,9 +1505,9 @@
       "classification": "canonical"
     },
     {
-      "value": 92,
-      "label": "π: P₂(37)→92",
-      "method": "Power-of-Bet on first 37 fractional digits of π; Fold₁₀₀₀(1091)=92 = פאי Latin Milui Simple",
+      "value": 91,
+      "label": "π: P₂(36)→91",
+      "method": "Power-of-Bet on first 36 fractional digits of π; Fold₁₀₀₀(1090)=91 = פאי Regular",
       "classification": "RESEARCH"
     },
     {
@@ -1509,6 +1515,12 @@
       "label": "פאי",
       "method": "Latin Milui v0 → English Simple",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 92,
+      "label": "π: P₂(37)→92",
+      "method": "Power-of-Bet on first 37 fractional digits of π; Fold₁₀₀₀(1091)=92 = פאי Latin Milui Simple",
+      "classification": "RESEARCH"
     },
     {
       "value": 93,
@@ -1548,12 +1560,6 @@
     },
     {
       "value": 101,
-      "label": "ABA pattern",
-      "method": "A-B-A encoded as 1-0-1 (same-different-same)",
-      "classification": "REPRESENTATION"
-    },
-    {
-      "value": 101,
       "label": "מיכאל",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -1589,6 +1595,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 101,
+      "label": "ABA pattern",
+      "method": "A-B-A encoded as 1-0-1 (same-different-same)",
+      "classification": "REPRESENTATION"
+    },
+    {
       "value": 104,
       "label": "8×בראשית",
       "method": "Hebrew Reduced · 8×13 · φ=48",
@@ -1596,15 +1608,15 @@
     },
     {
       "value": 104,
-      "label": "Alphaomega",
-      "method": "Jewish Δ Simple = 52+52",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 104,
       "label": "יהוה×4",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 104,
+      "label": "מקום",
+      "method": "Atbash / אתב״ש · transformed letters ידפי · Regular=10+4+80+10",
+      "classification": "FOUNDATION"
     },
     {
       "value": 104,
@@ -1616,6 +1628,12 @@
       "value": 104,
       "label": "קומפוזיציית רוב · 2 ביטים / רש וו בת",
       "method": "Reduction №1",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 104,
+      "label": "Alphaomega",
+      "method": "Jewish Δ Simple = 52+52",
       "classification": "BRIDGE"
     },
     {
@@ -1656,18 +1674,6 @@
     },
     {
       "value": 110,
-      "label": "Alpha",
-      "method": "English Isopsephy",
-      "classification": "canonical"
-    },
-    {
-      "value": 110,
-      "label": "π/e paired index · שמות ג:יד",
-      "method": "P₁^π(110)=520=אהיה שלחני אליכם; P₁^e(110)=543=אהיה אשר אהיה",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 110,
       "label": "לב פעמים לב",
       "method": "Reverse Ordinal / סדרי הפוך · 110 = 37+73",
       "classification": "FOUNDATION"
@@ -1697,9 +1703,15 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 111,
-      "label": "×3 Genesis/Rabbati Fold₁₀₀₀ invariant",
-      "method": "8103 and 14097 both fold to 111; follows from 3×703≡111 (mod999)",
+      "value": 110,
+      "label": "Alpha",
+      "method": "English Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 110,
+      "label": "π/e paired index · שמות ג:יד",
+      "method": "P₁^π(110)=520=אהיה שלחני אליכם; P₁^e(110)=543=אהיה אשר אהיה",
       "classification": "FOUNDATION"
     },
     {
@@ -1710,26 +1722,8 @@
     },
     {
       "value": 111,
-      "label": "Amit M. Rov",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 111,
-      "label": "project x",
-      "method": "English Simple / English One-step Zero · 3×37",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 111,
-      "label": "π: H₃(144)→111",
-      "method": "Power-of-Gimel · P₃^π(144)=31080; Fold₁₀₀₀: 31|080 → 111 = Amit M. Rov English Simple",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 111,
-      "label": "π: H₃(82)→111",
-      "method": "P₃^π(82)=20091; 20|091→111",
+      "label": "×3 Genesis/Rabbati Fold₁₀₀₀ invariant",
+      "method": "8103 and 14097 both fold to 111; follows from 3×703≡111 (mod999)",
       "classification": "FOUNDATION"
     },
     {
@@ -1775,16 +1769,40 @@
       "classification": "canonical"
     },
     {
-      "value": 112,
-      "label": "π: H₃(232)→112",
-      "method": "Power-of-Gimel · P₃^π(232)=48064; Fold₁₀₀₀: 48|064 → 112 = פאי AVGaD/Positional",
-      "classification": "RESEARCH"
+      "value": 111,
+      "label": "Amit M. Rov",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 111,
+      "label": "project x",
+      "method": "English Simple / English One-step Zero · 3×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 111,
+      "label": "π: H₃(144)→111",
+      "method": "Power-of-Gimel · P₃^π(144)=31080; Fold₁₀₀₀: 31|080 → 111 = Amit M. Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 111,
+      "label": "π: H₃(82)→111",
+      "method": "P₃^π(82)=20091; 20|091→111",
+      "classification": "FOUNDATION"
     },
     {
       "value": 112,
       "label": "פאי",
       "method": "AVGaD / Positional",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 112,
+      "label": "π: H₃(232)→112",
+      "method": "Power-of-Gimel · P₃^π(232)=48064; Fold₁₀₀₀: 48|064 → 112 = פאי AVGaD/Positional",
+      "classification": "RESEARCH"
     },
     {
       "value": 114,
@@ -1842,12 +1860,6 @@
     },
     {
       "value": 127,
-      "label": "φ: P₂(106)→127",
-      "method": "Power-of-Bet on first 106 fractional digits of φ; Fold₁₀₀₀(3124)=127 = תורה נקודה יהוה Ordinal",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 127,
       "label": "זה אלי ואנוהו",
       "method": "Hebrew Regular · זה אלי=53 + ואנוהו=74",
       "classification": "FOUNDATION"
@@ -1859,15 +1871,9 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 128,
-      "label": "Iso",
-      "method": "English Atbash → Regular · = אני בינה Hebrew Regular",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 128,
-      "label": "π: H₂(808)→128",
-      "method": "P₂^π(808)=23105; 23|105→128 = נקודה יהוה Latin Milui Reduced",
+      "value": 127,
+      "label": "φ: P₂(106)→127",
+      "method": "Power-of-Bet on first 106 fractional digits of φ; Fold₁₀₀₀(3124)=127 = תורה נקודה יהוה Ordinal",
       "classification": "RESEARCH"
     },
     {
@@ -1901,15 +1907,21 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 130,
-      "label": "10×בראשית",
-      "method": "Hebrew Reduced · φ=48",
-      "classification": "BRIDGE"
+      "value": 128,
+      "label": "Iso",
+      "method": "English Atbash → Regular · = אני בינה Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 128,
+      "label": "π: H₂(808)→128",
+      "method": "P₂^π(808)=23105; 23|105→128 = נקודה יהוה Latin Milui Reduced",
+      "classification": "RESEARCH"
     },
     {
       "value": 130,
-      "label": "π: H₅(520)→130",
-      "method": "Power-of-He · P₅^π(520)=6164959; Fold₁₀₀₀ → 130 = יהוה×5",
+      "label": "10×בראשית",
+      "method": "Hebrew Reduced · φ=48",
       "classification": "BRIDGE"
     },
     {
@@ -1923,6 +1935,12 @@
       "label": "פתח עמית בבאאהוה",
       "method": "Hebrew Ordinal · controlled ו׳ intervention: 124→130 (+6)",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 130,
+      "label": "π: H₅(520)→130",
+      "method": "Power-of-He · P₅^π(520)=6164959; Fold₁₀₀₀ → 130 = יהוה×5",
+      "classification": "BRIDGE"
     },
     {
       "value": 135,
@@ -1968,24 +1986,6 @@
     },
     {
       "value": 136,
-      "label": "Amit Mike Rov",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 136,
-      "label": "Amit Mike Rov / קול",
-      "method": "English Simple / Hebrew Regular",
-      "classification": "canonical"
-    },
-    {
-      "value": 136,
-      "label": "omega",
-      "method": "English AVGaD analogue",
-      "classification": "canonical"
-    },
-    {
-      "value": 136,
       "label": "כפול",
       "method": "Hebrew Regular",
       "classification": "BRIDGE"
@@ -2007,6 +2007,24 @@
       "label": "ריש ויו בית רובא",
       "method": "Hebrew Ordinal = Reduction №1",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "Amit Mike Rov",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "Amit Mike Rov / קול",
+      "method": "English Simple / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "omega",
+      "method": "English AVGaD analogue",
+      "classification": "canonical"
     },
     {
       "value": 137,
@@ -2052,18 +2070,6 @@
     },
     {
       "value": 148,
-      "label": "e: H₂(41)→148",
-      "method": "P₂^e(41)=1147; Fold₁₀₀₀: 1|147→148",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 148,
-      "label": "φ(298) · בלייז גילוי Reverse Ordinal",
-      "method": "Totient / Reverse Ordinal",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 148,
       "label": "סולם מילוי יהוה המצטבר",
       "method": "20+26+48+54=148=4×37",
       "classification": "FOUNDATION"
@@ -2075,10 +2081,16 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 160,
-      "label": "×2 Iso",
-      "method": "English Building / Achorayim (Simple) · 2×80 = 160 = מייק Hebrew Regular",
-      "classification": "FOUNDATION"
+      "value": 148,
+      "label": "e: H₂(41)→148",
+      "method": "P₂^e(41)=1147; Fold₁₀₀₀: 1|147→148",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 148,
+      "label": "φ(298) · בלייז גילוי Reverse Ordinal",
+      "method": "Totient / Reverse Ordinal",
+      "classification": "BRIDGE"
     },
     {
       "value": 160,
@@ -2088,15 +2100,9 @@
     },
     {
       "value": 160,
-      "label": "Aba / אופרטור אבא",
-      "method": "English ALBaM analogue",
-      "classification": "canonical"
-    },
-    {
-      "value": 160,
-      "label": "φ: H₃(231)→160",
-      "method": "P₃^φ(231)=49111; Fold₁₀₀₀→160 = מייק",
-      "classification": "RESEARCH"
+      "label": "×2 Iso",
+      "method": "English Building / Achorayim (Simple) · 2×80 = 160 = מייק Hebrew Regular",
+      "classification": "FOUNDATION"
     },
     {
       "value": 160,
@@ -2109,6 +2115,18 @@
       "label": "קול דודי",
       "method": "Hebrew Regular · מייק",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
+      "label": "Aba / אופרטור אבא",
+      "method": "English ALBaM analogue",
+      "classification": "canonical"
+    },
+    {
+      "value": 160,
+      "label": "φ: H₃(231)→160",
+      "method": "P₃^φ(231)=49111; Fold₁₀₀₀→160 = מייק",
+      "classification": "RESEARCH"
     },
     {
       "value": 163,
@@ -2130,15 +2148,15 @@
     },
     {
       "value": 165,
-      "label": "φ: P₁(929)→165",
-      "method": "Power-of-Aleph on first 929 fractional digits of φ; Fold₁₀₀₀(4161)=165 = נקודה Regular",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 165,
       "label": "נקודה",
       "method": "Hebrew Regular",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 165,
+      "label": "φ: P₁(929)→165",
+      "method": "Power-of-Aleph on first 929 fractional digits of φ; Fold₁₀₀₀(4161)=165 = נקודה Regular",
+      "classification": "RESEARCH"
     },
     {
       "value": 169,
@@ -2148,15 +2166,15 @@
     },
     {
       "value": 172,
-      "label": "ΡΟΒ",
-      "method": "Greek Isopsephy",
-      "classification": "canonical"
-    },
-    {
-      "value": 172,
       "label": "תורה נקודה יהוה",
       "method": "Reverse Ordinal",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 172,
+      "label": "ΡΟΒ",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
     },
     {
       "value": 174,
@@ -2166,15 +2184,15 @@
     },
     {
       "value": 177,
-      "label": "π: H₅(58)→177",
-      "method": "Power-of-He · P₅^π(58)=928248; Fold₁₀₀₀: 928|248=1176 → 1|176=177 = עמית מיכאל בלייז רוב Ordinal",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 177,
       "label": "עמית מיכאל בלייז רוב",
       "method": "Hebrew Ordinal",
       "classification": "canonical"
+    },
+    {
+      "value": 177,
+      "label": "π: H₅(58)→177",
+      "method": "Power-of-He · P₅^π(58)=928248; Fold₁₀₀₀: 928|248=1176 → 1|176=177 = עמית מיכאל בלייז רוב Ordinal",
+      "classification": "BRIDGE"
     },
     {
       "value": 191,
@@ -2208,6 +2226,12 @@
     },
     {
       "value": 208,
+      "label": "×2 מקום",
+      "method": "Atbash · 2×104 = 208 = רוב Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 208,
       "label": "×2 Alphaomega",
       "method": "Jewish Δ Simple",
       "classification": "BRIDGE"
@@ -2223,6 +2247,18 @@
       "label": "×8 Rov",
       "method": "English Reverse Ordinal · 8×26",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 208,
+      "label": "משולש א",
+      "method": "Latin Milui v0 → English Simple · רוב",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 208,
+      "label": "רוב",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
     },
     {
       "value": 208,
@@ -2249,16 +2285,10 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 208,
-      "label": "משולש א",
-      "method": "Latin Milui v0 → English Simple · רוב",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 208,
-      "label": "רוב",
-      "method": "Hebrew Regular",
-      "classification": "canonical"
+      "value": 212,
+      "label": "פאי",
+      "method": "Standard/Talmudic/Mayim Milui",
+      "classification": "FOUNDATION"
     },
     {
       "value": 212,
@@ -2267,9 +2297,9 @@
       "classification": "RESEARCH"
     },
     {
-      "value": 212,
-      "label": "פאי",
-      "method": "Standard/Talmudic/Mayim Milui",
+      "value": 216,
+      "label": "תיבה מלאה",
+      "method": "4×(8+20+26) = 2×108",
       "classification": "FOUNDATION"
     },
     {
@@ -2279,9 +2309,9 @@
       "classification": "canonical"
     },
     {
-      "value": 216,
-      "label": "תיבה מלאה",
-      "method": "4×(8+20+26) = 2×108",
+      "value": 220,
+      "label": "סולמות יהוה 72+148",
+      "method": "simple cumulative 72 + filled cumulative 148 = 220",
       "classification": "FOUNDATION"
     },
     {
@@ -2295,18 +2325,6 @@
       "label": "οἶκον",
       "method": "Greek Isopsephy",
       "classification": "canonical"
-    },
-    {
-      "value": 220,
-      "label": "סולמות יהוה 72+148",
-      "method": "simple cumulative 72 + filled cumulative 148 = 220",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 222,
-      "label": "π: H₃(850)→222",
-      "method": "Power-of-Gimel · P₃^π(850)=172050; Fold₁₀₀₀: 172|050 → 222",
-      "classification": "BRIDGE"
     },
     {
       "value": 222,
@@ -2337,6 +2355,12 @@
       "label": "תיבה פרימיטיבית · שטחי פאות",
       "method": "(4×10)+(10×13)+(13×4)=40+130+52=222",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
+      "label": "π: H₃(850)→222",
+      "method": "Power-of-Gimel · P₃^π(850)=172050; Fold₁₀₀₀: 172|050 → 222",
+      "classification": "BRIDGE"
     },
     {
       "value": 230,
@@ -2388,15 +2412,15 @@
     },
     {
       "value": 232,
-      "label": "ΑΜΙΘ ΡΟΒ / יהי אור",
-      "method": "Greek / Hebrew",
-      "classification": "canonical"
-    },
-    {
-      "value": 232,
       "label": "ע״ב+ס״ג+מ״ה+ב״ן",
       "method": "72+63+45+52 = 232 · four principal YHWH fillings",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 232,
+      "label": "ΑΜΙΘ ΡΟΒ / יהי אור",
+      "method": "Greek / Hebrew",
+      "classification": "canonical"
     },
     {
       "value": 234,
@@ -2460,6 +2484,12 @@
     },
     {
       "value": 288,
+      "label": "קומפוזיציית מייק · דרגה 2 ביט / מם יד יד קף",
+      "method": "Hebrew Regular · 16×18 · phi=96",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 288,
       "label": "π: P₁(58)=288",
       "method": "Power-of-Aleph · n=58 = Father English Simple; exact raw hit 288 = φ(888)",
       "classification": "BRIDGE"
@@ -2475,12 +2505,6 @@
       "label": "φ(קומפוזיציה מפתח=646) / φ(888)",
       "method": "Totient",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 288,
-      "label": "קומפוזיציית מייק · דרגה 2 ביט / מם יד יד קף",
-      "method": "Hebrew Regular · 16×18 · phi=96",
-      "classification": "FOUNDATION"
     },
     {
       "value": 290,
@@ -2616,15 +2640,15 @@
     },
     {
       "value": 358,
-      "label": "AlphaBeta − Alpha",
-      "method": "396 − 38 = 358",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 358,
       "label": "משיח",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 358,
+      "label": "AlphaBeta − Alpha",
+      "method": "396 − 38 = 358",
+      "classification": "BRIDGE"
     },
     {
       "value": 360,
@@ -2730,12 +2754,6 @@
     },
     {
       "value": 424,
-      "label": "Beta",
-      "method": "English Achorayim",
-      "classification": "canonical"
-    },
-    {
-      "value": 424,
       "label": "מם יוד יוד קוף",
       "method": "Latin Milui v0 → English Simple",
       "classification": "BRIDGE"
@@ -2751,6 +2769,12 @@
       "label": "קול דודי",
       "method": "Hebrew Atbash · משיח בן דוד",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 424,
+      "label": "Beta",
+      "method": "English Achorayim",
+      "classification": "canonical"
     },
     {
       "value": 441,
@@ -2820,6 +2844,18 @@
     },
     {
       "value": 512,
+      "label": "מקום",
+      "method": "Prefix cumulative sum (site legacy: מספר האחור · תוספת / Achorayim) · 40+(40+100)+(40+100+6)+(40+100+6+40)=512",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
+      "label": "מקום · HomePower e bridge",
+      "method": "P₁^e(104)=sum first 104 fractional digits of e =512; input 104 is Atbash(מקום), output 512 is prefix-cumulative מקום",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
       "label": "phi(1360)",
       "method": "2^9; doubled=1024",
       "classification": "BRIDGE"
@@ -2852,6 +2888,36 @@
       "value": 520,
       "label": "×5 Father",
       "method": "English Atbash Ordinal · 20×26 = עמית Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "י״י × אתב״ש־סדרי(י״י)",
+      "method": "20×26 = 520 = עמית Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "יהי קדם הנוצר",
+      "method": "Hebrew Regular · 25+144+351 = 520 = עמית",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "ישיר / עמית / כשר",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "עמית / אהיה שלחני אליכם / יהוה באלב״ם",
+      "method": "Hebrew Regular / ALBaM",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
+      "label": "תיבה פרימיטיבית · נפח",
+      "method": "4×10×13=520",
       "classification": "FOUNDATION"
     },
     {
@@ -2897,42 +2963,6 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 520,
-      "label": "י״י × אתב״ש־סדרי(י״י)",
-      "method": "20×26 = 520 = עמית Regular",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 520,
-      "label": "יהי קדם הנוצר",
-      "method": "Hebrew Regular · 25+144+351 = 520 = עמית",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 520,
-      "label": "ישיר / עמית / כשר",
-      "method": "Hebrew Regular",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 520,
-      "label": "עמית / אהיה שלחני אליכם / יהוה באלב״ם",
-      "method": "Hebrew Regular / ALBaM",
-      "classification": "canonical"
-    },
-    {
-      "value": 520,
-      "label": "תיבה פרימיטיבית · נפח",
-      "method": "4×10×13=520",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 528,
-      "label": "BLAZE / מייק רוב מייק",
-      "method": "Jewish Gematria / Hebrew Regular",
-      "classification": "canonical"
-    },
-    {
       "value": 528,
       "label": "אז ישיר",
       "method": "Hebrew Regular · T32",
@@ -2963,6 +2993,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 528,
+      "label": "BLAZE / מייק רוב מייק",
+      "method": "Jewish Gematria / Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
       "value": 534,
       "label": "ק²ב²ל²ה²",
       "method": "Private/Squared Gematria on Hebrew Ordinal values · 19²+2²+12²+5² = 361+4+144+25",
@@ -2988,18 +3024,6 @@
     },
     {
       "value": 543,
-      "label": "e: H₁(345)→543",
-      "method": "P₁^e(345)=1542; Fold₁₀₀₀→543 = אהיה אשר אהיה",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 543,
-      "label": "e: P₁(110)→543",
-      "method": "sum first 110 fractional digits of e =543 = אהיה אשר אהיה",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 543,
       "label": "אהיה אשר אהיה",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -3009,6 +3033,18 @@
       "label": "שלושים ושבע / שבעים ושלוש",
       "method": "Atbash",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 543,
+      "label": "e: H₁(345)→543",
+      "method": "P₁^e(345)=1542; Fold₁₀₀₀→543 = אהיה אשר אהיה",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 543,
+      "label": "e: P₁(110)→543",
+      "method": "sum first 110 fractional digits of e =543 = אהיה אשר אהיה",
+      "classification": "FOUNDATION"
     },
     {
       "value": 550,
@@ -3048,12 +3084,6 @@
     },
     {
       "value": 636,
-      "label": "π: P₂(20)=636",
-      "method": "Power-of-Bet · exact raw hit; n=20 = י״י Regular / ×5 Father Word Reduced; 636 = מילוי עמית",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 636,
       "label": "מילוי עמית",
       "method": "Standard Milui",
       "classification": "canonical"
@@ -3065,15 +3095,27 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 636,
+      "label": "π: P₂(20)=636",
+      "method": "Power-of-Bet · exact raw hit; n=20 = י״י Regular / ×5 Father Word Reduced; 636 = מילוי עמית",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 637,
+      "label": "תורה יהוה",
+      "method": "Hebrew Regular",
+      "classification": "canonical"
+    },
+    {
       "value": 637,
       "label": "π: H₃(116)→637",
       "method": "P₃^π(116)=25612; 25|612→637 = תורה יהוה Regular",
       "classification": "RESEARCH"
     },
     {
-      "value": 637,
-      "label": "תורה יהוה",
-      "method": "Hebrew Regular",
+      "value": 640,
+      "label": "שמש / φ(935)",
+      "method": "Hebrew Regular / Totient",
       "classification": "canonical"
     },
     {
@@ -3083,15 +3125,21 @@
       "classification": "canonical"
     },
     {
-      "value": 640,
-      "label": "שמש / φ(935)",
-      "method": "Hebrew Regular / Totient",
-      "classification": "canonical"
-    },
-    {
       "value": 646,
       "label": "קומפוזיציה מפתח / עין מם יוד תיו",
       "method": "Milui variant (תיו) · φ=288",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 656,
+      "label": "דין → 656",
+      "method": "8×82 (Achorayim+Addition) = 656 = ΜΑΙΧΕ = ΜΕΣΣΙΑΣ",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 656,
+      "label": "עין מים יוד תיו",
+      "method": "Composition family · 16x41",
       "classification": "FOUNDATION"
     },
     {
@@ -3107,18 +3155,6 @@
       "classification": "canonical"
     },
     {
-      "value": 656,
-      "label": "דין → 656",
-      "method": "8×82 (Achorayim+Addition) = 656 = ΜΑΙΧΕ = ΜΕΣΣΙΑΣ",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 656,
-      "label": "עין מים יוד תיו",
-      "method": "Composition family · 16x41",
-      "classification": "FOUNDATION"
-    },
-    {
       "value": 657,
       "label": "באות במראה",
       "method": "Hebrew Regular · 9×73",
@@ -3128,6 +3164,12 @@
       "value": 666,
       "label": "888−222",
       "method": "Cross-method difference · 18×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 666,
+      "label": "רלא",
+      "method": "Cycle BKR / סייקל בכ״ר",
       "classification": "BRIDGE"
     },
     {
@@ -3149,21 +3191,9 @@
       "classification": "FOUNDATION"
     },
     {
-      "value": 666,
-      "label": "רלא",
-      "method": "Cycle BKR / סייקל בכ״ר",
-      "classification": "BRIDGE"
-    },
-    {
       "value": 676,
       "label": "×4 מפתח השם יהוה",
       "method": "Latin Milui v0 → English Reduced · 4×169=(2×13)²=26²=יהוה²",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 676,
-      "label": "Iso",
-      "method": "English Addition & Subtraction · = 26² = יהוה²",
       "classification": "FOUNDATION"
     },
     {
@@ -3176,6 +3206,12 @@
       "value": 676,
       "label": "משולש מתוך תיבת עמית-מייק-רוב",
       "method": "520×208÷160 = 676 = 26²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 676,
+      "label": "Iso",
+      "method": "English Addition & Subtraction · = 26² = יהוה²",
       "classification": "FOUNDATION"
     },
     {
@@ -3192,6 +3228,12 @@
     },
     {
       "value": 703,
+      "label": "ואת הארץ",
+      "method": "Hebrew Regular · T37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 703,
       "label": "Genesis/Rabbati Fold₁₀₀₀ invariant",
       "method": "2701=2×999+703; 4699=4×999+703; both fold to 703",
       "classification": "FOUNDATION"
@@ -3200,12 +3242,6 @@
       "value": 703,
       "label": "π: H₂(82)→703",
       "method": "P₂^π(82)=2701; Fold₁₀₀₀: 2|701 → 703 = ואת הארץ Regular = T37",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 703,
-      "label": "ואת הארץ",
-      "method": "Hebrew Regular · T37",
       "classification": "FOUNDATION"
     },
     {
@@ -3270,12 +3306,6 @@
     },
     {
       "value": 768,
-      "label": "π: H₃(231)→768",
-      "method": "P₃^π(231)=47721; Fold₁₀₀₀→768 = עמית מ. רוב",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 768,
       "label": "דברים",
       "method": "Equivalence · 3×Regular for 5-letter word",
       "classification": "FOUNDATION"
@@ -3293,9 +3323,9 @@
       "classification": "BRIDGE"
     },
     {
-      "value": 776,
-      "label": "π window 611×165",
-      "method": "sum of 165 fractional π digits starting at position 611 =776 = תורה נקודה Regular",
+      "value": 768,
+      "label": "π: H₃(231)→768",
+      "method": "P₃^π(231)=47721; Fold₁₀₀₀→768 = עמית מ. רוב",
       "classification": "RESEARCH"
     },
     {
@@ -3303,6 +3333,12 @@
       "label": "תורה נקודה",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 776,
+      "label": "π window 611×165",
+      "method": "sum of 165 fractional π digits starting at position 611 =776 = תורה נקודה Regular",
+      "classification": "RESEARCH"
     },
     {
       "value": 777,
@@ -3378,12 +3414,6 @@
     },
     {
       "value": 816,
-      "label": "Amit Mike Rov",
-      "method": "English Gematria",
-      "classification": "canonical"
-    },
-    {
-      "value": 816,
       "label": "דברים",
       "method": "Hebrew Final Letters · 256+560",
       "classification": "BRIDGE"
@@ -3399,6 +3429,12 @@
       "label": "קשר עמוק",
       "method": "Hebrew Regular · 816=6×136=Tet16",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 816,
+      "label": "Amit Mike Rov",
+      "method": "English Gematria",
+      "classification": "canonical"
     },
     {
       "value": 873,
@@ -3440,30 +3476,6 @@
       "value": 888,
       "label": "873 constant pair → זה צופן",
       "method": "H₁^e(873)=12 and H₁^φ(873)=876; 12+876=888 = זה צופן Final",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 888,
-      "label": "A.B.A MIKE ROV",
-      "method": "Jewish Gematria",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 888,
-      "label": "Amit Mike Rov",
-      "method": "Jewish Δ Simple · 1024−136",
-      "classification": "canonical"
-    },
-    {
-      "value": 888,
-      "label": "π: H₂(534)→888",
-      "method": "Power-of-Bet · P₂^π(534)=14874; Fold₁₀₀₀: 14|874 → 888 = עמית מייק רוב",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 888,
-      "label": "φ: P₂(23)→888",
-      "method": "sum of squares of first 23 fractional digits of φ =888",
       "classification": "RESEARCH"
     },
     {
@@ -3543,6 +3555,30 @@
       "label": "תיבה מלאה · שטחי פאות",
       "method": "8×20+20×26+26×8=160+520+208=888",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "A.B.A MIKE ROV",
+      "method": "Jewish Gematria",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "Amit Mike Rov",
+      "method": "Jewish Δ Simple · 1024−136",
+      "classification": "canonical"
+    },
+    {
+      "value": 888,
+      "label": "π: H₂(534)→888",
+      "method": "Power-of-Bet · P₂^π(534)=14874; Fold₁₀₀₀: 14|874 → 888 = עמית מייק רוב",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "φ: P₂(23)→888",
+      "method": "sum of squares of first 23 fractional digits of φ =888",
+      "classification": "RESEARCH"
     },
     {
       "value": 899,
@@ -3636,14 +3672,14 @@
     },
     {
       "value": 999,
-      "label": "Fold₁₀₀₀ invariant",
-      "method": "1000≡1 (mod 999); repeated 3-digit block-sum preserves residue mod 999",
+      "label": "רלא · מחזור 234→342→423",
+      "method": "234+342+423 = 111×(2+3+4) = 999 = 27×37",
       "classification": "FOUNDATION"
     },
     {
       "value": 999,
-      "label": "רלא · מחזור 234→342→423",
-      "method": "234+342+423 = 111×(2+3+4) = 999 = 27×37",
+      "label": "Fold₁₀₀₀ invariant",
+      "method": "1000≡1 (mod 999); repeated 3-digit block-sum preserves residue mod 999",
       "classification": "FOUNDATION"
     },
     {
@@ -3660,6 +3696,12 @@
     },
     {
       "value": 1000,
+      "label": "אלף",
+      "method": "Semantic value: thousand",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 1000,
       "label": "Amit M. Rov",
       "method": "Jewish Gematria",
       "classification": "canonical"
@@ -3668,12 +3710,6 @@
       "value": 1000,
       "label": "Hₖᶜ operator frame",
       "method": "Pₖᶜ(n)=Σ first n fractional digits of constant c raised to k; Hₖᶜ(n)=Fold₁₀₀₀(Pₖᶜ(n))",
-      "classification": "REPRESENTATION"
-    },
-    {
-      "value": 1000,
-      "label": "אלף",
-      "method": "Semantic value: thousand",
       "classification": "REPRESENTATION"
     },
     {
@@ -3708,6 +3744,12 @@
     },
     {
       "value": 1024,
+      "label": "×2 מקום",
+      "method": "Prefix cumulative sum / site Achorayim · 2×512 = 1024 = 32²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "×4 דברים",
       "method": "Hebrew Regular · 2^10 · 1024−816=208",
       "classification": "FOUNDATION"
@@ -3720,20 +3762,14 @@
     },
     {
       "value": 1024,
-      "label": "×64 Rov",
-      "method": "English ALBaM analogue · 64×16",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 1024,
       "label": "×64 עמית",
       "method": "Hebrew Reduced / Small · 64×16",
       "classification": "FOUNDATION"
     },
     {
       "value": 1024,
-      "label": "×8 Iso",
-      "method": "English Atbash → Regular · 8×128 = 1024 = Amit Mike Rov Jewish Gematria",
+      "label": "×64 Rov",
+      "method": "English ALBaM analogue · 64×16",
       "classification": "FOUNDATION"
     },
     {
@@ -3744,21 +3780,15 @@
     },
     {
       "value": 1024,
+      "label": "×8 Iso",
+      "method": "English Atbash → Regular · 8×128 = 1024 = Amit Mike Rov Jewish Gematria",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "2phi(1360)",
       "method": "2^10; 16x64; 1024-136=888",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 1024,
-      "label": "Amit Mike Rov",
-      "method": "Jewish Gematria",
-      "classification": "canonical"
-    },
-    {
-      "value": 1024,
-      "label": "Amit Mike Rov / מיכאלבלייז",
-      "method": "Jewish Gematria / Achorayim",
-      "classification": "canonical"
     },
     {
       "value": 1024,
@@ -3771,6 +3801,18 @@
       "label": "מפתח + מלכות / בראשית + אלף",
       "method": "528+496 = 913+111 = 1024 = 32² = T31+T32",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "Amit Mike Rov",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 1024,
+      "label": "Amit Mike Rov / מיכאלבלייז",
+      "method": "Jewish Gematria / Achorayim",
+      "classification": "canonical"
     },
     {
       "value": 1030,
@@ -3936,6 +3978,12 @@
     },
     {
       "value": 1360,
+      "label": "עין מים יוד תיו · מילוי תלמודי",
+      "method": "phi=512; 2phi=1024; 2phi-136=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1360,
       "label": "Talmudic lift of 656",
       "method": "2x656+48 = 10x136 · phi=512",
       "classification": "BRIDGE"
@@ -3944,12 +3992,6 @@
       "value": 1360,
       "label": "Talmudic lift of Amit Mayim expansion",
       "method": "Talmudic Milui; 10x136; phi=512",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 1360,
-      "label": "עין מים יוד תיו · מילוי תלמודי",
-      "method": "phi=512; 2phi=1024; 2phi-136=888",
       "classification": "FOUNDATION"
     },
     {
@@ -4146,24 +4188,6 @@
     },
     {
       "value": 2080,
-      "label": "Amit Mike Rov",
-      "method": "Simple² Squared",
-      "classification": "canonical"
-    },
-    {
-      "value": 2080,
-      "label": "LCM decoder · תיבה",
-      "method": "LCM(160,520,208)=2080; 2080/520=4, 2080/208=10, 2080/160=13",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 2080,
-      "label": "T64 / ×4 Amit / 32×65 / 80×26",
-      "method": "Triangular / English Regular scaling / Buddhist body-number bridge",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 2080,
       "label": "אחד×מייק = לב×אדני",
       "method": "13×160 = 32×65",
       "classification": "FOUNDATION"
@@ -4185,6 +4209,24 @@
       "label": "עמית, מייק, רוב",
       "method": "LCM(520,160,208)",
       "classification": "canonical"
+    },
+    {
+      "value": 2080,
+      "label": "Amit Mike Rov",
+      "method": "Simple² Squared",
+      "classification": "canonical"
+    },
+    {
+      "value": 2080,
+      "label": "LCM decoder · תיבה",
+      "method": "LCM(160,520,208)=2080; 2080/520=4, 2080/208=10, 2080/160=13",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "T64 / ×4 Amit / 32×65 / 80×26",
+      "method": "Triangular / English Regular scaling / Buddhist body-number bridge",
+      "classification": "BRIDGE"
     },
     {
       "value": 2103,
@@ -4224,6 +4266,18 @@
     },
     {
       "value": 2368,
+      "label": "לב×Mike = יחידה×אוזן",
+      "method": "32×74 = 37×64",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2368,
+      "label": "סולם מילוי יהוה",
+      "method": "16×148=2368",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2368,
       "label": "e: P₂(72)→2368",
       "method": "sum of squares of first 72 fractional digits of e =2368 =16×148",
       "classification": "RESEARCH"
@@ -4239,18 +4293,6 @@
       "label": "π: P₁(534)=2368",
       "method": "Power-of-Aleph · exact raw hit from 534 = ק²ב²ל²ה²; equals ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ Greek Isopsephy",
       "classification": "FOUNDATION"
-    },
-    {
-      "value": 2368,
-      "label": "לב×Mike = יחידה×אוזן",
-      "method": "32×74 = 37×64",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 2368,
-      "label": "סולם מילוי יהוה",
-      "method": "16×148=2368",
-      "classification": "BRIDGE"
     },
     {
       "value": 2386,
@@ -4302,12 +4344,6 @@
     },
     {
       "value": 2701,
-      "label": "π: P₂(82)=2701",
-      "method": "Power-of-Bet · exact raw hit: sum of squares of first 82 fractional digits of π = 2701 = בראשית א:א Regular; H₂(82)=703",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 2701,
       "label": "בראשית · 6×את + הרץ",
       "method": "6×401+295=2701",
       "classification": "FOUNDATION"
@@ -4325,16 +4361,22 @@
       "classification": "canonical"
     },
     {
-      "value": 2888,
-      "label": "φ: 82|0|82 frame",
-      "method": "2520 + 368 = 2888; 368 =160+208",
-      "classification": "RESEARCH"
+      "value": 2701,
+      "label": "π: P₂(82)=2701",
+      "method": "Power-of-Bet · exact raw hit: sum of squares of first 82 fractional digits of π = 2701 = בראשית א:א Regular; H₂(82)=703",
+      "classification": "FOUNDATION"
     },
     {
       "value": 2888,
       "label": "מפתח השם יה",
       "method": "Ratzo VaShov",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 2888,
+      "label": "φ: 82|0|82 frame",
+      "method": "2520 + 368 = 2888; 368 =160+208",
+      "classification": "RESEARCH"
     },
     {
       "value": 3168,
