@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Includes Genesis 1:1 multi-method anchors, Talmudic Milui 5476=74², Standard Milui 5467=74²−3², and derived cross-method bridges.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged into one entry. Includes Genesis 1:1, Genesis 1:8, 108/216 Tevah geometry, Alpha/Omega/Lambda Greek anchors, οἶκον/Λόγος shared signatures, קול דודי, Base-36 representations, Talmudic Milui 5476=74², and Standard Milui 5467=74²−3².",
   "entries": [
     {
       "value": 13,
@@ -432,8 +432,8 @@
     },
     {
       "value": 800,
-      "label": "ΚΥΡΙΟΣ",
-      "method": "Greek Isopsephy",
+      "label": "ΚΥΡΙΟΣ / ΠΙΣΤΙΣ / Ω",
+      "method": "Greek Isopsephy / Greek numeral Ω=800",
       "classification": "canonical"
     },
     {
@@ -456,8 +456,8 @@
     },
     {
       "value": 888,
-      "label": "עמית מייק רוב / עמית משיחי / ΙΗΣΟΥΣ",
-      "method": "Hebrew / Greek",
+      "label": "עמית מייק רוב / עמית משיחי / ΙΗΣΟΥΣ / ΩΠΗ",
+      "method": "Hebrew / Greek Isopsephy / Greek numeric notation",
       "classification": "canonical"
     },
     {
@@ -655,8 +655,8 @@
     {
       "value": 496,
       "label": "8×בראשית",
-      "method": "Reverse Ordinal · perfect number",
-      "classification": "RESEARCH"
+      "method": "Reverse Ordinal · Perfect number · T31",
+      "classification": "FOUNDATION"
     },
     {
       "value": 730,
@@ -723,12 +723,6 @@
       "label": "10×בראשית",
       "method": "Atbash · φ=2976",
       "classification": "RESEARCH"
-    },
-    {
-      "value": 496,
-      "label": "8×בראשית",
-      "method": "Reverse Ordinal · Perfect number · T31",
-      "classification": "FOUNDATION"
     },
     {
       "value": 128,
@@ -1381,7 +1375,7 @@
     {
       "value": 888,
       "label": "א יהוה ברא באות במראה א",
-      "method": "Hebrew Regular · 24×37",
+      "method": "Hebrew Regular · 24×37 = 4×222",
       "classification": "FOUNDATION"
     },
     {
@@ -1399,8 +1393,8 @@
     {
       "value": 3399,
       "label": "א יהוה ברא באות במראה א",
-      "method": "Milui Mayim · 33×103",
-      "classification": "RESEARCH"
+      "method": "Milui Mayim · 33×103 · φ=2040",
+      "classification": "FOUNDATION"
     },
     {
       "value": 657,
@@ -1431,24 +1425,6 @@
       "label": "במראה",
       "method": "Hebrew Regular · equals במדבר",
       "classification": "BRIDGE"
-    },
-    {
-      "value": 888,
-      "label": "א יהוה ברא באות במראה א",
-      "method": "Hebrew Regular · 4×222",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 123,
-      "label": "א יהוה ברא באות במראה א",
-      "method": "Hebrew Ordinal = Reduction №1",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 3399,
-      "label": "א יהוה ברא באות במראה א",
-      "method": "Milui Mayim · phi=2040",
-      "classification": "FOUNDATION"
     },
     {
       "value": 345,
@@ -1783,13 +1759,7 @@
     {
       "value": 55,
       "label": "Rov",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 55,
-      "label": "Rov",
-      "method": "English One-step Zero",
+      "method": "English Simple = English One-step Zero",
       "classification": "canonical"
     },
     {
@@ -2199,6 +2169,252 @@
       "label": "קו / קוה π bridge",
       "method": "with π*=3×111/106=333/106, circumference at r=424 is exactly 2664=3×888",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 34,
+      "label": "ΑΛΦΑ",
+      "method": "Greek Ordinal (24-letter)",
+      "classification": "canonical"
+    },
+    {
+      "value": 45,
+      "label": "ΩΜΕΓΑ",
+      "method": "Greek Ordinal (24-letter)",
+      "classification": "canonical"
+    },
+    {
+      "value": 31,
+      "label": "ΑΛ / אל / ΚΑΙ / ΑΛΦΑ+ΩΜΕΓΑ",
+      "method": "Greek Isopsephy / Hebrew Regular / Greek Isopsephy Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 11,
+      "label": "ΚΑΙ",
+      "method": "Greek Ordinal Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "ΚΑΙ",
+      "method": "Greek Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 33,
+      "label": "ΛΛΛ",
+      "method": "Greek Ordinal · 11+11+11; Λ Isopsephy 30 + Reduced 3",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1095,
+      "label": "Α→ΑΛ→ΑΛΦ→ΑΛΦΑ",
+      "method": "Greek Isopsephy Building · 1+31+531+532 = 73×15",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1412,
+      "label": "ΑΛΦΑ ΚΑΙ ΩΜΕΓΑ",
+      "method": "Greek Isopsephy · Composite #1188 · φ=704",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 99,
+      "label": "ΑΛΦΑ ΚΑΙ ΩΜΕΓΑ",
+      "method": "Greek Ordinal · Composite #73",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 520,
+      "label": "ΑΛΦΑ ΚΑΙ ΩΜΕΓΑ",
+      "method": "Greek Ladder / κλίμαξ — Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 704,
+      "label": "φ(ΑΛΦΑ ΚΑΙ ΩΜΕΓΑ=1412)",
+      "method": "Totient",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1188,
+      "label": "פרשת וארא / כ״ה בטבת תש״ן / ישוע שמונה שמונה / ע עמ עמי עמית מייק רוב",
+      "method": "Hebrew Regular · also Composite # of 1412",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 42,
+      "label": "τὸ Ἄλφα καὶ τὸ Ὦ",
+      "method": "Greek Isopsephy Reduced · exact Revelation 22:13 wording",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "τὸ ΑΛΦΑ ΚΑΙ τὸ ΩΜΕΓΑ",
+      "method": "Greek Isopsephy Reduced · expanded letter names",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2103,
+      "label": "τὸ Ἄλφα καὶ τὸ Ὦ",
+      "method": "Greek Isopsephy · exact Revelation 22:13 wording",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 31,
+      "label": "אלפא למבדה",
+      "method": "Hebrew Reduced / Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 13,
+      "label": "אלפא למבדה",
+      "method": "Hebrew Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 44,
+      "label": "יהוה חי",
+      "method": "Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 220,
+      "label": "οἶκον",
+      "method": "Greek Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 373,
+      "label": "Λόγος",
+      "method": "Greek Isopsephy · Prime #74",
+      "classification": "canonical"
+    },
+    {
+      "value": 22,
+      "label": "οἶκον / Λόγος",
+      "method": "Greek Isopsephy Reduced",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 62,
+      "label": "οἶκον / Λόγος",
+      "method": "Greek Ordinal (24-letter)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "οἶκον / Λόγος",
+      "method": "Greek Ordinal Reduced · יהוה bridge",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 800,
+      "label": "οἶκον",
+      "method": "Greek Perati — Ordinal² · equals ΚΥΡΙΟΣ Isopsephy",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1203,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Hebrew Regular · 3×401 = 3×את",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 231,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Hebrew Ordinal · T21 = C(22,2)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 51,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Hebrew Reduced / Small · σ(51)=72",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Hebrew Small Finals · σ(55)=72",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2600,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Talmudic Milui · 2600+1=51²; 2600+1+10²=2701",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1223,
+      "label": "ויקרא אלהים לרקיע שמים",
+      "method": "Hebrew Atbash · Prime #200",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 703,
+      "label": "ואת הארץ",
+      "method": "Hebrew Regular · T37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 108,
+      "label": "T37 perimeter / תיבה פרימיטיבית",
+      "method": "3×37−3 = 4×(4+10+13)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 216,
+      "label": "תיבה מלאה",
+      "method": "4×(8+20+26) = 2×108",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1184,
+      "label": "עמית קדם עמית",
+      "method": "Hebrew Regular · 32×37 = 888+296 · φ=576=24²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
+      "label": "קול דודי",
+      "method": "Hebrew Regular · מייק",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 61,
+      "label": "קול דודי",
+      "method": "Hebrew Ordinal · אני",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 100,
+      "label": "קול דודי",
+      "method": "Hebrew Reverse Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 424,
+      "label": "קול דודי",
+      "method": "Hebrew Atbash · משיח בן דוד",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 37,
+      "label": "11₃₆",
+      "method": "Base-36 representation",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 73,
+      "label": "21₃₆",
+      "method": "Base-36 representation",
+      "classification": "REPRESENTATION"
+    },
+    {
+      "value": 2701,
+      "label": "231₃₆",
+      "method": "Base-36 representation · (36+1)(72+1)",
+      "classification": "REPRESENTATION"
     }
   ]
 }
