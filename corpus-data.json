@@ -5,6 +5,12 @@
   "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank, including רלא/999, דין/1024–656, לב פעמים לב, Shema/Israel balance, קשר עמוק, YHWH 54/148, and verified constant-scan bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION.",
   "entries": [
     {
+      "value": 0,
+      "label": "Q₄ Euler relation",
+      "method": "16−32+24−8=0",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 2,
       "label": "עמית mod 37",
       "method": "520 mod 37 = 2",
@@ -39,6 +45,12 @@
       "label": "תורה",
       "method": "Word Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 8,
+      "label": "Q₄ / Tesseract cubic cells",
+      "method": "Hypercube exact · f₃(Q₄)=8",
+      "classification": "FOUNDATION"
     },
     {
       "value": 10,
@@ -188,6 +200,12 @@
       "value": 16,
       "label": "Iso",
       "method": "English Small/Pythagorean · 9+1+6 · = Amit English Small = עמית Hebrew Small",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 16,
+      "label": "Q₄ / Tesseract vertices",
+      "method": "Hypercube exact · |V(Q₄)|=2⁴=16",
       "classification": "FOUNDATION"
     },
     {
@@ -357,6 +375,12 @@
       "label": "Aba / אופרטור אבא",
       "method": "English Gematria = 6×Simple",
       "classification": "canonical"
+    },
+    {
+      "value": 24,
+      "label": "Q₄ / Tesseract square faces",
+      "method": "Hypercube exact · f₂(Q₄)=C(4,2)·2²=24",
+      "classification": "FOUNDATION"
     },
     {
       "value": 25,
@@ -536,6 +560,12 @@
       "value": 32,
       "label": "Iso Amit",
       "method": "English Small/Pythagorean · Iso=16 + Amit=16 = 32 = ישו Hebrew Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 32,
+      "label": "Q₄ / Tesseract edges",
+      "method": "Hypercube exact · |E(Q₄)|=4·2³=32",
       "classification": "FOUNDATION"
     },
     {
@@ -2118,6 +2148,12 @@
     },
     {
       "value": 136,
+      "label": "16×16 symmetric state matrix",
+      "method": "Independent entries =16·17/2=T₁₆=136 = Amit Mike Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
       "label": "חלל",
       "method": "Equivalence / שווי · balanced weight for 3 letters =2×68 =136 = Amit Mike Rov English Simple",
       "classification": "FOUNDATION"
@@ -2621,6 +2657,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 256,
+      "label": "Q₄×Q₄ = Q₈",
+      "method": "Hypercube product · 16×16=256=2⁸=|V(Q₈)|",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 258,
       "label": "Amit / אלהימ",
       "method": "English Gematria / Equivalence",
@@ -2672,6 +2714,12 @@
       "value": 290,
       "label": "×5 Father",
       "method": "English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 296,
+      "label": "Q₄ cell ×37",
+      "method": "8×37=296",
       "classification": "BRIDGE"
     },
     {
@@ -3005,6 +3053,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 496,
+      "label": "T₃₁ / perfect-number center",
+      "method": "T₃₁=496; perfect number; appears in 2080=3·T₃₂+T₃₁",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 507,
       "label": "φ: P₁(110)→507",
       "method": "sum first 110 fractional digits of φ =507; control against π/e n=110 pair",
@@ -3203,6 +3257,12 @@
       "classification": "canonical"
     },
     {
+      "value": 528,
+      "label": "T₃₂ / corner triangle",
+      "method": "T₃₂=528; 3·528+496=2080",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 534,
       "label": "ק²ב²ל²ה²",
       "method": "Private/Squared Gematria on Hebrew Ordinal values · 19²+2²+12²+5² = 361+4+144+25",
@@ -3278,6 +3338,12 @@
       "value": 590,
       "label": "מים יוד יוד קוף",
       "method": "Atbash · 10×59",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 592,
+      "label": "Q₄ vertex ×37",
+      "method": "16×37=592",
       "classification": "BRIDGE"
     },
     {
@@ -3786,6 +3852,18 @@
     },
     {
       "value": 888,
+      "label": "Q₄ cell-unit closure",
+      "method": "8 cubic cells ×111 =888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "Q₄ face-unit closure",
+      "method": "24 square faces ×37 =888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
       "label": "π: H₂(534)→888",
       "method": "Power-of-Bet · P₂^π(534)=14874; Fold₁₀₀₀: 14|874 → 888 = עמית מייק רוב",
       "classification": "FOUNDATION"
@@ -4044,6 +4122,12 @@
     },
     {
       "value": 1024,
+      "label": "4⁵ lattice hypervolume",
+      "method": "Five-dimensional side-4 lattice count · 4⁵=1024=64×16",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "דין · סגירת 1024 בשתי שיטות",
       "method": "16×64 (Regular) = 8×128 (Equivalence) = 1024 = 32²",
       "classification": "FOUNDATION"
@@ -4077,6 +4161,18 @@
       "label": "Amit Mike Rov / מיכאלבלייז",
       "method": "Jewish Gematria / Achorayim",
       "classification": "canonical"
+    },
+    {
+      "value": 1024,
+      "label": "Q₁₀ vertices",
+      "method": "Hypercube exact · |V(Q₁₀)|=2¹⁰=1024",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "Q₈ edges",
+      "method": "Hypercube exact · |E(Q₈)|=8·2⁷=1024",
+      "classification": "FOUNDATION"
     },
     {
       "value": 1030,
@@ -4539,6 +4635,18 @@
       "label": "T64 / ×4 Amit / 32×65 / 80×26",
       "method": "Triangular / English Regular scaling / Buddhist body-number bridge",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 2080,
+      "label": "Tesseract-triangle decomposition",
+      "method": "3·T₃₂+T₃₁ =3·528+496=2080",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2080,
+      "label": "Tevah half-volume",
+      "method": "8×20×26/2=2080 =4×520=10×208=13×160",
+      "classification": "FOUNDATION"
     },
     {
       "value": 2103,
@@ -5088,6 +5196,14 @@
       "added_at": "2026-09-29",
       "vector": "Regular=73; Ordinal=37; Reverse Ordinal=55; Reduced/Small=19 for both החלל and חכמה.",
       "mirror": "37↔73; 55↔55; 19↔91; each pair sums to 110."
+    },
+    "core_hypercube_tevah": {
+      "added_at": "2026-09-29",
+      "tesseract": "Q4 f-vector=(16,32,24,8); dual 16-cell=(8,24,32,16).",
+      "sixteen": "16 vertices; T16=136; symmetric 16×16 matrix has 136 independent entries.",
+      "products": "Q4×Q4≅Q8; 16×16=256 vertices; Q8 has 1024 edges; Q10 has 1024 vertices.",
+      "closure": "32²=1024; 24×37=888; 1024−136=888.",
+      "tevah": "primitive (4,10,13), full (8,20,26); pairwise products 160,208,520 sum 888; volume 4160; half-volume 2080."
     }
   },
   "corrections": {
