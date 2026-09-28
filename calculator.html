@@ -1905,6 +1905,7 @@ console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze A
 console.assert(T('מיכאל בלייז','he','regular')===160,'Michael Blaze regular 160');
 console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');console.assert(T('אלהימ','he','positional')===316,'Elohim open positional 316');console.assert(T('אלהימ','he','ratzo')===314,'Elohim open ratzo 314');console.assert(T('יהוה','he','albam')===520,'YHWH ALBaM 520');console.assert(T('יהוה','he','kolel')===27,'YHWH Kolel 27');console.assert(T('יהוה','he','achorayim')===72,'YHWH Achorayim 72');
 loadSavedItems();loadCorpusOverrides();applyCorpusOverrides();renderAll();syncSharedCorpus();
+if(location.hash==='#methods')setTimeout(()=>openMethodBook(),0);
 </script>
 </body>
 </html>
