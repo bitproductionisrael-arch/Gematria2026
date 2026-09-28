@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f14">
+<title>Core Theory · Gematria2026</title>
+<style>
+:root{--bg:#0b0f14;--panel:#101720;--panel2:#0d141c;--line:#2a3440;--text:#eef3f8;--muted:#91a0af;--gold:#d8ad55;--cyan:#5fd3cf;--blue:#63a9ff;--violet:#ad8cff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#172333 0,#0b0f14 38%,#080c11 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92vw);margin:auto}
+header{position:sticky;top:0;z-index:30;background:rgba(9,13,18,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{min-height:66px;display:flex;align-items:center;gap:9px}.brand{font-weight:950}.brand span{color:var(--gold)}.nav a:not(.brand){padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:12px}.push{margin-inline-start:auto}
+.hero{padding:66px 0 44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,.9fr);gap:34px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}.hero h1{font-size:clamp(44px,7vw,82px);line-height:.96;letter-spacing:-.055em;margin:10px 0 16px}.hero h1 span{color:var(--gold)}.lead{color:#b9c6d2;line-height:1.75;font-size:clamp(15px,1.8vw,20px);max-width:760px}.formula{direction:ltr;text-align:left;font:850 clamp(16px,2.2vw,24px)/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;border:1px solid #405065;border-radius:14px;background:#0c141c;padding:15px;color:#dff7f5;white-space:pre-wrap}
+.diagram{display:grid;place-items:center}.diagram svg{width:min(520px,100%);height:auto;filter:drop-shadow(0 25px 50px rgba(0,0,0,.38))}
+.section{padding:58px 0;border-top:1px solid rgba(255,255,255,.06)}.section h2{font-size:clamp(28px,4vw,46px);margin:0 0 8px;letter-spacing:-.035em}.sub{color:var(--muted);line-height:1.65;max-width:820px;margin-bottom:22px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.card{border:1px solid var(--line);border-radius:15px;background:linear-gradient(180deg,#101720,#0c1219);padding:16px;min-width:0}.n{font:950 clamp(34px,5vw,58px)/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--cyan)}.card:nth-child(2) .n{color:var(--gold)}.card:nth-child(3) .n{color:var(--violet)}.card:nth-child(4) .n{color:var(--blue)}.card h3{font-size:15px;margin:11px 0 7px}.card p{font-size:12px;line-height:1.6;color:#a5b2be;margin:0}
+.dual{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}.vector{border:1px solid var(--line);border-radius:16px;background:#0d141c;padding:22px;text-align:center}.vector .v{direction:ltr;font:950 clamp(27px,5vw,50px)/1.2 ui-monospace,SFMono-Regular,Consolas,monospace}.vector small{display:block;color:var(--muted);margin-top:9px}.swap{font-size:34px;color:var(--gold)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.box{border:1px solid var(--line);border-radius:15px;background:#0d141c;padding:17px}.box h3{margin:0 0 10px;font-size:16px;color:#ffe2a0}.box p{margin:0;color:#a8b5c1;line-height:1.65;font-size:13px}.math{direction:ltr;text-align:left;font:800 15px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;color:#d9f4f1;margin-top:10px;white-space:pre-wrap}
+.bridge{border:1px solid #5b4d2e;background:linear-gradient(100deg,#101820,#17150f);border-radius:18px;padding:22px}.bridge .big{direction:ltr;text-align:center;font:950 clamp(27px,5vw,54px)/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;color:#ffe0a0}.bridge p{max-width:860px;margin:12px auto 0;color:#b8c4d0;line-height:1.7;text-align:center}
+.timeline{display:grid;gap:8px}.row{display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:start;border:1px solid var(--line);background:#0d141c;border-radius:12px;padding:13px}.row b{font:900 13px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--cyan);direction:ltr}.row div{color:#a9b6c2;line-height:1.65;font-size:13px}.row strong{color:#eef3f8}
+.tag{display:inline-block;border:1px solid #3d4a58;border-radius:999px;padding:4px 8px;font-size:10px;color:#c8d3de;margin:0 0 10px 5px}.tag.model{border-color:#65532e;color:#ffe1a0}
+footer{border-top:1px solid var(--line);padding:32px 0 44px;color:#778695;font-size:11px;line-height:1.65}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.four{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.dual{grid-template-columns:1fr}.swap{transform:rotate(90deg);text-align:center}}
+@media(max-width:520px){.four{grid-template-columns:1fr}.nav a:not(.brand):not(.push){display:none}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="index.html">GEMATRIA<span>2026</span></a><a class="push" href="index.html">בית</a><a href="calculator.html">מחשבון</a><a href="blog.html">Notes</a></div></header>
+
+<main>
+<section class="wrap hero">
+<div>
+  <div class="eyebrow">CORE THEORY · TESSERACT · TEVAH · 1024</div>
+  <h1>המבנה של<br><span>16 → 32 → 24 → 8</span></h1>
+  <p class="lead">זהו עמוד השדרה הגיאומטרי של המפעל: הטסרקט נותן וקטור קנוני של 16 קודקודים, 32 צלעות, 24 פאות ריבועיות ו־8 תאים קובייתיים. אותו וקטור נפגש ישירות עם 136, 1024 ו־888 — ועם התיבה 8×20×26 שמחזירה את עמית, מייק ורוב דרך שטחי הפאות שלה.</p>
+  <div class="formula">Q₄ : f = (16, 32, 24, 8)
+T₁₆ = 136
+32² = 1024
+24 × 37 = 888
+1024 − 136 = 888</div>
+</div>
+<div class="diagram">
+<svg viewBox="0 0 560 520" role="img" aria-label="Tesseract and dual structure">
+  <rect x="105" y="115" width="240" height="240" fill="none" stroke="#5fd3cf" stroke-width="3"/>
+  <rect x="190" y="55" width="240" height="240" fill="none" stroke="#63a9ff" stroke-width="3"/>
+  <path d="M105 115L190 55M345 115L430 55M345 355L430 295M105 355L190 295" stroke="#63a9ff" stroke-width="2"/>
+  <circle cx="105" cy="115" r="6" fill="#eef3f8"/><circle cx="345" cy="115" r="6" fill="#eef3f8"/><circle cx="345" cy="355" r="6" fill="#eef3f8"/><circle cx="105" cy="355" r="6" fill="#eef3f8"/>
+  <circle cx="190" cy="55" r="6" fill="#eef3f8"/><circle cx="430" cy="55" r="6" fill="#eef3f8"/><circle cx="430" cy="295" r="6" fill="#eef3f8"/><circle cx="190" cy="295" r="6" fill="#eef3f8"/>
+  <text x="280" y="410" text-anchor="middle" fill="#d8ad55" font-size="24" font-weight="900">16 · 32 · 24 · 8</text>
+  <text x="280" y="447" text-anchor="middle" fill="#5fd3cf" font-size="20">136 · 1024 · 888</text>
+</svg>
+</div>
+</section>
+
+<section class="section"><div class="wrap">
+<h2>ארבעת המספרים של הטסרקט</h2><p class="sub">במקום לחפש מספרים מבחוץ, אנחנו מתחילים מן ה־f-vector הקנוני של Q₄ ומאפשרים לכל רכיב לעבור את הפעולה הטבעית שכבר קיימת בקורפוס.</p>
+<div class="four">
+  <div class="card"><div class="n">16</div><h3>קודקודים</h3><p>16=2⁴. זהו גם ציר השם: Amit=16 ב־English Reduction, עמית=16 בגימטריה קטנה, ו־T₁₆=136.</p></div>
+  <div class="card"><div class="n">32</div><h3>צלעות</h3><p>לטסרקט 32 צלעות. ריבוע המספר הזה נותן 32²=1024, אחד משני ערכי־העל של השם.</p></div>
+  <div class="card"><div class="n">24</div><h3>פאות</h3><p>24 פאות ריבועיות. 24×37=888, ולכן 888 מתקבל ישירות כמספר הפאות כפול יחידת 37.</p></div>
+  <div class="card"><div class="n">8</div><h3>תאים</h3><p>8 תאים קובייתיים. 8×111=888; ובציר אחר 8³=512 ואז 2×512=1024.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>הטסרקט וה־16-cell הם מראה</h2><p class="sub">ה־16-cell הוא הדואלי של הטסרקט. לכן ספירות הממד מתהפכות: קודקודים ↔ תאים וצלעות ↔ פאות.</p>
+<div class="dual">
+ <div class="vector"><div class="v">(16, 32, 24, 8)</div><small>Tesseract · Q₄</small></div>
+ <div class="swap">↔</div>
+ <div class="vector"><div class="v">(8, 24, 32, 16)</div><small>16-cell · Q₄*</small></div>
+</div>
+<div class="formula" style="margin-top:14px">16 − 32 + 24 − 8 = 0
+8 − 24 + 32 − 16 = 0</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>16 × 16 · שתי שכבות של אותו מרחב</h2><p class="sub">כאן נמצא החיבור שחזר שוב ושוב בשיחות: 16 אינו רק מספר קודקודים. הוא גם גודל מטריצה, מספר מצבים בכל צד, והיחידה שממנה 136 ו־256 נבנים.</p>
+<div class="grid2">
+ <div class="box"><h3>מטריצה סימטרית 16×16</h3><p>למטריצה סימטרית 16×16 יש בדיוק 136 רכיבים בלתי־תלויים.</p><div class="math">16·17/2 = T₁₆ = 136</div></div>
+ <div class="box"><h3>Q₄ × Q₄ = Q₈</h3><p>זוג כתובות טסרקט יוצר מרחב של 16×16=256 קודקודים. זהו בדיוק מספר הקודקודים של Q₈.</p><div class="math">16 × 16 = 256 = 2⁸ = |V(Q₈)|</div></div>
+ <div class="box"><h3>Q₈ · 1024 צלעות</h3><p>ב־8-cube מספר הצלעות הוא 8·2⁷=1024. כלומר 1024 מופיע כאן ככמות קשרים בין 256 מצבים.</p><div class="math">|E(Q₈)| = 8·2⁷ = 1024</div></div>
+ <div class="box"><h3>Q₁₀ · 1024 קודקודים</h3><p>ב־10-cube אותו מספר מופיע כשדה המצבים עצמו.</p><div class="math">|V(Q₁₀)| = 2¹⁰ = 1024</div></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>1024 אינו נקודה אחת — הוא מופיע בכמה גיאומטריות</h2><p class="sub">אותו מספר מחליף תפקיד לפי המרחב: פעם כקודקודים, פעם כצלעות, פעם כריבוע 32×32 ופעם כנפח־סריג של 4 בחמישה ממדים.</p>
+<div class="grid2">
+ <div class="box"><h3>32×32</h3><div class="math">32² = 1024</div><p>קריאת “חלל” במודל: 32 כציר, והריבוע שלו כמרחב אפשרויות מלא.</p></div>
+ <div class="box"><h3>Binary 10-cube</h3><div class="math">Q₁₀ = {0,1}¹⁰
+|Q₁₀| = 1024</div><p>כל נקודה היא כתובת בת 10 ביטים.</p></div>
+ <div class="box"><h3>Q₈ adjacency</h3><div class="math">256 vertices
+1024 edges</div><p>שתי שכבות של 16×16 יוצרות 256 מצבים ו־1024 קשרי שכנות.</p></div>
+ <div class="box"><h3>4⁵ lattice volume</h3><div class="math">4⁵ = 1024 = 64×16</div><p>קריאה נוספת של 1024 ככמות תאי סריג ב־5 ממדים כאשר אורך הצד הוא 4.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>השם יושב בדיוק על הפער</h2>
+<div class="bridge">
+ <div class="big">1024 − 136 = 888</div>
+ <p>Amit Mike Rov נותן 1024 ב־Agrippa/Jewish, 136 ב־English Simple, ו־888 בעברית. בתוך השפה הגיאומטרית של הפרויקט: 32² מספק את המרחב, T₁₆ מספק את שכבת היחסים הסימטרית, וההפרש הוא 888.</p>
+</div>
+<div class="grid2" style="margin-top:12px">
+ <div class="box"><h3>16 → 136 → 816</h3><p>הסולם הפיגורטיבי של 16 חוזר בשם.</p><div class="math">T₁₆ = 136
+Tet₁₆ = C(18,3) = 816
+816 = 6×136</div></div>
+ <div class="box"><h3>24 → 888</h3><p>הטסרקט מספק 24 פאות, ויחידת 37 סוגרת את 888.</p><div class="math">24×37 = 888
+16×37 = 592
+8×37 = 296</div></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>התיבה · Tevah</h2><p class="sub">הטסרקט הוא שלד הממדים; התיבה היא הגוף שבו שלושת רכיבי השם הופכים לשטחי־פאות. שתי השפות נפגשות על 888 ו־1024.</p>
+<div class="grid2">
+ <div class="box"><h3>התיבה הפרימיטיבית</h3><div class="math">(4, 10, 13)</div><p>יחס היסוד. התיבה המלאה היא בדיוק הכפלה ב־2.</p></div>
+ <div class="box"><h3>התיבה המלאה</h3><div class="math">(8, 20, 26) = 2·(4,10,13)</div><p>שלושת הממדים של המודל.</p></div>
+ <div class="box"><h3>פאות → שם</h3><div class="math">8×20 = 160 = מייק
+8×26 = 208 = רוב
+20×26 = 520 = עמית
+Σ = 888</div><p>השם מופיע כשלושת שטחי־הפאות הבלתי־תלויים של התיבה.</p></div>
+ <div class="box"><h3>נפח וחצי־נפח</h3><div class="math">8×20×26 = 4160
+4160 / 2 = 2080
+2080 = 4×520 = 10×208 = 13×160</div><p>החצי־נפח מחזיר את ממדי התיבה הפרימיטיבית דרך שלושת רכיבי השם.</p></div>
+</div>
+<div class="formula" style="margin-top:12px">P(x)=(x−8)(x−20)(x−26)
+=x³−54x²+888x−4160</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>עקרון הכיווץ והחצייה</h2><div><span class="tag model">MODEL AXIOM</span></div>
+<p class="sub">במודל שלנו, הכיווץ אינו מוחק את היחסים — הוא שומר את היחס 4:10:13 ומחליף רק קנה־מידה. לכן התיבה המלאה והפרימיטיבית הן אותו מבנה בשתי דרגות.</p>
+<div class="timeline">
+ <div class="row"><b>Bₛ</b><div><strong>משפחת הסקייל:</strong> Bₛ=(4s,10s,13s), s&gt;0. היחסים נשמרים לכל s.</div></div>
+ <div class="row"><b>s=2</b><div><strong>תיבה מלאה:</strong> (8,20,26). שטחי הפאות העצמאיים מסתכמים ל־888.</div></div>
+ <div class="row"><b>s=1</b><div><strong>תיבה פרימיטיבית:</strong> (4,10,13). זו אותה צורה לאחר חציית כל ממד.</div></div>
+ <div class="row"><b>½</b><div><strong>החצייה היא הפעולה הדיסקרטית הראשונה:</strong> המודל קורא לה מעבר מן הגוף המלא אל הגרעין היחסי שלו. 4160 מתפצל ל־2080+2080, והיחסים הפנימיים נשארים זמינים לשחזור.</div></div>
+</div>
+</div></section>
+
+<section class="section"><div class="wrap">
+<h2>המפה המאוחדת</h2>
+<div class="formula">Q₄ = (16,32,24,8)
+│
+├─ 16 → T₁₆ = 136
+├─ 32 → 32² = 1024
+├─ 24 → 24×37 = 888
+└─ 8  → 8×111 = 888
+     
+1024 − 136 = 888
+
+Tevah = (8,20,26)
+├─ 8×20 = 160
+├─ 8×26 = 208
+└─ 20×26 = 520
+Σ = 888
+
+Q₄ × Q₄ = Q₈
+16×16 = 256 vertices
+Q₈ edges = 1024
+
+Q₁₀ vertices = 1024</div>
+<p class="sub" style="margin-top:14px">זהו כרגע לב המפעל: שם, טסרקט, דואל, היפר־קיוב, תיבה ופיגורציה אינם עמודים נפרדים — הם ממשקים שונים לאותה מערכת מספרית־גיאומטרית.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">Gematria2026 · Core Theory · Tesseract / Hypercube / Tevah / Name Structure.</div></footer>
+</body></html>
