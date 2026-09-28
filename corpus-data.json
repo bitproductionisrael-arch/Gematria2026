@@ -2844,6 +2844,12 @@
     },
     {
       "value": 512,
+      "label": "8³ / 8×8×8",
+      "method": "Exact arithmetic · 8×8×8 = 512 = 2^9 · links מקום Building=512",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 512,
       "label": "מקום",
       "method": "Prefix cumulative sum (site legacy: מספר האחור · תוספת / Achorayim) · 40+(40+100)+(40+100+6)+(40+100+6+40)=512",
       "classification": "FOUNDATION"
@@ -3786,6 +3792,12 @@
     },
     {
       "value": 1024,
+      "label": "2×8³ / 32²",
+      "method": "2×512 = 1024 = 32² · links ×2 מקום",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "2phi(1360)",
       "method": "2^10; 16x64; 1024-136=888",
       "classification": "BRIDGE"
@@ -4722,6 +4734,12 @@
         "ישו = 32 (Hebrew Reverse Ordinal)"
       ],
       "anti_spam": "Do not append this note to unrelated occurrences of 32."
+    }
+  },
+  "corrections": {
+    "eight_cube": {
+      "added_at": "2026-09-29",
+      "statement": "8×8×8 = 512, not 888. 888 may be written visually as 8|8|8, but not as the product 8×8×8."
     }
   }
 }
