@@ -758,6 +758,7 @@ function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(
 /* ---------- state ---------- */
 const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,queryMultiplierActive:false,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
+function clearMatrixComparisonSelections(){state.derivedSelections=[];state.repeatHitSelected=[];state.repeatPage=0}
 
 const SAVED_STORE_KEY='gematria2026.saved.v1';
 let SAVED_ITEMS=[],savedTab='match';
@@ -802,7 +803,7 @@ function editCanonicalCorpus(key){
 }
 function hideCanonicalCorpus(key){const src=CORPUS_SOURCE.find(x=>corpusEntryKey(x)===key);if(!src)return;CORPUS_OVERRIDES[key]={...(CORPUS_OVERRIDES[key]||{}),hidden:true};persistCorpusOverrides();applyCorpusOverrides();renderSavedManager();renderAll()}
 function resetCanonicalCorpus(key){delete CORPUS_OVERRIDES[key];persistCorpusOverrides();applyCorpusOverrides();renderSavedManager();renderAll()}
-function jumpSaved(id){const x=savedItem(id);if(!x)return;document.getElementById('q').value=x.text;document.getElementById('compareA').value=x.text;document.getElementById('repeatPhrase').value=x.text;closeSavedManager();renderAll()}
+function jumpSaved(id){const x=savedItem(id);if(!x)return;clearMatrixComparisonSelections();document.getElementById('q').value=x.text;document.getElementById('compareA').value=x.text;document.getElementById('repeatPhrase').value=x.text;closeSavedManager();renderAll()}
 function promoteSaved(id){const x=savedItem(id);if(!x)return;const name=prompt('שם הקורפוס',x.corpusName||'כללי');if(name===null)return;x.kind='corpus';x.corpusName=name.trim()||'כללי';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
 function moveSavedCorpus(id){const x=savedItem(id);if(!x)return;const name=prompt('העבר לקורפוס',x.corpusName||'כללי');if(name===null)return;x.corpusName=name.trim()||'כללי';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
 function demoteSaved(id){const x=savedItem(id);if(!x)return;x.kind='match';x.updatedAt=new Date().toISOString();persistSavedItems();renderSavedManager()}
@@ -1526,8 +1527,9 @@ async function saveSelectedPoster(){
 
 /* ---------- events ---------- */
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
-document.getElementById('q').addEventListener('input',()=>{document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
-document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
+document.getElementById('q').addEventListener('input',()=>{clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
+document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){clearMatrixComparisonSelections();document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
+document.getElementById('repeatPhrase').addEventListener('input',()=>{clearMatrixComparisonSelections();renderRepeat();renderResults()});
 document.getElementById('rabbatiBtn').addEventListener('click',insertRabbatiMark);
 document.getElementById('queryMultMinus').addEventListener('click',()=>{if(!state.queryMultiplierActive)return;state.queryMultiplier=Math.max(1,queryMultiplier()-1);if(state.queryMultiplier<=1){state.queryMultiplier=1;state.queryMultiplierActive=false}renderAll()});
 document.getElementById('queryMultValue').addEventListener('click',()=>{if(!state.queryMultiplierActive){state.queryMultiplierActive=true;state.queryMultiplier=2}else state.queryMultiplier=Math.min(999,queryMultiplier()+1);renderAll()});
