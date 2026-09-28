@@ -2070,6 +2070,12 @@
     },
     {
       "value": 128,
+      "label": "Q₄ vertex-cell product",
+      "method": "16 vertices ×8 cubic cells =128",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 128,
       "label": "π: H₂(808)→128",
       "method": "P₂^π(808)=23105; 23|105→128 = נקודה יהוה Latin Milui Reduced",
       "classification": "RESEARCH"
@@ -2199,6 +2205,24 @@
       "label": "omega",
       "method": "English AVGaD analogue",
       "classification": "canonical"
+    },
+    {
+      "value": 136,
+      "label": "Q₃/Q₇ coupling sum",
+      "method": "|V(Q₃)|+|V(Q₇)|=8+128=136",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "Q₄ 128+8 coupling",
+      "method": "16×8 +8 =128+8 =136 = T₁₆",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "T₁₆ / symmetric 16×16 degrees",
+      "method": "T₁₆=16·17/2=136 = independent entries of a symmetric 16×16 matrix",
+      "classification": "FOUNDATION"
     },
     {
       "value": 137,
@@ -3852,6 +3876,12 @@
     },
     {
       "value": 888,
+      "label": "Q₃/Q₇ host-minus-coupling",
+      "method": "8×128 − (8+128) =1024−136=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
       "label": "Q₄ cell-unit closure",
       "method": "8 cubic cells ×111 =888",
       "classification": "FOUNDATION"
@@ -4164,9 +4194,27 @@
     },
     {
       "value": 1024,
+      "label": "Q₁₀ = Q₃ □ Q₇",
+      "method": "Hypercube product · |V(Q₃)|×|V(Q₇)|=8×128=1024",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "Q₁₀ = Q₅ □ Q₅",
+      "method": "Hypercube product · |V(Q₅)|²=32²=1024",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "Q₁₀ vertices",
       "method": "Hypercube exact · |V(Q₁₀)|=2¹⁰=1024",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "Q₄ intrinsic product",
+      "method": "8 cubic cells × dimension 4 × 32 edges = 8×4×32 =1024",
+      "classification": "BRIDGE"
     },
     {
       "value": 1024,
@@ -5204,6 +5252,14 @@
       "products": "Q4×Q4≅Q8; 16×16=256 vertices; Q8 has 1024 edges; Q10 has 1024 vertices.",
       "closure": "32²=1024; 24×37=888; 1024−136=888.",
       "tevah": "primitive (4,10,13), full (8,20,26); pairwise products 160,208,520 sum 888; volume 4160; half-volume 2080."
+    },
+    "hypercube_teaching_chain": {
+      "added_at": "2026-09-29",
+      "q4": "Q₄ f-vector=(16,32,24,8). Explain each component before derived operators.",
+      "sixteen": "16→T₁₆=136; also symmetric 16×16 matrix independent entries=136; 16×8=128; 128+8=136.",
+      "q10": "Q₁₀≅Q₅□Q₅ gives 32×32=1024; Q₁₀≅Q₃□Q₇ gives 8×128=1024 and 8+128=136.",
+      "e8": "E₈=8·2⁷=1024, eighth term in hypercube edge-count sequence.",
+      "closure": "8×4×32=1024 uses Q₄ cell count, dimension, and edge count as an explicit model operator."
     }
   },
   "corrections": {
