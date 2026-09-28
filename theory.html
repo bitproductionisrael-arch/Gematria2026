@@ -23,7 +23,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(8,12,17,.9);backdrop-fil
 .pull{font-size:clamp(25px,4vw,44px);line-height:1.35;font-weight:950;letter-spacing:-.03em;margin:28px 0;color:#f5f7fa}.pull span{color:var(--gold)}
 footer{border-top:1px solid var(--line);padding:34px 0 50px;color:#7d8b99;font-size:11px;line-height:1.7}
 @media(max-width:760px){.split{grid-template-columns:1fr}.nav a:not(.brand):not(.push){display:none}.step{grid-template-columns:1fr}.step:before{width:32px;height:32px}.table{font-size:11px}}
-</style>
+.article-hero-figure{margin:30px 0 10px;border:1px solid var(--line);border-radius:18px;background:#f7fbff;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.22)}.article-hero-figure img{display:block;width:100%;height:auto}.article-hero-figure figcaption{padding:10px 14px;background:#0c141c;color:#9eacb9;font-size:11px;line-height:1.55}</style>
 </head>
 <body>
 <header><div class="wrap nav">
@@ -48,6 +48,11 @@ V = 16   vertices
 E = 32   edges
 F = 24   square faces
 C = 8    cubic cells</div>
+<figure class="article-hero-figure">
+  <img src="assets/tesseract-convergence.svg" alt="Tesseract geometry to number theory convergence: 16 vertices, 32 edges, 24 square faces and 8 cubic cells linked to 136, 1024 and 888">
+  <figcaption data-i18n="tesseract_infographic_caption">מפת־על של Q₄: ארבע הספירות הקנוניות של הטסרקט והמסלולים שלהן אל 136, 1024 ו־888.</figcaption>
+</figure>
+
 <div class="visual">
   <div class="visual-head"><h3 data-i18n="q4_visual_title">טסרקט מסתובב · 16 קודקודים / 32 צלעות</h3><span data-i18n="q4_visual_sub">הקרנה דו־ממדית של סיבוב 4D</span></div>
   <canvas id="tesseractCanvas" width="1000" height="620"></canvas>
@@ -345,6 +350,7 @@ Tevah = (8,20,26)
 </script>
 <script>
 window.PAGE_I18N={
+ tesseract_infographic_caption:{he:'מפת־על של Q₄: ארבע הספירות הקנוניות של הטסרקט והמסלולים שלהן אל 136, 1024 ו־888.',en:'Q₄ overview: the four canonical tesseract counts and their routes into 136, 1024 and 888.'},
  nav_home:{he:'בית',en:'Home'},nav_articles:{he:'מאמרים',en:'Articles'},nav_calc:{he:'מחשבון',en:'Calculator'},
  hero_title:{he:'איך <span>16, 32, 24, 8</span> בונים את 136, 1024 ו־888',en:'How <span>16, 32, 24, 8</span> Build 136, 1024 and 888'},
  hero_lead:{he:'נקודת המוצא היא אובייקט גאומטרי סטנדרטי לחלוטין: הטסרקט, הקובייה הארבע־ממדית Q₄. לטסרקט יש 16 קודקודים, 32 צלעות, 24 פאות ריבועיות ו־8 תאים קובייתיים. המודל מתחיל מן הספירות הגאומטריות האלה, ואז מפעיל עליהן אופרטורים מוגדרים. כך נבנית השרשרת 16→136, 32→1024, 24→888, 8→512/888/1024.',en:'The starting point is a standard geometric object: the tesseract, the four-dimensional cube Q₄. It has 16 vertices, 32 edges, 24 square faces and 8 cubic cells. The model begins with these canonical counts and then applies explicitly defined operators, producing the chains 16→136, 32→1024, 24→888 and 8→512/888/1024.'},
