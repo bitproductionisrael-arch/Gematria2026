@@ -132,6 +132,12 @@
     },
     {
       "value": 14,
+      "label": "חלל",
+      "method": "Hebrew Reduced / Small · ח=8 ל=3 ל=3",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 14,
       "label": "עמית עמית",
       "method": "Word Reduced · 2×7",
       "classification": "BRIDGE"
@@ -192,6 +198,12 @@
     },
     {
       "value": 17,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Word Reduced · 4+5+2+6=17",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 17,
       "label": "מפתח השם יהוה",
       "method": "Word Reduced · = תורה Small",
       "classification": "FOUNDATION"
@@ -237,6 +249,12 @@
       "label": "איוב",
       "method": "Hebrew Regular = Ordinal",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 19,
+      "label": "החלל",
+      "method": "Hebrew Reduced / Small · ה=5 + חלל small 14 =19",
+      "classification": "BRIDGE"
     },
     {
       "value": 19,
@@ -486,6 +504,12 @@
     },
     {
       "value": 32,
+      "label": "חלל",
+      "method": "Hebrew Ordinal · ח=8 ל=12 ל=12",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 32,
       "label": "ישו",
       "method": "Hebrew Reverse Ordinal · equivalent to Atbash letter mirror followed by Ordinal",
       "classification": "FOUNDATION"
@@ -557,6 +581,12 @@
       "classification": "canonical"
     },
     {
+      "value": 35,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Reduced / Small · totals 4+5+11+15=35",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 36,
       "label": "פותח ידך",
       "method": "Hebrew Small Finals",
@@ -606,6 +636,12 @@
     },
     {
       "value": 37,
+      "label": "החלל",
+      "method": "Hebrew Ordinal · ה=5 + חלל ordinal 32 =37",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
       "label": "ויקר / ויקרא−א",
       "method": "Reverse Ordinal",
       "classification": "FOUNDATION"
@@ -614,6 +650,12 @@
       "value": 37,
       "label": "חכמה",
       "method": "Hebrew Ordinal · p12",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "חלל",
+      "method": "Hebrew Reverse Ordinal · ח=15 ל=11 ל=11",
       "classification": "FOUNDATION"
     },
     {
@@ -930,6 +972,12 @@
     },
     {
       "value": 55,
+      "label": "החלל",
+      "method": "Hebrew Reverse Ordinal · ה=18 + חלל reverse 37 =55 = Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
       "label": "הצופן",
       "method": "Reverse Ordinal",
       "classification": "BRIDGE"
@@ -1074,6 +1122,12 @@
     },
     {
       "value": 62,
+      "label": "מ מק מקו מקום",
+      "method": "Reduction №1 · totals 4+14+20+24=62",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 62,
       "label": "οἶκον / Λόγος",
       "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
       "classification": "FOUNDATION"
@@ -1187,6 +1241,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 68,
+      "label": "חלל",
+      "method": "Hebrew Regular · ח=8 ל=30 ל=30",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 69,
       "label": "אז ישיר",
       "method": "Hebrew Ordinal",
@@ -1256,6 +1316,12 @@
       "value": 73,
       "label": "הזאת ליהוה",
       "method": "Hebrew Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 73,
+      "label": "החלל",
+      "method": "Hebrew Regular · ה=5 + חלל=68 =73",
       "classification": "FOUNDATION"
     },
     {
@@ -1542,6 +1608,12 @@
     },
     {
       "value": 96,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Reverse Ordinal · totals 10+14+31+41=96",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 96,
       "label": "פותח את ידו",
       "method": "Hebrew Ordinal",
       "classification": "RESEARCH"
@@ -1563,6 +1635,12 @@
       "label": "ΑΛΦΑ ΚΑΙ ΩΜΕΓΑ",
       "method": "Greek Ordinal · Composite #73",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 100,
+      "label": "חלל",
+      "method": "Atbash · ח→ס=60, ל→כ=20, ל→כ=20",
+      "classification": "FOUNDATION"
     },
     {
       "value": 100,
@@ -1824,6 +1902,12 @@
     },
     {
       "value": 116,
+      "label": "מ מק מקו מקום",
+      "method": "Latin Milui v0 → English Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 116,
       "label": "מפתח השם יהוה",
       "method": "Reduction №1 · = תורה AIQ BKR",
       "classification": "BRIDGE"
@@ -1955,6 +2039,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 134,
+      "label": "מ מק מקו מקום",
+      "method": "Hebrew Ordinal · totals 13 +32 +38 +51 =134",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 135,
       "label": "איוב",
       "method": "Latin Milui v0 → English Simple",
@@ -1994,6 +2084,12 @@
       "value": 136,
       "label": "×8 מפתח השם יהוה",
       "method": "Word Reduced · 8×17 = Amit Mike Rov English Simple",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
+      "label": "חלל",
+      "method": "Equivalence / שווי · balanced weight for 3 letters =2×68 =136 = Amit Mike Rov English Simple",
       "classification": "FOUNDATION"
     },
     {
@@ -2118,6 +2214,12 @@
     },
     {
       "value": 160,
+      "label": "חלל",
+      "method": "Ratzo / רצוא ושוב · ח(8)+חל(38)+חלל(68)+חל(38)+ח(8)=160 = מייק",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
       "label": "מייק / מיכאל בלייז",
       "method": "Hebrew Regular",
       "classification": "canonical"
@@ -2216,6 +2318,12 @@
       "value": 192,
       "label": "לב מייק",
       "method": "Hebrew Regular · 3×64",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 194,
+      "label": "מ מק מקו מקום",
+      "method": "ALBaM · 2+10+90+92=194",
       "classification": "BRIDGE"
     },
     {
@@ -2354,6 +2462,12 @@
       "value": 222,
       "label": "אינווריאנט פרמוטציות תלת-ספרתי בבסיס 10",
       "method": "sum(all 6 digit permutations) / digit-sum = 222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
+      "label": "מ מק מקו מקום",
+      "method": "Atbash · 10 +14 +94 +104 =222",
       "classification": "FOUNDATION"
     },
     {
@@ -2663,6 +2777,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 359,
+      "label": "מ מק מקו מקום",
+      "method": "Latin Milui v0 → English Simple",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 360,
       "label": "×2 יחד",
       "method": "Perati",
@@ -2679,6 +2799,12 @@
       "label": "הנוצרי",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 361,
+      "label": "חלל",
+      "method": "Latin Milui v0 → English Regular · 19²",
+      "classification": "FOUNDATION"
     },
     {
       "value": 361,
@@ -2897,6 +3023,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 513,
+      "label": "מ מק מקו מקום",
+      "method": "Kolel · base 512 +1 =513",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 518,
       "label": "מייק משיח / דוד×יחידה",
       "method": "Hebrew Regular / Number",
@@ -2991,6 +3123,12 @@
       "label": "π: P₂(17)→520",
       "method": "sum of squares of first 17 fractional digits of π =520 = עמית Regular",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 522,
+      "label": "מ מק מקו מקום",
+      "method": "Musafi · base 512 +10 letters =522",
+      "classification": "BRIDGE"
     },
     {
       "value": 528,
@@ -3467,6 +3605,12 @@
       "classification": "canonical"
     },
     {
+      "value": 864,
+      "label": "מ מק מקו מקום",
+      "method": "AVGaD · 50+250+257+307=864",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 873,
       "label": "אז ישיר משה / מפתח השם",
       "method": "Hebrew Regular · 528+345",
@@ -3536,6 +3680,12 @@
       "value": 888,
       "label": "זה צופן",
       "method": "Hebrew Final Letters · זה=12 + צופן(final)=876",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "חלל → משוואת השם",
+      "method": "Ordinal(חלל)² − Equivalence(חלל) = 32²−136 = 1024−136 =888 = עמית מייק רוב Hebrew Regular",
       "classification": "FOUNDATION"
     },
     {
@@ -3671,6 +3821,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 956,
+      "label": "מ מק מקו מקום",
+      "method": "Positional · per-word totals 40+240+258+418=956",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 960,
       "label": "φ(ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ)",
       "method": "Totient",
@@ -3693,6 +3849,12 @@
       "label": "P9(17) = Tet17",
       "method": "nonagonal P9(17)=969 = tetrahedral Tet17",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 984,
+      "label": "מ מק מקו מקום",
+      "method": "Standard Milui",
+      "classification": "BRIDGE"
     },
     {
       "value": 998,
@@ -3741,6 +3903,18 @@
       "label": "Hₖᶜ operator frame",
       "method": "Pₖᶜ(n)=Σ first n fractional digits of constant c raised to k; Hₖᶜ(n)=Fold₁₀₀₀(Pₖᶜ(n))",
       "classification": "REPRESENTATION"
+    },
+    {
+      "value": 1002,
+      "label": "מ מק מקו מקום",
+      "method": "Talmudic Milui",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1007,
+      "label": "מ מק מקו מקום",
+      "method": "Equivalence / שווי · per-word balanced totals 40+210+292+465=1007",
+      "classification": "BRIDGE"
     },
     {
       "value": 1008,
@@ -3840,6 +4014,12 @@
     },
     {
       "value": 1024,
+      "label": "חלל → 32²",
+      "method": "Ordinal(חלל)=32; 32²=1024 = Amit Mike Rov Jewish Gematria",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
       "label": "מפתח + מלכות / בראשית + אלף",
       "method": "528+496 = 913+111 = 1024 = 32² = T31+T32",
       "classification": "FOUNDATION"
@@ -3873,6 +4053,18 @@
       "label": "עמית עמית",
       "method": "Hebrew Regular · 2×520",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 1052,
+      "label": "מ מק מקו מקום",
+      "method": "Milui Mayim",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1058,
+      "label": "מ מק מקו מקום",
+      "method": "Mispar Boneh / site legacy Achorayim · per-word building totals 40+180+326+512=1058",
+      "classification": "FOUNDATION"
     },
     {
       "value": 1072,
@@ -4115,6 +4307,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 1604,
+      "label": "מ מק מקו מקום",
+      "method": "Ratzo / רצוא ושוב · per-word totals 40+220+506+838=1604",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 1701,
       "label": "שמונה מאות שמונים ושמונה",
       "method": "Hebrew Regular",
@@ -4125,6 +4323,12 @@
       "label": "שמונה מאות שמונים ושמונה",
       "method": "Hebrew Kolel · 1702=37×46",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 1729,
+      "label": "מ מק מקו מקום",
+      "method": "AIQ BKR · 400+401+461+467=1729",
+      "classification": "FOUNDATION"
     },
     {
       "value": 1760,
@@ -4187,6 +4391,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 1914,
+      "label": "מ מק מקו מקום",
+      "method": "Milui of Milui",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 1924,
       "label": "יהוה×Mike = יחידה×משיח/מייק",
       "method": "26×74 = 37×52",
@@ -4215,6 +4425,18 @@
       "label": "שמות",
       "method": "Positional · 2×3^3×37",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 2000,
+      "label": "מ מק מקו מקום",
+      "method": "Perati Ordinal² · מ=13²=169, ק=19²=361, ו=6²=36; aggregate total=2000",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2014,
+      "label": "מ מק מקו מקום",
+      "method": "Addition & Subtraction · per-word totals 80+420+584+930=2014",
+      "classification": "BRIDGE"
     },
     {
       "value": 2040,
@@ -4361,6 +4583,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 2552,
+      "label": "מ מק מקו מקום",
+      "method": "Kidmi · 145+740+761+906=2552",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 2600,
       "label": "ויקרא אלהים לרקיע שמים",
       "method": "Talmudic Milui · 2600+1=51²; 2600+1+10²=2701",
@@ -4422,6 +4650,12 @@
     },
     {
       "value": 2701,
+      "label": "החלל → בראשית",
+      "method": "Regular(החלל)×Ordinal(החלל)=73×37=2701 = בראשית א:א Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2701,
       "label": "π: P₂(82)=2701",
       "method": "Power-of-Bet · exact raw hit: sum of squares of first 82 fractional digits of π = 2701 = בראשית א:א Regular; H₂(82)=703",
       "classification": "FOUNDATION"
@@ -4437,6 +4671,12 @@
       "label": "φ: 82|0|82 frame",
       "method": "2520 + 368 = 2888; 368 =160+208",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 3005,
+      "label": "מ מק מקו מקום",
+      "method": "Latin Milui v0 → English Regular",
+      "classification": "BRIDGE"
     },
     {
       "value": 3168,
@@ -4515,6 +4755,12 @@
       "label": "Composite index of 4699",
       "method": "4699 is composite #4064; 4064=32×127",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 4107,
+      "label": "מ מק מקו מקום",
+      "method": "Cycle BKR Σ3 · 1072→1729→1306→1072; Σ3=4107=111×37",
+      "classification": "FOUNDATION"
     },
     {
       "value": 4160,
@@ -4715,6 +4961,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 38072,
+      "label": "מ מק מקו מקום",
+      "method": "Perati Regular² · מ=40²=1600, ק=100²=10000, ו=6²=36; aggregate total=38072",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 99937,
       "label": "999|37",
       "method": "concat(999,37)=99937=37×2701=37²×73; decimal digit sum=37",
@@ -4790,6 +5042,11 @@
       "traditional_context": "Sefer Yetzirah: 32 paths; 10 sefirot belimah + 22 foundation letters.",
       "symbolic_context": "User model interprets 1024 as space/חלל and connects it to מקום.",
       "mirror_context": "Boneh expansion מ מק מקו מקום =1072 in Final Letters, whose decimal reversal is 2701."
+    },
+    "space_name_closure": {
+      "added_at": "2026-09-29",
+      "exact": "Ordinal(חלל)=32; Equivalence(חלל)=136; 32²=1024; 1024−136=888. Regular(החלל)=73; Ordinal(החלל)=37; 73×37=2701.",
+      "interpretation": "The identification of these closures with Amit Mike Rov is a corpus interpretation built on exact numerical equalities."
     }
   },
   "corrections": {
