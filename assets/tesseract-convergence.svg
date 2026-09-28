@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Tesseract: Geometry to Number Theory Convergence</title>
+<desc id="desc">A 4D hypercube infographic linking 16 vertices, 32 edges, 24 square faces and 8 cubic cells to 136, 1024, 888 and related hypercube closures.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset="1" stop-color="#eef5fb"/></linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#77e8ff"/><stop offset="1" stop-color="#14a4dd"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#0b213a" flood-opacity=".16"/></filter>
+  <style>
+    .t{font-family:Inter,Arial,sans-serif;fill:#081a35}.muted{fill:#456178}.blue{fill:#086ab8}.line{stroke:#0c78c8;stroke-width:3;fill:none}.card{fill:#fff;stroke:#b8d5eb;stroke-width:2}.small{font-size:22px}.label{font-size:34px;font-weight:800}.eq{font-size:38px;font-weight:800}.sub{font-size:20px;fill:#41566b}.node{fill:#0876c7}.outer{stroke:#172435;stroke-width:10;fill:none;stroke-linecap:round;stroke-linejoin:round}.inner{stroke:#1ca9df;stroke-width:9;fill:#54d6ff;fill-opacity:.11;stroke-linecap:round;stroke-linejoin:round}.conn{stroke:#e56468;stroke-width:5;opacity:.85}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<text class="t" x="100" y="75" font-size="58" font-weight="900">Tesseract: Geometry to Number Theory Convergence</text>
+<line x1="475" y1="102" x2="1125" y2="102" stroke="#7ac2ea" stroke-width="3"/>
+<text class="t" x="535" y="165" font-size="70" font-weight="900">The <tspan fill="#0876c7">4D</tspan> Hypercube</text>
+<text class="t muted" x="505" y="210" font-size="27">A tesseract is the four-dimensional analogue of a cube.</text>
+
+<g transform="translate(45 225)">
+  <rect class="card" x="0" y="0" width="300" height="180" rx="18" fill-opacity=".92"/>
+  <text class="t blue" x="25" y="45" font-size="31" font-weight="900">How it connects</text>
+  <text class="t" x="25" y="80" font-size="22">
+    <tspan x="25" dy="0">Each vertex of the outer cube</tspan>
+    <tspan x="25" dy="29">is connected to a corresponding</tspan>
+    <tspan x="25" dy="29">vertex of the inner cube.</tspan>
+  </text>
+</g>
+
+<!-- Tesseract projection -->
+<g filter="url(#shadow)">
+  <path class="outer" d="M210 405 L650 405 L650 790 L210 790 Z"/>
+  <path class="outer" d="M360 315 L800 315 L800 700 L360 700 Z"/>
+  <path class="conn" d="M210 405 L360 315 M650 405 L800 315 M650 790 L800 700 M210 790 L360 700"/>
+  <path class="inner" d="M325 500 L555 500 L555 705 L325 705 Z"/>
+  <path class="inner" d="M410 450 L640 450 L640 655 L410 655 Z"/>
+  <path class="inner" d="M325 500 L410 450 M555 500 L640 450 M555 705 L640 655 M325 705 L410 655"/>
+  <g fill="#172435">
+    <circle cx="210" cy="405" r="12"/><circle cx="650" cy="405" r="12"/><circle cx="650" cy="790" r="12"/><circle cx="210" cy="790" r="12"/>
+    <circle cx="360" cy="315" r="12"/><circle cx="800" cy="315" r="12"/><circle cx="800" cy="700" r="12"/><circle cx="360" cy="700" r="12"/>
+  </g>
+  <g fill="#16aadd">
+    <circle cx="325" cy="500" r="11"/><circle cx="555" cy="500" r="11"/><circle cx="555" cy="705" r="11"/><circle cx="325" cy="705" r="11"/>
+    <circle cx="410" cy="450" r="11"/><circle cx="640" cy="450" r="11"/><circle cx="640" cy="655" r="11"/><circle cx="410" cy="655" r="11"/>
+  </g>
+</g>
+
+<g>
+  <rect x="740" y="245" width="125" height="44" rx="12" fill="#dfeffc"/>
+  <text class="t blue" x="755" y="277" font-size="24" font-weight="800">It has:</text>
+
+  <circle class="node" cx="770" cy="335" r="8"/><text class="t label" x="790" y="347">16 <tspan font-size="26" font-weight="500">vertices</tspan></text>
+  <circle class="node" cx="770" cy="425" r="8"/><text class="t label" x="790" y="437">32 <tspan font-size="26" font-weight="500">edges</tspan></text>
+  <circle class="node" cx="770" cy="535" r="8"/><text class="t label" x="790" y="527">24 <tspan font-size="26" font-weight="500">square</tspan><tspan x="846" dy="30" font-size="26" font-weight="500">faces</tspan></text>
+  <circle class="node" cx="770" cy="650" r="8"/><text class="t label" x="790" y="662">8 <tspan font-size="26" font-weight="500">cubic cells</tspan></text>
+
+  <path class="line" d="M965 335 H1010 L1065 275 H1130"/><path class="line" d="M965 425 H1015 L1065 385 H1130"/>
+  <path class="line" d="M965 535 H1015 L1065 495 H1130"/><path class="line" d="M965 650 H1010 L1065 605 H1130"/>
+  <path class="line" d="M970 650 H1015 L1065 715 H1130"/><path class="line" d="M970 650 H1015 L1065 795 H1130"/>
+</g>
+
+<g>
+  <rect class="card" x="1130" y="225" width="420" height="100" rx="15"/>
+  <circle class="node" cx="1150" cy="275" r="9"/><text class="t eq" x="1175" y="286">16 → T<tspan baseline-shift="sub" font-size="22">16</tspan> = 136</text>
+  <text class="t sub" x="1305" y="315">(16th Triangular Number)</text>
+
+  <rect class="card" x="1130" y="340" width="420" height="100" rx="15"/>
+  <circle class="node" cx="1150" cy="390" r="9"/><text class="t eq" x="1175" y="401">32 → 32² = 1024</text>
+  <text class="t sub" x="1320" y="430">(Square of Edges)</text>
+
+  <rect class="card" x="1130" y="455" width="420" height="100" rx="15"/>
+  <circle class="node" cx="1150" cy="505" r="9"/><text class="t eq" x="1175" y="516">24 → 24×37 = 888</text>
+  <text class="t sub" x="1265" y="545">(Faces × 37)</text>
+
+  <rect class="card" x="1130" y="570" width="420" height="105" rx="15"/>
+  <circle class="node" cx="1150" cy="620" r="9"/><text class="t" x="1175" y="632" font-size="33" font-weight="800">8 → 8³ = 512 → ×2 = 1024</text>
+  <text class="t sub" x="1240" y="662">(Cube of Cells → Doubling)</text>
+
+  <rect class="card" x="1130" y="690" width="420" height="72" rx="15"/>
+  <circle class="node" cx="1150" cy="726" r="9"/><text class="t eq" x="1175" y="738">E<tspan baseline-shift="sub" font-size="22">8</tspan> = 1024</text>
+
+  <rect class="card" x="1130" y="775" width="420" height="82" rx="15"/>
+  <circle class="node" cx="1150" cy="816" r="9"/><text class="t eq" x="1175" y="828">8×4×32 = 1024</text>
+  <text class="t sub" x="1190" y="853">(Cells × Dimension × Edges)</text>
+</g>
+</svg>
