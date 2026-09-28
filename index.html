@@ -411,6 +411,7 @@ function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLette
 const GR_NUMERIC_ORDER=Array.from('αβγδεϝζηθικλμνξοπϙρστυφχψωϡ');
 const GR_MODERN_ORDER=Array.from('αβγδεζηθικλμνξοπρστυφχψω');
 const GR_VAL={},GR_VAL_RED={},GR_ORD={},GR_ORD_RED={},GR_REV_ORD={},GR_ZERO_STEP={},GR_KIDMI={},GR_PERATI={},GR_PERATI_ORD={};
+const GR_ORD_ANCIENT={},GR_ORD_ANCIENT_RED={},GR_REV_ORD_ANCIENT={},GR_PERATI_ORD_ANCIENT={};
 const GR_ATBASH={},GR_ATBASH_LETTER={},GR_HALFSHIFT={},GR_HALFSHIFT_LETTER={},GR_AVGAD={},GR_AVGAD_LETTER={};
 function grPut(map,L,v){map[L]=v;map[L.toUpperCase()]=v}
 function grPutSub(map,L,v){map[L]=v;map[L.toUpperCase()]=v.toUpperCase()}
@@ -418,6 +419,16 @@ GR_NUMERIC_ORDER.forEach((L,i)=>{const v=tiered(i);grPut(GR_VAL,L,v);grPut(GR_VA
 // Traditional numeric aliases: stigma/digamma = 6, both koppa glyphs = 90; final sigma = sigma.
 for(const [alias,base] of [['ϛ','ϝ'],['ϟ','ϙ'],['ς','σ']]){
   for(const map of [GR_VAL,GR_VAL_RED,GR_ZERO_STEP,GR_PERATI]){if(base in map)grPut(map,alias,map[base])}
+}
+// Ancient 27-sign positional order: 24 standard letters + digamma/stigma, koppa, sampi.
+// This is a positional research method derived from the historical alphabetic numeral sequence,
+// distinct from ordinary isopsephy values and from the modern 24-letter ordinal.
+GR_NUMERIC_ORDER.forEach((L,i)=>{
+  const ord=i+1,rev=27-i;
+  grPut(GR_ORD_ANCIENT,L,ord);grPut(GR_ORD_ANCIENT_RED,L,dr(ord));grPut(GR_REV_ORD_ANCIENT,L,rev);grPut(GR_PERATI_ORD_ANCIENT,L,ord**2);
+});
+for(const [alias,base] of [['ϛ','ϝ'],['ϟ','ϙ'],['ς','σ']]){
+  for(const map of [GR_ORD_ANCIENT,GR_ORD_ANCIENT_RED,GR_REV_ORD_ANCIENT,GR_PERATI_ORD_ANCIENT]){if(base in map)grPut(map,alias,map[base])}
 }
 let _grKidmi=0;
 GR_MODERN_ORDER.forEach((L,i)=>{
@@ -506,7 +517,8 @@ const METHODS={
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},
   {key:'reduced',cat:'base',name:'Greek Isopsephy Reduced / Small',map:GR_VAL_RED},
   {key:'wordReduced',cat:'base',name:'Greek Word Reduced',map:GR_VAL,fold:'word',research:true},
-  {key:'ordinal',cat:'base',name:'Greek Ordinal (24-letter)',map:GR_ORD},
+  {key:'ordinalAncient27',cat:'base',name:'Greek Ordinal — Ancient 27-sign / עתיקה 27 סימנים',map:GR_ORD_ANCIENT,research:true},
+  {key:'ordinal',cat:'base',name:'Greek Ordinal — Modern 24-letter / מודרנית 24 אותיות',map:GR_ORD},
   {key:'ordinalReduced',cat:'base',name:'Greek Ordinal Reduced',map:GR_ORD_RED,research:true},
   {key:'reverseOrdinal',cat:'base',name:'Greek Reverse Ordinal',map:GR_REV_ORD,research:true},
   {key:'zeroStep',cat:'base',name:'Greek Reduction №1 / One-step Zero',map:GR_ZERO_STEP,research:true},
@@ -833,7 +845,7 @@ function magnetQueryPrefix(r){
 }
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
-function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinal']:['pythagorean','ordinal','sumerian','agrippa','agrippaDeltaSimple'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
+function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinalAncient27','ordinal']:['pythagorean','ordinal','sumerian','agrippa','agrippaDeltaSimple'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
 function ensureSelection(){const cats=categories();if(!cats.includes(state.category))state.category=cats[0]||'base';const inCat=current.results.filter(r=>r.method.cat===state.category);if(!current.results.some(r=>r.method.key===state.methodKey)||!inCat.some(r=>r.method.key===state.methodKey))state.methodKey=(inCat[0]||current.results[0])?.method.key||null;const valid=new Set(current.results.map(r=>r.method.key));state.selectedMethods=(state.selectedMethods||[]).filter(k=>valid.has(k));if(!state.selectionTouched){state.selectedMethods=defaultBaseKeys(current.script)}if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];if(!current.results.some(r=>r.method.key===state.numKey))state.numKey=state.methodKey}
 
 /* ---------- render helpers ---------- */
@@ -1591,7 +1603,10 @@ console.assert(T('ΑΛ','el','isopsephy')===31,'Greek AL isopsephy 31');
 console.assert(T('ΑΛΦ','el','isopsephy')===531,'Greek ALPH isopsephy 531');
 console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','isopsephy')===1381,'Greek Alpha Omega isopsephy 1381');
 console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','reduced')===31,'Greek Alpha Omega reduced 31');
-console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','ordinal')===79,'Greek Alpha Omega ordinal 79');
+console.assert(T('ΑΛΦΑ','el','ordinalAncient27')===37,'Greek Alpha ancient 27-sign ordinal 37');
+console.assert(T('ΩΜΕΓΑ','el','ordinalAncient27')===48,'Greek Omega ancient 27-sign ordinal 48');
+console.assert(T('ΑΛΦΑ','el','ordinal')===34,'Greek Alpha modern 24-letter ordinal 34');
+console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','ordinal')===79,'Greek Alpha Omega modern ordinal 79');
 console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','ordinalReduced')===25,'Greek Alpha Omega ordinal reduced 25');
 console.assert(T('ΙΗΣΟΥΣ','el','isopsephy')===888,'Greek Iesous isopsephy 888');
 console.assert(T('ΙΗΣΟΥΣ','el','reduced')===24,'Greek Iesous reduced 24');
