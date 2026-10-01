@@ -678,7 +678,7 @@ const METHOD_EN_HISTORY={
  reverseOrdinal:'A derived operator equivalent to taking the ordinal value after the Atbash mirror: position → 23−position.',
  zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
  redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
- harmonicHalf:'Site-developed research operator (2026). Starts from the D1 / Reduction №1 total and repeatedly halves the whole result. The square view is a geometric scaling model, not a traditional gematria cipher.',
+ harmonicHalf:'Site-developed research operator (2026). Starts from the D1 / Reduction №1 total and repeatedly halves the whole result only while each next value remains a positive integer; it stops before fractions. The square view follows the accepted generations only.',
  achorayim:'Naming conflict under review: the code computes cumulative prefix sums. The older Achorayim label does not describe this algorithm precisely.',
  positional:'Naming conflict under review. The algorithm is unambiguous: multiply each letter value by its position in the word.'
 };
@@ -780,7 +780,12 @@ function calculateReductionResearch(text,m,mode){
  const L=reductionLadderData(text,'he',HE_VAL);
  if(mode==='ladder')return {method:m,total:L.stageTotals[L.stageTotals.length-1],words:L.words,redLadder:true,ladder:L.stageTotals};
  const h0=L.stageTotals[Math.min(1,L.stageTotals.length-1)]||0;
- const harmonic=Array.from({length:7},(_,k)=>h0/(2**k));
+ const harmonic=[h0];
+ while(harmonic.length<32){
+  const next=harmonic[harmonic.length-1]/2;
+  if(!Number.isInteger(next)||next<=0)break;
+  harmonic.push(next);
+ }
  return {method:m,total:harmonic[1]??h0,words:L.words,harmonicHalf:true,ladder:L.stageTotals,h0,harmonic};
 }
 function calculate(text,script,m){
@@ -1179,7 +1184,7 @@ function buildingMilestoneText(w){
 }
 function wordDescription(r,idx){
  if(r.redLadder){const w=r.words[idx];if(!w)return'אין פירוק';const paths=w.toks.map((t,i)=>t.label+': '+w.stages.map(st=>fmt(st[i])).join(' → ')).join('\n');return w.raw+'\n'+paths+'\n'+r.ladder.map((v,k)=>'D'+k+' total = '+fmt(v)).join('\n')+'\nStable: D'+(r.ladder.length-1)}
- if(r.harmonicHalf){const w=r.words[idx];const d1=w?w.stages[Math.min(1,w.stages.length-1)]:[];return (w?w.raw+'\nD1: ['+d1.map(fmt).join(', ')+'] = '+fmt(sum(d1))+'\n':'')+r.harmonic.map((v,k)=>'H'+k+' = '+exactHalfFraction(r.h0,k)+' = '+fmt(v)).join('\n')+'\nSquare: area A0/2^k · side ratio 1/√(2^k) · string analogy: L/2 → frequency ×2'}
+ if(r.harmonicHalf){const w=r.words[idx];const d1=w?w.stages[Math.min(1,w.stages.length-1)]:[];return (w?w.raw+'\nD1: ['+d1.map(fmt).join(', ')+'] = '+fmt(sum(d1))+'\n':'')+r.harmonic.map((v,k)=>'H'+k+' = '+fmt(v)).join('\n')+'\nSTOP before fractions · only positive integers are accepted\nSquare: generations follow accepted integer halvings only · string analogy: L/2 → frequency ×2'}
  if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
 if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
  const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;const v=t.multiplier>1?`${fmt(t.rawValue)}×${fmt(t.multiplier)}=${fmt(w.baseVals[i])}`:fmt(w.baseVals[i]);return `${lab}(${v})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(isBuildingMethod(m)){out+=`\nבניין / Building: ${buildingAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;const ms=buildingMilestoneText(w);if(ms)out+=`\n${ms}`}else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
@@ -1202,10 +1207,10 @@ function reductionResearchHtml(r){
  return '<div class="research-operator-box"><b>סולם צמצום · Reduction Ladder</b><div class="tiny">D0 הוא הערך ההכרחי. בכל שלב מקצרים כל ערך עשרוני כשאפשר, עד קיבוע.</div>'+global+'</div>'+perWord;
 }
 function harmonicResearchHtml(r){
- const levels=r.harmonic.map((v,k)=>'<div class="research-stage"><b>H'+k+'</b><code>'+exactHalfFraction(r.h0,k)+' = '+fmt(v)+'</code></div>').join('');
+ const levels=r.harmonic.map((v,k)=>'<div class="research-stage"><b>H'+k+'</b><code>'+fmt(v)+'</code></div>').join('');
  let squares='';
- for(let k=0;k<=4;k++){const n=2**k,side=Math.max(7,32/Math.sqrt(n)),cells=Array.from({length:n},()=>'<span class="square-cell" style="width:'+side.toFixed(1)+'px;height:'+side.toFixed(1)+'px"></span>').join('');squares+='<div class="square-row"><div class="square-label">k='+k+' · ×'+n+' · A/'+n+'</div><div class="square-cells">'+cells+'</div></div>'}
- return '<div class="research-operator-box"><b>חצי הרמוני · Harmonic Half</b><div class="tiny">H0 = D1 total. זה אופרטור של חציית התוצאה השלמה, נפרד מסולם הצמצום.</div>'+levels+'<div class="square-halving"><b>חלוקת ריבוע · Square Halving</b><div class="tiny">דור k: מספר צאצאים 2^k · שטח כל אחד A0/2^k · יחס צלע 1/√(2^k). אלה ריבועים מוקטנים שווי־שטח, לא חיתוך ישר יחיד.</div>'+squares+'<div class="tiny">אנלוגיית מיתר בלבד: חצי אורך → פי 2 תדירות.</div></div></div>';
+ for(let k=0;k<Math.min(5,r.harmonic.length);k++){const n=2**k,side=Math.max(7,32/Math.sqrt(n)),cells=Array.from({length:n},()=>'<span class="square-cell" style="width:'+side.toFixed(1)+'px;height:'+side.toFixed(1)+'px"></span>').join('');squares+='<div class="square-row"><div class="square-label">k='+k+' · ×'+n+' · A/'+n+'</div><div class="square-cells">'+cells+'</div></div>'}
+ return '<div class="research-operator-box"><b>חצי הרמוני · Harmonic Half</b><div class="tiny">H0 = D1 total. מחלקים ב־2 רק כל עוד התוצאה הבאה היא מספר שלם חיובי. עוצרים לפני השבר הראשון.</div>'+levels+'<div class="square-halving"><b>חלוקת ריבוע · Square Halving</b><div class="tiny">מוצגים רק הדורות שאושרו על־ידי חצי הרמוני: אין דור שברי. אלה ריבועים מוקטנים שווי־שטח, לא חיתוך ישר יחיד.</div>'+squares+'<div class="tiny">אנלוגיית מיתר בלבד: חצי אורך → פי 2 תדירות.</div></div></div>';
 }
 function richBreakdownHtml(r){
  if(r?.redLadder)return reductionResearchHtml(r);
@@ -1946,7 +1951,7 @@ console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','reverseOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
 const __redAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='redLadder'));console.assert(__redAmit.ladder.join(',')==='520,52,16'&&__redAmit.total===16,'Reduction Ladder Amit 520→52→16');
-const __halfAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='harmonicHalf'));console.assert(__halfAmit.harmonic.slice(0,3).join(',')==='52,26,13'&&__halfAmit.total===26,'Harmonic Half Amit 52→26→13');
+const __halfAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='harmonicHalf'));console.assert(__halfAmit.harmonic.join(',')==='52,26,13'&&__halfAmit.total===26,'Harmonic Half Amit 52→26→13 then STOP before 6.5');
 console.assert(T('יהוה','he','albam')===520&&T('עמית','he','regular')===520&&__halfAmit.total===T('יהוה','he','regular'),'ALBaM(YHWH)=Regular(Amit)=520; Harmonic H1(Amit)=Regular(YHWH)=26');
 console.assert(T('עמית מייק רוב','he','regular')*2===1776,'Query multiplier arithmetic 888×2=1776');
 console.assert(T('עמית','he','perati')===166600,'Amit Perati 166600');
