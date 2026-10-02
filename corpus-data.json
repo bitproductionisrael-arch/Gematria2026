@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-10-02",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank, including רלא/999, דין/1024–656, לב פעמים לב, Shema/Israel balance, קשר עמוק, YHWH 54/148, and verified constant-scan bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges, and the 37↔73 → 4/4 → 126 BPM composition mapping. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION; designed musical mappings are labeled RESEARCH/REPRESENTATION.",
   "entries": [
     {
       "value": 0,
@@ -5511,6 +5511,306 @@
       "label": "2701×1072 / 37² Collapse source",
       "method": "Research · Number",
       "classification": "canonical"
+    },
+    {
+      "value": 7,
+      "label": "В начале сотворил Бог небо и землю · word count",
+      "method": "Russian Synodal Genesis 1:1 · 7 words",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 28,
+      "label": "В начале сотворил Бог небо и землю · letter count",
+      "method": "Russian Synodal Genesis 1:1 · 28 Cyrillic letters = T7; same word/letter counts as Hebrew Genesis 1:1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 324,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Ordinal (O) · Synodal Genesis 1:1 · 324=18²",
+      "classification": "canonical"
+    },
+    {
+      "value": 126,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Full Reduction (R) · Synodal Genesis 1:1 · 126=7×18",
+      "classification": "canonical"
+    },
+    {
+      "value": 27,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Word Reduction (W) · Synodal Genesis 1:1 · 27=3³",
+      "classification": "canonical"
+    },
+    {
+      "value": 6723,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Standard / Decimal Tier (D) · Synodal Genesis 1:1 · 6723=81×83=82²−1",
+      "classification": "canonical"
+    },
+    {
+      "value": 3,
+      "label": "В",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 808,
+      "label": "начале",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 25,
+      "label": "начале",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 583,
+      "label": "сотворил",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 11×53",
+      "classification": "canonical"
+    },
+    {
+      "value": 115,
+      "label": "сотворил",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 34,
+      "label": "сотворил",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 7,
+      "label": "сотворил",
+      "method": "Russian Word Reduction (W) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 76,
+      "label": "Бог",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 22,
+      "label": "Бог",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 13,
+      "label": "Бог",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 138,
+      "label": "небо",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 21,
+      "label": "небо",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 10,
+      "label": "и",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 1,
+      "label": "и",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 5105,
+      "label": "землю",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 5×1021",
+      "classification": "canonical"
+    },
+    {
+      "value": 74,
+      "label": "землю",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 29,
+      "label": "землю",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 888,
+      "label": "А В НАЧАЛЕ БОГ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 111,
+      "label": "ЗЕМЛЕ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 999,
+      "label": "А НЕБО ПРОИЗРАСТИТ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 66,
+      "label": "НАД",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 555,
+      "label": "РОДУ ЕГО И",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 777,
+      "label": "ИХ БОГ И СКАЗАЛ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 999,
+      "label": "А В НАЧАЛЕ БОГ + ЗЕМЛЕ",
+      "method": "Russian Standard / Decimal Tier (D) · 888+111=999",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 58,
+      "label": "Genesis 1 · Russian prime-valued words",
+      "method": "Russian chapter scan under locked D mapping · count=58",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 54,
+      "label": "Genesis 1 · Russian prime islands",
+      "method": "Russian chapter scan under locked D mapping · count=54",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 523,
+      "label": "Genesis 1 · Russian non-prime-valued words",
+      "method": "Russian chapter scan under locked D mapping · count=523; 523 is prime",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 581,
+      "label": "Genesis 1 · Russian chapter relation",
+      "method": "7×83=581 · chapter-scan structural relation",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 208,
+      "label": "Hebrew↔Russian Genesis reduced bridge",
+      "method": "Hebrew Genesis reduced 82 + Russian Genesis Full Reduction 126 = 208 = רוב Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 999,
+      "label": "Hebrew×Russian Genesis word-reduction bridge",
+      "method": "Hebrew W=37 × Russian W=27 = 999",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 3025,
+      "label": "Hebrew Regular + Russian Ordinal · Genesis 1:1",
+      "method": "2701+324=3025=55²",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 622,
+      "label": "Hebrew Ordinal + Russian Ordinal · Genesis 1:1",
+      "method": "298+324=622",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
+      "label": "Hebrew + Russian Genesis word reductions",
+      "method": "37+27=64=8²",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 26,
+      "label": "Russian−Hebrew Genesis Ordinal difference",
+      "method": "324−298=26=יהוה Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1394,
+      "label": "В начале сотворил",
+      "method": "Russian Standard / D · 3+808+583=1394=17×82=34×41",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 5329,
+      "label": "Бог небо и землю",
+      "method": "Russian Standard / D · 76+138+10+5105=5329=73²",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1258,
+      "label": "Russian Genesis prime-factor weight",
+      "method": "Σ prime-factor weights = 1258 = 34×37 = 1000+258",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 253,
+      "label": "Russian Genesis prime-index weight",
+      "method": "Σ prime-index weights = 253 = T22",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 1166,
+      "label": "Russian Genesis alternating prime-factor sum",
+      "method": "1166=2×583=2×сотворил (D)",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 41,
+      "label": "В начале Бог",
+      "method": "Russian Full Reduction side · 3+25+13=41",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 51,
+      "label": "небо и землю",
+      "method": "Russian Full Reduction side · 21+1+29=51; 51−41=10",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 10,
+      "label": "сотворил · axis",
+      "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 126,
+      "label": "GENESIS · 37↔73 → 4/4 → 126 BPM",
+      "method": "COMPOSED @ DJ IESOUs BLAZE · 37+73+16=126; composition mapping",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 4,
+      "label": "37↔73 · 4/4 meter construction",
+      "method": "(73−37) mod 16=4; 16÷4=4; 4×1/4=4/4 · composition mapping",
+      "classification": "REPRESENTATION"
     }
   ],
   "operator_protocols": {
