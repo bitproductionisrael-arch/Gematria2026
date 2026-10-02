@@ -296,7 +296,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
         <select id="sampleSelect" aria-label="דוגמאות">
-          <option value="" data-i18n="samples">דוגמאות</option><option>עמית מייק רוב</option><option>Amit Mike Rov</option><option>ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ</option><option>משיח מייק</option><option>אלהימ</option><option>מיכאל בלייז</option>
+          <option value="" data-i18n="samples">דוגמאות</option><option>עמית מייק רוב</option><option>Amit Mike Rov</option><option>ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ</option><option>В начале сотворил Бог небо и землю</option><option>משיח מייק</option><option>אלהימ</option><option>מיכאל בלייז</option>
         </select>
         <div id="scriptBadge">עברית · Hebrew</div>
       </div>
@@ -429,6 +429,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
           <div class="methodbook-langs">
             <button data-methodbook-script="he" class="active" data-i18n="lang_hebrew">עברית</button>
             <button data-methodbook-script="el">Ελληνικά</button>
+            <button data-methodbook-script="ru">Русский</button>
             <button data-methodbook-script="en">English</button>
           </div>
 <select id="methodBookSelect" class="methodbook-select" aria-label="בחר סייפר"></select>
@@ -536,12 +537,21 @@ const EN_ATBASH={},EN_ATBASH_ORD={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LET
 EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_ATBASH_ORD[L]=EN_ORD[mirror];EN_ATBASH_ORD[a]=EN_ORD[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
 for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;EN_ALBAM_LETTER[a.toUpperCase()]=b.toUpperCase();EN_ALBAM_LETTER[b]=a;EN_ALBAM_LETTER[b.toUpperCase()]=a.toUpperCase();EN_ALBAM[a]=EN_REG[b];EN_ALBAM[a.toUpperCase()]=EN_REG[b];EN_ALBAM[b]=EN_REG[a];EN_ALBAM[b.toUpperCase()]=EN_REG[a]}
 
+
+/* ---------- Russian · locked 33-letter audit alphabet ---------- */
+const RU_ORDER=Array.from('абвгдеёжзийклмнопрстуфхцчшщъыьэюя');
+const RU_ORD={},RU_RED={},RU_DECIMAL={};
+RU_ORDER.forEach((L,i)=>{
+  const idx=i+1,q=Math.floor(i/9),d=(i%9)+1,decimal=d*(10**q);
+  for(const c of [L,L.toUpperCase()]){RU_ORD[c]=idx;RU_RED[c]=d;RU_DECIMAL[c]=decimal}
+});
+
 const LATIN_MILUI_USER_V0={
  'א':'Alf','ב':'Bet','ג':'Gml','ד':'Dlt','ה':'Hey','ו':'Vav','ז':'Zin','ח':'Het','ט':'Tet','י':'Yod','כ':'Kaf','ך':'Kaf','ל':'Lmd','מ':'Mem','ם':'Mem','נ':'Nun','ן':'Nun','ס':'Smk','ע':'Ayn','פ':'Peh','ף':'Peh','צ':'Zdk','ץ':'Zdk','ק':'Kuf','ר':'Res','ש':'Sin','ת':'Tav'
 };
 const AGR={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:600,K:10,L:20,M:30,N:40,O:50,P:60,Q:70,R:80,S:90,T:100,U:200,V:700,W:900,X:300,Y:400,Z:500};Object.keys(AGR).forEach(k=>AGR[k.toLowerCase()]=AGR[k]);const AGR_RED={},AGR_PERATI={};Object.entries(AGR).forEach(([k,v])=>{AGR_RED[k]=dr(v);AGR_PERATI[k]=v**2});
 
-function detectScript(t){if(/[֐-׿]/.test(t))return'he';if(/[Ͱ-Ͽἀ-῿]/.test(t))return'el';if(/[A-Za-z]/.test(t))return'en';return'en'}
+function detectScript(t){if(/[֐-׿]/.test(t))return'he';if(/[Ͱ-Ͽἀ-῿]/.test(t))return'el';if(/[А-Яа-яЁё]/.test(t))return'ru';if(/[A-Za-z]/.test(t))return'en';return'en'}
 const SUPER_DIGIT={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
 function tokensForWord(word,script,map){
  const out=[],chars=Array.from(word);
@@ -626,6 +636,12 @@ const METHODS={
   {key:'ladder',cat:'ops',name:'Greek Ladder / κλίμαξ — Isopsephy',map:GR_VAL,transform:ladder,transformName:'prefixes + suffixes',research:true},
   {key:'ladderOrdinal',cat:'ops',name:'Greek Ladder / κλίμαξ — Ordinal',map:GR_ORD,transform:ladder,transformName:'prefixes + suffixes',research:true}
  ],
+ ru:[
+  {key:'ruRegular',cat:'base',name:'Русская стандартная / Russian Standard · Decimal Tier (D)',map:RU_DECIMAL},
+  {key:'ruOrdinal',cat:'base',name:'Русский порядковый / Russian Ordinal (O)',map:RU_ORD},
+  {key:'ruReduced',cat:'base',name:'Полное сокращение / Russian Full Reduction (R)',map:RU_RED},
+  {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Word Reduction (W)',map:RU_RED,fold:'word'}
+ ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
   {key:'regular',cat:'base',name:'English Isopsephy',map:EN_REG},
@@ -666,7 +682,8 @@ const METHOD_EN_NAMES={
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
  milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
- redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research'
+ redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
+ ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction'
 };
 const METHOD_EN_HISTORY={
  regular:'Traditional Hebrew gematria using the standard letter-value scale. Exact primary-source chronology is being documented separately.',
@@ -680,7 +697,11 @@ const METHOD_EN_HISTORY={
  redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
  harmonicHalf:'Site-developed research operator (2026). Starts from the D1 / Reduction №1 total and repeatedly halves the whole result only while each next value remains a positive integer; it stops before fractions. The square view follows the accepted generations only.',
  achorayim:'Naming conflict under review: the code computes cumulative prefix sums. The older Achorayim label does not describe this algorithm precisely.',
- positional:'Naming conflict under review. The algorithm is unambiguous: multiply each letter value by its position in the word.'
+ positional:'Naming conflict under review. The algorithm is unambiguous: multiply each letter value by its position in the word.',
+ ruRegular:'Locked Gematria2026 research mapping for the modern 33-letter Russian alphabet, including Ё in position 7. It is the D layer of the audited index decomposition i=9q+d; no ancient Russian numeral tradition is claimed.',
+ ruOrdinal:'Modern alphabet-position mapping for the 33-letter Russian alphabet, with Ё in position 7.',
+ ruReduced:'The audited R layer: reduce each Russian alphabet index to its repeating 1–9 digit before summing.',
+ ruWordReduced:'The audited W layer: digital-root each word’s R subtotal, then sum the word results.'
 };
 function calcLang(){try{return window.SiteI18n?.get?.()||localStorage.getItem('gematria2026.lang')||'he'}catch(_){return'he'}}
 function L(he,en){return calcLang()==='en'?en:he}
@@ -827,6 +848,10 @@ const METHOD_BOOK_DOCS={
  'el:isopsephy':{plain:'Greek Isopsephy',original:'ἰσοψηφία / isopsephy',status:'traditional',history:'שיטת המספרים האלפביתיים היוונית העתיקה; תיעוד כרונולוגי מפורט יתווסף עם מקורות.',formula:'Sum traditional Greek alphabetic numeral values.'},
  'el:reduced':{plain:'Reduced Isopsephy',original:'Modern reduced analogue',status:'modern',history:'אנלוג מודרני לצמצום 1–9 המופעל על ערכי האיזופספיה; אינו מוצג כאן כשיטה יוונית עתיקה.',formula:'Digital-root each isopsephy letter value to 1–9, then sum.'},
  'el:wordReduced':{plain:'Wordwise Isopsephy Reduction',original:'Modern wordwise reduction',status:'modern',history:'אופרטור מחקרי מודרני: כל מילה מצטמצמת בנפרד.',formula:'For each word: digital-root(sum(isopsephy values)); then sum the word results.'},
+ 'ru:ruRegular':{plain:'Russian Standard · Decimal Tier',original:'Gematria2026 locked Russian D mapping',status:'modern',history:'מיפוי מחקרי נעול של Gematria2026 לאלפבית הרוסי המודרני בן 33 אותיות, כולל Ё במקום השביעי. הוא נגזר מאותו פירוק אינדקס i=9q+d ששימש בביקורת הרב־לשונית; אין כאן טענה שזו שיטת מספור רוסית עתיקה.',formula:'For alphabet index i=9q+d with d=1…9, assign D(letter)=d×10^q; sum all letters. Ё is the 7th letter.'},
+ 'ru:ruOrdinal':{plain:'Russian Ordinal',original:'Modern 33-letter alphabet index',status:'modern',history:'ערך מיקום מודרני לפי האלפבית הרוסי בן 33 אותיות, עם Ё במקום השביעי.',formula:'А=1, Б=2, …, Ё=7, …, Я=33; then sum.'},
+ 'ru:ruReduced':{plain:'Russian Full Reduction',original:'Index digit d in i=9q+d',status:'modern',history:'שכבת R של מנוע הביקורת: כל מיקום אלפביתי מצטמצם למחזור 1–9 לפני הסכימה.',formula:'For alphabet index i, use d=((i−1) mod 9)+1; then sum all letters.'},
+ 'ru:ruWordReduced':{plain:'Russian Word Reduction',original:'Wordwise digital-root of R',status:'modern',history:'שכבת W של מנוע הביקורת: מחשבים R לכל מילה, מצמצמים את סכום המילה לשורש ספרתי, ואז מחברים את המילים.',formula:'For each word: digital_root(sum(R(letter))); then sum the word results.'},
  'en:ordinal':{plain:'English Ordinal',original:'A1Z26 / Simple',status:'modern-standard',history:'מיפוי לטיני מודרני נפוץ. מנועים שונים משתמשים בכינויים Simple או Ordinal.',formula:'A=1, B=2, …, Z=26; then sum.',aliases:['English Simple']},
  'en:pythagorean':{plain:'English Full Reduction',original:'Pythagorean / Reduction',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
  'en:wordReduced':{plain:'English Wordwise Reduction',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(Pythagorean letter values)); then sum words.'},
@@ -873,7 +898,7 @@ function methodBookAliases(script,m){const d=METHOD_BOOK_DOCS[methodBookId(scrip
 function methodBookSample(script){
  const q=document.getElementById('q');const t=q&&q.value.trim();
  if(t&&detectScript(t)===script)return t;
- return script==='he'?'מראות':script==='el'?'ΛΟΓΟΣ':'Amit';
+ return script==='he'?'מראות':script==='el'?'ΛΟΓΟΣ':script==='ru'?'В начале сотворил Бог небо и землю':'Amit';
 }
 function methodBookExample(script,m){
  const text=methodBookSample(script);let r;
@@ -907,6 +932,7 @@ function methodBookAlphabet(script,m){
   return base;
  }
  if(script==='el')return (m.key==='isopsephy'||m.key==='reduced'||m.key==='zeroStep'||m.key==='perati')?[...GR_NUMERIC_ORDER]:[...GR_MODERN_ORDER];
+ if(script==='ru')return [...RU_ORDER];
  return [...EN_ORDER];
 }
 function methodBookCipherBoard(script,m){
@@ -931,7 +957,7 @@ function renderMethodBook(){
  const statusClass=st[1],conflict=d.conflict||d.status==='conflict';
  document.getElementById('methodBookDoc').innerHTML=
   '<div><div class="methodbook-name">'+esc(methodBookPlain(script,m))+'</div><div class="methodbook-alias">'+esc(m.name)+'</div></div>'+
-  '<div class="methodbook-badges"><span class="methodbook-badge '+statusClass+'">'+esc(st[0])+'</span><span class="methodbook-badge">'+esc(script==='he'?'עברית':script==='el'?'Greek':'English')+'</span>'+(conflict?'<span class="methodbook-badge conflict">שם בבדיקה</span>':'')+'</div>'+
+  '<div class="methodbook-badges"><span class="methodbook-badge '+statusClass+'">'+esc(st[0])+'</span><span class="methodbook-badge">'+esc(script==='he'?'עברית':script==='el'?'Greek':script==='ru'?'Русский · Russian':'English')+'</span>'+(conflict?'<span class="methodbook-badge conflict">שם בבדיקה</span>':'')+'</div>'+
   '<div class="methodbook-grid primary">'+
    '<section class="methodbook-box"><h3>'+L('הסייפר','Cipher')+'</h3>'+methodBookCipherBoard(script,m)+'</section>'+
    '<section class="methodbook-box formula-box"><h3>'+L('הנוסחה','Formula')+'</h3><div class="methodbook-bigformula">'+esc(methodBookFormula(script,m))+'</div></section>'+
@@ -1016,10 +1042,11 @@ function nearestCorpus(n,limit=3){return CORPUS.filter(x=>x.value!==n).slice().s
 const REFERENCE_BANK={
  he:['עמית מייק רוב','עמית משיחי','עמית מיכאל בלייז רוב','עמית','מייק','רוב','מיכאל','בלייז','מיכאל בלייז','מיכאלבלייז','יחידה','דוד','דויד','יהוה','אלהים','אלהימ','אהיה','אדני','שדי','משיח','משיחי','ישו','אני','אני בינה','משה','השם','אהיה אשר אהיה','אהיה שלחני אליכם','משיח יהוה','מייק משיח','רוב מייק רוב','מייק רוב מייק','פתח עמית','תיקון תורה','אני תיקון תורה','רוב בלייז','בלייז רוב','מרכבה','שכינה','מזל','קול','אוזן','בן דוד','דוד רוב','יהוה יהוה','יהוה יהוה יהוה יהוה','יהוה יהוה יהוה יהוה יהוה','בראשית ברא אלהים את השמים ואת הארץ'],
  el:['ΙΗΣΟΥΣ','ΧΡΙΣΤΟΣ','ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ','ΜΑΙΧΕ','ΜΕΣΣΙΑΣ','ΚΥΡΙΟΣ','ΣΩΤΗΡ','ΑΛΗΘΕΙΑ','ΟΔΟΣ','ΖΩΗ','ΑΜΙΘ','ΡΟΒ','ΑΜΙΘ ΡΟΒ','ΑΜΙΘ ΜΑΙΧΕ ΡΟΒ','ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ'],
+ ru:['В начале сотворил Бог небо и землю','В','начале','сотворил','Бог','небо','и','землю','А В НАЧАЛЕ БОГ','ЗЕМЛЕ','А НЕБО ПРОИЗРАСТИТ','НАД','РОДУ ЕГО И','ИХ БОГ И СКАЗАЛ'],
  en:['Amit','Mike','Rov','Blaze','Amit Mike Rov','Amit M Rov','Amit M. Rov']
 };
 function normText(t){return String(t||'').replace(/[\s.׳״'"-]+/g,'').toLowerCase()}
-function baseMethodKey(script){return script==='he'?'regular':script==='el'?'isopsephy':'ordinal'}
+function baseMethodKey(script){return script==='he'?'regular':script==='el'?'isopsephy':script==='ru'?'ruRegular':'ordinal'}
 function autoComparisonTarget(text){
  const script=detectScript(text),methods=METHODS[script]||[];let key=state.methodKey;
  if(!methods.some(m=>m.key===key))key=baseMethodKey(script);
@@ -1135,7 +1162,7 @@ function magnetQueryPrefix(r){
 }
 function methodByKey(key){return current.results.find(r=>r.method.key===key)||current.results[0]}
 function categories(){return [...new Set(METHODS[current.script].map(m=>m.cat))]}
-function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinalAncient27','ordinal']:['pythagorean','ordinal','sumerian','agrippa','agrippaDeltaSimple'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
+function defaultBaseKeys(script){const preferred=script==='he'?['regular','reduced','ordinal']:script==='el'?['isopsephy','ordinalAncient27','ordinal']:script==='ru'?['ruRegular','ruOrdinal','ruReduced','ruWordReduced']:['pythagorean','ordinal','sumerian','agrippa','agrippaDeltaSimple'];const valid=new Set(current.results.map(r=>r.method.key));return preferred.filter(k=>valid.has(k))}
 function ensureSelection(){const cats=categories();if(!cats.includes(state.category))state.category=cats[0]||'base';const inCat=current.results.filter(r=>r.method.cat===state.category);if(!current.results.some(r=>r.method.key===state.methodKey)||!inCat.some(r=>r.method.key===state.methodKey))state.methodKey=(inCat[0]||current.results[0])?.method.key||null;const valid=new Set(current.results.map(r=>r.method.key));state.selectedMethods=(state.selectedMethods||[]).filter(k=>valid.has(k));if(!state.selectionTouched){state.selectedMethods=defaultBaseKeys(current.script)}if(!state.selectedMethods.length&&state.methodKey)state.selectedMethods=[state.methodKey];if(!current.results.some(r=>r.method.key===state.numKey))state.numKey=state.methodKey}
 
 /* ---------- render helpers ---------- */
@@ -1659,7 +1686,7 @@ function renderForms(){const text=document.getElementById('q').value,script=dete
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
  }else{document.getElementById('miluiValue').textContent='—';document.getElementById('milui2Value').textContent='—';document.getElementById('miluiMayimValue').textContent='—';document.getElementById('miluiText').textContent='מילוי פעיל בעברית';document.getElementById('miluiMeta').innerHTML='';document.getElementById('yhvhMilui').textContent='';document.getElementById('boundaryTitle').textContent='אפקט גבול זמין בכל שפה';document.getElementById('boundaryDiffs').innerHTML=diffRows(text,boundaryless(text));document.getElementById('finalTitle').textContent='אותיות סופיות רלוונטיות לעברית';document.getElementById('finalDiffs').innerHTML=''} }
 
-function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
+function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',ru:'Russian',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',ru:'רוסית · Russian',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
 
 /* ---------- report / export ---------- */
 function buildReport(text,data){const out=[text,''];for(const r of data.results){out.push(`${r.method.name} = ${r.total}`);const a=analyzeNumber(r.total);if(a){out.push(`φ=${a.phi} | τ=${a.tau} | σ=${a.sigma} | λ=${a.lambda} | rad=${a.rad}`);out.push(`${a.prime?'Prime #'+a.primeIndex:'Composite #'+(a.compositeIndex??'—')} | factors: ${fmtFactors(a.factors)}`);if(a.forms.length||a.binom.length)out.push(`Forms: ${a.forms.concat(a.binom).join(' | ')}`);const h=corpusHits(r.total);if(h.length)out.push(`Corpus: ${h.map(x=>x.label+' ['+x.method+']').join(' | ')}`)}out.push('')}return out.join('\n')}
