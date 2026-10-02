@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-10-02",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges, and the 37↔73 → 4/4 → 126 BPM composition mapping. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION; designed musical mappings are labeled RESEARCH/REPRESENTATION.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION.",
   "entries": [
     {
       "value": 0,
@@ -5799,18 +5799,6 @@
       "label": "сотворил · axis",
       "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
       "classification": "RESEARCH"
-    },
-    {
-      "value": 126,
-      "label": "GENESIS · 37↔73 → 4/4 → 126 BPM",
-      "method": "COMPOSED @ DJ IESOUs BLAZE · 37+73+16=126; composition mapping",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 4,
-      "label": "37↔73 · 4/4 meter construction",
-      "method": "(73−37) mod 16=4; 16÷4=4; 4×1/4=4/4 · composition mapping",
-      "classification": "REPRESENTATION"
     }
   ],
   "operator_protocols": {
