@@ -670,24 +670,11 @@ const METHODS={
   {key:'ruReverseOrdinal',cat:'base',name:'Обратный порядковый / Russian Reverse Ordinal',map:RU_REV_ORD,research:true},
   {key:'ruZeroStep',cat:'base',name:'Одношаговое десятичное сокращение / Russian One-step Zero',map:RU_ZERO_STEP,research:true},
 
-  {key:'ruMirrorD',cat:'cipher',name:'Зеркало алфавита / Russian Alphabet Mirror → D',map:RU_MIRROR_D,sub:RU_MIRROR_LETTER,research:true},
   {key:'ruShiftD',cat:'cipher',name:'Сдвиг +1 / Russian +1 Shift → D',map:RU_SHIFT_D,sub:RU_SHIFT_LETTER,research:true},
-  {key:'ruKidmiD',cat:'cipher',name:'Накопительный алфавит / Russian Cumulative Alphabet → D',map:RU_KIDMI_D,research:true},
-  {key:'ruPeratiD',cat:'cipher',name:'Russian Perati · D²',map:RU_PERATI_D,perati:true,research:true},
-  {key:'ruPeratiOrdinal',cat:'cipher',name:'Russian Perati · Ordinal²',map:RU_PERATI_ORD,perati:true,research:true},
-  {key:'ruKolelD',cat:'cipher',name:'Russian D + Kolel (+1)',map:RU_DECIMAL,post:(t,v)=>v+1,research:true},
-  {key:'ruMusafiD',cat:'cipher',name:'Russian D + Musafi (+letters)',map:RU_DECIMAL,post:(t,v,s)=>v+letterCount(t,s,RU_DECIMAL),research:true},
-
-  {key:'ruBuildingD',cat:'ops',name:'Russian Prefix Building · D',map:RU_DECIMAL,transform:cumulative,transformName:'prefix sums',research:true},
   {key:'ruBuildingOrdinal',cat:'ops',name:'Russian Prefix Building · Ordinal',map:RU_ORD,transform:cumulative,transformName:'prefix sums',research:true},
   {key:'ruPositionalD',cat:'ops',name:'Russian Positional · D',map:RU_DECIMAL,transform:positional,transformName:'position × value',research:true},
   {key:'ruPositionalOrdinal',cat:'ops',name:'Russian Positional · Ordinal',map:RU_ORD,transform:positional,transformName:'position × value',research:true},
-  {key:'ruEquivalenceD',cat:'ops',name:'Russian Equivalence · D',map:RU_DECIMAL,transform:balanced,transformName:'balanced weight',research:true},
-  {key:'ruEquivalenceOrdinal',cat:'ops',name:'Russian Equivalence · Ordinal',map:RU_ORD,transform:balanced,transformName:'balanced weight',research:true},
-  {key:'ruRatzoD',cat:'ops',name:'Russian Running & Returning · D',map:RU_DECIMAL,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
-  {key:'ruRatzoOrdinal',cat:'ops',name:'Russian Running & Returning · Ordinal',map:RU_ORD,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
-  {key:'ruLadderD',cat:'ops',name:'Russian Addition & Subtraction / Ladder · D',map:RU_DECIMAL,transform:ladder,transformName:'prefixes + suffixes',research:true},
-  {key:'ruLadderOrdinal',cat:'ops',name:'Russian Addition & Subtraction / Ladder · Ordinal',map:RU_ORD,transform:ladder,transformName:'prefixes + suffixes',research:true}
+  {key:'ruRatzoOrdinal',cat:'ops',name:'Russian Running & Returning · Ordinal',map:RU_ORD,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true}
  ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
