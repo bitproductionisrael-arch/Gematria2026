@@ -540,10 +540,36 @@ for(let i=0;i<13;i++){const a=EN_ORDER[i],b=EN_ORDER[i+13];EN_ALBAM_LETTER[a]=b;
 
 /* ---------- Russian · locked 33-letter audit alphabet ---------- */
 const RU_ORDER=Array.from('абвгдеёжзийклмнопрстуфхцчшщъыьэюя');
-const RU_ORD={},RU_RED={},RU_DECIMAL={};
+const RU_ORD={},RU_RED={},RU_DECIMAL={},RU_REV_ORD={},RU_ZERO_STEP={};
+const RU_MIRROR_D={},RU_MIRROR_LETTER={},RU_SHIFT_D={},RU_SHIFT_LETTER={};
+const RU_KIDMI_D={},RU_PERATI_D={},RU_PERATI_ORD={};
+let _ruKidmi=0;
 RU_ORDER.forEach((L,i)=>{
   const idx=i+1,q=Math.floor(i/9),d=(i%9)+1,decimal=d*(10**q);
-  for(const c of [L,L.toUpperCase()]){RU_ORD[c]=idx;RU_RED[c]=d;RU_DECIMAL[c]=decimal}
+  const mirror=RU_ORDER[32-i],shift=RU_ORDER[(i+1)%33];
+  _ruKidmi+=decimal;
+  for(const c of [L,L.toUpperCase()]){
+    RU_ORD[c]=idx;
+    RU_RED[c]=d;
+    RU_DECIMAL[c]=decimal;
+    RU_REV_ORD[c]=33-i;
+    RU_ZERO_STEP[c]=(decimal>=10&&decimal%10===0)?decimal/10:decimal;
+    RU_MIRROR_D[c]=RU_DECIMAL[mirror]??(((32-i)<9)?(33-i):(((33-i-1)%9)+1)*(10**Math.floor((33-i-1)/9)));
+    RU_MIRROR_LETTER[c]=c===L?mirror:mirror.toUpperCase();
+    RU_SHIFT_D[c]=RU_DECIMAL[shift]??((((i+1)%33)<9)?(((i+1)%33)+1):((((i+1)%33)%9)+1)*(10**Math.floor(((i+1)%33)/9)));
+    RU_SHIFT_LETTER[c]=c===L?shift:shift.toUpperCase();
+    RU_KIDMI_D[c]=_ruKidmi;
+    RU_PERATI_D[c]=decimal**2;
+    RU_PERATI_ORD[c]=idx**2;
+  }
+});
+// Resolve mirror/shift D values after the full D table exists.
+RU_ORDER.forEach((L,i)=>{
+  const mirror=RU_ORDER[32-i],shift=RU_ORDER[(i+1)%33];
+  for(const c of [L,L.toUpperCase()]){
+    RU_MIRROR_D[c]=RU_DECIMAL[mirror];
+    RU_SHIFT_D[c]=RU_DECIMAL[shift];
+  }
 });
 
 const LATIN_MILUI_USER_V0={
@@ -640,7 +666,28 @@ const METHODS={
   {key:'ruRegular',cat:'base',name:'Русская стандартная / Russian Standard · Decimal Tier (D)',map:RU_DECIMAL},
   {key:'ruOrdinal',cat:'base',name:'Русский порядковый / Russian Ordinal (O)',map:RU_ORD},
   {key:'ruReduced',cat:'base',name:'Полное сокращение / Russian Full Reduction (R)',map:RU_RED},
-  {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Word Reduction (W)',map:RU_RED,fold:'word'}
+  {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Word Reduction (W)',map:RU_RED,fold:'word'},
+  {key:'ruReverseOrdinal',cat:'base',name:'Обратный порядковый / Russian Reverse Ordinal',map:RU_REV_ORD,research:true},
+  {key:'ruZeroStep',cat:'base',name:'Одношаговое десятичное сокращение / Russian One-step Zero',map:RU_ZERO_STEP,research:true},
+
+  {key:'ruMirrorD',cat:'cipher',name:'Зеркало алфавита / Russian Alphabet Mirror → D',map:RU_MIRROR_D,sub:RU_MIRROR_LETTER,research:true},
+  {key:'ruShiftD',cat:'cipher',name:'Сдвиг +1 / Russian +1 Shift → D',map:RU_SHIFT_D,sub:RU_SHIFT_LETTER,research:true},
+  {key:'ruKidmiD',cat:'cipher',name:'Накопительный алфавит / Russian Cumulative Alphabet → D',map:RU_KIDMI_D,research:true},
+  {key:'ruPeratiD',cat:'cipher',name:'Russian Perati · D²',map:RU_PERATI_D,perati:true,research:true},
+  {key:'ruPeratiOrdinal',cat:'cipher',name:'Russian Perati · Ordinal²',map:RU_PERATI_ORD,perati:true,research:true},
+  {key:'ruKolelD',cat:'cipher',name:'Russian D + Kolel (+1)',map:RU_DECIMAL,post:(t,v)=>v+1,research:true},
+  {key:'ruMusafiD',cat:'cipher',name:'Russian D + Musafi (+letters)',map:RU_DECIMAL,post:(t,v,s)=>v+letterCount(t,s,RU_DECIMAL),research:true},
+
+  {key:'ruBuildingD',cat:'ops',name:'Russian Prefix Building · D',map:RU_DECIMAL,transform:cumulative,transformName:'prefix sums',research:true},
+  {key:'ruBuildingOrdinal',cat:'ops',name:'Russian Prefix Building · Ordinal',map:RU_ORD,transform:cumulative,transformName:'prefix sums',research:true},
+  {key:'ruPositionalD',cat:'ops',name:'Russian Positional · D',map:RU_DECIMAL,transform:positional,transformName:'position × value',research:true},
+  {key:'ruPositionalOrdinal',cat:'ops',name:'Russian Positional · Ordinal',map:RU_ORD,transform:positional,transformName:'position × value',research:true},
+  {key:'ruEquivalenceD',cat:'ops',name:'Russian Equivalence · D',map:RU_DECIMAL,transform:balanced,transformName:'balanced weight',research:true},
+  {key:'ruEquivalenceOrdinal',cat:'ops',name:'Russian Equivalence · Ordinal',map:RU_ORD,transform:balanced,transformName:'balanced weight',research:true},
+  {key:'ruRatzoD',cat:'ops',name:'Russian Running & Returning · D',map:RU_DECIMAL,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
+  {key:'ruRatzoOrdinal',cat:'ops',name:'Russian Running & Returning · Ordinal',map:RU_ORD,transform:pyramid,transformName:'prefixes out + return',ratzo:true,research:true},
+  {key:'ruLadderD',cat:'ops',name:'Russian Addition & Subtraction / Ladder · D',map:RU_DECIMAL,transform:ladder,transformName:'prefixes + suffixes',research:true},
+  {key:'ruLadderOrdinal',cat:'ops',name:'Russian Addition & Subtraction / Ladder · Ordinal',map:RU_ORD,transform:ladder,transformName:'prefixes + suffixes',research:true}
  ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
@@ -683,7 +730,15 @@ const METHOD_EN_NAMES={
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
  milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
- ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction'
+ ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction',
+ ruReverseOrdinal:'Russian Reverse Ordinal',ruZeroStep:'Russian One-step Zero',
+ ruMirrorD:'Russian Alphabet Mirror → D',ruShiftD:'Russian +1 Shift → D',ruKidmiD:'Russian Cumulative Alphabet → D',
+ ruPeratiD:'Russian Perati · D²',ruPeratiOrdinal:'Russian Perati · Ordinal²',ruKolelD:'Russian D + Kolel (+1)',ruMusafiD:'Russian D + Letter Count',
+ ruBuildingD:'Russian Prefix Building · D',ruBuildingOrdinal:'Russian Prefix Building · Ordinal',
+ ruPositionalD:'Russian Positional · D',ruPositionalOrdinal:'Russian Positional · Ordinal',
+ ruEquivalenceD:'Russian Equivalence · D',ruEquivalenceOrdinal:'Russian Equivalence · Ordinal',
+ ruRatzoD:'Russian Running & Returning · D',ruRatzoOrdinal:'Russian Running & Returning · Ordinal',
+ ruLadderD:'Russian Addition & Subtraction · D',ruLadderOrdinal:'Russian Addition & Subtraction · Ordinal'
 };
 const METHOD_EN_HISTORY={
  regular:'Traditional Hebrew gematria using the standard letter-value scale. Exact primary-source chronology is being documented separately.',
@@ -701,7 +756,26 @@ const METHOD_EN_HISTORY={
  ruRegular:'Locked Gematria2026 research mapping for the modern 33-letter Russian alphabet, including Ё in position 7. It is the D layer of the audited index decomposition i=9q+d; no ancient Russian numeral tradition is claimed.',
  ruOrdinal:'Modern alphabet-position mapping for the 33-letter Russian alphabet, with Ё in position 7.',
  ruReduced:'The audited R layer: reduce each Russian alphabet index to its repeating 1–9 digit before summing.',
- ruWordReduced:'The audited W layer: digital-root each word’s R subtotal, then sum the word results.'
+ ruWordReduced:'The audited W layer: digital-root each word’s R subtotal, then sum the word results.',
+ ruReverseOrdinal:'Modern 33-letter mirror-position operator: i → 34−i. П at position 17 is fixed.',
+ ruZeroStep:'Site one-step decimal reduction applied to Russian D values.',
+ ruMirrorD:'Modern alphabet-mirror analogue on the 33-letter Russian alphabet; mirrored letters are evaluated with D. No historical Russian cipher attribution is claimed.',
+ ruShiftD:'Modern cyclic +1 alphabet shift; Я wraps to А; substituted letters are evaluated with D.',
+ ruKidmiD:'Modern cumulative-D analogue: each letter receives the sum of D values from А through that letter.',
+ ruPeratiD:'Modern squared-value operator: sum D(letter)².',
+ ruPeratiOrdinal:'Modern squared-position operator: sum Ordinal(letter)².',
+ ruKolelD:'Modern extension: Russian D total +1.',
+ ruMusafiD:'Modern extension: Russian D total plus counted Cyrillic letters.',
+ ruBuildingD:'Modern prefix-building operator using D values.',
+ ruBuildingOrdinal:'Modern prefix-building operator using ordinal values.',
+ ruPositionalD:'Modern position × D operator within each word.',
+ ruPositionalOrdinal:'Modern position × ordinal operator within each word.',
+ ruEquivalenceD:'Modern balanced-weight operator using D values.',
+ ruEquivalenceOrdinal:'Modern balanced-weight operator using ordinal values.',
+ ruRatzoD:'Modern prefix out-and-return operator using D values.',
+ ruRatzoOrdinal:'Modern prefix out-and-return operator using ordinal values.',
+ ruLadderD:'Modern prefix + suffix ladder using D values.',
+ ruLadderOrdinal:'Modern prefix + suffix ladder using ordinal values.'
 };
 function calcLang(){try{return window.SiteI18n?.get?.()||localStorage.getItem('gematria2026.lang')||'he'}catch(_){return'he'}}
 function L(he,en){return calcLang()==='en'?en:he}
@@ -852,6 +926,25 @@ const METHOD_BOOK_DOCS={
  'ru:ruOrdinal':{plain:'Russian Ordinal',original:'Modern 33-letter alphabet index',status:'modern',history:'ערך מיקום מודרני לפי האלפבית הרוסי בן 33 אותיות, עם Ё במקום השביעי.',formula:'А=1, Б=2, …, Ё=7, …, Я=33; then sum.'},
  'ru:ruReduced':{plain:'Russian Full Reduction',original:'Index digit d in i=9q+d',status:'modern',history:'שכבת R של מנוע הביקורת: כל מיקום אלפביתי מצטמצם למחזור 1–9 לפני הסכימה.',formula:'For alphabet index i, use d=((i−1) mod 9)+1; then sum all letters.'},
  'ru:ruWordReduced':{plain:'Russian Word Reduction',original:'Wordwise digital-root of R',status:'modern',history:'שכבת W של מנוע הביקורת: מחשבים R לכל מילה, מצמצמים את סכום המילה לשורש ספרתי, ואז מחברים את המילים.',formula:'For each word: digital_root(sum(R(letter))); then sum the word results.'},
+ 'ru:ruReverseOrdinal':{plain:'Russian Reverse Ordinal',original:'Modern mirror-position operator',status:'modern',history:'אופרטור מודרני על 33 האותיות: מיקום i מוחלף ב־34−i. האות П במיקום 17 היא נקודת האמצע ולכן נשארת 17.',formula:'For ordinal position i, use 34−i. Thus А=33, Б=32, …, П=17, …, Я=1.'},
+ 'ru:ruZeroStep':{plain:'Russian One-step Zero',original:'Site one-step decimal reduction on D',status:'modern',history:'אנלוג ישיר לאופרטור הצמצום החד־שלבי של האתר, המופעל על ערכי D הרוסיים.',formula:'For each D value v: if v≥10 and v ends in 0, use v/10 once; otherwise keep v. Then sum.'},
+ 'ru:ruMirrorD':{plain:'Russian Alphabet Mirror → D',original:'33-letter alphabet mirror · site analogue',status:'modern',history:'שיקוף מלא של האלפבית הרוסי: אות במיקום i מוחלפת באות במיקום 34−i, ואז נמדדת בערכי D. בגלל האורך האי־זוגי, П היא אות מרכזית קבועה.',formula:'Substitute letter i by letter 34−i, then sum D values. П↔П.'},
+ 'ru:ruShiftD':{plain:'Russian +1 Shift → D',original:'Cyclic alphabet shift · site analogue',status:'modern',history:'אופרטור מחזורי מודרני: כל אות עוברת לאות הבאה באלפבית הרוסי, כאשר Я חוזרת ל־А.',formula:'А→Б→В→…→Я→А; evaluate each substituted letter with D.'},
+ 'ru:ruKidmiD':{plain:'Russian Cumulative Alphabet → D',original:'Cumulative D / Kidmi analogue',status:'modern',history:'אופרטור מצטבר: לכל אות משויך סכום ערכי D מתחילת האלפבית ועד אליה.',formula:'For letter at position i: K(i)=D(1)+D(2)+…+D(i); then sum K over the text.'},
+ 'ru:ruPeratiD':{plain:'Russian Perati · D²',original:'Squared D values · site analogue',status:'modern',history:'אופרטור ריבועי מודרני: כל ערך D מועלה בריבוע לפני הסכימה.',formula:'Σ D(letter)².'},
+ 'ru:ruPeratiOrdinal':{plain:'Russian Perati · Ordinal²',original:'Squared ordinal values · site analogue',status:'modern',history:'אופרטור ריבועי על מיקומי האותיות באלפבית בן 33 אותיות.',formula:'Σ Ordinal(letter)².'},
+ 'ru:ruKolelD':{plain:'Russian D + Kolel',original:'Kolel analogue',status:'modern',history:'הרחבה אלגוריתמית של סכום D: מוסיפים 1 לתוצאה הכוללת.',formula:'D(text)+1.'},
+ 'ru:ruMusafiD':{plain:'Russian D + letter count',original:'Musafi analogue',status:'modern',history:'הרחבה אלגוריתמית של סכום D: מוסיפים את מספר האותיות הקיריליות שנספרו.',formula:'D(text)+number_of_counted_letters.'},
+ 'ru:ruBuildingD':{plain:'Russian Prefix Building · D',original:'Prefix-sum operator',status:'modern',history:'אופרטור קידומות: לכל מילה מחברים את הקידומת הראשונה, שתי האותיות הראשונות וכן הלאה, לפי D.',formula:'For a₁…aₙ: (a₁)+(a₁+a₂)+…+(a₁+…+aₙ), using D values.'},
+ 'ru:ruBuildingOrdinal':{plain:'Russian Prefix Building · Ordinal',original:'Prefix-sum operator',status:'modern',history:'אותו בניין קידומות, הפעם על ערכי המיקום 1–33.',formula:'Sum cumulative prefixes using ordinal values.'},
+ 'ru:ruPositionalD':{plain:'Russian Positional · D',original:'Position × D',status:'modern',history:'כל ערך D מוכפל במיקום האות בתוך המילה.',formula:'Σ j·D(letter_j), with j=1…word length.'},
+ 'ru:ruPositionalOrdinal':{plain:'Russian Positional · Ordinal',original:'Position × Ordinal',status:'modern',history:'כל ערך סידורי מוכפל במיקום האות בתוך המילה.',formula:'Σ j·Ordinal(letter_j).'},
+ 'ru:ruEquivalenceD':{plain:'Russian Equivalence · D',original:'Balanced-weight operator',status:'modern',history:'אופרטור המשקל המאוזן של האתר, מיושם על D.',formula:'For word length n, multiply every D value by (n+1)/2, then sum.'},
+ 'ru:ruEquivalenceOrdinal':{plain:'Russian Equivalence · Ordinal',original:'Balanced-weight operator',status:'modern',history:'אופרטור המשקל המאוזן של האתר, מיושם על הערך הסידורי.',formula:'For word length n, multiply every ordinal value by (n+1)/2, then sum.'},
+ 'ru:ruRatzoD':{plain:'Russian Running & Returning · D',original:'Prefix out-and-return operator',status:'modern',history:'קידומות מצטברות החוצה ואז חזרה בסדר הפוך, על ערכי D.',formula:'Prefix sums outward, then the prefixes return in reverse order, using D.'},
+ 'ru:ruRatzoOrdinal':{plain:'Russian Running & Returning · Ordinal',original:'Prefix out-and-return operator',status:'modern',history:'אותו רצוא־ושוב אלגוריתמי על הערכים הסידוריים.',formula:'Prefix sums outward and back, using ordinal values.'},
+ 'ru:ruLadderD':{plain:'Russian Addition & Subtraction / Ladder · D',original:'Prefix + suffix operator',status:'modern',history:'מחברים את כל הקידומות ואת כל הסיומות של כל מילה לפי D.',formula:'Sum all prefixes and all suffixes using D values.'},
+ 'ru:ruLadderOrdinal':{plain:'Russian Addition & Subtraction / Ladder · Ordinal',original:'Prefix + suffix operator',status:'modern',history:'מחברים את כל הקידומות ואת כל הסיומות לפי הערכים הסידוריים.',formula:'Sum all prefixes and all suffixes using ordinal values.'},
  'en:ordinal':{plain:'English Ordinal',original:'A1Z26 / Simple',status:'modern-standard',history:'מיפוי לטיני מודרני נפוץ. מנועים שונים משתמשים בכינויים Simple או Ordinal.',formula:'A=1, B=2, …, Z=26; then sum.',aliases:['English Simple']},
  'en:pythagorean':{plain:'English Full Reduction',original:'Pythagorean / Reduction',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
  'en:wordReduced':{plain:'English Wordwise Reduction',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(Pythagorean letter values)); then sum words.'},
