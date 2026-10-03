@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-10-02",
+  "updated_at": "2026-10-03",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained.",
   "entries": [
     {
       "value": 0,
@@ -5798,6 +5798,42 @@
       "value": 10,
       "label": "сотворил · axis",
       "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 411,
+      "label": "В начале сотворил Бог",
+      "method": "Russian Reverse Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =411 = English KJV Genesis 1:1 Ordinal",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 82,
+      "label": "сотворил небо",
+      "method": "Russian One-step Zero / D reduction · exhaustive 63-bipartition Genesis 1:1 scan · =82 = Hebrew Genesis 1:1 Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1949,
+      "label": "В начале сотворил небо и",
+      "method": "Russian +1 Shift → D · exhaustive 63-bipartition Genesis 1:1 scan · =1949 = Greek LXX Genesis 1:1 D audit",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 222,
+      "label": "в бог небо",
+      "method": "Russian Running & Returning · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =222 = English KJV Genesis 1:1 Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 37,
+      "label": "в сотворил",
+      "method": "Russian Full Reduction (R) · exhaustive 63-bipartition Genesis 1:1 scan · 3+34=37 = Hebrew Genesis 1:1 Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "начале сотворил небо и",
+      "method": "Russian Prefix Building · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =888",
       "classification": "RESEARCH"
     }
   ],
