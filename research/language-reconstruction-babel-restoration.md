@@ -516,3 +516,49 @@ Q3 coverage now:
 Direct 37, 74, 148, 444, 888.
 System closure 222.
 Direct 111, 222, 296 remain open.
+
+
+## Batch D — 72/72 operator closure
+
+הגדרת CLOSED:
+רשומה סגורה היא שפה שקיבלה אופרטור טבעי/היסטורי/מבני וסטטוס מפורש. CLOSED אינו אומר שהשפה פגעה ב-888 או ב-Q3.
+
+### ממצאים חדשים
+- Breton Jezuz, Peurunvan L25: Forward=88, Reverse=42, Closure=130.
+- Javanese Yesus, Unicode CLDR local order L29: Forward=110, Reverse=40, Closure=150.
+- Sundanese Yesus, Unicode CLDR local order L27: Forward=93, Reverse=47, Closure=140.
+- Mauritian Creole Zezi, Unicode CLDR native main L25: Forward=64, Reverse=40, Closure=104.
+- Luyia/Luhya Yesu, Unicode CLDR L26: Forward=70, Reverse=38, Closure=108.
+- Modern Armenian Հիսուս, L39: Forward=143, Reverse=97, Closure=240.
+- Classical Latin IESVS, L23: Forward=70, Reverse=50, Closure=120.
+- Tagalog Hesus:
+  - modern Filipino28: Forward=78, Reverse=67, Closure=145.
+  - historical Abakada20: Forward=62, Reverse=43, Closure=105.
+
+### AUX channels from CLDR
+במקום לפסול שם שמשתמש באות auxiliary, שומרים שני ערוצים:
+- Kikuyu Jeso: MAIN29 | AUX5 → support sum34.
+- Hawaiian Iesū: MAIN18 | AUX9 → support sum27.
+- Cebuano Jesus: MAIN51 | AUX3 → support sum54.
+
+### Indic GRID closures
+- Bengali যীশু: consonants55 | vowels9 → sum64.
+- Tamil இயேசு: consonants14 | vowels16 → sum30.
+- Gujarati ઈસુ: consonant33 | vowels9 → sum42.
+
+### Standard comparator pack
+SUPPORT בלבד:
+- JESUS: Ordinal74, Pythagorean/Small11, English×6=444.
+- IESUS: Ordinal73.
+- GIESU: Reverse Ordinal74.
+- IESOUS: Reverse Ordinal74; Agrippa/Jewish-style=444.
+
+מכאן 74→11 הוא relation פנימי של אותה מחרוזת JESUS בשתי שיטות קבועות, לא רק 7+4=11.
+
+### סטטוס
+72/72 שפות בקורפוס קיבלו אופרטור/סטטוס.
+החורים שנותרו הם יעדי Q3, לא שורות ריקות:
+- Direct BASE 111: עדיין פתוח.
+- Direct BASE 222: עדיין פתוח; 222 קיים כ-System Closure.
+- Direct BASE 296: עדיין פתוח.
+- 444: נמצא ב-defined English cipher; עדיין פתוח כ-native historical/ordinal raw output בלתי-תלוי.
