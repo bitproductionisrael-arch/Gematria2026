@@ -3,7 +3,77 @@
   const KEY='gematria2026.lang';
   const SUPPORTED=['he','en'];
   const get=()=>{const v=localStorage.getItem(KEY);return SUPPORTED.includes(v)?v:'he'};
-  const esc=s=>String(s==null?'':s);
+
+  const RU_LABEL_FIXES=[
+    [/Русская стандартная\s*\/\s*Russian Standard\s*·\s*Decimal Tier \(D\)/g,'Russian Gematria'],
+    [/Russian Standard\s*·\s*Decimal Tier \(D\)/g,'Russian Gematria'],
+    [/Russian Standard\s*·\s*Decimal Tier/g,'Russian Gematria'],
+    [/Полное сокращение\s*\/\s*Russian Full Reduction \(R\)/g,'Russian Reduced'],
+    [/Russian Full Reduction \(R\)/g,'Russian Reduced'],
+    [/Russian Full Reduction/g,'Russian Reduced'],
+    [/Russian Prefix Building\s*·\s*Ordinal/g,'Building Ordinal'],
+    [/Russian Building\s*\/\s*Achorayim\s*—\s*Ordinal/g,'Building Ordinal'],
+    [/Russian Prefix Building\s*\/\s*Ordinal/g,'Building Ordinal']
+  ];
+  function fixRuLabels(s){
+    let out=String(s==null?'':s);
+    for(const [re,rep] of RU_LABEL_FIXES)out=out.replace(re,rep);
+    return out;
+  }
+  function patchRuLabels(root){
+    root=root||document.body;
+    if(!root)return;
+    try{
+      if(root.nodeType===Node.TEXT_NODE){
+        const v=fixRuLabels(root.nodeValue);
+        if(v!==root.nodeValue)root.nodeValue=v;
+        return;
+      }
+      const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+        const p=node.parentElement;
+        if(!p)return NodeFilter.FILTER_REJECT;
+        if(/^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|INPUT)$/i.test(p.tagName))return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }});
+      const nodes=[];
+      while(walker.nextNode())nodes.push(walker.currentNode);
+      for(const node of nodes){const v=fixRuLabels(node.nodeValue);if(v!==node.nodeValue)node.nodeValue=v;}
+      root.querySelectorAll&&root.querySelectorAll('option,[title],[aria-label]').forEach(el=>{
+        if(el.tagName==='OPTION'){const v=fixRuLabels(el.textContent);if(v!==el.textContent)el.textContent=v;}
+        for(const attr of ['title','aria-label'])if(el.hasAttribute&&el.hasAttribute(attr)){const v=fixRuLabels(el.getAttribute(attr));if(v!==el.getAttribute(attr))el.setAttribute(attr,v);}
+      });
+    }catch(e){console.warn('Russian label patch failed',e)}
+  }
+  let ruLabelObserver=null;
+  function ensureRuLabelPatch(){
+    patchRuLabels(document.body);
+    if(ruLabelObserver||!document.body||!window.MutationObserver)return;
+    ruLabelObserver=new MutationObserver(muts=>{
+      for(const m of muts){
+        if(m.type==='characterData')patchRuLabels(m.target);
+        else m.addedNodes&&m.addedNodes.forEach(n=>patchRuLabels(n));
+      }
+    });
+    ruLabelObserver.observe(document.body,{subtree:true,childList:true,characterData:true});
+  }
+  let clipboardPatched=false;
+  function ensureClipboardPatch(){
+    if(clipboardPatched)return;
+    clipboardPatched=true;
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        const orig=navigator.clipboard.writeText.bind(navigator.clipboard);
+        navigator.clipboard.writeText=function(text){return orig(fixRuLabels(text));};
+      }
+    }catch(e){console.warn('Clipboard patch failed',e)}
+    document.addEventListener('copy',e=>{
+      try{
+        const txt=String(window.getSelection&&window.getSelection()||'');
+        const fixed=fixRuLabels(txt);
+        if(txt&&fixed!==txt&&e.clipboardData){e.preventDefault();e.clipboardData.setData('text/plain',fixed);}
+      }catch(_){ }
+    },true);
+  }
 
   function ensureStyle(){
     if(document.getElementById('siteLangStyle'))return;
@@ -109,11 +179,13 @@
     const b=ensureToggle();b.textContent=lang==='he'?'EN':'HE';
     b.title=lang==='he'?'Switch to English':'עבור לעברית';
     ensureSpeakButton();
+    ensureClipboardPatch();
     applyStatic(lang);
     if(typeof window.onSiteLanguageChange==='function')window.onSiteLanguageChange(lang);
+    ensureRuLabelPatch();
     window.dispatchEvent(new CustomEvent('site-language-change',{detail:{lang}}));
   }
-  function init(){ensureStyle();ensureToggle();ensureSpeakButton();set(get())}
-  window.SiteI18n={get,set,apply:()=>set(get()),supported:SUPPORTED};
+  function init(){ensureStyle();ensureToggle();ensureSpeakButton();ensureClipboardPatch();set(get())}
+  window.SiteI18n={get,set,apply:()=>set(get()),supported:SUPPORTED,fixLabels:fixRuLabels,patchLabels:ensureRuLabelPatch};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
