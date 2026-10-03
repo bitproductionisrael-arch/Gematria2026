@@ -486,3 +486,33 @@ Direct BASE: 37, 74, 148, 888.
 Complement/system: Irish R37; Old Armenian and Navajo C222.
 73-family: Estonian73; Arabic146; Amharic146; Tigrinya146.
 Still open as DIRECT BASE: 111, 222, 296, 444.
+
+
+## Batch C — complement families
+
+### New direct results
+- Sesotho Jesu: Forward 74, Reverse 70, Closure 144.
+- English JESUS: Ordinal 74; fixed ×6 English cipher =444.
+
+### Complement families
+- Guarani Hesu: 66 / 70 / 136.
+- Chichewa Yesu: 49 / 51 / 100.
+- Luganda Yesu: 66 / 34 / 100.
+- Swahili Yesu: 66 / 34 / 100.
+- Gusii Yeso: 65 / 35 / 100.
+- Malagasy Jesosy: 81 / 51 / 132.
+- Haitian Creole Jezi: 63 / 69 / 132.
+
+Format above is Forward / Reverse / Closure.
+
+Repeated outputs:
+- Reverse 70: Sesotho, Guarani, Lower Sorbian.
+- Reverse 51: Chichewa, Malagasy.
+- Forward 66: Guarani, Luganda, Swahili.
+- Closure 100: Chichewa, Luganda, Swahili, Gusii.
+- Closure 132: Malagasy, Haitian Creole.
+
+Q3 coverage now:
+Direct 37, 74, 148, 444, 888.
+System closure 222.
+Direct 111, 222, 296 remain open.
