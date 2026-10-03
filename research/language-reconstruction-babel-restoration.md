@@ -562,3 +562,73 @@ SUPPORT בלבד:
 - Direct BASE 222: עדיין פתוח; 222 קיים כ-System Closure.
 - Direct BASE 296: עדיין פתוח.
 - 444: נמצא ב-defined English cipher; עדיין פתוח כ-native historical/ordinal raw output בלתי-תלוי.
+
+
+## Batch F — JESUS internal operator lattice
+
+### 74 as Q3 generator
+JESUS = 74 in English Simple / Ordinal.
+
+From the same base value:
+- 74 / 2 = 37
+- 74 × 1 = 74
+- 74 × 2 = 148
+- 74 × 3 = 222
+- 74 × 4 = 296
+- 74 × 6 = 444
+- 74 × 12 = 888
+
+Therefore 74 generates nearly the entire 37/Q3 ladder under the fixed incidence multipliers.
+111 remains the exceptional midpoint:
+111 = 3×37 = 444/4 = 888/8.
+
+This is classified as GEOMETRY, not as independent language evidence.
+
+### Small=11 repdigit generator
+JESUS = 11 in English Small/Pythagorean.
+
+Multiplication yields:
+11×2=22
+11×3=33
+11×4=44
+11×5=55
+11×6=66
+11×8=88
+11×10=110
+11×12=132
+
+For n=1…9, 11×n creates the repeated-digit family nn.
+This gives a formal connection between the 74 readout and the 11/22/33/44/55/66/77/88/99 string states.
+
+### Repeated x6 lift across independent cipher channels
+Three distinct JESUS readouts show the same fixed sixfold lift:
+- Simple 74 → English Gematria 444 = 6×74
+- Isopsephy 515 → Addition & Subtraction 3090 = 6×515
+- Building 188 → Building Gematria 1128 = 6×188
+
+Additionally:
+- Equivalence 1545 = 3×515
+- Addition & Subtraction 3090 = 2×1545
+
+This defines a candidate HomePower operator:
+L6(x)=6x
+
+Status: STRUCTURAL / SUPPORT until the internal definitions of each cipher are compared to determine whether the repeated ×6 is algebraically built into the methods or is an independent coincidence.
+
+### Jewish delta identity
+JESUS:
+Jewish = 985
+JewishΔSimple = 911
+Simple = 74
+
+985 − 911 = 74
+
+This relation is expected to be checked against the formal definition of JewishΔSimple before being treated as evidence; if ΔSimple is defined by subtraction of Simple, the equality is tautological.
+
+### Atbash / ALBaM scale
+Atbash Ordinal = 61
+ALBaM analogue = 610
+
+610 = 10×61
+
+This is another exact fixed-scale pair to classify by cipher definition before assigning evidential weight.
