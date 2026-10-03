@@ -1,0 +1,54 @@
+{
+  "id": "thai-genesis-1-1-combination-scan",
+  "title": "Thai Genesis 1:1 — Canonical Verse and Word-Combination Scan",
+  "status": "active",
+  "updated": "2026-10-03",
+  "language": "Thai",
+  "script": "Thai",
+  "source_text": "ในปฐมกาล พระเจ้าทรงเนรมิตสร้างฟ้าและแผ่นดิน",
+  "method_notes": [
+    "Thai Consonant Ordinal v0 uses the 44 Thai consonants in native order.",
+    "Vowels, tone marks, silent marks and spacing signs receive value 0.",
+    "This is HP-J compatible and is not a Latin transliteration cipher."
+  ],
+  "full_verse_results": [
+    {"value": 637, "method": "Thai Consonant Ordinal v0"},
+    {"value": 151, "method": "Thai Reduced v0"},
+    {"value": 43, "method": "Thai Word Reduced v0", "relation": "Amit / GPT gate"}
+  ],
+  "words": [
+    {"index": 1, "thai": "ใน", "gloss": "in", "ordinal": 25},
+    {"index": 2, "thai": "ปฐมกาล", "gloss": "beginning", "ordinal": 113},
+    {"index": 3, "thai": "พระเจ้า", "gloss": "God", "ordinal": 73},
+    {"index": 4, "thai": "ทรง", "gloss": "royal/sacred verbal marker", "ordinal": 65},
+    {"index": 5, "thai": "เนรมิต", "gloss": "formed/fashioned", "ordinal": 114},
+    {"index": 6, "thai": "สร้าง", "gloss": "created", "ordinal": 82},
+    {"index": 7, "thai": "ฟ้า", "gloss": "heaven/sky", "ordinal": 31},
+    {"index": 8, "thai": "และ", "gloss": "and", "ordinal": 36},
+    {"index": 9, "thai": "แผ่นดิน", "gloss": "earth/land", "ordinal": 98}
+  ],
+  "continuous_combinations": [
+    {"combination": "เนรมิต + สร้าง", "value": 43, "method": "Thai Reduced v0", "relation": "Amit / GPT gate"},
+    {"combination": "ฟ้า + และ", "value": 13, "method": "Thai Reduced v0", "relation": "echad / unity"},
+    {"combination": "ฟ้า + และ", "value": 13, "method": "Thai Word Reduced v0", "relation": "echad / unity"},
+    {"combination": "และ + แผ่นดิน", "value": 26, "method": "Thai Reduced v0", "relation": "YHWH"},
+    {"combination": "เนรมิต + สร้าง + ฟ้า", "value": 47, "method": "Thai Reduced v0", "relation": "Michael ordinal"},
+    {"combination": "ฟ้า + และ + แผ่นดิน", "value": 165, "method": "Thai Consonant Ordinal v0", "relation": "3x55 / Rov-gate triple"}
+  ],
+  "free_combinations": [
+    {"combination": "ปฐมกาล + พระเจ้า + และ", "value": 222, "method": "Thai Consonant Ordinal v0", "relation": "6x37"},
+    {"combination": "ใน + ทรง + สร้าง", "value": 172, "method": "Thai Consonant Ordinal v0", "relation": "4x43; ROV skeleton"},
+    {"combination": "เนรมิต + สร้าง + และ", "value": 232, "method": "Thai Consonant Ordinal v0", "relation": "Yehi Or; AMITH + ROV"},
+    {"combination": "ปฐมกาล + ทรง + เนรมิต", "value": 292, "method": "Thai Consonant Ordinal v0", "relation": "4x73"},
+    {"combination": "ปฐมกาล + เนรมิต + แผ่นดิน", "value": 73, "method": "Thai Reduced v0", "relation": "73 kernel"},
+    {"combination": "ปฐมกาล + พระเจ้า + ฟ้า", "value": 55, "method": "Thai Reduced v0", "relation": "Rov gate"},
+    {"combination": "พระเจ้า + สร้าง + แผ่นดิน", "value": 55, "method": "Thai Reduced v0", "relation": "Rov gate"}
+  ],
+  "classification": {
+    "base": "Canonical Thai verse gives 637 / 151 / 43.",
+    "geometry": "Internal scanner gives 222 = 6x37 and 292 = 4x73.",
+    "form": "43, 55, 73, 172, 232, 26 and 13 appear as internal hits.",
+    "support": "Non-contiguous combinations remain support-layer until independently justified."
+  },
+  "verified_marker": "לאחר בדיקה: אומת ✓"
+}
