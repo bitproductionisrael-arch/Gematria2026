@@ -1,0 +1,36 @@
+{
+  "schema": "gematria2026-corpus-addendum-v1",
+  "updated_at": "2026-10-03",
+  "title": "Иисус / Russian Gematria / Amit Rov Bridge",
+  "status": "active-research",
+  "classification": ["RUSSIAN-JESUS", "AMIT-ROV-BRIDGE", "LANGUAGE-RESTORATION"],
+  "entries": [
+    {
+      "value": 520,
+      "label": "Иисус",
+      "method": "Russian Gematria",
+      "bridge": "עמית = 520 (Hebrew Regular)",
+      "classification": "RUSSIAN-JESUS-AMIT"
+    },
+    {
+      "value": 208,
+      "label": "Иисус",
+      "method": "Building Ordinal",
+      "bridge": "רוב = 208 (Hebrew Regular)",
+      "classification": "RUSSIAN-JESUS-ROV"
+    },
+    {
+      "value": 52,
+      "label": "Иисус",
+      "method": "Russian Reduced",
+      "bridge": "Mike / מייק / משיח axis",
+      "classification": "RUSSIAN-JESUS-MIKE"
+    }
+  ],
+  "site_label_rule": {
+    "Russian Standard · Decimal Tier (D)": "Russian Gematria",
+    "Russian Prefix Building · Ordinal": "Building Ordinal",
+    "Russian Full Reduction (R)": "Russian Reduced"
+  },
+  "corpus_sentence": "Иисус in the modern Russian engine returns the Amit-Rov axis: 520, 208, 52."
+}
