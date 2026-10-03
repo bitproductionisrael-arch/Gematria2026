@@ -1,0 +1,18 @@
+{
+  "schema": "gematria2026-corpus-addendum-v1",
+  "updated_at": "2026-10-03",
+  "title": "Michael the Great Minister / 777 Addendum",
+  "status": "active-research",
+  "parent": "research/corpus-michael-kohen-gadol-55.json",
+  "classification": ["MICHAEL-FUNCTION", "GREAT-MINISTER", "PRIESTLY-ORDER", "Q3-777"],
+  "entries": [
+    {"value": 654, "label": "מיכאל השר הגדול", "method": "Hebrew Regular / הכרחית", "classification": "MICHAEL-GREAT-MINISTER"},
+    {"value": 123, "label": "מיכאל השר הגדול", "method": "Hebrew Ordinal / סדרית", "classification": "MICHAEL-GREAT-MINISTER"},
+    {"value": 777, "label": "מיכאל השר הגדול closure", "method": "654 + 123 = 777", "classification": "Q3-777-CLOSURE"},
+    {"value": 101, "label": "מיכאל", "method": "Hebrew Regular / הכרחית", "classification": "MICHAEL-BASE"},
+    {"value": 505, "label": "השר", "method": "Hebrew Regular; 505 = מיכאל × 5", "classification": "MINISTER-MULTIPLIER"},
+    {"value": 111, "label": "VERTEX state", "method": "111 = 3×37", "classification": "Q3"},
+    {"value": 777, "label": "7×111", "method": "777 = 7×111 = 21×37", "classification": "Q3-777"}
+  ],
+  "corpus_statement": "מיכאל השר הגדול closes Hebrew Regular and Hebrew Ordinal into 777: 654 + 123 = 777. השר = 505 = מיכאל × 5. The 777 result is classified as 7×111 = 21×37, connecting the great minister layer to the Q3 vertex state."
+}
