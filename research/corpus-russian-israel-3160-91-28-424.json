@@ -1,0 +1,53 @@
+{
+  "schema": "gematria2026-corpus-addendum-v1",
+  "updated_at": "2026-10-03",
+  "title": "Russian Israel / Израиль / 3160 91 28 1 424 Addendum",
+  "status": "active-research",
+  "parent": "research/iisus-russian-amit-rov-520-208-52.md",
+  "classification": [
+    "RUSSIAN-ISRAEL",
+    "YHWH-ADONAI-91",
+    "ROV-28",
+    "UNITY-1",
+    "MASHIACH-BEN-DAVID-424",
+    "JESUS-ELOHIM-316"
+  ],
+  "entries": [
+    {
+      "value": 3160,
+      "label": "Израиль",
+      "method": "Russian Gematria",
+      "classification": "RUSSIAN-ISRAEL-FULL-BODY"
+    },
+    {
+      "value": 91,
+      "label": "Израиль",
+      "method": "Russian Ordinal",
+      "classification": "YHWH-ADONAI-AMEN-91"
+    },
+    {
+      "value": 28,
+      "label": "Израиль",
+      "method": "Russian Reduced",
+      "classification": "ROV-ORDINAL-28"
+    },
+    {
+      "value": 1,
+      "label": "Израиль",
+      "method": "Word Reduced",
+      "classification": "UNITY-ECHAD-NODE"
+    },
+    {
+      "value": 424,
+      "label": "Израиль",
+      "method": "Russian Positional · Ordinal",
+      "classification": "MASHIACH-BEN-DAVID-424"
+    },
+    {
+      "value": 316,
+      "label": "316 bridge inside 3160",
+      "method": "3160 = 10 × 316",
+      "classification": "JESUS-ELOHIM-316-BRIDGE"
+    }
+  ]
+}
