@@ -1,0 +1,52 @@
+{
+  "schema": "gematria2026-corpus-addendum-v1",
+  "updated_at": "2026-10-03",
+  "title": "Russian Koen / Коэн / 4160 74 20 2 416 62 Addendum",
+  "status": "active-research",
+  "classification": [
+    "RUSSIAN-KOHEN",
+    "TEVAH-PRODUCT-4160",
+    "BOX-POLYNOMIAL-CONSTANT",
+    "MIKE-74",
+    "YHWH-20",
+    "ONE-STEP-416"
+  ],
+  "entries": [
+    {
+      "value": 4160,
+      "label": "Коэн",
+      "method": "Russian Gematria",
+      "classification": "TEVAH-PRODUCT-8x20x26"
+    },
+    {
+      "value": 74,
+      "label": "Коэн",
+      "method": "Russian Ordinal",
+      "classification": "MIKE-74-2x37"
+    },
+    {
+      "value": 20,
+      "label": "Коэн",
+      "method": "Russian Reduced",
+      "classification": "YHWH-MIKE-DIV8-LAYER"
+    },
+    {
+      "value": 2,
+      "label": "Коэн",
+      "method": "Word Reduced",
+      "classification": "DUAL-GATE"
+    },
+    {
+      "value": 416,
+      "label": "Коэн",
+      "method": "One-step Zero / Russian One-step Reduction",
+      "classification": "ONE-STEP-TEVAH-PRODUCT"
+    },
+    {
+      "value": 62,
+      "label": "Коэн",
+      "method": "Russian Reverse Ordinal",
+      "classification": "MIRROR-ORDINAL-BODY"
+    }
+  ]
+}
