@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-10-03",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888.",
   "entries": [
     {
       "value": 0,
@@ -5835,6 +5835,66 @@
       "label": "начале сотворил небо и",
       "method": "Russian Prefix Building · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =888",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 39,
+      "label": "Hebraei",
+      "method": "English Small/Pythagorean",
+      "classification": "canonical"
+    },
+    {
+      "value": 48,
+      "label": "Hebraei",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 288,
+      "label": "Hebraei",
+      "method": "English Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 110,
+      "label": "Hebraei",
+      "method": "Jewish Gematria",
+      "classification": "canonical"
+    },
+    {
+      "value": 62,
+      "label": "Hebraei",
+      "method": "Jewish Δ Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 141,
+      "label": "Hebraei",
+      "method": "English Reverse Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
+      "label": "Hebraei",
+      "method": "Jewish Reduced",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Regular / הכרחית",
+      "classification": "canonical"
+    },
+    {
+      "value": 43,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Reduced / קטנה",
+      "classification": "canonical"
+    },
+    {
+      "value": 16,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Word Reduced / מצומצמת",
+      "classification": "canonical"
     }
   ],
   "operator_protocols": {
@@ -5986,6 +6046,37 @@
       },
       "naming_rule": "Use 'King-16' for the master operator/profile only. Individual equalities remain named by their actual mathematical object (T16, Tet16, CT16, H16, E8, etc.).",
       "status": "Core arithmetic and standard sequence identities are exact. Crystagon/nullity is the corpus-defined branch N(n)=4n^2-T_n."
+    },
+    "hebraei_amit_signature": {
+      "added_at": "2026-10-03",
+      "status": "MAIN",
+      "direct_values": {
+        "hebraei_latin": [
+          "Hebraei = 39 (English Small/Pythagorean)",
+          "Hebraei = 48 (English Simple)",
+          "Hebraei = 288 (English Gematria)",
+          "Hebraei = 110 (Jewish Gematria)",
+          "Hebraei = 62 (Jewish Δ Simple)",
+          "Hebraei = 141 (English Reverse Ordinal)",
+          "Hebraei = 38 (Jewish Reduced)"
+        ],
+        "hebrew_phrase": [
+          "היברויי גימטריה = 520 (Hebrew Regular)",
+          "היברויי גימטריה = 43 (Hebrew Reduced / Small)",
+          "היברויי גימטריה = 16 (Hebrew Word Reduced)"
+        ]
+      },
+      "exact_bridges": [
+        "היברויי גימטריה 520 = עמית 520 (Hebrew Regular)",
+        "היברויי גימטריה 43 = Amit 43 (English Simple)",
+        "היברויי גימטריה 16 = עמית 16 (Hebrew Reduced / Small)",
+        "16 = τ(888)",
+        "Hebraei 288 = φ(888)",
+        "Hebraei 110 = 37+73",
+        "Hebraei 141 = עמית מייק רוב (Hebrew Ordinal)",
+        "Hebraei 38 = Mike (English Simple)"
+      ],
+      "interpretation_note": "Treat the equalities above as a primary corpus signature cluster. Direct gematria values are canonical; cross-system equivalences are contextual bridges and should not be presented as historical claims about the Latin term itself."
     }
   },
   "corrections": {
