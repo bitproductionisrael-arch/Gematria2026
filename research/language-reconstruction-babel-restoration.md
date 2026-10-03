@@ -428,3 +428,61 @@ LANGUAGE
 - 2026-10-03: Hungarian 136, Polish 101, Finnish reverse 101, Latvian 110 קוטלגו מחדש.
 - 2026-10-03: Ukrainian / Georgian complement closure = 136.
 - 2026-10-03: נוספה קבוצת historical non-hits: Gothic 485, Georgian 285, Old Armenian 11920, Aghwan 648025.
+
+
+## Batch B — HomePower multilingual scan
+
+### HomePower operators added
+- HP-K — Kaṭapayādi: historical Indic consonant-to-digit encoding. Use only where the script mapping is documented.
+- HP-L — Han stroke count: Chinese is scanned by canonical character stroke counts rather than Latin ordinal.
+- HP-J2 — Multi-axis script grid: consonant/vowel or Jamo channels are kept separate before any scalar reduction.
+
+### B37 class
+For an alphabet of 36 ordered graphemes:
+Forward + Reverse = 37 × word_length.
+
+Verified inside the fixed corpus:
+- Old Armenian: Յիսուս → F148, R74, C222.
+- Albanian: Jezui → F99, R86, C185.
+- Igbo: Jisọs → F107, R78, C185.
+- Navajo: Jíísas → F87, R135, C222.
+- Lower Sorbian: Jezus → F115, R70, C185.
+
+B37 is a SYSTEM property; the specific Forward/Reverse split is the name fingerprint.
+
+### New base/system results
+- Irish Íosa: F39, R37, C76.
+- Amharic የሱስ under documented Ethiopic Halehame enumeration: 146 = 2×73.
+- Tigrinya short form የሱስ: same Ethiopic output 146.
+- Korean 예수: native Jamo channels 22 | 22 → support total 44.
+- Tibetan ཡེ་ཤུ: F56, R16, system closure72.
+- Japanese イエス: gojūon F19, R122, closure141.
+- Thai เยซู: consonant/vowel vector 45 | 21; support F66, R56, closure122.
+- Mandarin: 耶穌 =25 strokes; 耶稣 =22 strokes.
+
+### Indic historical numeric
+Using Kaṭapayādi where directly supported:
+- Hindi यीशु → 51.
+- Marathi येशू → 51.
+- Malayalam യേശു → 51.
+- Telugu యేసు → 71.
+
+### Additional alphabetic results
+- Ido Iesu: F54, R54, C108 — self-complement.
+- Spanish Jesús: F77, R63, C140.
+- Swedish / Norwegian Jesus: F74, R76, C150.
+- Indonesian / Malay Yesus: F89, R46, C135.
+- Vietnamese Giêsu: F79, R71, C150.
+- Māori Ihu: F19, R29, C48.
+- Italian Gesù: F48, R40, C88.
+- Maltese Ġesù: F60, R64, C124.
+
+### Script incompatibility rule
+If the accepted local form contains a grapheme outside the native alphabet inventory, do not invent a native ordinal. Mark HYBRID / EXTERNAL-GRAPHEME.
+Examples currently flagged: Hawaiian Iesū and Cebuano Jesus.
+
+### Q3 status after Batch B
+Direct BASE: 37, 74, 148, 888.
+Complement/system: Irish R37; Old Armenian and Navajo C222.
+73-family: Estonian73; Arabic146; Amharic146; Tigrinya146.
+Still open as DIRECT BASE: 111, 222, 296, 444.
