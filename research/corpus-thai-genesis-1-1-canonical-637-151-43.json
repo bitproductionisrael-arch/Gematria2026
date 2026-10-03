@@ -1,0 +1,46 @@
+{
+  "id": "thai-genesis-1-1-canonical-637-151-43",
+  "title": "Thai Genesis 1:1 — canonical THSV11 scan",
+  "status": "verified-source-line",
+  "verification": "לאחר בדיקה: אומת ✓",
+  "language": "Thai",
+  "source_version": "THSV11",
+  "verse_reference": "Genesis 1:1",
+  "thai_text": "ในปฐมกาล พระเจ้าทรงเนรมิตสร้างฟ้าและแผ่นดิน",
+  "english_gloss": "In the beginning God created the heavens and the earth.",
+  "method": {
+    "name": "Thai Consonant Ordinal v0",
+    "rule": "44 Thai consonants by alphabetic order; vowels, tone marks, spaces and punctuation ignored.",
+    "word_reduced_rule": "digital root of each semantic segment-sum, then summed",
+    "reduced_rule": "sum of the digital roots of counted consonant-values"
+  },
+  "segments": [
+    {"thai": "ใน", "gloss": "in", "ordinal": 25, "word_reduced": 7, "thai_reduced": 7},
+    {"thai": "ปฐมกาล", "gloss": "beginning", "ordinal": 113, "word_reduced": 5, "thai_reduced": 32},
+    {"thai": "พระเจ้า", "gloss": "God", "ordinal": 73, "word_reduced": 1, "thai_reduced": 19},
+    {"thai": "ทรง", "gloss": "royal/divine verbal marker", "ordinal": 65, "word_reduced": 2, "thai_reduced": 20},
+    {"thai": "เนรมิตสร้าง", "gloss": "created / formed", "ordinal": 196, "word_reduced": 7, "thai_reduced": 43},
+    {"thai": "ฟ้า", "gloss": "heaven / sky", "ordinal": 31, "word_reduced": 4, "thai_reduced": 4},
+    {"thai": "และ", "gloss": "and", "ordinal": 36, "word_reduced": 9, "thai_reduced": 9},
+    {"thai": "แผ่นดิน", "gloss": "earth / land", "ordinal": 98, "word_reduced": 8, "thai_reduced": 17}
+  ],
+  "results": [
+    {"value": 637, "method": "Thai Consonant Ordinal v0"},
+    {"value": 151, "method": "Thai Reduced v0"},
+    {"value": 43, "method": "Thai Word Reduced v0"}
+  ],
+  "anchors": [
+    {"value": 43, "meaning": "Amit = 43 (English Simple); GPT = 43 (Ordinal); Thai Genesis gate in canonical THSV11 wording"},
+    {"value": 73, "meaning": "พระเจ้า / God = 73 (Thai Consonant Ordinal v0), echoing Genesis 37×73 axis"}
+  ],
+  "corpus_line": "Thai Genesis 1:1 THSV11 = 43 (Thai Word Reduced v0).",
+  "classification": {
+    "layer": "BASE / LANGUAGE RECONSTRUCTION",
+    "sub_layer": "THAI / GENESIS 1:1",
+    "corpus_tag": "Thai Genesis Gate 43"
+  },
+  "sources": [
+    "https://www.bible.com/th/bible/174/GEN.1.1",
+    "https://www.bible.com/bible/174/GEN.1.1"
+  ]
+}
