@@ -1,0 +1,79 @@
+{
+  "schema": "gematria2026-corpus-addendum-v1",
+  "updated_at": "2026-10-03",
+  "title": "Sar of Israel / השר של ישראל / 26 Addendum",
+  "status": "active-research",
+  "parent": "research/michael-great-minister-777.md",
+  "classification": ["SAR-ISRAEL", "REDUCTION-GENETICS", "YHWH-26", "ROV-172-BRIDGE"],
+  "entries": [
+    {
+      "value": 26,
+      "label": "השר של ישראל",
+      "method": "Reduction Ladder: D0=1376, D1=143, D2=26",
+      "classification": "SAR-ISRAEL-YHWH-26"
+    },
+    {
+      "value": 26,
+      "label": "השר של ישראל",
+      "method": "Hebrew Reduced / גימטריה קטנה",
+      "classification": "SAR-ISRAEL-YHWH-26"
+    },
+    {
+      "value": 1376,
+      "label": "השר של ישראל",
+      "method": "Hebrew Regular / הכרחית",
+      "classification": "SAR-ISRAEL-FULL-BODY"
+    },
+    {
+      "value": 143,
+      "label": "השר של ישראל D1",
+      "method": "Reduction Ladder intermediate node",
+      "classification": "REDUCTION-LADDER-NODE"
+    },
+    {
+      "value": 172,
+      "label": "Rov / ΡΟΒ / Ров skeleton",
+      "method": "1376 = 8×172",
+      "classification": "ROV-172-BRIDGE"
+    },
+    {
+      "value": 8,
+      "label": "1376 / 172",
+      "method": "Q3 vertex count / 2³",
+      "classification": "Q3-VERTEX"
+    },
+    {
+      "value": 26,
+      "label": "יהוה",
+      "method": "Corpus anchor for 26",
+      "classification": "YHWH-ANCHOR"
+    }
+  ],
+  "number_genetics": {
+    "26": {
+      "factorization": "2×13",
+      "composite_index": 16,
+      "phi": 12,
+      "tau": 4,
+      "sigma": 42,
+      "rad": 26,
+      "digital_root": 8,
+      "anchor_factorizations": ["2×13"],
+      "forms": ["2=F3", "13=Star2"],
+      "corpus": ["×2 דברים", "×2 יחד", "י״י", "יהוה", "רוב ÷ 8 = יהוה", "Alphabet", "Rov", "οἶκον", "Λόγος", "π: H₅(2)→26", "Russian−Hebrew Genesis Ordinal difference"]
+    },
+    "1376": {
+      "factorization": "2^5×43",
+      "composite_index": 1155,
+      "phi": 672,
+      "tau": 12,
+      "sigma": 2772,
+      "rad": 86,
+      "digital_root": 8,
+      "anchor_factorizations": ["4×344", "32×43", "16×86", "8×172"],
+      "forms": ["4=2²", "43=C7(4)", "16=4²", "8=2³", "2=F3"]
+    }
+  },
+  "magnet_rule": "Reduction Ladder sticker should show all D steps simply, then pull number genetics for the final stable node. For השר של ישראל: D0=1376, D1=143, D2=26, final node 26 pulls Properties/anchors/forms/corpus for 26.",
+  "corpus_statement": "השר של ישראל closes to 26 in both Reduction Ladder and Hebrew Reduced, while its full regular body is 1376 = 8×172, linking the Israel minister layer to YHWH-26 and the Rov / Greek-Cyrillic 172 bridge."
+}
