@@ -2156,5 +2156,139 @@ window.onSiteLanguageChange=function(lang){
 };
 </script>
 <script src="site-i18n.js"></script>
+
+<!-- AMIT_COMBINATION_SCANNER_V1 -->
+<style>
+.combo-scan-btn{font-size:18px}
+.combo-modal{position:fixed;inset:0;z-index:9998;background:rgba(3,7,12,.86);backdrop-filter:blur(8px);display:none;padding:18px}
+.combo-modal.open{display:grid;place-items:center}
+.combo-shell{width:min(1180px,96vw);height:min(840px,92vh);background:#0d141d;border:1px solid #344456;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.55);display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:10px;padding:14px;overflow:hidden}
+.combo-head{display:flex;align-items:center;gap:10px}.combo-head .grow{flex:1}.combo-title{font-size:19px;font-weight:950}.combo-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.combo-controls{display:grid;grid-template-columns:1.2fr 1fr 1fr auto auto;gap:8px;align-items:center}
+.combo-controls select,.combo-controls input{height:38px;padding:6px 9px;min-width:0}
+.combo-status{display:flex;gap:8px;align-items:center;min-height:30px;font-size:11px;color:var(--muted);flex-wrap:wrap}.combo-status b{color:#ffe2a0}
+.combo-results{min-height:0;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:8px;align-content:start;padding:2px}
+.combo-hit{border:1px solid #2d3b49;background:#0a1118;border-radius:13px;padding:10px;display:grid;gap:7px;cursor:pointer}
+.combo-hit:hover{border-color:#6b7e93;background:#0e1822}.combo-hit .phrase{font-size:14px;font-weight:850;line-height:1.35}.combo-hit .meta{font-size:10px;color:var(--muted)}
+.combo-hit .vals{display:flex;gap:5px;flex-wrap:wrap}.combo-chip{border:1px solid #314052;border-radius:999px;padding:3px 7px;font-size:10px;direction:ltr}.combo-chip.anchor{border-color:#6f5a2d;color:#ffe2a0}.combo-chip.corpus{border-color:#326c69;color:#bdf4f0}
+.combo-hit .score{font-size:20px;font-weight:950;color:var(--blue);direction:ltr}.combo-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
+@media(max-width:760px){.combo-modal{padding:6px}.combo-shell{width:100%;height:96vh;padding:9px}.combo-controls{grid-template-columns:1fr 1fr}.combo-controls button{height:38px}.combo-results{grid-template-columns:1fr}.combo-title{font-size:16px}}
+</style>
+<script>
+(function(){
+ var CORE_ANCHORS=new Set([13,16,24,26,27,28,32,33,37,43,54,55,64,73,74,82,100,104,110,111,136,148,160,208,216,222,288,316,368,520,656,666,703,777,816,888,999,1000,1008,1024,1188,1369,1480,1776,2080,2368,2701,4160]);
+ function esc2(s){return String(s).replace(/[&<>"']/g,function(ch){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]})}
+ function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+ var modal=mk('div','combo-modal');
+ modal.id='comboModal';
+ modal.innerHTML='<div class="combo-shell">'+
+ '<div class="combo-head"><div class="grow"><div class="combo-title">🧩 Combination Scanner · סורק צירופים</div><div class="combo-sub">מפרק משפט לצירופי מילים, מריץ את מנוע האתר ומעלה רק התאמות מעניינות.</div></div><button id="comboClose">✕</button></div>'+
+ '<div class="combo-controls"><select id="comboMode"><option value="subsets">כל תתי-הקבוצות</option><option value="contiguous">רצפים בלבד</option></select><select id="comboMethodScope"><option value="all">כל השיטות</option><option value="current">השיטה הנוכחית</option></select><select id="comboThreshold"><option value="100">קורפוס בלבד</option><option value="25" selected>עוגנים + קורפוס</option><option value="10">רחב</option></select><button id="comboRun">סרוק</button><button id="comboStop">עצור</button></div>'+
+ '<div class="combo-status" id="comboStatus">מוכן לסריקה.</div>'+
+ '<div class="combo-results" id="comboResults"><div class="combo-empty">כתוב משפט למעלה ולחץ סרוק.</div></div>'+
+ '</div>';
+ document.body.appendChild(modal);
+
+ var qb=document.querySelector('.querybox');
+ if(qb){
+   var b=document.createElement('button');b.id='comboOpen';b.className='query-quick combo-scan-btn';b.title='סריקת צירופים מתוך המשפט';b.textContent='🧩';
+   var save=document.getElementById('saveQuery');if(save)qb.insertBefore(b,save);else qb.appendChild(b);
+ }
+ var running=false,stop=false;
+ function words(){return (document.getElementById('q').value||'').trim().split(/\s+/).filter(Boolean)}
+ function combos(ws,mode){
+   var out=[],n=ws.length,i,j,mask,a;
+   if(mode==='contiguous'){
+     for(i=0;i<n;i++)for(j=i;j<n;j++)out.push({text:ws.slice(i,j+1).join(' '),idx:ws.slice(i,j+1).map(function(_,k){return i+k})});
+     return out;
+   }
+   if(n>15)return null;
+   for(mask=1;mask<(1<<n);mask++){
+     a=[];var ids=[];
+     for(i=0;i<n;i++)if(mask&(1<<i)){a.push(ws[i]);ids.push(i)}
+     out.push({text:a.join(' '),idx:ids});
+   }
+   return out;
+ }
+ function scoreResult(r){
+   var hits=[];try{hits=corpusHits(r.total)||[]}catch(_){}
+   var score=hits.length*100+(CORE_ANCHORS.has(r.total)?25:0);
+   var forms=[];try{var an=analyzeNumber(r.total);forms=an&&an.forms?an.forms:[]}catch(_){}
+   if(score<25&&forms.length)score+=10;
+   return {score:score,hits:hits,forms:forms};
+ }
+ function resultRows(phrase){
+   var data;
+   try{data=calculateAll(phrase)}catch(_){return []}
+   var rows=data.results||[];
+   var scope=document.getElementById('comboMethodScope').value;
+   if(scope==='current'){
+     var key=state&&state.methodKey;
+     rows=rows.filter(function(r){return r.method&&r.method.key===key});
+   }
+   return rows;
+ }
+ function render(hits,scanned,total){
+   var box=document.getElementById('comboResults');
+   var threshold=Number(document.getElementById('comboThreshold').value)||25;
+   hits=hits.filter(function(h){return h.score>=threshold}).sort(function(a,b){return b.score-a.score||a.words-b.words}).slice(0,500);
+   document.getElementById('comboStatus').innerHTML='<b>'+scanned.toLocaleString()+'</b> / '+total.toLocaleString()+' צירופים · <b>'+hits.length+'</b> hits מוצגים · לחיצה על hit מעבירה אותו למחשבון';
+   if(!hits.length){box.innerHTML='<div class="combo-empty">עדיין אין hits בסף שנבחר.</div>';return}
+   box.innerHTML=hits.map(function(h){
+     var chips=h.matches.slice(0,7).map(function(m){
+       var cls=m.hits.length?'corpus':(CORE_ANCHORS.has(m.total)?'anchor':'');
+       var lab=(m.method.name||m.method.key)+' = '+m.total;
+       if(m.hits.length)lab+=' · '+m.hits.map(function(x){return x.label}).slice(0,2).join('/');
+       return '<span class="combo-chip '+cls+'">'+esc2(lab)+'</span>';
+     }).join('');
+     return '<div class="combo-hit" data-phrase="'+encodeURIComponent(h.phrase)+'"><div style="display:flex;gap:8px;align-items:start"><div class="phrase" style="flex:1">'+esc2(h.phrase)+'</div><div class="score">'+h.score+'</div></div><div class="vals">'+chips+'</div><div class="meta">'+h.words+' מילים · '+h.matches.length+' מסלולים מעניינים</div></div>';
+   }).join('');
+ }
+ async function run(){
+   if(running)return;
+   var ws=words(),mode=document.getElementById('comboMode').value;
+   if(!ws.length)return;
+   var list=combos(ws,mode);
+   if(!list){
+     document.getElementById('comboStatus').innerHTML='לסריקת <b>כל</b> תתי-הקבוצות המלאה מוגבל כרגע ל-15 מילים כדי לא להקפיא את הדפדפן. בחר "רצפים בלבד" למשפט ארוך יותר.';
+     return;
+   }
+   running=true;stop=false;
+   var best=new Map(),i=0,total=list.length;
+   document.getElementById('comboResults').innerHTML='<div class="combo-empty">סורק…</div>';
+   while(i<total&&!stop){
+     var end=Math.min(i+24,total);
+     for(;i<end;i++){
+       var item=list[i],rows=resultRows(item.text),matches=[],score=0;
+       for(var k=0;k<rows.length;k++){
+         var s=scoreResult(rows[k]);
+         if(s.score>0){matches.push({method:rows[k].method,total:rows[k].total,hits:s.hits,forms:s.forms,score:s.score});score+=s.score}
+       }
+       if(matches.length){
+         matches.sort(function(a,b){return b.score-a.score});
+         var prior=best.get(item.text);
+         var rec={phrase:item.text,words:item.idx.length,matches:matches,score:score};
+         if(!prior||rec.score>prior.score)best.set(item.text,rec);
+       }
+     }
+     if(i%240===0||i===total)render(Array.from(best.values()),i,total);
+     await new Promise(function(res){requestAnimationFrame(res)});
+   }
+   render(Array.from(best.values()),i,total);
+   document.getElementById('comboStatus').innerHTML+=(stop?' · נעצר':' · הושלם ✓');
+   running=false;
+ }
+ document.addEventListener('click',function(e){
+   if(e.target.closest('#comboOpen')){modal.classList.add('open');return}
+   if(e.target.closest('#comboClose')){stop=true;modal.classList.remove('open');return}
+   if(e.target.closest('#comboRun')){run();return}
+   if(e.target.closest('#comboStop')){stop=true;return}
+   var hit=e.target.closest('.combo-hit');
+   if(hit){var phrase=decodeURIComponent(hit.dataset.phrase||'');document.getElementById('q').value=phrase;modal.classList.remove('open');try{renderAll()}catch(_){}}
+ });
+ modal.addEventListener('click',function(e){if(e.target===modal){stop=true;modal.classList.remove('open')}});
+})();
+</script>
+
 </body>
 </html>
