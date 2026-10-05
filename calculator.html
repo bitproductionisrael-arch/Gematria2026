@@ -2168,7 +2168,7 @@ window.onSiteLanguageChange=function(lang){
 </style>
 <script>
 (function(){
- const INTERESTING=new Set([13,16,18,21,24,26,27,28,32,33,37,38,41,43,52,55,58,59,61,64,65,72,73,74,77,82,86,88,96,100,101,104,110,111,128,130,136,140,141,148,160,172,177,208,216,222,232,258,267,288,314,316,344,345,358,361,368,370,384,385,441,456,518,520,528,543,555,576,592,636,640,656,666,703,768,777,800,815,816,874,888,935,960,999,1000,1008,1024,1072,1073,1152,1177,1188,1221,1316,1369,1408,1480,1760,1776,1877,1888,1998,2080,2368,2701,3168,4160,5467,5476,7200]);
+ const STRONG_ANCHORS=new Set([37,54,73,74,104,110,111,136,148,160,208,216,222,288,296,316,368,370,520,592,656,666,703,777,816,888,999,1000,1008,1024,1188,1369,1480,1776,2080,2368,2701,4160]);
  const METHOD_KEYS={
    he:['regular','reduced','ordinal'],
    el:['isopsephy','reduced','ordinal'],
@@ -2187,10 +2187,9 @@ window.onSiteLanguageChange=function(lang){
    for(const m of methods){
      const vals=words.map(w=>Number(calculate(w,script,m).total)||0);
      const total=vals.reduce((a,b)=>a+b,0);
-     const corpusVals=new Set((CORPUS||[]).map(x=>Number(x.value)).filter(n=>Number.isInteger(n)&&n>0&&n<=total));
-     for(const n of INTERESTING)if(n<=total)corpusVals.add(n);
-     if(!corpusVals.size)continue;
-     const maxTarget=Math.max(...corpusVals);
+     const strongTargets=new Set([...STRONG_ANCHORS].filter(n=>n<=total));
+     if(!strongTargets.size)continue;
+     const maxTarget=Math.max(...strongTargets);
      let states=new Map([[0,[[]]]]);
      for(let i=0;i<vals.length;i++){
        const v=vals[i]; if(v<=0)continue;
@@ -2204,11 +2203,11 @@ window.onSiteLanguageChange=function(lang){
          }
        }
      }
-     for(const target of corpusVals){
+     for(const target of strongTargets){
        const sets=states.get(target)||[];
        for(const ids of sets){
          if(ids.length<2||ids.length>=words.length)continue;
-         const labels=(corpusHits(target)||[]).slice(0,2).map(x=>x.label);
+         const labels=(corpusHits(target)||[]).slice(0,1).map(x=>x.label);
          out.push({
            target,ids,method:m,script,
            words:ids.map(i=>words[i]),
@@ -2231,7 +2230,7 @@ window.onSiteLanguageChange=function(lang){
  function autoHitHtml(x){
    const short=String(x.method.name||x.method.key).split(' / ')[0].trim();
    const eq=x.words.map((w,i)=>w+' '+fmt(x.values[i])).join(' + ');
-   const label=x.labels.length?x.labels.join(' · '):'עוגן מחקר';
+   const label=x.labels.length?x.labels.join(' · '):'Strong Anchor';
    return '<div class="repeat-hit-cell combo-auto-hit">'+
      '<div class="repeat-hit-method">'+esc(short)+'</div>'+
      '<div class="repeat-hit-n">Σ מילים</div>'+
@@ -2253,7 +2252,7 @@ window.onSiteLanguageChange=function(lang){
      const auto=combos.map(autoHitHtml).join('');
      grid.innerHTML=auto+(repeatHits.length?old:'');
      const repCount=combos.filter(x=>x.target%111===0&&x.target>=111&&x.target<=999).length;
-     sub.textContent=combos.length+' צירופי מילים מדויקים'+(repCount?' · '+repCount+' חתימות 111–999':'')+(repeatHits.length?' · '+repeatHits.length+' פגיעות חזרה':'');
+     sub.textContent=combos.length+' Strong Anchor hits'+(repCount?' · '+repCount+' חתימות 111–999':'')+(repeatHits.length?' · '+repeatHits.length+' פגיעות חזרה':'');
    }else if(!repeatHits.length){
      sub.textContent='אין התאמות כרגע';
      grid.innerHTML='<div class="repeat-hit-empty">אין התאמות כרגע</div>';
