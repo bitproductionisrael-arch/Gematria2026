@@ -1167,7 +1167,7 @@ function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(
 /* ---------- state ---------- */
 const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,queryMultiplierActive:false,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
-function clearMatrixComparisonSelections(){state.derivedSelections=[];state.repeatHitSelected=[];state.repeatPage=0}
+function clearMatrixComparisonSelections(){state.derivedSelections=[];state.repeatHitSelected=[];state.autoComboSelected=[];state.repeatPage=0}
 
 const SAVED_STORE_KEY='gematria2026.saved.v1';
 let SAVED_ITEMS=[],savedTab='match';
@@ -2006,10 +2006,10 @@ document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=
 document.getElementById('repeatMatrixToggle').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage(false);toast(ok?'דוח המטריקס הופק':'שגיאה בהפקת הדוח')});
 document.getElementById('repeatMatrixDouble').addEventListener('click',()=>{state.repeatMatrixScale*=2;state.repeatHitSelected=[];renderRepeat();toast('דרגת המטריקס ×'+state.repeatMatrixScale)});
 document.getElementById('saveRepeatMatrix').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage(true);if(ok)toast('מטריקס ההתאמות הופק')});
-document.getElementById('repeatHitGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-hit-key]');if(!cell)return;const key=cell.dataset.hitKey,i=state.repeatHitSelected.indexOf(key);if(i>=0)state.repeatHitSelected.splice(i,1);else state.repeatHitSelected.push(key);renderRepeat()});
-document.getElementById('repeatHitAll').addEventListener('click',()=>{const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));state.repeatHitSelected=repeatCorpusHits(phrase,script,max).map(x=>x.r.selectionKey);renderRepeat()});
-document.getElementById('repeatHitClear').addEventListener('click',()=>{state.repeatHitSelected=[];renderRepeat()});
-document.getElementById('repeatHitAdd').addEventListener('click',()=>{const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12)),chosen=new Set(state.repeatHitSelected),rows=repeatCorpusHits(phrase,script,max).filter(x=>chosen.has(x.r.selectionKey));let added=0;for(const x of rows)if(!state.derivedSelections.some(y=>y.selectionKey===x.r.selectionKey)){state.derivedSelections.push(x.r);added++}if(rows.length){state.selectionTouched=true;renderResults()}toast(added?added+' התאמות נוספו למרכז ההשוואה':'אין התאמות חדשות להוסיף');renderRepeat()});
+document.getElementById('repeatHitGrid').addEventListener('click',e=>{const combo=e.target.closest('[data-combo-key]');if(combo){const key=combo.dataset.comboKey,arr=state.autoComboSelected||(state.autoComboSelected=[]),i=arr.indexOf(key);if(i>=0)arr.splice(i,1);else arr.push(key);renderRepeat();return}const cell=e.target.closest('[data-hit-key]');if(!cell)return;const key=cell.dataset.hitKey,i=state.repeatHitSelected.indexOf(key);if(i>=0)state.repeatHitSelected.splice(i,1);else state.repeatHitSelected.push(key);renderRepeat()});
+document.getElementById('repeatHitAll').addEventListener('click',()=>{const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12));state.repeatHitSelected=repeatCorpusHits(phrase,script,max).map(x=>x.r.selectionKey);state.autoComboSelected=typeof autoCombinationHits==='function'?autoCombinationHits(document.getElementById('q').value||'').map(x=>x.selectionKey):[];renderRepeat()});
+document.getElementById('repeatHitClear').addEventListener('click',()=>{state.repeatHitSelected=[];state.autoComboSelected=[];renderRepeat()});
+document.getElementById('repeatHitAdd').addEventListener('click',()=>{const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),max=Math.min(24,Math.max(1,Number(document.getElementById('repeatMax').value)||12)),chosen=new Set(state.repeatHitSelected),rows=repeatCorpusHits(phrase,script,max).filter(x=>chosen.has(x.r.selectionKey)),comboChosen=new Set(state.autoComboSelected||[]),comboRows=typeof autoCombinationHits==='function'?autoCombinationHits(document.getElementById('q').value||'').filter(x=>comboChosen.has(x.selectionKey)):[];let added=0;for(const x of rows)if(!state.derivedSelections.some(y=>y.selectionKey===x.r.selectionKey)){state.derivedSelections.push(x.r);added++}for(const x of comboRows)if(!state.derivedSelections.some(y=>y.selectionKey===x.selection.selectionKey)){state.derivedSelections.push(x.selection);added++}if(rows.length||comboRows.length){state.selectionTouched=true;renderResults()}toast(added?added+' התאמות נוספו למרכז ההשוואה':'אין התאמות חדשות להוסיף');renderRepeat()});
 document.getElementById('repeatGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-repeat-n]');if(!cell)return;const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),methods=METHODS[script],methodKey=cell.dataset.repeatMethod||document.getElementById('repeatMethod').value,m=methods.find(x=>x.key===methodKey)||methods[0],n=Number(cell.dataset.repeatN),r=makeRepeatSelection(phrase,script,m,n),i=state.derivedSelections.findIndex(x=>x.selectionKey===r.selectionKey);if(i>=0){state.derivedSelections.splice(i,1);toast('הוסר ממרכז ההשוואה')}else{state.derivedSelections.push(r);state.selectionTouched=true;toast('נוסף להשוואה: '+m.name+' ×'+n)}renderRepeat();renderResults()});
 document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
 document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
@@ -2160,7 +2160,7 @@ window.onSiteLanguageChange=function(lang){
 
 <!-- AMIT_AUTO_COMBINATION_MATRIX_V3 -->
 <style>
-.repeat-hit-cell.combo-auto-hit{border-color:#66562d;background:linear-gradient(180deg,#17140d,#0d151e);cursor:default}
+.repeat-hit-cell.combo-auto-hit{border-color:#66562d;background:linear-gradient(180deg,#17140d,#0d151e);cursor:pointer}
 .repeat-hit-cell.combo-auto-hit .repeat-hit-n{color:#ffe2a0}
 .repeat-hit-cell.combo-auto-hit .repeat-hit-v{color:#ffe2a0}
 .repeat-hit-cell.combo-auto-hit .repeat-hit-label{color:#cbd6e2;line-height:1.35}
@@ -2180,6 +2180,15 @@ window.onSiteLanguageChange=function(lang){
    return keys.map(k=>(METHODS[script]||[]).find(m=>m.key===k)).filter(Boolean);
  }
  function currentQueryText(){return (document.getElementById('q')?.value||'').trim()}
+ function comboSelectionKey(script,methodKey,ids,text){return 'combo:'+script+':'+methodKey+':'+ids.join('-')+':'+normText(text)}
+ function makeAutoComboSelection(hit){
+   const phrase=hit.words.join(' ');
+   const r=calculate(phrase,hit.script,hit.method);
+   r.selectionKey=comboSelectionKey(hit.script,hit.method.key,hit.ids,currentQueryText());
+   r.displayName=(hit.method.name||hit.method.key)+' · '+hit.words.join(' + ');
+   r.comboMeta={sourceText:currentQueryText(),words:hit.words.slice(),ids:hit.ids.slice(),methodKey:hit.method.key,target:hit.target};
+   return r
+ }
  function autoCombinationHits(text){
    const words=(text||'').split(/\s+/).filter(Boolean);
    if(words.length<2)return [];
@@ -2208,12 +2217,15 @@ window.onSiteLanguageChange=function(lang){
        for(const ids of sets){
          if(ids.length<2||ids.length>=words.length)continue;
          const labels=(corpusHits(target)||[]).slice(0,1).map(x=>x.label);
-         out.push({
+         const hit={
            target,ids,method:m,script,
            words:ids.map(i=>words[i]),
            values:ids.map(i=>vals[i]),
            labels
-         });
+         };
+         hit.selection=makeAutoComboSelection(hit);
+         hit.selectionKey=hit.selection.selectionKey;
+         out.push(hit);
        }
      }
    }
@@ -2231,7 +2243,9 @@ window.onSiteLanguageChange=function(lang){
    const short=String(x.method.name||x.method.key).split(' / ')[0].trim();
    const eq=x.words.map((w,i)=>w+' '+fmt(x.values[i])).join(' + ');
    const label=x.labels.length?x.labels.join(' · '):'Strong Anchor';
-   return '<div class="repeat-hit-cell combo-auto-hit">'+
+   const selected=(state.autoComboSelected||[]).includes(x.selectionKey);
+   return '<div class="repeat-hit-cell combo-auto-hit '+(selected?'selected':'')+'" data-combo-key="'+esc(x.selectionKey)+'">'+
+     '<span class="repeat-hit-check">'+(selected?'✓':'')+'</span>'+
      '<div class="repeat-hit-method">'+esc(short)+'</div>'+
      '<div class="repeat-hit-n">Σ מילים</div>'+
      '<div class="repeat-hit-v">'+fmt(x.target)+'</div>'+
@@ -2239,11 +2253,14 @@ window.onSiteLanguageChange=function(lang){
      '<div class="combo-words">'+esc(eq)+' = '+fmt(x.target)+'</div>'+
    '</div>';
  }
+ if(!Array.isArray(state.autoComboSelected))state.autoComboSelected=[];
  const originalRenderRepeatHits=renderRepeatHits;
  renderRepeatHits=function(phrase,script,max){
    originalRenderRepeatHits(phrase,script,max);
    const text=currentQueryText();
    const combos=autoCombinationHits(text);
+   const validComboKeys=new Set(combos.map(x=>x.selectionKey));
+   state.autoComboSelected=(state.autoComboSelected||[]).filter(k=>validComboKeys.has(k));
    const grid=document.getElementById('repeatHitGrid');
    const sub=document.getElementById('repeatHitSub');
    const repeatHits=repeatCorpusHits(phrase,script,max);
@@ -2265,6 +2282,9 @@ window.onSiteLanguageChange=function(lang){
    const count=n=>t.filter(x=>x.target===n).length;
    console.assert(count(999)===2&&count(888)===1&&count(777)===1,
      'Auto Matrix Genesis regression failed: expected 999×2, 888×1, 777×1');
+   const g999=t.find(x=>x.target===999&&x.words.includes('בראשית')&&x.words.includes('אלהים'));
+   console.assert(g999&&g999.selection&&g999.selection.total===999&&g999.selection.selectionKey,
+     'Auto Matrix selection regression failed: בראשית + אלהים must be selectable as 999');
  }catch(err){console.warn('Auto combination matrix self-test failed',err)}
 
  try{renderRepeat()}catch(_){}
