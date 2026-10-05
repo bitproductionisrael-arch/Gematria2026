@@ -2157,227 +2157,118 @@ window.onSiteLanguageChange=function(lang){
 </script>
 <script src="site-i18n.js"></script>
 
-<!-- AMIT_COMBINATION_SCANNER_V2 -->
+
+<!-- AMIT_AUTO_COMBINATION_MATRIX_V3 -->
 <style>
-.query-input-wrap{position:relative;min-width:0;height:54px}
-.query-input-wrap #q{width:100%;height:54px;padding-left:48px}
-.combo-scan-btn{position:absolute;left:5px;top:6px;width:38px!important;height:42px!important;padding:0!important;z-index:3;font-size:17px;border-color:#3b4d60;background:#0a1118}
-.combo-modal{position:fixed;inset:0;z-index:9998;background:rgba(3,7,12,.86);backdrop-filter:blur(8px);display:none;padding:18px}
-.combo-modal.open{display:grid;place-items:center}
-.combo-shell{width:min(1180px,96vw);height:min(840px,92vh);background:#0d141d;border:1px solid #344456;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.55);display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:10px;padding:14px;overflow:hidden}
-.combo-head{display:flex;align-items:center;gap:10px}.combo-head .grow{flex:1}.combo-title{font-size:19px;font-weight:950}.combo-sub{font-size:11px;color:var(--muted);margin-top:3px}
-.combo-controls{display:grid;grid-template-columns:1.2fr 1fr auto;gap:8px;align-items:center}
-.combo-controls select{height:38px;padding:6px 9px;min-width:0}
-.combo-status{display:flex;gap:8px;align-items:center;min-height:30px;font-size:11px;color:var(--muted);flex-wrap:wrap}.combo-status b{color:#ffe2a0}
-.combo-results{min-height:0;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:8px;align-content:start;padding:2px}
-.combo-hit{border:1px solid #2d3b49;background:#0a1118;border-radius:13px;padding:11px;display:grid;gap:7px;cursor:pointer}
-.combo-hit:hover{border-color:#6b7e93;background:#0e1822}
-.combo-hit.strong{border-color:#6f5a2d;background:linear-gradient(180deg,#17140d,#0a1118)}
-.combo-equation{font-size:14px;font-weight:850;line-height:1.55;direction:rtl;text-align:right;overflow-wrap:anywhere}
-.combo-target{font-size:29px;font-weight:950;line-height:1;color:var(--blue);direction:ltr}
-.combo-hit.strong .combo-target{color:#ffe2a0}
-.combo-meta{font-size:10px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
-.combo-pill{border:1px solid #314052;border-radius:999px;padding:3px 7px;font-size:10px}
-.combo-pill.corpus{border-color:#326c69;color:#bdf4f0}
-.combo-pill.core{border-color:#6f5a2d;color:#ffe2a0}
-.combo-group{grid-column:1/-1;font-size:12px;font-weight:900;color:#b9c6d2;padding:7px 3px 1px;border-bottom:1px solid #24313d}
-.combo-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
-@media(max-width:760px){
- .combo-modal{padding:5px}.combo-shell{width:100%;height:97vh;padding:9px;border-radius:14px}
- .combo-controls{grid-template-columns:1fr 1fr}.combo-controls #comboRun{grid-column:1/-1}
- .combo-results{grid-template-columns:1fr}.combo-title{font-size:16px}.combo-sub{font-size:10px}
- .combo-equation{font-size:13px}.combo-target{font-size:25px}
-}
+.repeat-hit-cell.combo-auto-hit{border-color:#66562d;background:linear-gradient(180deg,#17140d,#0d151e);cursor:default}
+.repeat-hit-cell.combo-auto-hit .repeat-hit-n{color:#ffe2a0}
+.repeat-hit-cell.combo-auto-hit .repeat-hit-v{color:#ffe2a0}
+.repeat-hit-cell.combo-auto-hit .repeat-hit-label{color:#cbd6e2;line-height:1.35}
+.repeat-hit-cell.combo-auto-hit .combo-words{grid-column:1/-1;font-size:10px;color:#bdf4f0;line-height:1.35;margin-top:2px;white-space:normal}
 </style>
 <script>
 (function(){
- const CORE_TARGETS=[13,16,24,26,27,28,32,33,37,43,54,55,64,73,74,82,100,104,110,111,136,148,160,208,216,222,288,316,368,520,656,666,703,777,816,888,999,1000,1008,1024,1188,1369,1480,1776,2080,2368,2701,4160];
- const REP_TARGETS=new Set([111,222,333,444,555,666,777,888,999]);
- const PRIMARY={he:'regular',el:'isopsephy',ru:'ruRegular',en:'ordinal'};
- function esc2(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
- function mk(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
- function inputWords(){return (document.getElementById('q').value||'').trim().split(/\s+/).filter(Boolean)}
- function currentScript(){return (window.current&&current.script)||'he'}
- function methodByScriptKey(script,key){return (METHODS[script]||[]).find(m=>m.key===key)}
- function primaryMethod(script){return methodByScriptKey(script,PRIMARY[script])||(METHODS[script]||[]).find(m=>m.cat==='base')||(METHODS[script]||[])[0]}
- function selectedMethods(script){
-   const scope=document.getElementById('comboMethodScope')?.value||'primary';
-   if(scope==='current'){
-     const m=methodByScriptKey(script,state&&state.methodKey);
-     return m?[m]:[primaryMethod(script)].filter(Boolean);
-   }
-   if(scope==='base')return (METHODS[script]||[]).filter(m=>m.cat==='base');
-   return [primaryMethod(script)].filter(Boolean);
+ const INTERESTING=new Set([13,16,18,21,24,26,27,28,32,33,37,38,41,43,52,55,58,59,61,64,65,72,73,74,77,82,86,88,96,100,101,104,110,111,128,130,136,140,141,148,160,172,177,208,216,222,232,258,267,288,314,316,344,345,358,361,368,370,384,385,441,456,518,520,528,543,555,576,592,636,640,656,666,703,768,777,800,815,816,874,888,935,960,999,1000,1008,1024,1072,1073,1152,1177,1188,1221,1316,1369,1408,1480,1760,1776,1877,1888,1998,2080,2368,2701,3168,4160,5467,5476,7200]);
+ const METHOD_KEYS={
+   he:['regular','reduced','ordinal'],
+   el:['isopsephy','reduced','ordinal'],
+   ru:['ruRegular','ruReduced','ruOrdinal'],
+   en:['regular','pythagorean','ordinal']
+ };
+ function matrixMethods(script){
+   const keys=METHOD_KEYS[script]||[];
+   return keys.map(k=>(METHODS[script]||[]).find(m=>m.key===k)).filter(Boolean);
  }
- function targetPool(total){
-   const mode=document.getElementById('comboTargetMode')?.value||'core';
-   let arr;
-   if(mode==='rep')arr=[111,222,333,444,555,666,777,888,999];
-   else if(mode==='corpus'){
-     arr=Array.from(new Set(CORE_TARGETS.concat((window.CORPUS||CORPUS||[]).map(x=>Number(x.value)).filter(Number.isFinite))));
-   }else arr=CORE_TARGETS.slice();
-   return arr.filter(n=>Number.isInteger(n)&&n>0&&n<=total).sort((a,b)=>a-b);
- }
- function wordVector(ws,script,method){
-   return ws.map((w,i)=>{
-     let v=0;
-     try{v=Number(calculate(w,script,method).total)||0}catch(_){}
-     return {i,word:w,value:v};
-   });
- }
- function subsetHits(vec,targets,maxKeep=1200){
-   const targetSet=new Set(targets);
-   if(!targets.length)return {hits:[],truncated:false};
-   const maxTarget=Math.max(...targets);
-   let states=new Map([[0,[[]]]]);
-   let truncated=false;
-   for(const item of vec){
-     if(item.value<=0)continue;
-     const snapshot=Array.from(states.entries());
-     for(const [sum,combos] of snapshot){
-       const ns=sum+item.value;
-       if(ns>maxTarget)continue;
-       let dest=states.get(ns);
-       if(!dest){dest=[];states.set(ns,dest)}
-       for(const combo of combos){
-         if(dest.length>=maxKeep){truncated=true;break}
-         dest.push(combo.concat(item.i));
+ function currentQueryText(){return (document.getElementById('q')?.value||'').trim()}
+ function autoCombinationHits(text){
+   const words=(text||'').split(/\s+/).filter(Boolean);
+   if(words.length<2)return [];
+   const script=detectScript(text),methods=matrixMethods(script),out=[];
+   for(const m of methods){
+     const vals=words.map(w=>Number(calculate(w,script,m).total)||0);
+     const total=vals.reduce((a,b)=>a+b,0);
+     const corpusVals=new Set((CORPUS||[]).map(x=>Number(x.value)).filter(n=>Number.isInteger(n)&&n>0&&n<=total));
+     for(const n of INTERESTING)if(n<=total)corpusVals.add(n);
+     if(!corpusVals.size)continue;
+     const maxTarget=Math.max(...corpusVals);
+     let states=new Map([[0,[[]]]]);
+     for(let i=0;i<vals.length;i++){
+       const v=vals[i]; if(v<=0)continue;
+       const snap=Array.from(states.entries());
+       for(const [sum,sets] of snap){
+         const ns=sum+v;if(ns>maxTarget)continue;
+         let dest=states.get(ns);if(!dest){dest=[];states.set(ns,dest)}
+         for(const ids of sets){
+           if(dest.length>=500)break;
+           dest.push(ids.concat(i));
+         }
+       }
+     }
+     for(const target of corpusVals){
+       const sets=states.get(target)||[];
+       for(const ids of sets){
+         if(ids.length<2||ids.length>=words.length)continue;
+         const labels=(corpusHits(target)||[]).slice(0,2).map(x=>x.label);
+         out.push({
+           target,ids,method:m,script,
+           words:ids.map(i=>words[i]),
+           values:ids.map(i=>vals[i]),
+           labels
+         });
        }
      }
    }
-   const hits=[];
-   for(const target of targets){
-     const combos=states.get(target)||[];
-     for(const ids of combos){
-       if(ids.length<2||ids.length>=vec.length)continue;
-       hits.push({target,ids});
-     }
-   }
-   return {hits,truncated};
+   const seen=new Set();
+   return out.filter(x=>{
+     const k=x.method.key+'|'+x.target+'|'+x.ids.join(',');
+     if(seen.has(k))return false;seen.add(k);return true;
+   }).sort((a,b)=>{
+     const aRep=(a.target%111===0&&a.target>=111&&a.target<=999)?0:1;
+     const bRep=(b.target%111===0&&b.target>=111&&b.target<=999)?0:1;
+     return aRep-bRep || b.target-a.target || a.method.key.localeCompare(b.method.key) || a.ids.length-b.ids.length;
+   });
  }
- function signaturePriority(n){return REP_TARGETS.has(n)?0:1}
- function comboKey(h){return h.method.key+'|'+h.target+'|'+h.ids.join(',')}
- function scanText(text,methodScopeOverride){
-   const ws=(text||'').trim().split(/\s+/).filter(Boolean);
-   const script=detectScript?detectScript(text):currentScript();
-   let methods;
-   if(methodScopeOverride){
-     const m=methodByScriptKey(script,methodScopeOverride);methods=m?[m]:[];
-   }else methods=selectedMethods(script);
-   const all=[];let truncated=false;
-   for(const method of methods){
-     const vec=wordVector(ws,script,method);
-     const total=vec.reduce((a,x)=>a+x.value,0);
-     const targets=targetPool(total);
-     const res=subsetHits(vec,targets);
-     truncated=truncated||res.truncated;
-     for(const h of res.hits){
-       const parts=h.ids.map(i=>vec[i]);
-       let corpus=[];
-       try{corpus=corpusHits(h.target)||[]}catch(_){}
-       all.push({
-         target:h.target,ids:h.ids,parts,method,script,
-         corpus,core:CORE_TARGETS.includes(h.target),
-         strong:REP_TARGETS.has(h.target)
-       });
-     }
-   }
-   const dedup=new Map();
-   for(const h of all)dedup.set(comboKey(h),h);
-   const hits=Array.from(dedup.values()).sort((a,b)=>
-     signaturePriority(a.target)-signaturePriority(b.target) ||
-     b.target-a.target ||
-     a.ids.length-b.ids.length ||
-     a.ids.join(',').localeCompare(b.ids.join(','))
-   );
-   return {words:ws,script,hits,truncated,methods};
- }
- function equationHtml(h){
-   return h.parts.map(p=>'<span>'+esc2(p.word)+' <b dir="ltr">'+p.value.toLocaleString()+'</b></span>').join(' + ');
- }
- function renderScan(result){
-   const box=document.getElementById('comboResults');
-   const methodNames=result.methods.map(m=>m.name||m.key).join(' · ');
-   document.getElementById('comboStatus').innerHTML=
-     '<b>'+result.words.length+'</b> מילים · <b>'+result.hits.length+'</b> צירופים מדויקים · '+esc2(methodNames||'—')+
-     (result.truncated?' · חלק מסכומים בעלי אלפי פתרונות קוצצו להגנת הדפדפן':'');
-   if(!result.hits.length){
-     box.innerHTML='<div class="combo-empty">לא נמצאו סכומי מילים שפוגעים בדיוק ביעדים שנבחרו.</div>';return;
-   }
-   let html='',lastStrong=null;
-   for(const h of result.hits){
-     if(lastStrong!==h.strong){
-       html+='<div class="combo-group">'+(h.strong?'חתימות חוזרות · Exact hits':'עוגני ליבה נוספים')+'</div>';
-       lastStrong=h.strong;
-     }
-     const labels=h.corpus.slice(0,2).map(x=>x.label).join(' · ');
-     html+='<div class="combo-hit '+(h.strong?'strong':'')+'" data-phrase="'+encodeURIComponent(h.parts.map(p=>p.word).join(' '))+'" data-method="'+esc2(h.method.key)+'">'+
-       '<div style="display:flex;gap:10px;align-items:start"><div class="combo-equation" style="flex:1"><b dir="ltr">'+h.target.toLocaleString()+'</b> = '+equationHtml(h)+'</div><div class="combo-target">'+h.target.toLocaleString()+'</div></div>'+
-       '<div class="combo-meta">'+
-         (h.strong?'<span class="combo-pill core">חתימה חוזרת</span>':'<span class="combo-pill core">עוגן</span>')+
-         '<span class="combo-pill">'+esc2(h.method.name||h.method.key)+'</span>'+
-         (labels?'<span class="combo-pill corpus">'+esc2(labels)+'</span>':'')+
-       '</div></div>';
-   }
-   box.innerHTML=html;
- }
- function run(){
-   const text=document.getElementById('q').value||'';
-   if(!text.trim())return;
-   renderScan(scanText(text));
- }
- const modal=mk('div','combo-modal');
- modal.id='comboModal';
- modal.innerHTML='<div class="combo-shell">'+
-   '<div class="combo-head"><div class="grow"><div class="combo-title">🧩 Combination Scanner · סורק צירופי מילים</div><div class="combo-sub">כל מילה מחושבת בנפרד; הסורק מחפש תתי־קבוצות שסכומן פוגע בדיוק בעוגן. לא ניקוד, לא “כמעט”.</div></div><button id="comboClose">✕</button></div>'+
-   '<div class="combo-controls">'+
-     '<select id="comboMethodScope"><option value="primary" selected>השיטה הראשית של השפה</option><option value="current">השיטה הפעילה כרגע</option><option value="base">כל שיטות הבסיס</option></select>'+
-     '<select id="comboTargetMode"><option value="core" selected>עוגני ליבה</option><option value="rep">111–999 בלבד</option><option value="corpus">ליבה + כל ערכי הקורפוס</option></select>'+
-     '<button id="comboRun">סרוק מחדש</button>'+
-   '</div>'+
-   '<div class="combo-status" id="comboStatus">מוכן לסריקה.</div>'+
-   '<div class="combo-results" id="comboResults"><div class="combo-empty">פתח את הסורק כדי לחשב.</div></div>'+
+ function autoHitHtml(x){
+   const short=String(x.method.name||x.method.key).split(' / ')[0].trim();
+   const eq=x.words.map((w,i)=>w+' '+fmt(x.values[i])).join(' + ');
+   const label=x.labels.length?x.labels.join(' · '):'עוגן מחקר';
+   return '<div class="repeat-hit-cell combo-auto-hit">'+
+     '<div class="repeat-hit-method">'+esc(short)+'</div>'+
+     '<div class="repeat-hit-n">Σ מילים</div>'+
+     '<div class="repeat-hit-v">'+fmt(x.target)+'</div>'+
+     '<div class="repeat-hit-label">'+esc(label)+'</div>'+
+     '<div class="combo-words">'+esc(eq)+' = '+fmt(x.target)+'</div>'+
    '</div>';
- document.body.appendChild(modal);
-
- const q=document.getElementById('q');
- const qb=document.querySelector('.querybox');
- if(q&&qb){
-   const wrap=document.createElement('div');wrap.className='query-input-wrap';
-   qb.insertBefore(wrap,q);wrap.appendChild(q);
-   const b=document.createElement('button');b.id='comboOpen';b.className='query-quick combo-scan-btn';b.title='סריקת צירופי מילים';b.setAttribute('aria-label','סריקת צירופי מילים');b.textContent='🧩';
-   wrap.appendChild(b);
  }
- document.addEventListener('click',e=>{
-   if(e.target.closest('#comboOpen')){modal.classList.add('open');run();return}
-   if(e.target.closest('#comboClose')){modal.classList.remove('open');return}
-   if(e.target.closest('#comboRun')){run();return}
-   const hit=e.target.closest('.combo-hit');
-   if(hit){
-     const phrase=decodeURIComponent(hit.dataset.phrase||'');
-     const key=hit.dataset.method||'';
-     document.getElementById('q').value=phrase;
-     if(key&&state)state.methodKey=key;
-     modal.classList.remove('open');
-     try{renderAll()}catch(_){}
+ const originalRenderRepeatHits=renderRepeatHits;
+ renderRepeatHits=function(phrase,script,max){
+   originalRenderRepeatHits(phrase,script,max);
+   const text=currentQueryText();
+   const combos=autoCombinationHits(text);
+   const grid=document.getElementById('repeatHitGrid');
+   const sub=document.getElementById('repeatHitSub');
+   const repeatHits=repeatCorpusHits(phrase,script,max);
+   if(combos.length){
+     const old=grid.innerHTML;
+     const auto=combos.map(autoHitHtml).join('');
+     grid.innerHTML=auto+(repeatHits.length?old:'');
+     const repCount=combos.filter(x=>x.target%111===0&&x.target>=111&&x.target<=999).length;
+     sub.textContent=combos.length+' צירופי מילים מדויקים'+(repCount?' · '+repCount+' חתימות 111–999':'')+(repeatHits.length?' · '+repeatHits.length+' פגיעות חזרה':'');
+   }else if(!repeatHits.length){
+     sub.textContent='אין התאמות כרגע';
+     grid.innerHTML='<div class="repeat-hit-empty">אין התאמות כרגע</div>';
    }
- });
- document.getElementById('comboMethodScope').addEventListener('change',run);
- document.getElementById('comboTargetMode').addEventListener('change',run);
- modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+ };
 
- // Regression test: Genesis 1:1 under Hebrew Regular must expose 999 twice, 888 once, 777 once.
+ // Regression: Genesis 1:1, Hebrew Regular must contain 999×2, 888×1, 777×1.
  try{
-   const oldScope=document.getElementById('comboMethodScope').value;
-   const oldTarget=document.getElementById('comboTargetMode').value;
-   document.getElementById('comboMethodScope').value='primary';
-   document.getElementById('comboTargetMode').value='core';
-   const t=scanText('בראשית ברא אלהים את השמים ואת הארץ','regular').hits;
+   const t=autoCombinationHits('בראשית ברא אלהים את השמים ואת הארץ').filter(x=>x.method.key==='regular');
    const count=n=>t.filter(x=>x.target===n).length;
-   console.assert(count(999)===2&&count(888)===1&&count(777)===1,'Combination Scanner Genesis regression: expected 999×2, 888×1, 777×1');
-   document.getElementById('comboMethodScope').value=oldScope;
-   document.getElementById('comboTargetMode').value=oldTarget;
- }catch(e){console.warn('Combination Scanner self-test failed',e)}
+   console.assert(count(999)===2&&count(888)===1&&count(777)===1,
+     'Auto Matrix Genesis regression failed: expected 999×2, 888×1, 777×1');
+ }catch(err){console.warn('Auto combination matrix self-test failed',err)}
+
+ try{renderRepeat()}catch(_){}
 })();
 </script>
 
