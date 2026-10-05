@@ -1625,11 +1625,21 @@ function makeRepeatSelection(phrase,script,m,n){
  r.repeatMeta={phrase,count:n,methodName:m.name,methodKey:m.key};
  return r
 }
+function matrixMethodRank(script,key){
+ const preferred={
+  he:['regular','ordinal','reduced','final','smallFinals'],
+  el:['isopsephy','ordinal','reduced','wordReduced'],
+  ru:['ruRegular','ruOrdinal','ruReduced'],
+  en:['regular','ordinal','pythagorean','wordReduced']
+ };
+ const list=preferred[script]||[];
+ const i=list.indexOf(key);return i<0?1000+i:i
+}
 function repeatCorpusHits(phrase,script,max){
  const methods=syncRelevantMethods(phrase,METHODS[script]);
  const cols=Array.from({length:max},(_,i)=>(i+1)*state.repeatMatrixScale),hits=[];
  for(const m of methods)for(const n of cols){const r=makeRepeatSelection(phrase,script,m,n),ch=corpusHits(r.total);if(ch.length)hits.push({r,m,n,hits:ch})}
- return hits
+ return hits.sort((a,b)=>matrixMethodRank(script,a.m.key)-matrixMethodRank(script,b.m.key)||a.n-b.n||a.r.total-b.r.total)
 }
 function renderRepeatHits(phrase,script,max){
  const hits=repeatCorpusHits(phrase,script,max),valid=new Set(hits.map(x=>x.r.selectionKey));
@@ -2166,15 +2176,16 @@ window.onSiteLanguageChange=function(lang){
 .repeat-hit-cell.combo-auto-hit .repeat-hit-label{color:#cbd6e2;line-height:1.35}
 .repeat-hit-cell.combo-auto-hit .combo-words{grid-column:1/-1;font-size:10px;color:#bdf4f0;line-height:1.35;margin-top:2px;white-space:normal}
 .repeat-hit-cell.combo-auto-hit.selected{border-color:var(--gold);background:#1b1810;box-shadow:inset 0 0 0 1px rgba(216,173,85,.25)}
+.combo-group{grid-column:1/-1;padding:7px 4px 3px;border-bottom:1px solid #2a3947;color:#ffe2a0;font-size:11px;font-weight:900}
 </style>
 <script>
 (function(){
  const STRONG_ANCHORS=new Set([37,73,74,111,136,148,160,208,222,296,368,370,520,592,656,666,703,777,816,888,999,1000,1024,1369,1480,1776,2080,2368,2701,4160]);
  const METHOD_KEYS={
-   he:['regular','reduced','ordinal'],
-   el:['isopsephy','reduced','ordinal'],
-   ru:['ruRegular','ruReduced','ruOrdinal'],
-   en:['regular','pythagorean','ordinal']
+   he:['regular','ordinal','reduced'],
+   el:['isopsephy','ordinal','reduced'],
+   ru:['ruRegular','ruOrdinal','ruReduced'],
+   en:['regular','ordinal','pythagorean']
  };
  function matrixMethods(script){
    const keys=METHOD_KEYS[script]||[];
@@ -2235,9 +2246,12 @@ window.onSiteLanguageChange=function(lang){
      const k=x.method.key+'|'+x.target+'|'+x.ids.join(',');
      if(seen.has(k))return false;seen.add(k);return true;
    }).sort((a,b)=>{
+     const keys=METHOD_KEYS[a.script]||[];
+     const ar=keys.indexOf(a.method.key),br=keys.indexOf(b.method.key);
+     const am=ar<0?999:ar,bm=br<0?999:br;
      const aRep=(a.target%111===0&&a.target>=111&&a.target<=999)?0:1;
      const bRep=(b.target%111===0&&b.target>=111&&b.target<=999)?0:1;
-     return aRep-bRep || b.target-a.target || a.method.key.localeCompare(b.method.key) || a.ids.length-b.ids.length;
+     return am-bm || aRep-bRep || b.target-a.target || a.ids.length-b.ids.length || a.ids.join(',').localeCompare(b.ids.join(','));
    });
  }
  window.__autoCombinationHits=autoCombinationHits;
@@ -2268,7 +2282,14 @@ window.onSiteLanguageChange=function(lang){
    const repeatHits=repeatCorpusHits(phrase,script,max);
    if(combos.length){
      const old=grid.innerHTML;
-     const auto=combos.map(autoHitHtml).join('');
+     let auto='',lastMethod='';
+     for(const x of combos){
+       if(x.method.key!==lastMethod){
+         auto+='<div class="combo-group">'+esc(String(x.method.name||x.method.key).split(' / ')[0].trim())+'</div>';
+         lastMethod=x.method.key;
+       }
+       auto+=autoHitHtml(x);
+     }
      grid.innerHTML=auto+(repeatHits.length?old:'');
      const repCount=combos.filter(x=>x.target%111===0&&x.target>=111&&x.target<=999).length;
      sub.textContent=combos.length+' Strong Anchor hits'+(repCount?' · '+repCount+' חתימות 111–999':'')+(repeatHits.length?' · '+repeatHits.length+' פגיעות חזרה':'');
