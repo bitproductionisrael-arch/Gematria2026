@@ -202,6 +202,18 @@
                         </div>
                         <div id="tet3dControls" class="hidden rounded-lg border border-cyan-800/50 bg-gray-900/70 px-3 py-2 space-y-2">
                             <div class="font-semibold text-cyan-300">Tet — טטראדרון תלת־ממדי</div>
+                            <label for="tetRenderMode" class="block text-cyan-200 text-[11px] font-semibold">מצב המחשה / TET MODE</label>
+                            <select id="tetRenderMode" class="w-full bg-[#101a26] border border-cyan-700/60 text-white rounded-lg px-3 py-2 text-sm" aria-label="מצב המחשה של טטראדרון">
+                                <option value="classic">Classic — המנוע הנוכחי</option>
+                                <option value="surface">3D Surface — מעטפת נקייה</option>
+                                <option value="xray">3D X-Ray — כל הנקודות</option>
+                                <option value="layers">3D Layers — פירוק שכבות</option>
+                            </select>
+                            <div id="tetLayersControl" class="hidden rounded-lg bg-black/30 p-2">
+                                <div class="flex items-center justify-between text-[11px] text-gray-200 mb-1"><label for="tetLayerSpread">מרחק בין שכבות</label><span id="tetSpreadValue" class="font-mono text-cyan-300">65%</span></div>
+                                <input type="range" id="tetLayerSpread" min="0" max="1.5" step="0.05" value="0.65" class="w-full accent-cyan-400" aria-label="מרחק פיצוץ השכבות">
+                                <p class="text-[10px] leading-relaxed text-gray-400 mt-1">כל נקודה שומרת את הקואורדינטות המקוריות שלה. ההפרדה היא לצורך המחשה בלבד.</p>
+                            </div>
                             <button id="tetShowInteriorBtn" type="button" class="w-full rounded-lg bg-slate-700 px-3 py-2 text-gray-100 font-medium">מעטפת בלבד · הצג נקודות פנימיות (X-Ray)</button>
                             <div class="text-gray-400 text-[11px]">אצבע אחת: סיבוב. שתי אצבעות: הזזה. אם שתי אצבעות אינן מגיבות בטלפון, לחץ MOVE בצד שמאל והזז באצבע אחת. לחיצה חוזרת מחזירה סיבוב.</div>
                         </div>
@@ -317,6 +329,8 @@
             n: 37,
             figureType: 'T',
             figLayers: [],
+            tetRenderMode: 'classic',
+            tetExplosion: 0.65,
             segments: 36,
             points: [],
             cells: [],
@@ -431,7 +445,10 @@
 
         function getShapeSubtitle() {
             if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
-            if (state.figureType === 'TET') return `POINTS: ${state.points.length} | LAYERS: ${state.n} | REGULAR TETRAHEDRON · 3D`;
+            if (state.figureType === 'TET') {
+                const mode=state.tetRenderMode || 'classic';
+                return `POINTS: ${state.points.length} | LAYERS: ${state.n} | REGULAR TETRAHEDRON · 3D | ${mode.toUpperCase()}${mode==='layers'?' · EXPLODED VIEW':''}`;
+            }
             let activeCellsCount = state.cells.length;
             let text = `POINTS: ${state.points.length}`;
             if (state.cellShape === 'rhombus') {
@@ -764,7 +781,11 @@
                 const rx=v.X*ca-v.Y*sa, ry=v.X*sa+v.Y*ca;
                 return {x:rx,y:ry*se-v.Z*ce,depth:ry*ce+v.Z*se};
             };
-            for(const p of state.points) Object.assign(p,project(p));
+            const explode=state.tetRenderMode==='layers' ? 24 * state.tetExplosion : 0;
+            for(const p of state.points) {
+                const result=explode ? project({X:p.X,Y:p.Y,Z:p.Z+p.z*explode}) : project(p);
+                Object.assign(p,result);
+            }
             state.tetScreenVertices=state.tetVertices.map(project);
             const camera={X:sa*ce,Y:ca*ce,Z:se};
             state.tetFrontFaces=[];
@@ -782,6 +803,104 @@
             }
             if(state.n===1) state.tetFrontFaces.forEach(f=>f.visible=true);
             state.tetSortedPoints=[...state.points].sort((a,b)=>a.depth-b.depth);
+        }
+
+        // An opt-in scientific illustration. Geometry originates entirely from integer
+        // tetrahedral barycentric coordinates (a+b+c+d=n-1). 3D Layers offsets only
+        // rendered positions; counts and exact world coordinates remain unchanged.
+        function drawTetExperimental(ctx,scale) {
+            const mode=state.tetRenderMode;
+            if(!['surface','xray','layers'].includes(mode))return drawTetrahedron(ctx,scale);
+            const layers=mode==='layers';
+            const xray=mode==='xray';
+            const verts=state.tetScreenVertices;
+            const faces=state.tetFrontFaces.filter(f=>f.visible).sort((a,b)=>a.depth-b.depth);
+            const whites=['#d5f3ff','#a7e9ec','#e2e8ff','#e9d7aa','#a9d4ff','#c5f7db'];
+            ctx.save();
+            if(state.showLattice && !layers && state.n>1) {
+                // Subtle faces, truthful outline of a regular tetrahedron.
+                for(const face of faces){
+                    const vs=face.ids.map(i=>verts[i]);
+                    ctx.beginPath();ctx.moveTo(vs[0].x,vs[0].y);ctx.lineTo(vs[1].x,vs[1].y);ctx.lineTo(vs[2].x,vs[2].y);ctx.closePath();
+                    ctx.fillStyle=hexToRgba(state.customColorSequence[face.i % state.customColorSequence.length],xray?0.045:0.11);
+                    ctx.fill();
+                }
+                for(let i=0;i<4;i++)for(let j=i+1;j<4;j++) {
+                    const onFront=faces.some(f=>f.ids.includes(i)&&f.ids.includes(j));
+                    if(!onFront&&!xray)continue;
+                    ctx.beginPath();ctx.moveTo(verts[i].x,verts[i].y);ctx.lineTo(verts[j].x,verts[j].y);
+                    ctx.lineWidth=(onFront?1.4:0.7)/scale;
+                    ctx.strokeStyle=onFront?'rgba(177,235,248,.9)':'rgba(145,171,190,.2)';
+                    if(!onFront)ctx.setLineDash([3/scale,4/scale]);ctx.stroke();ctx.setLineDash([]);
+                }
+            }
+            if(layers && (state.showLattice||state.showGrid)) {
+                // T_n + T_(n-1) + ... + T_1; all layer triangles remain equilateral in 3D.
+                for(const layer of state.figLayers) {
+                    const count=layer.side;
+                    if(count<=1)continue;
+                    const v=layer.vertices;
+                    ctx.beginPath();ctx.moveTo(v[0].x,v[0].y);ctx.lineTo(v[1].x,v[1].y);ctx.lineTo(v[2].x,v[2].y);ctx.closePath();
+                    ctx.lineWidth=1.1/scale;
+                    ctx.strokeStyle=hexToRgba(whites[layer.z%whites.length],0.72);
+                    if(state.showLattice){ctx.fillStyle=hexToRgba(whites[layer.z%whites.length],0.027);ctx.fill();}
+                    ctx.stroke();
+                    if(state.showGrid && state.n<=26) {
+                        const point=(r,c)=>layer.points[r*(r+1)/2+c];
+                        ctx.beginPath();
+                        for(let r=0;r<count;r++) for(let c=0;c<=r;c++){
+                            const p=point(r,c);
+                            if(c<r){const q=point(r,c+1);ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);}
+                            if(r+1<count)for(const q of [point(r+1,c),point(r+1,c+1)]){ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);}
+                        }
+                        ctx.lineWidth=0.42/scale;ctx.strokeStyle=hexToRgba(whites[layer.z%whites.length],0.25);ctx.stroke();
+                    }
+                }
+            }
+            if(state.showGrid&&!layers&&state.n<=28) {
+                const table=new Map(state.points.map(p=>[p.weights.join(','),p]));
+                ctx.beginPath();
+                for(const p of state.points){
+                    if(!p.weights.some((v,i)=>v===0&&(xray||state.tetFrontFaces[i].visible)))continue;
+                    for(let a=0;a<4;a++)for(let b=a+1;b<4;b++){
+                        if(p.weights[a]===0)continue;
+                        const w=[...p.weights];w[a]--;w[b]++;
+                        const q=table.get(w.join(','));
+                        if(q && q.weights.some((v,i)=>v===0&&(xray||state.tetFrontFaces[i].visible))) {
+                            ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+                        }
+                    }
+                }
+                ctx.lineWidth=0.45/scale;ctx.strokeStyle='rgba(148,190,215,.22)';ctx.stroke();
+            }
+            if(state.showDots){
+                const sorted=state.tetSortedPoints;
+                const minDepth=sorted.length?sorted[0].depth:0;
+                const maxDepth=sorted.length?sorted[sorted.length-1].depth:1;
+                const span=Math.max(1,maxDepth-minDepth);
+                for(const p of sorted){
+                    const visible=p.weights.some((v,i)=>v===0&&state.tetFrontFaces[i].visible);
+                    if(!layers&&!xray&&!visible)continue;
+                    const depth=(p.depth-minDepth)/span;
+                    const r=layers?1.22:xray?(0.86+depth*0.37):(1.18+depth*0.2);
+                    const own=state.highlightPointMap?.get(p);
+                    const color=own||(layers?whites[p.z%whites.length]:state.dotColor);
+                    if(state.mutedColors.has(color))continue;
+                    ctx.globalAlpha=layers?(0.6+0.3*depth):xray?((visible?0.43:0.14)+0.28*depth):(0.78+0.22*depth);
+                    ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+                }
+                ctx.globalAlpha=1;
+            }
+            if(!layers&&state.showLattice&&state.n>1){
+                // High contrast silhouette on top of dot lattice.
+                ctx.beginPath();
+                for(const face of faces){
+                    const v=face.ids.map(i=>verts[i]);
+                    ctx.moveTo(v[0].x,v[0].y);ctx.lineTo(v[1].x,v[1].y);ctx.lineTo(v[2].x,v[2].y);ctx.closePath();
+                }
+                ctx.lineWidth=1.15/scale;ctx.strokeStyle='rgba(185,235,251,0.88)';ctx.stroke();
+            }
+            ctx.restore();
         }
 
         function drawTetrahedron(ctx,scale) {
@@ -849,7 +968,7 @@
         }
 
         function drawFigurate(ctx, scale) {
-            if (state.figureType==='TET') {drawTetrahedron(ctx,scale);return;}
+            if (state.figureType==='TET') {if(state.tetRenderMode==='classic')drawTetrahedron(ctx,scale);else drawTetExperimental(ctx,scale);return;}
             if (state.showLattice) {
                 const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
                 for (const layer of ordered) {
@@ -1636,6 +1755,7 @@
             });
             const tetControls=document.getElementById('tet3dControls');
             if(tetControls) tetControls.classList.toggle('hidden',family!=='TET');
+            refreshTetExperimentControls();
             if(!state.tetInteractionMode)state.tetInteractionMode='rotate';
             refreshTetMoveButton();
             const tetButton=document.getElementById('tetShowInteriorBtn');
@@ -1650,6 +1770,36 @@
             if(!match){alert('הקלד T37, CT16 או Tet10');return;}
             createBaseShape(Number(match[2]), match[1]||state.figureType);
         }
+        function refreshTetExperimentControls() {
+            const mode=state.tetRenderMode||'classic';
+            const select=document.getElementById('tetRenderMode');
+            if(select)select.value=mode;
+            const layers=document.getElementById('tetLayersControl');
+            if(layers)layers.classList.toggle('hidden',mode!=='layers');
+            const standard=document.getElementById('tetShowInteriorBtn');
+            if(standard)standard.classList.toggle('hidden',mode!=='classic');
+            const slider=document.getElementById('tetLayerSpread');
+            if(slider)slider.value=String(state.tetExplosion);
+            const label=document.getElementById('tetSpreadValue');
+            if(label)label.textContent=Math.round(state.tetExplosion*100)+'%';
+        }
+        document.getElementById('tetRenderMode').addEventListener('change',e=>{
+            if(state.figureType!=='TET')return;
+            const mode=e.target.value;
+            if(!['classic','surface','xray','layers'].includes(mode))return;
+            state.tetRenderMode=mode;
+            projectTetrahedron();
+            refreshTetExperimentControls();
+            autoScaleAndPosition();
+        });
+        document.getElementById('tetLayerSpread').addEventListener('input',e=>{
+            const value=Number(e.target.value);
+            if(state.figureType!=='TET'||!Number.isFinite(value))return;
+            state.tetExplosion=Math.max(0,Math.min(1.5,value));
+            projectTetrahedron();
+            refreshTetExperimentControls();
+            autoScaleAndPosition();
+        });
         document.getElementById('tetShowInteriorBtn')?.addEventListener('click',e=>{
             if(state.figureType!=='TET') return;
             state.tetShowInterior=!state.tetShowInterior;
@@ -1743,6 +1893,13 @@
             if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
             const valid = Number.isSafeInteger(n) && n >= (family === 'T' ? 2 : 1) && n <= (family === 'TET' ? 55 : 200);
             createBaseShape(valid ? n : 37, valid ? family : 'T');
+            if(valid && family==='TET') {
+                const requested=(params.get('tetmode')||'').toLowerCase();
+                if(['classic','surface','xray','layers'].includes(requested)) {
+                    state.tetRenderMode=requested;
+                    projectTetrahedron();refreshTetExperimentControls();autoScaleAndPosition();
+                }
+            }
             if (valid && params.get('bridge') === '1') {
                 try {
                     const obj = JSON.parse(sessionStorage.getItem('gematria2026.geometryOverlay.v1') || 'null');
