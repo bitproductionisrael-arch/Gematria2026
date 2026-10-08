@@ -231,7 +231,18 @@
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="PYR">Pyr · פירמידה</button>
                             </div>
                             <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³ · Pyr: פירמידה ריבועית Σk².</div>
-<div id="pyr3dControls" class="hidden mt-2 p-2 rounded-lg border border-cyan-800/60 bg-gray-900/70"><div class="font-semibold text-cyan-300 text-xs">Pyrₙ = n(n+1)(2n+1)/6 · שכבות 1²+2²+⋯+n²</div><button type="button" id="pyrShowInteriorBtn" class="mt-2 px-3 py-2 rounded-lg bg-cyan-900 text-cyan-50 text-xs border border-cyan-700">X-Ray · הצג את כל הנקודות</button><div class="mt-1 text-[10px] text-gray-400">Pyr5 = 55 = T10. שכבות ריבועיות מדויקות בסידור תלת־ממדי. ניתן לסובב את המבנה.</div></div>
+<div id="pyr3dControls" class="hidden mt-2 p-2 rounded-lg border border-cyan-800/60 bg-gray-900/70"><div class="font-semibold text-cyan-300 text-xs">Pyrₙ = n(n+1)(2n+1)/6 · שכבות 1²+2²+⋯+n²</div><button type="button" id="pyrShowInteriorBtn" class="mt-2 px-3 py-2 rounded-lg bg-cyan-900 text-cyan-50 text-xs border border-cyan-700">X-Ray · הצג את כל הנקודות</button><div class="mt-1 text-[10px] text-gray-400">Pyr5 = 55 = T10. שכבות ריבועיות מדויקות בסידור תלת־ממדי. ניתן לסובב את המבנה.</div>
+<div class="mt-3 border-t border-cyan-900/50 pt-3" id="pyrRatzoControls">
+<label for="pyrRatzoText" class="block font-semibold text-amber-300 text-xs mb-1">רצוא ושוב על פירמידה · Running &amp; Returning on Pyr</label>
+<input id="pyrRatzoText" type="text" dir="rtl" value="מיכאל" placeholder="הזן מילה או ביטוי בעברית" class="w-full rounded bg-[#101720] text-slate-100 border border-slate-600 px-3 py-2 text-sm" />
+<div class="flex gap-2 mt-2">
+<select id="pyrRatzoMethod" class="min-w-0 flex-1 bg-[#101720] text-white border border-slate-600 rounded px-2 py-2 text-xs">
+<option value="he-regular">עברית רגילה (כמו במחשבון)</option><option value="he-ordinal">עברית סדרית (מחקר)</option></select>
+<button type="button" id="pyrRatzoApply" class="px-3 py-2 rounded bg-amber-700 text-white text-xs">שבץ על פירמידה</button></div>
+<select id="pyrRatzoWord" class="hidden mt-2 w-full bg-[#101720] text-cyan-100 rounded px-2 py-2 border border-cyan-800 text-xs" aria-label="בחר מילה"></select>
+<div id="pyrRatzoInfo" role="status" aria-live="polite" class="mt-2 p-2 rounded bg-[#0b141e] text-xs text-slate-300 leading-relaxed">כל מילה מקבלת Pyr לפי מספר אותיותיה. חזרה לא מוסיפה נקודות.</div>
+<button type="button" id="pyrRatzoCopy" class="mt-2 px-3 py-1.5 rounded bg-slate-800 text-cyan-100 text-xs border border-slate-600" disabled>🧲 העתק מסלול</button>
+</div></div>
                         </div>
                         <div class="flex flex-col gap-1.5 mt-1">
                             <span class="text-amber-400 font-semibold text-[11px]">צורת רשת ולאטיס (Shape):</span>
@@ -452,9 +463,10 @@
     st.points.forEach(p=>Object.assign(p,proj(p)));
     st.pyrScreenVertices=st.pyrVertices.map(proj);
     st.pyrSorted=[...st.points].sort((a,b)=>a.depth-b.depth);
+    st.pyrRatzoCenters=Array.from({length:st.n},(_,i)=>proj({X:0,Y:0,Z:(st.n-i-1)*24}));
   }
   function buildPyramid(n,st) {
-    reset(st,n,'PYR');st.pyrYaw=.57;st.pyrElevation=.53;st.pyrShowInterior=true;
+    reset(st,n,'PYR');st.pyrYaw=.57;st.pyrElevation=.53;st.pyrShowInterior=true;st.pyrRatzo=null;
     const d=22,h=24,half=(n-1)*d/2;
     st.pyrVertices=[{X:-half,Y:-half,Z:0},{X:half,Y:-half,Z:0},{X:half,Y:half,Z:0},{X:-half,Y:half,Z:0},{X:0,Y:0,Z:(n-1)*h}];
     st.pyrLayerLookup=[];
@@ -468,6 +480,30 @@
     }
     if(st.points.length!==n*(n+1)*(2*n+1)/6)throw Error('PYR count mismatch');
     projectPyramid(st);
+  }
+
+  /* Wordwise matching of existing calculator's prefix-and-return transform. */
+  function ratzoPyrCompute(input,mode='he-regular'){
+    if(!['he-regular','he-ordinal'].includes(mode))throw Error('שיטת גימטריה לא נתמכת');
+    const abc='אבגדהוזחטיכלמנסעפצקרשת';
+    const reg=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400];
+    const finals={'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
+    const rawWords=String(input).trim().split(/\s+/).filter(Boolean);
+    if(!rawWords.length)throw Error('הזן מילה או ביטוי בעברית');
+    if(rawWords.length>40)throw Error('מקסימום 40 מילים');
+    const words=rawWords.map(raw=>{
+      if(Array.from(raw).some(x=>/[A-Za-z\u0370-\u03ff\u0400-\u04ff]/.test(x)))throw Error('המסלול הזה מיועד כרגע לאותיות עבריות');
+      const letters=Array.from(raw).filter(x=>/[א-ת]/.test(x));
+      if(!letters.length)return null;
+      if(letters.length>35)throw Error('מקסימום 35 אותיות למילה');
+      const values=letters.map(ch=>{const i=abc.indexOf(finals[ch]||ch);return mode==='he-ordinal'?i+1:reg[i]});
+      let cumulative=0;
+      const prefixes=values.map(v=>(cumulative+=v));
+      const path=prefixes.concat(prefixes.slice(0,-1).reverse());
+      return {raw,letters,values,prefixes,path,n:letters.length,points:letters.length*(letters.length+1)*(2*letters.length+1)/6,total:path.reduce((a,b)=>a+b,0)};
+    }).filter(Boolean);
+    if(!words.length)throw Error('לא נמצאו אותיות עבריות');
+    return {text:input,mode,words,total:words.reduce((a,w)=>a+w.total,0)};
   }
   function drawPyramid(ctx,scale,st){
     const n=st.n,v=st.pyrScreenVertices;
@@ -520,6 +556,32 @@
         ctx.fillStyle=color;ctx.fill();
       }
       ctx.globalAlpha=1;
+    }
+
+    // Cyan ascends, amber returns. Routes do not duplicate the physical dots.
+    if(st.pyrRatzo&&st.pyrRatzo.n===n&&st.pyrRatzoCenters?.length===n){
+      const centers=st.pyrRatzoCenters,offset=14/Math.max(.35,scale);
+      const path=(ids,side,color)=>{
+        ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=2.6/Math.max(.35,scale);
+        for(let i=0;i<ids.length-1;i++){
+          const a=centers[ids[i]],b=centers[ids[i+1]];
+          const p={x:a.x+side*offset,y:a.y},q={x:b.x+side*offset,y:b.y};
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();
+          const dx=q.x-p.x,dy=q.y-p.y,len=Math.hypot(dx,dy)||1,ux=dx/len,uy=dy/len,alen=5.5/Math.max(.35,scale);
+          ctx.beginPath();ctx.moveTo(q.x,q.y);
+          ctx.lineTo(q.x-ux*alen-uy*alen*.52,q.y-uy*alen+ux*alen*.52);
+          ctx.lineTo(q.x-ux*alen+uy*alen*.52,q.y-uy*alen-ux*alen*.52);
+          ctx.closePath();ctx.fill();
+        }
+      };
+      path(Array.from({length:n},(_,i)=>i),-1,'#67e8f9');
+      path(Array.from({length:n},(_,i)=>n-1-i),1,'#fbbf24');
+      ctx.font='bold '+(10/Math.max(.35,scale))+'px Arial,sans-serif';
+      ctx.textBaseline='middle';ctx.textAlign='right';ctx.fillStyle='#a5f3fc';
+      for(let i=0;i<n;i++){
+        const c=centers[i];
+        ctx.fillText(String(st.pyrRatzo.prefixes[i]),c.x-offset-7/Math.max(.35,scale),c.y);
+      }
     }
   }
   function drawSquare(ctx,scale,state){
@@ -632,7 +694,7 @@
     void panel.offsetWidth;
     panel.classList.add('shape-match-flash');
   }
-  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,buildPyramid,projectPyramid,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
+  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,buildPyramid,projectPyramid,ratzoPyrCompute,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
 })();
 
 </script>
@@ -2271,6 +2333,75 @@
             document.getElementById('pyrShowInteriorBtn').textContent=state.pyrShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג את כל הנקודות (X-Ray)';
             renderCanvas();
         });
+
+        /* Same per-word operator as the calculator; different geometry only. */
+        let ratzoPyrResult=null;
+        const ratzoText=document.getElementById('pyrRatzoText');
+        const ratzoMode=document.getElementById('pyrRatzoMethod');
+        const ratzoWord=document.getElementById('pyrRatzoWord');
+        const ratzoInfo=document.getElementById('pyrRatzoInfo');
+        const ratzoCopy=document.getElementById('pyrRatzoCopy');
+        function showRatzoWord(index){
+            if(!ratzoPyrResult||!ratzoPyrResult.words[index])return;
+            const part=ratzoPyrResult.words[index];
+            createBaseShape(part.n,'PYR');
+            state.pyrRatzo=part;
+            window.FigurateFamilies.projectPyramid(state);
+            ratzoInfo.replaceChildren();
+            const heading=document.createElement('div');
+            heading.className='text-cyan-200 font-semibold mb-1';
+            heading.textContent=part.raw+' · Pyr'+part.n+' = '+part.points+' נקודות · רצוא ושוב = '+part.total;
+            const path=document.createElement('div');
+            path.className='font-mono text-[11px] text-slate-200 break-words';
+            path.textContent=part.path.join(' → ');
+            const line=document.createElement('div');
+            line.className='text-amber-200 text-[11px] mt-1';
+            line.textContent='כחול: עלייה 1→'+part.n+' · זהב: חזרה '+part.n+'→1 · '+part.path.length+' תחנות על '+part.n+' שכבות';
+            const overall=document.createElement('div');
+            overall.className='font-bold text-xs mt-2';
+            overall.textContent='סה״כ לכל '+ratzoPyrResult.words.length+' המילים = '+ratzoPyrResult.total+' · ללא ספירה כפולה של נקודות';
+            ratzoInfo.append(heading,path,line,overall);
+            ratzoCopy.disabled=false;renderCanvas();
+        }
+        function applyRatzoPyr(){
+            try{
+                ratzoPyrResult=window.FigurateFamilies.ratzoPyrCompute(ratzoText.value,ratzoMode.value);
+                ratzoWord.replaceChildren();
+                ratzoPyrResult.words.forEach((w,i)=>{
+                    const option=document.createElement('option');option.value=String(i);
+                    option.textContent=(i+1)+'. '+w.raw+' · Pyr'+w.n+' ('+w.points+') · R='+w.total;
+                    ratzoWord.append(option);
+                });
+                ratzoWord.classList.toggle('hidden',ratzoPyrResult.words.length<2);
+                ratzoInfo.classList.remove('text-red-300');
+                showRatzoWord(0);
+            }catch(e){
+                ratzoPyrResult=null;state.pyrRatzo=null;
+                ratzoInfo.textContent=e.message||String(e);
+                ratzoInfo.classList.add('text-red-300');ratzoCopy.disabled=true;
+                renderCanvas();
+            }
+        }
+        document.getElementById('pyrRatzoApply').addEventListener('click',applyRatzoPyr);
+        ratzoText.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyRatzoPyr();}});
+        ratzoWord.addEventListener('change',()=>showRatzoWord(Number(ratzoWord.value)));
+        ratzoCopy.addEventListener('click',()=>{
+            if(!ratzoPyrResult)return;
+            const payload=['רצוא ושוב ↔ Pyr · Running & Returning on Square Pyramid',
+                'שיטת מספור: '+ratzoPyrResult.mode,
+                ...ratzoPyrResult.words.map(w=>w.raw+' | Pyr'+w.n+'='+w.points+' | Prefixes '+w.prefixes.join(',')+
+                  ' | Path '+w.path.join(' → ')+' | Ratzo='+w.total),
+                'סה״כ = '+ratzoPyrResult.total,
+                'Pyr points are geometric counts, distinct from gematria sums; returning does not add geometric points.'
+            ].join('\n');
+            if(navigator.clipboard?.writeText)navigator.clipboard.writeText(payload).catch(()=>window.prompt('העתק',payload));
+            else window.prompt('העתק',payload);
+        });
+        window.RatzoPyrBridge={
+          compute:window.FigurateFamilies.ratzoPyrCompute,
+          apply:(text,mode='he-regular')=>{ratzoText.value=text;ratzoMode.value=mode;applyRatzoPyr();},
+          inspect:()=>ratzoPyrResult?{wordCount:ratzoPyrResult.words.length,total:ratzoPyrResult.total,mode:ratzoPyrResult.mode,activeWord:Number(ratzoWord.value)}:null
+        };
         window.GeometryCoincidences={inspect:()=>window.FigurateFamilies.inspect(state),create:createBaseShape,matches:window.FigurateFamilies.matches,view:()=>({...state.view}),state:()=>({family:state.figureType,n:state.n,cubeYaw:state.cubeYaw,cubeElevation:state.cubeElevation})};
         window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay,
             inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
@@ -2287,6 +2418,11 @@
                     state.tetRenderMode=requested;
                     projectTetrahedron();refreshTetExperimentControls();autoScaleAndPosition();
                 }
+            }
+            if (valid && family==='PYR' && params.get('ratzo')==='1') {
+                const incoming=params.get('text');
+                if(incoming&&incoming.length<=150)document.getElementById('pyrRatzoText').value=incoming;
+                window.RatzoPyrBridge.apply(document.getElementById('pyrRatzoText').value,params.get('method')==='ordinal'?'he-ordinal':'he-regular');
             }
             if (valid && params.get('bridge') === '1') {
                 try {
