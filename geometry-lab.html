@@ -146,6 +146,7 @@
                 <button id="zoomIn" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-plus text-[9px]"></i></button>
                 <button id="zoomOut" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-minus text-[9px]"></i></button>
                 <button id="resetView" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-expand text-[9px]"></i></button>
+                <button id="tetMoveModeBtn" type="button" class="hidden w-11 h-10 rounded-md bg-gray-800 text-cyan-200 text-[11px] font-bold items-center justify-center border border-cyan-800" title="MOVE: הזז את הצורה באצבע אחת (לחץ כדי לחזור לסיבוב)" aria-label="החלף בין סיבוב להזזה באצבע אחת" aria-pressed="false">MOVE</button>
             </div>
 
             <div class="absolute top-4 right-4 z-30 flex flex-col gap-2">
@@ -202,7 +203,7 @@
                         <div id="tet3dControls" class="hidden rounded-lg border border-cyan-800/50 bg-gray-900/70 px-3 py-2 space-y-2">
                             <div class="font-semibold text-cyan-300">Tet — טטראדרון תלת־ממדי</div>
                             <button id="tetShowInteriorBtn" type="button" class="w-full rounded-lg bg-slate-700 px-3 py-2 text-gray-100 font-medium">מעטפת בלבד · הצג נקודות פנימיות (X-Ray)</button>
-                            <div class="text-gray-400 text-[11px]">אצבע אחת: סיבוב הטטראדרון. שתי אצבעות יחד: הזזת כל הצורה למעלה, למטה או לצדדים. GRID מציג צלעות סריג.</div>
+                            <div class="text-gray-400 text-[11px]">אצבע אחת: סיבוב. שתי אצבעות: הזזה. אם שתי אצבעות אינן מגיבות בטלפון, לחץ MOVE בצד שמאל והזז באצבע אחת. לחיצה חוזרת מחזירה סיבוב.</div>
                         </div>
                         <div class="border-t border-gray-700/60"></div>
 
@@ -1371,63 +1372,130 @@
         document.getElementById('customBgColorPicker').addEventListener('input', (e) => { state.appBgColor = e.target.value; renderCanvas(); });
         document.getElementById('customDotColorPicker').addEventListener('input', (e) => { state.dotColor = e.target.value; MathEngine.applyColorSequence(); renderCanvas(); });
 
+
+        function refreshTetMoveButton() {
+            const btn=document.getElementById('tetMoveModeBtn');
+            const isTet=state.figureType==='TET';
+            btn.classList.toggle('hidden', !isTet);
+            btn.classList.toggle('flex', isTet);
+            const move=isTet&&state.tetInteractionMode==='move';
+            btn.setAttribute('aria-pressed', String(move));
+            btn.textContent=move?'MOVE ✓':'MOVE';
+            btn.classList.toggle('bg-cyan-700',move);
+            btn.classList.toggle('bg-gray-800',!move);
+        }
+        document.getElementById('tetMoveModeBtn').addEventListener('click',()=>{
+            if(state.figureType!=='TET')return;
+            state.tetInteractionMode=state.tetInteractionMode==='move'?'rotate':'move';
+            endDrag();refreshTetMoveButton();
+        });
         function startDrag(clientX,clientY) {
+            const move=state.figureType!=='TET'||state.tetInteractionMode==='move';
+            const dpr=window.devicePixelRatio||1;
             state.isDragging=true;
-            state.dragStart=state.figureType==='TET'
-                ? {x:clientX,y:clientY,yaw:state.tetYaw,elevation:state.tetElevation}
-                : {x:clientX-state.view.x,y:clientY-state.view.y};
+            state.dragStart=move
+                ? {x:clientX*dpr-state.view.x,y:clientY*dpr-state.view.y}
+                : {x:clientX,y:clientY,yaw:state.tetYaw,elevation:state.tetElevation};
             UI.canvas.style.cursor='grabbing';
         }
         function onDrag(clientX,clientY) {
             if(!state.isDragging) return;
-            if(state.figureType==='TET') {
+            const move=state.figureType!=='TET'||state.tetInteractionMode==='move';
+            if(!move) {
                 state.tetYaw=state.dragStart.yaw+(clientX-state.dragStart.x)*0.008;
                 state.tetElevation=Math.max(0.17,Math.min(1.2,state.dragStart.elevation+(state.dragStart.y-clientY)*0.006));
                 projectTetrahedron();
-            } else {state.view.x=clientX-state.dragStart.x;state.view.y=clientY-state.dragStart.y;}
+            } else {
+                const dpr=window.devicePixelRatio||1;
+                state.view.x=clientX*dpr-state.dragStart.x;
+                state.view.y=clientY*dpr-state.dragStart.y;
+            }
             renderCanvas();
         }
         function endDrag() {state.isDragging=false;UI.canvas.style.cursor='move';}
 
-        UI.canvas.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
-        window.addEventListener('mouseup', endDrag);
-        window.addEventListener('mousemove', (e) => onDrag(e.clientX, e.clientY));
-        // One finger rotates Tet; two fingers move the entire shape in screen space.
-        // State.view is stored in canvas device pixels, while Touch.clientX/Y are CSS pixels.
-        let twoFingerPan = null;
-        const fingerMidpoint = touches => ({
-            x:(touches[0].clientX+touches[1].clientX)/2,
-            y:(touches[0].clientY+touches[1].clientY)/2
-        });
-        function beginTwoFingerPan(touches) {
-            const m = fingerMidpoint(touches);
-            twoFingerPan = {startX:m.x,startY:m.y,viewX:state.view.x,viewY:state.view.y};
-            endDrag(); // stop rotating immediately when the second finger lands
+        UI.canvas.addEventListener('mousedown', e => startDrag(e.clientX,e.clientY));
+        window.addEventListener('mouseup',endDrag);
+        window.addEventListener('mousemove', e => onDrag(e.clientX,e.clientY));
+
+        // Primary Android/Chrome path: track each touch separately by stable pointer ID.
+        const activeTouchPointers=new Map();
+        let pointerPanStart=null, waitForTouchRelease=false;
+        function pointerMidpoint(){
+            const [a,b]=[...activeTouchPointers.values()];
+            return {x:(a.x+b.x)/2,y:(a.y+b.y)/2};
         }
-        UI.canvas.addEventListener('touchstart', e => {
-            if(e.touches.length >= 2) beginTwoFingerPan(e.touches);
-            else if(e.touches.length === 1 && !twoFingerPan) startDrag(e.touches[0].clientX,e.touches[0].clientY);
-            if(e.cancelable) e.preventDefault();
-        }, {passive:false});
-        window.addEventListener('touchmove', e => {
-            if(twoFingerPan) {
-                if(e.touches.length >= 2) {
-                    const m = fingerMidpoint(e.touches), dpr = window.devicePixelRatio || 1;
-                    state.view.x = twoFingerPan.viewX + (m.x-twoFingerPan.startX)*dpr;
-                    state.view.y = twoFingerPan.viewY + (m.y-twoFingerPan.startY)*dpr;
-                    renderCanvas();
+        UI.canvas.addEventListener('pointerdown',e=>{
+            if(e.pointerType!=='touch')return;
+            activeTouchPointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+            try{UI.canvas.setPointerCapture(e.pointerId)}catch(_){}
+            if(activeTouchPointers.size>=2){
+                const m=pointerMidpoint();
+                pointerPanStart={x:m.x,y:m.y,viewX:state.view.x,viewY:state.view.y};
+                waitForTouchRelease=true;
+                endDrag();
+            }else if(!waitForTouchRelease){startDrag(e.clientX,e.clientY);}
+            if(e.cancelable)e.preventDefault();
+        });
+        window.addEventListener('pointermove',e=>{
+            if(e.pointerType!=='touch'||!activeTouchPointers.has(e.pointerId))return;
+            activeTouchPointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+            if(activeTouchPointers.size>=2){
+                if(!pointerPanStart){
+                    const m=pointerMidpoint();
+                    pointerPanStart={x:m.x,y:m.y,viewX:state.view.x,viewY:state.view.y};
                 }
-            } else if(e.touches.length === 1 && state.isDragging) {
-                onDrag(e.touches[0].clientX,e.touches[0].clientY);
-            }
-            if((twoFingerPan || state.isDragging) && e.cancelable) e.preventDefault();
-        }, {passive:false});
-        const finishTouchGesture = e => {
-            if(e.touches.length < 2) twoFingerPan = null;
-            endDrag(); // avoid accidental rotation when the second finger is lifted
+                const m=pointerMidpoint(),dpr=window.devicePixelRatio||1;
+                state.view.x=pointerPanStart.viewX+(m.x-pointerPanStart.x)*dpr;
+                state.view.y=pointerPanStart.viewY+(m.y-pointerPanStart.y)*dpr;
+                renderCanvas();
+            }else if(!waitForTouchRelease){onDrag(e.clientX,e.clientY);}
+            if(e.cancelable)e.preventDefault();
+        },{passive:false});
+        function releaseTouchPointer(e){
+            if(e.pointerType!=='touch'||!activeTouchPointers.has(e.pointerId))return;
+            const wasMulti=activeTouchPointers.size>=2||waitForTouchRelease;
+            activeTouchPointers.delete(e.pointerId);
+            if(activeTouchPointers.size<2)pointerPanStart=null;
+            endDrag();
+            if(activeTouchPointers.size===0)waitForTouchRelease=false;
+            else if(wasMulti)waitForTouchRelease=true;
+        }
+        window.addEventListener('pointerup',releaseTouchPointer);
+        window.addEventListener('pointercancel',releaseTouchPointer);
+        window.addEventListener('blur',()=>{
+            activeTouchPointers.clear();pointerPanStart=null;waitForTouchRelease=false;endDrag();
+        });
+
+        // Legacy fallback for older WebViews without PointerEvent support.
+        let legacyTwoFingerPan=null;
+        const legacyMidpoint=touches=>({x:(touches[0].clientX+touches[1].clientX)/2,y:(touches[0].clientY+touches[1].clientY)/2});
+        UI.canvas.addEventListener('touchstart',e=>{
+            if(window.PointerEvent)return;
+            if(e.touches.length>=2){
+                const m=legacyMidpoint(e.touches);
+                legacyTwoFingerPan={x:m.x,y:m.y,viewX:state.view.x,viewY:state.view.y};
+                endDrag();
+            }else if(e.touches.length===1&&!legacyTwoFingerPan)startDrag(e.touches[0].clientX,e.touches[0].clientY);
+            if(e.cancelable)e.preventDefault();
+        },{passive:false});
+        window.addEventListener('touchmove',e=>{
+            if(window.PointerEvent)return;
+            if(legacyTwoFingerPan&&e.touches.length>=2){
+                const m=legacyMidpoint(e.touches),dpr=window.devicePixelRatio||1;
+                state.view.x=legacyTwoFingerPan.viewX+(m.x-legacyTwoFingerPan.x)*dpr;
+                state.view.y=legacyTwoFingerPan.viewY+(m.y-legacyTwoFingerPan.y)*dpr;
+                renderCanvas();
+            }else if(!legacyTwoFingerPan&&e.touches.length===1)onDrag(e.touches[0].clientX,e.touches[0].clientY);
+            if(e.cancelable)e.preventDefault();
+        },{passive:false});
+        const finishLegacyTouch=e=>{
+            if(window.PointerEvent)return;
+            if(e.touches.length<2)legacyTwoFingerPan=null;
+            endDrag();
         };
-        window.addEventListener('touchend',finishTouchGesture);
-        window.addEventListener('touchcancel',finishTouchGesture);
+        window.addEventListener('touchend',finishLegacyTouch);
+        window.addEventListener('touchcancel',finishLegacyTouch);
         UI.canvas.addEventListener('wheel', (e) => { e.preventDefault(); state.view.scale *= (e.deltaY < 0 ? 1.1 : 0.9); renderCanvas(); }, { passive: false });
 
         document.getElementById('zoomIn').addEventListener('click', () => { state.view.scale *= 1.2; renderCanvas(); });
@@ -1568,6 +1636,8 @@
             });
             const tetControls=document.getElementById('tet3dControls');
             if(tetControls) tetControls.classList.toggle('hidden',family!=='TET');
+            if(!state.tetInteractionMode)state.tetInteractionMode='rotate';
+            refreshTetMoveButton();
             const tetButton=document.getElementById('tetShowInteriorBtn');
             if(tetButton) tetButton.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
             document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family}${n}`;
