@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b101b">
+<title>Tet Showcase · Gematria2026</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#eff6ff;background:#0b101b}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:radial-gradient(ellipse 55% 58% at 48% 57%,#101b2d 0%,#0b101b 83%);user-select:none;-webkit-user-select:none}
+#stage{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#stage:active{cursor:grabbing}
+header{position:fixed;left:0;right:0;top:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:calc(14px + env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) 0 max(18px,env(safe-area-inset-left));pointer-events:none}
+header>*{pointer-events:auto}
+.back{color:#b8d2e4;text-decoration:none;border:1px solid #273d56;padding:9px 12px;background:#111c2cba;border-radius:12px;font-size:12px;white-space:nowrap;backdrop-filter:blur(8px)}
+.info{text-align:right;min-width:0;line-height:1.1}
+.info .overline{display:block;font-size:11px;letter-spacing:.18em;color:#8aaeca;font-weight:700}
+h1{font-size:clamp(18px,4vw,28px);margin:6px 0;color:#f8fdff;letter-spacing:.02em}
+.info small{color:#9fb8cd;font-size:11px;line-height:1.5}
+#counts{font-variant-numeric:tabular-nums}
+.controls{position:fixed;bottom:calc(17px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:7px;padding:8px;border:1px solid #31445d;border-radius:18px;background:#101c2aec;box-shadow:0 12px 40px #0007;max-width:calc(100vw - 20px);backdrop-filter:blur(18px)}
+button{color:#b1c8d9;cursor:pointer;border:0;background:transparent;border-radius:11px;padding:10px 13px;font:600 12px system-ui;white-space:nowrap}
+button[aria-pressed="true"]{color:#ffffff;background:#174d68;box-shadow:inset 0 0 0 1px #41809a66}
+button:hover{background:#1b3348}
+.sep{height:19px;width:1px;background:#29425a;flex-shrink:0}
+.help{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(91px + env(safe-area-inset-bottom));color:#9bb6ca;font-size:11px;z-index:2;white-space:nowrap;text-shadow:0 1px 4px #000}
+#layerPanel{position:fixed;right:12px;top:95px;background:#111e2cdf;border:1px solid #28455b;border-radius:14px;padding:12px;display:none;z-index:2;max-width:240px}
+#layerPanel label{display:block;font-size:12px;color:#c4e4f1;margin-bottom:6px}
+#layerPanel input{width:185px;accent-color:#70cddd}
+#layerPanel.show{display:block}
+#status{position:fixed;right:14px;bottom:calc(96px + env(safe-area-inset-bottom));padding:6px 9px;color:#98b4c8;font:11px system-ui;z-index:2}
+@media(max-width:520px){header{padding-left:12px;padding-right:12px}.info small{font-size:10px}.controls{gap:2px;padding:6px}button{padding:10px 9px;font-size:11px}.back{padding:9px;font-size:11px}.help{font-size:10px}#status{right:8px;bottom:calc(125px + env(safe-area-inset-bottom));font-size:10px}#layerPanel{top:105px}}
+</style>
+</head>
+<body>
+<canvas id="stage" aria-label="טטראדרון תלת ממדי עם נקודות סריג מדויקות"></canvas>
+<header>
+ <div class="info"><span class="overline">GEMATRIA2026 · TET SHOWCASE</span><h1 id="shapeTitle">Tet16 · 3D</h1><small id="counts">816 נקודות · 16 שכבות משולשיות</small></div>
+ <a class="back" id="backLab" href="geometry-lab.html?figure=TET16">↩ Geometry Lab</a>
+</header>
+<div id="layerPanel"><label for="layerSpread">מרחק בין שכבות <b id="spreadValue">65%</b></label><input type="range" min="0" max="1.5" value="0.65" step="0.05" id="layerSpread" aria-label="מרחק שכבות"></div>
+<div id="status">אצבע אחת: סיבוב · שתי אצבעות: הזזה / שינוי גודל</div>
+<div class="help" id="help">המעטפת · ארבע פאות משולשיות · סריג טטראדרלי</div>
+<div class="controls" role="group" aria-label="מצבי תצוגת טטראדרון">
+ <button data-mode="surface" aria-pressed="true">✦ Showcase</button>
+ <button data-mode="xray" aria-pressed="false">X-Ray</button>
+ <button data-mode="layers" aria-pressed="false">Layers</button>
+ <span class="sep"></span>
+ <button id="reset" title="שחזר זווית, גודל ומרכז" aria-label="אפס תצוגה">↺ איפוס</button>
+</div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const canvas=$('stage'),ctx=canvas.getContext('2d',{alpha:false});
+const params=new URLSearchParams(location.search);
+const parsed=Number(params.get('n')||16);
+const n=Number.isInteger(parsed)&&parsed>=2&&parsed<=55?parsed:16;
+const m=n-1;
+const total=n*(n+1)*(n+2)/6;
+$('shapeTitle').textContent=`Tet${n} · 3D`;
+$('counts').textContent=`${total.toLocaleString('en-US')} נקודות · ${n} שכבות משולשיות`;
+$('backLab').href=`geometry-lab.html?figure=TET${n}`;
+const base=[[-.5,-1/(2*Math.sqrt(3)),0],[.5,-1/(2*Math.sqrt(3)),0],[0,1/Math.sqrt(3),0],[0,0,Math.sqrt(2/3)]];
+const vertices=base.map(v=>v.map(k=>k*m));
+const points=[],layers=Array.from({length:n},()=>[]);
+for(let z=0;z<n;z++)for(let r=0;r<n-z;r++)for(let c=0;c<=r;c++){
+ const weights=[m-z-r,c,r-c,z];
+ const w=[0,0,0];for(let i=0;i<4;i++)for(let j=0;j<3;j++)w[j]+=weights[i]*base[i][j];
+ const p={weights,z,world:w,boundary:weights.some(q=>q===0)};points.push(p);layers[z].push(p);
+}
+if(points.length!==total||new Set(points.map(p=>p.weights.join(','))).size!==total)throw Error('Tet lattice generation error');
+const state={mode:'surface',yaw:.10,elevation:.42,spread:.65,panX:0,panY:0,zoom:1,width:0,height:0,dpr:1,unit:1,visiblePoints:0};
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+function project(world){
+ const cy=Math.cos(state.yaw),sy=Math.sin(state.yaw),se=Math.sin(state.elevation),ce=Math.cos(state.elevation);
+ const x=world[0]*cy-world[1]*sy;
+ const y=world[0]*sy+world[1]*cy;
+ return{x,y:y*se-world[2]*ce,depth:y*ce+world[2]*se};
+}
+function cross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]}
+function getFaces(){
+ const cam=[Math.sin(state.yaw)*Math.cos(state.elevation),Math.cos(state.yaw)*Math.cos(state.elevation),Math.sin(state.elevation)];
+ const faces=[];
+ for(let i=0;i<4;i++){
+  const ids=[0,1,2,3].filter(j=>j!==i);
+  const [a,b,c]=ids.map(k=>vertices[k]);
+  const normal=cross(b.map((v,j)=>v-a[j]),c.map((v,j)=>v-a[j]));
+  const away=vertices[i].map((v,j)=>v-a[j]);
+  const sign=normal.reduce((s,v,j)=>s+v*away[j],0)>0?-1:1;
+  const facing=normal.reduce((s,v,j)=>s+v*cam[j],0)*sign>0;
+  const scr=ids.map(j=>project(vertices[j]));
+  faces.push({i,ids,visible:facing,pts:scr,centerX:scr.reduce((s,v)=>s+v.x,0)/3,avgDepth:scr.reduce((s,v)=>s+v.depth,0)/3});
+ }
+ return faces;
+}
+function draw(){
+ const {width:w,height:h,dpr}=state;
+ if(!w||!h)return;
+ ctx.setTransform(dpr,0,0,dpr,0,0);
+ ctx.fillStyle='#0b101b';ctx.fillRect(0,0,w,h);
+ // Deliberately match the original proof render: two shaded colored faces,
+ // crisp cyan wireframe and high-contrast white integer lattice nodes.
+ const exploded=state.mode==='layers';
+ const projectedPoints=points.map(p=>{
+  const q=p.world.slice();if(exploded)q[2]+=p.z*.62*state.spread;
+  return{...p,...project(q)};
+ });
+ const faceList=getFaces(), fronts=faceList.filter(f=>f.visible).sort((a,b)=>a.avgDepth-b.avgDepth);
+ const coords=projectedPoints;
+ const projectedVertices=vertices.map(v=>project(v));
+ let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+ const fitList=exploded?coords:projectedVertices;
+ for(const p of fitList){minX=Math.min(minX,p.x);maxX=Math.max(maxX,p.x);minY=Math.min(minY,p.y);maxY=Math.max(maxY,p.y)}
+ const spanX=Math.max(.4,maxX-minX),spanY=Math.max(.4,maxY-minY);
+ const reservedTop=Math.min(100,h*.15),reservedBottom=Math.min(104,h*.17);
+ const heightAvailable=Math.max(180,h-reservedTop-reservedBottom);
+ const scale=Math.min(w*.87/spanX,heightAvailable*.91/spanY,70)*state.zoom;
+ const cx=(minX+maxX)/2,cy=(minY+maxY)/2;
+ const offsetX=w/2+state.panX,offsetY=reservedTop+(heightAvailable-spanY*scale)/2+spanY*scale/2+state.panY;
+ const screen=p=>({x:(p.x-cx)*scale+offsetX,y:(p.y-cy)*scale+offsetY});
+ function line(a,b,stroke,width=1,dash=null){const A=screen(a),B=screen(b);ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.lineTo(B.x,B.y);ctx.strokeStyle=stroke;ctx.lineWidth=width;if(dash)ctx.setLineDash(dash);ctx.stroke();if(dash)ctx.setLineDash([])}
+ if(!exploded){
+  for(const f of fronts){
+   const poly=f.pts.map(screen);
+   ctx.beginPath();ctx.moveTo(poly[0].x,poly[0].y);ctx.lineTo(poly[1].x,poly[1].y);ctx.lineTo(poly[2].x,poly[2].y);ctx.closePath();
+   const left=f.centerX<0;
+   const grad=ctx.createLinearGradient(0,Math.min(...poly.map(p=>p.y)),0,Math.max(...poly.map(p=>p.y)));
+   grad.addColorStop(0,left?'#152656':'#063b48');
+   grad.addColorStop(.75,left?'#1a2e68':'#083c48');
+   grad.addColorStop(1,left?'#142756':'#092c41');
+   ctx.fillStyle=grad;ctx.fill();
+  }
+  // The six true edges; hidden edges are excluded except in X-Ray.
+  for(let a=0;a<4;a++)for(let b=a+1;b<4;b++){
+   const front=fronts.some(f=>f.ids.includes(a)&&f.ids.includes(b));
+   if(front)line(projectedVertices[a],projectedVertices[b],'rgba(127,229,250,.77)',1.65);
+   else if(state.mode==='xray')line(projectedVertices[a],projectedVertices[b],'rgba(130,171,202,.27)',.9,[4,5]);
+  }
+ }else{
+  const shades=['#dceaff','#c4edfd','#98e4e6','#f0e2bf','#b9d4ff','#b9efdc'];
+  for(let z=0;z<n;z++){
+   const layer=coords.filter(p=>p.z===z);
+   const corners=layer.filter(p=>p.weights.filter(q=>q>0).length===1|| (z>0&&p.weights.slice(0,3).filter(q=>q>0).length===1));
+   const ids=[0,1,2].map(k=>layer.find(p=>p.weights[k]===m-z&&p.weights.slice(0,3).filter(q=>q>0).length===1)).filter(Boolean);
+   if(ids.length===3&&z<n-1){for(let j=0;j<3;j++)line(ids[j],ids[(j+1)%3],shades[z%6]+'9c',1)}
+  }
+ }
+ const sorted=coords.slice().sort((a,b)=>a.depth-b.depth);
+ let drawn=0;
+ for(const p of sorted){
+  const facing=p.weights.some((weight,i)=>weight===0&&faceList[i].visible);
+  if(state.mode==='surface'&&!facing)continue;
+  const depthRange=Math.max(.01,m);
+  const depthFactor=clamp((p.depth+m)/(2*m),0,1);
+  const radius=Math.min(3.25,Math.max(1.0,48/n))* (state.mode==='xray'?.9:1);
+  const v=screen(p);
+  const showFront=facing||exploded;
+  const a=state.mode==='xray'&&!facing?.22:showFront?.99:.4;
+  ctx.globalAlpha=a;
+  if(exploded){const shades=['#f5faff','#cceffe','#b3fcf7','#e8e4dc','#c9dcff','#c1f2e4'];ctx.fillStyle=shades[p.z%shades.length];}
+  else ctx.fillStyle='#f9fdff';
+  ctx.beginPath();ctx.arc(v.x,v.y,radius,0,Math.PI*2);ctx.fill();
+  drawn++;
+ }
+ ctx.globalAlpha=1;
+ // Outline over dots produces the crisp reference-image silhouette.
+ if(!exploded){for(const f of fronts){const p=f.pts;for(let i=0;i<3;i++)line(p[i],p[(i+1)%3],'rgba(147,227,250,.67)',1.35)}}
+ state.visiblePoints=drawn;
+}
+function resize(){state.dpr=Math.min(window.devicePixelRatio||1,3);state.width=innerWidth;state.height=innerHeight;canvas.width=Math.round(innerWidth*state.dpr);canvas.height=Math.round(innerHeight*state.dpr);canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';draw()}
+const help={surface:'המעטפת · ארבע פאות משולשיות · סריג טטראדרלי',xray:'X-Ray · כל הנקודות כולל פנים הגוף',layers:'Layers · סכום של משולשים T1 + T2 + … + T'+n};
+function setMode(mode){if(!['surface','xray','layers'].includes(mode))return;state.mode=mode;for(const b of document.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode===mode));$('layerPanel').classList.toggle('show',mode==='layers');$('help').textContent=help[mode];draw()}
+for(const b of document.querySelectorAll('[data-mode]'))b.addEventListener('click',()=>setMode(b.dataset.mode));
+$('layerSpread').addEventListener('input',e=>{state.spread=Number(e.target.value);$('spreadValue').textContent=Math.round(state.spread*100)+'%';draw()});
+$('reset').addEventListener('click',()=>{state.yaw=.10;state.elevation=.42;state.panX=state.panY=0;state.zoom=1;draw()});
+const pointers=new Map();let gesture=null;
+const mid=()=>{const a=[...pointers.values()];return {x:(a[0].x+a[1].x)/2,y:(a[0].y+a[1].y)/2,dist:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)}};
+canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size===2){const m=mid();gesture={two:true,x:m.x,y:m.y,dist:m.dist,panX:state.panX,panY:state.panY,zoom:state.zoom}}else if(pointers.size===1){gesture={two:false,x:e.clientX,y:e.clientY,yaw:state.yaw,elevation:state.elevation}}e.preventDefault()});
+canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>=2&&gesture?.two){const m=mid();state.panX=gesture.panX+m.x-gesture.x;state.panY=gesture.panY+m.y-gesture.y;state.zoom=clamp(gesture.zoom*m.dist/Math.max(1,gesture.dist),.3,5);draw()}else if(pointers.size===1&&gesture&&!gesture.two){state.yaw=gesture.yaw+(e.clientX-gesture.x)*.009;state.elevation=clamp(gesture.elevation+(gesture.y-e.clientY)*.007,.07,1.45);draw()}e.preventDefault()});
+function release(e){pointers.delete(e.pointerId);gesture=null}canvas.addEventListener('pointerup',release);canvas.addEventListener('pointercancel',release);window.addEventListener('blur',()=>{pointers.clear();gesture=null});
+canvas.addEventListener('wheel',e=>{e.preventDefault();state.zoom=clamp(state.zoom*(e.deltaY>0?.9:1.1),.3,5);draw()},{passive:false});
+window.addEventListener('resize',resize);resize();
+if(['xray','layers'].includes(params.get('mode')))setMode(params.get('mode'));
+window.tetShowcaseTest={get:()=>({n,total,unique:new Set(points.map(p=>p.weights.join(','))).size,mode:state.mode,visible:state.visiblePoints,panX:state.panX,panY:state.panY,zoom:state.zoom,yaw:state.yaw,elevation:state.elevation}),setMode,draw,points,vertices};
+</script>
+</body>
+</html>
