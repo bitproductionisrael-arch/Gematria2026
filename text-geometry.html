@@ -9,6 +9,8 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Rubik',Arial,sans-serif}button,input,textarea,select{font:inherit}a{color:var(--cyan)}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}a:focus-visible,button:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .wrap{width:min(1120px,calc(100% - 32px));margin:auto}header{border-bottom:1px solid var(--border);background:#0d141e}header .wrap{min-height:68px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0}.brand{text-decoration:none;color:var(--text);font-size:17px;font-weight:900;letter-spacing:.03em}.brand span{color:var(--gold)}nav{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap}nav a{font-size:12px;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:8px 11px;border-radius:8px}
 main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--gold)}h1{font-size:clamp(28px,4.5vw,47px);margin:8px 0 9px;line-height:1.18}.lead{color:var(--muted);font-size:14px;line-height:1.8;max-width:850px;margin-bottom:22px}.layout{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:16px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px;min-width:0}.panel h2{font-size:17px;margin:0 0 15px;color:#f9dc9f}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:12px;color:#bfcbd6;font-weight:700}.field textarea,.field select{width:100%;border-radius:10px;border:1px solid #43505f;background:#0b111a;color:var(--text);padding:12px;font-size:15px;min-height:48px}.field textarea{min-height:105px;resize:vertical;line-height:1.7}.field select{cursor:pointer}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--border);border-radius:10px;min-height:44px;padding:9px 15px;color:var(--text);background:#1a2531;font-size:13px;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.primary{background:var(--gold);color:#17120b;border-color:#efc276}.btn.secondary{border-color:#407d7b;color:var(--cyan)}.btn:hover:not(:disabled){filter:brightness(1.12)}.pill{border:1px solid var(--border);border-radius:10px;background:#0c131c;padding:10px 13px;font-size:12px;color:var(--muted)}.big{font-size:clamp(38px,6vw,58px);font-weight:850;line-height:1.1;color:var(--gold);font-variant-numeric:tabular-nums}.sub{font-size:12px;color:var(--muted);line-height:1.75}.metric{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0 16px;border-bottom:1px solid var(--border)}.status{margin:15px 0;background:#0e1923;border-inline-start:3px solid var(--cyan);border-radius:6px;padding:12px;color:#c4d4de;font-size:12px;line-height:1.75}.status.warn{border-color:var(--gold)}.matches{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.match{padding:9px 12px;border:1px solid #547f7d;border-radius:10px;background:#122a2b;color:#b9f7ec;font-weight:850;font-size:14px;cursor:pointer}.match[aria-pressed=true]{background:#1e5353;box-shadow:0 0 0 2px #79ccca inset}.closest{font-size:12px;line-height:1.7;color:var(--muted);margin-top:10px}.words{display:grid;gap:7px;margin-top:12px;max-height:290px;overflow:auto}.word{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#0d151e;padding:9px 11px;border-radius:9px;border:1px solid #263644;font-size:13px}.word b{font-variant-numeric:tabular-nums}.word .swatch{width:12px;height:12px;border-radius:3px;flex:none;display:inline-block;margin-inline-end:7px}.preview-card{background:#0b1018;border:1px solid #283543;border-radius:12px;overflow:hidden;min-height:270px;position:relative}.preview-card canvas{display:block;width:100%;height:300px}.preview-note{position:absolute;right:12px;top:12px;padding:6px 9px;border:1px solid #3a4e5b;background:#0b121ceb;border-radius:6px;font-size:11px;color:#b6c7d3}.fine{margin-top:12px;font-size:11px;color:#91a2b0;line-height:1.8}.empty{font-size:13px;color:#b4c7d1;padding:8px 0}.quick{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 3px}.quick button{font-size:11px;border:1px solid #394b5a;background:#142330;border-radius:7px;color:#d4e6ed;padding:7px 10px}.legend-note{color:#a3b8c5;font-size:12px;margin-top:10px;line-height:1.7}
+.control-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.control-grid .field{margin:4px 0}.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:10px 0;font-size:12px;color:#bfcbd6}.zoom-actions{display:flex;align-items:center;gap:6px}.zoom-actions button{min-width:38px;height:38px;border:1px solid #45576c;color:#eef3f8;border-radius:9px;background:#1a2835}.zoom-actions strong{font-variant-numeric:tabular-nums;color:#f2ce8a;min-width:37px;text-align:center}.refresh-motion{animation:refill .24s ease-out}@keyframes refill{from{opacity:.38;transform:scale(.99)}to{opacity:1;transform:scale(1)}}.preview-card canvas{cursor:grab}.preview-card canvas:active{cursor:grabbing}
+@media(max-width:580px){.control-grid{grid-template-columns:1fr}.preview-toolbar{align-items:flex-start}}
 @media(max-width:790px){.layout{grid-template-columns:1fr}main{padding-top:20px}.panel{padding:14px}header .wrap{gap:8px}nav{margin-inline-start:0;width:100%}nav a{flex:1;text-align:center}.preview-card canvas{height:270px}}@media(max-width:360px){.wrap{width:calc(100% - 20px)}.btn{flex:1}.preview-card canvas{height:230px}}
 </style>
 </head>
@@ -20,39 +22,64 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 <div class="layout">
 <section class="panel"><h2>1 · מקור החישוב</h2>
 <div class="field"><label for="phrase">טקסט / שם / פסוק</label><textarea id="phrase" dir="auto" maxlength="2500">בראשית ברא אלהים את השמים ואת הארץ</textarea></div>
-<div class="field"><label for="method">שיטת המספור</label><select id="method"><optgroup label="עברית"><option value="he:regular">רגילה · א=1 … ת=400</option><option value="he:ordinal">סידורית · א=1 … ת=22</option><option value="he:reduced">קטנה · 1–9</option><option value="he:final">סופיות מורחבות · ץ=900</option></optgroup><optgroup label="English"><option value="en:ordinal">English Simple · A=1–Z=26</option><option value="en:sumerian">English Gematria · ×6</option><option value="en:regular">English Isopsephy</option><option value="en:agrippa">English Jewish / Agrippa</option></optgroup><optgroup label="Greek"><option value="el:isopsephy">Greek Isopsephy</option><option value="el:ordinal">Greek Ordinal (24)</option></optgroup><optgroup label="Русский"><option value="ru:ruOrdinal">Russian Ordinal (33)</option><option value="ru:ruRegular">Russian Decimal Tier</option><option value="ru:ruReduced">Russian Reduced</option></optgroup></select></div>
+<div class="field"><label for="method">שיטת המספור</label><select id="method"><optgroup label="עברית"><option value="he:regular">רגילה · א=1 … ת=400</option><option value="he:ordinal">סידורית · א=1 … ת=22</option><option value="he:reduced">קטנה · 1–9</option><option value="he:final">סופיות מורחבות · ץ=900</option><option value="he:smallFinals">קטנה סופית · ץ=9</option><option value="he:reverseOrdinal">סידורית הפוכה · ת=1</option><option value="he:zeroStep">צמצום №1 · 10→1</option><option value="he:wordReduced">צמצום לפי מילה · שורש ספרתי</option></optgroup><optgroup label="English"><option value="en:ordinal">English Simple · A=1–Z=26</option><option value="en:sumerian">English Gematria · ×6</option><option value="en:regular">English Isopsephy</option><option value="en:agrippa">English Jewish / Agrippa</option><option value="en:pythagorean">English Small / Pythagorean</option><option value="en:reverse">English Reverse Ordinal</option></optgroup><optgroup label="Greek"><option value="el:isopsephy">Greek Isopsephy</option><option value="el:ordinal">Greek Ordinal (24)</option><option value="el:reduced">Greek Isopsephy Reduced</option></optgroup><optgroup label="Русский"><option value="ru:ruOrdinal">Russian Ordinal (33)</option><option value="ru:ruRegular">Russian Decimal Tier</option><option value="ru:ruReduced">Russian Reduced</option><option value="ru:ruReverseOrdinal">Russian Reverse Ordinal</option></optgroup></select></div>
+<div class="control-grid">
+<div class="field"><label for="placementMode">בסיס השיבוץ</label><select id="placementMode">
+<option value="gematria">לפי ערך הגימטריה · יחידות</option><option value="letters">לפי מספר האותיות · אות = נקודה</option>
+</select></div>
+<div class="field"><label for="displayMode">מה רואים בתוך הצורה?</label><select id="displayMode">
+<option value="dots">נקודות בלבד</option><option value="letters" selected>אותיות</option><option value="numbers">ערכי האותיות · מספרים</option>
+</select></div>
+</div>
 <div class="quick"><button type="button" data-example="genesis">בראשית א׳:א׳</button><button type="button" data-example="name">עמית מייק רוב</button><button type="button" data-example="voice">קול</button><button type="button" data-example="english">Amit Mike Rov</button></div>
 <div class="row" style="margin-top:14px"><a class="btn secondary" id="calculatorLink" href="calculator.html?textGeometry=1">חשב גם במחשבון המלא ←</a><button class="btn" id="copyProof" type="button">העתק תוצאה</button></div>
 <p id="methodOrigin" class="fine" aria-live="polite">שיטות בסיס תואמות להגדרות המקור של Gematria2026. אופרטורים אחרים זמינים דרך המחשבון המלא.</p>
 <h2 style="margin-top:22px">2 · חלוקת המילים</h2><div id="words" class="words" aria-live="polite"></div><div class="legend-note" id="legendNote"></div>
 </section>
 <section class="panel"><h2>3 · גיאומטריה מספרית</h2>
-<div class="metric"><div><div class="sub">ערך הטקסט בשיטה הנבחרת</div><div class="big" id="total" aria-live="polite">2701</div></div><div class="pill" id="lettersCount">28 אותיות · 7 מילים</div></div>
+<div class="metric"><div><div class="sub" id="metricName">ערך הטקסט בשיטה הנבחרת</div><div class="big" id="total" aria-live="polite">2701</div></div><div class="pill" id="lettersCount">28 אותיות · 7 מילים</div></div>
 <div id="status" class="status" role="status" aria-live="polite"></div><div id="matches" class="matches"></div>
+<div class="preview-toolbar"><span id="slotNote">שיבוץ לפי ערכים · אותיות</span><div class="zoom-actions"><button type="button" id="previewZoomIn" aria-label="הגדל תצוגה">+</button><button type="button" id="previewZoomOut" aria-label="הקטן תצוגה">−</button><button type="button" id="previewReset" aria-label="אפס זום">איפוס</button><strong id="zoomLabel">×1.0</strong></div></div>
 <div class="preview-card"><canvas id="preview" role="img" aria-label="הדמיית הנקודות של צורת T או CT או Tet"></canvas><div id="previewNote" class="preview-note">מיפוי מילים לפי סדר</div></div>
-<div id="nearest" class="closest"></div>
+<div id="viewNote" class="legend-note" aria-live="polite">הגדל תצוגה כדי לראות אותיות</div><div id="nearest" class="closest"></div>
 <div class="row" style="margin-top:16px"><button class="btn primary" id="openGeometry" type="button" disabled>פתח צורה מלאה ב־Geometry Lab ←</button></div>
-<div class="fine">בצורה בעלת N נקודות, כל מילה מקבלת בדיוק כמספר ערכה נקודות ברצף, מהקודקוד הראשון לפי סדר המחולל. אין חפיפה בין קבוצות. כאשר הפירוק אינו אדיטיבי — מוצגת הצורה ללא צביעת מילים.</div>
+<div class="fine">במצב גימטריה כל אות תופסת את ערכה בנקודות; במצב ספירת אותיות כל אות תופסת נקודה אחת. בחירת אותיות או מספרים משנה רק את הכיתוב, לא את הספירה. כשאין צורה מדויקת מוצגת פריסה משולשית פתוחה, המסומנת בבירור כלא־מדויקת.</div>
 </section>
 </div>
 </main>
 <script>
+/* Gematria2026 · Text ↔ Geometry · canonical bridge v3
+   Geometry is an exact integer partition display, not a claim of symbolic causality. */
 (()=>{'use strict';
 const H='אבגדהוזחטיכלמנסעפצקרשת',G='αβγδεϝζηθικλμνξοπϙρστυφχψωϡ',GM='αβγδεζηθικλμνξοπρστυφχψω',R='абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-const finals={ך:'כ',ם:'מ',ן:'נ',ף:'פ',ץ:'צ'}, extended={ך:500,ם:600,ן:700,ף:800,ץ:900};
+const finals={ך:'כ',ם:'מ',ן:'נ',ף:'פ',ץ:'צ'},extended={ך:500,ם:600,ן:700,ף:800,ץ:900};
 const colors=['#4ba5ff','#e7a444','#34c8a5','#e46b6b','#a985f5','#5ac9e2','#d5b460','#f289bc','#7bd68d','#e5a3e6'];
-const opts=document.getElementById('method'),elPhrase=document.getElementById('phrase'),wordsBox=document.getElementById('words'),elTotal=document.getElementById('total'),elMatches=document.getElementById('matches'),elStatus=document.getElementById('status'),elNearest=document.getElementById('nearest'),elNotes=document.getElementById('legendNote'),open=document.getElementById('openGeometry'),canvas=document.getElementById('preview'),ctx=canvas.getContext('2d');
+const $=id=>document.getElementById(id);
+const opts=$('method'),elPhrase=$('phrase'),wordsBox=$('words'),elTotal=$('total'),elMatches=$('matches'),elStatus=$('status'),elNearest=$('nearest'),elNotes=$('legendNote'),open=$('openGeometry'),canvas=$('preview'),ctx=canvas.getContext('2d');
+const placement=$('placementMode'),display=$('displayMode'),zoomText=$('zoomLabel'),viewNote=$('viewNote');
 const tier=i=>i<9?i+1:i<18?(i-8)*10:(i-17)*100;
 const make=(alphabet,f)=>Object.fromEntries([...alphabet].map((ch,i)=>[ch,f(i)]));
-const heReg=make(H,tier),heOrd=make(H,i=>i+1),heRed=make(H,i=>(i%9)+1),heFin={...heReg,...extended};
-for(const [f,b] of Object.entries(finals)){heReg[f]=heReg[b];heOrd[f]=heOrd[b];heRed[f]=heRed[b]}
+const heReg=make(H,tier),heOrd=make(H,i=>i+1),heRed=make(H,i=>(i%9)+1),heFinal={...heReg,...extended},heRev=make(H,i=>22-i),heSmallFinal={...heRed};
+const heOneStep=make(H,i=>{const v=tier(i);return v>=10&&v%10===0?v/10:v;});
+for(const [f,b] of Object.entries(finals)){
+ for(const map of [heReg,heOrd,heRed,heRev,heOneStep])map[f]=map[b];
+ heSmallFinal[f]=({ך:5,ם:6,ן:7,ף:8,ץ:9})[f];
+}
 const eng='abcdefghijklmnopqrstuvwxyz',agr=[1,2,3,4,5,6,7,8,9,600,10,20,30,40,50,60,70,80,90,100,200,700,900,300,400,500];
 const grReg=make(G,tier);Object.assign(grReg,{'ϛ':grReg['ϝ'],'ϟ':grReg['ϙ'],'ς':grReg['σ']});
 const grOrd=make(GM,i=>i+1);grOrd['ς']=grOrd['σ'];
 const maps={
- 'he:regular':heReg,'he:ordinal':heOrd,'he:reduced':heRed,'he:final':heFin,
- 'en:ordinal':make(eng,i=>i+1),'en:sumerian':make(eng,i=>6*(i+1)),'en:regular':make(eng,tier),'en:agrippa':make(eng,i=>agr[i]),
- 'el:isopsephy':grReg,'el:ordinal':grOrd,'ru:ruOrdinal':make(R,i=>i+1),'ru:ruRegular':make(R,i=>((i%9)+1)*10**Math.floor(i/9)),'ru:ruReduced':make(R,i=>(i%9)+1)};
+ 'he:regular':heReg,'he:ordinal':heOrd,'he:reduced':heRed,'he:final':heFinal,
+ 'he:smallFinals':heSmallFinal,'he:reverseOrdinal':heRev,'he:zeroStep':heOneStep,'he:wordReduced':heRed,
+ 'en:ordinal':make(eng,i=>i+1),'en:sumerian':make(eng,i=>6*(i+1)),
+ 'en:regular':make(eng,tier),'en:agrippa':make(eng,i=>agr[i]),
+ 'en:pythagorean':make(eng,i=>i%9+1),'en:reverse':make(eng,i=>26-i),
+ 'el:isopsephy':grReg,'el:ordinal':grOrd,'el:reduced':make(G,i=>i%9+1),
+ 'ru:ruOrdinal':make(R,i=>i+1),'ru:ruRegular':make(R,i=>((i%9)+1)*10**Math.floor(i/9)),
+ 'ru:ruReduced':make(R,i=>i%9+1),'ru:ruReverseOrdinal':make(R,i=>33-i)
+};
+// Greek reduced must be the digit-root of classical isopsephy (≡ per-letter 1..9).
+for(const [ch,v] of Object.entries(grReg))maps['el:reduced'][ch]=((v-1)%9)+1;
 const sup={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
 const familyName=(family,n)=>family==='TET'?'Tet'+n:family+n;
@@ -60,35 +87,228 @@ const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6};
 const maxN={T:200,CT:200,TET:55};
 const methodLang=key=>key.split(':')[0];
 const detect=t=>/[\u0590-\u05ff]/.test(t)?'he':/[\u0370-\u03ff\u1f00-\u1fff]/.test(t)?'el':/[а-яё]/i.test(t)?'ru':'en';
-function wordValue(raw,method){const map=maps[method];if(!map)return 0;const lang=methodLang(method);const ar=Array.from(raw);let sum=0;for(let i=0;i<ar.length;i++){let ch=ar[i];if(lang==='el')ch=ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');else if(lang==='en'||lang==='ru')ch=ch.toLowerCase();let v=map[ch]||0;if(!v)continue;let digits='',j=i+1;while(j<ar.length&&sup[ar[j]]!==undefined){digits+=sup[ar[j]];j++;}if(digits){v*=Math.max(1,Number(digits)||1);i=j-1;}sum+=v;}return sum;}
-function countLetters(raw,method){const map=maps[method];const lang=methodLang(method);return [...raw].filter(ch=>{let a=ch;if(lang==='el')a=a.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');else a=a.toLowerCase();return (map[a]||0)!==0;}).length;}
-function exactMatches(value){const m=[];for(const fam of ['T','CT','TET']){for(let n=(fam==='T'?2:1);n<=maxN[fam];n++){const k=formula[fam](n);if(k===value)m.push({family:fam,n,count:k});if(k>value)break;}}return m}
-function closest(value){const all=[];for(let f of ['T','CT','TET'])for(let n=f==='T'?2:1;n<=maxN[f];n++)all.push({family:f,n,count:formula[f](n)});return all.sort((a,b)=>Math.abs(a.count-value)-Math.abs(b.count-value)||a.count-b.count).slice(0,3)}
-let imported=null,selected=null,groups=[],computed=0,wordColorsValid=false,currentText='',currentMethod='',importLabel='';
-function loadCalculatorImport(){try{const data=JSON.parse(sessionStorage.getItem('gematria2026.textGeometry.v1')||'null');if(!data||data.v!==1||Date.now()-data.at>3600000||data.at>Date.now()+300000||!Number.isSafeInteger(data.total)||data.total<0||typeof data.text!=='string'||data.text.length>2500)return;imported=data;elPhrase.value=data.text;opts.insertAdjacentHTML('afterbegin','<option value="imported">תוצאה שהועברה מהמחשבון המלא</option>');opts.value='imported';}catch(e){console.warn('Bridge import ignored',e)}}
-function getReading(){const text=elPhrase.value.trim(),method=opts.value;if(method==='imported'&&imported&&text===imported.text){const rows=(Array.isArray(imported.words)?imported.words:[]).filter(x=>x&&typeof x.label==='string'&&Number.isSafeInteger(x.count)&&x.count>=0).map(x=>({label:x.label,count:x.count}));const valid=rows.length>0&&rows.reduce((a,x)=>a+x.count,0)===imported.total;return {text,method,total:imported.total,rows:valid?rows:[],valid,letters:imported.letters||0,origin:`ערך מחושב במחשבון: ${imported.methodName||imported.methodKey||'שיטה נבחרת'}`,imported:true}}
-const words=text.split(/\s+/).filter(Boolean),rows=words.map(raw=>({label:raw,count:wordValue(raw,method)}));const letters=words.reduce((acc,w)=>acc+countLetters(w,method),0);return {text,method,total:rows.reduce((a,x)=>a+x.count,0),rows,valid:words.length>0&&letters>0,letters,origin:opts.selectedOptions[0]?.textContent||method,imported:false}}
-function pointsForShape(choice){const {family,n}=choice,points=[];if(family==='T'){for(let r=0;r<n;r++)for(let c=0;c<=r;c++)points.push({x:c-r/2,y:r*Math.sqrt(3)/2});}else if(family==='CT'){points.push({x:0,y:0});for(let ring=1;ring<n;ring++){const side=ring,ht=side*Math.sqrt(3)/2,vs=[{x:0,y:-2*ht/3},{x:-side/2,y:ht/3},{x:side/2,y:ht/3}];for(let edge=0;edge<3;edge++)for(let j=0;j<ring;j++){const t=j/ring,a=vs[edge],b=vs[(edge+1)%3];points.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});}}}else{for(let z=0;z<n;z++){const side=n-z;for(let r=0;r<side;r++)for(let c=0;c<=r;c++)points.push({x:(c-r/2)+z*.72,y:(r-(side-1)/2)*Math.sqrt(3)/2-z*.67});}}return points}
-function drawPreview(){const w=canvas.clientWidth||400,h=canvas.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#0a111b';ctx.fillRect(0,0,w,h);if(!selected)return;const p=pointsForShape(selected),minx=Math.min(...p.map(x=>x.x)),maxx=Math.max(...p.map(x=>x.x)),miny=Math.min(...p.map(x=>x.y)),maxy=Math.max(...p.map(x=>x.y));let scale=Math.min((w-44)/Math.max(1,maxx-minx),(h-48)/Math.max(1,maxy-miny));scale=Math.min(scale,42);const offX=w/2-(minx+maxx)/2*scale,offY=h/2-(miny+maxy)/2*scale;const maxDots=p.length;let colored=0,idx=0;const isColored=wordColorsValid&&groups.reduce((s,g)=>s+g.count,0)===p.length;ctx.strokeStyle='#4b6375';ctx.lineWidth=1; if(selected.family==='T'&&selected.n>1){ctx.beginPath();for(const xy of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])ctx.lineTo(offX+xy.x*scale,offY+xy.y*scale);ctx.stroke();}
-for(const pt of p){while(isColored&&idx<groups.length&&colored>=groups[idx].count){idx++;colored=0}const col=isColored?(groups[idx]?.color||'#e2e8f0'):'#4ba5ff';const radius=Math.max(0.8,Math.min(3.5,scale*.24));ctx.beginPath();ctx.arc(offX+pt.x*scale,offY+pt.y*scale,radius,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();colored++}
+const digitalRoot=n=>n===0?0:1+(n-1)%9;
+function normalize(ch,lang){
+ if(lang==='el')return ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+ if(lang==='en'||lang==='ru')return ch.toLowerCase();
+ return ch;
 }
-function update(){const data=getReading();const {text,method,total,rows,valid,letters,origin}=data;currentText=text;currentMethod=method;computed=total;importLabel=origin;elTotal.textContent=fmt(total);document.getElementById('lettersCount').textContent=`${fmt(letters)} אותיות · ${rows.length} מילים`;document.getElementById('methodOrigin').textContent=data.imported?'הערך נלקח מהמחשבון המקורי. חלוקת מילים זמינה רק אם סכומה תואם בדיוק את התוצאה.':'החישוב נעשה בשיטת בסיס תואמת להגדרות המחשבון הראשי. סופיות, סימני ניקוד והכפלות על־כתביות מטופלים לפי כללי השיטה.';
-groups=rows.map((r,i)=>({...r,color:colors[i%colors.length]}));wordColorsValid=valid&&rows.length>0&&rows.reduce((a,x)=>a+x.count,0)===total;
-wordsBox.replaceChildren();if(rows.length&&wordColorsValid){for(const r of groups){const line=document.createElement('div');line.className='word';const lab=document.createElement('span'),num=document.createElement('b'),sw=document.createElement('span');sw.className='swatch';sw.style.background=r.color;lab.append(sw,document.createTextNode(r.label));num.textContent=fmt(r.count);line.append(lab,num);wordsBox.append(line)}}else{const e=document.createElement('div');e.className='empty';e.textContent=rows.length?'אין פירוק מילים אדיטיבי מאומת לשיטה זו.': 'הקלד טקסט כדי להתחיל';wordsBox.append(e)}
-elNotes.textContent=wordColorsValid?'הצבעים ממפים מקטעים רציפים בסדר המחולל; כל נקודה נספרת פעם אחת.':'צביעת מילים כבויה עד לקבלת פירוק שניתן לבדיקה.';
-const found=Number.isSafeInteger(total)&&total>0&&text?exactMatches(total):[];elMatches.replaceChildren();selected=null;open.disabled=true;elNearest.textContent='';
-if(!text||!valid&&method!=='imported'){elStatus.textContent='הקלד טקסט בשיטת המספור המתאימה.';elStatus.className='status warn';document.getElementById('previewNote').textContent='אין ערך לחישוב';drawPreview();return}
-if(!Number.isSafeInteger(total)||total<0){elStatus.textContent='המספר גדול מדי לתצוגה מדויקת.';elStatus.className='status warn';drawPreview();return}
-if(found.length){elStatus.textContent=`התאמה מדויקת: ${fmt(total)} נקודות. התוצאה אינה תלויה בבחירת הצבעים.`;elStatus.className='status';for(const shape of found){const b=document.createElement('button');b.type='button';b.className='match';b.textContent=`${familyName(shape.family,shape.n)} = ${fmt(shape.count)}`;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>select(shape));elMatches.append(b)}select(found[0]);}else{elStatus.textContent=`אין התאמה ישירה ל־T / CT / Tet בטווח הנתמך עבור ${fmt(total)}. לא נקבעה צורה מלאכותית.`;elStatus.className='status warn';let near=closest(total);elNearest.textContent='הצורות הקרובות (לא התאמה): '+near.map(x=>`${familyName(x.family,x.n)} = ${fmt(x.count)} (Δ ${x.count-total>0?'+':''}${fmt(x.count-total)})`).join(' · ');document.getElementById('previewNote').textContent='אין צורה מדויקת';drawPreview();}}
-function select(choice){selected=choice;open.disabled=false;elMatches.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.textContent.startsWith(familyName(choice.family,choice.n)+' ='))));document.getElementById('previewNote').textContent=familyName(choice.family,choice.n)+' · '+fmt(choice.count)+' נקודות';drawPreview()}
-function goGeometry(){if(!selected||selected.count!==computed)return;const payload={v:1,at:Date.now(),family:selected.family,n:selected.n,value:computed,text:currentText,method:importLabel,groups:wordColorsValid?groups:[]};try{sessionStorage.setItem('gematria2026.geometryOverlay.v1',JSON.stringify(payload))}catch(e){console.warn('Bridge session storage failed:',e)}location.href=`geometry-lab.html?figure=${encodeURIComponent(familyName(selected.family,selected.n))}&bridge=1`}
-function goCalculator(e){try{sessionStorage.setItem('gematria2026.calculatorReturn.v1',JSON.stringify({v:1,at:Date.now(),text:currentText}))}catch(_){} }
-function copyResult(){const l=[currentText,`Method: ${importLabel}`,`Total: ${computed}`,selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No exact T/CT/Tet match'];if(wordColorsValid)l.push(...groups.map(g=>`${g.label} = ${g.count}`));const t=l.join('\n');if(navigator.clipboard?.writeText)navigator.clipboard.writeText(t).then(()=>{document.getElementById('copyProof').textContent='הועתק ✓';}).catch(()=>fallbackCopy(t));else fallbackCopy(t)}
-function fallbackCopy(t){const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.left='-10000px';document.body.append(a);a.select();document.execCommand('copy');a.remove();document.getElementById('copyProof').textContent='הועתק ✓'}
-let manualSelection=false;elPhrase.addEventListener('input',()=>{if(opts.value==='imported'){opts.value=detect(elPhrase.value)+':'+({he:'regular',en:'ordinal',el:'isopsephy',ru:'ruOrdinal'}[detect(elPhrase.value)]);imported=null;}else if(!manualSelection){opts.value=detect(elPhrase.value)+':'+({he:'regular',en:'ordinal',el:'isopsephy',ru:'ruOrdinal'}[detect(elPhrase.value)]);}update()});opts.addEventListener('change',()=>{manualSelection=true;update()});
-document.querySelectorAll('[data-example]').forEach(btn=>btn.addEventListener('click',()=>{const ex=btn.dataset.example,items={genesis:['בראשית ברא אלהים את השמים ואת הארץ','he:regular'],name:['עמית מייק רוב','he:regular'],voice:['קול','he:regular'],english:['Amit Mike Rov','en:ordinal']};elPhrase.value=items[ex][0];opts.value=items[ex][1];manualSelection=false;imported=null;update()}));
-open.addEventListener('click',goGeometry);document.getElementById('calculatorLink').addEventListener('click',goCalculator);document.getElementById('copyProof').addEventListener('click',copyResult);window.addEventListener('resize',()=>drawPreview());
-loadCalculatorImport();update();window.TextGeometryBridge={formula,exactMatches,wordValue,pointsForShape,getReading,select,update};
+function tokenize(raw,method){
+ const map=maps[method];if(!map)return [];
+ const lang=methodLang(method),chars=Array.from(raw),out=[];
+ for(let i=0;i<chars.length;i++){
+  const glyph=chars[i],key=normalize(glyph,lang),base=key in map?key:lang==='he'?(finals[key]||key):key;
+  if(!(base in map))continue;
+  let factor=1,j=i+1,digits='';
+  while(j<chars.length&&sup[chars[j]]!==undefined){digits+=sup[chars[j]];j++;}
+  if(digits){factor=Math.max(1,Number(digits)||1);i=j-1;}
+  const value=map[base]*factor;
+  out.push({glyph:glyph+(digits?Array.from(digits).map(n=>Object.keys(sup).find(k=>sup[k]===n)).join(''):''),value});
+ }
+ return out;
+}
+function wordValue(raw,method){let total=tokenize(raw,method).reduce((a,t)=>a+t.value,0);return method==='he:wordReduced'?digitalRoot(total):total;}
+function countLetters(raw,method){return tokenize(raw,method).length;}
+function exactMatches(value){const m=[];for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++){
+ const count=formula[family](n);if(count===value)m.push({family,n,count});if(count>value)break;
+}return m;}
+function closest(value){const all=[];for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++)all.push({family,n,count:formula[family](n)});
+ return all.sort((a,b)=>Math.abs(a.count-value)-Math.abs(b.count-value)||a.count-b.count).slice(0,3);}
+function pointsForShape(choice){const {family,n}=choice,p=[];
+ if(family==='T'||family==='PARTIAL'){
+  const limit=family==='PARTIAL'?choice.count:formula.T(n);
+  for(let r=0;r<n&&p.length<limit;r++)for(let c=0;c<=r&&p.length<limit;c++)p.push({x:c-r/2,y:r*Math.sqrt(3)/2});
+ }else if(family==='CT'){
+  p.push({x:0,y:0});
+  for(let ring=1;ring<n;ring++){
+   const ht=ring*Math.sqrt(3)/2,vs=[{x:0,y:-2*ht/3},{x:-ring/2,y:ht/3},{x:ring/2,y:ht/3}];
+   for(let edge=0;edge<3;edge++)for(let j=0;j<ring;j++){
+    const a=vs[edge],b=vs[(edge+1)%3],t=j/ring;
+    p.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});
+   }
+  }
+ }else{
+  for(let z=0;z<n;z++){
+   const side=n-z;for(let r=0;r<side;r++)for(let c=0;c<=r;c++)p.push({x:(c-r/2)+z*.72,y:(r-(side-1)/2)*Math.sqrt(3)/2-z*.67});
+  }
+ }
+ return p;
+}
+let imported=null,selected=null,groups=[],slots=[],pointSlots=[],computed=0,wordColorsValid=false,currentText='',currentMethod='',importLabel='',currentReading=null,wasExact=false;
+let zoom=1,panX=0,panY=0,pointer=null;
+function loadCalculatorImport(){
+ try{const d=JSON.parse(sessionStorage.getItem('gematria2026.textGeometry.v1')||'null');
+ if(!d||d.v!==1||Date.now()-d.at>3600000||d.at>Date.now()+300000||!Number.isSafeInteger(d.total)||d.total<0||typeof d.text!=='string'||d.text.length>2500)return;
+ imported=d;elPhrase.value=d.text;
+ opts.insertAdjacentHTML('afterbegin','<option value="imported">תוצאה שהועברה מהמחשבון המלא</option>');opts.value='imported';
+ }catch(e){console.warn('Bridge import ignored',e)}
+}
+function defaultMethod(lang){return {he:'he:regular',en:'en:ordinal',el:'el:isopsephy',ru:'ru:ruOrdinal'}[lang]||'he:regular';}
+function getReading(){
+ const text=elPhrase.value.trim(),method=opts.value,words=text.split(/\s+/).filter(Boolean);
+ const effective=method==='imported'?defaultMethod(detect(text)):method;
+ const tokenRows=words.map(raw=>({label:raw,tokens:tokenize(raw,effective)}));
+ const letters=tokenRows.reduce((sum,row)=>sum+row.tokens.length,0);
+ let rows,total,valid,importFlag=false,additive=method!=='he:wordReduced';
+ if(method==='imported'&&imported&&text===imported.text){
+  total=imported.total;importFlag=true;
+  const incoming=Array.isArray(imported.words)?imported.words:[];
+  rows=incoming.filter(x=>x&&typeof x.label==='string'&&Number.isSafeInteger(x.count)&&x.count>=0).map(x=>({label:x.label,count:x.count}));
+  valid=rows.length>0&&rows.reduce((a,x)=>a+x.count,0)===total;
+  additive=false;
+ }else{
+  rows=tokenRows.map(row=>({label:row.label,count:wordValue(row.label,method)}));
+  total=rows.reduce((a,r)=>a+r.count,0);
+  valid=rows.length>0&&letters>0;
+ }
+ const origin=importFlag?`ערך שהועבר מהמחשבון: ${imported.methodName||imported.methodKey||'שיטה נבחרת'}`:opts.selectedOptions[0]?.textContent||method;
+ return {text,method,total,rows,tokenRows,valid,letters,origin,imported:importFlag,additive};
+}
+function buildPlacement(data){
+ const byLetters=placement.value==='letters';
+ let list=[],unitGroups=[];
+ if(byLetters){
+  data.tokenRows.forEach((row,i)=>{
+   const color=colors[i%colors.length];unitGroups.push({label:row.label,count:row.tokens.length,color});
+   row.tokens.forEach(tok=>list.push({glyph:tok.glyph,value:tok.value,count:1,color}));
+  });
+  return {total:data.letters,units:list,groups:unitGroups,colorValid:data.letters>0};
+ }
+ const expected=data.total;
+ if(data.imported||!data.additive){
+  if(data.valid)data.rows.forEach((row,i)=>{const color=colors[i%colors.length];unitGroups.push({label:row.label,count:row.count,color});list.push({glyph:row.label,value:row.count,count:row.count,color});});
+ }else{
+  data.tokenRows.forEach((row,i)=>{
+   const color=colors[i%colors.length];const value=row.tokens.reduce((a,x)=>a+x.value,0);
+   unitGroups.push({label:row.label,count:value,color});row.tokens.forEach(tok=>list.push({glyph:tok.glyph,value:tok.value,count:tok.value,color}));
+  });
+ }
+ const sum=list.reduce((a,x)=>a+x.count,0);
+ return {total:expected,units:list,groups:unitGroups,colorValid:data.valid&&sum===expected};
+}
+function getPointSlots(count){if(count>20100)return [];const out=[];
+ for(const slot of slots)for(let i=0;i<slot.count;i++)out.push(slot);
+ return out.length===count?out:[];
+}
+function restartMotion(){canvas.classList.remove('refresh-motion');void canvas.offsetWidth;canvas.classList.add('refresh-motion');}
+function drawPreview(){
+ const w=canvas.clientWidth||400,h=canvas.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#0a111b';ctx.fillRect(0,0,w,h);
+ if(!selected||selected.count>20100){viewNote.textContent='אין נקודות להצגה';return;}
+ const p=pointsForShape(selected);if(!p.length){viewNote.textContent='אין נקודות להצגה';return;}
+ let minx=Infinity,maxx=-Infinity,miny=Infinity,maxy=-Infinity;
+ for(const q of p){minx=Math.min(minx,q.x);maxx=Math.max(maxx,q.x);miny=Math.min(miny,q.y);maxy=Math.max(maxy,q.y);}
+ const base=Math.min((w-52)/Math.max(1,maxx-minx),(h-54)/Math.max(1,maxy-miny),44),scale=base*zoom;
+ const ox=w/2-(minx+maxx)/2*scale+panX,oy=h/2-(miny+maxy)/2*scale+panY;
+ const hasSlots=pointSlots.length===p.length;
+ const mode=display.value,labelEnabled=mode!=='dots'&&scale>=18;
+ if(selected.family==='T'){
+  ctx.lineWidth=1;ctx.strokeStyle='#5a7188';ctx.beginPath();
+  for(const q of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])ctx.lineTo(ox+q.x*scale,oy+q.y*scale);ctx.stroke();
+ }
+ const radius=Math.max(.85,Math.min(3.7,scale*.21));
+ for(let i=0;i<p.length;i++){
+  const q=p[i],x=ox+q.x*scale,y=oy+q.y*scale;
+  if(x<-25||x>w+25||y<-25||y>h+25)continue;
+  const slot=hasSlots?pointSlots[i]:null;
+  ctx.fillStyle=slot?.color||'#4ba5ff';ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();
+  if(labelEnabled&&slot){
+   const label=mode==='letters'?slot.glyph:String(slot.value);
+   if(label.length>10)continue;
+   ctx.font=`700 ${Math.max(10,Math.min(15,scale*.37))}px Rubik,Arial,sans-serif`;
+   ctx.textAlign='center';ctx.textBaseline='bottom';ctx.lineWidth=2.8;
+   ctx.strokeStyle='#08131c';ctx.strokeText(label,x,y-5);
+   ctx.fillStyle='#f8fafc';ctx.fillText(label,x,y-5);
+  }
+ }
+ viewNote.textContent=mode==='dots'?'נקודות צבעוניות לפי המילים':labelEnabled?`${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`:`הגדל תצוגה לראות ${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`;
+ zoomText.textContent='×'+zoom.toFixed(1);
+}
+function resetView(){zoom=1;panX=0;panY=0;drawPreview()}
+function chooseShape(shape){selected=shape;open.disabled=!shape||shape.family==='PARTIAL';
+ elMatches.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(shape&&b.dataset.family===shape.family&&Number(b.dataset.n)===shape.n)));
+ $('previewNote').textContent=shape?.family==='PARTIAL'?`${fmt(shape.count)} נקודות · T${shape.n} פתוח`:shape?familyName(shape.family,shape.n)+' · '+fmt(shape.count)+' נקודות':'אין שיבוץ';
+ drawPreview();
+}
+function update(){
+ const data=getReading();currentReading=data;
+ const {text,method,rows,valid,letters,origin}=data;
+ const placementData=buildPlacement(data);groups=placementData.groups;slots=placementData.units;
+ computed=placementData.total;currentText=text;currentMethod=method;importLabel=origin;
+ elTotal.textContent=fmt(computed);$('lettersCount').textContent=`${fmt(letters)} אותיות · ${rows.length} מילים`;
+ $('metricName').textContent=placement.value==='letters'?'מספר האותיות שנקלטו':'ערך הטקסט בשיטה הנבחרת';
+ $('methodOrigin').textContent=data.imported?'הערך הגיע מהמחשבון הראשי. במצב ערכי גימטריה הפירוק לאותיות אינו מחושב מחדש כאן; במצב מספר אותיות כל אות נספרת פעם אחת.':'החישוב משתמש באותיות ובערכים של השיטה הנבחרת. כל שינוי בשיטה מחשב מחדש את הנקודות ואת הצורה.';
+ wordColorsValid=placementData.colorValid;
+ wordsBox.replaceChildren();
+ if(groups.length&&wordColorsValid){for(const r of groups){const row=document.createElement('div');row.className='word';const name=document.createElement('span'),value=document.createElement('b'),color=document.createElement('span');color.className='swatch';color.style.background=r.color;name.append(color,document.createTextNode(r.label));value.textContent=fmt(r.count);row.append(name,value);wordsBox.append(row);}}
+ else{const row=document.createElement('div');row.className='empty';row.textContent=rows.length?'לא ניתן לאמת פירוק אדיטיבי בשיטה הנוכחית.':'הקלד טקסט כדי להתחיל';wordsBox.append(row);}
+ const isLetterMode=placement.value==='letters';
+ elNotes.textContent=isLetterMode?'שיבוץ לפי כמות אותיות: אות אחת = נקודה אחת, גם כשערכה הגימטרי גבוה.':'שיבוץ לפי ערך: כל אות תופסת בדיוק את מספר הנקודות של ערכה. במצבים לא־אדיטיביים השיבוץ מתבצע לפי סכומי מילים מאומתים בלבד.';
+ $('slotNote').textContent=`שיבוץ: ${isLetterMode?'אות אחת לכל נקודה':'יחידות גימטריה'} · סימון: ${display.value==='letters'?'אותיות':display.value==='numbers'?'ערכי אותיות':'נקודות'}`;
+ elMatches.replaceChildren();elNearest.textContent='';selected=null;open.disabled=true;pointSlots=[];
+ if(!text||!letters){elStatus.textContent='הקלד טקסט באלפבית הנתמך בשיטה שנבחרה.';elStatus.className='status warn';$('previewNote').textContent='אין נתונים';drawPreview();return;}
+ if(!Number.isSafeInteger(computed)||computed<1||computed>20100){elStatus.textContent='מספר הנקודות אינו בטווח 1–20,100 להצגה במעבדה זו.';elStatus.className='status warn';$('previewNote').textContent='מחוץ לטווח';drawPreview();return;}
+ const hasVerifiedAllocation=wordColorsValid;
+ if(hasVerifiedAllocation)pointSlots=getPointSlots(computed);
+ const found=exactMatches(computed);
+ if(found.length){
+  wasExact=true;elStatus.textContent=`התאמה מדויקת: ${fmt(computed)} נקודות · ${isLetterMode?'ספירת אותיות':'גימטריה'} · ${hasVerifiedAllocation?'כל נקודה נספרת פעם אחת.':'אין פירוק אותיות או מילים מאומת; הצורה מוצגת ללא שיבוץ צבעוני.'}`;elStatus.className='status';
+  for(const shape of found){const b=document.createElement('button');b.type='button';b.className='match';b.dataset.family=shape.family;b.dataset.n=shape.n;b.textContent=`${familyName(shape.family,shape.n)} = ${fmt(shape.count)}`;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{resetView();chooseShape(shape)});elMatches.append(b);}
+  chooseShape(found[0]);
+ }else{
+  wasExact=false;
+  const n=Math.ceil((Math.sqrt(8*computed+1)-1)/2);
+  const partial={family:'PARTIAL',n,count:computed};
+  elStatus.textContent=`אין T / CT / Tet מדויק ל־${fmt(computed)}. מוצגות ${fmt(computed)} נקודות בפריסה משולשית פתוחה T${n}, ללא השלמת הנקודות החסרות.${hasVerifiedAllocation?'':' אין פירוק אותיות או מילים מאומת.'}`;
+  elStatus.className='status warn';
+  const near=closest(computed);elNearest.textContent='צורות קרובות (לא התאמה): '+near.map(q=>`${familyName(q.family,q.n)}=${fmt(q.count)} (Δ${q.count-computed>0?'+':''}${fmt(q.count-computed)})`).join(' · ');
+  chooseShape(partial);
+ }
+ restartMotion();
+}
+function select(choice){resetView();chooseShape(choice)}
+function goGeometry(){
+ if(!selected||selected.family==='PARTIAL'||selected.count!==computed)return;
+ const payload={v:1,at:Date.now(),family:selected.family,n:selected.n,value:computed,text:currentText,method:importLabel,
+  placement:placement.value,display:display.value,groups:wordColorsValid?groups:[],
+  slots:pointSlots.length===computed?slots.map(s=>({glyph:s.glyph,value:s.value,count:s.count,color:s.color})):[]};
+ try{sessionStorage.setItem('gematria2026.geometryOverlay.v1',JSON.stringify(payload));}catch(e){console.warn('Bridge session storage failed',e);return;}
+ location.href=`geometry-lab.html?figure=${encodeURIComponent(familyName(selected.family,selected.n))}&bridge=1`;
+}
+function goCalculator(){try{sessionStorage.setItem('gematria2026.calculatorReturn.v1',JSON.stringify({v:1,at:Date.now(),text:currentText}));}catch(_){}}
+function copyResult(){
+ const desc=placement.value==='letters'?'Letter count':'Gematria value';
+ const lines=[currentText,`Method: ${importLabel}`,`${desc}: ${computed}`,`Display: ${display.value}`,
+ selected?.family==='PARTIAL'?`Partial lattice (not an exact figural number): ${computed}/${formula.T(selected.n)}`:selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No displayable lattice'];
+ if(wordColorsValid)lines.push(...groups.map(g=>`${g.label} = ${g.count}`));
+ const value=lines.join('\n');if(navigator.clipboard?.writeText)navigator.clipboard.writeText(value).then(()=>$('copyProof').textContent='הועתק ✓').catch(()=>fallbackCopy(value));else fallbackCopy(value);
+}
+function fallbackCopy(s){const x=document.createElement('textarea');x.value=s;x.style.position='fixed';x.style.left='-10000px';document.body.append(x);x.select();document.execCommand('copy');x.remove();$('copyProof').textContent='הועתק ✓'}
+let manualSelection=false;
+elPhrase.addEventListener('input',()=>{
+ if(opts.value==='imported'){opts.value=defaultMethod(detect(elPhrase.value));imported=null;manualSelection=false;}
+ else if(!manualSelection)opts.value=defaultMethod(detect(elPhrase.value));
+ resetView();update();
+});
+opts.addEventListener('change',()=>{manualSelection=true;resetView();update();});
+placement.addEventListener('change',()=>{resetView();update();});
+display.addEventListener('change',()=>{drawPreview();$('slotNote').textContent=`שיבוץ: ${placement.value==='letters'?'אות אחת לכל נקודה':'יחידות גימטריה'} · סימון: ${display.value==='letters'?'אותיות':display.value==='numbers'?'ערכי אותיות':'נקודות'}`;});
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>{
+ const examples={genesis:['בראשית ברא אלהים את השמים ואת הארץ','he:regular'],name:['עמית מייק רוב','he:regular'],voice:['קול','he:regular'],english:['Amit Mike Rov','en:ordinal']};
+ const e=examples[b.dataset.example];elPhrase.value=e[0];opts.value=e[1];manualSelection=false;imported=null;resetView();update();
+}));
+$('previewZoomIn').addEventListener('click',()=>{zoom=Math.min(20,zoom*1.5);drawPreview()});
+$('previewZoomOut').addEventListener('click',()=>{zoom=Math.max(1,zoom/1.5);panX=zoom===1?0:panX;panY=zoom===1?0:panY;drawPreview()});
+$('previewReset').addEventListener('click',resetView);
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1,Math.min(20,zoom*(e.deltaY<0?1.3:1/1.3)));drawPreview()},{passive:false});
+canvas.style.touchAction='none';canvas.addEventListener('pointerdown',e=>{pointer={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!pointer)return;panX+=e.clientX-pointer.x;panY+=e.clientY-pointer.y;pointer={x:e.clientX,y:e.clientY};drawPreview()});
+for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{pointer=null;});
+open.addEventListener('click',goGeometry);$('calculatorLink').addEventListener('click',goCalculator);$('copyProof').addEventListener('click',copyResult);window.addEventListener('resize',drawPreview);
+loadCalculatorImport();update();
+window.TextGeometryBridge={formula,exactMatches,wordValue,countLetters,tokenize,pointsForShape,getReading,getPlacement:()=>placement.value,getDisplay:()=>display.value,select,update};
 })();
+
 </script>
 </body></html>
