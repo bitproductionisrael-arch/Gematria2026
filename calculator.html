@@ -532,6 +532,9 @@ function normalizeGreekChar(ch){const base=String(ch).normalize('NFD').replace(/
 
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
 const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
+// Pi alphabet: A-Z use the first 26 digits after the decimal point (exclude 3).
+const EN_PI_DIGITS='14159265358979323846264338';
+const EN_PI=makeEn(i=>Number(EN_PI_DIGITS[i]));
 const EN_PERATI_SIMPLE={},EN_PERATI={},EN_KIDMI={},EN_ZERO_STEP={};let _enkid=0;EN_ORDER.forEach(L=>{EN_PERATI_SIMPLE[L]=EN_ORD[L]**2;EN_PERATI_SIMPLE[L.toUpperCase()]=EN_PERATI_SIMPLE[L];EN_PERATI[L]=EN_REG[L]**2;EN_PERATI[L.toUpperCase()]=EN_PERATI[L];_enkid+=EN_REG[L];EN_KIDMI[L]=_enkid;EN_KIDMI[L.toUpperCase()]=_enkid;const v=EN_REG[L];EN_ZERO_STEP[L]=(v>=10&&v%10===0)?v/10:v;EN_ZERO_STEP[L.toUpperCase()]=EN_ZERO_STEP[L]});
 const EN_ATBASH={},EN_ATBASH_ORD={},EN_ATBASH_LETTER={},EN_ALBAM={},EN_ALBAM_LETTER={},EN_AVGAD={},EN_AVGAD_LETTER={};
 EN_ORDER.forEach((L,i)=>{const a=L.toUpperCase(),mirror=EN_ORDER[25-i],shift=EN_ORDER[(i+1)%26];EN_ATBASH_LETTER[L]=mirror;EN_ATBASH_LETTER[a]=mirror.toUpperCase();EN_ATBASH[L]=EN_REG[mirror];EN_ATBASH[a]=EN_REG[mirror];EN_ATBASH_ORD[L]=EN_ORD[mirror];EN_ATBASH_ORD[a]=EN_ORD[mirror];EN_AVGAD_LETTER[L]=shift;EN_AVGAD_LETTER[a]=shift.toUpperCase();EN_AVGAD[L]=EN_REG[shift];EN_AVGAD[a]=EN_REG[shift]});
@@ -694,6 +697,7 @@ const METHODS={
   {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
   {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
   {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
+  {key:'piAlphabet',cat:'ops',name:'Pi π Alphabet / אלף־בית של פאי',map:EN_PI,research:true},
   {key:'building',cat:'ops',name:'English Building / Achorayim (Simple)',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},
   {key:'achorayimRegular',cat:'ops',name:'English Achorayim / Building (Regular)',map:EN_REG,transform:cumulative,transformName:'prefix sums'},
   {key:'buildingSumerian',cat:'ops',name:'English Building Gematria',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
@@ -709,6 +713,7 @@ const METHODS={
 };
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
 const METHOD_EN_NAMES={
+ piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
  smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Reverse Ordinal',zeroStep:'One-Step Decimal Reduction',
  atbash:'Atbash',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
@@ -728,6 +733,7 @@ const METHOD_EN_NAMES={
  ruLadderD:'Russian Addition & Subtraction · D',ruLadderOrdinal:'Russian Addition & Subtraction · Ordinal'
 };
 const METHOD_EN_HISTORY={
+ piAlphabet:'A–Z are assigned the first 26 digits after the decimal point of π: 14159265358979323846264338. The integer part 3 is excluded. Uppercase and lowercase letters have identical values; spaces and punctuation are ignored. Amit Mike Rov = 17 + 27 + 17 = 61.',
  regular:'Traditional Hebrew gematria using the standard letter-value scale. Exact primary-source chronology is being documented separately.',
  final:'A traditional extended-final-letter variant in which ךםןףץ receive 500–900. Exact historical naming is being source-checked.',
  ordinal:'Traditional ordinal counting by Hebrew alphabet position.',
@@ -894,6 +900,7 @@ function calculateAll(text){const script=detectScript(text);return {script,resul
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+ 'en:piAlphabet':{plain:'אלף־בית של פאי / Pi π Alphabet',original:'Pi π Alphabet · A–Z from π',status:'modern',history:'מצמידים את 26 הספרות הראשונות אחרי הנקודה של π לאותיות A–Z לפי הסדר. החלק השלם 3 אינו נכלל. אותיות גדולות וקטנות מקבלות אותו ערך; רווחים וסימני פיסוק אינם נספרים. Amit Mike Rov = 17 + 27 + 17 = 61.',formula:'π = 3.14159265358979323846264338…; A–Z → 14159265358979323846264338; sum the assigned letter values.'},
  'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
  'he:final':{plain:'גימטריה סופית',original:'Final-letter values / Mispar Gadol variant',status:'traditional',history:'וריאנט מסורתי שבו ךםןףץ מקבלות ערכים מורחבים. שם ותיארוך מדויק יסומנו לאחר אימות מקור ראשוני.',formula:'Regular values, but ך=500, ם=600, ן=700, ף=800, ץ=900.'},
  'he:ordinal':{plain:'גימטריה סדרית',original:'מספר סידורי / Mispar Siduri',status:'traditional',history:'שיטה מסורתית המבוססת על מיקום האות באלפבית.',formula:'א=1, ב=2, …, ת=22; sum the letter positions.'},
