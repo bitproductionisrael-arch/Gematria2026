@@ -68,6 +68,7 @@
             </button>
             <h1 class="font-bold text-lg tracking-wide hidden sm:block">GeoVisualizer <span class="font-light text-gray-400">Pro</span></h1>
             <a id="siteBackLink" href="index.html" class="text-amber-400 text-[11px] sm:text-xs hover:text-amber-300 border border-gray-700 rounded-lg px-2 py-1 shrink-0" title="חזרה ל-Gematria2026">← GEMATRIA2026</a>
+            <a href="text-geometry.html" class="text-cyan-300 text-[11px] border border-cyan-800 rounded-lg px-2 py-1 shrink-0" title="טקסט לגיאומטריה" aria-label="טקסט לגיאומטריה">Σ→△</a>
         </div>
         
         <div id="topToolbar" class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-1">
@@ -102,6 +103,8 @@
 
             <canvas id="mainCanvas" class="w-full h-full cursor-move"></canvas>
             
+            <div id="textGeometryInfo" class="absolute top-24 left-1/2 transform -translate-x-1/2 glass-panel rounded-lg px-3 py-2 z-20 hidden max-w-[92%] max-h-[90px] overflow-y-auto shadow-2xl text-[10px] sm:text-xs" style="width:max-content;max-width:92%;" aria-live="polite"></div>
+
             <div id="colorCounterPanel" class="absolute left-1/2 transform -translate-x-1/2 glass-panel rounded-md px-1.5 py-0.5 z-20 w-max max-w-[95%] hidden flex-nowrap overflow-x-auto no-scrollbar items-center justify-start gap-1 shadow-2xl border border-gray-600/30">
             </div>
 
@@ -594,7 +597,6 @@
                 state.points.forEach(p => { sumX += p.x; sumY += p.y; });
                 const centerX = sumX / (state.points.length || 1);
                 const centerY = sumY / (state.points.length || 1);
-
                 let cellMap;
                 if (state.cellShape === 'rhombus') {
                     cellMap = new Map(state.cells.map(c => [`${c.r},${c.c},${c.type}`, c]));
@@ -797,6 +799,7 @@
                 if (state.factorQueue.length > 0 && validDivs.includes(state.factorQueue[0])) k = state.factorQueue.shift();
                 else k = validDivs[0];
             }
+
             MathEngine.subdivideWithFactor(k);
             renderCanvas();
         }
@@ -1193,8 +1196,7 @@
             btn.addEventListener('click', (e) => {
                 state.cellShape = e.currentTarget.getAttribute('data-shape');
                 document.querySelectorAll('.shape-mode-btn').forEach(b => {
-                    b.classList.remove('bg-amber-600', 'text-white');
-                    b.classList.add('bg-gray-800', 'text-gray-300');
+                    b.classList.remove('bg-amber-600', 'text-white');                    b.classList.add('bg-gray-800', 'text-gray-300');
                 });
                 e.currentTarget.classList.remove('bg-gray-800', 'text-gray-300');
                 e.currentTarget.classList.add('bg-amber-600', 'text-white');
@@ -1286,7 +1288,57 @@
             renderCanvas();
         }
 
+        const bridgeInfo = document.getElementById('textGeometryInfo');
+        function clearTextBridgeOverlay() {
+            state.highlightPointMap = null;
+            bridgeInfo.replaceChildren();
+            bridgeInfo.classList.add('hidden');
+        }
+        function applyTextBridgeOverlay(data) {
+            if (!data || data.v !== 1 || !['T','CT','TET'].includes(data.family) ||
+                !Number.isSafeInteger(data.n) || data.n !== state.n || data.family !== state.figureType ||
+                !Number.isSafeInteger(data.value) || data.value !== state.points.length ||
+                typeof data.text !== 'string' || data.text.length > 2500) return false;
+            const arr = Array.isArray(data.groups) ? data.groups : [];
+            const validGroups = arr.length > 0 && arr.length <= 250 && arr.every(g =>
+                g && typeof g.label === 'string' && g.label.length <= 200 &&
+                Number.isSafeInteger(g.count) && g.count >= 0 &&
+                /^#[0-9a-fA-F]{6}$/.test(g.color)) &&
+                arr.reduce((sum, g) => sum + g.count, 0) === state.points.length;
+            state.highlightPointMap = null;
+            if (validGroups) {
+                const map = new Map(); let k = 0;
+                for (const g of arr) for (let i = 0; i < g.count; i++) map.set(state.points[k++], g.color);
+                state.highlightPointMap = map;
+                state.colorTargetType = 'point';
+                state.showLattice = false;
+                state.showDots = true;
+                UI.toggleLatticeBtn.classList.remove('bg-amber-600','border-amber-500');
+                UI.toggleLatticeBtn.classList.add('bg-gray-800','border-gray-700');
+                UI.toggleDotsBtn.classList.add('bg-amber-600','border-amber-500');
+                UI.toggleDotsBtn.classList.remove('bg-gray-800','border-gray-700');
+            }
+            bridgeInfo.replaceChildren();
+            const title = document.createElement('div');
+            title.textContent = `טקסט → ${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} · ${state.points.length} נקודות · ${validGroups ? 'מיפוי מילים בסדר המחולל' : 'ללא צביעת מילים'}`;
+            title.className = 'text-amber-300 font-bold mb-1';bridgeInfo.append(title);
+            if (validGroups) {
+                const row = document.createElement('div');row.className='flex flex-wrap gap-x-2 gap-y-1';
+                arr.forEach(g => {const chip=document.createElement('span');chip.className='whitespace-nowrap';
+                    const square=document.createElement('span');square.textContent='● ';square.style.color=g.color;
+                    chip.append(square,document.createTextNode(`${g.label}=${g.count}`));row.append(chip);});
+                bridgeInfo.append(row);
+            }
+            const controls=document.createElement('div');controls.className='flex gap-3 mt-1';
+            const back=document.createElement('a');back.href='text-geometry.html';back.textContent='חזרה לחישוב';back.className='text-cyan-300 underline';
+            const reset=document.createElement('button');reset.type='button';reset.textContent='נקה סימון';reset.className='text-gray-300 underline';
+            reset.addEventListener('click',()=>{clearTextBridgeOverlay();state.colorTargetType='cell';renderCanvas();});
+            controls.append(back,reset);bridgeInfo.append(controls);
+            bridgeInfo.classList.remove('hidden');renderCanvas();return true;
+        }
+
         function createBaseShape(n, family = state.figureType) {
+            clearTextBridgeOverlay();
             family = String(family).toUpperCase();
             if (!['T', 'CT', 'TET'].includes(family)) return;
             const minimum = family === 'T' ? 2 : 1;
@@ -1392,7 +1444,21 @@
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
 
         resizeCanvas();
-        setTimeout(() => createBaseShape(37), 100);
+        window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay };
+        setTimeout(() => {
+            const params = new URLSearchParams(location.search);
+            const match = (params.get('figure') || '').match(/^(TET|CT|T)(\d+)$/i);
+            let n = 37, family = 'T';
+            if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
+            const valid = Number.isSafeInteger(n) && n >= (family === 'T' ? 2 : 1) && n <= (family === 'TET' ? 55 : 200);
+            createBaseShape(valid ? n : 37, valid ? family : 'T');
+            if (valid && params.get('bridge') === '1') {
+                try {
+                    const obj = JSON.parse(sessionStorage.getItem('gematria2026.geometryOverlay.v1') || 'null');
+                    if (obj && obj.at && Date.now() - obj.at < 3600000 && obj.at <= Date.now()+300000) applyTextBridgeOverlay(obj);
+                } catch (err) { console.warn('Text Geometry bridge import skipped:', err); }
+            }
+        }, 100);
     </script>
 </body>
 </html>
