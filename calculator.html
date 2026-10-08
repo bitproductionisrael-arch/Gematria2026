@@ -461,6 +461,9 @@ const fmt=n=>Number.isInteger(n)?n.toLocaleString('en-US'):String(n);
 
 /* ---------- alphabets ---------- */
 const HE_ORDER=Array.from('אבגדהוזחטיכלמנסעפצקרשת');
+// Hebrew Pi alphabet uses exactly 22 post-decimal digits, in א–ת order.
+const HE_PI_DIGITS='1415926535897932384626';
+const HE_PI=Object.fromEntries(HE_ORDER.map((letter,i)=>[letter,Number(HE_PI_DIGITS[i])]));
 const FINAL_TO_BASE={'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
 const FINAL_ORDER=Array.from('ךםןףץ');
 const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_REV_ORD={},HE_KIDMI={},HE_PERATI={},HE_PERATI_ORD={};
@@ -619,6 +622,7 @@ const METHODS={
   {key:'perati',cat:'cipher',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
   {key:'kolel',cat:'cipher',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
   {key:'musafi',cat:'cipher',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
+  {key:'piAlphabetHebrew',cat:'ops',name:'אלפבית (π) פי',map:HE_PI,research:true},
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
   {key:'positional',cat:'ops',name:'גימטריה מיקום · מגרעת / Positional',map:HE_VAL,transform:positional,transformName:'position × value'},
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
@@ -713,6 +717,7 @@ const METHODS={
 };
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
 const METHOD_EN_NAMES={
+ piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
  smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Reverse Ordinal',zeroStep:'One-Step Decimal Reduction',
@@ -733,6 +738,7 @@ const METHOD_EN_NAMES={
  ruLadderD:'Russian Addition & Subtraction · D',ruLadderOrdinal:'Russian Addition & Subtraction · Ordinal'
 };
 const METHOD_EN_HISTORY={
+ piAlphabetHebrew:'The 22 Hebrew letters א–ת receive the first 22 digits after the decimal point of π: 1415926535897932384626. Final forms keep the value of their ordinary letter. Niqqud, spaces and punctuation are ignored.',
  piAlphabet:'A–Z are assigned the first 26 digits after the decimal point of π: 14159265358979323846264338. The integer part 3 is excluded. Uppercase and lowercase letters have identical values; spaces and punctuation are ignored. Amit Mike Rov = 17 + 27 + 17 = 61.',
  regular:'Traditional Hebrew gematria using the standard letter-value scale. Exact primary-source chronology is being documented separately.',
  final:'A traditional extended-final-letter variant in which ךםןףץ receive 500–900. Exact historical naming is being source-checked.',
@@ -900,6 +906,7 @@ function calculateAll(text){const script=detectScript(text);return {script,resul
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+ 'he:piAlphabetHebrew':{plain:'אלפבית (π) פי',original:'אלפבית (π) פי · Hebrew Pi Alphabet',status:'modern',history:'22 האותיות א–ת מקבלות לפי הסדר את 22 הספרות הראשונות אחרי הנקודה של π. החלק השלם 3 אינו נכלל. אותיות סופיות מקבלות את ערך האות הרגילה; ניקוד, רווחים וסימני פיסוק אינם נספרים.',formula:'π = 3.1415926535897932384626…; א–ת → 1415926535897932384626; sum the assigned letter values.'},
  'en:piAlphabet':{plain:'אלף־בית של פאי / Pi π Alphabet',original:'Pi π Alphabet · A–Z from π',status:'modern',history:'מצמידים את 26 הספרות הראשונות אחרי הנקודה של π לאותיות A–Z לפי הסדר. החלק השלם 3 אינו נכלל. אותיות גדולות וקטנות מקבלות אותו ערך; רווחים וסימני פיסוק אינם נספרים. Amit Mike Rov = 17 + 27 + 17 = 61.',formula:'π = 3.14159265358979323846264338…; A–Z → 14159265358979323846264338; sum the assigned letter values.'},
  'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
  'he:final':{plain:'גימטריה סופית',original:'Final-letter values / Mispar Gadol variant',status:'traditional',history:'וריאנט מסורתי שבו ךםןףץ מקבלות ערכים מורחבים. שם ותיארוך מדויק יסומנו לאחר אימות מקור ראשוני.',formula:'Regular values, but ך=500, ם=600, ן=700, ף=800, ץ=900.'},
