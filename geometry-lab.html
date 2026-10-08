@@ -334,6 +334,9 @@
             pendingExecutionAction: null,
             highlightMap: null,
             highlightPointMap: null,
+            bridgeLabelMap: null,
+            bridgeDisplay: 'dots',
+            bridgePlacement: 'gematria',
             colorTargetType: 'cell' // 'cell' or 'point'
         };
 
@@ -597,6 +600,7 @@
                 state.points.forEach(p => { sumX += p.x; sumY += p.y; });
                 const centerX = sumX / (state.points.length || 1);
                 const centerY = sumY / (state.points.length || 1);
+
                 let cellMap;
                 if (state.cellShape === 'rhombus') {
                     cellMap = new Map(state.cells.map(c => [`${c.r},${c.c},${c.type}`, c]));
@@ -793,7 +797,6 @@
             
             const validDivs = getValidDivisors(state.segments);
             if (validDivs.length === 0) return;
-
             let k = preferredFactor;
             if (!k || !validDivs.includes(k)) {
                 if (state.factorQueue.length > 0 && validDivs.includes(state.factorQueue[0])) k = state.factorQueue.shift();
@@ -951,6 +954,21 @@
                 });
             }
             
+            }
+            // Letter/value labels belong to the exact point allocation imported from Text ↔ Geometry.
+            if (state.showDots && state.bridgeLabelMap && state.bridgeDisplay !== 'dots' && state.view.scale*18 >= (state.bridgeDisplay === 'numbers' ? 25 : 18)) {
+                ctx.textAlign='center';ctx.textBaseline='bottom';
+                ctx.font='700 10px Rubik,Arial,sans-serif';
+                ctx.lineWidth=2.4 / Math.max(0.25,state.view.scale);
+                for (const [point,slot] of state.bridgeLabelMap) {
+                    const actualX = w / 2 + state.view.x + point.x * state.view.scale * window.devicePixelRatio;
+                    const actualY = h / 2 + state.view.y + point.y * state.view.scale * window.devicePixelRatio;
+                    if (actualX < -30 || actualX > w + 30 || actualY < -30 || actualY > h + 30) continue;
+                    const label = state.bridgeDisplay === 'letters' ? slot.glyph : String(slot.value);
+                    if (!label || label.length > 10) continue;
+                    ctx.strokeStyle='#0b1019';ctx.strokeText(label,point.x,point.y-5);
+                    ctx.fillStyle='#f8fafc';ctx.fillText(label,point.x,point.y-5);
+                }
             }
             ctx.restore();
 
@@ -1196,7 +1214,8 @@
             btn.addEventListener('click', (e) => {
                 state.cellShape = e.currentTarget.getAttribute('data-shape');
                 document.querySelectorAll('.shape-mode-btn').forEach(b => {
-                    b.classList.remove('bg-amber-600', 'text-white');                    b.classList.add('bg-gray-800', 'text-gray-300');
+                    b.classList.remove('bg-amber-600', 'text-white');
+                    b.classList.add('bg-gray-800', 'text-gray-300');
                 });
                 e.currentTarget.classList.remove('bg-gray-800', 'text-gray-300');
                 e.currentTarget.classList.add('bg-amber-600', 'text-white');
@@ -1291,6 +1310,9 @@
         const bridgeInfo = document.getElementById('textGeometryInfo');
         function clearTextBridgeOverlay() {
             state.highlightPointMap = null;
+            state.bridgeLabelMap = null;
+            state.bridgeDisplay = 'dots';
+            state.bridgePlacement = 'gematria';
             bridgeInfo.replaceChildren();
             bridgeInfo.classList.add('hidden');
         }
@@ -1305,11 +1327,24 @@
                 Number.isSafeInteger(g.count) && g.count >= 0 &&
                 /^#[0-9a-fA-F]{6}$/.test(g.color)) &&
                 arr.reduce((sum, g) => sum + g.count, 0) === state.points.length;
+            const glyphSlots = Array.isArray(data.slots) ? data.slots : [];
+            const validSlots = glyphSlots.length > 0 && glyphSlots.length <= 2500 &&
+                glyphSlots.every(slot => slot && typeof slot.glyph === 'string' && slot.glyph.length <= 24 &&
+                    Number.isSafeInteger(slot.value) && slot.value >= 0 && Number.isSafeInteger(slot.count) && slot.count > 0 &&
+                    /^#[0-9a-fA-F]{6}$/.test(slot.color)) &&
+                glyphSlots.reduce((sum,slot)=>sum+slot.count,0) === state.points.length;
             state.highlightPointMap = null;
-            if (validGroups) {
+            state.bridgeLabelMap = null;
+            if (validGroups || validSlots) {
                 const map = new Map(); let k = 0;
-                for (const g of arr) for (let i = 0; i < g.count; i++) map.set(state.points[k++], g.color);
+                const source = validSlots ? glyphSlots : arr;
+                for (const item of source) for (let i = 0; i < item.count; i++) map.set(state.points[k++], item.color);
                 state.highlightPointMap = map;
+                if (validSlots) {
+                    const labels = new Map();let index = 0;
+                    for (const slot of glyphSlots) for (let j=0;j<slot.count;j++) labels.set(state.points[index++],slot);
+                    state.bridgeLabelMap = labels;
+                }
                 state.colorTargetType = 'point';
                 state.showLattice = false;
                 state.showDots = true;
@@ -1318,9 +1353,11 @@
                 UI.toggleDotsBtn.classList.add('bg-amber-600','border-amber-500');
                 UI.toggleDotsBtn.classList.remove('bg-gray-800','border-gray-700');
             }
+            state.bridgeDisplay = ['dots','letters','numbers'].includes(data.display) ? data.display : 'dots';
+            state.bridgePlacement = data.placement === 'letters' ? 'letters' : 'gematria';
             bridgeInfo.replaceChildren();
             const title = document.createElement('div');
-            title.textContent = `טקסט → ${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} · ${state.points.length} נקודות · ${validGroups ? 'מיפוי מילים בסדר המחולל' : 'ללא צביעת מילים'}`;
+            title.textContent = `טקסט → ${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} · ${state.points.length} נקודות · ${state.bridgePlacement === 'letters' ? 'נקודה לכל אות' : 'יחידות גימטריה'} · ${validSlots ? 'שיבוץ אותיות' : validGroups ? 'צביעת מילים' : 'ללא צבעים'}`;
             title.className = 'text-amber-300 font-bold mb-1';bridgeInfo.append(title);
             if (validGroups) {
                 const row = document.createElement('div');row.className='flex flex-wrap gap-x-2 gap-y-1';
@@ -1328,6 +1365,21 @@
                     const square=document.createElement('span');square.textContent='● ';square.style.color=g.color;
                     chip.append(square,document.createTextNode(`${g.label}=${g.count}`));row.append(chip);});
                 bridgeInfo.append(row);
+            }
+            if (validSlots) {
+                const label = document.createElement('label');label.className='flex flex-wrap items-center gap-2 mt-1';
+                label.append(document.createTextNode('תצוגה בתוך הנקודות:'));
+                const select = document.createElement('select');select.id='geometryBridgeDisplay';
+                select.className='bg-gray-900 border border-gray-600 text-gray-100 rounded px-2 py-1.5 text-[12px]';
+                for (const [key,text] of [['dots','נקודות'],['letters','אותיות'],['numbers','מספרים']]) {
+                    const option=document.createElement('option');option.value=key;option.textContent=text;select.append(option);
+                }
+                select.value=state.bridgeDisplay;
+                select.addEventListener('change',()=>{state.bridgeDisplay=select.value;renderCanvas();});
+                label.append(select);bridgeInfo.append(label);
+                const explain=document.createElement('div');explain.className='text-gray-400 mt-1';
+                explain.textContent='אם הכיתוב אינו מוצג, השתמש בזום + להגדלה. ערך כל אות נשמר בשיבוץ.';
+                bridgeInfo.append(explain);
             }
             const controls=document.createElement('div');controls.className='flex gap-3 mt-1';
             const back=document.createElement('a');back.href='text-geometry.html';back.textContent='חזרה לחישוב';back.className='text-cyan-300 underline';
@@ -1444,7 +1496,8 @@
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
 
         resizeCanvas();
-        window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay };
+        window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay,
+            inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
         setTimeout(() => {
             const params = new URLSearchParams(location.search);
             const match = (params.get('figure') || '').match(/^(TET|CT|T)(\d+)$/i);
