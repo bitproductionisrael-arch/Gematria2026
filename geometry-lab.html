@@ -228,8 +228,10 @@
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="TET">Tet · 3D</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="SQ">SQ · ריבוע</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CUBE">Cube · קובייה</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="PYR">Pyr · פירמידה</button>
                             </div>
-                            <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³.</div>
+                            <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³ · Pyr: פירמידה ריבועית Σk².</div>
+<div id="pyr3dControls" class="hidden mt-2 p-2 rounded-lg border border-cyan-800/60 bg-gray-900/70"><div class="font-semibold text-cyan-300 text-xs">Pyrₙ = n(n+1)(2n+1)/6 · שכבות 1²+2²+⋯+n²</div><button type="button" id="pyrShowInteriorBtn" class="mt-2 px-3 py-2 rounded-lg bg-cyan-900 text-cyan-50 text-xs border border-cyan-700">X-Ray · הצג את כל הנקודות</button><div class="mt-1 text-[10px] text-gray-400">Pyr5 = 55 = T10. שכבות ריבועיות מדויקות בסידור תלת־ממדי. ניתן לסובב את המבנה.</div></div>
                         </div>
                         <div class="flex flex-col gap-1.5 mt-1">
                             <span class="text-amber-400 font-semibold text-[11px]">צורת רשת ולאטיס (Shape):</span>
@@ -362,11 +364,11 @@
    Independent extension: the established T/CT/Tet generators are untouched. */
 (function () {
   'use strict';
-  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30]};
-  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube'};
-  const order = ['T','CT','TET','SQ','CUBE'];
+  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30], PYR:[1,35]};
+  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube',PYR:'Pyr'};
+  const order = ['T','CT','TET','SQ','CUBE','PYR'];
   const value = (f,n) => f==='T' ? n*(n+1)/2 : f==='CT' ? 1+3*n*(n-1)/2 :
-    f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : NaN;
+    f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : f==='PYR' ? n*(n+1)*(2*n+1)/6 : NaN;
   const supported = (f,n) => Number.isSafeInteger(n) && n>=bounds[f]?.[0] && n<=bounds[f]?.[1];
   function matches(total) {
     if (!Number.isSafeInteger(total) || total<1) return [];
@@ -377,7 +379,9 @@
     const cube=Math.round(Math.cbrt(total));
     const tetEst=Math.round(Math.cbrt(6*total));
     const tet=[tetEst-3,tetEst-2,tetEst-1,tetEst,tetEst+1,tetEst+2,tetEst+3].find(n=>n>=1 && value('TET',n)===total);
-    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube};
+    const pyrEst=Math.round(Math.cbrt(3*total));
+    const pyr=[pyrEst-3,pyrEst-2,pyrEst-1,pyrEst,pyrEst+1,pyrEst+2,pyrEst+3].find(n=>n>=1&&value('PYR',n)===total);
+    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube, PYR:pyr};
     for (const f of order) {
       const n=cands[f];
       if (Number.isSafeInteger(n)&&n>=1&&value(f,n)===total)
@@ -438,6 +442,85 @@
     state.getCubePoint=(r,c,z)=>z>=0&&z<n&&r>=0&&r<n&&c>=0&&c<n ? state.points[z*n*n+r*n+c]:undefined;
     if(state.points.length!==n*n*n)throw Error('Cube point-count mismatch');
     projectCube(state);
+  }
+
+  /* True 3D square pyramidal lattice: layer k has exactly k² points. */
+  function projectPyramid(st) {
+    if(st.figureType!=='PYR')return;
+    const ca=Math.cos(st.pyrYaw),sa=Math.sin(st.pyrYaw),ce=Math.cos(st.pyrElevation),se=Math.sin(st.pyrElevation);
+    const proj=p=>{const x=p.X*ca-p.Y*sa,y=p.X*sa+p.Y*ca;return {x,y:y*se-p.Z*ce,depth:y*ce+p.Z*se};};
+    st.points.forEach(p=>Object.assign(p,proj(p)));
+    st.pyrScreenVertices=st.pyrVertices.map(proj);
+    st.pyrSorted=[...st.points].sort((a,b)=>a.depth-b.depth);
+  }
+  function buildPyramid(n,st) {
+    reset(st,n,'PYR');st.pyrYaw=.57;st.pyrElevation=.53;st.pyrShowInterior=true;
+    const d=22,h=24,half=(n-1)*d/2;
+    st.pyrVertices=[{X:-half,Y:-half,Z:0},{X:half,Y:-half,Z:0},{X:half,Y:half,Z:0},{X:-half,Y:half,Z:0},{X:0,Y:0,Z:(n-1)*h}];
+    st.pyrLayerLookup=[];
+    for(let k=1;k<=n;k++){
+      const m=(k-1)/2,Z=(n-k)*h,layer=[];
+      for(let r=0;r<k;r++)for(let c=0;c<k;c++){
+        const p={r,c,layer:k,X:(c-m)*d,Y:(r-m)*d,Z,assignedColor:st.dotColor};
+        st.points.push(p);layer.push(p);
+      }
+      st.pyrLayerLookup.push(layer);st.figLayers.push({side:k,count:k*k,points:layer});
+    }
+    if(st.points.length!==n*(n+1)*(2*n+1)/6)throw Error('PYR count mismatch');
+    projectPyramid(st);
+  }
+  function drawPyramid(ctx,scale,st){
+    const n=st.n,v=st.pyrScreenVertices;
+    if(st.showLattice&&n>1){
+      const faces=[
+        {ids:[0,1,2,3],fill:'rgba(32,109,152,.16)'},
+        {ids:[0,1,4],fill:'rgba(24,140,169,.15)'},
+        {ids:[1,2,4],fill:'rgba(31,119,163,.18)'},
+        {ids:[2,3,4],fill:'rgba(33,141,141,.13)'},
+        {ids:[3,0,4],fill:'rgba(71,115,168,.14)'}
+      ].sort((a,b)=>a.ids.reduce((x,i)=>x+v[i].depth,0)/a.ids.length-b.ids.reduce((x,i)=>x+v[i].depth,0)/b.ids.length);
+      for(const face of faces){
+        ctx.beginPath();ctx.moveTo(v[face.ids[0]].x,v[face.ids[0]].y);
+        for(let j=1;j<face.ids.length;j++)ctx.lineTo(v[face.ids[j]].x,v[face.ids[j]].y);
+        ctx.closePath();ctx.fillStyle=face.fill;ctx.fill();
+      }
+      for(const [a,b] of [[0,1],[1,2],[2,3],[3,0],[0,4],[1,4],[2,4],[3,4]]){
+        ctx.beginPath();ctx.moveTo(v[a].x,v[a].y);ctx.lineTo(v[b].x,v[b].y);
+        ctx.lineWidth=1.8/scale;ctx.strokeStyle='rgba(169,224,241,.82)';ctx.stroke();
+      }
+      for(const layer of st.pyrLayerLookup){
+        const k=Math.round(Math.sqrt(layer.length));if(k<=1)continue;
+        const pts=[layer[0],layer[k-1],layer[k*k-1],layer[k*(k-1)]];
+        ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);
+        for(let j=1;j<pts.length;j++)ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.closePath();ctx.lineWidth=.65/scale;ctx.strokeStyle='rgba(126,192,221,.27)';ctx.stroke();
+      }
+    }
+    if(st.showGrid){
+      ctx.beginPath();ctx.lineWidth=.55/scale;ctx.strokeStyle='rgba(167,210,239,.28)';
+      for(const layer of st.pyrLayerLookup){
+        const k=Math.round(Math.sqrt(layer.length));
+        for(let r=0;r<k;r++)for(let c=0;c<k;c++){
+          const p=layer[r*k+c];
+          if(c+1<k){const q=layer[r*k+c+1];ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);}
+          if(r+1<k){const q=layer[(r+1)*k+c];ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);}
+        }
+      }
+      ctx.stroke();
+    }
+    if(st.showDots){
+      const radius=Math.max(.8,Math.min(3,8/Math.sqrt(Math.max(.25,scale))));
+      for(const p of st.pyrSorted){
+        const outer=p.r===0||p.c===0||p.r===p.layer-1||p.c===p.layer-1;
+        if(!outer&&!st.pyrShowInterior)continue;
+        const color=st.highlightPointMap?.get(p)||p.assignedColor;
+        if(st.mutedColors.has(color))continue;
+        ctx.globalAlpha=outer?.95:.42;
+        ctx.beginPath();ctx.arc(p.x,p.y,outer?radius:radius*.77,0,Math.PI*2);
+        ctx.fillStyle=color;ctx.fill();
+      }
+      ctx.globalAlpha=1;
+    }
   }
   function drawSquare(ctx,scale,state){
     const n=state.n,step=18,h=(n-1)*step/2;
@@ -513,11 +596,13 @@
   function draw(ctx,scale,state){
     if(state.figureType==='SQ')return drawSquare(ctx,scale,state);
     if(state.figureType==='CUBE')return drawCube(ctx,scale,state);
+    if(state.figureType==='PYR')return drawPyramid(ctx,scale,state);
   }
   function subtitle(state){
     const n=state.n;
     if(state.figureType==='SQ')return `POINTS: ${n*n} | ${n} × ${n} GRID · 2D SQUARE`;
     if(state.figureType==='CUBE')return `POINTS: ${n*n*n} | ${n} × ${n} × ${n} GRID · 3D CUBE${state.cubeShowInterior?' · X-RAY':' · SURFACE'}`;
+    if(state.figureType==='PYR')return `POINTS: ${n*(n+1)*(2*n+1)/6} | ${n} SQUARE LAYERS · 1²+...+${n}² · 3D PYRAMID`;
     return '';
   }
   function renderMatches(state,createShape){
@@ -547,7 +632,7 @@
     void panel.offsetWidth;
     panel.classList.add('shape-match-flash');
   }
-  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
+  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,buildPyramid,projectPyramid,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
 })();
 
 </script>
@@ -688,7 +773,7 @@
 
         function getShapeSubtitle() {
             if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
-            if(state.figureType==='SQ'||state.figureType==='CUBE')return window.FigurateFamilies.subtitle(state);
+            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR')return window.FigurateFamilies.subtitle(state);
             if (state.figureType === 'TET') {
                 const mode=state.tetRenderMode || 'classic';
                 return `POINTS: ${state.points.length} | LAYERS: ${state.n} | REGULAR TETRAHEDRON · 3D | ${mode.toUpperCase()}${mode==='layers'?' · EXPLODED VIEW':''}`;
@@ -1213,7 +1298,7 @@
         }
 
         function drawFigurate(ctx, scale) {
-            if(state.figureType==='SQ'||state.figureType==='CUBE') {window.FigurateFamilies.draw(ctx,scale,state);return;}
+            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR') {window.FigurateFamilies.draw(ctx,scale,state);return;}
             if (state.figureType==='TET') {if(state.tetRenderMode==='classic')drawTetrahedron(ctx,scale);else drawTetExperimental(ctx,scale);return;}
             if (state.showLattice) {
                 const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
@@ -1688,7 +1773,7 @@
             btn.addEventListener('click', () => {
                 const fam=btn.dataset.figure;
                 const lim=window.FigurateFamilies.bounds[fam];
-                createBaseShape(Math.min(state.n,lim[1]),fam);
+                createBaseShape(fam==='PYR'&&state.figureType!=='PYR'?5:Math.min(state.n,lim[1]),fam);
             });
         });
 
@@ -1744,7 +1829,7 @@
 
         function refreshTetMoveButton() {
             const btn=document.getElementById('tetMoveModeBtn');
-            const isTet=state.figureType==='TET'||state.figureType==='CUBE';
+            const isTet=state.figureType==='TET'||state.figureType==='CUBE'||state.figureType==='PYR';
             btn.classList.toggle('hidden', !isTet);
             btn.classList.toggle('flex', isTet);
             const move=isTet&&state.tetInteractionMode==='move';
@@ -1754,28 +1839,31 @@
             btn.classList.toggle('bg-gray-800',!move);
         }
         document.getElementById('tetMoveModeBtn').addEventListener('click',()=>{
-            if(state.figureType!=='TET'&&state.figureType!=='CUBE')return;
+            if(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')return;
             state.tetInteractionMode=state.tetInteractionMode==='move'?'rotate':'move';
             endDrag();refreshTetMoveButton();
         });
         function startDrag(clientX,clientY) {
-            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE')||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')||state.tetInteractionMode==='move';
             const dpr=window.devicePixelRatio||1;
             state.isDragging=true;
             state.dragStart=move
                 ? {x:clientX*dpr-state.view.x,y:clientY*dpr-state.view.y}
-                : {x:clientX,y:clientY,yaw:state.figureType==='CUBE'?state.cubeYaw:state.tetYaw,elevation:state.figureType==='CUBE'?state.cubeElevation:state.tetElevation};
+                : {x:clientX,y:clientY,yaw:state.figureType==='CUBE'?state.cubeYaw:state.figureType==='PYR'?state.pyrYaw:state.tetYaw,elevation:state.figureType==='CUBE'?state.cubeElevation:state.figureType==='PYR'?state.pyrElevation:state.tetElevation};
             UI.canvas.style.cursor='grabbing';
         }
         function onDrag(clientX,clientY) {
             if(!state.isDragging) return;
-            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE')||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')||state.tetInteractionMode==='move';
             if(!move) {
                 const yaw=state.dragStart.yaw+(clientX-state.dragStart.x)*0.008;
                 const elevation=Math.max(0.17,Math.min(1.2,state.dragStart.elevation+(state.dragStart.y-clientY)*0.006));
                 if(state.figureType==='CUBE'){
                     state.cubeYaw=yaw;state.cubeElevation=elevation;
                     window.FigurateFamilies.projectCube(state);
+                } else if(state.figureType==='PYR'){
+                    state.pyrYaw=yaw;state.pyrElevation=elevation;
+                    window.FigurateFamilies.projectPyramid(state);
                 } else {
                     state.tetYaw=yaw;state.tetElevation=elevation;
                     projectTetrahedron();
@@ -2005,9 +2093,10 @@
             }
             state.highlightMap=null;state.highlightPointMap=null;
             if (family === 'T') MathEngine.createTriangle(n, 'triangulation');
-            else if(family==='SQ'||family==='CUBE') {
+            else if(family==='SQ'||family==='CUBE'||family==='PYR') {
                 if(family==='SQ')window.FigurateFamilies.buildSquare(n,state);
-                else window.FigurateFamilies.buildCube(n,state);
+                else if(family==='CUBE')window.FigurateFamilies.buildCube(n,state);
+                else window.FigurateFamilies.buildPyramid(n,state);
                 MathEngine.applyColorSequence();updateDivisorUI();
             } else initializeFigurate(n, family);
             document.querySelectorAll('.figure-type-btn').forEach(btn => {
@@ -2021,6 +2110,10 @@
             if(tetControls) tetControls.classList.toggle('hidden',family!=='TET');
             const cubeControls=document.getElementById('cube3dControls');
             if(cubeControls)cubeControls.classList.toggle('hidden',family!=='CUBE');
+            const pyrControls=document.getElementById('pyr3dControls');
+            if(pyrControls)pyrControls.classList.toggle('hidden',family!=='PYR');
+            const pyrButton=document.getElementById('pyrShowInteriorBtn');
+            if(pyrButton)pyrButton.textContent=state.pyrShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג את כל הנקודות (X-Ray)';
             const cubeButton=document.getElementById('cubeShowInteriorBtn');
             if(cubeButton)cubeButton.textContent=state.cubeShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג גם נקודות פנימיות (X-Ray)';
             const quickShowcase=document.getElementById('tetShowcaseQuick');
@@ -2030,7 +2123,7 @@
             refreshTetMoveButton();
             const tetButton=document.getElementById('tetShowInteriorBtn');
             if(tetButton) tetButton.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
-            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family}${n}`;
+            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family === 'PYR' ? 'Pyr' : family}${n}`;
             autoScaleAndPosition();
             window.FigurateFamilies.renderMatches(state,createBaseShape);
         }
@@ -2042,9 +2135,9 @@
                 if(exact){createBaseShape(exact.n,exact.family);return;}
                 alert('לא נמצאה צורה מדויקת הניתנת לציור למספר הזה במשפחות הפעילות.');return;
             }
-            const match=input.match(/^(cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
-            if(!match){alert('דוגמאות: 136, T16, CT10, SQ8, Cube4');return;}
-            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE'};
+            const match=input.match(/^(pyramid|pyr|cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
+            if(!match){alert('דוגמאות: 55, T10, Pyr5, Tet20, CT10, SQ8, Cube4');return;}
+            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE',PYRAMID:'PYR'};
             const family=aliases[match[1].toUpperCase()]||match[1].toUpperCase();
             createBaseShape(Number(match[2]),family);
         }
@@ -2172,12 +2265,18 @@
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
 
         resizeCanvas();
+        document.getElementById('pyrShowInteriorBtn').addEventListener('click',()=>{
+            if(state.figureType!=='PYR')return;
+            state.pyrShowInterior=!state.pyrShowInterior;
+            document.getElementById('pyrShowInteriorBtn').textContent=state.pyrShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג את כל הנקודות (X-Ray)';
+            renderCanvas();
+        });
         window.GeometryCoincidences={inspect:()=>window.FigurateFamilies.inspect(state),create:createBaseShape,matches:window.FigurateFamilies.matches,view:()=>({...state.view}),state:()=>({family:state.figureType,n:state.n,cubeYaw:state.cubeYaw,cubeElevation:state.cubeElevation})};
         window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay,
             inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
         setTimeout(() => {
             const params = new URLSearchParams(location.search);
-            const match = (params.get('figure') || '').match(/^(CUBE|SQ|TET|CT|T)(\d+)$/i);
+            const match = (params.get('figure') || '').match(/^(PYR|CUBE|SQ|TET|CT|T)(\d+)$/i);
             let n = 37, family = 'T';
             if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
             const valid = window.FigurateFamilies.supported(family,n);
