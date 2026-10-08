@@ -202,7 +202,7 @@
                         <div id="tet3dControls" class="hidden rounded-lg border border-cyan-800/50 bg-gray-900/70 px-3 py-2 space-y-2">
                             <div class="font-semibold text-cyan-300">Tet — טטראדרון תלת־ממדי</div>
                             <button id="tetShowInteriorBtn" type="button" class="w-full rounded-lg bg-slate-700 px-3 py-2 text-gray-100 font-medium">מעטפת בלבד · הצג נקודות פנימיות (X-Ray)</button>
-                            <div class="text-gray-400 text-[11px]">גרור באצבע כדי לסובב את הטטראדרון. GRID מציג צלעות סריג.</div>
+                            <div class="text-gray-400 text-[11px]">אצבע אחת: סיבוב הטטראדרון. שתי אצבעות יחד: הזזת כל הצורה למעלה, למטה או לצדדים. GRID מציג צלעות סריג.</div>
                         </div>
                         <div class="border-t border-gray-700/60"></div>
 
@@ -1392,9 +1392,42 @@
         UI.canvas.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
         window.addEventListener('mouseup', endDrag);
         window.addEventListener('mousemove', (e) => onDrag(e.clientX, e.clientY));
-        UI.canvas.addEventListener('touchstart', (e) => { if(e.touches.length === 1) startDrag(e.touches[0].clientX, e.touches[0].clientY); }, {passive: true});
-        window.addEventListener('touchend', endDrag);
-        window.addEventListener('touchmove', (e) => { if(e.touches.length === 1) onDrag(e.touches[0].clientX, e.touches[0].clientY); }, {passive: true});
+        // One finger rotates Tet; two fingers move the entire shape in screen space.
+        // State.view is stored in canvas device pixels, while Touch.clientX/Y are CSS pixels.
+        let twoFingerPan = null;
+        const fingerMidpoint = touches => ({
+            x:(touches[0].clientX+touches[1].clientX)/2,
+            y:(touches[0].clientY+touches[1].clientY)/2
+        });
+        function beginTwoFingerPan(touches) {
+            const m = fingerMidpoint(touches);
+            twoFingerPan = {startX:m.x,startY:m.y,viewX:state.view.x,viewY:state.view.y};
+            endDrag(); // stop rotating immediately when the second finger lands
+        }
+        UI.canvas.addEventListener('touchstart', e => {
+            if(e.touches.length >= 2) beginTwoFingerPan(e.touches);
+            else if(e.touches.length === 1 && !twoFingerPan) startDrag(e.touches[0].clientX,e.touches[0].clientY);
+            if(e.cancelable) e.preventDefault();
+        }, {passive:false});
+        window.addEventListener('touchmove', e => {
+            if(twoFingerPan) {
+                if(e.touches.length >= 2) {
+                    const m = fingerMidpoint(e.touches), dpr = window.devicePixelRatio || 1;
+                    state.view.x = twoFingerPan.viewX + (m.x-twoFingerPan.startX)*dpr;
+                    state.view.y = twoFingerPan.viewY + (m.y-twoFingerPan.startY)*dpr;
+                    renderCanvas();
+                }
+            } else if(e.touches.length === 1 && state.isDragging) {
+                onDrag(e.touches[0].clientX,e.touches[0].clientY);
+            }
+            if((twoFingerPan || state.isDragging) && e.cancelable) e.preventDefault();
+        }, {passive:false});
+        const finishTouchGesture = e => {
+            if(e.touches.length < 2) twoFingerPan = null;
+            endDrag(); // avoid accidental rotation when the second finger is lifted
+        };
+        window.addEventListener('touchend',finishTouchGesture);
+        window.addEventListener('touchcancel',finishTouchGesture);
         UI.canvas.addEventListener('wheel', (e) => { e.preventDefault(); state.view.scale *= (e.deltaY < 0 ? 1.1 : 0.9); renderCanvas(); }, { passive: false });
 
         document.getElementById('zoomIn').addEventListener('click', () => { state.view.scale *= 1.2; renderCanvas(); });
@@ -1425,7 +1458,7 @@
             if(optimalScale > 2.5) optimalScale = 2.5; 
             
             const shapeCssHeight = sH * optimalScale;
-            const targetCssTop = topPadding + (availableHeight - shapeCssHeight) / 2 - (state.figureType==='TET'?0:50);
+            const targetCssTop = topPadding + (availableHeight - shapeCssHeight) / 2 - (state.figureType==='TET'?18:50);
             const viewY_CSS = targetCssTop - (canvasH / 2) - (minY * optimalScale);
             
             state.view = { x: -(minX+maxX)/2*optimalScale*dpr, y: viewY_CSS * dpr, scale: optimalScale };
