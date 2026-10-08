@@ -60,8 +60,34 @@
         @keyframes shapeMatchFlash { 0%,48%,100% {border-color:rgba(34,211,238,.38);box-shadow:0 0 0 rgba(34,211,238,0)} 24%,72% {border-color:rgba(250,204,21,.9);box-shadow:0 0 10px rgba(250,204,21,.24)} }
         .shape-match-flash {animation:shapeMatchFlash 0.75s ease-in-out 2;}
         @media (prefers-reduced-motion:reduce){.shape-match-flash{animation:none;}}
-        #shapeMatchPanel {white-space:normal;max-width:min(86vw,500px);pointer-events:auto;}
-        #shapeMatchButtons button {touch-action:manipulation;}
+        /* Figurate coincidences live directly below the shape input, not over the canvas. */
+        #shapeMatchPanel {
+            position:absolute;
+            top:calc(100% + 6px);
+            inset-inline:0;
+            width:100%;
+            max-width:100%;
+            box-sizing:border-box;
+            align-items:center;
+            gap:9px;
+            min-height:36px;
+            padding:4px 9px;
+            z-index:35;
+            overflow:hidden;
+            pointer-events:auto;
+        }
+        #shapeMatchPanel:not(.hidden) {display:flex;}
+        #shapeMatchButtons {
+            flex:1 1 auto;
+            min-width:0;
+            overflow-x:auto;
+            overflow-y:hidden;
+            flex-wrap:nowrap;
+            justify-content:flex-start;
+            scrollbar-width:none;
+            -webkit-overflow-scrolling:touch;
+        }
+        #shapeMatchButtons button {touch-action:manipulation;flex-shrink:0;white-space:nowrap;}
     </style>
 </head>
 <body class="flex flex-col text-sm h-screen-dynamic">
@@ -104,10 +130,6 @@
             <div id="shapeInfoOverlay" class="absolute top-4 left-1/2 transform -translate-x-1/2 glass-panel rounded-lg px-4 py-1.5 flex flex-col items-center gap-0.5 z-10 hidden shadow-xl text-center w-max max-w-[90%] pointer-events-none whitespace-nowrap">
                 <div id="shapeFormula" class="font-bold text-sm sm:text-base text-white"></div>
                 <div id="shapePoints" class="text-[11px] sm:text-xs text-gray-400"></div>
-                <div id="shapeMatchPanel" class="hidden mt-1.5 rounded-lg border border-cyan-500/40 bg-slate-900/95 px-2 py-1.5 text-xs text-cyan-100 shadow-lg" role="status" aria-live="polite">
-                    <div class="mb-1 flex flex-wrap justify-center items-center gap-1 text-[11px]"> <span class="text-amber-300">✦</span> <strong id="shapeMatchValue" class="tabular-nums"></strong> <span>מתאים גם לצורות:</span></div>
-                    <div id="shapeMatchButtons" class="flex flex-wrap justify-center gap-1.5"></div>
-                </div>
             </div>
 
             <canvas id="mainCanvas" class="w-full h-full cursor-move"></canvas>
@@ -123,6 +145,14 @@
                     <button id="generateBtn" class="absolute inset-y-1.5 left-1.5 bg-amber-600 hover:bg-amber-500 text-white px-6 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg">
                         הפק צורה
                     </button>
+                <div id="shapeMatchPanel" class="hidden rounded-xl border border-cyan-500/40 bg-slate-900/95 text-xs text-cyan-100 shadow-lg" role="status" aria-live="polite" aria-label="התאמות נוספות של מספר הנקודות">
+                    <div class="flex items-center gap-1 whitespace-nowrap text-[11px] shrink-0 font-semibold">
+                        <span class="text-amber-300" aria-hidden="true">✦</span>
+                        <strong id="shapeMatchValue" class="tabular-nums"></strong>
+                        <span>גם:</span>
+                    </div>
+                    <div id="shapeMatchButtons" class="flex items-center gap-1.5 no-scrollbar"></div>
+                </div>
                 </div>
             </div>
 
@@ -1861,7 +1891,7 @@
             const canvasW = UI.canvas.width / dpr;
             
             const availableWidth = canvasW * 0.95; 
-            const topPadding = Math.max(state.figureType==='TET'?125:60,window.FigurateFamilies.matches(state.points.length).length>1?135:0);
+            const topPadding = state.figureType==='TET'?125:60;
             const bottomPadding = state.figureType==='TET'?135:140; 
             const availableHeight = canvasH - topPadding - bottomPadding;
             
