@@ -34,20 +34,43 @@
         ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        /* Small screens: keep all five view controls visible, without horizontal overlap. */
+        @media (max-width: 640px) {
+            #appHeader { height: auto; min-height: 0; padding: 8px 10px; gap: 7px; flex-direction: column; align-items: stretch; }
+            #headerBrand { width: 100%; justify-content: space-between; gap: 8px; }
+            #siteBackLink { max-width: calc(100vw - 72px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+            #topToolbar { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; overflow: visible; width: 100%; padding: 0; }
+            #topToolbar button { min-width: 0; width: 100%; justify-content: center; padding: 8px 1px; font-size: 11px; }
+            #shapeInfoOverlay { top: 12px; max-width: calc(100% - 140px); white-space: normal; }
+            #shapePoints { font-size: 10px; line-height: 1.25; }
+            #unifiedMenu { width: min(92vw, 360px); max-height: min(72dvh, calc(100dvh - 180px)); }
+            #dreamAdvisorModal { width: min(92vw, 360px); right: 8px; }
+            #bottomControls { padding-left: 10px; padding-right: 10px; }
+            #promptInput { font-size: 16px; }
+        }
+        #unifiedMenu { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+        #unifiedMenu input[type="color"] { appearance: auto; -webkit-appearance: auto; width: 100%; min-width: 0; height: 44px; padding: 2px; border: 1px solid #556071; border-radius: 9px; background: #232d3c; cursor: pointer; touch-action: manipulation; }
+        #unifiedMenu .color-field { min-width: 0; flex: 1; cursor: pointer; }
+        #unifiedMenu .color-sequence-row > div { flex: 1; min-width: 0; }
+        #unifiedMenu .color-sequence-row input { min-width: 0; }
+        #unifiedMenu button, #unifiedMenu label { touch-action: manipulation; }
+        #unifiedMenu .figure-type-btn:disabled { opacity: 0.4; }
+        #menuSubdivideBtn:disabled, #quickSubdivideBtnMain:disabled { opacity: 0.35; cursor: not-allowed; }
     </style>
 </head>
 <body class="flex flex-col text-sm h-screen-dynamic">
 
-    <header class="h-14 bg-[#141722] border-b border-gray-800 flex items-center justify-between px-3 sm:px-4 z-20 shrink-0">
-        <div class="flex items-center gap-3">
+    <header id="appHeader" class="h-14 bg-[#141722] border-b border-gray-800 flex items-center justify-between px-3 sm:px-4 z-20 shrink-0">
+        <div id="headerBrand" class="flex items-center gap-3">
             <button id="exportImageBtn" class="w-8 h-8 rounded bg-gradient-to-br from-amber-600 to-stone-700 flex items-center justify-center shadow-lg shadow-amber-500/20 cursor-pointer hover:opacity-90 transition shrink-0" title="ייצא תמונה (JPG)">
                 <i class="fa-solid fa-camera text-white text-xs"></i>
             </button>
             <h1 class="font-bold text-lg tracking-wide hidden sm:block">GeoVisualizer <span class="font-light text-gray-400">Pro</span></h1>
-            <a href="index.html" class="text-amber-400 text-[11px] sm:text-xs hover:text-amber-300 border border-gray-700 rounded-lg px-2 py-1 shrink-0" title="חזרה ל-Gematria2026">← GEMATRIA2026</a>
+            <a id="siteBackLink" href="index.html" class="text-amber-400 text-[11px] sm:text-xs hover:text-amber-300 border border-gray-700 rounded-lg px-2 py-1 shrink-0" title="חזרה ל-Gematria2026">← GEMATRIA2026</a>
         </div>
         
-        <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-1">
+        <div id="topToolbar" class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-1">
             <button id="toggleDotsBtn" class="bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0">
                 <i class="fa-solid fa-circle text-[9px]"></i> DOTS
             </button>
@@ -84,7 +107,7 @@
 
             <div id="bottomControls" class="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 w-full max-w-2xl px-4 z-30">
                 <div class="w-full relative shadow-2xl transition-all duration-300" id="inputContainer">
-                    <input type="text" id="promptInput" class="w-full bg-[#1e222d] border border-gray-700 text-white rounded-full py-3 sm:py-4 pr-6 pl-32 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-base placeholder-gray-500 shadow-inner" placeholder="הקלד צורה... (למשל: T37)">
+                    <input type="text" id="promptInput" class="w-full bg-[#1e222d] border border-gray-700 text-white rounded-full py-3 sm:py-4 pr-6 pl-32 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-base placeholder-gray-500 shadow-inner" placeholder="T37 / CT16 / Tet10">
                     <button id="generateBtn" class="absolute inset-y-1.5 left-1.5 bg-amber-600 hover:bg-amber-500 text-white px-6 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg">
                         הפק צורה
                     </button>
@@ -153,6 +176,15 @@
                             </div>
                         </div>
 
+                        <div class="flex flex-col gap-1.5 mt-1" id="figureTypeControl">
+                            <span class="text-amber-400 font-semibold text-[11px]">משפחת צורות (Figurate Family):</span>
+                            <div class="grid grid-cols-3 gap-1.5">
+                                <button type="button" class="figure-type-btn py-2 rounded bg-amber-600 text-white font-semibold" data-figure="T">T · משולש</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CT">CT · ממורכז</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="TET">Tet · 3D</button>
+                            </div>
+                            <div class="text-[10px] text-gray-400">T: משולש רגיל · CT: מרכז + טבעות משולשות · Tet: שכבות משולשות במבט איזומטרי.</div>
+                        </div>
                         <div class="flex flex-col gap-1.5 mt-1">
                             <span class="text-amber-400 font-semibold text-[11px]">צורת רשת ולאטיס (Shape):</span>
                             <div class="flex gap-1.5">
@@ -181,14 +213,14 @@
                         <div class="flex flex-col gap-1.5">
                             <span class="text-gray-300 font-semibold text-[11px]">בחירה בסיסית (רקע ונקודות):</span>
                             <div class="grid grid-cols-2 gap-2">
-                                <div class="flex items-center justify-between bg-gray-800/80 px-2.5 py-1.5 rounded-lg border border-gray-700">
-                                    <span class="text-gray-300">רקע:</span>
-                                    <input type="color" id="customBgColorPicker" value="#0f111a" class="w-6 h-6 rounded cursor-pointer border-0 bg-transparent">
-                                </div>
-                                <div class="flex items-center justify-between bg-gray-800/80 px-2.5 py-1.5 rounded-lg border border-gray-700">
-                                    <span class="text-gray-300">נקודות:</span>
-                                    <input type="color" id="customDotColorPicker" value="#ffffff" class="w-6 h-6 rounded cursor-pointer border-0 bg-transparent">
-                                </div>
+                                <label for="customBgColorPicker" class="color-field flex items-center justify-between gap-2 bg-gray-800/80 px-2 py-1.5 rounded-lg border border-gray-700">
+                                    <span class="text-gray-300 shrink-0">רקע:</span>
+                                    <input type="color" id="customBgColorPicker" value="#0f111a" class="color-picker-main w-14 h-11 rounded cursor-pointer">
+                                </label>
+                                <label for="customDotColorPicker" class="color-field flex items-center justify-between gap-2 bg-gray-800/80 px-2 py-1.5 rounded-lg border border-gray-700">
+                                    <span class="text-gray-300 shrink-0">נקודות:</span>
+                                    <input type="color" id="customDotColorPicker" value="#ffffff" class="color-picker-main w-14 h-11 rounded cursor-pointer">
+                                </label>
                             </div>
                         </div>
 
@@ -198,7 +230,7 @@
                             <div class="flex justify-between items-center">
                                 <span class="text-amber-400 font-semibold text-[11px]">סדר ריצוף צבעي הצורות:</span>
                             </div>
-                            <div class="flex flex-row gap-1.5 overflow-x-auto pb-1 items-center bg-gray-900/60 p-2 rounded-lg border border-gray-700/80">
+                            <div class="color-sequence-row flex flex-row gap-1 overflow-x-visible pb-1 items-center bg-gray-900/60 p-2 rounded-lg border border-gray-700/80">
                                 <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">1</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="0" value="#2563eb"></div>
                                 <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">2</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="1" value="#d97706"></div>
                                 <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">3</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="2" value="#059669"></div>
@@ -274,6 +306,8 @@
 
         const state = {
             n: 37,
+            figureType: 'T',
+            figLayers: [],
             segments: 36,
             points: [],
             cells: [],
@@ -317,6 +351,7 @@
         }
 
         function getValidDivisors(num) {
+            if (state.figureType !== 'T') return [];
             let divs = [];
             for (let i = 2; i <= num; i++) {
                 if (num % i === 0) divs.push(i);
@@ -327,8 +362,17 @@
         function updateDivisorUI() {
             UI.divisorButtonsContainer.innerHTML = '';
             const divisors = getValidDivisors(state.segments);
+            const supportsSubdivision = state.figureType === 'T';
+            document.getElementById('menuSubdivideBtn').disabled = !supportsSubdivision;
+            document.getElementById('quickSubdivideBtnMain').disabled = !supportsSubdivision;
+            document.querySelectorAll('.shape-mode-btn').forEach(btn => {
+                btn.disabled = !supportsSubdivision;
+                btn.classList.toggle('opacity-40', !supportsSubdivision);
+            });
             if (divisors.length === 0) {
-                UI.divisorButtonsContainer.innerHTML = '<span class="text-[10px] text-amber-400 font-medium">הגעת למקסימום חלוקה!</span>';
+                UI.divisorButtonsContainer.innerHTML = supportsSubdivision
+                    ? '<span class="text-[10px] text-amber-400 font-medium">הגעת למקסימום חלוקה!</span>'
+                    : '<span class="text-[10px] text-amber-400 font-medium">CT ו-Tet מוצגים בשכבות; חלוקה בגורמים זמינה למשפחת T.</span>';
                 return;
             }
             divisors.forEach(d => {
@@ -374,6 +418,8 @@
         }
 
         function getShapeSubtitle() {
+            if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
+            if (state.figureType === 'TET') return `POINTS: ${state.points.length} | LAYERS: ${state.n}`;
             let activeCellsCount = state.cells.length;
             let text = `POINTS: ${state.points.length}`;
             if (state.cellShape === 'rhombus') {
@@ -391,7 +437,14 @@
             const singleTriangleCounts = {};
             let hasColors = false;
 
-            if (state.colorTargetType === 'point') {
+            if (state.figureType !== 'T' && state.colorTargetType === 'cell') {
+                state.figLayers.forEach(layer => {
+                    if (state.showLattice && layer.color) {
+                        colorCounts[layer.color] = (colorCounts[layer.color] || 0) + 1;
+                        hasColors = true;
+                    }
+                });
+            } else if (state.colorTargetType === 'point') {
                 state.points.forEach(p => {
                     const effectiveColor = (state.highlightPointMap && state.highlightPointMap.has(p)) ? state.highlightPointMap.get(p) : p.assignedColor;
                     if (effectiveColor && state.showDots) {
@@ -463,6 +516,8 @@
 
         const MathEngine = {
             createTriangle: (n, mode = 'triangulation') => {
+                state.figureType = 'T';
+                state.figLayers = [];
                 state.n = n;
                 state.segments = n - 1;
                 state.points = [];
@@ -524,6 +579,17 @@
 
             applyColorSequence: () => {
                 const numColors = state.customColorSequence.length;
+                if (state.figureType !== 'T') {
+                    state.figLayers.forEach((layer, i) => {
+                        const idx = state.coloringRuleMode === 'concentric' ? i
+                            : state.coloringRuleMode === 'diagonal' ? i * 2
+                            : state.coloringRuleMode === 'radial' ? i * 3
+                            : i * 5 + Math.floor(i / 3);
+                        layer.color = state.customColorSequence[idx % numColors];
+                    });
+                    state.points.forEach(p => p.assignedColor = state.dotColor);
+                    return;
+                }
                 let sumX = 0, sumY = 0;
                 state.points.forEach(p => { sumX += p.x; sumY += p.y; });
                 const centerX = sumX / (state.points.length || 1);
@@ -609,7 +675,116 @@
             }
         };
 
+        function initializeFigurate(n, family) {
+            state.figureType = family;
+            state.n = n;
+            state.segments = 0;
+            state.points = [];
+            state.cells = [];
+            state.figLayers = [];
+            state.getPoint = () => undefined;
+            state.factorQueue = [];
+            state.highlightMap = null;
+            state.highlightPointMap = null;
+            state.colorTargetType = 'cell';
+            state.mutedColors.clear();
+            state.cellShape = 'triangle';
+            if (family === 'CT') {
+                state.points.push({x:0,y:0,r:0,c:0,assignedColor:state.dotColor});
+                for (let ring = 1; ring < n; ring++) {
+                    const side = 18 * ring;
+                    const height = side * Math.sqrt(3) / 2;
+                    const vertices = [
+                        {x:0,y:-2*height/3},
+                        {x:-side/2,y:height/3},
+                        {x:side/2,y:height/3}
+                    ];
+                    for (let edge=0;edge<3;edge++) {
+                        for (let j=0;j<ring;j++) {
+                            const t=j/ring, a=vertices[edge], b=vertices[(edge+1)%3];
+                            state.points.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,
+                                ring,edge,r:ring,c:edge*ring+j,assignedColor:state.dotColor});
+                        }
+                    }
+                    state.figLayers.push({vertices, ring, count:3*ring});
+                }
+                if (state.points.length !== 1 + 3*n*(n-1)/2) throw Error('CT point count mismatch');
+            } else {
+                const space = 18, h=space*Math.sqrt(3)/2;
+                for (let z=0;z<n;z++) {
+                    const side=n-z;
+                    const layerPoints=[];
+                    for (let r=0;r<side;r++) {
+                        for (let c=0;c<=r;c++) {
+                            const point = {r,c,z,x:(c-r/2)*space+z*space*0.72,
+                                y:(r-(side-1)/2)*h-z*space*0.67, assignedColor:state.dotColor};
+                            layerPoints.push(point);
+                            state.points.push(point);
+                        }
+                    }
+                    const vertex = (r,c) => layerPoints[r*(r+1)/2+c];
+                    const vertices = [vertex(0,0),vertex(side-1,0),vertex(side-1,side-1)];
+                    state.figLayers.push({vertices, z, side, points:layerPoints, count:layerPoints.length});
+                }
+                if (state.points.length !== n*(n+1)*(n+2)/6) throw Error('Tet point count mismatch');
+            }
+            MathEngine.applyColorSequence();
+            updateDivisorUI();
+        }
+
+        function drawFigurate(ctx, scale) {
+            if (state.showLattice) {
+                const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
+                for (const layer of ordered) {
+                    if (state.mutedColors.has(layer.color)) continue;
+                    const v=layer.vertices;
+                    if (v.length < 3) continue;
+                    ctx.beginPath();ctx.moveTo(v[0].x,v[0].y);
+                    ctx.lineTo(v[1].x,v[1].y);ctx.lineTo(v[2].x,v[2].y);ctx.closePath();
+                    ctx.fillStyle=hexToRgba(layer.color, state.figureType === 'CT' ? 0.88 : 0.16);
+                    ctx.fill();
+                    ctx.lineWidth=1.3/scale;
+                    ctx.strokeStyle=state.latticeOutlineColor;
+                    ctx.stroke();
+                }
+            }
+            if (state.showGrid) {
+                ctx.lineWidth=0.75/scale;ctx.strokeStyle=state.gridColor;ctx.beginPath();
+                if (state.figureType==='CT') {
+                    for (const layer of state.figLayers) {
+                        const ringPts=state.points.filter(p=>p.ring===layer.ring);
+                        for(let i=0;i<ringPts.length;i++) {
+                            const a=ringPts[i],b=ringPts[(i+1)%ringPts.length];
+                            ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+                        }
+                    }
+                } else {
+                    for (const layer of state.figLayers) {
+                        const side=layer.side;
+                        const point=(r,c)=>layer.points[r*(r+1)/2+c];
+                        for (let r=0;r<side;r++) for(let c=0;c<=r;c++) {
+                            const a=point(r,c);
+                            if(c<r){const b=point(r,c+1);ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);}
+                            if(r+1<side)for (const b of [point(r+1,c),point(r+1,c+1)]) {
+                                ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+                            }
+                        }
+                    }
+                }
+                ctx.stroke();
+            }
+            if (state.showDots) {
+                for (const p of state.points) {
+                    const color=state.highlightPointMap?.get(p)||p.assignedColor;
+                    if (state.mutedColors.has(color)) continue;
+                    ctx.beginPath();ctx.arc(p.x,p.y,state.highlightPointMap?.has(p)?4.5:3.1,0,Math.PI*2);
+                    ctx.fillStyle=color;ctx.fill();
+                }
+            }
+        }
+
         function executeSubdivision(preferredFactor = null) {
+            if (state.figureType !== 'T') return;
             state.currentLogicMode = 'triangulation';
             state.showLattice = true;
             UI.toggleLatticeBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
@@ -622,7 +797,6 @@
                 if (state.factorQueue.length > 0 && validDivs.includes(state.factorQueue[0])) k = state.factorQueue.shift();
                 else k = validDivs[0];
             }
-
             MathEngine.subdivideWithFactor(k);
             renderCanvas();
         }
@@ -634,13 +808,17 @@
             const ctx = UI.ctx;
             
             ctx.fillStyle = state.appBgColor;
-            ctx.fillRect(0, 0, w, h);            
+            ctx.fillRect(0, 0, w, h);
+            
             ctx.save();
             ctx.translate(w / 2 + state.view.x, h / 2 + state.view.y);
             ctx.scale(state.view.scale * window.devicePixelRatio, state.view.scale * window.devicePixelRatio);
 
             const sScale = state.view.scale || 1;
 
+            if (state.figureType !== 'T') {
+                drawFigurate(ctx, sScale);
+            } else {
             if (state.showLattice) {
                 state.cells.forEach(cell => {
                     if(!cell.v[0]) return;
@@ -770,13 +948,14 @@
                 });
             }
             
+            }
             ctx.restore();
-            
-            UI.shapeFormula.textContent = `T${state.n} = ${state.points.length}`;
+
+            UI.shapeFormula.textContent = `${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} = ${state.points.length}`;
             UI.shapePoints.textContent = getShapeSubtitle();
             updateColorCounter();
 
-            if (state.showLattice && state.cells.length > 0) {
+            if (state.showLattice && state.cells.length > 0 && state.figureType === 'T') {
                 let maxY = -Infinity;
                 state.points.forEach(p => { if (p.y > maxY) maxY = p.y; });
                 if (maxY !== -Infinity) {
@@ -789,6 +968,8 @@
                     if (targetY > maxAllowedY) targetY = maxAllowedY;
                     UI.colorCounterPanel.style.top = `${targetY}px`;
                 }
+            } else if (state.figureType !== 'T') {
+                UI.colorCounterPanel.style.top = `${Math.max(120, UI.canvas.clientHeight - 156)}px`;
             }
         }
 
@@ -802,13 +983,24 @@
 
         document.getElementById('exportImageBtn').addEventListener('click', () => {
             const exportCanvas = document.createElement('canvas');
-            exportCanvas.width = UI.canvas.width;
-            exportCanvas.height = UI.canvas.height;
+            const src=UI.canvas, dpr=window.devicePixelRatio||1;
+            const footerHeight = Math.round(110*dpr);
+            exportCanvas.width = src.width;
+            exportCanvas.height = src.height + footerHeight;
             const eCtx = exportCanvas.getContext('2d');
-            eCtx.drawImage(UI.canvas, 0, 0);
+            eCtx.fillStyle = state.appBgColor;
+            eCtx.fillRect(0,0,exportCanvas.width,exportCanvas.height);
+            eCtx.drawImage(src,0,0);
+            eCtx.fillStyle='#ffffff';
+            eCtx.textAlign='center';
+            eCtx.font=`bold ${Math.max(18,Math.round(25*dpr))}px Rubik, sans-serif`;
+            eCtx.fillText(UI.shapeFormula.textContent,exportCanvas.width/2,src.height+44*dpr);
+            eCtx.fillStyle='#aab4c3';
+            eCtx.font=`${Math.max(12,Math.round(15*dpr))}px Rubik, sans-serif`;
+            eCtx.fillText(UI.shapePoints.textContent,exportCanvas.width/2,src.height+77*dpr);
 
             const link = document.createElement('a');
-            link.download = `GeoVisualizer_T${state.n}_${Date.now()}.jpg`;
+            link.download = `GeoVisualizer_${state.figureType}${state.n}_${Date.now()}.jpg`;
             link.href = exportCanvas.toDataURL('image/jpeg', 0.95);
             link.click();
         });
@@ -876,7 +1068,14 @@
         unifiedSettingsBtn.addEventListener('click', (e) => { e.stopPropagation(); UI.unifiedMenu.classList.toggle('hidden'); });
         closeUnifiedMenu.addEventListener('click', () => UI.unifiedMenu.classList.add('hidden'));
         UI.unifiedMenu.classList.add('hidden');
-        window.addEventListener('click', () => UI.unifiedMenu.classList.add('hidden'));
+        // Keep Android's native color chooser alive: clicks within the menu must not close it.
+        UI.unifiedMenu.addEventListener('click', (event) => event.stopPropagation());
+        UI.unifiedMenu.addEventListener('pointerdown', (event) => event.stopPropagation());
+        window.addEventListener('click', (event) => {
+            if (!UI.unifiedMenu.contains(event.target) && !unifiedSettingsBtn.contains(event.target)) {
+                UI.unifiedMenu.classList.add('hidden');
+            }
+        });
 
         // יועץ החלומות החכם המחובר למסך
         const toggleDreamAdvisorBtn = document.getElementById('toggleDreamAdvisorBtn');
@@ -889,7 +1088,7 @@
         const executeAdvisorIdeaBtn = document.getElementById('executeAdvisorIdeaBtn');
 
         function updateAdvisorContextDisplay() {
-            advisorLiveContext.innerHTML = `<b>מצב מסך פעיל:</b> T${state.n} (${state.points.length} נקודות) | ${state.cells.length} תאים`;
+            advisorLiveContext.innerHTML = `<b>מצב מסך פעיל:</b> ${state.figureType}${state.n} (${state.points.length} נקודות) | ${state.figureType === 'T' ? state.cells.length + ' תאים' : state.figLayers.length + ' שכבות'}`;
         }
 
         toggleDreamAdvisorBtn.addEventListener('click', (e) => {
@@ -984,7 +1183,11 @@
 
         document.getElementById('menuSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; executeSubdivision(); });
         document.getElementById('quickSubdivideBtnMain').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; executeSubdivision(); });
-        document.getElementById('menuResetSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; createBaseShape(state.n); });
+        document.getElementById('menuResetSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; createBaseShape(state.n, state.figureType); });
+
+        document.querySelectorAll('.figure-type-btn').forEach(btn => {
+            btn.addEventListener('click', () => createBaseShape(Math.min(state.n, btn.dataset.figure === 'TET' ? 55 : 200), btn.dataset.figure));
+        });
 
         document.querySelectorAll('.shape-mode-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -1070,8 +1273,7 @@
                 if(p.x<minX) minX=p.x; if(p.x>maxX) maxX=p.x;
                 if(p.y<minY) minY=p.y; if(p.y>maxY) maxY=p.y;
             });
-            const sW = maxX - minX, sH = maxY - minY;
-            if (sW === 0 || sH === 0) return;
+            const sW = Math.max(18,maxX-minX), sH = Math.max(18,maxY-minY);
             
             let optimalScale = Math.min(availableWidth / sW, availableHeight / sH) * 0.92;
             if(optimalScale > 2.5) optimalScale = 2.5; 
@@ -1080,14 +1282,40 @@
             const targetCssTop = topPadding + (availableHeight - shapeCssHeight) / 2 - 50;
             const viewY_CSS = targetCssTop - (canvasH / 2) - (minY * optimalScale);
             
-            state.view = { x: 0, y: viewY_CSS * dpr, scale: optimalScale };
+            state.view = { x: -(minX+maxX)/2*optimalScale*dpr, y: viewY_CSS * dpr, scale: optimalScale };
             renderCanvas();
         }
 
-        function createBaseShape(n) { if (!Number.isSafeInteger(n) || n < 2 || n > 200) { alert('יש להזין T בין 2 ל-200.'); return; } state.highlightMap = null; state.highlightPointMap = null; MathEngine.createTriangle(n, 'triangulation'); autoScaleAndPosition(); }
+        function createBaseShape(n, family = state.figureType) {
+            family = String(family).toUpperCase();
+            if (!['T', 'CT', 'TET'].includes(family)) return;
+            const minimum = family === 'T' ? 2 : 1;
+            const maximum = family === 'TET' ? 55 : 200;
+            if (!Number.isSafeInteger(n) || n < minimum || n > maximum) {
+                alert(`עבור ${family}: יש לבחור n בין ${minimum} ל-${maximum}.`);return;
+            }
+            state.highlightMap=null;state.highlightPointMap=null;
+            if (family === 'T') MathEngine.createTriangle(n, 'triangulation');
+            else initializeFigurate(n, family);
+            document.querySelectorAll('.figure-type-btn').forEach(btn => {
+                const active=btn.dataset.figure === family;
+                btn.classList.toggle('bg-amber-600',active);
+                btn.classList.toggle('text-white',active);
+                btn.classList.toggle('bg-gray-800',!active);
+                btn.classList.toggle('text-gray-300',!active);
+            });
+            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family}${n}`;
+            autoScaleAndPosition();
+        }
 
-        document.getElementById('generateBtn').addEventListener('click', () => { const m = document.getElementById('promptInput').value.match(/\d+/); if(m) createBaseShape(parseInt(m[0])); });
-        document.getElementById('promptInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') { const m = e.target.value.match(/\d+/); if(m) createBaseShape(parseInt(m[0])); } });
+        function generateFromInput() {
+            const input=document.getElementById('promptInput').value.trim();
+            const match=input.match(/^(tet|ct|t)?\s*[_-]?\s*(\d+)$/i);
+            if(!match){alert('הקלד T37, CT16 או Tet10');return;}
+            createBaseShape(Number(match[2]), match[1]||state.figureType);
+        }
+        document.getElementById('generateBtn').addEventListener('click',generateFromInput);
+        document.getElementById('promptInput').addEventListener('keydown',e=>{if(e.key==='Enter')generateFromInput();});
 
         const chatSidebar = document.getElementById('chatSidebar');
         document.getElementById('toggleChatBtn').addEventListener('click', () => chatSidebar.classList.toggle('hidden'));
@@ -1148,8 +1376,10 @@
                         responseText = `בודדו וצבעו בדיוק ${count} תאי לאטיס בצהוב. כעת תוכל להמשיך להפעיל חלוקות וחתכים כרגיל!`;
                     }
                 } else if (m) {
-                    createBaseShape(parseInt(m[0]));
-                    responseText = `יצרתי את T${m[0]} מחדש.`;
+                    const familyMatch=val.match(/(?:tet|ct|t)\s*\d+/i);
+                    const family=familyMatch?.[0].match(/^(tet|ct|t)/i)?.[0] || state.figureType;
+                    createBaseShape(parseInt(m[0]),family);
+                    responseText = `יצרתי את ${family}${m[0]} מחדש.`;
                 } else {
                     responseText = 'פקודה לא מזוהה.';
                 }
