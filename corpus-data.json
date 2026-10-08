@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-10-09",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice.",
   "entries": [
     {
       "value": 0,
@@ -425,6 +425,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 20,
+      "label": "Dodec₂ = 20 — דודקהדרון",
+      "method": "Dodec2=2×5×4/2=20; the regular dodecahedron has V=20, E=30, F=12 pentagons.",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 21,
       "label": "אהיה",
       "method": "Hebrew Regular",
@@ -603,6 +609,12 @@
       "label": "פי",
       "method": "Hebrew Ordinal",
       "classification": "canonical"
+    },
+    {
+      "value": 27,
+      "label": "Dodec — הפרש שלישי Δ³=27",
+      "method": "Dodec_n=(9n³−9n²+2n)/2, hence third forward differences equal 27 for all n (OEIS A006566).",
+      "classification": "FOUNDATION"
     },
     {
       "value": 27,
@@ -4392,6 +4404,12 @@
     },
     {
       "value": 816,
+      "label": "Dodec₆ = Tet₁₆ = 816",
+      "method": "Dodec_n=n(3n−1)(3n−2)/2 = C(3n,3)=Tet_(3n−2). n=6 -> 6×17×16/2=816 and Tet16=816. OEIS A006566; direct all-index identity.",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 816,
       "label": "Te₁₆ / Tet₁₆",
       "method": "Tetrahedral index · C(18,3)=16·17·18/6=816=6×136",
       "classification": "FOUNDATION"
@@ -5465,6 +5483,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 2024,
+      "label": "Dodec₈ = Tet₂₂ = 2024",
+      "method": "Dodec8=8×23×22/2=2024 = Tet22 (ordinary tetrahedral numbers), general relation Dodec_n=Tet_(3n−2).",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 2040,
       "label": "phi(3399)",
       "method": "15×136 · phi=512",
@@ -6373,6 +6397,35 @@
         ]
       },
       "status": "algebra proven; visualization geometric layout; numbers for arbitrary non-unit letter values are not equal to Pyr_n"
+    },
+    "regular_dodecahedral_family": {
+      "date": "2026-10-09",
+      "source": "OEIS A006566: https://oeis.org/A006566",
+      "figurate_definition": "Dodec_n=n(3n−1)(3n−2)/2=binomial(3n,3)",
+      "identity": "Dodec_n=Tet_(3n−2), n≥1; Dodec6=Tet16=816",
+      "first_values": [
+        1,
+        20,
+        84,
+        220,
+        455,
+        816,
+        1330,
+        2024
+      ],
+      "difference_3": 27,
+      "true_solid": {
+        "name": "regular dodecahedron",
+        "vertices": 20,
+        "edges": 30,
+        "faces": 12,
+        "each_face": "regular pentagon"
+      },
+      "rendering_qualification": "The 3D wireframe and faces represent a real regular dodecahedron. The N dots inside use deterministic low-discrepancy interior sampling (with 20 exact vertices) solely to visualize sequence quantity, not a mathematically canonical nested dodecahedral point lattice. Link to matching tetrahedral point lattice through Dodec_n=Tet_(3n−2).",
+      "web": "geometry-lab.html?figure=DODEC6",
+      "calculator": "calculator.html",
+      "range_visualized": "n=1..14",
+      "validation": "JS functions: 11 n values verified point draw counts, faces=12, edges=30, vertices=20; projection, toggles and matched Tet index tested"
     }
   },
   "corrections": {
