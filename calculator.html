@@ -303,6 +303,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     </div>
     <div class="top-actions">
       <a href="index.html" class="iconbtn home-link-btn" title="דף הבית" aria-label="דף הבית">⌂</a>
+      <a id="textGeometryBridgeLink" href="text-geometry.html" class="iconbtn" title="טקסט ↔ גיאומטריה · העבר את התוצאה הנבחרת" aria-label="טקסט לגיאומטריה">△</a>
       <button id="copyAll" class="iconbtn" title="העתק את כל שיטות הגימטריה">🧲</button>
       <button id="copyAllBroken" class="iconbtn" title="מגנט שבור — העתק רק תוצאה (שיטה)">🧲½</button>
       <button id="copyAllMath" class="iconbtn math-magnet" title="העתק את כל השיטות + פירוקים ותכונות מתמטיות">🧲∑</button>
@@ -2134,6 +2135,29 @@ console.assert(compositeIndex(636)===520,'636 composite #520');console.assert(pr
 console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze Achorayim 1024');
 console.assert(T('מיכאל בלייז','he','regular')===160,'Michael Blaze regular 160');
 console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');console.assert(T('אלהימ','he','positional')===316,'Elohim open positional 316');console.assert(T('אלהימ','he','ratzo')===314,'Elohim open ratzo 314');console.assert(T('יהוה','he','albam')===520,'YHWH ALBaM 520');console.assert(T('יהוה','he','kolel')===27,'YHWH Kolel 27');console.assert(T('יהוה','he','achorayim')===72,'YHWH Achorayim 72');
+
+/* Text Geometry: forward selected result without changing calculation algorithms. */
+document.getElementById('textGeometryBridgeLink').addEventListener('click',()=>{
+ try{
+  const r=methodByKey(state.methodKey),text=document.getElementById('q').value.trim();
+  if(!r||!text||!Number.isSafeInteger(r.total)||r.total<0)return;
+  const k=Number.isSafeInteger(r.queryMultiplier)&&r.queryMultiplier>0?r.queryMultiplier:1;
+  const rawWords=(r.words||[]).map(w=>({label:w.raw,count:(w.folded!==null&&w.folded!==undefined?w.folded:(Array.isArray(w.vals)?w.vals.reduce((s,x)=>s+x,0):NaN))*k}));
+  const valid=rawWords.length>0&&rawWords.every(w=>typeof w.label==='string'&&Number.isSafeInteger(w.count)&&w.count>=0)&&rawWords.reduce((s,w)=>s+w.count,0)===r.total;
+  const letters=(r.words||[]).reduce((s,w)=>s+(Array.isArray(w.toks)?w.toks.length:0),0);
+  sessionStorage.setItem('gematria2026.textGeometry.v1',JSON.stringify({v:1,at:Date.now(),text,total:r.total,methodKey:r.method.key,methodName:r.method.name,script:current.script,letters,words:valid?rawWords:[]}));
+ }catch(err){console.warn('Text Geometry export unavailable:',err)}
+});
+try{
+ if(new URLSearchParams(location.search).get('textGeometry')==='1'){
+  const d=JSON.parse(sessionStorage.getItem('gematria2026.calculatorReturn.v1')||'null');
+  if(d?.v===1&&typeof d.text==='string'&&d.text.length<=2500&&Date.now()-d.at<3600000){
+   document.getElementById('q').value=d.text;
+   sessionStorage.removeItem('gematria2026.calculatorReturn.v1');
+  }
+ }
+}catch(err){console.warn('Text Geometry return unavailable:',err)}
+
 loadSavedItems();loadCorpusOverrides();applyCorpusOverrides();renderAll();syncSharedCorpus();
 if(location.hash==='#methods')setTimeout(()=>openMethodBook(),0);
 </script>
