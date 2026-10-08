@@ -57,6 +57,11 @@
         #unifiedMenu button, #unifiedMenu label { touch-action: manipulation; }
         #unifiedMenu .figure-type-btn:disabled { opacity: 0.4; }
         #menuSubdivideBtn:disabled, #quickSubdivideBtnMain:disabled { opacity: 0.35; cursor: not-allowed; }
+        @keyframes shapeMatchFlash { 0%,48%,100% {border-color:rgba(34,211,238,.38);box-shadow:0 0 0 rgba(34,211,238,0)} 24%,72% {border-color:rgba(250,204,21,.9);box-shadow:0 0 10px rgba(250,204,21,.24)} }
+        .shape-match-flash {animation:shapeMatchFlash 0.75s ease-in-out 2;}
+        @media (prefers-reduced-motion:reduce){.shape-match-flash{animation:none;}}
+        #shapeMatchPanel {white-space:normal;max-width:min(86vw,500px);pointer-events:auto;}
+        #shapeMatchButtons button {touch-action:manipulation;}
     </style>
 </head>
 <body class="flex flex-col text-sm h-screen-dynamic">
@@ -99,6 +104,10 @@
             <div id="shapeInfoOverlay" class="absolute top-4 left-1/2 transform -translate-x-1/2 glass-panel rounded-lg px-4 py-1.5 flex flex-col items-center gap-0.5 z-10 hidden shadow-xl text-center w-max max-w-[90%] pointer-events-none whitespace-nowrap">
                 <div id="shapeFormula" class="font-bold text-sm sm:text-base text-white"></div>
                 <div id="shapePoints" class="text-[11px] sm:text-xs text-gray-400"></div>
+                <div id="shapeMatchPanel" class="hidden mt-1.5 rounded-lg border border-cyan-500/40 bg-slate-900/95 px-2 py-1.5 text-xs text-cyan-100 shadow-lg" role="status" aria-live="polite">
+                    <div class="mb-1 flex flex-wrap justify-center items-center gap-1 text-[11px]"> <span class="text-amber-300">✦</span> <strong id="shapeMatchValue" class="tabular-nums"></strong> <span>מתאים גם לצורות:</span></div>
+                    <div id="shapeMatchButtons" class="flex flex-wrap justify-center gap-1.5"></div>
+                </div>
             </div>
 
             <canvas id="mainCanvas" class="w-full h-full cursor-move"></canvas>
@@ -110,7 +119,7 @@
 
             <div id="bottomControls" class="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 w-full max-w-2xl px-4 z-30">
                 <div class="w-full relative shadow-2xl transition-all duration-300" id="inputContainer">
-                    <input type="text" id="promptInput" class="w-full bg-[#1e222d] border border-gray-700 text-white rounded-full py-3 sm:py-4 pr-6 pl-32 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-base placeholder-gray-500 shadow-inner" placeholder="T37 / CT16 / Tet10">
+                    <input type="text" id="promptInput" class="w-full bg-[#1e222d] border border-gray-700 text-white rounded-full py-3 sm:py-4 pr-6 pl-32 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-base placeholder-gray-500 shadow-inner" placeholder="136 / T16 / CT10 / SQ8 / Cube4">
                     <button id="generateBtn" class="absolute inset-y-1.5 left-1.5 bg-amber-600 hover:bg-amber-500 text-white px-6 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg">
                         הפק צורה
                     </button>
@@ -187,8 +196,10 @@
                                 <button type="button" class="figure-type-btn py-2 rounded bg-amber-600 text-white font-semibold" data-figure="T">T · משולש</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CT">CT · ממורכז</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="TET">Tet · 3D</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="SQ">SQ · ריבוע</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CUBE">Cube · קובייה</button>
                             </div>
-                            <div class="text-[10px] text-gray-400">T: משולש רגיל · CT: מרכז + טבעות משולשות · Tet: שכבות משולשות במבט איזומטרי.</div>
+                            <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³.</div>
                         </div>
                         <div class="flex flex-col gap-1.5 mt-1">
                             <span class="text-amber-400 font-semibold text-[11px]">צורת רשת ולאטיס (Shape):</span>
@@ -219,6 +230,11 @@
                             </div>
                             <button id="tetShowInteriorBtn" type="button" class="w-full rounded-lg bg-slate-700 px-3 py-2 text-gray-100 font-medium">מעטפת בלבד · הצג נקודות פנימיות (X-Ray)</button>
                             <div class="text-gray-400 text-[11px]">אצבע אחת: סיבוב. שתי אצבעות: הזזה. אם שתי אצבעות אינן מגיבות בטלפון, לחץ MOVE בצד שמאל והזז באצבע אחת. לחיצה חוזרת מחזירה סיבוב.</div>
+                        </div>
+                        <div id="cube3dControls" class="hidden rounded-lg border border-cyan-800/50 bg-gray-900/70 px-3 py-2 space-y-2">
+                            <div class="font-semibold text-cyan-300">Cube · קובייה תלת־ממדית</div>
+                            <button id="cubeShowInteriorBtn" type="button" class="w-full rounded-lg bg-slate-700 px-3 py-2 text-gray-100 font-medium">מעטפת · הצג גם נקודות פנימיות (X-Ray)</button>
+                            <div class="text-[11px] text-gray-400">סיבוב באצבע, הזזה בשתי אצבעות או במצב MOVE.</div>
                         </div>
                         <div class="border-t border-gray-700/60"></div>
 
@@ -312,6 +328,200 @@
     </main>
 
     <script>
+/* Geometry Lab: exact square/cube lattices and cross-family coincidence detector.
+   Independent extension: the established T/CT/Tet generators are untouched. */
+(function () {
+  'use strict';
+  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30]};
+  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube'};
+  const order = ['T','CT','TET','SQ','CUBE'];
+  const value = (f,n) => f==='T' ? n*(n+1)/2 : f==='CT' ? 1+3*n*(n-1)/2 :
+    f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : NaN;
+  const supported = (f,n) => Number.isSafeInteger(n) && n>=bounds[f]?.[0] && n<=bounds[f]?.[1];
+  function matches(total) {
+    if (!Number.isSafeInteger(total) || total<1) return [];
+    const candidates=[];
+    const tri=Math.round((Math.sqrt(8*total+1)-1)/2);
+    const ct=Math.round((3+Math.sqrt(24*total-15))/6);
+    const sq=Math.round(Math.sqrt(total));
+    const cube=Math.round(Math.cbrt(total));
+    const tetEst=Math.round(Math.cbrt(6*total));
+    const tet=[tetEst-3,tetEst-2,tetEst-1,tetEst,tetEst+1,tetEst+2,tetEst+3].find(n=>n>=1 && value('TET',n)===total);
+    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube};
+    for (const f of order) {
+      const n=cands[f];
+      if (Number.isSafeInteger(n)&&n>=1&&value(f,n)===total)
+        candidates.push({family:f,n,label:display[f]+n,value:total,renderable:supported(f,n)});
+    }
+    return candidates;
+  }
+  const reset = (state,n,family) => {
+    state.figureType=family; state.n=n; state.segments=0;
+    state.points=[];state.cells=[];state.figLayers=[];state.getPoint=()=>undefined;
+    state.factorQueue=[];state.highlightMap=null;state.highlightPointMap=null;
+    state.bridgeLabelMap=null;state.colorTargetType='point';
+    state.mutedColors.clear();state.cellShape='square';
+  };
+  function buildSquare(n,state) {
+    reset(state,n,'SQ');
+    const d=18,m=(n-1)/2;
+    for(let r=0;r<n;r++)for(let c=0;c<n;c++)
+      state.points.push({r,c,x:(c-m)*d,y:(r-m)*d,assignedColor:state.dotColor});
+    state.getPoint=(r,c)=>r>=0&&r<n&&c>=0&&c<n?state.points[r*n+c]:undefined;
+    if(state.points.length!==n*n)throw Error('Square point-count mismatch');
+  }
+  function projectCube(state) {
+    if(state.figureType!=='CUBE')return;
+    const yaw=state.cubeYaw,elev=state.cubeElevation;
+    const ca=Math.cos(yaw),sa=Math.sin(yaw),ce=Math.cos(elev),se=Math.sin(elev);
+    const project=p=>{
+      const rx=p.X*ca-p.Y*sa,ry=p.X*sa+p.Y*ca;
+      return {x:rx,y:ry*se-p.Z*ce,depth:ry*ce+p.Z*se};
+    };
+    state.points.forEach(p=>Object.assign(p,project(p)));
+    const h=(state.n-1)*9;
+    const corner=(a,b,c)=>project({X:a*h,Y:b*h,Z:c*h});
+    const cam={X:sa*ce,Y:ca*ce,Z:se};
+    state.cubeFaces=[];
+    for(const axis of ['X','Y','Z']){
+      const sign=cam[axis]>=0?1:-1;
+      const other=['X','Y','Z'].filter(a=>a!==axis);
+      const coords=[[-1,-1],[1,-1],[1,1],[-1,1]].map(([p,q])=>{
+        const v={X:0,Y:0,Z:0};v[axis]=sign*h;v[other[0]]=p*h;v[other[1]]=q*h;return project(v);
+      });
+      state.cubeFaces.push({axis,sign,pts:coords,depth:coords.reduce((s,p)=>s+p.depth,0)/4});
+    }
+    const faceSigns=Object.fromEntries(state.cubeFaces.map(f=>[f.axis,f.sign]));
+    state.cubeVisible=p=> p.X===faceSigns.X*h||p.Y===faceSigns.Y*h||p.Z===faceSigns.Z*h;
+    state.cubeSorted=[...state.points].sort((a,b)=>a.depth-b.depth);
+    state.cubeCorners=[];
+    for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])
+      state.cubeCorners.push({sx:x,sy:y,sz:z,...corner(x,y,z)});
+  }
+  function buildCube(n,state){
+    reset(state,n,'CUBE');
+    const d=18,m=(n-1)/2;
+    state.cubeYaw=0.51;state.cubeElevation=0.53;
+    state.cubeShowInterior=false;
+    for(let z=0;z<n;z++)for(let r=0;r<n;r++)for(let c=0;c<n;c++)
+      state.points.push({r,c,z,X:(c-m)*d,Y:(r-m)*d,Z:(z-m)*d,assignedColor:state.dotColor});
+    state.getCubePoint=(r,c,z)=>z>=0&&z<n&&r>=0&&r<n&&c>=0&&c<n ? state.points[z*n*n+r*n+c]:undefined;
+    if(state.points.length!==n*n*n)throw Error('Cube point-count mismatch');
+    projectCube(state);
+  }
+  function drawSquare(ctx,scale,state){
+    const n=state.n,step=18,h=(n-1)*step/2;
+    if(state.showLattice){
+      ctx.fillStyle='rgba(18, 83, 111, 0.18)';
+      ctx.fillRect(-h,-h,h*2,h*2);
+      ctx.strokeStyle='#59b6d8';ctx.lineWidth=1.6/scale;
+      ctx.strokeRect(-h,-h,h*2,h*2);
+    }
+    if(state.showGrid){
+      ctx.beginPath();ctx.lineWidth=0.7/scale;ctx.strokeStyle='rgba(153,211,244,0.4)';
+      for(let i=0;i<n;i++){const k=-h+i*step;
+        ctx.moveTo(-h,k);ctx.lineTo(h,k);ctx.moveTo(k,-h);ctx.lineTo(k,h);
+      }
+      ctx.stroke();
+    }
+    if(state.showDots){
+      const radius=Math.max(0.9,Math.min(3,8/Math.sqrt(Math.max(.25,scale))));
+      for(const p of state.points){
+        const color=state.highlightPointMap?.get(p)||p.assignedColor;
+        if(state.mutedColors.has(color))continue;
+        ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);
+        ctx.fillStyle=color;ctx.fill();
+      }
+    }
+  }
+  function drawCube(ctx,scale,state){
+    const n=state.n,points=state.cubeSorted||state.points;
+    if(state.showLattice&&n>1){
+      const tones={X:'rgba(33,136,171,0.26)',Y:'rgba(50,109,201,0.3)',Z:'rgba(30,171,150,0.22)'};
+      for(const face of [...state.cubeFaces].sort((a,b)=>a.depth-b.depth)){
+        const p=face.pts;
+        ctx.beginPath();ctx.moveTo(p[0].x,p[0].y);
+        for(let i=1;i<4;i++)ctx.lineTo(p[i].x,p[i].y);
+        ctx.closePath();ctx.fillStyle=tones[face.axis];ctx.fill();
+      }
+      for(let i=0;i<8;i++)for(let j=i+1;j<8;j++){
+        const a=state.cubeCorners[i],b=state.cubeCorners[j];
+        if(Number(a.sx===b.sx)+Number(a.sy===b.sy)+Number(a.sz===b.sz)!==2)continue;
+        const bright=state.cubeVisible({X:a.sx*(n-1)*9,Y:a.sy*(n-1)*9,Z:a.sz*(n-1)*9}) &&
+                     state.cubeVisible({X:b.sx*(n-1)*9,Y:b.sy*(n-1)*9,Z:b.sz*(n-1)*9});
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.lineWidth=(bright?2.1:0.85)/scale;
+        ctx.strokeStyle=bright?'rgba(165,237,255,0.9)':'rgba(79,121,155,0.28)';ctx.stroke();
+      }
+    }
+    if(state.showGrid&&n>1){
+      ctx.beginPath();ctx.lineWidth=.65/scale;ctx.strokeStyle='rgba(145,212,250,.33)';
+      for(const p of state.points){
+        if(!state.cubeVisible(p))continue;
+        for(const [dr,dc,dz] of [[1,0,0],[0,1,0],[0,0,1]]){
+          const q=state.getCubePoint(p.r+dr,p.c+dc,p.z+dz);
+          if(q&&state.cubeVisible(q)){ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);}
+        }
+      }
+      ctx.stroke();
+    }
+    if(state.showDots){
+      const radius=Math.max(.85,Math.min(3,8/Math.sqrt(Math.max(.25,scale))));
+      for(const p of points){
+        const surface=p.r===0||p.r===n-1||p.c===0||p.c===n-1||p.z===0||p.z===n-1;
+        const front=state.cubeVisible(p);
+        if(!state.cubeShowInterior&&!front)continue;
+        const color=state.highlightPointMap?.get(p)||p.assignedColor;
+        if(state.mutedColors.has(color))continue;
+        ctx.globalAlpha=front?1:surface?.29:.19;
+        ctx.beginPath();ctx.arc(p.x,p.y,front?radius:radius*.75,0,2*Math.PI);
+        ctx.fillStyle=color;ctx.fill();
+      }
+      ctx.globalAlpha=1;
+    }
+  }
+  function draw(ctx,scale,state){
+    if(state.figureType==='SQ')return drawSquare(ctx,scale,state);
+    if(state.figureType==='CUBE')return drawCube(ctx,scale,state);
+  }
+  function subtitle(state){
+    const n=state.n;
+    if(state.figureType==='SQ')return `POINTS: ${n*n} | ${n} × ${n} GRID · 2D SQUARE`;
+    if(state.figureType==='CUBE')return `POINTS: ${n*n*n} | ${n} × ${n} × ${n} GRID · 3D CUBE${state.cubeShowInterior?' · X-RAY':' · SURFACE'}`;
+    return '';
+  }
+  function renderMatches(state,createShape){
+    const panel=document.getElementById('shapeMatchPanel');
+    const buttons=document.getElementById('shapeMatchButtons');
+    if(!panel||!buttons)return;
+    buttons.replaceChildren();
+    const all=matches(state.points.length);
+    const others=all.filter(m=>m.family!==state.figureType||m.n!==state.n);
+    if(others.length===0){panel.classList.add('hidden');return;}
+    document.getElementById('shapeMatchValue').textContent=String(state.points.length);
+    for(const match of others){
+      const button=document.createElement('button');
+      button.type='button';button.textContent=match.label;
+      button.className='shape-match-button px-2.5 py-1 rounded-lg bg-cyan-900/75 border border-cyan-500/60 text-cyan-50 font-semibold text-[11px] hover:bg-cyan-700 active:bg-cyan-600 transition';
+      if(match.renderable){
+        button.title=`הצג ${match.label} עם ${match.value} נקודות`;
+        button.addEventListener('click',e=>{e.stopPropagation();createShape(match.n,match.family);});
+      }else{
+        button.disabled=true;button.title='התאמה מדויקת — גדולה מטווח התצוגה';
+        button.classList.add('opacity-45','cursor-not-allowed');
+      }
+      buttons.append(button);
+    }
+    panel.classList.remove('hidden');
+    panel.classList.remove('shape-match-flash');
+    void panel.offsetWidth;
+    panel.classList.add('shape-match-flash');
+  }
+  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
+})();
+
+</script>
+    <script>
         const UI = {
             canvas: document.getElementById('mainCanvas'),
             ctx: document.getElementById('mainCanvas').getContext('2d', { alpha: false }),
@@ -401,7 +611,7 @@
             if (divisors.length === 0) {
                 UI.divisorButtonsContainer.innerHTML = supportsSubdivision
                     ? '<span class="text-[10px] text-amber-400 font-medium">הגעת למקסימום חלוקה!</span>'
-                    : '<span class="text-[10px] text-amber-400 font-medium">CT ו-Tet מוצגים בשכבות; חלוקה בגורמים זמינה למשפחת T.</span>';
+                    : '<span class="text-[10px] text-amber-400 font-medium">רשתות CT, Tet, SQ ו-Cube זמינות; חלוקה לגורמים מיועדת למשפחת T.</span>';
                 return;
             }
             divisors.forEach(d => {
@@ -448,6 +658,7 @@
 
         function getShapeSubtitle() {
             if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
+            if(state.figureType==='SQ'||state.figureType==='CUBE')return window.FigurateFamilies.subtitle(state);
             if (state.figureType === 'TET') {
                 const mode=state.tetRenderMode || 'classic';
                 return `POINTS: ${state.points.length} | LAYERS: ${state.n} | REGULAR TETRAHEDRON · 3D | ${mode.toUpperCase()}${mode==='layers'?' · EXPLODED VIEW':''}`;
@@ -668,7 +879,8 @@
             subdivideWithFactor: (k) => {
                 if (state.segments % k !== 0) return { success: false, message: `לא ניתן לחלק בגורם ${k}.` };
                 const sn = state.segments / k;
-                let newCells = [];                let cellIdCounter = 0;
+                let newCells = [];
+                let cellIdCounter = 0;
 
                 state.cells.forEach((parentCell) => {
                     const { r, c, type } = parentCell;
@@ -971,6 +1183,7 @@
         }
 
         function drawFigurate(ctx, scale) {
+            if(state.figureType==='SQ'||state.figureType==='CUBE') {window.FigurateFamilies.draw(ctx,scale,state);return;}
             if (state.figureType==='TET') {if(state.tetRenderMode==='classic')drawTetrahedron(ctx,scale);else drawTetExperimental(ctx,scale);return;}
             if (state.showLattice) {
                 const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
@@ -1419,6 +1632,7 @@
                     }
                     renderCanvas();
                 };
+
                 dreamAdvisorResponse.innerHTML = ans;
                 executeAdvisorIdeaBtn.classList.remove('hidden');
             }, 300);
@@ -1441,7 +1655,11 @@
         document.getElementById('menuResetSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; createBaseShape(state.n, state.figureType); });
 
         document.querySelectorAll('.figure-type-btn').forEach(btn => {
-            btn.addEventListener('click', () => createBaseShape(Math.min(state.n, btn.dataset.figure === 'TET' ? 55 : 200), btn.dataset.figure));
+            btn.addEventListener('click', () => {
+                const fam=btn.dataset.figure;
+                const lim=window.FigurateFamilies.bounds[fam];
+                createBaseShape(Math.min(state.n,lim[1]),fam);
+            });
         });
 
         document.querySelectorAll('.shape-mode-btn').forEach(btn => {
@@ -1494,10 +1712,9 @@
         document.getElementById('customBgColorPicker').addEventListener('input', (e) => { state.appBgColor = e.target.value; renderCanvas(); });
         document.getElementById('customDotColorPicker').addEventListener('input', (e) => { state.dotColor = e.target.value; MathEngine.applyColorSequence(); renderCanvas(); });
 
-
         function refreshTetMoveButton() {
             const btn=document.getElementById('tetMoveModeBtn');
-            const isTet=state.figureType==='TET';
+            const isTet=state.figureType==='TET'||state.figureType==='CUBE';
             btn.classList.toggle('hidden', !isTet);
             btn.classList.toggle('flex', isTet);
             const move=isTet&&state.tetInteractionMode==='move';
@@ -1507,26 +1724,32 @@
             btn.classList.toggle('bg-gray-800',!move);
         }
         document.getElementById('tetMoveModeBtn').addEventListener('click',()=>{
-            if(state.figureType!=='TET')return;
+            if(state.figureType!=='TET'&&state.figureType!=='CUBE')return;
             state.tetInteractionMode=state.tetInteractionMode==='move'?'rotate':'move';
             endDrag();refreshTetMoveButton();
         });
         function startDrag(clientX,clientY) {
-            const move=state.figureType!=='TET'||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE')||state.tetInteractionMode==='move';
             const dpr=window.devicePixelRatio||1;
             state.isDragging=true;
             state.dragStart=move
                 ? {x:clientX*dpr-state.view.x,y:clientY*dpr-state.view.y}
-                : {x:clientX,y:clientY,yaw:state.tetYaw,elevation:state.tetElevation};
+                : {x:clientX,y:clientY,yaw:state.figureType==='CUBE'?state.cubeYaw:state.tetYaw,elevation:state.figureType==='CUBE'?state.cubeElevation:state.tetElevation};
             UI.canvas.style.cursor='grabbing';
         }
         function onDrag(clientX,clientY) {
             if(!state.isDragging) return;
-            const move=state.figureType!=='TET'||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE')||state.tetInteractionMode==='move';
             if(!move) {
-                state.tetYaw=state.dragStart.yaw+(clientX-state.dragStart.x)*0.008;
-                state.tetElevation=Math.max(0.17,Math.min(1.2,state.dragStart.elevation+(state.dragStart.y-clientY)*0.006));
-                projectTetrahedron();
+                const yaw=state.dragStart.yaw+(clientX-state.dragStart.x)*0.008;
+                const elevation=Math.max(0.17,Math.min(1.2,state.dragStart.elevation+(state.dragStart.y-clientY)*0.006));
+                if(state.figureType==='CUBE'){
+                    state.cubeYaw=yaw;state.cubeElevation=elevation;
+                    window.FigurateFamilies.projectCube(state);
+                } else {
+                    state.tetYaw=yaw;state.tetElevation=elevation;
+                    projectTetrahedron();
+                }
             } else {
                 const dpr=window.devicePixelRatio||1;
                 state.view.x=clientX*dpr-state.dragStart.x;
@@ -1541,6 +1764,7 @@
         window.addEventListener('mousemove', e => onDrag(e.clientX,e.clientY));
 
         // Primary Android/Chrome path: track each touch separately by stable pointer ID.
+        // This works even if the browser does not dispatch a combined two-finger TouchEvent.
         const activeTouchPointers=new Map();
         let pointerPanStart=null, waitForTouchRelease=false;
         function pointerMidpoint(){
@@ -1622,7 +1846,11 @@
 
         document.getElementById('zoomIn').addEventListener('click', () => { state.view.scale *= 1.2; renderCanvas(); });
         document.getElementById('zoomOut').addEventListener('click', () => { state.view.scale *= 0.8; renderCanvas(); });
-        document.getElementById('resetView').addEventListener('click', () => {if(state.figureType==='TET'){state.tetYaw=0.10;state.tetElevation=0.42;projectTetrahedron();}autoScaleAndPosition();});
+        document.getElementById('resetView').addEventListener('click', () => {
+            if(state.figureType==='TET'){state.tetYaw=0.10;state.tetElevation=0.42;projectTetrahedron();}
+            if(state.figureType==='CUBE'){state.cubeYaw=0.51;state.cubeElevation=0.53;window.FigurateFamilies.projectCube(state);}
+            autoScaleAndPosition();
+        });
 
         function autoScaleAndPosition() {
             UI.shapeInfoOverlay.classList.remove('hidden');
@@ -1633,7 +1861,7 @@
             const canvasW = UI.canvas.width / dpr;
             
             const availableWidth = canvasW * 0.95; 
-            const topPadding = state.figureType==='TET'?125:60;
+            const topPadding = Math.max(state.figureType==='TET'?125:60,window.FigurateFamilies.matches(state.points.length).length>1?135:0);
             const bottomPadding = state.figureType==='TET'?135:140; 
             const availableHeight = canvasH - topPadding - bottomPadding;
             
@@ -1740,15 +1968,18 @@
         function createBaseShape(n, family = state.figureType) {
             clearTextBridgeOverlay();
             family = String(family).toUpperCase();
-            if (!['T', 'CT', 'TET'].includes(family)) return;
-            const minimum = family === 'T' ? 2 : 1;
-            const maximum = family === 'TET' ? 55 : 200;
+            if (!window.FigurateFamilies.bounds[family]) return;
+            const [minimum,maximum] = window.FigurateFamilies.bounds[family];
             if (!Number.isSafeInteger(n) || n < minimum || n > maximum) {
                 alert(`עבור ${family}: יש לבחור n בין ${minimum} ל-${maximum}.`);return;
             }
             state.highlightMap=null;state.highlightPointMap=null;
             if (family === 'T') MathEngine.createTriangle(n, 'triangulation');
-            else initializeFigurate(n, family);
+            else if(family==='SQ'||family==='CUBE') {
+                if(family==='SQ')window.FigurateFamilies.buildSquare(n,state);
+                else window.FigurateFamilies.buildCube(n,state);
+                MathEngine.applyColorSequence();updateDivisorUI();
+            } else initializeFigurate(n, family);
             document.querySelectorAll('.figure-type-btn').forEach(btn => {
                 const active=btn.dataset.figure === family;
                 btn.classList.toggle('bg-amber-600',active);
@@ -1758,6 +1989,10 @@
             });
             const tetControls=document.getElementById('tet3dControls');
             if(tetControls) tetControls.classList.toggle('hidden',family!=='TET');
+            const cubeControls=document.getElementById('cube3dControls');
+            if(cubeControls)cubeControls.classList.toggle('hidden',family!=='CUBE');
+            const cubeButton=document.getElementById('cubeShowInteriorBtn');
+            if(cubeButton)cubeButton.textContent=state.cubeShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג גם נקודות פנימיות (X-Ray)';
             const quickShowcase=document.getElementById('tetShowcaseQuick');
             if(quickShowcase) {quickShowcase.classList.toggle('hidden',family!=='TET'); quickShowcase.classList.toggle('flex',family==='TET');}
             refreshTetExperimentControls();
@@ -1767,13 +2002,21 @@
             if(tetButton) tetButton.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
             document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family}${n}`;
             autoScaleAndPosition();
+            window.FigurateFamilies.renderMatches(state,createBaseShape);
         }
 
         function generateFromInput() {
             const input=document.getElementById('promptInput').value.trim();
-            const match=input.match(/^(tet|ct|t)?\s*[_-]?\s*(\d+)$/i);
-            if(!match){alert('הקלד T37, CT16 או Tet10');return;}
-            createBaseShape(Number(match[2]), match[1]||state.figureType);
+            if(/^\d+$/.test(input)) {
+                const exact=window.FigurateFamilies.matches(Number(input)).find(m=>m.renderable);
+                if(exact){createBaseShape(exact.n,exact.family);return;}
+                alert('לא נמצאה צורה מדויקת הניתנת לציור למספר הזה במשפחות הפעילות.');return;
+            }
+            const match=input.match(/^(cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
+            if(!match){alert('דוגמאות: 136, T16, CT10, SQ8, Cube4');return;}
+            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE'};
+            const family=aliases[match[1].toUpperCase()]||match[1].toUpperCase();
+            createBaseShape(Number(match[2]),family);
         }
         function refreshTetExperimentControls() {
             const mode=state.tetRenderMode||'classic';
@@ -1813,6 +2056,12 @@
             if(state.figureType!=='TET') return;
             state.tetShowInterior=!state.tetShowInterior;
             e.currentTarget.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
+            renderCanvas();
+        });
+        document.getElementById('cubeShowInteriorBtn').addEventListener('click',e=>{
+            if(state.figureType!=='CUBE')return;
+            state.cubeShowInterior=!state.cubeShowInterior;
+            e.currentTarget.textContent=state.cubeShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג גם נקודות פנימיות (X-Ray)';
             renderCanvas();
         });
         document.getElementById('generateBtn').addEventListener('click',generateFromInput);
@@ -1893,14 +2142,15 @@
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
 
         resizeCanvas();
+        window.GeometryCoincidences={inspect:()=>window.FigurateFamilies.inspect(state),create:createBaseShape,matches:window.FigurateFamilies.matches,view:()=>({...state.view}),state:()=>({family:state.figureType,n:state.n,cubeYaw:state.cubeYaw,cubeElevation:state.cubeElevation})};
         window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay,
             inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
         setTimeout(() => {
             const params = new URLSearchParams(location.search);
-            const match = (params.get('figure') || '').match(/^(TET|CT|T)(\d+)$/i);
+            const match = (params.get('figure') || '').match(/^(CUBE|SQ|TET|CT|T)(\d+)$/i);
             let n = 37, family = 'T';
             if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
-            const valid = Number.isSafeInteger(n) && n >= (family === 'T' ? 2 : 1) && n <= (family === 'TET' ? 55 : 200);
+            const valid = window.FigurateFamilies.supported(family,n);
             createBaseShape(valid ? n : 37, valid ? family : 'T');
             if(valid && family==='TET') {
                 const requested=(params.get('tetmode')||'').toLowerCase();
