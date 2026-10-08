@@ -229,8 +229,16 @@
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="SQ">SQ · ריבוע</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CUBE">Cube · קובייה</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="PYR">Pyr · פירמידה</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="DODEC">Dodec · 12 פאות</button>
                             </div>
-                            <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³ · Pyr: פירמידה ריבועית Σk².</div>
+                            <div class="text-[10px] text-gray-400">T: משולש · CT: ממורכז · Tet: טטראדרון · SQ: ריבוע n² · Cube: קובייה n³ · Pyr: פירמידה ריבועית Σk² · Dodec: דודקהדרון בעל 12 מחומשים.</div>
+<div id="dodec3dControls" class="hidden mt-2 p-2 rounded-lg border border-amber-700/60 bg-gray-900/70">
+ <div class="font-bold text-amber-300 text-xs">Dodec · דודקהדרון תלת־ממדי רגיל</div>
+ <div class="mt-1 text-[11px] text-gray-200" dir="ltr">Dodecₙ = n(3n−1)(3n−2)/2 = Tet₍₃ₙ₋₂₎</div>
+ <div class="text-[11px] text-cyan-200 mt-1" dir="ltr">Dodec6 = Tet16 = 816</div>
+ <button type="button" id="dodecInteriorBtn" class="mt-2 rounded border border-amber-700 bg-[#1b2532] px-3 py-2 text-[11px] text-white">X-Ray · הצג נקודות פנימיות</button>
+ <div class="mt-1 text-[10px] text-gray-400">12 פאות מחומשות, 30 צלעות ו־20 קודקודים אמיתיים. הנקודות הנוספות הן המחשת כמות בתוך הגוף, לא רשת מחומשים קנונית.</div>
+</div>
 <div id="pyr3dControls" class="hidden mt-2 p-2 rounded-lg border border-cyan-800/60 bg-gray-900/70"><div class="font-semibold text-cyan-300 text-xs">Pyrₙ = n(n+1)(2n+1)/6 · שכבות 1²+2²+⋯+n²</div><button type="button" id="pyrShowInteriorBtn" class="mt-2 px-3 py-2 rounded-lg bg-cyan-900 text-cyan-50 text-xs border border-cyan-700">X-Ray · הצג את כל הנקודות</button><div class="mt-1 text-[10px] text-gray-400">Pyr5 = 55 = T10. שכבות ריבועיות מדויקות בסידור תלת־ממדי. ניתן לסובב את המבנה.</div>
 <div class="mt-3 border-t border-cyan-900/50 pt-3" id="pyrRatzoControls">
 <label for="pyrRatzoText" class="block font-semibold text-amber-300 text-xs mb-1">רצוא ושוב על פירמידה · Running &amp; Returning on Pyr</label>
@@ -375,11 +383,11 @@
    Independent extension: the established T/CT/Tet generators are untouched. */
 (function () {
   'use strict';
-  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30], PYR:[1,35]};
-  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube',PYR:'Pyr'};
-  const order = ['T','CT','TET','SQ','CUBE','PYR'];
+  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30], PYR:[1,35], DODEC:[1,14]};
+  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube',PYR:'Pyr',DODEC:'Dodec'};
+  const order = ['T','CT','TET','SQ','CUBE','PYR','DODEC'];
   const value = (f,n) => f==='T' ? n*(n+1)/2 : f==='CT' ? 1+3*n*(n-1)/2 :
-    f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : f==='PYR' ? n*(n+1)*(2*n+1)/6 : NaN;
+    f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : f==='PYR' ? n*(n+1)*(2*n+1)/6 : f==='DODEC' ? n*(3*n-1)*(3*n-2)/2 : NaN;
   const supported = (f,n) => Number.isSafeInteger(n) && n>=bounds[f]?.[0] && n<=bounds[f]?.[1];
   function matches(total) {
     if (!Number.isSafeInteger(total) || total<1) return [];
@@ -392,7 +400,9 @@
     const tet=[tetEst-3,tetEst-2,tetEst-1,tetEst,tetEst+1,tetEst+2,tetEst+3].find(n=>n>=1 && value('TET',n)===total);
     const pyrEst=Math.round(Math.cbrt(3*total));
     const pyr=[pyrEst-3,pyrEst-2,pyrEst-1,pyrEst,pyrEst+1,pyrEst+2,pyrEst+3].find(n=>n>=1&&value('PYR',n)===total);
-    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube, PYR:pyr};
+    const dodecEst=Math.round(Math.cbrt(2*total/9));
+    const dodec=[dodecEst-3,dodecEst-2,dodecEst-1,dodecEst,dodecEst+1,dodecEst+2,dodecEst+3].find(n=>n>=1&&value('DODEC',n)===total);
+    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube, PYR:pyr, DODEC:dodec};
     for (const f of order) {
       const n=cands[f];
       if (Number.isSafeInteger(n)&&n>=1&&value(f,n)===total)
@@ -584,6 +594,130 @@
       }
     }
   }
+
+  /* Real regular dodecahedron vertices/edges/12 planar pentagonal faces.
+     Dodecahedral NUMBER dots are displayed as a controlled visual point cloud,
+     NOT as an asserted natural crystal lattice or shell-by-shell packing. */
+  function dodecGeometry(){
+    const phi=(1+Math.sqrt(5))/2,inv=1/phi,verts=[];
+    for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1])
+      verts.push({X:x,Y:y,Z:z});
+    for(const a of [-1,1])for(const b of [-1,1]){
+      verts.push({X:0,Y:a*inv,Z:b*phi});
+      verts.push({X:a*inv,Y:b*phi,Z:0});
+      verts.push({X:a*phi,Y:0,Z:b*inv});
+    }
+    const dot=(a,b)=>a.X*b.X+a.Y*b.Y+a.Z*b.Z;
+    const sub=(a,b)=>({X:a.X-b.X,Y:a.Y-b.Y,Z:a.Z-b.Z});
+    const cross=(a,b)=>({X:a.Y*b.Z-a.Z*b.Y,Y:a.Z*b.X-a.X*b.Z,Z:a.X*b.Y-a.Y*b.X});
+    const dsq=(a,b)=>(a.X-b.X)**2+(a.Y-b.Y)**2+(a.Z-b.Z)**2;
+    const min=Math.min(...verts.flatMap((v,i)=>verts.slice(i+1).map(w=>dsq(v,w))));
+    const edges=[];
+    for(let i=0;i<20;i++)for(let j=i+1;j<20;j++)
+      if(Math.abs(dsq(verts[i],verts[j])-min)<1e-6)edges.push([i,j]);
+    const faces=[],seen=new Set();
+    for(let i=0;i<18;i++)for(let j=i+1;j<19;j++)for(let k=j+1;k<20;k++){
+      const a=verts[i],n=cross(sub(verts[j],a),sub(verts[k],a)),len=Math.hypot(n.X,n.Y,n.Z);
+      if(len<1e-7)continue;
+      const dist=verts.map(p=>(dot(n,p)-dot(n,a))/len);
+      const ids=dist.map((v,id)=>Math.abs(v)<1e-6?id:-1).filter(id=>id>=0);
+      if(ids.length!==5||!(dist.every(v=>v<=1e-6)||dist.every(v=>v>=-1e-6)))continue;
+      const key=ids.join(',');if(seen.has(key))continue;seen.add(key);
+      const center={X:0,Y:0,Z:0};
+      ids.forEach(id=>{center.X+=verts[id].X/5;center.Y+=verts[id].Y/5;center.Z+=verts[id].Z/5;});
+      const outward=dot(n,center)>=0?n:{X:-n.X,Y:-n.Y,Z:-n.Z};
+      const mag=Math.hypot(outward.X,outward.Y,outward.Z);
+      const normal={X:outward.X/mag,Y:outward.Y/mag,Z:outward.Z/mag};
+      const t=sub(verts[ids[0]],center),tl=Math.hypot(t.X,t.Y,t.Z);
+      const u={X:t.X/tl,Y:t.Y/tl,Z:t.Z/tl},v=cross(normal,u);
+      ids.sort((x,y)=>{
+        const px=sub(verts[x],center),py=sub(verts[y],center);
+        return Math.atan2(dot(px,v),dot(px,u))-Math.atan2(dot(py,v),dot(py,u));
+      });
+      faces.push({ids,normal,d:dot(normal,a)});
+    }
+    if(verts.length!==20||edges.length!==30||faces.length!==12||faces.some(f=>f.ids.length!==5))
+      throw Error('DODEC geometry V/E/F mismatch');
+    return {verts,edges,faces};
+  }
+  const dodecMesh=dodecGeometry();
+  function dodecHalton(index,base){
+    let result=0,f=1/base;
+    while(index>0){result+=f*(index%base);index=Math.floor(index/base);f/=base;}
+    return result;
+  }
+  function projectDodec(st){
+    if(st.figureType!=='DODEC')return;
+    const ca=Math.cos(st.dodecYaw),sa=Math.sin(st.dodecYaw),ce=Math.cos(st.dodecElevation),se=Math.sin(st.dodecElevation);
+    const proj=p=>{
+      const x=p.X*ca-p.Y*sa,y=p.X*sa+p.Y*ca;
+      return {x,y:y*se-p.Z*ce,depth:y*ce+p.Z*se};
+    };
+    st.dodecScreenVerts=st.dodecVertices.map(proj);
+    st.points.forEach(p=>Object.assign(p,proj(p)));
+    st.dodecSorted=[...st.points].sort((a,b)=>a.depth-b.depth);
+  }
+  function buildDodec(n,st){
+    reset(st,n,'DODEC');
+    st.dodecYaw=.51;st.dodecElevation=.61;st.dodecShowInterior=true;
+    const factor=78,geo=dodecMesh,total=value('DODEC',n);
+    st.dodecVertices=geo.verts.map(v=>({X:v.X*factor,Y:v.Y*factor,Z:v.Z*factor}));
+    st.dodecEdges=geo.edges;
+    st.dodecFaces=geo.faces;
+    if(n===1){
+      st.points.push({X:0,Y:0,Z:0,isVertex:false,assignedColor:st.dotColor});
+    }else{
+      for(const p of st.dodecVertices)st.points.push({...p,isVertex:true,assignedColor:st.dotColor});
+      // Fill the regular dodecahedron's interior deterministically with low-discrepancy samples.
+      // These are precisely counted illustrative dots, not a pentagonal-face lattice.
+      const phi=(1+Math.sqrt(5))/2;
+      let candidate=0;
+      while(st.points.length<total){
+        candidate++;
+        const p={X:(2*dodecHalton(candidate,2)-1)*phi,
+                 Y:(2*dodecHalton(candidate,3)-1)*phi,
+                 Z:(2*dodecHalton(candidate,5)-1)*phi};
+        const inside=geo.faces.every(face=>
+          p.X*face.normal.X+p.Y*face.normal.Y+p.Z*face.normal.Z<=face.d-0.00001);
+        if(!inside)continue;
+        st.points.push({X:p.X*factor,Y:p.Y*factor,Z:p.Z*factor,isVertex:false,assignedColor:st.dotColor});
+      }
+    }
+    if(st.points.length!==total)throw Error('Dodec figural points mismatch');
+    projectDodec(st);
+  }
+  function drawDodec(ctx,scale,st){
+    const verts=st.dodecScreenVerts;
+    if(st.showLattice){
+      const sorted=st.dodecFaces.map(f=>({...f,depth:f.ids.reduce((sum,i)=>sum+verts[i].depth,0)/5}))
+        .sort((a,b)=>a.depth-b.depth);
+      for(const f of sorted){
+        ctx.beginPath();ctx.moveTo(verts[f.ids[0]].x,verts[f.ids[0]].y);
+        for(let j=1;j<5;j++)ctx.lineTo(verts[f.ids[j]].x,verts[f.ids[j]].y);
+        ctx.closePath();ctx.fillStyle=f.depth<0?'rgba(32,110,146,.11)':'rgba(49,141,162,.18)';
+        ctx.fill();ctx.lineWidth=.65/scale;ctx.strokeStyle='rgba(111,185,215,.23)';ctx.stroke();
+      }
+      for(const [i,j]of st.dodecEdges){
+        const a=verts[i],b=verts[j],front=a.depth+b.depth>=0;
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.lineWidth=(front?1.75:.9)/scale;
+        ctx.strokeStyle=front?'rgba(180,228,244,.9)':'rgba(113,173,199,.32)';
+        ctx.stroke();
+      }
+    }
+    if(st.showDots){
+      const radius=Math.max(.85,Math.min(3.1,7/Math.sqrt(Math.max(.25,scale))));
+      for(const p of st.dodecSorted){
+        if(!p.isVertex&&!st.dodecShowInterior)continue;
+        const color=st.highlightPointMap?.get(p)||p.assignedColor;
+        if(st.mutedColors.has(color))continue;
+        ctx.globalAlpha=p.isVertex?1:.38;
+        ctx.beginPath();ctx.arc(p.x,p.y,p.isVertex?radius*1.5:radius*.74,0,Math.PI*2);
+        ctx.fillStyle=color;ctx.fill();
+      }
+      ctx.globalAlpha=1;
+    }
+  }
   function drawSquare(ctx,scale,state){
     const n=state.n,step=18,h=(n-1)*step/2;
     if(state.showLattice){
@@ -659,12 +793,14 @@
     if(state.figureType==='SQ')return drawSquare(ctx,scale,state);
     if(state.figureType==='CUBE')return drawCube(ctx,scale,state);
     if(state.figureType==='PYR')return drawPyramid(ctx,scale,state);
+    if(state.figureType==='DODEC')return drawDodec(ctx,scale,state);
   }
   function subtitle(state){
     const n=state.n;
     if(state.figureType==='SQ')return `POINTS: ${n*n} | ${n} × ${n} GRID · 2D SQUARE`;
     if(state.figureType==='CUBE')return `POINTS: ${n*n*n} | ${n} × ${n} × ${n} GRID · 3D CUBE${state.cubeShowInterior?' · X-RAY':' · SURFACE'}`;
     if(state.figureType==='PYR')return `POINTS: ${n*(n+1)*(2*n+1)/6} | ${n} SQUARE LAYERS · 1²+...+${n}² · 3D PYRAMID`;
+    if(state.figureType==='DODEC')return 'POINTS: '+value('DODEC',n)+' | 12 PENTAGONAL FACES · 30 EDGES · 20 VERTICES · Dodec'+n+' = Tet'+(3*n-2)+' · REPRESENTATIVE DOTS';
     return '';
   }
   function renderMatches(state,createShape){
@@ -694,7 +830,7 @@
     void panel.offsetWidth;
     panel.classList.add('shape-match-flash');
   }
-  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,buildPyramid,projectPyramid,ratzoPyrCompute,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
+  window.FigurateFamilies={bounds,value,supported,matches,buildSquare,buildCube,projectCube,buildPyramid,projectPyramid,buildDodec,projectDodec,ratzoPyrCompute,draw,subtitle,renderMatches,inspect:state=>({family:state.figureType,n:state.n,points:state.points.length,matches:matches(state.points.length),cubeFront:state.figureType==='CUBE'?state.points.filter(p=>state.cubeVisible(p)).length:null})};
 })();
 
 </script>
@@ -835,7 +971,7 @@
 
         function getShapeSubtitle() {
             if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
-            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR')return window.FigurateFamilies.subtitle(state);
+            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR'||state.figureType==='DODEC')return window.FigurateFamilies.subtitle(state);
             if (state.figureType === 'TET') {
                 const mode=state.tetRenderMode || 'classic';
                 return `POINTS: ${state.points.length} | LAYERS: ${state.n} | REGULAR TETRAHEDRON · 3D | ${mode.toUpperCase()}${mode==='layers'?' · EXPLODED VIEW':''}`;
@@ -1360,7 +1496,7 @@
         }
 
         function drawFigurate(ctx, scale) {
-            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR') {window.FigurateFamilies.draw(ctx,scale,state);return;}
+            if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR'||state.figureType==='DODEC') {window.FigurateFamilies.draw(ctx,scale,state);return;}
             if (state.figureType==='TET') {if(state.tetRenderMode==='classic')drawTetrahedron(ctx,scale);else drawTetExperimental(ctx,scale);return;}
             if (state.showLattice) {
                 const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
@@ -1835,7 +1971,7 @@
             btn.addEventListener('click', () => {
                 const fam=btn.dataset.figure;
                 const lim=window.FigurateFamilies.bounds[fam];
-                createBaseShape(fam==='PYR'&&state.figureType!=='PYR'?5:Math.min(state.n,lim[1]),fam);
+                createBaseShape(fam==='PYR'&&state.figureType!=='PYR'?5:fam==='DODEC'&&state.figureType!=='DODEC'?6:Math.min(state.n,lim[1]),fam);
             });
         });
 
@@ -1891,7 +2027,7 @@
 
         function refreshTetMoveButton() {
             const btn=document.getElementById('tetMoveModeBtn');
-            const isTet=state.figureType==='TET'||state.figureType==='CUBE'||state.figureType==='PYR';
+            const isTet=state.figureType==='TET'||state.figureType==='CUBE'||state.figureType==='PYR'||state.figureType==='DODEC';
             btn.classList.toggle('hidden', !isTet);
             btn.classList.toggle('flex', isTet);
             const move=isTet&&state.tetInteractionMode==='move';
@@ -1901,22 +2037,22 @@
             btn.classList.toggle('bg-gray-800',!move);
         }
         document.getElementById('tetMoveModeBtn').addEventListener('click',()=>{
-            if(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')return;
+            if(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR'&&state.figureType!=='DODEC')return;
             state.tetInteractionMode=state.tetInteractionMode==='move'?'rotate':'move';
             endDrag();refreshTetMoveButton();
         });
         function startDrag(clientX,clientY) {
-            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR'&&state.figureType!=='DODEC')||state.tetInteractionMode==='move';
             const dpr=window.devicePixelRatio||1;
             state.isDragging=true;
             state.dragStart=move
                 ? {x:clientX*dpr-state.view.x,y:clientY*dpr-state.view.y}
-                : {x:clientX,y:clientY,yaw:state.figureType==='CUBE'?state.cubeYaw:state.figureType==='PYR'?state.pyrYaw:state.tetYaw,elevation:state.figureType==='CUBE'?state.cubeElevation:state.figureType==='PYR'?state.pyrElevation:state.tetElevation};
+                : {x:clientX,y:clientY,yaw:state.figureType==='CUBE'?state.cubeYaw:state.figureType==='PYR'?state.pyrYaw:state.figureType==='DODEC'?state.dodecYaw:state.tetYaw,elevation:state.figureType==='CUBE'?state.cubeElevation:state.figureType==='PYR'?state.pyrElevation:state.figureType==='DODEC'?state.dodecElevation:state.tetElevation};
             UI.canvas.style.cursor='grabbing';
         }
         function onDrag(clientX,clientY) {
             if(!state.isDragging) return;
-            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR')||state.tetInteractionMode==='move';
+            const move=(state.figureType!=='TET'&&state.figureType!=='CUBE'&&state.figureType!=='PYR'&&state.figureType!=='DODEC')||state.tetInteractionMode==='move';
             if(!move) {
                 const yaw=state.dragStart.yaw+(clientX-state.dragStart.x)*0.008;
                 const elevation=Math.max(0.17,Math.min(1.2,state.dragStart.elevation+(state.dragStart.y-clientY)*0.006));
@@ -1926,6 +2062,9 @@
                 } else if(state.figureType==='PYR'){
                     state.pyrYaw=yaw;state.pyrElevation=elevation;
                     window.FigurateFamilies.projectPyramid(state);
+                } else if(state.figureType==='DODEC'){
+                    state.dodecYaw=yaw;state.dodecElevation=elevation;
+                    window.FigurateFamilies.projectDodec(state);
                 } else {
                     state.tetYaw=yaw;state.tetElevation=elevation;
                     projectTetrahedron();
@@ -2155,9 +2294,10 @@
             }
             state.highlightMap=null;state.highlightPointMap=null;
             if (family === 'T') MathEngine.createTriangle(n, 'triangulation');
-            else if(family==='SQ'||family==='CUBE'||family==='PYR') {
+            else if(family==='SQ'||family==='CUBE'||family==='PYR'||family==='DODEC') {
                 if(family==='SQ')window.FigurateFamilies.buildSquare(n,state);
                 else if(family==='CUBE')window.FigurateFamilies.buildCube(n,state);
+                else if(family==='DODEC')window.FigurateFamilies.buildDodec(n,state);
                 else window.FigurateFamilies.buildPyramid(n,state);
                 MathEngine.applyColorSequence();updateDivisorUI();
             } else initializeFigurate(n, family);
@@ -2174,6 +2314,10 @@
             if(cubeControls)cubeControls.classList.toggle('hidden',family!=='CUBE');
             const pyrControls=document.getElementById('pyr3dControls');
             if(pyrControls)pyrControls.classList.toggle('hidden',family!=='PYR');
+            const dodecControls=document.getElementById('dodec3dControls');
+            if(dodecControls)dodecControls.classList.toggle('hidden',family!=='DODEC');
+            const dodecButton=document.getElementById('dodecInteriorBtn');
+            if(dodecButton)dodecButton.textContent=state.dodecShowInterior?'X-Ray פעיל · הצג קודקודים בלבד':'20 קודקודים · הצג גם נקודות פנים';
             const pyrButton=document.getElementById('pyrShowInteriorBtn');
             if(pyrButton)pyrButton.textContent=state.pyrShowInterior?'X-Ray פעיל · הצג מעטפת':'מעטפת · הצג את כל הנקודות (X-Ray)';
             const cubeButton=document.getElementById('cubeShowInteriorBtn');
@@ -2185,7 +2329,7 @@
             refreshTetMoveButton();
             const tetButton=document.getElementById('tetShowInteriorBtn');
             if(tetButton) tetButton.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
-            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family === 'PYR' ? 'Pyr' : family}${n}`;
+            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family === 'PYR' ? 'Pyr' : family === 'DODEC' ? 'Dodec' : family}${n}`;
             autoScaleAndPosition();
             window.FigurateFamilies.renderMatches(state,createBaseShape);
         }
@@ -2197,9 +2341,9 @@
                 if(exact){createBaseShape(exact.n,exact.family);return;}
                 alert('לא נמצאה צורה מדויקת הניתנת לציור למספר הזה במשפחות הפעילות.');return;
             }
-            const match=input.match(/^(pyramid|pyr|cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
-            if(!match){alert('דוגמאות: 55, T10, Pyr5, Tet20, CT10, SQ8, Cube4');return;}
-            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE',PYRAMID:'PYR'};
+            const match=input.match(/^(dodecahedron|dodecahedral|dodec|dod|pyramid|pyr|cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
+            if(!match){alert('דוגמאות: 816, Dodec6, Tet16, Pyr5, T10, CT10, SQ8, Cube4');return;}
+            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE',PYRAMID:'PYR',DOD:'DODEC',DODECAHEDRON:'DODEC',DODECAHEDRAL:'DODEC'};
             const family=aliases[match[1].toUpperCase()]||match[1].toUpperCase();
             createBaseShape(Number(match[2]),family);
         }
@@ -2410,12 +2554,18 @@
           apply:(text,mode='he-regular')=>{ratzoText.value=text;ratzoMode.value=mode;applyRatzoPyr();},
           inspect:()=>ratzoPyrResult?{wordCount:ratzoPyrResult.words.length,total:ratzoPyrResult.total,mode:ratzoPyrResult.mode,activeWord:Number(ratzoWord.value)}:null
         };
+        document.getElementById('dodecInteriorBtn').addEventListener('click',()=>{
+            if(state.figureType!=='DODEC')return;
+            state.dodecShowInterior=!state.dodecShowInterior;
+            document.getElementById('dodecInteriorBtn').textContent=state.dodecShowInterior?'X-Ray פעיל · הצג קודקודים בלבד':'20 קודקודים · הצג גם נקודות פנים';
+            renderCanvas();
+        });
         window.GeometryCoincidences={inspect:()=>window.FigurateFamilies.inspect(state),create:createBaseShape,matches:window.FigurateFamilies.matches,view:()=>({...state.view}),state:()=>({family:state.figureType,n:state.n,cubeYaw:state.cubeYaw,cubeElevation:state.cubeElevation})};
         window.TextGeometryLabBridge = { apply:applyTextBridgeOverlay, clear:clearTextBridgeOverlay,
             inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
         setTimeout(() => {
             const params = new URLSearchParams(location.search);
-            const match = (params.get('figure') || '').match(/^(PYR|CUBE|SQ|TET|CT|T)(\d+)$/i);
+            const match = (params.get('figure') || '').match(/^(DODEC|PYR|CUBE|SQ|TET|CT|T)(\d+)$/i);
             let n = 37, family = 'T';
             if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
             const valid = window.FigurateFamilies.supported(family,n);
