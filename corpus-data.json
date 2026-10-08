@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-10-09",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count.",
   "entries": [
     {
       "value": 0,
@@ -1334,6 +1334,12 @@
       "value": 55,
       "label": "Pyr₅ = T₁₀ = 55 — פירמידה ריבועית",
       "method": "Pyr(n)=∑(k²,k=1..n)=n(n+1)(2n+1)/6; Pyr(5)=1+4+9+16+25=55=T10",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 55,
+      "label": "Pyr₅ = Σ רצוא ושוב על יחידות 1..5",
+      "method": "Define R(a1..an)=p_n+2Σ_{k=1}^{n-1}p_k with p_k=Σ_{j≤k}a_j; then R(1^k)=k², hence Pyr5=Σ_{k=1}^5 R(1^k)=1+4+9+16+25=55",
       "classification": "FOUNDATION"
     },
     {
@@ -5639,6 +5645,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 2600,
+      "label": "עמית מייק רוב — רצוא ושוב לפי מילים",
+      "method": "Original Hebrew Regular Running & Returning: עמית 1120 + מייק 460 + רוב 1020 = 2600; words calculated independently; geometry assigns separate Pyr4/Pyr4/Pyr3",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 2664,
       "label": "דויד×Amit M. Rov = יחידה×יהוה באחוריים",
       "method": "24×111 = 37×72 = phi(5476)",
@@ -6339,6 +6351,28 @@
       },
       "validation": "Pyr5 points and [1,4,9,16,25] layers; site match T10 & Pyr5; JS syntax and Tet20 tested",
       "status": "A exact identities, figurate shape drawing; any further symbolic interpretation separate"
+    },
+    "square_pyramidal_ratzo_bridge": {
+      "added_at": "2026-10-09",
+      "formula": "R(a_1,...,a_n)=P_n+2*sum_{k=1}^{n-1}(P_k)=sum_{i=1}^n (2(n-i)+1)*a_i; P_k=partial sums",
+      "unit_law": "R(1,...,1; n ones)=n² via 1+3+...+(2n-1)=n²",
+      "pyramid_law": "Pyr(n)=sum_{k=1}^n R(1^k)=n(n+1)(2n+1)/6",
+      "site": "geometry-lab.html?figure=PYR5&ratzo=1",
+      "workflow": "Ratzoh on user-provided words uses original calculator's independent-word transform; each word maps to one n-layer square pyramid; no duplicate dots for reverse path.",
+      "name_example": {
+        "wordwise": [
+          1120,
+          460,
+          1020
+        ],
+        "total": 2600,
+        "wordPyramids": [
+          30,
+          30,
+          14
+        ]
+      },
+      "status": "algebra proven; visualization geometric layout; numbers for arbitrary non-unit letter values are not equal to Pyr_n"
     }
   },
   "corrections": {
