@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-09",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls.",
   "entries": [
     {
       "value": 0,
@@ -11,10 +11,22 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 1,
+      "label": "и",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 2,
       "label": "עמית mod 37",
       "method": "520 mod 37 = 2",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 3,
+      "label": "В",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
     },
     {
       "value": 4,
@@ -39,6 +51,18 @@
       "label": "הצופן decoder → עמית",
       "method": "231/33=7 = עמית Word Reduced",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 7,
+      "label": "В начале сотворил Бог небо и землю · word count",
+      "method": "Russian Synodal Genesis 1:1 · 7 words",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 7,
+      "label": "сотворил",
+      "method": "Russian Word Reduction (W) · Genesis 1:1",
+      "classification": "canonical"
     },
     {
       "value": 8,
@@ -77,6 +101,18 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 10,
+      "label": "и",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 10,
+      "label": "сотворил · axis",
+      "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 11,
       "label": "נקודה יהוה",
       "method": "Word Reduced",
@@ -93,6 +129,12 @@
       "label": "×4 Mother",
       "method": "Jewish Word Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 12,
+      "label": "22|42|72 — מחלקות שזירה מחזוריות",
+      "method": "lcm(22,42,72)=5544; 22×42×72/5544=12 distinct simultaneous-step orbits",
+      "classification": "FOUNDATION"
     },
     {
       "value": 12,
@@ -137,6 +179,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 13,
+      "label": "Бог",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 14,
       "label": "במדבר",
       "method": "Hebrew Reduced · דוד",
@@ -177,6 +225,12 @@
       "label": "אז ישיר decoder → עמית",
       "method": "528/33=16 = עמית Hebrew Small",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 16,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Word Reduced / מצומצמת",
+      "classification": "canonical"
     },
     {
       "value": 16,
@@ -383,6 +437,12 @@
       "classification": "canonical"
     },
     {
+      "value": 21,
+      "label": "небо",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 22,
       "label": "בבאאהוה",
       "method": "Genesis word initials Regular",
@@ -393,6 +453,12 @@
       "label": "οἶκον / Λόγος",
       "method": "Greek Isopsephy Reduced",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 22,
+      "label": "Бог",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
     },
     {
       "value": 23,
@@ -455,6 +521,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 25,
+      "label": "начале",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 26,
       "label": "×2 דברים",
       "method": "Hebrew Reduced · יהוה",
@@ -498,6 +570,12 @@
     },
     {
       "value": 26,
+      "label": "Russian−Hebrew Genesis Ordinal difference",
+      "method": "324−298=26=יהוה Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 26,
       "label": "οἶκον / Λόγος",
       "method": "Greek Ordinal Reduced · יהוה bridge",
       "classification": "BRIDGE"
@@ -518,6 +596,12 @@
       "value": 27,
       "label": "פי",
       "method": "Hebrew Ordinal",
+      "classification": "canonical"
+    },
+    {
+      "value": 27,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Word Reduction (W) · Synodal Genesis 1:1 · 27=3³",
       "classification": "canonical"
     },
     {
@@ -561,6 +645,18 @@
       "label": "π: P₃(528)→28",
       "method": "Power-of-Gimel on first 528 fractional digits of π; Fold₁₀₀₀(103924)=28 = פאי Ordinal",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 28,
+      "label": "В начале сотворил Бог небо и землю · letter count",
+      "method": "Russian Synodal Genesis 1:1 · 28 Cyrillic letters = T7; same word/letter counts as Hebrew Genesis 1:1",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 29,
+      "label": "землю",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
+      "classification": "canonical"
     },
     {
       "value": 30,
@@ -680,6 +776,12 @@
       "value": 34,
       "label": "ΑΛΦΑ",
       "method": "Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות",
+      "classification": "canonical"
+    },
+    {
+      "value": 34,
+      "label": "сотворил",
+      "method": "Russian Full Reduction (R) · Genesis 1:1",
       "classification": "canonical"
     },
     {
@@ -827,6 +929,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 37,
+      "label": "в сотворил",
+      "method": "Russian Full Reduction (R) · exhaustive 63-bipartition Genesis 1:1 scan · 3+34=37 = Hebrew Genesis 1:1 Word Reduced",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 38,
       "label": "נקודה יהוה",
       "method": "Hebrew Reduced / Small",
@@ -852,6 +960,12 @@
     },
     {
       "value": 38,
+      "label": "Hebraei",
+      "method": "Jewish Reduced",
+      "classification": "canonical"
+    },
+    {
+      "value": 38,
       "label": "Iso",
       "method": "English Atbash Ordinal · = Mike English Simple",
       "classification": "FOUNDATION"
@@ -860,6 +974,12 @@
       "value": 38,
       "label": "Mike",
       "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 39,
+      "label": "Hebraei",
+      "method": "English Small/Pythagorean",
       "classification": "canonical"
     },
     {
@@ -899,10 +1019,28 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 41,
+      "label": "В начале Бог",
+      "method": "Russian Full Reduction side · 3+25+13=41",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 42,
+      "label": "ע״ב→מ״ב — מיקום 17 ו-שלשה 17",
+      "method": "Torah W(17)=ה=5; 72-name #17=לאו=37; fixed exploratory F(17)=37+5=42",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 42,
       "label": "פותח את ידו",
       "method": "Hebrew Reduced / Small / Small Finals",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 42,
+      "label": "שם עמית מייק רוב — סכום התמורות לפי מילה",
+      "method": "4! + 4!/2! + 3! = 24+12+6=42; per-word permutation sum, NOT whole-name permutations",
+      "classification": "RESEARCH"
     },
     {
       "value": 42,
@@ -914,6 +1052,12 @@
       "value": 42,
       "label": "φ(אלהים=86)",
       "method": "Totient",
+      "classification": "canonical"
+    },
+    {
+      "value": 43,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Reduced / קטנה",
       "classification": "canonical"
     },
     {
@@ -990,6 +1134,12 @@
     },
     {
       "value": 48,
+      "label": "Hebraei",
+      "method": "English Simple",
+      "classification": "canonical"
+    },
+    {
+      "value": 48,
       "label": "ΩΜΕΓΑ",
       "method": "Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות · Ω=26 Μ=13 Ε=5 Γ=3 Α=1",
       "classification": "RESEARCH"
@@ -999,6 +1149,12 @@
       "label": "ויקרא אלהים לרקיע שמים",
       "method": "Hebrew Reduced / Small · σ(51)=72",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 51,
+      "label": "небо и землю",
+      "method": "Russian Full Reduction side · 21+1+29=51; 51−41=10",
+      "classification": "RESEARCH"
     },
     {
       "value": 52,
@@ -1062,8 +1218,26 @@
     },
     {
       "value": 54,
+      "label": "תיבה B1 — ⊞₂ סכום זוגות",
+      "method": "(4+10)+(4+13)+(10+13)=14+17+23=54=2e1(B1); total edge length =108",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 54,
+      "label": "Amit Mike Rov — סכום תמורות לפי מילה",
+      "method": "4!+4!+3!=24+24+6=54=e1(8,20,26); Mike has four distinct Latin letters",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 54,
       "label": "e: H₂(37)→54",
       "method": "P₂^e(37)=1053; Fold₁₀₀₀: 1|053→54",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 54,
+      "label": "Genesis 1 · Russian prime islands",
+      "method": "Russian chapter scan under locked D mapping · count=54",
       "classification": "RESEARCH"
     },
     {
@@ -1188,6 +1362,12 @@
     },
     {
       "value": 58,
+      "label": "Genesis 1 · Russian prime-valued words",
+      "method": "Russian chapter scan under locked D mapping · count=58",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 58,
       "label": "φ: H₁(231)→58",
       "method": "P₁^φ(231)=1057; Fold₁₀₀₀→58 = Atbash(עמית)",
       "classification": "RESEARCH"
@@ -1239,6 +1419,12 @@
       "label": "מ מק מקו מקום",
       "method": "Reduction №1 · totals 4+14+20+24=62",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 62,
+      "label": "Hebraei",
+      "method": "Jewish Δ Simple",
+      "classification": "canonical"
     },
     {
       "value": 62,
@@ -1302,6 +1488,12 @@
     },
     {
       "value": 64,
+      "label": "Hebrew + Russian Genesis word reductions",
+      "method": "37+27=64=8²",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 64,
       "label": "I Ching: 64 hexagrams",
       "method": "Book of Changes structure",
       "classification": "FOUNDATION"
@@ -1353,6 +1545,12 @@
       "label": "AlphaBeta 1–3–6 ladder",
       "method": "66×T1=66; 66×T2=198; 66×T3=396",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 66,
+      "label": "НАД",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
     },
     {
       "value": 68,
@@ -1407,6 +1605,12 @@
       "label": "לב מייק",
       "method": "Reverse Ordinal · 6×23−66 · יהוה באחוריים",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 72,
+      "label": "מ״ב→ע״ב — מיקום 42 ו-שלשה 42",
+      "method": "Torah W(42)=ב=2; 72-name #42=מיכ=70; fixed exploratory F(42)=70+2=72",
+      "classification": "RESEARCH"
     },
     {
       "value": 72,
@@ -1508,6 +1712,18 @@
       "value": 74,
       "label": "Mike",
       "method": "English Regular",
+      "classification": "canonical"
+    },
+    {
+      "value": 74,
+      "label": "землю",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
+      "value": 76,
+      "label": "Бог",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
       "classification": "canonical"
     },
     {
@@ -1617,6 +1833,12 @@
       "label": "π: P₁(17)→82",
       "method": "sum first 17 fractional digits of π =82 = Genesis 1:1 Small",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 82,
+      "label": "сотворил небо",
+      "method": "Russian One-step Zero / D reduction · exhaustive 63-bipartition Genesis 1:1 scan · =82 = Hebrew Genesis 1:1 Reduced",
+      "classification": "BRIDGE"
     },
     {
       "value": 85,
@@ -1884,6 +2106,24 @@
     },
     {
       "value": 108,
+      "label": "42!!! · HomePower 999",
+      "method": "multifactorial step 3: product(42,39,...,3)=416971064282572800; Fold999=108",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 108,
+      "label": "תיבה B2 — ⊞₂ סכום זוגות",
+      "method": "(8+20)+(8+26)+(20+26)=28+34+46=108=2e1(B2); total edge length =216",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 108,
+      "label": "תיבת B1 — V1(t) מקדם t²",
+      "method": "(4+2t)(10+2t)(13+2t)=520+444t+108t²+8t³; 108=4(4+10+13)",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 108,
       "label": "Beta",
       "method": "Jewish Gematria",
       "classification": "canonical"
@@ -1934,6 +2174,12 @@
       "value": 110,
       "label": "Alpha",
       "method": "English Isopsephy",
+      "classification": "canonical"
+    },
+    {
+      "value": 110,
+      "label": "Hebraei",
+      "method": "Jewish Gematria",
       "classification": "canonical"
     },
     {
@@ -2021,6 +2267,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 111,
+      "label": "ЗЕМЛЕ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 112,
       "label": "פאי",
       "method": "AVGaD / Positional",
@@ -2037,6 +2289,12 @@
       "label": "פותח את ידו",
       "method": "Reduction №1",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 115,
+      "label": "сотворил",
+      "method": "Russian Ordinal (O) · Genesis 1:1",
+      "classification": "canonical"
     },
     {
       "value": 116,
@@ -2079,6 +2337,12 @@
       "label": "אז ישיר השם יה",
       "method": "Hebrew Ordinal",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 126,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Full Reduction (R) · Synodal Genesis 1:1 · 126=7×18",
+      "classification": "canonical"
     },
     {
       "value": 127,
@@ -2322,6 +2586,12 @@
     },
     {
       "value": 136,
+      "label": "שמות כ״ב + מ״ב + ע״ב",
+      "method": "22+42+72=136=T16=1024−888; sum of named system indices, not aggregate letter count",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 136,
       "label": "Amit Mike Rov",
       "method": "English Simple",
       "classification": "canonical"
@@ -2369,6 +2639,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 138,
+      "label": "небо",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 140,
       "label": "Amit",
       "method": "Jewish Gematria",
@@ -2405,10 +2681,22 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 141,
+      "label": "Hebraei",
+      "method": "English Reverse Ordinal",
+      "classification": "canonical"
+    },
+    {
       "value": 144,
       "label": "ל² / קדם",
       "method": "Ordinal-square: ל=12 → 12²=144 = קדם Hebrew Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 148,
+      "label": "משפחת שמות י״ב כ״ב מ״ב ע״ב",
+      "method": "12+22+42+72=148; 148×6=888; numerical lengths only",
+      "classification": "RESEARCH"
     },
     {
       "value": 148,
@@ -2543,6 +2831,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 189,
+      "label": "Amit Mike Rov — whole-name permutations fold999",
+      "method": "11!/(2!×2!)=9,979,200; Fold999=189. Distinct from per-word sum=54",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 191,
       "label": "נקודה יהוה",
       "method": "Hebrew Regular",
@@ -2634,6 +2928,12 @@
     },
     {
       "value": 208,
+      "label": "Hebrew↔Russian Genesis reduced bridge",
+      "method": "Hebrew Genesis reduced 82 + Russian Genesis Full Reduction 126 = 208 = רוב Hebrew Regular",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 208,
       "label": "π: H₅(1888)→208",
       "method": "Power-of-He · P₅^π(1888)=23442742; Fold₁₀₀₀ → 208 = רוב Regular",
       "classification": "FOUNDATION"
@@ -2643,6 +2943,12 @@
       "label": "φ(קומפוזיציה עמית=636) / רוב",
       "method": "Totient / Hebrew Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 210,
+      "label": "עמית מיכאל בלייז רוב — סכום תמורות לפי מילה",
+      "method": "4!+5!+5!/2!+3!=24+120+60+6=210=5×42",
+      "classification": "RESEARCH"
     },
     {
       "value": 212,
@@ -2658,8 +2964,20 @@
     },
     {
       "value": 216,
+      "label": "72!!!! · HomePower 999",
+      "method": "multifactorial step 4: 72×68×...×4; Fold999=216, NOT raw 216",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 216,
       "label": "תיבה מלאה",
       "method": "4×(8+20+26) = 2×108",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 216,
+      "label": "תיבת B2 — V2(t) מקדם t² / שמות ע״ב",
+      "method": "(8+2t)(20+2t)(26+2t)=4160+1776t+216t²+8t³; 216=4(8+20+26)=3×72 letters",
       "classification": "FOUNDATION"
     },
     {
@@ -2724,8 +3042,20 @@
     },
     {
       "value": 222,
+      "label": "תיבה פרימיטיבית B1 — ⊠₂",
+      "method": "e2(4,10,13)=4×10+4×13+10×13=40+52+130=222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
       "label": "π: H₃(850)→222",
       "method": "Power-of-Gimel · P₃^π(850)=172050; Fold₁₀₀₀: 172|050 → 222",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 222,
+      "label": "в бог небо",
+      "method": "Russian Running & Returning · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =222 = English KJV Genesis 1:1 Reduced",
       "classification": "BRIDGE"
     },
     {
@@ -2733,6 +3063,12 @@
       "label": "רל",
       "method": "Hebrew Regular · ר=200 ל=30",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 231,
+      "label": "11!!!! — שלב קפיצה ארבע",
+      "method": "11×7×3=231=C(22,2); no repeated-letter correction applies to multifactorial",
+      "classification": "RESEARCH"
     },
     {
       "value": 231,
@@ -2819,6 +3155,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 253,
+      "label": "Russian Genesis prime-index weight",
+      "method": "Σ prime-index weights = 253 = T22",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 256,
       "label": "16×16 / Q₈ vertices",
       "method": "16²=256=2⁸=|V(Q₈)|; equivalently Q₄□Q₄≅Q₈",
@@ -2871,6 +3213,12 @@
       "label": "קומפוזיציית מייק · דרגה 2 ביט / מם יד יד קף",
       "method": "Hebrew Regular · 16×18 · phi=96",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 288,
+      "label": "Hebraei",
+      "method": "English Gematria",
+      "classification": "canonical"
     },
     {
       "value": 288,
@@ -2973,6 +3321,18 @@
       "label": "ויקרא",
       "method": "Hebrew Regular · central Torah book (3 of 5)",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 324,
+      "label": "72!!! · HomePower 999",
+      "method": "multifactorial step 3: 72×69×...×3; Fold999=324=3×108",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 324,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Ordinal (O) · Synodal Genesis 1:1 · 324=18²",
+      "classification": "canonical"
     },
     {
       "value": 330,
@@ -3159,6 +3519,12 @@
       "label": "AlphaBeta",
       "method": "English Gematria = 6×66 = 33×12",
       "classification": "canonical"
+    },
+    {
+      "value": 411,
+      "label": "В начале сотворил Бог",
+      "method": "Russian Reverse Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =411 = English KJV Genesis 1:1 Ordinal",
+      "classification": "BRIDGE"
     },
     {
       "value": 416,
@@ -3360,6 +3726,12 @@
     },
     {
       "value": 520,
+      "label": "היברויי גימטריה",
+      "method": "Hebrew Regular / הכרחית",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
       "label": "י״י × אתב״ש־סדרי(י״י)",
       "method": "20×26 = 520 = עמית Regular",
       "classification": "BRIDGE"
@@ -3435,6 +3807,12 @@
       "label": "מ מק מקו מקום",
       "method": "Musafi · base 512 +10 letters =522",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 523,
+      "label": "Genesis 1 · Russian non-prime-valued words",
+      "method": "Russian chapter scan under locked D mapping · count=523; 523 is prime",
+      "classification": "RESEARCH"
     },
     {
       "value": 528,
@@ -3545,16 +3923,34 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 555,
+      "label": "РОДУ ЕГО И",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 576,
       "label": "רוב מייק רוב",
       "method": "Hebrew Regular",
       "classification": "canonical"
     },
     {
+      "value": 581,
+      "label": "Genesis 1 · Russian chapter relation",
+      "method": "7×83=581 · chapter-scan structural relation",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 582,
       "label": "A.B.A MIKE ROV",
       "method": "English Gematria = 6×97; paired with Amit 258 = 6×43",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 583,
+      "label": "сотворил",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 11×53",
+      "classification": "canonical"
     },
     {
       "value": 590,
@@ -3579,6 +3975,12 @@
       "label": "תורה",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 622,
+      "label": "Hebrew Ordinal + Russian Ordinal · Genesis 1:1",
+      "method": "298+324=622",
+      "classification": "BRIDGE"
     },
     {
       "value": 636,
@@ -3755,6 +4157,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 729,
+      "label": "עמית מייק רוב — תמורות מלאות וקיפול 999",
+      "method": "11!/(3!×2!)=3,326,400; Fold999=729=3^6. Distinct from per-word sum=42",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 730,
       "label": "10×בראשית",
       "method": "Latin Milui v0 → English Reduced · 10×73",
@@ -3845,6 +4253,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 777,
+      "label": "ИХ БОГ И СКАЗАЛ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 783,
       "label": "איזון בראשית 783",
       "method": "אלהים השמים והארץ = אלהים את הארץ = 783 = 27×29",
@@ -3887,6 +4301,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 808,
+      "label": "начале",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
+      "classification": "canonical"
+    },
+    {
       "value": 815,
       "label": "ΖΩΗ",
       "method": "Greek Isopsephy",
@@ -3915,6 +4335,12 @@
       "label": "דברים",
       "method": "Hebrew Final Letters · 256+560",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 816,
+      "label": "כ״ב שם / O3 π³",
+      "method": "sum cubes of first 22 fractional digits π=4812; Fold999=816; 816+72=888",
+      "classification": "RESEARCH"
     },
     {
       "value": 816,
@@ -4110,6 +4536,12 @@
     },
     {
       "value": 888,
+      "label": "תיבה מלאה B2 — ⊠₂",
+      "method": "e2(8,20,26)=8×20+8×26+20×26=160+208+520=888; 4×222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
       "label": "A.B.A MIKE ROV",
       "method": "Jewish Gematria",
       "classification": "FOUNDATION"
@@ -4154,6 +4586,18 @@
       "value": 888,
       "label": "φ: P₂(23)→888",
       "method": "sum of squares of first 23 fractional digits of φ =888",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 888,
+      "label": "А В НАЧАЛЕ БОГ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 888,
+      "label": "начале сотворил небо и",
+      "method": "Russian Prefix Building · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =888",
       "classification": "RESEARCH"
     },
     {
@@ -4277,6 +4721,24 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 999,
+      "label": "Hebrew×Russian Genesis word-reduction bridge",
+      "method": "Hebrew W=37 × Russian W=27 = 999",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 999,
+      "label": "А В НАЧАЛЕ БОГ + ЗЕМЛЕ",
+      "method": "Russian Standard / Decimal Tier (D) · 888+111=999",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 999,
+      "label": "А НЕБО ПРОИЗРАСТИТ",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 1000,
       "label": "×4 שלושים ושבע כפול שבעים ושלוש",
       "method": "Reverse Ordinal",
@@ -4323,6 +4785,12 @@
       "label": "×144 עמית",
       "method": "Word Reduced · 144×7",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 1008,
+      "label": "72 שמות — 216 אותיות / O1 יחס הזהב",
+      "method": "raw sum first 216 fractional digits φ(golden ratio)=1008=42×72/3; Fold999=9",
+      "classification": "RESEARCH"
     },
     {
       "value": 1008,
@@ -4619,6 +5087,12 @@
       "classification": "canonical"
     },
     {
+      "value": 1166,
+      "label": "Russian Genesis alternating prime-factor sum",
+      "method": "1166=2×583=2×сотворил (D)",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 1177,
       "label": "תיקון תורה",
       "method": "Hebrew Regular",
@@ -4685,6 +5159,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 1258,
+      "label": "Russian Genesis prime-factor weight",
+      "method": "Σ prime-factor weights = 1258 = 34×37 = 1000+258",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 1260,
       "label": "Alphabet",
       "method": "English ALBaM analogue = 1000 + 10×26",
@@ -4737,6 +5217,12 @@
       "label": "ריש ויו בית רובא",
       "method": "Atbash · 37²",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 1394,
+      "label": "В начале сотворил",
+      "method": "Russian Standard / D · 3+808+583=1394=17×82=34×41",
+      "classification": "RESEARCH"
     },
     {
       "value": 1408,
@@ -4895,6 +5381,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 1949,
+      "label": "В начале сотворил небо и",
+      "method": "Russian +1 Shift → D · exhaustive 63-bipartition Genesis 1:1 scan · =1949 = Greek LXX Genesis 1:1 D audit",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 1998,
       "label": "54×37 / מסגרת 165",
       "method": "1998=37×54; 54 is full Tetragrammaton fill and full-box e1",
@@ -4923,6 +5415,12 @@
       "label": "מ מק מקו מקום",
       "method": "Perati Ordinal² · מ=13²=169, ק=19²=361, ו=6²=36; aggregate total=2000",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 2000,
+      "label": "R(42) — חזרה סימבולית לב׳ רבתי",
+      "method": "R(n)=n·EulerPhi(n)·CarmichaelLambda(n)−(2^(n−1) mod999)^2; R(42)=42×12×6−32²=2000; folded 2; post-hoc operator, not independent prediction",
+      "classification": "RESEARCH"
     },
     {
       "value": 2014,
@@ -5195,6 +5693,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 3025,
+      "label": "Hebrew Regular + Russian Ordinal · Genesis 1:1",
+      "method": "2701+324=3025=55²",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 3168,
       "label": "ΚΥΡΙΟΣ ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ",
       "method": "Greek Isopsephy",
@@ -5381,10 +5885,22 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 5105,
+      "label": "землю",
+      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 5×1021",
+      "classification": "canonical"
+    },
+    {
       "value": 5328,
       "label": "סכום כל 18 הפרמוטציות של 520,160,208",
       "method": "6×888 = 24×222 = 144×37",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 5329,
+      "label": "Бог небо и землю",
+      "method": "Russian Standard / D · 76+138+10+5105=5329=73²",
+      "classification": "RESEARCH"
     },
     {
       "value": 5467,
@@ -5415,6 +5931,12 @@
       "label": "פי",
       "method": "Perati",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 6723,
+      "label": "В начале сотворил Бог небо и землю",
+      "method": "Russian Standard / Decimal Tier (D) · Synodal Genesis 1:1 · 6723=81×83=82²−1",
+      "classification": "canonical"
     },
     {
       "value": 6888,
@@ -5510,390 +6032,6 @@
       "value": 2895472,
       "label": "2701×1072 / 37² Collapse source",
       "method": "Research · Number",
-      "classification": "canonical"
-    },
-    {
-      "value": 7,
-      "label": "В начале сотворил Бог небо и землю · word count",
-      "method": "Russian Synodal Genesis 1:1 · 7 words",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 28,
-      "label": "В начале сотворил Бог небо и землю · letter count",
-      "method": "Russian Synodal Genesis 1:1 · 28 Cyrillic letters = T7; same word/letter counts as Hebrew Genesis 1:1",
-      "classification": "FOUNDATION"
-    },
-    {
-      "value": 324,
-      "label": "В начале сотворил Бог небо и землю",
-      "method": "Russian Ordinal (O) · Synodal Genesis 1:1 · 324=18²",
-      "classification": "canonical"
-    },
-    {
-      "value": 126,
-      "label": "В начале сотворил Бог небо и землю",
-      "method": "Russian Full Reduction (R) · Synodal Genesis 1:1 · 126=7×18",
-      "classification": "canonical"
-    },
-    {
-      "value": 27,
-      "label": "В начале сотворил Бог небо и землю",
-      "method": "Russian Word Reduction (W) · Synodal Genesis 1:1 · 27=3³",
-      "classification": "canonical"
-    },
-    {
-      "value": 6723,
-      "label": "В начале сотворил Бог небо и землю",
-      "method": "Russian Standard / Decimal Tier (D) · Synodal Genesis 1:1 · 6723=81×83=82²−1",
-      "classification": "canonical"
-    },
-    {
-      "value": 3,
-      "label": "В",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 808,
-      "label": "начале",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 25,
-      "label": "начале",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 583,
-      "label": "сотворил",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 11×53",
-      "classification": "canonical"
-    },
-    {
-      "value": 115,
-      "label": "сотворил",
-      "method": "Russian Ordinal (O) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 34,
-      "label": "сотворил",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 7,
-      "label": "сотворил",
-      "method": "Russian Word Reduction (W) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 76,
-      "label": "Бог",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 22,
-      "label": "Бог",
-      "method": "Russian Ordinal (O) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 13,
-      "label": "Бог",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 138,
-      "label": "небо",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 21,
-      "label": "небо",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 10,
-      "label": "и",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 1,
-      "label": "и",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 5105,
-      "label": "землю",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1 · 5×1021",
-      "classification": "canonical"
-    },
-    {
-      "value": 74,
-      "label": "землю",
-      "method": "Russian Ordinal (O) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 29,
-      "label": "землю",
-      "method": "Russian Full Reduction (R) · Genesis 1:1",
-      "classification": "canonical"
-    },
-    {
-      "value": 888,
-      "label": "А В НАЧАЛЕ БОГ",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 111,
-      "label": "ЗЕМЛЕ",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 999,
-      "label": "А НЕБО ПРОИЗРАСТИТ",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 66,
-      "label": "НАД",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 555,
-      "label": "РОДУ ЕГО И",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 777,
-      "label": "ИХ БОГ И СКАЗАЛ",
-      "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 999,
-      "label": "А В НАЧАЛЕ БОГ + ЗЕМЛЕ",
-      "method": "Russian Standard / Decimal Tier (D) · 888+111=999",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 58,
-      "label": "Genesis 1 · Russian prime-valued words",
-      "method": "Russian chapter scan under locked D mapping · count=58",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 54,
-      "label": "Genesis 1 · Russian prime islands",
-      "method": "Russian chapter scan under locked D mapping · count=54",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 523,
-      "label": "Genesis 1 · Russian non-prime-valued words",
-      "method": "Russian chapter scan under locked D mapping · count=523; 523 is prime",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 581,
-      "label": "Genesis 1 · Russian chapter relation",
-      "method": "7×83=581 · chapter-scan structural relation",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 208,
-      "label": "Hebrew↔Russian Genesis reduced bridge",
-      "method": "Hebrew Genesis reduced 82 + Russian Genesis Full Reduction 126 = 208 = רוב Hebrew Regular",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 999,
-      "label": "Hebrew×Russian Genesis word-reduction bridge",
-      "method": "Hebrew W=37 × Russian W=27 = 999",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 3025,
-      "label": "Hebrew Regular + Russian Ordinal · Genesis 1:1",
-      "method": "2701+324=3025=55²",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 622,
-      "label": "Hebrew Ordinal + Russian Ordinal · Genesis 1:1",
-      "method": "298+324=622",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 64,
-      "label": "Hebrew + Russian Genesis word reductions",
-      "method": "37+27=64=8²",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 26,
-      "label": "Russian−Hebrew Genesis Ordinal difference",
-      "method": "324−298=26=יהוה Hebrew Regular",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 1394,
-      "label": "В начале сотворил",
-      "method": "Russian Standard / D · 3+808+583=1394=17×82=34×41",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 5329,
-      "label": "Бог небо и землю",
-      "method": "Russian Standard / D · 76+138+10+5105=5329=73²",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 1258,
-      "label": "Russian Genesis prime-factor weight",
-      "method": "Σ prime-factor weights = 1258 = 34×37 = 1000+258",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 253,
-      "label": "Russian Genesis prime-index weight",
-      "method": "Σ prime-index weights = 253 = T22",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 1166,
-      "label": "Russian Genesis alternating prime-factor sum",
-      "method": "1166=2×583=2×сотворил (D)",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 41,
-      "label": "В начале Бог",
-      "method": "Russian Full Reduction side · 3+25+13=41",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 51,
-      "label": "небо и землю",
-      "method": "Russian Full Reduction side · 21+1+29=51; 51−41=10",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 10,
-      "label": "сотворил · axis",
-      "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 411,
-      "label": "В начале сотворил Бог",
-      "method": "Russian Reverse Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =411 = English KJV Genesis 1:1 Ordinal",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 82,
-      "label": "сотворил небо",
-      "method": "Russian One-step Zero / D reduction · exhaustive 63-bipartition Genesis 1:1 scan · =82 = Hebrew Genesis 1:1 Reduced",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 1949,
-      "label": "В начале сотворил небо и",
-      "method": "Russian +1 Shift → D · exhaustive 63-bipartition Genesis 1:1 scan · =1949 = Greek LXX Genesis 1:1 D audit",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 222,
-      "label": "в бог небо",
-      "method": "Russian Running & Returning · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =222 = English KJV Genesis 1:1 Reduced",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 37,
-      "label": "в сотворил",
-      "method": "Russian Full Reduction (R) · exhaustive 63-bipartition Genesis 1:1 scan · 3+34=37 = Hebrew Genesis 1:1 Word Reduced",
-      "classification": "BRIDGE"
-    },
-    {
-      "value": 888,
-      "label": "начале сотворил небо и",
-      "method": "Russian Prefix Building · Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =888",
-      "classification": "RESEARCH"
-    },
-    {
-      "value": 39,
-      "label": "Hebraei",
-      "method": "English Small/Pythagorean",
-      "classification": "canonical"
-    },
-    {
-      "value": 48,
-      "label": "Hebraei",
-      "method": "English Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 288,
-      "label": "Hebraei",
-      "method": "English Gematria",
-      "classification": "canonical"
-    },
-    {
-      "value": 110,
-      "label": "Hebraei",
-      "method": "Jewish Gematria",
-      "classification": "canonical"
-    },
-    {
-      "value": 62,
-      "label": "Hebraei",
-      "method": "Jewish Δ Simple",
-      "classification": "canonical"
-    },
-    {
-      "value": 141,
-      "label": "Hebraei",
-      "method": "English Reverse Ordinal",
-      "classification": "canonical"
-    },
-    {
-      "value": 38,
-      "label": "Hebraei",
-      "method": "Jewish Reduced",
-      "classification": "canonical"
-    },
-    {
-      "value": 520,
-      "label": "היברויי גימטריה",
-      "method": "Hebrew Regular / הכרחית",
-      "classification": "canonical"
-    },
-    {
-      "value": 43,
-      "label": "היברויי גימטריה",
-      "method": "Hebrew Reduced / קטנה",
-      "classification": "canonical"
-    },
-    {
-      "value": 16,
-      "label": "היברויי גימטריה",
-      "method": "Hebrew Word Reduced / מצומצמת",
       "classification": "canonical"
     }
   ],
@@ -6077,6 +6215,80 @@
         "Hebraei 38 = Mike (English Simple)"
       ],
       "interpretation_note": "Treat the equalities above as a primary corpus signature cluster. Direct gematria values are canonical; cross-system equivalences are contextual bridges and should not be presented as historical claims about the Latin term itself."
+    },
+    "tevah_42_72_names_permutations": {
+      "added_at": "2026-10-09",
+      "record": "research/tevah-42-72-names-permutations-2026-10-09.md",
+      "junk": "research/JUNK-tevah-42-72-2026-10-09.md",
+      "semantic_levels": {
+        "A": "proved algebra and exact counting",
+        "C": "source-dependent historical text and letter counts",
+        "D": "post-hoc structural alignments, control sampling needed",
+        "E": "symbolic interpretation"
+      },
+      "primitive": {
+        "axes": [
+          4,
+          10,
+          13
+        ],
+        "e1": 27,
+        "pairSum": 54,
+        "e2": 222,
+        "edgeLength": 108,
+        "surfaceArea": 444,
+        "volume": 520,
+        "parallelPolynomial": "520+444t+108t²+8t³"
+      },
+      "full": {
+        "axes": [
+          8,
+          20,
+          26
+        ],
+        "e1": 54,
+        "pairSum": 108,
+        "e2": 888,
+        "edgeLength": 216,
+        "surfaceArea": 1776,
+        "volume": 4160,
+        "parallelPolynomial": "4160+1776t+216t²+8t³"
+      },
+      "operations": {
+        "⊞₂": "(a+b)+(a+c)+(b+c)=2(a+b+c)",
+        "⊠₂": "ab+ac+bc",
+        "surface": "2⊠₂",
+        "edgeLength": "2⊞₂"
+      },
+      "holyNames": {
+        "fortyTwo": "7×6 initials of Ana Bekoach",
+        "seventyTwo": "72 triplets from Exodus 14:19-21, 216 letter positions",
+        "auxiliary": [
+          12,
+          22,
+          14
+        ],
+        "cycleOrbitsOf_22_42_72": 12
+      },
+      "namePermutation": {
+        "hebrewWhole": "11!/(3!2!)=3326400; Fold999=729",
+        "hebrewWordwise": "4!+4!/2!+3!=42",
+        "englishWhole": "11!/(2!2!)=9979200; Fold999=189",
+        "englishWordwise": "4!+4!+3!=54",
+        "extendedHebrewWordwise": "24+120+60+6=210"
+      },
+      "multifactorial": {
+        "formula": "n!^(k)=n(n−k)(n−2k)... stopping at last positive",
+        "k3n42Fold999": 108,
+        "k3n72Fold999": 324,
+        "k4n72Fold999": 216,
+        "rawVsFold": "always distinguish"
+      },
+      "bridge": {
+        "torahIndex17": "ה=5 and 72-name #17 לאו=37 ->42",
+        "torahIndex42": "ב=2 and 72-name #42 מיכ=70 ->72",
+        "status": "exploratory after-the-fact, not proof of prediction/intent"
+      }
     }
   },
   "corrections": {
