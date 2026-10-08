@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>GeoVisualizer Pro - Universal LATTICE & DOTS Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Rubik:wght@300;400;500;700&display=swap');
+        
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            font-family: 'Rubik', 'Inter', sans-serif;
+            background-color: #0f111a;
+            color: #e2e8f0;
+            overflow: hidden;
+            position: fixed; inset: 0;
+        }
+
+        .glass-panel {
+            background: rgba(22, 26, 36, 0.96);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        canvas { display: block; touch-action: none; }
+        .h-screen-dynamic { height: 100dvh; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+    </style>
+</head>
+<body class="flex flex-col text-sm h-screen-dynamic">
+
+    <header class="h-14 bg-[#141722] border-b border-gray-800 flex items-center justify-between px-3 sm:px-4 z-20 shrink-0">
+        <div class="flex items-center gap-3">
+            <button id="exportImageBtn" class="w-8 h-8 rounded bg-gradient-to-br from-amber-600 to-stone-700 flex items-center justify-center shadow-lg shadow-amber-500/20 cursor-pointer hover:opacity-90 transition shrink-0" title="ייצא תמונה (JPG)">
+                <i class="fa-solid fa-camera text-white text-xs"></i>
+            </button>
+            <h1 class="font-bold text-lg tracking-wide hidden sm:block">GeoVisualizer <span class="font-light text-gray-400">Pro</span></h1>
+            <a href="index.html" class="text-amber-400 text-[11px] sm:text-xs hover:text-amber-300 border border-gray-700 rounded-lg px-2 py-1 shrink-0" title="חזרה ל-Gematria2026">← GEMATRIA2026</a>
+        </div>
+        
+        <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-1">
+            <button id="toggleDotsBtn" class="bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0">
+                <i class="fa-solid fa-circle text-[9px]"></i> DOTS
+            </button>
+            <button id="toggleLatticeBtn" class="bg-gray-800 border border-gray-700 text-gray-300 transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0">
+                <i class="fa-solid fa-layer-group text-[9px]"></i> LATTICE
+            </button>
+            <button id="toggleGridBtn" class="bg-gray-800 border border-gray-700 text-gray-300 transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0">
+                <i class="fa-solid fa-border-all text-[9px]"></i> GRID
+            </button>
+
+            <!-- כפתור יועץ החלומות החכם בראש העמוד -->
+            <button id="toggleDreamAdvisorBtn" class="bg-indigo-700 hover:bg-indigo-600 text-white transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0" title="יועץ החלומות החכם">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i> <span class="hidden sm:inline">יועץ החלומות החכם</span>
+            </button>
+
+            <button id="toggleChatBtn" class="bg-stone-700 hover:bg-stone-600 text-white transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-medium shadow-lg ml-1 text-[11px] sm:text-sm shrink-0">
+                <i class="fa-solid fa-robot"></i> <span class="hidden sm:inline">צ'ט AI</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 flex overflow-hidden relative w-full">
+        <section class="flex-1 relative bg-black flex items-center justify-center overflow-hidden h-full">
+            
+            <div id="shapeInfoOverlay" class="absolute top-4 left-1/2 transform -translate-x-1/2 glass-panel rounded-lg px-4 py-1.5 flex flex-col items-center gap-0.5 z-10 hidden shadow-xl text-center w-max max-w-[90%] pointer-events-none whitespace-nowrap">
+                <div id="shapeFormula" class="font-bold text-sm sm:text-base text-white"></div>
+                <div id="shapePoints" class="text-[11px] sm:text-xs text-gray-400"></div>
+            </div>
+
+            <canvas id="mainCanvas" class="w-full h-full cursor-move"></canvas>
+            
+            <div id="colorCounterPanel" class="absolute left-1/2 transform -translate-x-1/2 glass-panel rounded-md px-1.5 py-0.5 z-20 w-max max-w-[95%] hidden flex-nowrap overflow-x-auto no-scrollbar items-center justify-start gap-1 shadow-2xl border border-gray-600/30">
+            </div>
+
+            <div id="bottomControls" class="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 w-full max-w-2xl px-4 z-30">
+                <div class="w-full relative shadow-2xl transition-all duration-300" id="inputContainer">
+                    <input type="text" id="promptInput" class="w-full bg-[#1e222d] border border-gray-700 text-white rounded-full py-3 sm:py-4 pr-6 pl-32 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-base placeholder-gray-500 shadow-inner" placeholder="הקלד צורה... (למשל: T37)">
+                    <button id="generateBtn" class="absolute inset-y-1.5 left-1.5 bg-amber-600 hover:bg-amber-500 text-white px-6 rounded-full font-medium transition-colors flex items-center gap-2 shadow-lg">
+                        הפק צורה
+                    </button>
+                </div>
+            </div>
+
+            <!-- מודל יועץ החלומות החכם המחובר למסך -->
+            <div id="dreamAdvisorModal" class="absolute top-16 right-4 glass-panel rounded-2xl p-4 hidden flex-col gap-3 z-50 w-80 sm:w-96 shadow-2xl text-xs border border-indigo-500/40">
+                <div class="flex items-center justify-between border-b border-indigo-500/30 pb-2">
+                    <span class="font-bold text-sm text-indigo-300 flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> יועץ החלומות החכם (מחובר למסך)
+                    </span>
+                    <button id="closeDreamModal" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-sm"></i></button>
+                </div>
+                <div id="advisorLiveContext" class="bg-indigo-950/60 p-2 rounded border border-indigo-500/30 text-[10px] text-indigo-200">
+                    מצב נוכחי: מנתח את נתוני המסך...
+                </div>
+                <p class="text-[10px] text-gray-400">יועץ מבוסס פקודות מקומיות, ללא חיבור למודל AI חיצוני.</p>
+                <p class="text-[11px] text-gray-300 leading-tight">שאל האם לצבוע נקודות או תאי לאטיס/שטחים (למשל: "צבע 3 נקודות צהוב" או "צבע 5 תאים אדום"):</p>
+                <div class="flex gap-1.5">
+                    <input type="text" id="dreamAdvisorInput" class="flex-1 bg-black/70 border border-indigo-500/40 rounded px-2 py-1.5 text-white text-xs focus:outline-none focus:border-amber-400" placeholder="למשל: צבע 37 תאים צהוב...">
+                    <button id="dreamAdvisorSendBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded text-xs font-medium shadow transition">שאל</button>
+                </div>
+                <div id="dreamAdvisorResponse" class="hidden p-2.5 bg-black/80 rounded border border-indigo-500/20 text-[11px] text-indigo-200 leading-relaxed max-h-40 overflow-y-auto"></div>
+                
+                <!-- כפתור הוצאה לפועל פעיל -->
+                <button id="executeAdvisorIdeaBtn" class="hidden w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-90 text-white py-2 px-3 rounded-lg font-bold text-xs shadow-lg flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-circle-check text-white"></i> הוצאה לפועל (יישם פתרון זה מיידית)
+                </button>
+            </div>
+
+            <div class="absolute top-4 left-4 glass-panel rounded-lg p-1 flex flex-col gap-1 z-10">
+                <button id="zoomIn" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-plus text-[9px]"></i></button>
+                <button id="zoomOut" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-minus text-[9px]"></i></button>
+                <button id="resetView" class="w-5 h-5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs flex items-center justify-center"><i class="fa-solid fa-expand text-[9px]"></i></button>
+            </div>
+
+            <div class="absolute top-4 right-4 z-30 flex flex-col gap-2">
+                <div class="relative">
+                    <button id="unifiedSettingsBtn" class="w-9 h-9 rounded-xl bg-stone-800 hover:bg-stone-700 border border-gray-700 text-white flex items-center justify-center shadow-2xl transition">
+                        <i class="fa-solid fa-sliders text-sm text-amber-500"></i>
+                    </button>
+                    
+                    <div id="unifiedMenu" class="absolute top-11 right-0 glass-panel rounded-2xl p-3.5 hidden flex-col gap-3 z-40 w-80 sm:w-88 shadow-2xl text-xs max-h-[82vh] overflow-y-auto">
+                        <div class="flex items-center justify-between border-b border-gray-700 pb-2">
+                            <span class="font-bold text-sm text-amber-500 flex items-center gap-2">
+                                <i class="fa-solid fa-palette"></i> מרכז שליטה ועיצוב
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <button id="negativeBtn" class="bg-stone-700 hover:bg-stone-600 text-amber-400 px-2 py-1 rounded text-[11px] font-bold flex items-center gap-1 border border-stone-600 shadow">
+                                    <i class="fa-solid fa-circle-half-stroke"></i> נגטיב
+                                </button>
+                                <button id="closeUnifiedMenu" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-sm"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5 bg-gray-900/60 p-2 rounded-lg border border-gray-700/80">
+                            <span class="text-amber-400 font-semibold text-[11px]">קאונטר אינדקס (מיספור צורות):</span>
+                            <div class="flex gap-1.5">
+                                <button id="counterRTLBtn" class="flex-1 py-1 px-2 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-medium transition shadow flex items-center justify-center gap-1">
+                                    <i class="fa-solid fa-arrow-right"></i> מימין לשמאל
+                                </button>
+                                <button id="counterLTRBtn" class="flex-1 py-1 px-2 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-medium transition shadow flex items-center justify-center gap-1">
+                                    <i class="fa-solid fa-arrow-left"></i> משמאל לימין
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5 mt-1">
+                            <span class="text-amber-400 font-semibold text-[11px]">צורת רשת ולאטיס (Shape):</span>
+                            <div class="flex gap-1.5">
+                                <button class="shape-mode-btn flex-1 py-1.5 rounded bg-amber-600 text-white text-[11px] font-medium transition shadow text-center" data-shape="triangle">
+                                    <i class="fa-solid fa-play -rotate-90 text-[10px]"></i> משולשים
+                                </button>
+                                <button class="shape-mode-btn flex-1 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[11px] font-medium transition shadow text-center" data-shape="rhombus">
+                                    <i class="fa-solid fa-gem text-[10px]"></i> מעוינים
+                                </button>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-700/60"></div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <span class="text-amber-400 font-semibold text-[11px]">חוק השלכת צבעים (Coloring Rule):</span>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <button class="coloring-rule-btn px-2 py-1.5 rounded bg-amber-600 text-white text-[10px] font-medium transition shadow text-center" data-mode="adjacent">פסיפס שכנים</button>
+                                <button class="coloring-rule-btn px-2 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-medium transition shadow text-center" data-mode="concentric">טבעות מרכז</button>
+                                <button class="coloring-rule-btn px-2 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-medium transition shadow text-center" data-mode="diagonal">גלים אלכסוניים</button>
+                                <button class="coloring-rule-btn px-2 py-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-medium transition shadow text-center" data-mode="radial">קרני שמש (Radial)</button>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700/60"></div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <span class="text-gray-300 font-semibold text-[11px]">בחירה בסיסית (רקע ונקודות):</span>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="flex items-center justify-between bg-gray-800/80 px-2.5 py-1.5 rounded-lg border border-gray-700">
+                                    <span class="text-gray-300">רקע:</span>
+                                    <input type="color" id="customBgColorPicker" value="#0f111a" class="w-6 h-6 rounded cursor-pointer border-0 bg-transparent">
+                                </div>
+                                <div class="flex items-center justify-between bg-gray-800/80 px-2.5 py-1.5 rounded-lg border border-gray-700">
+                                    <span class="text-gray-300">נקודות:</span>
+                                    <input type="color" id="customDotColorPicker" value="#ffffff" class="w-6 h-6 rounded cursor-pointer border-0 bg-transparent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700/60"></div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-amber-400 font-semibold text-[11px]">סדר ריצוף צבעي הצורות:</span>
+                            </div>
+                            <div class="flex flex-row gap-1.5 overflow-x-auto pb-1 items-center bg-gray-900/60 p-2 rounded-lg border border-gray-700/80">
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">1</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="0" value="#2563eb"></div>
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">2</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="1" value="#d97706"></div>
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">3</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="2" value="#059669"></div>
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">4</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="3" value="#dc2626"></div>
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">5</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="4" value="#9333ea"></div>
+                                <div class="flex flex-col items-center gap-0.5 shrink-0"><span class="text-[9px] text-gray-400">6</span><input type="color" class="custom-seq-color w-7 h-7 rounded cursor-pointer border-0 bg-transparent" data-index="5" value="#0891b2"></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700/60"></div>
+
+                        <div class="flex flex-col gap-2 bg-gray-900/60 p-2.5 rounded-lg border border-gray-700/80">
+                            <span class="text-amber-400 font-semibold text-[11px] flex items-center gap-1.5"><i class="fa-solid fa-shapes"></i> חלוקה ואיפוס צורה:</span>
+                            <div class="flex gap-2">
+                                <button id="menuSubdivideBtn" class="flex-1 bg-amber-600 hover:bg-amber-500 text-white py-1.5 px-2 rounded font-medium text-[11px] flex items-center justify-center gap-1.5 shadow transition"><i class="fa-solid fa-wand-magic-sparkles"></i> חלק (Subdivide)</button>
+                                <button id="menuResetSubdivideBtn" class="flex-1 bg-stone-700 hover:bg-stone-600 text-gray-200 py-1.5 px-2 rounded font-medium text-[11px] flex items-center justify-center gap-1.5 shadow transition"><i class="fa-solid fa-rotate-left"></i> איפוס למקור</button>
+                            </div>
+                            <div id="divisorButtonsContainer" class="flex gap-1 flex-wrap mt-0.5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="quickSubdivideBtnMain" class="w-9 h-9 rounded-xl bg-stone-800 hover:bg-stone-700 border border-gray-700 text-white flex items-center justify-center shadow-2xl transition relative group" title="חלוקה למשולשים">
+                    <i class="fa-solid fa-caret-up text-[22px] text-gray-600 group-hover:text-gray-500 transition-colors"></i>
+                    <i class="fa-solid fa-scissors text-[10px] absolute text-amber-500 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[20%]"></i>
+                </button>
+            </div>
+        </section>
+
+        <aside id="chatSidebar" class="hidden md:flex flex-col w-full md:w-96 bg-[#181b26] border-l border-gray-800 absolute md:relative top-0 bottom-0 right-0 z-50 shadow-2xl h-full">
+            <div class="p-4 border-b border-gray-800 flex items-center justify-between bg-[#141722] shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></div>
+                    <h2 class="font-semibold text-gray-200">מסוף מנוע גיאומטרי</h2>
+                </div>
+                <button id="closeChatBtn" class="text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center md:hidden"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="chatHistory" class="flex-1 overflow-y-auto p-4 flex flex-col gap-4 min-h-0 bg-[#181b26]">
+                <div class="bg-indigo-900/50 p-4 rounded-xl max-w-[85%] border border-indigo-500/30">
+                    היי! אני מסוף הפקודות של ה-Subdivision Engine.<br><br>
+                    <b>מצבי מנוע:</b><br>
+                    1. <b>Triangulation (ברירת מחדל):</b> פיצול מלא של כל המשולשים, ללא חורים וללא איבוד נקודות.<br>
+                    2. <b>Sierpinski:</b> מצב מיוחד המופעל רק לפי בקשה מפורשת.
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-gray-700 bg-[#1a1d27] shrink-0">
+                <div class="relative flex items-center">
+                    <input type="text" id="chatInput" autocomplete="off" class="w-full bg-[#0a0c13] border-2 border-gray-600 text-white rounded-full py-3 pr-6 pl-14 focus:outline-none focus:border-amber-500 transition-all text-base" placeholder="הקלד פקודה...">
+                    <button id="sendChatBtn" class="absolute left-2 w-9 h-9 rounded-full bg-amber-600 hover:bg-amber-500 text-white flex items-center justify-center shadow-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        const UI = {
+            canvas: document.getElementById('mainCanvas'),
+            ctx: document.getElementById('mainCanvas').getContext('2d', { alpha: false }),
+            shapeInfoOverlay: document.getElementById('shapeInfoOverlay'),
+            shapeFormula: document.getElementById('shapeFormula'),
+            shapePoints: document.getElementById('shapePoints'),
+            colorCounterPanel: document.getElementById('colorCounterPanel'),
+            toggleDotsBtn: document.getElementById('toggleDotsBtn'),
+            toggleLatticeBtn: document.getElementById('toggleLatticeBtn'),
+            toggleGridBtn: document.getElementById('toggleGridBtn'),
+            unifiedMenu: document.getElementById('unifiedMenu'),
+            divisorButtonsContainer: document.getElementById('divisorButtonsContainer'),
+            counterRTLBtn: document.getElementById('counterRTLBtn'),
+            counterLTRBtn: document.getElementById('counterLTRBtn')
+        };
+
+        const state = {
+            n: 37,
+            segments: 36,
+            points: [],
+            cells: [],
+            showDots: true,
+            showLattice: true,
+            showGrid: false,
+            currentLogicMode: 'triangulation',
+            cellShape: 'triangle',
+            coloringRuleMode: 'adjacent',
+            customColorSequence: ['#2563eb', '#d97706', '#059669', '#dc2626', '#9333ea', '#0891b2'],
+            mutedColors: new Set(),
+            counterMode: null,
+            dotColor: '#ffffff',
+            latticeOutlineColor: '#000000',
+            gridColor: 'rgba(255, 255, 255, 0.35)',
+            appBgColor: '#0f111a',
+            view: { x: 0, y: 0, scale: 1 },
+            isDragging: false,
+            dragStart: { x: 0, y: 0 },
+            factorQueue: [],
+            pendingExecutionAction: null,
+            highlightMap: null,
+            highlightPointMap: null,
+            colorTargetType: 'cell' // 'cell' or 'point'
+        };
+
+        function getPrimeFactors(num) {
+            let factors = [];
+            let d = 2;
+            while (d * d <= num) {
+                while ((num % d) === 0) { factors.push(d); num /= d; }
+                d++;
+            }
+            if (num > 1) factors.push(num);
+            return factors;
+        }
+
+        function getOptimalFactorQueue(segments) {
+            if (segments === 36) return [2, 3, 3, 2];
+            return getPrimeFactors(segments);
+        }
+
+        function getValidDivisors(num) {
+            let divs = [];
+            for (let i = 2; i <= num; i++) {
+                if (num % i === 0) divs.push(i);
+            }
+            return divs;
+        }
+
+        function updateDivisorUI() {
+            UI.divisorButtonsContainer.innerHTML = '';
+            const divisors = getValidDivisors(state.segments);
+            if (divisors.length === 0) {
+                UI.divisorButtonsContainer.innerHTML = '<span class="text-[10px] text-amber-400 font-medium">הגעת למקסימום חלוקה!</span>';
+                return;
+            }
+            divisors.forEach(d => {
+                const btn = document.createElement('button');
+                btn.className = `px-2 py-1 rounded bg-gray-800 hover:bg-amber-600 text-gray-200 border border-gray-700 text-[11px] font-mono transition shadow`;
+                btn.textContent = `k=${d}`;
+                btn.addEventListener('click', () => executeSubdivision(d));
+                UI.divisorButtonsContainer.appendChild(btn);
+            });
+        }
+
+        function hexToRgba(hex, alpha = 0.8) {
+            let c = hex.replace('#', '');
+            if (c.length === 3) c = c.split('').map(char => char + char).join('');
+            const num = parseInt(c, 16);
+            return `rgba(${(num >> 16) & 255}, ${(num >> 8) & 255}, ${num & 255}, ${alpha})`;
+        }
+
+        function invertColor(hex) {
+            let c = hex.replace('#', '');
+            if (c.length === 3) c = c.split('').map(char => char + char).join('');
+            const num = parseInt(c, 16);
+            const r = 255 - ((num >> 16) & 255);
+            const g = 255 - ((num >> 8) & 255);
+            const b = 255 - (num & 255);
+            return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+        }
+
+        function getRhombusPairs() {
+            const lookup = new Map(state.cells.map(c => [`${c.r},${c.c},${c.type}`, c]));
+            const pairedIds = new Set();
+            const pairs = [];
+            state.cells.forEach(cell => {
+                if (cell.type !== 'up') return;
+                const down = lookup.get(`${cell.r + cell.s},${cell.c},down`);
+                if (down) {
+                    pairs.push([cell, down]);
+                    pairedIds.add(cell.id);
+                    pairedIds.add(down.id);
+                }
+            });
+            return { pairs, singles: state.cells.filter(c => !pairedIds.has(c.id)) };
+        }
+
+        function getShapeSubtitle() {
+            let activeCellsCount = state.cells.length;
+            let text = `POINTS: ${state.points.length}`;
+            if (state.cellShape === 'rhombus') {
+                const grouping = getRhombusPairs();
+                text += ` | RHOMBUSES: ${grouping.pairs.length} | REMAINING TRIANGLES: ${grouping.singles.length}`;
+            } else {
+                text += ` | TRIANGLES: ${activeCellsCount}`;
+            }
+            return text;
+        }
+
+        function updateColorCounter() {
+            if (!UI.colorCounterPanel) return;
+            const colorCounts = {};
+            const singleTriangleCounts = {};
+            let hasColors = false;
+
+            if (state.colorTargetType === 'point') {
+                state.points.forEach(p => {
+                    const effectiveColor = (state.highlightPointMap && state.highlightPointMap.has(p)) ? state.highlightPointMap.get(p) : p.assignedColor;
+                    if (effectiveColor && state.showDots) {
+                        colorCounts[effectiveColor] = (colorCounts[effectiveColor] || 0) + 1;
+                        hasColors = true;
+                    }
+                });
+            } else if (state.cellShape === 'rhombus') {
+                const grouping = getRhombusPairs();
+                grouping.pairs.forEach(([cell]) => {
+                    const effectiveColor = (state.highlightMap && state.highlightMap.has(cell.id)) ? state.highlightMap.get(cell.id) : cell.color;
+                    if (effectiveColor && state.showLattice) {
+                        colorCounts[effectiveColor] = (colorCounts[effectiveColor] || 0) + 1;
+                        hasColors = true;
+                    }
+                });
+                grouping.singles.forEach(cell => {
+                    const effectiveColor = (state.highlightMap && state.highlightMap.has(cell.id)) ? state.highlightMap.get(cell.id) : cell.color;
+                    if (effectiveColor && state.showLattice) {
+                        singleTriangleCounts[effectiveColor] = (singleTriangleCounts[effectiveColor] || 0) + 1;
+                        hasColors = true;
+                    }
+                });
+            } else {
+                state.cells.forEach(cell => {
+                    const effectiveColor = (state.highlightMap && state.highlightMap.has(cell.id)) ? state.highlightMap.get(cell.id) : cell.color;
+                    if(effectiveColor && state.showLattice) {
+                        colorCounts[effectiveColor] = (colorCounts[effectiveColor] || 0) + 1;
+                        hasColors = true;
+                    }
+                });
+            }
+
+            if (!hasColors) {
+                UI.colorCounterPanel.classList.add('hidden');
+                UI.colorCounterPanel.classList.remove('flex');
+                return;
+            }
+
+            UI.colorCounterPanel.innerHTML = '';
+            UI.colorCounterPanel.classList.remove('hidden');
+            UI.colorCounterPanel.classList.add('flex');
+            
+            const isRhombus = state.cellShape === 'rhombus' && state.colorTargetType === 'cell';
+            const colors = [...new Set([...Object.keys(colorCounts), ...Object.keys(singleTriangleCounts)])].sort((a,b) => ((colorCounts[b] || 0) + (singleTriangleCounts[b] || 0)) - ((colorCounts[a] || 0) + (singleTriangleCounts[a] || 0)));
+            
+            colors.forEach(color => {
+                const rawCount = colorCounts[color];
+                const displayCount = isRhombus ? `${rawCount || 0}◇${singleTriangleCounts[color] ? ` ${singleTriangleCounts[color]}△` : ''}` : rawCount;
+                const isMuted = state.mutedColors.has(color);
+                
+                const item = document.createElement('div');
+                item.className = `flex items-center gap-0.5 shrink-0 whitespace-nowrap px-1 py-0.5 rounded cursor-pointer transition select-none ${isMuted ? 'opacity-30 line-through bg-gray-800/40' : 'hover:bg-gray-800/80'}`;
+                item.title = isMuted ? 'לחץ להצגה' : 'לחץ להסתרה/עמעום צבע זה';
+                item.innerHTML = `
+                    <span class="text-[8px] font-bold text-gray-200">${displayCount}</span>
+                    <div class="w-1.5 h-1.5 rounded-full shadow-sm border border-gray-400/30 shrink-0" style="background-color: ${color}"></div>
+                `;
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (state.mutedColors.has(color)) state.mutedColors.delete(color);
+                    else state.mutedColors.add(color);
+                    updateColorCounter();
+                    renderCanvas();
+                });
+                UI.colorCounterPanel.appendChild(item);
+            });
+        }
+
+        const MathEngine = {
+            createTriangle: (n, mode = 'triangulation') => {
+                state.n = n;
+                state.segments = n - 1;
+                state.points = [];
+                state.cells = [];
+                state.mutedColors.clear();
+                state.currentLogicMode = mode;
+                state.highlightMap = null;
+                state.highlightPointMap = null;
+                state.colorTargetType = 'cell';
+                state.factorQueue = getOptimalFactorQueue(state.segments);
+                
+                const spacing = 18;
+                const heightOffset = spacing * Math.sqrt(3) / 2;
+                let minY = Infinity, maxY = -Infinity;
+                
+                for (let r = 0; r < n; r++) {
+                    const rowWidth = r * spacing;
+                    const y = r * heightOffset - (n * heightOffset) / 2;
+                    if (y < minY) minY = y;
+                    if (y > maxY) maxY = y;
+                    
+                    for (let c = 0; c <= r; c++) {
+                        const x = -rowWidth / 2 + c * spacing;
+                        state.points.push({ r, c, x, y, assignedColor: state.dotColor });
+                    }
+                }
+                
+                const pointLookup = new Map(state.points.map(p => [`${p.r},${p.c}`, p]));
+                state.getPoint = (r, c) => pointLookup.get(`${r},${c}`);
+                state.cells.push({ id: 0, r: 0, c: 0, s: state.segments, type: 'up' });
+
+                MathEngine.updateCellVertices();
+                MathEngine.applyColorSequence();
+                updateDivisorUI();
+                return { totalPoints: state.points.length, shapeW: n * spacing, shapeH: maxY - minY, minY };
+            },
+
+            updateCellVertices: () => {
+                state.cells.forEach(cell => {
+                    if (cell.type === 'up') {
+                        cell.v = [
+                            state.getPoint(cell.r, cell.c),
+                            state.getPoint(cell.r + cell.s, cell.c),
+                            state.getPoint(cell.r + cell.s, cell.c + cell.s)
+                        ];
+                    } else {
+                        cell.v = [
+                            state.getPoint(cell.r, cell.c),
+                            state.getPoint(cell.r + cell.s, cell.c + cell.s),
+                            state.getPoint(cell.r, cell.c + cell.s)
+                        ];
+                    }
+                    if (cell.v[0] && cell.v[1] && cell.v[2]) {
+                        cell.cx = (cell.v[0].x + cell.v[1].x + cell.v[2].x) / 3;
+                        cell.cy = (cell.v[0].y + cell.v[1].y + cell.v[2].y) / 3;
+                    }
+                });
+            },
+
+            applyColorSequence: () => {
+                const numColors = state.customColorSequence.length;
+                let sumX = 0, sumY = 0;
+                state.points.forEach(p => { sumX += p.x; sumY += p.y; });
+                const centerX = sumX / (state.points.length || 1);
+                const centerY = sumY / (state.points.length || 1);
+
+                let cellMap;
+                if (state.cellShape === 'rhombus') {
+                    cellMap = new Map(state.cells.map(c => [`${c.r},${c.c},${c.type}`, c]));
+                }
+
+                state.cells.forEach(cell => {
+                    let colorIndex = 0;
+                    const rIdx = Math.floor(cell.r / cell.s);
+                    const cIdx = Math.floor(cell.c / cell.s);
+                    let cx = cell.cx || 0, cy = cell.cy || 0;
+
+                    if (state.cellShape === 'rhombus') {
+                        let effR = cell.type === 'down' ? rIdx - 1 : rIdx;
+                        let effC = cIdx;
+                        if (state.coloringRuleMode === 'adjacent') colorIndex = Math.abs(effR * 2 + effC * 3) % numColors;
+                        else if (state.coloringRuleMode === 'concentric') colorIndex = Math.floor(Math.hypot(cx - centerX, cy - centerY) / 35) % numColors;
+                        else if (state.coloringRuleMode === 'diagonal') colorIndex = Math.abs(effR - effC) % numColors;
+                        else if (state.coloringRuleMode === 'radial') colorIndex = Math.floor(((Math.atan2(cy - centerY, cx - centerX) + Math.PI) / (2 * Math.PI)) * numColors * 2) % numColors;
+                    } else {
+                        if (state.coloringRuleMode === 'adjacent') colorIndex = Math.abs(rIdx * 5 + cIdx * 7 + (cell.type === 'down' ? 1 : 0)) % numColors;
+                        else if (state.coloringRuleMode === 'concentric') colorIndex = Math.floor(Math.hypot(cx - centerX, cy - centerY) / 25) % numColors;
+                        else if (state.coloringRuleMode === 'diagonal') colorIndex = Math.abs(rIdx * 7 - cIdx * 5 + (cell.type === 'down' ? 3 : 0)) % numColors;
+                        else if (state.coloringRuleMode === 'radial') colorIndex = Math.floor(((Math.atan2(cy - centerY, cx - centerX) + Math.PI) / (2 * Math.PI)) * numColors * 2) % numColors;
+                    }
+                    cell.color = state.customColorSequence[colorIndex];
+                });
+
+                if (state.cellShape === 'rhombus') {
+                    state.cells.forEach(cell => {
+                        if (cell.type === 'up') {
+                            const pairedDown = cellMap.get(`${cell.r + cell.s},${cell.c},down`);
+                            if (pairedDown) pairedDown.color = cell.color;
+                        }
+                    });
+                }
+                state.points.forEach(p => p.assignedColor = state.dotColor);
+            },
+
+            subdivideWithFactor: (k) => {
+                if (state.segments % k !== 0) return { success: false, message: `לא ניתן לחלק בגורם ${k}.` };
+                const sn = state.segments / k;
+                let newCells = [];
+                let cellIdCounter = 0;
+
+                state.cells.forEach((parentCell) => {
+                    const { r, c, type } = parentCell;
+                    if (type === 'up') {
+                        for (let i = 0; i < k; i++) {
+                            for (let j = 0; j <= i; j++) {
+                                newCells.push({ id: cellIdCounter++, r: r + i * sn, c: c + j * sn, s: sn, type: 'up' });
+                            }
+                        }
+                        for (let i = 0; i < k - 1; i++) {
+                            for (let j = 0; j <= i; j++) {
+                                newCells.push({ id: cellIdCounter++, r: r + (i + 1) * sn, c: c + j * sn, s: sn, type: 'down' });
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < k; i++) {
+                            for (let j = 0; j < k - i; j++) {
+                                newCells.push({ id: cellIdCounter++, r: r + i * sn, c: c + i * sn + j * sn, s: sn, type: 'down' });
+                            }
+                        }
+                        for (let i = 0; i < k - 1; i++) {
+                            for (let j = 0; j < k - 1 - i; j++) {
+                                newCells.push({ id: cellIdCounter++, r: r + i * sn, c: c + (i + 1) * sn + j * sn, s: sn, type: 'up' });
+                            }
+                        }
+                    }
+                });
+
+                state.cells = newCells;
+                state.segments = sn;
+                MathEngine.updateCellVertices();
+                MathEngine.applyColorSequence();
+                updateDivisorUI();
+                return { success: true, message: `חולק בגורם k=${k}.` };
+            }
+        };
+
+        function executeSubdivision(preferredFactor = null) {
+            state.currentLogicMode = 'triangulation';
+            state.showLattice = true;
+            UI.toggleLatticeBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
+            
+            const validDivs = getValidDivisors(state.segments);
+            if (validDivs.length === 0) return;
+
+            let k = preferredFactor;
+            if (!k || !validDivs.includes(k)) {
+                if (state.factorQueue.length > 0 && validDivs.includes(state.factorQueue[0])) k = state.factorQueue.shift();
+                else k = validDivs[0];
+            }
+
+            MathEngine.subdivideWithFactor(k);
+            renderCanvas();
+        }
+
+        function renderCanvas() {
+            if (!UI.ctx || state.points.length === 0) return;
+            const w = UI.canvas.width;
+            const h = UI.canvas.height;
+            const ctx = UI.ctx;
+            
+            ctx.fillStyle = state.appBgColor;
+            ctx.fillRect(0, 0, w, h);            
+            ctx.save();
+            ctx.translate(w / 2 + state.view.x, h / 2 + state.view.y);
+            ctx.scale(state.view.scale * window.devicePixelRatio, state.view.scale * window.devicePixelRatio);
+
+            const sScale = state.view.scale || 1;
+
+            if (state.showLattice) {
+                state.cells.forEach(cell => {
+                    if(!cell.v[0]) return;
+                    let effectiveColor = cell.color;
+                    let isTargeted = true;
+                    if (state.highlightMap) {
+                        if (state.highlightMap.has(cell.id)) {
+                            effectiveColor = state.highlightMap.get(cell.id);
+                            isTargeted = true;
+                        } else {
+                            isTargeted = false; // still render background or dimmed if needed, or let full lattice render normally
+                        }
+                    }
+                    if (state.mutedColors.has(effectiveColor)) return;
+
+                    ctx.beginPath();
+                    ctx.moveTo(cell.v[0].x, cell.v[0].y);
+                    ctx.lineTo(cell.v[1].x, cell.v[1].y);
+                    ctx.lineTo(cell.v[2].x, cell.v[2].y);
+                    ctx.closePath();
+                    ctx.fillStyle = hexToRgba(effectiveColor, isTargeted ? 0.9 : 0.3);
+                    ctx.fill();
+                });
+            }
+
+            if (state.showGrid) {
+                ctx.lineWidth = 0.8 / sScale;
+                ctx.strokeStyle = state.gridColor;
+                ctx.beginPath();
+                state.points.forEach(p => {
+                    const right = state.getPoint(p.r, p.c + 1);
+                    const downLeft = state.getPoint(p.r + 1, p.c);
+                    const downRight = state.getPoint(p.r + 1, p.c + 1);
+
+                    if (state.cellShape !== 'rhombus' && right) { ctx.moveTo(p.x, p.y); ctx.lineTo(right.x, right.y); }
+                    if (downLeft) { ctx.moveTo(p.x, p.y); ctx.lineTo(downLeft.x, downLeft.y); }
+                    if (downRight) { ctx.moveTo(p.x, p.y); ctx.lineTo(downRight.x, downRight.y); }
+                });
+                ctx.stroke();
+            }
+
+            if (state.showLattice) {
+                const edgeMap = new Map();
+                state.cells.forEach(cell => {
+                    if(!cell.v[0] || !cell.v[1] || !cell.v[2]) return;
+                    let effectiveColor = cell.color;
+                    if (state.highlightMap && state.highlightMap.has(cell.id)) {
+                        effectiveColor = state.highlightMap.get(cell.id);
+                    }
+                    if (state.mutedColors.has(effectiveColor)) return;
+
+                    const v = cell.v;
+                    const triEdges = [[v[0], v[1]], [v[1], v[2]], [v[2], v[0]]];
+                    triEdges.forEach(([a, b]) => {
+                        if (state.cellShape === 'rhombus' && a.r === b.r) return;
+                        const key = (a.r < b.r || (a.r === b.r && a.c < b.c))
+                            ? `${a.r},${a.c}-${b.r},${b.c}`
+                            : `${b.r},${b.c}-${a.r},${a.c}`;
+                        edgeMap.set(key, {a, b});
+                    });
+                });
+
+                ctx.lineWidth = 1.4 / sScale;
+                ctx.strokeStyle = state.latticeOutlineColor;
+                ctx.beginPath();
+                edgeMap.forEach(edge => {
+                    ctx.moveTo(edge.a.x, edge.a.y);
+                    ctx.lineTo(edge.b.x, edge.b.y);
+                });
+                ctx.stroke();
+            }
+
+            if (state.counterMode && state.showLattice) {
+                let renderList = [];
+                if (state.cellShape === 'rhombus') {
+                    const rhombusMap = new Map();
+                    state.cells.forEach(cell => {
+                        const effectiveColor = (state.highlightMap && state.highlightMap.has(cell.id)) ? state.highlightMap.get(cell.id) : cell.color;
+                        if (state.mutedColors.has(effectiveColor)) return;
+                        const key = cell.type === 'up' ? `${cell.r},${cell.c}` : `${cell.r - cell.s},${cell.c}`;
+                        if (!rhombusMap.has(key)) rhombusMap.set(key, []);
+                        rhombusMap.get(key).push(cell);
+                    });
+                    rhombusMap.forEach(pair => {
+                        if (pair.length === 2) {
+                            let avgX = (pair[0].cx + pair[1].cx) / 2;
+                            let avgY = (pair[0].cy + pair[1].cy) / 2;
+                            renderList.push({ x: avgX, y: avgY });
+                        }
+                    });
+                } else {
+                    state.cells.forEach(cell => {
+                        const effectiveColor = (state.highlightMap && state.highlightMap.has(cell.id)) ? state.highlightMap.get(cell.id) : cell.color;
+                        if (state.mutedColors.has(effectiveColor)) return;
+                        renderList.push({ x: cell.cx, y: cell.cy });
+                    });
+                }
+
+                if (state.counterMode === 'rtl') {
+                    renderList.sort((a, b) => (Math.abs(a.y - b.y) > 4) ? a.y - b.y : b.x - a.x);
+                } else if (state.counterMode === 'ltr') {
+                    renderList.sort((a, b) => (Math.abs(a.y - b.y) > 4) ? a.y - b.y : a.x - b.x);
+                }
+
+                ctx.font = 'bold 8px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                renderList.forEach((item, idx) => {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillText((idx + 1).toString(), item.x, item.y);
+                });
+            }
+
+            if (state.showDots) {
+                state.points.forEach(p => {
+                    let pColor = p.assignedColor;
+                    if (state.highlightPointMap && state.highlightPointMap.has(p)) {
+                        pColor = state.highlightPointMap.get(p);
+                    }
+                    if (state.mutedColors.has(pColor)) return;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, state.highlightPointMap && state.highlightPointMap.has(p) ? 5 : 3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = pColor;
+                    ctx.fill();
+                });
+            }
+            
+            ctx.restore();
+            
+            UI.shapeFormula.textContent = `T${state.n} = ${state.points.length}`;
+            UI.shapePoints.textContent = getShapeSubtitle();
+            updateColorCounter();
+
+            if (state.showLattice && state.cells.length > 0) {
+                let maxY = -Infinity;
+                state.points.forEach(p => { if (p.y > maxY) maxY = p.y; });
+                if (maxY !== -Infinity) {
+                    const cssCenterY = (h / 2 + state.view.y) / window.devicePixelRatio;
+                    const shapeBottomCssY = cssCenterY + (maxY * state.view.scale);
+                    const inputBox = document.getElementById('bottomControls');
+                    const inputBoxTop = inputBox ? inputBox.getBoundingClientRect().top : h;
+                    const maxAllowedY = inputBoxTop - 40; 
+                    let targetY = shapeBottomCssY + 6;
+                    if (targetY > maxAllowedY) targetY = maxAllowedY;
+                    UI.colorCounterPanel.style.top = `${targetY}px`;
+                }
+            }
+        }
+
+        function resizeCanvas() {
+            const parent = UI.canvas.parentElement;
+            UI.canvas.width = parent.clientWidth * window.devicePixelRatio;
+            UI.canvas.height = parent.clientHeight * window.devicePixelRatio;
+            renderCanvas();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        document.getElementById('exportImageBtn').addEventListener('click', () => {
+            const exportCanvas = document.createElement('canvas');
+            exportCanvas.width = UI.canvas.width;
+            exportCanvas.height = UI.canvas.height;
+            const eCtx = exportCanvas.getContext('2d');
+            eCtx.drawImage(UI.canvas, 0, 0);
+
+            const link = document.createElement('a');
+            link.download = `GeoVisualizer_T${state.n}_${Date.now()}.jpg`;
+            link.href = exportCanvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+        });
+
+        UI.toggleDotsBtn.addEventListener('click', () => {
+            state.showDots = !state.showDots;
+            UI.toggleDotsBtn.classList.toggle('bg-amber-600', state.showDots);
+            UI.toggleDotsBtn.classList.toggle('border-amber-500', state.showDots);
+            UI.toggleDotsBtn.classList.toggle('bg-gray-800', !state.showDots);
+            UI.toggleDotsBtn.classList.toggle('border-gray-700', !state.showDots);
+            renderCanvas();
+        });
+
+        UI.toggleLatticeBtn.addEventListener('click', () => {
+            state.showLattice = !state.showLattice;
+            UI.toggleLatticeBtn.classList.toggle('bg-amber-600', state.showLattice);
+            UI.toggleLatticeBtn.classList.toggle('border-amber-500', state.showLattice);
+            UI.toggleLatticeBtn.classList.toggle('bg-gray-800', !state.showLattice);
+            UI.toggleLatticeBtn.classList.toggle('border-gray-700', !state.showLattice);
+            renderCanvas();
+        });
+
+        UI.toggleGridBtn.addEventListener('click', () => {
+            state.showGrid = !state.showGrid;
+            UI.toggleGridBtn.classList.toggle('bg-amber-600', state.showGrid);
+            UI.toggleGridBtn.classList.toggle('border-amber-500', state.showGrid);
+            UI.toggleGridBtn.classList.toggle('bg-gray-800', !state.showGrid);
+            UI.toggleGridBtn.classList.toggle('border-gray-700', !state.showGrid);
+            renderCanvas();
+        });
+
+        UI.counterRTLBtn.addEventListener('click', () => {
+            if (state.counterMode === 'rtl') {
+                state.counterMode = null;
+                UI.counterRTLBtn.classList.remove('bg-amber-600', 'text-white');
+                UI.counterRTLBtn.classList.add('bg-gray-800', 'text-gray-300');
+            } else {
+                state.counterMode = 'rtl';
+                UI.counterRTLBtn.classList.add('bg-amber-600', 'text-white');
+                UI.counterRTLBtn.classList.remove('bg-gray-800', 'text-gray-300');
+                UI.counterLTRBtn.classList.remove('bg-amber-600', 'text-white');
+                UI.counterLTRBtn.classList.add('bg-gray-800', 'text-gray-300');
+            }
+            renderCanvas();
+        });
+
+        UI.counterLTRBtn.addEventListener('click', () => {
+            if (state.counterMode === 'ltr') {
+                state.counterMode = null;
+                UI.counterLTRBtn.classList.remove('bg-amber-600', 'text-white');
+                UI.counterLTRBtn.classList.add('bg-gray-800', 'text-gray-300');
+            } else {
+                state.counterMode = 'ltr';
+                UI.counterLTRBtn.classList.add('bg-amber-600', 'text-white');
+                UI.counterLTRBtn.classList.remove('bg-gray-800', 'text-gray-300');
+                UI.counterRTLBtn.classList.remove('bg-amber-600', 'text-white');
+                UI.counterRTLBtn.classList.add('bg-gray-800', 'text-gray-300');
+            }
+            renderCanvas();
+        });
+
+        const unifiedSettingsBtn = document.getElementById('unifiedSettingsBtn');
+        const closeUnifiedMenu = document.getElementById('closeUnifiedMenu');
+
+        unifiedSettingsBtn.addEventListener('click', (e) => { e.stopPropagation(); UI.unifiedMenu.classList.toggle('hidden'); });
+        closeUnifiedMenu.addEventListener('click', () => UI.unifiedMenu.classList.add('hidden'));
+        UI.unifiedMenu.classList.add('hidden');
+        window.addEventListener('click', () => UI.unifiedMenu.classList.add('hidden'));
+
+        // יועץ החלומות החכם המחובר למסך
+        const toggleDreamAdvisorBtn = document.getElementById('toggleDreamAdvisorBtn');
+        const dreamAdvisorModal = document.getElementById('dreamAdvisorModal');
+        const closeDreamModal = document.getElementById('closeDreamModal');
+        const dreamAdvisorInput = document.getElementById('dreamAdvisorInput');
+        const dreamAdvisorSendBtn = document.getElementById('dreamAdvisorSendBtn');
+        const dreamAdvisorResponse = document.getElementById('dreamAdvisorResponse');
+        const advisorLiveContext = document.getElementById('advisorLiveContext');
+        const executeAdvisorIdeaBtn = document.getElementById('executeAdvisorIdeaBtn');
+
+        function updateAdvisorContextDisplay() {
+            advisorLiveContext.innerHTML = `<b>מצב מסך פעיל:</b> T${state.n} (${state.points.length} נקודות) | ${state.cells.length} תאים`;
+        }
+
+        toggleDreamAdvisorBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dreamAdvisorModal.classList.toggle('hidden');
+            dreamAdvisorModal.classList.toggle('flex');
+            updateAdvisorContextDisplay();
+        });
+
+        closeDreamModal.addEventListener('click', () => {
+            dreamAdvisorModal.classList.add('hidden');
+            dreamAdvisorModal.classList.remove('flex');
+        });
+
+        dreamAdvisorModal.addEventListener('click', (e) => e.stopPropagation());
+
+        function askSmartDreamAdvisor() {
+            const query = dreamAdvisorInput.value.trim();
+            if (!query) return;
+            dreamAdvisorResponse.classList.remove('hidden');
+            dreamAdvisorResponse.innerHTML = '<span class="text-amber-400 animate-pulse">יועץ החלומות מנתח האם מדובר בנקודות או בתאי לאטיס (שטחים)...</span>';
+            executeAdvisorIdeaBtn.classList.add('hidden');
+
+            setTimeout(() => {
+                const q = query.toLowerCase();
+                let countMatch = q.match(/\d+/);
+                let targetCount = countMatch ? parseInt(countMatch[0]) : 37;
+                let colorName = 'צהוב';
+                let hexColor = '#eab308';
+
+                if (q.includes('אדום')) { hexColor = '#dc2626'; colorName = 'אדום'; }
+                else if (q.includes('כחול')) { hexColor = '#2563eb'; colorName = 'כחול'; }
+                else if (q.includes('ירוק')) { hexColor = '#059669'; colorName = 'ירוק'; }
+                else if (q.includes('סגול')) { hexColor = '#9333ea'; colorName = 'סגול'; }
+                else if (q.includes('כתום')) { hexColor = '#d97706'; colorName = 'כתום'; }
+
+                let isPointTarget = q.includes('נקוד') || q.includes('נק');
+
+                let ans = `🧠 <b>ניתוח יועץ החלומות:</b><br>` +
+                          `• זיהיתי יעד: <b>${isPointTarget ? 'נקודות (Dots)' : 'תאים / שטחים (Cells/Lattice)'}</b>.<br>` +
+                          `• כמות: <b>${targetCount}</b> בצבע <b>${colorName}</b>.<br>` +
+                          `• לחץ על <b>הוצאה לפועל</b> ליישום! (כל כפתורי החלוקה והרשתות יישארו זמינים עבורך להמשך עבודה).`;
+
+                state.pendingExecutionAction = () => {
+                    if (isPointTarget) {
+                        state.colorTargetType = 'point';
+                        state.showDots = true;
+                        UI.toggleDotsBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
+
+                        let sumX = 0, sumY = 0;
+                        state.points.forEach(p => { sumX += p.x; sumY += p.y; });
+                        let cx = sumX / (state.points.length || 1);
+                        let cy = sumY / (state.points.length || 1);
+
+                        const sortedPoints = [...state.points].sort((a, b) => Math.hypot(a.x - cx, a.y - cy) - Math.hypot(b.x - cx, b.y - cy));
+                        state.highlightPointMap = new Map();
+                        let takeNum = Math.min(targetCount, sortedPoints.length);
+                        for (let i = 0; i < takeNum; i++) {
+                            state.highlightPointMap.set(sortedPoints[i], hexColor);
+                        }
+                    } else {
+                        state.colorTargetType = 'cell';
+                        state.showLattice = true;
+                        UI.toggleLatticeBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
+
+                        const sortedCells = [...state.cells].sort((a, b) => (a.cx*a.cx + a.cy*a.cy) - (b.cx*b.cx + b.cy*b.cy));
+                        state.highlightMap = new Map();
+                        let takeNum = Math.min(targetCount, sortedCells.length);
+                        for (let i = 0; i < takeNum; i++) {
+                            state.highlightMap.set(sortedCells[i].id, hexColor);
+                        }
+                    }
+                    renderCanvas();
+                };
+
+                dreamAdvisorResponse.innerHTML = ans;
+                executeAdvisorIdeaBtn.classList.remove('hidden');
+            }, 300);
+        }
+
+        dreamAdvisorSendBtn.addEventListener('click', askSmartDreamAdvisor);
+        dreamAdvisorInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') askSmartDreamAdvisor(); });
+
+        executeAdvisorIdeaBtn.addEventListener('click', () => {
+            if (typeof state.pendingExecutionAction === 'function') {
+                state.pendingExecutionAction();
+                dreamAdvisorModal.classList.add('hidden');
+                dreamAdvisorModal.classList.remove('flex');
+                addMessage('יועץ החלומות ביצע את הבחירה בהצלחה! כעת תוכל להמשיך להפעיל חלוקות וחתכים חופשי.', 'ai');
+            }
+        });
+
+        document.getElementById('menuSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; executeSubdivision(); });
+        document.getElementById('quickSubdivideBtnMain').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; executeSubdivision(); });
+        document.getElementById('menuResetSubdivideBtn').addEventListener('click', () => { state.highlightMap = null; state.highlightPointMap = null; createBaseShape(state.n); });
+
+        document.querySelectorAll('.shape-mode-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                state.cellShape = e.currentTarget.getAttribute('data-shape');
+                document.querySelectorAll('.shape-mode-btn').forEach(b => {
+                    b.classList.remove('bg-amber-600', 'text-white');
+                    b.classList.add('bg-gray-800', 'text-gray-300');
+                });
+                e.currentTarget.classList.remove('bg-gray-800', 'text-gray-300');
+                e.currentTarget.classList.add('bg-amber-600', 'text-white');
+                MathEngine.applyColorSequence();
+                renderCanvas();
+            });
+        });
+
+        document.querySelectorAll('.coloring-rule-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                state.coloringRuleMode = e.currentTarget.getAttribute('data-mode');
+                document.querySelectorAll('.coloring-rule-btn').forEach(b => {
+                    b.classList.remove('bg-amber-600', 'text-white');
+                    b.classList.add('bg-gray-800', 'text-gray-300');
+                });
+                e.currentTarget.classList.remove('bg-gray-800', 'text-gray-300');
+                e.currentTarget.classList.add('bg-amber-600', 'text-white');
+                MathEngine.applyColorSequence();
+                renderCanvas();
+            });
+        });
+
+        document.getElementById('negativeBtn').addEventListener('click', () => {
+            state.appBgColor = invertColor(state.appBgColor);
+            state.dotColor = invertColor(state.dotColor);
+            state.latticeOutlineColor = invertColor(state.latticeOutlineColor);
+            state.customColorSequence = state.customColorSequence.map(c => invertColor(c));
+            document.getElementById('customBgColorPicker').value = state.appBgColor;
+            document.getElementById('customDotColorPicker').value = state.dotColor;
+            MathEngine.applyColorSequence();
+            renderCanvas();
+        });
+
+        document.querySelectorAll('.custom-seq-color').forEach(inp => {
+            inp.addEventListener('input', (e) => {
+                state.customColorSequence[parseInt(e.target.getAttribute('data-index'))] = e.target.value;
+                MathEngine.applyColorSequence();
+                renderCanvas();
+            });
+        });
+
+        document.getElementById('customBgColorPicker').addEventListener('input', (e) => { state.appBgColor = e.target.value; renderCanvas(); });
+        document.getElementById('customDotColorPicker').addEventListener('input', (e) => { state.dotColor = e.target.value; MathEngine.applyColorSequence(); renderCanvas(); });
+
+        function startDrag(clientX, clientY) { state.isDragging = true; state.dragStart = { x: clientX - state.view.x, y: clientY - state.view.y }; UI.canvas.style.cursor = 'grabbing'; }
+        function onDrag(clientX, clientY) { if (state.isDragging) { state.view.x = clientX - state.dragStart.x; state.view.y = clientY - state.dragStart.y; renderCanvas(); } }
+        function endDrag() { state.isDragging = false; UI.canvas.style.cursor = 'move'; }
+
+        UI.canvas.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
+        window.addEventListener('mouseup', endDrag);
+        window.addEventListener('mousemove', (e) => onDrag(e.clientX, e.clientY));
+        UI.canvas.addEventListener('touchstart', (e) => { if(e.touches.length === 1) startDrag(e.touches[0].clientX, e.touches[0].clientY); }, {passive: true});
+        window.addEventListener('touchend', endDrag);
+        window.addEventListener('touchmove', (e) => { if(e.touches.length === 1) onDrag(e.touches[0].clientX, e.touches[0].clientY); }, {passive: true});
+        UI.canvas.addEventListener('wheel', (e) => { e.preventDefault(); state.view.scale *= (e.deltaY < 0 ? 1.1 : 0.9); renderCanvas(); }, { passive: false });
+
+        document.getElementById('zoomIn').addEventListener('click', () => { state.view.scale *= 1.2; renderCanvas(); });
+        document.getElementById('zoomOut').addEventListener('click', () => { state.view.scale *= 0.8; renderCanvas(); });
+        document.getElementById('resetView').addEventListener('click', () => autoScaleAndPosition());
+
+        function autoScaleAndPosition() {
+            UI.shapeInfoOverlay.classList.remove('hidden');
+            UI.shapeInfoOverlay.classList.add('flex');
+            
+            const dpr = window.devicePixelRatio;
+            const canvasH = UI.canvas.height / dpr;
+            const canvasW = UI.canvas.width / dpr;
+            
+            const availableWidth = canvasW * 0.95; 
+            const topPadding = 60; 
+            const bottomPadding = 140; 
+            const availableHeight = canvasH - topPadding - bottomPadding;
+            
+            let minX=Infinity, maxX=-Infinity, minY=Infinity, maxY=-Infinity;
+            state.points.forEach(p => {
+                if(p.x<minX) minX=p.x; if(p.x>maxX) maxX=p.x;
+                if(p.y<minY) minY=p.y; if(p.y>maxY) maxY=p.y;
+            });
+            const sW = maxX - minX, sH = maxY - minY;
+            if (sW === 0 || sH === 0) return;
+            
+            let optimalScale = Math.min(availableWidth / sW, availableHeight / sH) * 0.92;
+            if(optimalScale > 2.5) optimalScale = 2.5; 
+            
+            const shapeCssHeight = sH * optimalScale;
+            const targetCssTop = topPadding + (availableHeight - shapeCssHeight) / 2 - 50;
+            const viewY_CSS = targetCssTop - (canvasH / 2) - (minY * optimalScale);
+            
+            state.view = { x: 0, y: viewY_CSS * dpr, scale: optimalScale };
+            renderCanvas();
+        }
+
+        function createBaseShape(n) { if (!Number.isSafeInteger(n) || n < 2 || n > 200) { alert('יש להזין T בין 2 ל-200.'); return; } state.highlightMap = null; state.highlightPointMap = null; MathEngine.createTriangle(n, 'triangulation'); autoScaleAndPosition(); }
+
+        document.getElementById('generateBtn').addEventListener('click', () => { const m = document.getElementById('promptInput').value.match(/\d+/); if(m) createBaseShape(parseInt(m[0])); });
+        document.getElementById('promptInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') { const m = e.target.value.match(/\d+/); if(m) createBaseShape(parseInt(m[0])); } });
+
+        const chatSidebar = document.getElementById('chatSidebar');
+        document.getElementById('toggleChatBtn').addEventListener('click', () => chatSidebar.classList.toggle('hidden'));
+        document.getElementById('closeChatBtn').addEventListener('click', () => chatSidebar.classList.toggle('hidden'));
+        const chatHistory = document.getElementById('chatHistory');
+        const chatInput = document.getElementById('chatInput');
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `flex gap-3 ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+            const avatar = sender === 'user' ? `<div class="w-8 h-8 rounded-full bg-stone-600/20 flex items-center justify-center shrink-0"><i class="fa-solid fa-user text-stone-400 text-xs"></i></div>` : `<div class="w-8 h-8 rounded-full bg-amber-600/20 flex items-center justify-center shrink-0"><i class="fa-solid fa-robot text-amber-500 text-xs"></i></div>`;
+            const bubble = `<div class="${sender === 'user' ? 'bg-amber-600' : 'bg-gray-800'} rounded-2xl ${sender === 'user' ? 'rounded-tl-none' : 'rounded-tr-none'} p-3 text-sm text-gray-200 shadow-sm">${String(text).replace(/[&<>"']/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[ch])).replace(/\n/g, '<br>')}</div>`;
+            div.innerHTML = `${avatar}${bubble}`;
+            chatHistory.appendChild(div);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function handleChat() {
+            const val = chatInput.value.trim().toLowerCase();
+            if (!val) return;
+            addMessage(chatInput.value, 'user');
+            chatInput.value = '';
+
+            setTimeout(() => {
+                let responseText = '';
+                const m = val.match(/\d+/);
+                if (m && !val.includes('t')) {
+                    const count = parseInt(m[0]);
+                    const isPoint = val.includes('נקוד') || val.includes('נק');
+                    if (isPoint) {
+                        state.colorTargetType = 'point';
+                        state.showDots = true;
+                        UI.toggleDotsBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
+
+                        let sumX = 0, sumY = 0;
+                        state.points.forEach(p => { sumX += p.x; sumY += p.y; });
+                        let cx = sumX / (state.points.length || 1);
+                        let cy = sumY / (state.points.length || 1);
+
+                        const sortedPoints = [...state.points].sort((a, b) => Math.hypot(a.x - cx, a.y - cy) - Math.hypot(b.x - cx, b.y - cy));
+                        state.highlightPointMap = new Map();
+                        let takeNum = Math.min(count, sortedPoints.length);
+                        for (let i = 0; i < takeNum; i++) {
+                            state.highlightPointMap.set(sortedPoints[i], '#eab308');
+                        }
+                        responseText = `בודדו וצבעו בדיוק ${count} נקודות בצהוב. כל כפתורי החלוקה והרשתות פעילים כרגיל!`;
+                    } else {
+                        state.colorTargetType = 'cell';
+                        state.showLattice = true;
+                        UI.toggleLatticeBtn.className = 'bg-amber-600 border border-amber-500 text-white transition-colors flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium shadow-lg text-[11px] sm:text-sm shrink-0';
+
+                        const sortedCells = [...state.cells].sort((a, b) => (a.cx*a.cx + a.cy*a.cy) - (b.cx*b.cx + b.cy*b.cy));
+                        state.highlightMap = new Map();
+                        let takeNum = Math.min(count, sortedCells.length);
+                        for(let i=0; i<takeNum; i++) {
+                            state.highlightMap.set(sortedCells[i].id, '#eab308');
+                        }
+                        responseText = `בודדו וצבעו בדיוק ${count} תאי לאטיס בצהוב. כעת תוכל להמשיך להפעיל חלוקות וחתכים כרגיל!`;
+                    }
+                } else if (m) {
+                    createBaseShape(parseInt(m[0]));
+                    responseText = `יצרתי את T${m[0]} מחדש.`;
+                } else {
+                    responseText = 'פקודה לא מזוהה.';
+                }
+                renderCanvas();
+                addMessage(responseText, 'ai');
+            }, 300);
+        }
+
+        document.getElementById('sendChatBtn').addEventListener('click', handleChat);
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
+
+        resizeCanvas();
+        setTimeout(() => createBaseShape(37), 100);
+    </script>
+</body>
+</html>
