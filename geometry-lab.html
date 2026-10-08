@@ -240,7 +240,7 @@
 <option value="he-regular">עברית רגילה (כמו במחשבון)</option><option value="he-ordinal">עברית סדרית (מחקר)</option></select>
 <button type="button" id="pyrRatzoApply" class="px-3 py-2 rounded bg-amber-700 text-white text-xs">שבץ על פירמידה</button></div>
 <select id="pyrRatzoWord" class="hidden mt-2 w-full bg-[#101720] text-cyan-100 rounded px-2 py-2 border border-cyan-800 text-xs" aria-label="בחר מילה"></select>
-<div id="pyrRatzoInfo" role="status" aria-live="polite" class="mt-2 p-2 rounded bg-[#0b141e] text-xs text-slate-300 leading-relaxed">כל מילה מקבלת Pyr לפי מספר אותיותיה. חזרה לא מוסיפה נקודות.</div>
+<div id="pyrRatzoInfo" role="status" aria-live="polite" class="mt-2 p-2 rounded bg-[#0b141e] text-xs text-slate-300 leading-relaxed">לכל k מתקיים R(1,1,…,1) = k². לכן Pyrₙ = ΣR(1ᵏ). ערכי האותיות המקוריים נשארים נפרדים ממספר הנקודות.</div>
 <button type="button" id="pyrRatzoCopy" class="mt-2 px-3 py-1.5 rounded bg-slate-800 text-cyan-100 text-xs border border-slate-600" disabled>🧲 העתק מסלול</button>
 </div></div>
                         </div>
@@ -2357,10 +2357,16 @@
             const line=document.createElement('div');
             line.className='text-amber-200 text-[11px] mt-1';
             line.textContent='כחול: עלייה 1→'+part.n+' · זהב: חזרה '+part.n+'→1 · '+part.path.length+' תחנות על '+part.n+' שכבות';
+            const weights=document.createElement('div');
+            weights.className='text-cyan-100 text-[11px] mt-2 break-words';
+            weights.textContent='שקלול המקור לפי טבעות אי־זוגיות: '+part.values.map((v,i)=>(2*(part.n-i)-1)+'×'+v).join(' + ')+' = '+part.total;
+            const theorem=document.createElement('div');
+            theorem.className='font-semibold text-amber-300 text-[11px] mt-2';
+            theorem.textContent='זהות מבנית: R(1ᵏ) = k²; לכן Pyr'+part.n+' = Σ R(1ᵏ), k=1..'+part.n+' = '+part.points;
             const overall=document.createElement('div');
             overall.className='font-bold text-xs mt-2';
             overall.textContent='סה״כ לכל '+ratzoPyrResult.words.length+' המילים = '+ratzoPyrResult.total+' · ללא ספירה כפולה של נקודות';
-            ratzoInfo.append(heading,path,line,overall);
+            ratzoInfo.append(heading,path,line,weights,theorem,overall);
             ratzoCopy.disabled=false;renderCanvas();
         }
         function applyRatzoPyr(){
@@ -2392,6 +2398,8 @@
                 ...ratzoPyrResult.words.map(w=>w.raw+' | Pyr'+w.n+'='+w.points+' | Prefixes '+w.prefixes.join(',')+
                   ' | Path '+w.path.join(' → ')+' | Ratzo='+w.total),
                 'סה״כ = '+ratzoPyrResult.total,
+                'General identity: R(1 repeated k times)=k²; Pyr(n)=sum_{k=1}^n R(1^k).',
+                'For weighted letters: R(a1..an)=sum_{i=1}^n (2(n-i)+1)*ai.',
                 'Pyr points are geometric counts, distinct from gematria sums; returning does not add geometric points.'
             ].join('\n');
             if(navigator.clipboard?.writeText)navigator.clipboard.writeText(payload).catch(()=>window.prompt('העתק',payload));
