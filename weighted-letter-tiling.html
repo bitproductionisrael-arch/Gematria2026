@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Weighted Letter Tiling · Geometry Lab</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,Arial,sans-serif;background:#080b11;color:#f7ebd1}
+*{box-sizing:border-box}body{margin:0;background:#080b11}header{padding:15px max(16px,calc((100vw - 1100px)/2));border-bottom:1px solid #343842;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+a{color:#72e7cb}main{max-width:1100px;margin:auto;padding:18px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 18px}button,select{background:#202a36;border:1px solid #596171;border-radius:9px;color:white;padding:10px 14px;font:inherit;cursor:pointer}button:hover{background:#334355}button:focus-visible,select:focus-visible{outline:2px solid #eac06d}#status{color:#b9cfbd;font-size:13px}.frame{border:1px solid #343944;border-radius:20px;background:#05080d;overflow:hidden}#output{width:100%;max-height:84vh;display:block}.hint{font-size:13px;line-height:1.65;color:#b6c0d0;margin-top:12px}code{color:#f5d188}@media(max-width:600px){main{padding:10px}.toolbar{font-size:14px}}
+</style></head><body><header><strong>GEOMETRY LAB · Weighted Letter Tiling</strong><a href="geometry-lab.html">← Geometry Lab</a></header>
+<main><div class="toolbar"><label for="preset">Model</label><select id="preset"><option value="canonical">Amit Mike Rov · T16 exact</option></select><button id="svgSave">Export SVG</button><button id="pngSave">Export PNG</button><span id="status" role="status"></span></div>
+<div class="frame" id="frame"><svg id="output" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1840" role="img" aria-label="136 precisely positioned letter-weighted dots"></svg></div>
+<p class="hint">A geometric construction, not a photograph: one point per English ordinal unit of each letter. The preset follows the approved rule: ROV = rows 1–10; MIKE = full rows 11–13 plus both endpoints of row 14; AMIT = the other 12 points of row 14 and rows 15–16. Letters are placed row-major, left to right <em>within each named region</em>. The site checks every count before rendering or exporting. This exact boundary is the documented T16 preset, not an automatic theorem for other names.</p>
+</main>
+<script>
+(()=>{'use strict';
+const NS='http://www.w3.org/2000/svg', svg=document.getElementById('output'),status=document.getElementById('status');
+const palette={ROV:['#63dabe','#a4ffea'],MIKE:['#77aafc','#cde0ff'],AMIT:['#efbe62','#fff1c0']};
+const names=[
+ {name:'ROV',letters:[['R',18],['O',15],['V',22]],expected:55},
+ {name:'MIKE',letters:[['M',13],['I',9],['K',11],['E',5]],expected:38},
+ {name:'AMIT',letters:[['A',1],['M',13],['I',9],['T',20]],expected:43}
+];
+function region(row,col){
+ if(row<=10)return 'ROV';
+ if(row<=13)return 'MIKE';
+ if(row===14)return (col===1||col===14)?'MIKE':'AMIT';
+ return 'AMIT';
+}
+function build(){
+ const points=[];for(let row=1;row<=16;row++)for(let col=1;col<=row;col++)points.push({row,col,region:region(row,col)});
+ if(points.length!==136||new Set(points.map(p=>p.row+':'+p.col)).size!==136)throw Error('Triangle count mismatch');
+ const expected={ROV:55,MIKE:38,AMIT:43};const counts={ROV:0,MIKE:0,AMIT:0};
+ for(const point of points)counts[point.region]++;
+ for(const n of names){
+  if(counts[n.name]!==expected[n.name]||n.letters.reduce((a,b)=>a+b[1],0)!==n.expected)throw Error(n.name+' invalid region or weights');
+  const cells=points.filter(p=>p.region===n.name);
+  const symbols=n.letters.flatMap(([letter,count])=>Array(count).fill(letter));
+  if(symbols.length!==cells.length)throw Error(n.name+' count mismatch');
+  cells.forEach((cell,i)=>{cell.letter=symbols[i]});
+  const audit=Object.fromEntries(n.letters.map(([l])=>[l,0]));
+  cells.forEach(p=>audit[p.letter]++);
+  for(const [letter,weight] of n.letters)if(audit[letter]!==weight)throw Error(n.name+' '+letter+' mismatch');
+ }
+ if(points.filter(p=>p.row===14&&p.region==='MIKE').map(p=>p.col).join(',')!=='1,14')throw Error('Row 14 endpoints invalid');
+ return points;
+}
+function el(tag,attrs={},content){const e=document.createElementNS(NS,tag);for(const [key,val]of Object.entries(attrs))e.setAttribute(key,String(val));if(content!==undefined)e.textContent=content;return e;}
+function label(parent,x,y,t,size,color,weight=600,anchor='middle'){parent.append(el('text',{x,y,'text-anchor':anchor,'font-family':'Arial, Helvetica, sans-serif','font-size':size,'font-weight':weight,fill:color},t))}
+function draw(points){
+ svg.replaceChildren();
+ svg.append(el('rect',{width:1200,height:1840,rx:25,fill:'#05080d'}));
+ label(svg,600,83,'T16 = 136',61,'#f1e5c7',700);
+ label(svg,600,142,'AMIT MIKE ROV · ENGLISH SIMPLE',28,'#bfc3cf');
+ const grp=el('g');svg.append(grp);
+ const stepX=64,stepY=86,centerX=600,topY=205,radius=24;
+ for(const p of points){
+  const x=centerX+(p.col-(p.row+1)/2)*stepX,y=topY+(p.row-1)*stepY;
+  const [fill,highlight]=palette[p.region];
+  grp.append(el('circle',{cx:x,cy:y,r:radius+2,fill:highlight,opacity:.17}));
+  grp.append(el('circle',{cx:x,cy:y,r:radius,fill,stroke:highlight,'stroke-opacity':.6,'stroke-width':1}));
+  label(grp,x,y+8,p.letter,25,'#090e16',750);
+ }
+ // The row-14 guide stays below letters, not through glyphs.
+ label(svg,600,1370,'14',18,'#bec5d0');
+ const sections=[['ROV','55','T10',245,'ROV'],['MIKE','38','11 + 12 + 13 + 2',600,'MIKE'],['AMIT','43','12 + 15 + 16',955,'AMIT']];
+ sections.forEach(([name,value,formula,x,c])=>{
+  label(svg,x,1590,name,31,palette[c][0],700);
+  label(svg,x,1662,value,63,palette[c][0],750);
+  label(svg,x,1704,formula,24,'#b6bfce',400);
+ });
+ svg.append(el('path',{d:'M60 1744 H1140',stroke:'#49515d','stroke-width':1.5}));
+ label(svg,600,1803,'55 + 38 + 43 = 136',44,'#f4e4bd',700);
+}
+function download(blob,filename){
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);
+}
+function svgXml(){return new XMLSerializer().serializeToString(svg)}
+let points;
+try{points=build();draw(points);status.textContent='Verified ✓ 136 dots · 136 letters · ROV 55 · MIKE 38 · AMIT 43';window.WeightedLetterTiling={inspect:()=>({points:points.length,groups:Object.fromEntries(names.map(n=>[n.name,{total:n.expected,letters:Object.fromEntries(n.letters)}])),row14:points.filter(p=>p.row===14).map(p=>[p.col,p.region,p.letter])}),getSVG:svgXml};}
+catch(e){status.style.color='#ff9898';status.textContent='Validation failed: '+e.message;document.querySelectorAll('button').forEach(b=>b.disabled=true);throw e}
+document.getElementById('svgSave').onclick=()=>download(new Blob([svgXml()],{type:'image/svg+xml;charset=utf-8'}),'T16-136-weighted-letter-tiling.svg');
+document.getElementById('pngSave').onclick=()=>{
+ const image=new Image(),url=URL.createObjectURL(new Blob([svgXml()],{type:'image/svg+xml;charset=utf-8'}));
+ image.onload=()=>{let canvas=document.createElement('canvas');canvas.width=2400;canvas.height=3680;const ctx=canvas.getContext('2d');ctx.drawImage(image,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);canvas.toBlob(blob=>{if(blob)download(blob,'T16-136-weighted-letter-tiling.png')},'image/png')};
+ image.onerror=()=>{URL.revokeObjectURL(url);status.textContent='PNG export failed';};
+ image.src=url;
+};
+})();
+</script></body></html>
