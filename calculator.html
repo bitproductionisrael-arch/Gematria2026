@@ -1535,7 +1535,7 @@ function richMagnetText(r){
  const hits=corpusHits(r.total);if(hits.length)lines.push('Corpus: '+hits.map(h=>h.label).join(' / '));
  return lines.join('\n')
 }
-function selectedPlainText(){return selectedResults().map(minimalResultText).concat(permutationSelected?[permutationSelectionText(false)]:[]).join('\n\n')}
+function selectedPlainText(){return selectedResults().map(minimalResultText).join('\n\n')}
 function selectedRichText(){return selectedResults().map(richMagnetText).concat(permutationSelected?[permMagnetText(permutationData(document.getElementById('q').value))]:[]).join('\n\n')}
 function brokenResultText(r){
  if(r?.repeatMeta)return `${magnetQueryPrefix(r)} = ${fmt(r.total)} (${r.repeatMeta.methodName})`;
@@ -1552,8 +1552,8 @@ function compactMathSummary(r){
  return bits.join(' · ')
 }
 function allResultsPlainText(){return current.results.map(minimalResultText).join('\n\n')}
-function allResultsBrokenText(){return current.results.map(brokenResultText).join('\n')}
-function allResultsRichText(){return current.results.map(compactMathSummary).join('\n')}
+function allResultsBrokenText(){return current.results.map(brokenResultText).concat(hasPermutationInput()?[permutationSelectionText(true)]:[]).join('\n')}
+function allResultsRichText(){return current.results.map(compactMathSummary).concat(hasPermutationInput()?[permMagnetText(permutationData(document.getElementById('q').value))]:[]).join('\n\n')}
 function resultSelectionKey(r){return r?.selectionKey||r?.method?.key||''}
 function resultDisplayName(r){return r?.displayName||methodUiName(r?.method)||''}
 function methodAliasNote(r){return r?.method?.aliasNote||''}
@@ -1668,6 +1668,7 @@ function permutationData(input){
  permCacheKey=key;
  return permCacheData=computePermutationData(input);
 }
+function hasPermutationInput(){return Boolean(document.getElementById('q')?.value?.trim())}
 function permMagnetText(d){
  if(d.error)return L('חריגה מהמגבלה 500 אותיות','Limit of 500 letters exceeded');
  if(!d.n)return L('לא נמצאו אותיות לחישוב','No letters to calculate');
@@ -1690,12 +1691,16 @@ function permutationSelectionText(broken){
 function permutationComparisonCardHtml(){
  const d=permutationData(document.getElementById('q').value);
  const result=d.error?'500+':d.n?permFmt(d.total):'—';
- const title=L('תמורות אותיות / עצרות','Letter permutations / factorials');
+ const title=L('פקטוריאל · תמורות אותיות','Factorial · Letter Permutations');
  const terms=d.groups.filter(g=>g.repetitions>1).map(g=>g.repetitions+'!').join(' × ')||'1';
  const formula=d.error?L('מעל 500 אותיות — צמצם את הטקסט','Over 500 letters — shorten the text'):d.n?(d.n+'! / ('+terms+') = '+permFmt(d.total)):'—';
  const summary=d.error?'':L('אותיות','Letters')+': '+d.n+' · '+L('סוגי אותיות','Distinct letters')+': '+d.groups.length+' · Fold999: '+permFmt(d.fold);
  return '<div class="multi-detail-card perm-inline-card" data-detail-method="permutations">'+
-  '<div class="mh"><div class="card-actions"><button data-permutation-copy="1" title="'+L('העתק חישוב','Copy calculation')+'">🧲</button><button data-remove-permutation="1" title="'+L('הסר מהבחירה','Remove selection')+'">✕</button></div>'+
+  '<div class="mh"><div class="card-actions">'+
+  '<button data-permutation-copy="regular" title="'+L('מגנט רגיל · תוצאת הפקטוריאל','Regular · factorial result')+'">🧲</button>'+
+  '<button data-permutation-copy="rich" class="math-magnet" title="'+L('מגנט גדול · פירוק פקטוריאל','Full · factorial calculation')+'">🧲∑</button>'+
+  '<button data-permutation-copy="short" title="'+L('מגנט מקוצר · תוצאה (שיטה)','Short · result (method)')+'">🧲½</button>'+
+  '<button data-remove-permutation="1" title="'+L('הסר מהבחירה','Remove selection')+'">✕</button></div>'+
   '<div class="mn">'+title+'</div><div class="mv">'+result+'</div></div>'+
   '<div class="multi-breakdown"><div class="perm-inline-formula" dir="ltr">'+esc(formula)+'</div><div class="tiny">'+esc(summary)+'</div>'+
   (d.script==='he'?'<label class="perm-final-label"><input type="checkbox" data-permutation-finals="1"'+(permutationDistinctFinals?' checked':'')+'>'+L('הפרד אותיות סופיות','Treat final forms separately')+'</label>':'')+
@@ -1704,7 +1709,7 @@ function permutationComparisonCardHtml(){
 function permutationMethodButtonHtml(){
  const d=permutationData(document.getElementById('q').value);
  const result=d.error?'500+':d.n?permFmt(d.total):'—';
- return '<button class="method-btn permutation-method-btn '+(permutationSelected?'active':'')+'" data-permutation-open="1" aria-pressed="'+permutationSelected+'"><div class="mn">'+L('תמורות אותיות / עצרות','Letter permutations / factorials')+'</div><div class="mv">'+result+'</div></button>';
+ return '<button class="method-btn permutation-method-btn '+(permutationSelected?'active':'')+'" data-permutation-open="1" aria-pressed="'+permutationSelected+'"><div class="mn">'+L('פקטוריאל · תמורות אותיות','Factorial · Letter Permutations')+'</div><div class="mv">'+result+'</div></button>';
 }
 
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${categoryUiName(c)}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=(state.category==='ops'?permutationMethodButtonHtml():'')+group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(methodUiName(r.method))}${r.method.aliasNote?`<div class="tiny" style="margin-top:2px;opacity:.7">${esc(r.method.aliasNote)}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(methodUiName(r.method))} = ${fmt(r.total)}</option>`).join('');
@@ -2114,9 +2119,12 @@ document.getElementById('multiDetailGrid').addEventListener('change',e=>{
  if(e.target.matches('[data-permutation-finals]')){permutationDistinctFinals=e.target.checked;renderResults()}
 });
 document.getElementById('multiDetailGrid').addEventListener('click',async e=>{
- if(e.target.closest('[data-permutation-copy]')){
-  const ok=await copyText(permMagnetText(permutationData(document.getElementById('q').value)));
-  toast(ok?L('חישוב התמורות הועתק','Permutation calculation copied'):L('שגיאה בהעתקה','Copy failed'));
+ const permutationMagnet=e.target.closest('[data-permutation-copy]');
+ if(permutationMagnet){
+  const mode=permutationMagnet.dataset.permutationCopy;
+  const output=mode==='rich'?permMagnetText(permutationData(document.getElementById('q').value)):permutationSelectionText(mode==='short');
+  const ok=await copyText(output);
+  toast(ok?L('הפקטוריאל הועתק','Factorial copied'):L('שגיאה בהעתקה','Copy failed'));
   return;
  }
  if(e.target.closest('[data-remove-permutation]')){permutationSelected=false;renderResults();return}
@@ -2244,6 +2252,7 @@ console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');con
 
 
 console.assert(permutationData('אבגדה').total===120n,'Permutation five distinct letters = 120');
+console.assert(!permutationSelected,'Factorial is optional and does not enter ordinary magnet by default');
 console.assert(permutationData('יהוה').total===12n,'Permutation YHWH 4!/2!=12');
 console.assert(permutationData('עמית מייק רוב').total===3326400n,'Permutation Hebrew full 3326400');
 console.assert(permutationData('עמית מייק רוב').fold===729n,'Permutation Fold999 Hebrew full = 729');
