@@ -649,6 +649,9 @@ const METHODS={
   {key:'letterProductRegular',cat:'ops',name:'מכפלת אותיות (רגיל) / Letter Product (Regular)',map:HE_VAL,letterProduct:true,research:true},
    {key:'letterProductOrdinal',cat:'ops',name:'מכפלת אותיות (סדרי) / Letter Product (Ordinal)',map:HE_ORD,letterProduct:true,research:true},
    {key:'letterProductSmall',cat:'ops',name:'מכפלת אותיות (קטן) / Letter Product (Small)',map:HE_KATAN,letterProduct:true,research:true},
+   {key:'letterDivisionRegular',cat:'ops',name:'חילוק אותיות (רגיל) / Letter Division (Regular)',map:HE_VAL,letterDivision:true,research:true},
+   {key:'letterDivisionOrdinal',cat:'ops',name:'חילוק אותיות (סדרי) / Letter Division (Ordinal)',map:HE_ORD,letterDivision:true,research:true},
+   {key:'letterDivisionSmall',cat:'ops',name:'חילוק אותיות (קטן) / Letter Division (Small)',map:HE_KATAN,letterDivision:true,research:true},
    {key:'piAlphabetHebrew',cat:'ops',name:'אלפבית (π) פי',map:HE_PI,research:true},
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
   {key:'positional',cat:'ops',name:'גימטריה מיקום · מגרעת / Positional',map:HE_VAL,transform:positional,transformName:'position × value'},
@@ -754,6 +757,7 @@ const METHOD_EN_NAMES={
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
  milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
+ letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
  ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction',
  ruReverseOrdinal:'Russian Reverse Ordinal',ruZeroStep:'Russian One-step Zero',
@@ -926,8 +930,36 @@ function calculateLetterProduct(text,script,m){
  return {method:m,total:hasLetters?productPublicValue(total):0,words,letterProduct:true};
 }
 function productPublicValue(v){return v<=BigInt(Number.MAX_SAFE_INTEGER)?Number(v):v.toString()}
+
+/* Letter Division: left-associative across all recognized letters, preserving an
+   exact BigInt fraction alongside the decimal approximation used by the UI. */
+function calculateLetterDivision(text,script,m){
+ const words=[],allVals=[];
+ for(const raw of wordsOf(text)){
+  const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
+  const vals=toks.map(t=>t.value);
+  allVals.push(...vals);
+  const localNumerator=BigInt(vals[0]),localDenominator=vals.slice(1).reduce((p,v)=>p*BigInt(v),1n);
+  if(localDenominator===0n)throw new Error('Letter Division: zero denominator');
+  const localGcd=bigIntGcd(localNumerator,localDenominator);
+  words.push({raw,toks,baseVals:vals,vals:[...vals],subtotal:Number(localNumerator)/Number(localDenominator),exactFraction:(localNumerator/localGcd).toString()+'/'+(localDenominator/localGcd).toString()});
+ }
+ if(!allVals.length)return {method:m,total:0,words,letterDivision:true,exactFraction:null};
+ const numerator=BigInt(allVals[0]);
+ const denominator=allVals.slice(1).reduce((p,v)=>p*BigInt(v),1n);
+ if(denominator===0n)throw new Error('Letter Division: zero denominator');
+ const g=bigIntGcd(numerator,denominator);
+ const num=numerator/g,den=denominator/g;
+ return {method:m,total:Number(num)/Number(den),words,letterDivision:true,exactFraction:den===1n?num.toString():num.toString()+'/'+den.toString()};
+}
+function bigIntGcd(a,b){
+ a=a<0n?-a:a;b=b<0n?-b:b;
+ while(b!==0n){const r=a%b;a=b;b=r}
+ return a||1n;
+}
 function calculate(text,script,m){
  if(m.letterProduct)return calculateLetterProduct(text,script,m);
+ if(m.letterDivision)return calculateLetterDivision(text,script,m);
  if(m.custom==='redLadder')return calculateReductionResearch(text,m,'ladder');
  if(m.custom==='harmonicHalf')return calculateReductionResearch(text,m,'harmonic');
  if(m.custom==='agrippaDeltaSimple')return calculateAgrippaDeltaSimple(text);
@@ -954,6 +986,9 @@ const METHOD_BOOK_DOCS={
   'he:letterProductRegular':{plain:'מכפלת אותיות (רגיל)',original:'Letter Product · Regular',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם ערכי הגימטריה הרגילה, כולל אותיות סופיות בערך האות הבסיסית. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π value(letter), regular Hebrew map. אלף: 1 × 30 × 80 = 2400.'},
   'he:letterProductOrdinal':{plain:'מכפלת אותיות (סדרי)',original:'Letter Product · Ordinal',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם מיקומן באלפבית העברי, 1–22. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π position(letter), Hebrew alphabet positions 1…22. אלף: 1 × 12 × 17 = 204.'},
   'he:letterProductSmall':{plain:'מכפלת אותיות (קטן)',original:'Letter Product · Small',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם הערכים המצומצמים 1–9. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π reducedValue(letter), Hebrew 1…9. אלף: 1 × 3 × 8 = 24.'},
+  'he:letterDivisionRegular':{plain:'חילוק אותיות (רגיל)',original:'Letter Division · Regular',status:'modern',history:'חילוק רציף משמאל לימין של ערכי האותיות הרגילים. ברווחים מתעלמים; התוצאה המדויקת היא שבר, ולא מספר מעוגל.',formula:'v₁ ÷ v₂ ÷ … ÷ vₙ = v₁/(v₂×…×vₙ). אלף: 1 ÷ 30 ÷ 80 = 1/2400; (1/2400) × 888 = 0.37 בדיוק.'},
+  'he:letterDivisionOrdinal':{plain:'חילוק אותיות (סדרי)',original:'Letter Division · Ordinal',status:'modern',history:'חילוק רציף משמאל לימין של מיקומי האותיות, 1–22, עם שבר מדויק.',formula:'v₁ ÷ v₂ ÷ … ÷ vₙ. אלף: 1 ÷ 12 ÷ 17 = 1/204.'},
+  'he:letterDivisionSmall':{plain:'חילוק אותיות (קטן)',original:'Letter Division · Small',status:'modern',history:'חילוק רציף משמאל לימין של הערכים הקטנים, 1–9, עם שבר מדויק.',formula:'v₁ ÷ v₂ ÷ … ÷ vₙ. אלף: 1 ÷ 3 ÷ 8 = 1/24.'},
  'he:piAlphabetHebrew':{plain:'אלפבית (π) פי',original:'אלפבית (π) פי · Hebrew Pi Alphabet',status:'modern',history:'22 האותיות א–ת מקבלות לפי הסדר את 22 הספרות הראשונות אחרי הנקודה של π. החלק השלם 3 אינו נכלל. אותיות סופיות מקבלות את ערך האות הרגילה; ניקוד, רווחים וסימני פיסוק אינם נספרים.',formula:'π = 3.1415926535897932384626…; א–ת → 1415926535897932384626; sum the assigned letter values.'},
  'en:piAlphabet':{plain:'אלף־בית של פאי / Pi π Alphabet',original:'Pi π Alphabet · A–Z from π',status:'modern',history:'מצמידים את 26 הספרות הראשונות אחרי הנקודה של π לאותיות A–Z לפי הסדר. החלק השלם 3 אינו נכלל. אותיות גדולות וקטנות מקבלות אותו ערך; רווחים וסימני פיסוק אינם נספרים. Amit Mike Rov = 17 + 27 + 17 = 61.',formula:'π = 3.14159265358979323846264338…; A–Z → 14159265358979323846264338; sum the assigned letter values.'},
  'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
@@ -1741,7 +1776,7 @@ function permutationMethodButtonHtml(){
 }
 
 function renderResults(){ensureSelection();const cats=categories();document.getElementById('categoryTabs').innerHTML=cats.map(c=>`<button data-cat="${c}" class="${state.category===c?'active':''}">${categoryUiName(c)}</button>`).join('');const group=current.results.filter(r=>r.method.cat===state.category);document.getElementById('methodGrid').innerHTML=(state.category==='ops'?permutationMethodButtonHtml():'')+group.map(r=>`<button class="method-btn ${state.selectedMethods.includes(r.method.key)?'active':''}" data-method="${r.method.key}"><div class="mn">${esc(methodUiName(r.method))}${r.method.aliasNote?`<div class="tiny" style="margin-top:2px;opacity:.7">${esc(r.method.aliasNote)}</div>`:''}</div><div class="mv">${fmt(r.total)}</div></button>`).join('');const sel=document.getElementById('mobileMethod');sel.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.methodKey?'selected':''}>${esc(methodUiName(r.method))} = ${fmt(r.total)}</option>`).join('');
- const selected=selectedResults();const pane=document.getElementById('detailPane');pane.classList.remove('multi-mode','permutation-mode');if(selected.length||permutationSelected){renderMultiDetails(selected);return}const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=methodUiName(r.method);document.getElementById('detailHint').textContent=r.method.aliasNote?r.method.aliasNote:(r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'');document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
+ const selected=selectedResults();const pane=document.getElementById('detailPane');pane.classList.remove('multi-mode','permutation-mode');if(selected.length||permutationSelected){renderMultiDetails(selected);return}const r=methodByKey(state.methodKey);if(!r)return;state.methodKey=r.method.key;state.word=Math.min(state.word,Math.max(0,r.words.length-1));document.getElementById('detailName').textContent=methodUiName(r.method);document.getElementById('detailHint').textContent=r.letterDivision&&r.exactFraction?('שבר מדויק: '+r.exactFraction+' · אופרטור מחקר'):r.method.aliasNote?r.method.aliasNote:(r.method.research?'אופרטור מחקר — נשמר בנפרד משיטות מסורתיות':'');document.getElementById('detailValue').textContent=fmt(r.total);document.getElementById('detailBadges').innerHTML=badgesFor(r.total);const a=analyzeNumber(r.total);document.getElementById('detailStats').innerHTML=a?[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('Prime/Composite',a.prime?`Prime #${a.primeIndex}`:`Composite #${a.compositeIndex??'—'}`),kv('Factors',fmtFactors(a.factors)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('Digital root',fmt(a.root)),kv('Forms',(a.forms.concat(a.binom).slice(0,2).join(' · ')||'—')),kv('Corpus',corpusHits(r.total).map(x=>x.label).slice(0,1).join('')||'—')].join(''):'';document.getElementById('wordLabel').textContent=r.words.length?`${state.word+1}/${r.words.length} · ${r.words[state.word].raw}`:'אין מילים';document.getElementById('wordBreak').textContent=wordDescription(r,state.word)}
 
 function renderNumber(){ensureSelection();const src=document.getElementById('numSource');src.innerHTML=current.results.map(r=>`<option value="${r.method.key}" ${r.method.key===state.numKey?'selected':''}>${esc(r.method.name)} = ${fmt(r.total)}</option>`).join('');const r=methodByKey(state.numKey);if(!r)return;const a=analyzeNumber(r.total);document.getElementById('numHeadline').textContent=fmt(r.total);if(!a)return;
  const hits=corpusHits(a.n).map(h=>h.label).join(' · ')||'—';document.getElementById('numCore').innerHTML=[kv('φ(n) (מספר הזרים ל-n)',fmt(a.phi)),kv('λ(n) (מחזור הכפל המינימלי)',fmt(a.lambda)),kv('τ(n) (מספר כל המחלקים)',fmt(a.tau)),kv('σ(n) (סכום כל המחלקים)',fmt(a.sigma)),kv('rad(n) (מכפלת הראשוניים השונים)',fmt(a.rad)),kv('ω(n) (מספר ראשוניים שונים)',fmt(a.omega)),kv('Ω(n) (ראשוניים כולל חזרות)',fmt(a.Omega)),kv('Corpus',hits),kv('קרוב בקורפוס',nearestCorpus(a.n,2).map(x=>`${x.label} (${x.value})`).join(' · ')||'—'),kv('φ-chain (שרשרת φ עד 1)',a.phiChain.join(' → ')),kv('Class (סיווג סכום מחלקים)',a.aliquot),kv('Squarefree (בלי גורם בריבוע)',a.squarefree?'כן':'לא'),kv('Powerful (כל ראשוני בריבוע)',a.powerful?'כן':'לא')].join('');
@@ -2187,6 +2222,12 @@ document.getElementById('saveView').addEventListener('click',async()=>{if(state.
 
 /* ---------- self tests ---------- */
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
+console.assert(Math.abs(T('אלף','he','letterDivisionRegular')-1/2400)<1e-18,'Letter Division Regular Alef 1/2400');
+console.assert(Math.abs(T('אלף','he','letterDivisionOrdinal')-1/204)<1e-16,'Letter Division Ordinal Alef 1/204');
+console.assert(Math.abs(T('אלף','he','letterDivisionSmall')-1/24)<1e-16,'Letter Division Small Alef 1/24');
+console.assert(calculate('אלף','he',METHODS.he.find(m=>m.key==='letterDivisionRegular')).exactFraction==='1/2400','Letter Division exact fraction');
+console.assert(Math.abs(T('בג','he','letterDivisionRegular')-2/3)<1e-15,'Letter Division order 2/3');
+console.assert(Math.abs((1/2400)*888-0.37)<1e-15,'888 × (1/2400) exactly 37/100');
 console.assert(T('ΑΛ','el','isopsephy')===31,'Greek AL isopsephy 31');
 console.assert(T('ΑΛΦ','el','isopsephy')===531,'Greek ALPH isopsephy 531');
 console.assert(T('ΑΛΦΑ ΩΜΕΓΑ','el','isopsephy')===1381,'Greek Alpha Omega isopsephy 1381');
