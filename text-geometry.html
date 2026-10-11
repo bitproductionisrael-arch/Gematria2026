@@ -18,7 +18,7 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 <header><div class="wrap"><a class="brand" href="index.html">GEMATRIA<span>2026</span></a><nav><a href="calculator.html">מחשבון</a><a href="geometry-lab.html">Geometry Lab</a><a href="index.html">ראשי</a></nav></div></header>
 <main class="wrap">
 <div class="eyebrow">RESEARCH TOOL · EXACT MATHEMATICS</div><h1>טקסט <span style="color:var(--gold)">↔</span> גיאומטריה</h1>
-<p class="lead">טקסט → ערך גימטרי → בדיקה של מספרים משולשיים T, משולשים ממורכזים CT וטטראדרליים Tet. רק התאמה מספרית מדויקת נפתחת אוטומטית. צביעת מילים היא מיפוי סדרתי מוגדר, לא תכונה גיאומטרית מוכחת של הטקסט.</p>
+<p class="lead">טקסט → ערך גימטרי → בדיקה של מספרים משולשיים T, משולשים ממורכזים CT וטטראדרליים Tet. התאמה מדויקת לצורה יחידה או לשני משולשי T שווים נפתחת אוטומטית. צביעת מילים היא מיפוי סדרתי מוגדר, לא תכונה גיאומטרית מוכחת של הטקסט.</p>
 <div class="layout">
 <section class="panel"><h2>1 · מקור החישוב</h2>
 <div class="field"><label for="phrase">טקסט / שם / פסוק</label><textarea id="phrase" dir="auto" maxlength="2500">בראשית ברא אלהים את השמים ואת הארץ</textarea></div>
@@ -42,8 +42,8 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 <div class="preview-toolbar"><span id="slotNote">שיבוץ לפי ערכים · אותיות</span><div class="zoom-actions"><button type="button" id="previewZoomIn" aria-label="הגדל תצוגה">+</button><button type="button" id="previewZoomOut" aria-label="הקטן תצוגה">−</button><button type="button" id="previewReset" aria-label="אפס זום">איפוס</button><strong id="zoomLabel">×1.0</strong></div></div>
 <div class="preview-card"><canvas id="preview" role="img" aria-label="הדמיית הנקודות של צורת T או CT או Tet"></canvas><div id="previewNote" class="preview-note">מיפוי מילים לפי סדר</div></div>
 <div id="viewNote" class="legend-note" aria-live="polite">הגדל תצוגה כדי לראות אותיות</div><div id="nearest" class="closest"></div>
-<div class="row" style="margin-top:16px"><button class="btn primary" id="openGeometry" type="button" disabled>פתח צורה מלאה ב־Geometry Lab ←</button></div>
-<div class="fine">במצב גימטריה כל אות תופסת את ערכה בנקודות; במצב ספירת אותיות כל אות תופסת נקודה אחת. בחירת אותיות או מספרים משנה רק את הכיתוב, לא את הספירה. כשאין צורה מדויקת מוצגת פריסה משולשית פתוחה, המסומנת בבירור כלא־מדויקת.</div>
+<div class="row" style="margin-top:16px"><button class="btn primary" id="openGeometry" type="button" disabled>פתח צורה מלאה ב־Geometry Lab ←</button><button class="btn secondary" id="saveGeometry" type="button" disabled>📸 שמור תמונה · PNG</button></div>
+<div class="fine">במצב גימטריה כל אות תופסת את ערכה בנקודות; במצב ספירת אותיות כל אות תופסת נקודה אחת. בחירת אותיות או מספרים משנה רק את הכיתוב, לא את הספירה. כאשר הערך הוא 2×Tn מצוירים שני משולשי Tn שלמים החופפים זה לזה במרכזם בצורת מגן דוד. רק כשאין פירוק מתאים מוצגת פריסה משולשית פתוחה.</div>
 </section>
 </div>
 </main>
@@ -82,9 +82,9 @@ const maps={
 for(const [ch,v] of Object.entries(grReg))maps['el:reduced'][ch]=((v-1)%9)+1;
 const sup={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
-const familyName=(family,n)=>family==='TET'?'Tet'+n:family+n;
-const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6};
-const maxN={T:200,CT:200,TET:55};
+const familyName=(family,n)=>family==='TET'?'Tet'+n:family==='STAR'?'2×T'+n+' · מגן דוד':family+n;
+const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6,STAR:n=>n*(n+1)};
+const maxN={T:200,CT:200,TET:55,STAR:200};
 const methodLang=key=>key.split(':')[0];
 const detect=t=>/[\u0590-\u05ff]/.test(t)?'he':/[\u0370-\u03ff\u1f00-\u1fff]/.test(t)?'el':/[а-яё]/i.test(t)?'ru':'en';
 const digitalRoot=n=>n===0?0:1+(n-1)%9;
@@ -109,13 +109,27 @@ function tokenize(raw,method){
 }
 function wordValue(raw,method){let total=tokenize(raw,method).reduce((a,t)=>a+t.value,0);return method==='he:wordReduced'?digitalRoot(total):total;}
 function countLetters(raw,method){return tokenize(raw,method).length;}
-function exactMatches(value){const m=[];for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++){
- const count=formula[family](n);if(count===value)m.push({family,n,count});if(count>value)break;
-}return m;}
+function exactMatches(value){
+ const m=[];
+ for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++){
+  const count=formula[family](n);if(count===value)m.push({family,n,count});if(count>value)break;
+ }
+ // Detect a union of two congruent complete triangular lattices, not a single T.
+ const n=Math.round((Math.sqrt(4*value+1)-1)/2);
+ if(Number.isInteger(n)&&n>=2&&n<=maxN.STAR&&formula.STAR(n)===value)m.push({family:'STAR',n,count:value});
+ return m;
+}
 function closest(value){const all=[];for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++)all.push({family,n,count:formula[family](n)});
  return all.sort((a,b)=>Math.abs(a.count-value)-Math.abs(b.count-value)||a.count-b.count).slice(0,3);}
 function pointsForShape(choice){const {family,n}=choice,p=[];
- if(family==='T'||family==='PARTIAL'){
+ if(family==='STAR'){
+  const rise=Math.sqrt(3)/2,height=(n-1)*rise;
+  // Two full Tn layers with identical centroids; no cropped or duplicated count.
+  for(let layer=0;layer<2;layer++)for(let r=0;r<n;r++)for(let c=0;c<=r;c++){
+   const y=r*rise;
+   p.push({x:c-r/2,y:layer===0?y:4*height/3-y,layer});
+  }
+ }else if(family==='T'||family==='PARTIAL'){
   const limit=family==='PARTIAL'?choice.count:formula.T(n);
   for(let r=0;r<n&&p.length<limit;r++)for(let c=0;c<=r&&p.length<limit;c++)p.push({x:c-r/2,y:r*Math.sqrt(3)/2});
  }else if(family==='CT'){
@@ -191,42 +205,65 @@ function getPointSlots(count){if(count>20100)return [];const out=[];
  return out.length===count?out:[];
 }
 function restartMotion(){canvas.classList.remove('refresh-motion');void canvas.offsetWidth;canvas.classList.add('refresh-motion');}
-function drawPreview(){
- const w=canvas.clientWidth||400,h=canvas.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
- canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
- ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#0a111b';ctx.fillRect(0,0,w,h);
- if(!selected||selected.count>20100){viewNote.textContent='אין נקודות להצגה';return;}
- const p=pointsForShape(selected);if(!p.length){viewNote.textContent='אין נקודות להצגה';return;}
+function drawPreview(exportCanvas=null){
+ const exporting=Boolean(exportCanvas),target=exportCanvas||canvas,pen=exportCanvas?target.getContext('2d'):ctx;
+ const w=exporting?target.width:(canvas.clientWidth||400),h=exporting?target.height:(canvas.clientHeight||300);
+ const dpr=exporting?1:Math.min(2,window.devicePixelRatio||1);
+ if(!exporting){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
+ pen.setTransform(dpr,0,0,dpr,0,0);
+ pen.fillStyle='#0a111b';pen.fillRect(0,0,w,h);
+ if(!selected||selected.count>20100){if(!exporting)viewNote.textContent='אין נקודות להצגה';return;}
+ const p=pointsForShape(selected);if(!p.length){if(!exporting)viewNote.textContent='אין נקודות להצגה';return;}
  let minx=Infinity,maxx=-Infinity,miny=Infinity,maxy=-Infinity;
  for(const q of p){minx=Math.min(minx,q.x);maxx=Math.max(maxx,q.x);miny=Math.min(miny,q.y);maxy=Math.max(maxy,q.y);}
- const base=Math.min((w-52)/Math.max(1,maxx-minx),(h-54)/Math.max(1,maxy-miny),44),scale=base*zoom;
- const ox=w/2-(minx+maxx)/2*scale+panX,oy=h/2-(miny+maxy)/2*scale+panY;
- const hasSlots=pointSlots.length===p.length;
- const mode=display.value,labelEnabled=mode!=='dots'&&scale>=18;
- if(selected.family==='T'){
-  ctx.lineWidth=1;ctx.strokeStyle='#5a7188';ctx.beginPath();
-  for(const q of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])ctx.lineTo(ox+q.x*scale,oy+q.y*scale);ctx.stroke();
+ const base=Math.min((w-(exporting?120:52))/Math.max(1,maxx-minx),(h-(exporting?160:54))/Math.max(1,maxy-miny),exporting?60:44);
+ const scale=base*(exporting?1:zoom),ox=w/2-(minx+maxx)/2*scale+(exporting?0:panX),oy=h/2-(miny+maxy)/2*scale+(exporting?0:panY);
+ const star=selected.family==='STAR',mode=display.value,labelEnabled=!exporting&&mode!=='dots'&&scale>=18&&(!star||scale>=50);
+ if(star){
+  const n=selected.n,half=(n-1)/2,height=(n-1)*Math.sqrt(3)/2;
+  const outlines=[
+   {color:'#58b6ff',vertices:[{x:0,y:0},{x:-half,y:height},{x:half,y:height}]},
+   {color:'#e9bd65',vertices:[{x:-half,y:height/3},{x:half,y:height/3},{x:0,y:4*height/3}]}
+  ];
+  for(const outline of outlines){
+   pen.beginPath();
+   outline.vertices.forEach((v,i)=>i?pen.lineTo(ox+v.x*scale,oy+v.y*scale):pen.moveTo(ox+v.x*scale,oy+v.y*scale));
+   pen.closePath();pen.strokeStyle=outline.color;pen.lineWidth=exporting?4:1.7;pen.stroke();
+  }
+ }else if(selected.family==='T'){
+  pen.lineWidth=1;pen.strokeStyle='#5a7188';pen.beginPath();
+  for(const q of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])pen.lineTo(ox+q.x*scale,oy+q.y*scale);
+  pen.stroke();
  }
- const radius=Math.max(.85,Math.min(3.7,scale*.21));
+ const hasSlots=pointSlots.length===p.length;
+ const radius=exporting?Math.max(1.5,Math.min(5.2,scale*.13)):Math.max(.8,Math.min(3.4,scale*.19));
  for(let i=0;i<p.length;i++){
   const q=p[i],x=ox+q.x*scale,y=oy+q.y*scale;
   if(x<-25||x>w+25||y<-25||y>h+25)continue;
   const slot=hasSlots?pointSlots[i]:null;
-  ctx.fillStyle=slot?.color||'#4ba5ff';ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();
+  pen.fillStyle=star?(q.layer===0?'#58b6ff':'#e9bd65'):(slot?.color||'#4ba5ff');
+  pen.beginPath();pen.arc(x,y,radius,0,Math.PI*2);pen.fill();
   if(labelEnabled&&slot){
    const label=mode==='letters'?slot.glyph:String(slot.value);
    if(label.length>10)continue;
-   ctx.font=`700 ${Math.max(10,Math.min(15,scale*.37))}px Rubik,Arial,sans-serif`;
-   ctx.textAlign='center';ctx.textBaseline='bottom';ctx.lineWidth=2.8;
-   ctx.strokeStyle='#08131c';ctx.strokeText(label,x,y-5);
-   ctx.fillStyle='#f8fafc';ctx.fillText(label,x,y-5);
+   pen.font=`700 ${Math.max(10,Math.min(15,scale*.37))}px Rubik,Arial,sans-serif`;
+   pen.textAlign='center';pen.textBaseline='bottom';pen.lineWidth=2.8;
+   pen.strokeStyle='#08131c';pen.strokeText(label,x,y-5);
+   pen.fillStyle='#f8fafc';pen.fillText(label,x,y-5);
   }
  }
- viewNote.textContent=mode==='dots'?'נקודות צבעוניות לפי המילים':labelEnabled?`${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`:`הגדל תצוגה לראות ${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`;
+ if(exporting){
+  pen.textAlign='center';pen.textBaseline='middle';
+  pen.fillStyle='#e9bd65';pen.font='bold 42px system-ui,Arial,sans-serif';
+  pen.fillText(star?`2 × T${selected.n} = ${fmt(selected.count)}`:`${familyName(selected.family,selected.n)} = ${fmt(selected.count)}`,w/2,53);
+  if(star){pen.font='26px system-ui,Arial,sans-serif';pen.fillStyle='#9fb6c5';pen.fillText(`${fmt(formula.T(selected.n))} + ${fmt(formula.T(selected.n))} · ${fmt(selected.count)} points`,w/2,h-44);}
+  return;
+ }
+ viewNote.textContent=star?`מגן דוד · ${fmt(formula.T(selected.n))} נקודות בכל משולש · כחול + זהב`:mode==='dots'?'נקודות צבעוניות לפי המילים':labelEnabled?`${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`:`הגדל תצוגה לראות ${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`;
  zoomText.textContent='×'+zoom.toFixed(1);
 }
 function resetView(){zoom=1;panX=0;panY=0;drawPreview()}
-function chooseShape(shape){selected=shape;open.disabled=!shape||shape.family==='PARTIAL';
+function chooseShape(shape){selected=shape;open.disabled=!shape||shape.family==='PARTIAL';$('saveGeometry').disabled=!shape;
  elMatches.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(shape&&b.dataset.family===shape.family&&Number(b.dataset.n)===shape.n)));
  $('previewNote').textContent=shape?.family==='PARTIAL'?`${fmt(shape.count)} נקודות · T${shape.n} פתוח`:shape?familyName(shape.family,shape.n)+' · '+fmt(shape.count)+' נקודות':'אין שיבוץ';
  drawPreview();
@@ -253,7 +290,12 @@ function update(){
  if(hasVerifiedAllocation)pointSlots=getPointSlots(computed);
  const found=exactMatches(computed);
  if(found.length){
-  wasExact=true;elStatus.textContent=`התאמה מדויקת: ${fmt(computed)} נקודות · ${isLetterMode?'ספירת אותיות':'גימטריה'} · ${hasVerifiedAllocation?'כל נקודה נספרת פעם אחת.':'אין פירוק אותיות או מילים מאומת; הצורה מוצגת ללא שיבוץ צבעוני.'}`;elStatus.className='status';
+  wasExact=true;
+  const star=found.find(x=>x.family==='STAR');
+  elStatus.textContent=star
+   ?`התאמה מדויקת לפירוק כפול: ${fmt(computed)} = 2 × T${star.n} = ${fmt(formula.T(star.n))} + ${fmt(formula.T(star.n))}. שני משולשים שלמים יוצרים מגן דוד, ללא השלמת נקודות וללא חיסור.`
+   :`התאמה מדויקת: ${fmt(computed)} נקודות · ${isLetterMode?'ספירת אותיות':'גימטריה'} · ${hasVerifiedAllocation?'כל נקודה נספרת פעם אחת.':'אין פירוק אותיות או מילים מאומת; הצורה מוצגת ללא שיבוץ צבעוני.'}`;
+  elStatus.className='status';
   for(const shape of found){const b=document.createElement('button');b.type='button';b.className='match';b.dataset.family=shape.family;b.dataset.n=shape.n;b.textContent=`${familyName(shape.family,shape.n)} = ${fmt(shape.count)}`;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{resetView();chooseShape(shape)});elMatches.append(b);}
   chooseShape(found[0]);
  }else{
@@ -274,13 +316,13 @@ function goGeometry(){
   placement:placement.value,display:display.value,groups:wordColorsValid?groups:[],
   slots:pointSlots.length===computed?slots.map(s=>({glyph:s.glyph,value:s.value,count:s.count,color:s.color})):[]};
  try{sessionStorage.setItem('gematria2026.geometryOverlay.v1',JSON.stringify(payload));}catch(e){console.warn('Bridge session storage failed',e);return;}
- location.href=`geometry-lab.html?figure=${encodeURIComponent(familyName(selected.family,selected.n))}&bridge=1`;
+ location.href=`geometry-lab.html?figure=${encodeURIComponent(selected.family==='STAR'?'STAR'+selected.n:familyName(selected.family,selected.n))}&bridge=1`;
 }
 function goCalculator(){try{sessionStorage.setItem('gematria2026.calculatorReturn.v1',JSON.stringify({v:1,at:Date.now(),text:currentText}));}catch(_){}}
 function copyResult(){
  const desc=placement.value==='letters'?'Letter count':'Gematria value';
  const lines=[currentText,`Method: ${importLabel}`,`${desc}: ${computed}`,`Display: ${display.value}`,
- selected?.family==='PARTIAL'?`Partial lattice (not an exact figural number): ${computed}/${formula.T(selected.n)}`:selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No displayable lattice'];
+ selected?.family==='PARTIAL'?`Partial lattice (not an exact figural number): ${computed}/${formula.T(selected.n)}`:selected?.family==='STAR'?`2 × T${selected.n} = ${formula.T(selected.n)} + ${formula.T(selected.n)} = ${computed}; two complete triangular layers`:selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No displayable lattice'];
  if(wordColorsValid)lines.push(...groups.map(g=>`${g.label} = ${g.count}`));
  const value=lines.join('\n');if(navigator.clipboard?.writeText)navigator.clipboard.writeText(value).then(()=>$('copyProof').textContent='הועתק ✓').catch(()=>fallbackCopy(value));else fallbackCopy(value);
 }
@@ -305,6 +347,17 @@ canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1,Math.min(
 canvas.style.touchAction='none';canvas.addEventListener('pointerdown',e=>{pointer={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId)});
 canvas.addEventListener('pointermove',e=>{if(!pointer)return;panX+=e.clientX-pointer.x;panY+=e.clientY-pointer.y;pointer={x:e.clientX,y:e.clientY};drawPreview()});
 for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{pointer=null;});
+function saveGeometryPng(){
+ if(!selected||selected.count>20100)return;
+ const image=document.createElement('canvas');image.width=1800;image.height=1800;drawPreview(image);
+ image.toBlob(blob=>{
+  if(!blob)return;
+  const url=URL.createObjectURL(blob),link=document.createElement('a');
+  link.href=url;link.download=`Gematria2026_${selected.family==='STAR'?'2xT'+selected.n+'_MagenDavid':familyName(selected.family,selected.n)}_${selected.count}.png`;
+  document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+ },'image/png');
+}
+$('saveGeometry').addEventListener('click',saveGeometryPng);
 open.addEventListener('click',goGeometry);$('calculatorLink').addEventListener('click',goCalculator);$('copyProof').addEventListener('click',copyResult);window.addEventListener('resize',drawPreview);
 loadCalculatorImport();update();
 window.TextGeometryBridge={formula,exactMatches,wordValue,countLetters,tokenize,pointsForShape,getReading,getPlacement:()=>placement.value,getDisplay:()=>display.value,select,update};
