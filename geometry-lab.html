@@ -226,6 +226,7 @@
                             <div class="grid grid-cols-3 gap-1.5">
                                 <button type="button" class="figure-type-btn py-2 rounded bg-amber-600 text-white font-semibold" data-figure="T">T · משולש</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CT">CT · ממורכז</button>
+                                <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="STAR">✡ 2×T · מגן דוד</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="TET">Tet · 3D</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="SQ">SQ · ריבוע</button>
                                 <button type="button" class="figure-type-btn py-2 rounded bg-gray-800 text-gray-300 font-semibold" data-figure="CUBE">Cube · קובייה</button>
@@ -384,10 +385,10 @@
    Independent extension: the established T/CT/Tet generators are untouched. */
 (function () {
   'use strict';
-  const bounds = {T:[2,200], CT:[1,200], TET:[1,55], SQ:[1,200], CUBE:[1,30], PYR:[1,35], DODEC:[1,14]};
-  const display = {T:'T',CT:'CT',TET:'Tet',SQ:'SQ',CUBE:'Cube',PYR:'Pyr',DODEC:'Dodec'};
-  const order = ['T','CT','TET','SQ','CUBE','PYR','DODEC'];
-  const value = (f,n) => f==='T' ? n*(n+1)/2 : f==='CT' ? 1+3*n*(n-1)/2 :
+  const bounds = {T:[2,200], CT:[1,200], STAR:[2,141], TET:[1,55], SQ:[1,200], CUBE:[1,30], PYR:[1,35], DODEC:[1,14]};
+  const display = {T:'T',CT:'CT',STAR:'2×T',TET:'Tet',SQ:'SQ',CUBE:'Cube',PYR:'Pyr',DODEC:'Dodec'};
+  const order = ['T','CT','TET','SQ','CUBE','PYR','DODEC','STAR'];
+  const value = (f,n) => f==='T' ? n*(n+1)/2 : f==='CT' ? 1+3*n*(n-1)/2 : f==='STAR' ? n*(n+1) :
     f==='TET' ? n*(n+1)*(n+2)/6 : f==='SQ' ? n*n : f==='CUBE' ? n*n*n : f==='PYR' ? n*(n+1)*(2*n+1)/6 : f==='DODEC' ? n*(3*n-1)*(3*n-2)/2 : NaN;
   const supported = (f,n) => Number.isSafeInteger(n) && n>=bounds[f]?.[0] && n<=bounds[f]?.[1];
   function matches(total) {
@@ -403,7 +404,8 @@
     const pyr=[pyrEst-3,pyrEst-2,pyrEst-1,pyrEst,pyrEst+1,pyrEst+2,pyrEst+3].find(n=>n>=1&&value('PYR',n)===total);
     const dodecEst=Math.round(Math.cbrt(2*total/9));
     const dodec=[dodecEst-3,dodecEst-2,dodecEst-1,dodecEst,dodecEst+1,dodecEst+2,dodecEst+3].find(n=>n>=1&&value('DODEC',n)===total);
-    const cands={T:tri, CT:ct, TET:tet, SQ:sq, CUBE:cube, PYR:pyr, DODEC:dodec};
+    const star=Math.round((Math.sqrt(4*total+1)-1)/2);
+    const cands={T:tri, CT:ct, STAR:star, TET:tet, SQ:sq, CUBE:cube, PYR:pyr, DODEC:dodec};
     for (const f of order) {
       const n=cands[f];
       if (Number.isSafeInteger(n)&&n>=1&&value(f,n)===total)
@@ -972,6 +974,7 @@
 
         function getShapeSubtitle() {
             if (state.figureType === 'CT') return `POINTS: ${state.points.length} | RINGS: ${Math.max(0, state.n - 1)} | CENTER: 1`;
+            if (state.figureType === 'STAR') return `2 × T${state.n} | ${state.points.length} POINTS | ${state.n*(state.n+1)/2} + ${state.n*(state.n+1)/2} | TWO COMPLETE TRIANGLES`;
             if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR'||state.figureType==='DODEC')return window.FigurateFamilies.subtitle(state);
             if (state.figureType === 'TET') {
                 const mode=state.tetRenderMode || 'classic';
@@ -1135,6 +1138,11 @@
             },
 
             applyColorSequence: () => {
+                if(state.figureType==='STAR'){
+                    state.figLayers.forEach((layer,i)=>layer.color=i===0?'#58b6ff':'#e9bd65');
+                    state.points.forEach(p=>p.assignedColor=p.layer===0?'#58b6ff':'#e9bd65');
+                    return;
+                }
                 const numColors = state.customColorSequence.length;
                 if (state.figureType !== 'T') {
                     state.figLayers.forEach((layer, i) => {
@@ -1246,7 +1254,25 @@
             state.colorTargetType = 'cell';
             state.mutedColors.clear();
             state.cellShape = 'triangle';
-            if (family === 'CT') {
+            if(family==='STAR'){
+                const step=18,rise=step*Math.sqrt(3)/2,height=(n-1)*rise;
+                for(let layer=0;layer<2;layer++){
+                    const layerPoints=[];
+                    for(let r=0;r<n;r++)for(let c=0;c<=r;c++){
+                        const y=r*rise;
+                        const point={r,c,layer,x:(c-r/2)*step,y:layer===0?y:4*height/3-y,
+                            assignedColor:layer===0?'#58b6ff':'#e9bd65'};
+                        layerPoints.push(point);state.points.push(point);
+                    }
+                    const half=(n-1)*step/2;
+                    const vertices=layer===0
+                        ?[{x:0,y:0},{x:-half,y:height},{x:half,y:height}]
+                        :[{x:-half,y:height/3},{x:half,y:height/3},{x:0,y:4*height/3}];
+                    state.figLayers.push({vertices,side:n,points:layerPoints,layer,count:layerPoints.length,
+                        color:layer===0?'#58b6ff':'#e9bd65'});
+                }
+                if(state.points.length!==n*(n+1))throw Error('STAR point count mismatch');
+            }else if (family === 'CT') {
                 state.points.push({x:0,y:0,r:0,c:0,assignedColor:state.dotColor});
                 for (let ring = 1; ring < n; ring++) {
                     const side = 18 * ring;
@@ -1499,7 +1525,16 @@
         function drawFigurate(ctx, scale) {
             if(state.figureType==='SQ'||state.figureType==='CUBE'||state.figureType==='PYR'||state.figureType==='DODEC') {window.FigurateFamilies.draw(ctx,scale,state);return;}
             if (state.figureType==='TET') {if(state.tetRenderMode==='classic')drawTetrahedron(ctx,scale);else drawTetExperimental(ctx,scale);return;}
-            if (state.showLattice) {
+            if (state.figureType==='STAR' && state.showLattice) {
+                for(const layer of state.figLayers){
+                    const vertices=layer.vertices;ctx.beginPath();
+                    ctx.moveTo(vertices[0].x,vertices[0].y);ctx.lineTo(vertices[1].x,vertices[1].y);
+                    ctx.lineTo(vertices[2].x,vertices[2].y);ctx.closePath();
+                    ctx.strokeStyle=layer.color;ctx.lineWidth=2.4/Math.max(.2,scale);
+                    ctx.stroke();
+                }
+            }
+            if (state.showLattice && state.figureType!=='STAR') {
                 const ordered = state.figureType === 'CT' ? [...state.figLayers].reverse() : state.figLayers;
                 for (const layer of ordered) {
                     if (state.mutedColors.has(layer.color)) continue;
@@ -1734,7 +1769,7 @@
             }
             ctx.restore();
 
-            UI.shapeFormula.textContent = `${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} = ${state.points.length}`;
+            UI.shapeFormula.textContent = `${state.figureType === 'STAR' ? '2×T' : state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} = ${state.points.length}`;
             UI.shapePoints.textContent = getShapeSubtitle();
             updateColorCounter();
 
@@ -1783,8 +1818,9 @@
             eCtx.fillText(UI.shapePoints.textContent,exportCanvas.width/2,src.height+77*dpr);
 
             const link = document.createElement('a');
-            link.download = `GeoVisualizer_${state.figureType}${state.n}_${Date.now()}.jpg`;
-            link.href = exportCanvas.toDataURL('image/jpeg', 0.95);
+            const isStar=state.figureType==='STAR';
+            link.download = `GeoVisualizer_${state.figureType}${state.n}_${Date.now()}.${isStar?'png':'jpg'}`;
+            link.href = isStar?exportCanvas.toDataURL('image/png'):exportCanvas.toDataURL('image/jpeg', 0.95);
             link.click();
         });
 
@@ -2213,7 +2249,7 @@
             bridgeInfo.classList.add('hidden');
         }
         function applyTextBridgeOverlay(data) {
-            if (!data || data.v !== 1 || !['T','CT','TET'].includes(data.family) ||
+            if (!data || data.v !== 1 || !['T','CT','TET','STAR'].includes(data.family) ||
                 !Number.isSafeInteger(data.n) || data.n !== state.n || data.family !== state.figureType ||
                 !Number.isSafeInteger(data.value) || data.value !== state.points.length ||
                 typeof data.text !== 'string' || data.text.length > 2500) return false;
@@ -2253,7 +2289,7 @@
             state.bridgePlacement = data.placement === 'letters' ? 'letters' : 'gematria';
             bridgeInfo.replaceChildren();
             const title = document.createElement('div');
-            title.textContent = `טקסט → ${state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} · ${state.points.length} נקודות · ${state.bridgePlacement === 'letters' ? 'נקודה לכל אות' : 'יחידות גימטריה'} · ${validSlots ? 'שיבוץ אותיות' : validGroups ? 'צביעת מילים' : 'ללא צבעים'}`;
+            title.textContent = `טקסט → ${state.figureType === 'STAR' ? '2×T' : state.figureType === 'TET' ? 'Tet' : state.figureType}${state.n} · ${state.points.length} נקודות · ${state.bridgePlacement === 'letters' ? 'נקודה לכל אות' : 'יחידות גימטריה'} · ${validSlots ? 'שיבוץ אותיות' : validGroups ? 'צביעת מילים' : 'ללא צבעים'}`;
             title.className = 'text-amber-300 font-bold mb-1';bridgeInfo.append(title);
             if (validGroups) {
                 const row = document.createElement('div');row.className='flex flex-wrap gap-x-2 gap-y-1';
@@ -2330,7 +2366,7 @@
             refreshTetMoveButton();
             const tetButton=document.getElementById('tetShowInteriorBtn');
             if(tetButton) tetButton.textContent=state.tetShowInterior?'X-Ray פעיל · הצג מעטפת בלבד':'מעטפת בלבד · הצג נקודות פנימיות (X-Ray)';
-            document.getElementById('promptInput').value=`${family === 'TET' ? 'Tet' : family === 'PYR' ? 'Pyr' : family === 'DODEC' ? 'Dodec' : family}${n}`;
+            document.getElementById('promptInput').value=`${family === 'STAR' ? 'STAR' : family === 'TET' ? 'Tet' : family === 'PYR' ? 'Pyr' : family === 'DODEC' ? 'Dodec' : family}${n}`;
             autoScaleAndPosition();
             window.FigurateFamilies.renderMatches(state,createBaseShape);
         }
@@ -2342,9 +2378,9 @@
                 if(exact){createBaseShape(exact.n,exact.family);return;}
                 alert('לא נמצאה צורה מדויקת הניתנת לציור למספר הזה במשפחות הפעילות.');return;
             }
-            const match=input.match(/^(dodecahedron|dodecahedral|dodec|dod|pyramid|pyr|cube|cubic|square|sq|tet|ct|c|t|s)\s*[_-]?\s*(\d+)$/i);
+            const match=input.match(/^(dodecahedron|dodecahedral|dodec|dod|pyramid|pyr|cube|cubic|square|sq|tet|ct|star|hexagram|c|t|s)\s*[_-]?\s*(\d+)$/i);
             if(!match){alert('דוגמאות: 816, Dodec6, Tet16, Pyr5, T10, CT10, SQ8, Cube4');return;}
-            const aliases={C:'CT',S:'SQ',SQUARE:'SQ',CUBIC:'CUBE',PYRAMID:'PYR',DOD:'DODEC',DODECAHEDRON:'DODEC',DODECAHEDRAL:'DODEC'};
+            const aliases={C:'CT',S:'SQ',HEXAGRAM:'STAR',SQUARE:'SQ',CUBIC:'CUBE',PYRAMID:'PYR',DOD:'DODEC',DODECAHEDRON:'DODEC',DODECAHEDRAL:'DODEC'};
             const family=aliases[match[1].toUpperCase()]||match[1].toUpperCase();
             createBaseShape(Number(match[2]),family);
         }
@@ -2566,7 +2602,7 @@
             inspect:()=>({points:state.points.length,labels:state.bridgeLabelMap?.size||0,display:state.bridgeDisplay,placement:state.bridgePlacement}) };
         setTimeout(() => {
             const params = new URLSearchParams(location.search);
-            const match = (params.get('figure') || '').match(/^(DODEC|PYR|CUBE|SQ|TET|CT|T)(\d+)$/i);
+            const match = (params.get('figure') || '').match(/^(DODEC|PYR|CUBE|SQ|TET|CT|STAR|T)(\d+)$/i);
             let n = 37, family = 'T';
             if (match) { family = match[1].toUpperCase(); n = Number(match[2]); }
             const valid = window.FigurateFamilies.supported(family,n);
