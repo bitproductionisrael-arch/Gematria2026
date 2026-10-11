@@ -32,7 +32,7 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 <header><div class="wrap"><a class="brand" href="index.html">GEMATRIA<span>2026</span></a><nav><a href="calculator.html">מחשבון</a><a href="geometry-lab.html">Geometry Lab</a><a href="index.html">ראשי</a></nav></div></header>
 <main class="wrap">
 <div class="eyebrow">RESEARCH TOOL · EXACT MATHEMATICS</div><h1>טקסט <span style="color:var(--gold)">↔</span> גיאומטריה</h1>
-<p class="lead">טקסט → ערך גימטרי → בדיקה של מספרים משולשיים T, משולשים ממורכזים CT וטטראדרליים Tet. התאמה מדויקת לצורה יחידה או לשני משולשי T שווים נפתחת אוטומטית. צביעת מילים היא מיפוי סדרתי מוגדר, לא תכונה גיאומטרית מוכחת של הטקסט.</p>
+<p class="lead">טקסט → ערך גימטרי → בדיקה של צורות מדויקות: T, CT, Tet, מגן דוד כפול, ריבועים, קוביות, פירמידות ומשפחות נוספות במעבדה. התאמה מדויקת לצורה יחידה או לשני משולשי T שווים נפתחת אוטומטית. צביעת מילים היא מיפוי סדרתי מוגדר, לא תכונה גיאומטרית מוכחת של הטקסט.</p>
 <div class="layout">
 <section class="panel"><h2>1 · מקור החישוב</h2>
 <div class="field"><label for="phrase">טקסט / שם / פסוק</label><textarea id="phrase" dir="auto" maxlength="2500">בראשית ברא אלהים את השמים ואת הארץ</textarea></div>
@@ -105,9 +105,9 @@ const maps={
 for(const [ch,v] of Object.entries(grReg))maps['el:reduced'][ch]=((v-1)%9)+1;
 const sup={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
-const familyName=(family,n)=>family==='TET'?'Tet'+n:family==='STAR'?'2×T'+n+' · מגן דוד':family==='RECT'?'מלבן':family==='CIRCLE'?'מעגל':family==='SPIRAL'?'ספירלה':family+n;
-const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6,STAR:n=>n*(n+1)};
-const maxN={T:200,CT:200,TET:55,STAR:200};
+const familyName=(family,n)=>family==='TET'?'Tet'+n:family==='STAR'?'2×T'+n+' · מגן דוד':family==='PYR'?'Pyr'+n:family==='DODEC'?'Dodec'+n:family==='SQ'?'SQ'+n:family==='CUBE'?'Cube'+n:family==='RECT'?'מלבן':family==='CIRCLE'?'מעגל':family==='SPIRAL'?'ספירלה':family+n;
+const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6,STAR:n=>n*(n+1),SQ:n=>n*n,CUBE:n=>n*n*n,PYR:n=>n*(n+1)*(2*n+1)/6,DODEC:n=>n*(3*n-1)*(3*n-2)/2};
+const maxN={T:200,CT:200,TET:55,STAR:200,SQ:200,CUBE:30,PYR:35,DODEC:14};
 const methodLang=key=>key.split(':')[0];
 const detect=t=>/[\u0590-\u05ff]/.test(t)?'he':/[\u0370-\u03ff\u1f00-\u1fff]/.test(t)?'el':/[а-яё]/i.test(t)?'ru':'en';
 const digitalRoot=n=>n===0?0:1+(n-1)%9;
@@ -134,7 +134,7 @@ function wordValue(raw,method){let total=tokenize(raw,method).reduce((a,t)=>a+t.
 function countLetters(raw,method){return tokenize(raw,method).length;}
 function exactMatches(value){
  const m=[];
- for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++){
+ for(const family of ['T','CT','TET','SQ','CUBE','PYR','DODEC'])for(let n=family==='T'?2:1;n<=maxN[family];n++){
   const count=formula[family](n);if(count===value)m.push({family,n,count});if(count>value)break;
  }
  // Detect a union of two congruent complete triangular lattices, not a single T.
@@ -147,8 +147,24 @@ function nearFactorPair(value){
  return null;
 }
 function pointsForShape(choice){const {family,n}=choice,p=[];
- if(family==='RECT'){
-  for(let r=0;r<choice.rows;r++)for(let c=0;c<choice.cols;c++)p.push({x:c-(choice.cols-1)/2,y:r-(choice.rows-1)/2});
+ if(family==='RECT'||family==='SQ'){
+  const rows=family==='SQ'?n:choice.rows,cols=family==='SQ'?n:choice.cols;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++)p.push({x:c-(cols-1)/2,y:r-(rows-1)/2});
+ }else if(family==='CUBE'){
+  const ca=Math.cos(.46),sa=Math.sin(.46),se=Math.sin(.52),ce=Math.cos(.52),m=(n-1)/2;
+  for(let z=0;z<n;z++)for(let y=0;y<n;y++)for(let x=0;x<n;x++){
+   const X=x-m,Y=y-m,Z=z-m,u=X*ca-Y*sa,v=X*sa+Y*ca;
+   p.push({x:u,y:v*se-Z*ce});
+  }
+ }else if(family==='PYR'){
+  const ca=Math.cos(.57),sa=Math.sin(.57),se=Math.sin(.53),ce=Math.cos(.53);
+  for(let side=1;side<=n;side++){
+   const m=(side-1)/2,Z=(n-side)*1.1;
+   for(let r=0;r<side;r++)for(let c=0;c<side;c++){
+    const X=c-m,Y=r-m,u=X*ca-Y*sa,v=X*sa+Y*ca;
+    p.push({x:u,y:v*se-Z*ce});
+   }
+  }
  }else if(family==='CIRCLE'){
   const radius=Math.max(1,choice.count/(2*Math.PI));
   for(let i=0;i<choice.count;i++){const angle=2*Math.PI*i/choice.count-Math.PI/2;p.push({x:radius*Math.cos(angle),y:radius*Math.sin(angle)});}
@@ -246,7 +262,7 @@ function drawPreview(exportCanvas=null){
  pen.fillStyle='#0a111b';pen.fillRect(0,0,w,h);
  if(!selected||selected.count>20100){if(!exporting){viewNote.textContent='אין ייצוג נבחר';$('emptyGeometry').hidden=false;zoomText.textContent='×1.0';}return;}
  if(!exporting)$('emptyGeometry').hidden=true;
- const p=pointsForShape(selected);if(!p.length){if(!exporting)viewNote.textContent='אין נקודות להצגה';return;}
+ const p=pointsForShape(selected);if(!p.length){if(!exporting){viewNote.textContent=selected?.family==='DODEC'?'Dodec: ייצוג מרחבי במעבדת Geometry Lab':'אין נקודות להצגה';$('emptyGeometry').hidden=false;$('emptyGeometry').firstChild.textContent=selected?.family==='DODEC'?'צורת Dodec מדויקת': 'אין ציור אוטומטי';$('emptyGeometry').lastElementChild.textContent=selected?.family==='DODEC'?'פתח את הצורה המרחבית במעבדת Geometry Lab.':'הסבר לעוזר איך לייצג את הנקודות.';}return;}
  let minx=Infinity,maxx=-Infinity,miny=Infinity,maxy=-Infinity;
  for(const q of p){minx=Math.min(minx,q.x);maxx=Math.max(maxx,q.x);miny=Math.min(miny,q.y);maxy=Math.max(maxy,q.y);}
  const base=Math.min((w-(exporting?120:52))/Math.max(1,maxx-minx),(h-(exporting?160:54))/Math.max(1,maxy-miny),exporting?60:44);
@@ -267,9 +283,10 @@ function drawPreview(exportCanvas=null){
   pen.lineWidth=1;pen.strokeStyle='#5a7188';pen.beginPath();
   for(const q of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])pen.lineTo(ox+q.x*scale,oy+q.y*scale);
   pen.stroke();
- }else if(selected.family==='RECT'){
+ }else if(selected.family==='RECT'||selected.family==='SQ'){
+  const rows=selected.family==='SQ'?selected.n:selected.rows,cols=selected.family==='SQ'?selected.n:selected.cols;
   pen.strokeStyle='#6cd8cb';pen.lineWidth=exporting?3:1.5;
-  pen.strokeRect(ox-(selected.cols-1)*scale/2,oy-(selected.rows-1)*scale/2,(selected.cols-1)*scale,(selected.rows-1)*scale);
+  pen.strokeRect(ox-(cols-1)*scale/2,oy-(rows-1)*scale/2,(cols-1)*scale,(rows-1)*scale);
  }else if(selected.family==='CIRCLE'){
   pen.strokeStyle='#6cd8cb';pen.lineWidth=exporting?3:1.5;pen.beginPath();
   pen.arc(ox,oy,Math.max(1,selected.count/(2*Math.PI))*scale,0,2*Math.PI);pen.stroke();
@@ -302,7 +319,7 @@ function drawPreview(exportCanvas=null){
  zoomText.textContent='×'+zoom.toFixed(1);
 }
 function resetView(){zoom=1;panX=0;panY=0;drawPreview()}
-function chooseShape(shape){selected=shape;open.disabled=!shape||Boolean(shape.custom);$('saveGeometry').disabled=!shape;
+function chooseShape(shape){selected=shape;open.disabled=!shape||Boolean(shape.custom);$('saveGeometry').disabled=!shape||shape.family==='DODEC';
  elMatches.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(shape&&b.dataset.family===shape.family&&Number(b.dataset.n)===shape.n)));
  $('previewNote').textContent=shape?.custom?`${shape.description} · ${fmt(shape.count)} נקודות`:shape?familyName(shape.family,shape.n)+' · '+fmt(shape.count)+' נקודות':'לא נבחרה צורה';
  drawPreview();
@@ -461,7 +478,7 @@ canvas.style.touchAction='none';canvas.addEventListener('pointerdown',e=>{pointe
 canvas.addEventListener('pointermove',e=>{if(!pointer)return;panX+=e.clientX-pointer.x;panY+=e.clientY-pointer.y;pointer={x:e.clientX,y:e.clientY};drawPreview()});
 for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{pointer=null;});
 function saveGeometryPng(){
- if(!selected||selected.count>20100)return;
+ if(!selected||selected.count>20100||selected.family==='DODEC')return;
  const image=document.createElement('canvas');image.width=1800;image.height=1800;drawPreview(image);
  image.toBlob(blob=>{
   if(!blob)return;
