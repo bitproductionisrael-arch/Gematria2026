@@ -2249,7 +2249,7 @@
             bridgeInfo.classList.add('hidden');
         }
         function applyTextBridgeOverlay(data) {
-            if (!data || data.v !== 1 || !['T','CT','TET','STAR'].includes(data.family) ||
+            if (!data || data.v !== 1 || !['T','CT','TET','STAR','SQ','CUBE','PYR','DODEC'].includes(data.family) ||
                 !Number.isSafeInteger(data.n) || data.n !== state.n || data.family !== state.figureType ||
                 !Number.isSafeInteger(data.value) || data.value !== state.points.length ||
                 typeof data.text !== 'string' || data.text.length > 2500) return false;
