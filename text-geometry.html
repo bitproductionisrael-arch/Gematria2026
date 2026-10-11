@@ -12,6 +12,20 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 .control-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.control-grid .field{margin:4px 0}.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:10px 0;font-size:12px;color:#bfcbd6}.zoom-actions{display:flex;align-items:center;gap:6px}.zoom-actions button{min-width:38px;height:38px;border:1px solid #45576c;color:#eef3f8;border-radius:9px;background:#1a2835}.zoom-actions strong{font-variant-numeric:tabular-nums;color:#f2ce8a;min-width:37px;text-align:center}.refresh-motion{animation:refill .24s ease-out}@keyframes refill{from{opacity:.38;transform:scale(.99)}to{opacity:1;transform:scale(1)}}.preview-card canvas{cursor:grab}.preview-card canvas:active{cursor:grabbing}
 @media(max-width:580px){.control-grid{grid-template-columns:1fr}.preview-toolbar{align-items:flex-start}}
 @media(max-width:790px){.layout{grid-template-columns:1fr}main{padding-top:20px}.panel{padding:14px}header .wrap{gap:8px}nav{margin-inline-start:0;width:100%}nav a{flex:1;text-align:center}.preview-card canvas{height:270px}}@media(max-width:360px){.wrap{width:calc(100% - 20px)}.btn{flex:1}.preview-card canvas{height:230px}}
+.geometry-guide{display:grid;gap:10px;padding:14px;margin:14px 0;border:1px solid #3d6969;border-radius:12px;background:#0f1e27}
+.geometry-guide[hidden],.empty-geometry[hidden]{display:none}
+.geometry-guide-title{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;color:#f0cb81;font-weight:800;font-size:16px}
+.geometry-guide-title small{font-size:10px;font-weight:500;color:#adcad5}
+.geometry-guide-log{display:grid;gap:7px;max-height:200px;min-height:55px;overflow:auto}
+.geometry-guide-message{max-width:96%;padding:9px 12px;border-radius:10px;white-space:pre-wrap;font-size:12px;line-height:1.75}
+.guide-bot{background:#1b323c;justify-self:start;color:#d4e7ee}
+.guide-person{background:#36311f;justify-self:end;color:#ffe8ad}
+.geometry-guide-quick{display:flex;flex-wrap:wrap;gap:7px}
+.geometry-guide-quick button{padding:7px 10px;border-radius:8px;background:#193138;border:1px solid #426565;color:#cef4ee;font-size:12px}
+.geometry-guide-label{font-size:12px;font-weight:800;color:#bdd5df}
+.geometry-guide textarea{width:100%;min-height:60px;padding:10px;border:1px solid #475c6b;border-radius:10px;background:#09131c;color:#ecf5fb;resize:vertical}
+.empty-geometry{position:absolute;inset:45px 12px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:#d4dce5;font-size:18px;font-weight:750;pointer-events:none}
+.empty-geometry span{font-size:13px;font-weight:400;color:#92a6b4}
 </style>
 </head>
 <body>
@@ -39,11 +53,20 @@ main{padding:26px 0 70px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:
 <section class="panel"><h2>3 · גיאומטריה מספרית</h2>
 <div class="metric"><div><div class="sub" id="metricName">ערך הטקסט בשיטה הנבחרת</div><div class="big" id="total" aria-live="polite">2701</div></div><div class="pill" id="lettersCount">28 אותיות · 7 מילים</div></div>
 <div id="status" class="status" role="status" aria-live="polite"></div><div id="matches" class="matches"></div>
+<section id="geometryGuide" class="geometry-guide" hidden>
+ <div class="geometry-guide-title">✧ עוזר גיאומטריה <small>פקודות ציור מדויקות</small></div>
+ <div id="geometryGuideLog" class="geometry-guide-log" role="log" aria-live="polite"></div>
+ <div id="geometryGuideQuick" class="geometry-guide-quick"></div>
+ <label for="geometryGuideInput" class="geometry-guide-label">איך לייצג את המספר?</label>
+ <textarea id="geometryGuideInput" rows="2" maxlength="500" placeholder="לדוגמה: מלבן 31×43, מעגל, ספירלה"></textarea>
+ <div class="row"><button id="geometryGuideDraw" class="btn primary" type="button">צייר לפי הוראה</button><button id="geometryGuideGPT" class="btn secondary" type="button">שאל את ChatGPT ↗</button><button id="geometryGuideCopy" class="btn" type="button">העתק בקשה</button></div>
+ <div class="fine">בתיבה הזו פועל מפרש הוראות מקומי. לשיחה חופשית עם ChatGPT לחץ על הכפתור. חיבור AI ישיר בתוך האתר מחייב שרת מאובטח.</div>
+</section>
 <div class="preview-toolbar"><span id="slotNote">שיבוץ לפי ערכים · אותיות</span><div class="zoom-actions"><button type="button" id="previewZoomIn" aria-label="הגדל תצוגה">+</button><button type="button" id="previewZoomOut" aria-label="הקטן תצוגה">−</button><button type="button" id="previewReset" aria-label="אפס זום">איפוס</button><strong id="zoomLabel">×1.0</strong></div></div>
-<div class="preview-card"><canvas id="preview" role="img" aria-label="הדמיית הנקודות של צורת T או CT או Tet"></canvas><div id="previewNote" class="preview-note">מיפוי מילים לפי סדר</div></div>
+<div class="preview-card"><canvas id="preview" role="img" aria-label="תצוגת ייצוג מדויק בלבד"></canvas><div id="previewNote" class="preview-note">מיפוי מילים לפי סדר</div><div id="emptyGeometry" class="empty-geometry" hidden>אין ציור אוטומטי<span>הסבר לעוזר איך לייצג את הנקודות.</span></div></div>
 <div id="viewNote" class="legend-note" aria-live="polite">הגדל תצוגה כדי לראות אותיות</div><div id="nearest" class="closest"></div>
 <div class="row" style="margin-top:16px"><button class="btn primary" id="openGeometry" type="button" disabled>פתח צורה מלאה ב־Geometry Lab ←</button><button class="btn secondary" id="saveGeometry" type="button" disabled>📸 שמור תמונה · PNG</button></div>
-<div class="fine">במצב גימטריה כל אות תופסת את ערכה בנקודות; במצב ספירת אותיות כל אות תופסת נקודה אחת. בחירת אותיות או מספרים משנה רק את הכיתוב, לא את הספירה. כאשר הערך הוא 2×Tn מצוירים שני משולשי Tn שלמים החופפים זה לזה במרכזם בצורת מגן דוד. רק כשאין פירוק מתאים מוצגת פריסה משולשית פתוחה.</div>
+<div class="fine">במצב גימטריה כל אות תופסת את ערכה בנקודות; במצב ספירת אותיות כל אות תופסת נקודה אחת. בחירת אותיות או מספרים משנה רק את הכיתוב, לא את הספירה. כאשר הערך הוא 2×Tn מצוירים שני משולשי Tn שלמים החופפים זה לזה במרכזם בצורת מגן דוד. כאשר לא נמצאה התאמה צורנית מדויקת, לא מצוירת צורה אוטומטית; ניתן לתת לעוזר הוראת ציור מדויקת.</div>
 </section>
 </div>
 </main>
@@ -82,7 +105,7 @@ const maps={
 for(const [ch,v] of Object.entries(grReg))maps['el:reduced'][ch]=((v-1)%9)+1;
 const sup={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
-const familyName=(family,n)=>family==='TET'?'Tet'+n:family==='STAR'?'2×T'+n+' · מגן דוד':family+n;
+const familyName=(family,n)=>family==='TET'?'Tet'+n:family==='STAR'?'2×T'+n+' · מגן דוד':family==='RECT'?'מלבן':family==='CIRCLE'?'מעגל':family==='SPIRAL'?'ספירלה':family+n;
 const formula={T:n=>n*(n+1)/2,CT:n=>1+3*n*(n-1)/2,TET:n=>n*(n+1)*(n+2)/6,STAR:n=>n*(n+1)};
 const maxN={T:200,CT:200,TET:55,STAR:200};
 const methodLang=key=>key.split(':')[0];
@@ -119,19 +142,28 @@ function exactMatches(value){
  if(Number.isInteger(n)&&n>=2&&n<=maxN.STAR&&formula.STAR(n)===value)m.push({family:'STAR',n,count:value});
  return m;
 }
-function closest(value){const all=[];for(const family of ['T','CT','TET'])for(let n=family==='T'?2:1;n<=maxN[family];n++)all.push({family,n,count:formula[family](n)});
- return all.sort((a,b)=>Math.abs(a.count-value)-Math.abs(b.count-value)||a.count-b.count).slice(0,3);}
+function nearFactorPair(value){
+ for(let a=Math.floor(Math.sqrt(value));a>=2;a--)if(value%a===0)return [a,value/a];
+ return null;
+}
 function pointsForShape(choice){const {family,n}=choice,p=[];
- if(family==='STAR'){
+ if(family==='RECT'){
+  for(let r=0;r<choice.rows;r++)for(let c=0;c<choice.cols;c++)p.push({x:c-(choice.cols-1)/2,y:r-(choice.rows-1)/2});
+ }else if(family==='CIRCLE'){
+  const radius=Math.max(1,choice.count/(2*Math.PI));
+  for(let i=0;i<choice.count;i++){const angle=2*Math.PI*i/choice.count-Math.PI/2;p.push({x:radius*Math.cos(angle),y:radius*Math.sin(angle)});}
+ }else if(family==='SPIRAL'){
+  const golden=Math.PI*(3-Math.sqrt(5));
+  for(let i=0;i<choice.count;i++){const radius=.75*Math.sqrt(i),angle=i*golden;p.push({x:radius*Math.cos(angle),y:radius*Math.sin(angle)});}
+ }else if(family==='STAR'){
   const rise=Math.sqrt(3)/2,height=(n-1)*rise;
   // Two full Tn layers with identical centroids; no cropped or duplicated count.
   for(let layer=0;layer<2;layer++)for(let r=0;r<n;r++)for(let c=0;c<=r;c++){
    const y=r*rise;
    p.push({x:c-r/2,y:layer===0?y:4*height/3-y,layer});
   }
- }else if(family==='T'||family==='PARTIAL'){
-  const limit=family==='PARTIAL'?choice.count:formula.T(n);
-  for(let r=0;r<n&&p.length<limit;r++)for(let c=0;c<=r&&p.length<limit;c++)p.push({x:c-r/2,y:r*Math.sqrt(3)/2});
+ }else if(family==='T'){
+  for(let r=0;r<n;r++)for(let c=0;c<=r;c++)p.push({x:c-r/2,y:r*Math.sqrt(3)/2});
  }else if(family==='CT'){
   p.push({x:0,y:0});
   for(let ring=1;ring<n;ring++){
@@ -141,7 +173,7 @@ function pointsForShape(choice){const {family,n}=choice,p=[];
     p.push({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});
    }
   }
- }else{
+ }else if(family==='TET'){
   for(let z=0;z<n;z++){
    const side=n-z;for(let r=0;r<side;r++)for(let c=0;c<=r;c++)p.push({x:(c-r/2)+z*.72,y:(r-(side-1)/2)*Math.sqrt(3)/2-z*.67});
   }
@@ -212,7 +244,8 @@ function drawPreview(exportCanvas=null){
  if(!exporting){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
  pen.setTransform(dpr,0,0,dpr,0,0);
  pen.fillStyle='#0a111b';pen.fillRect(0,0,w,h);
- if(!selected||selected.count>20100){if(!exporting)viewNote.textContent='אין נקודות להצגה';return;}
+ if(!selected||selected.count>20100){if(!exporting){viewNote.textContent='אין ייצוג נבחר';$('emptyGeometry').hidden=false;zoomText.textContent='×1.0';}return;}
+ if(!exporting)$('emptyGeometry').hidden=true;
  const p=pointsForShape(selected);if(!p.length){if(!exporting)viewNote.textContent='אין נקודות להצגה';return;}
  let minx=Infinity,maxx=-Infinity,miny=Infinity,maxy=-Infinity;
  for(const q of p){minx=Math.min(minx,q.x);maxx=Math.max(maxx,q.x);miny=Math.min(miny,q.y);maxy=Math.max(maxy,q.y);}
@@ -234,6 +267,12 @@ function drawPreview(exportCanvas=null){
   pen.lineWidth=1;pen.strokeStyle='#5a7188';pen.beginPath();
   for(const q of [p[0],p[p.length-selected.n],p[p.length-1],p[0]])pen.lineTo(ox+q.x*scale,oy+q.y*scale);
   pen.stroke();
+ }else if(selected.family==='RECT'){
+  pen.strokeStyle='#6cd8cb';pen.lineWidth=exporting?3:1.5;
+  pen.strokeRect(ox-(selected.cols-1)*scale/2,oy-(selected.rows-1)*scale/2,(selected.cols-1)*scale,(selected.rows-1)*scale);
+ }else if(selected.family==='CIRCLE'){
+  pen.strokeStyle='#6cd8cb';pen.lineWidth=exporting?3:1.5;pen.beginPath();
+  pen.arc(ox,oy,Math.max(1,selected.count/(2*Math.PI))*scale,0,2*Math.PI);pen.stroke();
  }
  const hasSlots=pointSlots.length===p.length;
  const radius=exporting?Math.max(1.5,Math.min(5.2,scale*.13)):Math.max(.8,Math.min(3.4,scale*.19));
@@ -255,19 +294,98 @@ function drawPreview(exportCanvas=null){
  if(exporting){
   pen.textAlign='center';pen.textBaseline='middle';
   pen.fillStyle='#e9bd65';pen.font='bold 42px system-ui,Arial,sans-serif';
-  pen.fillText(star?`2 × T${selected.n} = ${fmt(selected.count)}`:`${familyName(selected.family,selected.n)} = ${fmt(selected.count)}`,w/2,53);
+  pen.fillText(star?`2 × T${selected.n} = ${fmt(selected.count)}`:selected.custom?`${selected.description} · ${fmt(selected.count)}`:`${familyName(selected.family,selected.n)} = ${fmt(selected.count)}`,w/2,53);
   if(star){pen.font='26px system-ui,Arial,sans-serif';pen.fillStyle='#9fb6c5';pen.fillText(`${fmt(formula.T(selected.n))} + ${fmt(formula.T(selected.n))} · ${fmt(selected.count)} points`,w/2,h-44);}
   return;
  }
- viewNote.textContent=star?`מגן דוד · ${fmt(formula.T(selected.n))} נקודות בכל משולש · כחול + זהב`:mode==='dots'?'נקודות צבעוניות לפי המילים':labelEnabled?`${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`:`הגדל תצוגה לראות ${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`;
+ viewNote.textContent=selected.custom?`פריסה לפי הוראה: ${selected.description} · ${fmt(selected.count)} נקודות`:star?`מגן דוד · ${fmt(formula.T(selected.n))} נקודות בכל משולש · כחול + זהב`:mode==='dots'?'נקודות צבעוניות לפי המילים':labelEnabled?`${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`:`הגדל תצוגה לראות ${mode==='letters'?'אותיות':'מספרים'} · זום ×${zoom.toFixed(1)}`;
  zoomText.textContent='×'+zoom.toFixed(1);
 }
 function resetView(){zoom=1;panX=0;panY=0;drawPreview()}
-function chooseShape(shape){selected=shape;open.disabled=!shape||shape.family==='PARTIAL';$('saveGeometry').disabled=!shape;
+function chooseShape(shape){selected=shape;open.disabled=!shape||Boolean(shape.custom);$('saveGeometry').disabled=!shape;
  elMatches.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(shape&&b.dataset.family===shape.family&&Number(b.dataset.n)===shape.n)));
- $('previewNote').textContent=shape?.family==='PARTIAL'?`${fmt(shape.count)} נקודות · T${shape.n} פתוח`:shape?familyName(shape.family,shape.n)+' · '+fmt(shape.count)+' נקודות':'אין שיבוץ';
+ $('previewNote').textContent=shape?.custom?`${shape.description} · ${fmt(shape.count)} נקודות`:shape?familyName(shape.family,shape.n)+' · '+fmt(shape.count)+' נקודות':'לא נבחרה צורה';
  drawPreview();
 }
+
+const guide=$('geometryGuide'),chatLog=$('geometryGuideLog'),quick=$('geometryGuideQuick'),guideInput=$('geometryGuideInput');
+let guideContext='';
+function guideSay(text,person=false){
+ const node=document.createElement('div');node.className='geometry-guide-message '+(person?'guide-person':'guide-bot');
+ node.textContent=text;chatLog.append(node);chatLog.scrollTop=chatLog.scrollHeight;
+}
+function showGuide(){
+ const key=currentText+'|'+currentMethod+'|'+placement.value+'|'+computed;
+ if(guideContext!==key){
+  guideContext=key;chatLog.replaceChildren();guideInput.value='';
+  guideSay(`אין צורה מספרית מדויקת במאגר עבור ${fmt(computed)}. לא נצייר צורה חלקית. כיצד לארגן בדיוק ${fmt(computed)} נקודות?`);
+ }
+ quick.replaceChildren();
+ const pair=nearFactorPair(computed);
+ for(const command of [...(pair?[`מלבן ${pair[0]}×${pair[1]}`]:[]),'מעגל','ספירלה']){
+  const button=document.createElement('button');button.type='button';button.dataset.guideCommand=command;button.textContent=command;quick.append(button);
+ }
+ guide.hidden=false;
+}
+function interpretGeometry(command,total){
+ const text=String(command||'').trim();
+ if(!text)return {reply:'כתוב הוראה מפורשת. למשל: מלבן 31×43, מעגל, או ספירלה.'};
+ const pair=text.match(/(\d{1,5})\s*(?:×|x|\*|על|by)\s*(\d{1,5})/i);
+ if(pair){
+  const rows=+pair[1],cols=+pair[2];
+  if(rows<2||cols<2||rows*cols!==total)return {reply:`${rows}×${cols} = ${fmt(rows*cols)}, אבל צריך ${fmt(total)}. לא אצייר כמות שגויה.`};
+  return {shape:{family:'RECT',n:rows,rows,cols,count:total,custom:true,description:`מלבן ${rows}×${cols}`},reply:`מלבן ${rows}×${cols} = ${fmt(total)}. כל הנקודות נכללות.`};
+ }
+ if(/ריבוע|square/i.test(text)){
+  const side=Math.round(Math.sqrt(total));
+  return side>=2&&side*side===total?interpretGeometry(`מלבן ${side}×${side}`,total):{reply:`${fmt(total)} אינו ריבוע שלם. לא אבנה ריבוע חסר.`};
+ }
+ if(/מלבן|רשת|rectangle|grid/i.test(text)){
+  const factors=nearFactorPair(total);
+  return factors?interpretGeometry(`מלבן ${factors[0]}×${factors[1]}`,total):{reply:`ל־${fmt(total)} לא נמצאו שני גורמים שלמים מעל 1. אפשר לבקש מעגל או ספירלה.`};
+ }
+ if(/מגן דוד|כוכב|hexagram|star/i.test(text)){
+  const shape=exactMatches(total).find(x=>x.family==='STAR');
+  return shape?{shape,reply:`מגן דוד מדויק: 2×T${shape.n} = ${fmt(total)}.`}:{reply:`ל־${fmt(total)} אין 2×Tn שלם בתחום הנתמך. לא אצייר מגן דוד חסר נקודות.`};
+ }
+ if(/משולש|triangle|^T\d+$/i.test(text)){
+  const shape=exactMatches(total).find(x=>x.family==='T');
+  return shape?{shape,reply:`משולש שלם T${shape.n} = ${fmt(total)}.`}:{reply:`ל־${fmt(total)} אין Tn שלם בתחום הנתמך. אין ציור משולש חלקי.`};
+ }
+ if(/ספירלה|spiral|חמניה/i.test(text))
+  return {shape:{family:'SPIRAL',n:total,count:total,custom:true,description:'ספירלה'},reply:`צוירה ספירלה מדויקת עם ${fmt(total)} נקודות. זו פריסה מבוקשת ולא טענה למספר צורני.`};
+ if(/מעגל|עיגול|circle|ring|טבעת/i.test(text))
+  return {shape:{family:'CIRCLE',n:total,count:total,custom:true,description:'מעגל'},reply:`צויר מעגל מדויק עם ${fmt(total)} נקודות. זו פריסה מבוקשת ולא טענה למספר צורני.`};
+ return {reply:'ההוראה עדיין לא מוגדרת בצורה שאני יכול לצייר כאן. אפשר לכתוב מלבן a×b, מעגל או ספירלה, או לפתוח שיחה עם ChatGPT לפיתוח צורה אחרת.'};
+}
+function executeGuide(command){
+ const text=String(command||'').trim();if(!text)return;
+ guideSay(text,true);
+ const result=interpretGeometry(text,computed);
+ if(result.shape){
+  const points=pointsForShape(result.shape);
+  if(points.length!==computed){guideSay(`נוצרו ${fmt(points.length)} במקום ${fmt(computed)} — השרטוט בוטל.`);return;}
+  zoom=1;panX=0;panY=0;chooseShape(result.shape);
+  elStatus.textContent=`ייצוג לפי הוראה: ${result.shape.description||familyName(result.shape.family,result.shape.n)} · ${fmt(computed)} נקודות מדויקות.`;
+  elStatus.className='status';
+ }
+ guideSay(result.reply);guideInput.value='';guide.hidden=false;
+}
+function chatGPTQuestion(){
+ return ['עזור לי לבחור ייצוג גיאומטרי מדויק למספר, בלי משולשים חלקיים או חיסור/השלמת נקודות.',
+  'מספר נקודות: '+computed,'טקסט: '+currentText,'שיטה: '+importLabel,
+  'הוראה רצויה: '+(guideInput.value.trim()||'הצע כמה דרכים צורניות או פירוקים מדויקים.'),
+  'הצג מנגנון קואורדינטות שמבטיח בדיוק '+computed+' נקודות. כתוב בעברית בטקסט רגיל ובלי LaTeX.'].join('\n');
+}
+$('geometryGuideDraw').addEventListener('click',()=>executeGuide(guideInput.value));
+guideInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing){event.preventDefault();executeGuide(guideInput.value);}});
+quick.addEventListener('click',event=>{const b=event.target.closest('[data-guide-command]');if(b)executeGuide(b.dataset.guideCommand);});
+$('geometryGuideGPT').addEventListener('click',()=>{const url='https://chatgpt.com/?q='+encodeURIComponent(chatGPTQuestion());window.open(url,'_blank','noopener,noreferrer');});
+$('geometryGuideCopy').addEventListener('click',()=>{
+ const ask=chatGPTQuestion();
+ if(navigator.clipboard?.writeText)navigator.clipboard.writeText(ask).then(()=>guideSay('הבקשה הועתקה לשיחה עם ChatGPT.')).catch(()=>fallbackCopy(ask));
+ else fallbackCopy(ask);
+});
 function update(){
  const data=getReading();currentReading=data;
  const {text,method,rows,valid,letters,origin}=data;
@@ -283,7 +401,7 @@ function update(){
  const isLetterMode=placement.value==='letters';
  elNotes.textContent=isLetterMode?'שיבוץ לפי כמות אותיות: אות אחת = נקודה אחת, גם כשערכה הגימטרי גבוה.':'שיבוץ לפי ערך: כל אות תופסת בדיוק את מספר הנקודות של ערכה. במצבים לא־אדיטיביים השיבוץ מתבצע לפי סכומי מילים מאומתים בלבד.';
  $('slotNote').textContent=`שיבוץ: ${isLetterMode?'אות אחת לכל נקודה':'יחידות גימטריה'} · סימון: ${display.value==='letters'?'אותיות':display.value==='numbers'?'ערכי אותיות':'נקודות'}`;
- elMatches.replaceChildren();elNearest.textContent='';selected=null;open.disabled=true;pointSlots=[];
+ elMatches.replaceChildren();elNearest.textContent='';selected=null;open.disabled=true;$('saveGeometry').disabled=true;guide.hidden=true;pointSlots=[];
  if(!text||!letters){elStatus.textContent='הקלד טקסט באלפבית הנתמך בשיטה שנבחרה.';elStatus.className='status warn';$('previewNote').textContent='אין נתונים';drawPreview();return;}
  if(!Number.isSafeInteger(computed)||computed<1||computed>20100){elStatus.textContent='מספר הנקודות אינו בטווח 1–20,100 להצגה במעבדה זו.';elStatus.className='status warn';$('previewNote').textContent='מחוץ לטווח';drawPreview();return;}
  const hasVerifiedAllocation=wordColorsValid;
@@ -299,19 +417,14 @@ function update(){
   for(const shape of found){const b=document.createElement('button');b.type='button';b.className='match';b.dataset.family=shape.family;b.dataset.n=shape.n;b.textContent=`${familyName(shape.family,shape.n)} = ${fmt(shape.count)}`;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{resetView();chooseShape(shape)});elMatches.append(b);}
   chooseShape(found[0]);
  }else{
-  wasExact=false;
-  const n=Math.ceil((Math.sqrt(8*computed+1)-1)/2);
-  const partial={family:'PARTIAL',n,count:computed};
-  elStatus.textContent=`אין T / CT / Tet מדויק ל־${fmt(computed)}. מוצגות ${fmt(computed)} נקודות בפריסה משולשית פתוחה T${n}, ללא השלמת הנקודות החסרות.${hasVerifiedAllocation?'':' אין פירוק אותיות או מילים מאומת.'}`;
-  elStatus.className='status warn';
-  const near=closest(computed);elNearest.textContent='צורות קרובות (לא התאמה): '+near.map(q=>`${familyName(q.family,q.n)}=${fmt(q.count)} (Δ${q.count-computed>0?'+':''}${fmt(q.count-computed)})`).join(' · ');
-  chooseShape(partial);
+  wasExact=false;elStatus.textContent=`לא נמצאה התאמה צורנית מדויקת עבור ${fmt(computed)} במשפחות הפעילות. לא ציירתי משולש אקראי. הגדר את הייצוג בעוזר שמתחת.`;
+  elStatus.className='status warn';chooseShape(null);showGuide();
  }
  restartMotion();
 }
 function select(choice){resetView();chooseShape(choice)}
 function goGeometry(){
- if(!selected||selected.family==='PARTIAL'||selected.count!==computed)return;
+ if(!selected||selected.custom||selected.count!==computed)return;
  const payload={v:1,at:Date.now(),family:selected.family,n:selected.n,value:computed,text:currentText,method:importLabel,
   placement:placement.value,display:display.value,groups:wordColorsValid?groups:[],
   slots:pointSlots.length===computed?slots.map(s=>({glyph:s.glyph,value:s.value,count:s.count,color:s.color})):[]};
@@ -322,7 +435,7 @@ function goCalculator(){try{sessionStorage.setItem('gematria2026.calculatorRetur
 function copyResult(){
  const desc=placement.value==='letters'?'Letter count':'Gematria value';
  const lines=[currentText,`Method: ${importLabel}`,`${desc}: ${computed}`,`Display: ${display.value}`,
- selected?.family==='PARTIAL'?`Partial lattice (not an exact figural number): ${computed}/${formula.T(selected.n)}`:selected?.family==='STAR'?`2 × T${selected.n} = ${formula.T(selected.n)} + ${formula.T(selected.n)} = ${computed}; two complete triangular layers`:selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No displayable lattice'];
+ selected?.custom?`Manually requested geometry: ${selected.description}; exactly ${computed} points`:selected?.family==='STAR'?`2 × T${selected.n} = ${formula.T(selected.n)} + ${formula.T(selected.n)} = ${computed}; two complete triangular layers`:selected?`${familyName(selected.family,selected.n)} = ${computed}`:'No exact shape selected and no fallback drawn'];
  if(wordColorsValid)lines.push(...groups.map(g=>`${g.label} = ${g.count}`));
  const value=lines.join('\n');if(navigator.clipboard?.writeText)navigator.clipboard.writeText(value).then(()=>$('copyProof').textContent='הועתק ✓').catch(()=>fallbackCopy(value));else fallbackCopy(value);
 }
