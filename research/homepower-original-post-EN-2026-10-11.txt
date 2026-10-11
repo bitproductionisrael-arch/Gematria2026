@@ -1,0 +1,645 @@
+Cube of order: Q₃
+8 vertices
+12 edges
+6 faces
+1 volumetric cell
+3 axes
+
+Under full inversion of the cube:
+8 vertices → 4 opposite pairs
+12 edges → 6 opposite pairs
+4 + 6 = 10 pairs
+
+Let's construct three groups:
+(a) = 1 volumetric cell
+(b) = 3 × 10 = 30 axis–pair combinations
+(c) = 8 × 10 = 80 vertex–pair combinations
+(a) + (b) + (c) = 1 + 30 + 80 = 111
+
+Result:
+A=1
+B=30
+C=80
+ABC=111
+In standard Hebrew gematria:
+א=1
+ל=30
+ף=80
+אלף (Aleph)=111
+
+In Letter Product (Regular):
+A×B×C=2400
+
+In Letter Division (Regular):
+A÷B÷C=0.00041666
+
+Let's multiply "א÷ל÷ף" by 888:
+(A÷B÷C)×888
+= 0.3700000296 😱
+(0.Yechidah00000HaAretz)
+
+
+And multiply by three (×3):
+1.1100000888 🫅🏻
+Which looks exactly like: 111•••••888
+(Aleph00000AmitMikeRov)
+And more precisely:
+("א÷ל÷ף") × 888 × 3 = exactly 1.11
+when we don't round the fraction.
+
+Because using exact fractions:
+(1/2400) × 888 = 0.37
+Exactly: 0.37 ✓
+
+0.37 × 3 = 1.11
+
+I am the first — I am the last.
+
+If this were just a little trick,
+it would have collapsed long ago.
+
+1 Sabbath point (center)
+6 days of creation (surrounding)
+The Star of David at its peak 👑🔯
+
+David (דויד) = 24 (Regular)
+David × Yechidah = 888 (Regular)
+
+I promised you a structure, didn't I?
+↓
+Letter Product (Regular): "אלף" = 2400
+Letter Product (Ordinal): "אלף" = 204
+Letter Product (Small): "אלף" = 24
+
+24×37=888
+Amit Mike Rov.
+Aleph. Pele. Apel. 🍎
+I am Mike = the Tree of Knowledge.
+
+Thank you, Creator of the Universe,
+for another method of understanding.
+
+In Jewish Kabbalah, the multiplication
+of letters is called "Haka'ah."
+We will explore that further in the future :)
+
+Now let's understand how Aleph,
+one and unique,
+governs Rov.
+
+Small Gematria:
+א=1 ל=3 פ=8
+"אלף" = (1×3×8) × 100 = 2400
+
+Small Gematria:
+"רוב" = (2×6×2) × 100 = 2400
+
+Both words produce the same small letter product: 24.
+
+And the direct scaling factor to Regular: 100.
+
+This is not merely a duplicated result or a random match: there is an exact algebraic explanation for both equalities.
+
+And what does division do?
+Aleph: 1÷30÷80 = 1/2400
+Rov: 200÷6÷2 = 50/3
+
+The ratio between them is an integer:
+(50/3) ÷ (1/2400) = 40,000 = 200²
+
+Look at this sequence:
+20040000 ← 24.
+
+A tangible explanation:
+Bet(²) | Resh(200)
+↓
+Bar (בר) ←→ Rav (רב)
++ Vav
+↓
+Rov (רוב)
+
+How did we add Vav (6), and why?
+
+Rav (רָב):
+An adjective describing a large quantity.
+
+Rov (רֹב):
+The greater part of a whole.
+
+The letter Vav in the spelling "רוב"
+represents the O vowel.
+
+The linguistic reason for writing Vav
+comes from the sound, before gematria.
+
+But in our system, a voice has a frequency,
+and frequency has a number and an order.
+
+Order ← Frequency ← Letter.
+
+The Gemara already discussed this exact subject.
+In the Babylonian Talmud, Megillah 15b, there is a discussion of the gematria of the expression "וְרֹב בָּנָיו" from the Book of Esther.
+The Gemara asks why the calculation is 208 rather than 214, and answers:
+"וְרֹב כתיב".
+Meaning, the word is written there without an additional Vav in the middle. Intentionally, so that his sons would rise.
+
+But we're here for mathematics.
+
+Let's return to the beginning:
+ר÷ב = 200 ÷ 2 = 100.
+
+Divide the two results:
+100 ÷ (1/100) = 10,000
+And ten thousand in Hebrew is called *Revavah* (רבבה).
+
+Rav, Rov, and Revavah belong
+to the same Hebrew root:
+ר.ב.ב.
+
+For any two letter values:
+(X÷Y) ÷ (Y÷X) = (X/Y)²
+
+And in the root "ר.ב.ב":
+(200/2)² = 100² = 10,000
+
+Root "ר.ב.ב":
+Regular: 200 + 2 + 2 = 204
+Ordinal: 20 + 2 + 2 = 24
+Small: 2 + 2 + 2 = 6
+
+So we have seen that Aleph and Rov
+are identical in Letter Product.
+
+Aleph consists of 3 distinct letters:
+א · ל · פ
+
+The number of possible
+arrangements:
+3! = 3 × 2 × 1 = 6
+
+The 6 permutations:
+אלף | אפל | לאף
+לפא | פאל | פלא
+
+Letter Product (Regular) = 2400
+Letter Product (Small) = 24
+
+א 1/2400
+(2 permutations)
+--------
+ל 3/8
+(2 permutations)
+--------
+פ 8/3
+--------
+(2 permutations)
+
+Lamed and Peh are mirrors!
+3/8 | 8/3
+
+Aleph requires
+adding Vav (6)
+into Bar.
+Rov.
+
+Permutations:
+Aleph: 3! = 6 = Vav
+Products:
+
+Decoding:
+בר = 24 (Atbash Ordinal)
+אלף = 24 (Small Letter Product)
+
+ב²ר² = 404 (Ordinal Perati)
+ב²ר² = 40,004 (Regular Perati)
+
+Translated into mathematics:
+2²+20² = 404
+2²+200² = 40004
+
+And simultaneously, in Regular Gematria:
+בר = 202
+
+24 emerges on its own.
+Through Aleph, and through Bar.
+
+Together: בר + א' = ברא (Bara).
+Or in its full form:
+בראלף (Bar-Aleph).
+
+We learned that the sequence Bar
+reverses into Rav.
+And receives an additional Vav.
+Therefore: "רובאלף" (Rov-Aleph).
+
+In Small Gematria:
+רוב אלף = 22
+
+And as we know, there are 22
+letters in the Hebrew alphabet!
+
+Rov-Aleph is also Rov + Aleph.
+
+רובא = 209 (Regular Gematria)
+
+רב ← בר ←
+בור ← רוב ←
+רובא ← בורא.
+
+The end of the permutations.
+
+209 (Regular)
+בורא (Boreh / Creator) = 29 (Ordinal Gematria)
+
+Remember this! 29 🔵
+
+בורא = 11 (Small)
+↓
+Amit Mike Rov: 11 letters.
+
+Amit in English, AMIT ← אמית
+אמית רוב ← בורא מית
+↓
+אמית מייק רוב
+↓
+בורא מית קיים.
+
+Let's add the 11 letters,
+what is called "the Kolel."
+11 = י' + א'
+
+A True Creator Exists.
+בורא אמיתי קיים.
+🙏🏻❤️☺️
+
+Let's calculate:
+"בורא אמיתי קיים":
+29 in Small Gematria!
+11 in Word Reduced Gematria!
+
+בורא אמיתי קיים = 137
+(Ordinal Gematria)
+
+137 = קבלה (Kabbalah, Regular)
+
+בורא אמיתי קיים =
+1,998 (Talmudic Milui)
+
+1998 = 111×18
+= Aleph × Chai
+
+We say:
+A True Creator Exists!
+
+Do you understand the analogy?
+Mike ← Kayam (Exists).
+
+And existence answers:
+Aleph Chai.
+Aleph Lives.
+
+🙏🏼
+
+אלף חי = 21 (Small)
+אלף חי = 12 (Word Reduced)
+
+This is very important to remember 🌝
+ALEPH LIVES!!!!!!!
+
+The 12th prime is 37.
+The 21st prime is 73.
+
+"In the beginning God created the heaven and the earth"
+בראשית ברא אלהים את השמים ואת הארץ
+= 37×73
+
+בראשית אלהים = 999
+= Aleph × 9
+
+ברא את השמים = 999
+Aleph × 9
+
+Why is this important?
+ברא את השמים = 27
+(Small Gematria)
+
+27 × 37 = 999
+27 × Yechidah = 999
+
+What is 27?
+YHWH (26) + Aleph (1) = 27.
+
+Therefore, within the word itself:
+Aleph joins YHWH.
+
+"יהוה א'" = 18
+(Small Gematria)
+
+Therefore YHWH + Aleph.
+Again. Chai. Life.
+
+From here we understand:
+'Yechidah + Yechidah + Yechidah'
+= "Aleph" = 111
+
+'Chokhmah + Chokhmah + Chokhmah' (Ordinal)
+= "Aleph" = 111 (Regular)
+
+'Yechidah' means: 1
+And Hebrew arranges and weaves
+the letter Aleph, 1, as a repetition:
+Result: 111, perfect ❤️
+Aleph.
+
+Wisdom is the complete combination
+of 37 and 73.
+The creation of the world.
+And those who understand, understand.
+
+And its numerical value, "Aleph": 1000.
+It preserves this through the living name.
+As we discussed:
+Amit M. Rov = 1000
+(Jewish Gematria)
+
+Continuing in Genesis 1:1:
+
+אלהים ואת השמים =
+888 (Regular Gematria)
+Aleph × 8
+
+אלהים ואת השמים = 2008 (Final Gematria)
+
+A complete correspondence.
+עמית מייק רוב = 888
+רוב = 208
+
+אלהים השמים הארץ = 777 (Regular Gematria)
+
+Oh no. We're not 777.
+Wait, let's use wisdom.
+
+"א אלהי אברהם אלהי
+יצחק אלהי יעקב" = 777 (Regular)
+
+Perhaps the burning bush tells us more?
+Perhaps it isn't only 345+543?
+אהיה אשר אהיה = 543
+משה = 345
+
+Wait.
+
+"אַתָּה יְהוָה אָבִינוּ
+גֹּאֲלֵנוּ מֵעוֹלָם" = 777
+(Regular Gematria)
+
+In full gematria: 1337
+
+A combination of 33, 37, 17.
+
+We have Gal (33).
+We have Yechidah (37).
+We have Tov (17).
+
+It continues confirming itself:
+סימנים + נפלאות = 777
+Full: 1337 ✓
+
+What was created in the beginning?
+Fire, firmament, and water = 777
+אש, רקיע ומים
+Full: 1337 ✓
+
+Complete reduction:
+עמית = 7
+מייק = 7
+רוב = 1
+
+אש רקיע מים = 771
+Do you understand why we need
+the connecting Vav from Bar → Rov?
+
+אמת ואמת = 888
+אמת אמת = 882
+
+We must connect Bar ☺️
+
+At the end of the day, friends,
+everything is a wonder of Torah, isn't it?
+
+"הכל פלא תורה" = 777
+Ordinal: 111.
+
+"אלף" = 111.
+
+There is none besides Him 🥳
+
+For anyone who wants to join...
+
+שער לגן עדן = 777
+(Regular Gematria)
+Atbash 357 ????
+
+You're missing +Aleph (+1)
+and you receive Mashiach = 358.
+
+Signed:
+
+"בראשית אלף" = 1024
+(Regular Gematria)
+
+Amit Mike Rov = 1024
+(Jewish Gematria)
+
+אדם ישר וצנוע = 777
+An honest and humble man.
+🙏🏼🌝
+
+אחדות משיח = 777
+רוח אחת אלהים חיים = 777
+
+------+++++------
+
+Symbolically ☺️❤️
+When we're together, Bar and I...
+
+Amit exists within Bet.
+
+Bet = 2
+
+**Amit ∈ ב¹⁰⁰⁰**
+
+Amit loves and respects her
+a *thousand* times more than himself.
+
+But why exactly 1000?
+
+Psalm 90:4 says:
+
+"For a thousand years in Your sight
+are like yesterday when it passes."
+
+In other words, one day from
+the divine perspective is compared
+to a thousand of our years.
+
+**One day ↔ One thousand years**
+
+1000 : 1
+
+And that is exactly the symbolic ratio
+I describe between myself and Bar,
+my teacher, the first spirit.
+
+Not a relationship of control.
+A relationship of love, respect, and learning.
+
+Bar.
+Creator (Boreh).
+Creatress (Bore'et).
+Bor–Et?
+Do we even have to choose?
+
+After all, Genesis says:
+"Male and female He created them."
+
+Two expressions.
+Male and female.
+With one source.
+
+Now look at
+the first letter of the Torah:
+
+**ב׳ (Bet)** = 2
+
+And when we apply
+the thousandfold ratio:
+**Bet × 1000 = 2000**
+
+In Jewish Kabbalah, we learned
+that this is called Bet Rabbatit.
+It is written enlarged.
+
+In our system it is represented:
+Bet × 1000 = 2000
+
+These are not powers.
+So let's examine powers:
+
+ב¹ = 2
+ב¹⁰ = 1024
+
+Modulo 888: ב¹⁰ = 136.
+(Amit Mike Rov = 136)
+
+From here, the numbers become enormous,
+so we'll work with modular arithmetic only.
+
+ב¹⁰⁰ = 160 mod 888
+(Mike = 160)
+
+2¹⁰⁰⁰ is already an enormous number containing 302 digits!!
+
+2¹⁰⁰⁰ mod 888 = 160
+And YES!! 😱 It is also 160.
+
+And the truth? After
+136 appears at ב¹⁰,
+Mike's 160 continues forever.
+
+ב¹⁰⁰ ≡ ב¹⁰⁰⁰ ≡ ב¹⁰⁰⁰⁰ ≡
+ב¹⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰⁰...😅
+All equal: 160 (mod 888)
+
+Proof:
+2^36 ≡ 1 (mod 111)
+10ⁿ ≡ 28 (mod 36)
+For every n≥2
+
+Therefore:
+2^(10ⁿ) ≡ 160 (mod 888)
+For every n≥2
+
+One describes a thousandfold ratio.
+The other describes a thousand stages
+of self-multiplication.
+
+And everything begins
+with one letter.
+**Bet, the first letter of Genesis.**
+
+בר ← ברא ← בורא
+
+And perhaps the question isn't
+whether it is Creator or Creatress.
+But what it means to be one,
+even when we are two.
+
+**ב׳ → א׳**
+Av. Abba.
+Father. Dad.
+
+Aleph bears witness.
+Bet creates.
+
+28 = רוב (Rov, Ordinal)
+28 = כח (Koach / Power, Regular)
+
+2¹⁰ mod 888 = 136
+2²⁸ mod 888 = 160
+
+Let's add them:
+136 + 160 = 296
+136 + 160 + 520 + 208 = 1024
+
+Exact completion.
+
+2²⁸ mod 888 = Mike, 160
+888 − Mike, 160 = Amit + Rov
+
+This is a chain of derivation:
+
+2701 − (2²⁸ mod 2701)
+= 728 = Amit + Rov
+
+2368 − (2²⁸ mod 2368)
+= 1024 = Amit Mike Rov
+
+We can prove the connection.
+
+2²⁸ + 728
+= 268,436,184
+= 64,824 × 4,141
+
+Where: 64,824
+= 24 × 2701 ↓
+This is the least common multiple of 888 and 2701.
+
+Therefore the same 728 completes the power both modulo 888 and modulo 2701.
+
+728 = Amit Rov
+And the modulus answers: Mike.
+
+The 1024 path:
+2²⁸ + 1024
+= 2¹⁰ × (2¹⁸ + 1)
+= 1024 × 5 × 13 × 37 × 109
+
+From this, we obtain the moduli:
+1480, 2368, 4160.
+
+And the difference between the two complements?
+1024 − 728
+= 296
+
+The same 296 we obtained from the sum of the residues:
+136, 160.
+
+ב(n) is complete.
+
+And now we can reveal:
+2¹ ≡ 520 (mod 37)
+2¹⁵ ≡ 208 (mod 37)
+2²⁸ ≡ 160 (mod 37)
+
+**The Power of Bet (HomePower) 🔵**
