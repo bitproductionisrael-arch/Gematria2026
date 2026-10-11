@@ -2,7 +2,7 @@
   "schema": "gematria2026-corpus-v1",
   "updated_at": "2026-10-11",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md. Audit 2026-10-11 late: recovered archived Q4_H37_followup_verified.zip and Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip from user Library; reran Q4-H37 audit and 888-to-6 coupled diffusion; standalone H37+K spectral gap corrected to 0.8791010115 (original README inaccurately listed 0.8458174928); full-system gap confirmed 0.4582808243→0.5857864376; restored conditional Qd dimension-3 uniqueness theorem and archived alpha fit as post-hoc, not a physics derivation.",
   "entries": [
     {
       "value": 0,
@@ -50,6 +50,12 @@
       "value": 6,
       "label": "אלף · תמורות",
       "method": "3! = 6 סידורי אותיות א/ל/פ שונות",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 6,
+      "label": "Q₄-H37 · symmetric quotient dimension",
+      "method": "D6×S4-invariant sector of 888-state coupled operator; only symmetric states/forces",
       "classification": "FOUNDATION"
     },
     {
@@ -593,6 +599,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 24,
+      "label": "S₄ · permutations of 4 axes",
+      "method": "4!=24; Cartesian factor of H37×S4",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 25,
       "label": "ה² / יהי",
       "method": "Ordinal-square: ה=5 → 5²=25 = יהי Hebrew Regular",
@@ -929,6 +941,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 36,
+      "label": "S₄ · adjacent-transposition graph edges",
+      "method": "24 vertices each degree3 -> 24×3/2=36",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 37,
       "label": "11₃₆",
       "method": "Base-36 representation",
@@ -1034,6 +1052,12 @@
       "value": 37,
       "label": "שאריות השם mod 37",
       "method": "(520 mod37)+(160 mod37)+(208 mod37)=2+12+23=37; also 2×12=24 and 24×37=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "H37 · hexagonal radius-3 lattice vertices",
+      "method": "1+6+12+18=37; |q|,|r|,|q+r|≤3",
       "classification": "FOUNDATION"
     },
     {
@@ -1371,6 +1395,12 @@
       "label": "Genesis 1 · Russian prime islands",
       "method": "Russian chapter scan under locked D mapping · count=54",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 54,
+      "label": "H37 · elementary graph triangles",
+      "method": "54 distinct 3-cycles; independently recounted",
+      "classification": "FOUNDATION"
     },
     {
       "value": 55,
@@ -2061,6 +2091,12 @@
       "label": "שמונה מאות שמונים ושמונה",
       "method": "Hebrew Small",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 90,
+      "label": "H37 · nearest-neighbor edges",
+      "method": "37 vertices; 90 undirected edges",
+      "classification": "FOUNDATION"
     },
     {
       "value": 90,
@@ -2819,6 +2855,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 137,
+      "label": "Q₃ · 2V²+d² generator",
+      "method": "2×8²+3²=137; G(d)=2(2^d)²+d²",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 138,
       "label": "небо",
       "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
@@ -3465,6 +3507,12 @@
       "label": "Hebraei",
       "method": "English Gematria",
       "classification": "canonical"
+    },
+    {
+      "value": 288,
+      "label": "Q₄-H37 · D6×S4 group size",
+      "method": "12×24=288=φ(888); modeled subgroup",
+      "classification": "FOUNDATION"
     },
     {
       "value": 288,
@@ -4896,6 +4944,18 @@
     },
     {
       "value": 888,
+      "label": "Q₄-H37 · Cartesian state product",
+      "method": "37×24=888 with 3492 base edges; exact symmetric quotient dimension 6",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "Qd→Qd+1 · unique d=3 theorem",
+      "method": "W_d=e₂(V,V+E,V+E+F), P_d+1=f₂(Qd+1), R_d=V²−d³; W_d=P_d+1 R_d iff d=3",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
       "label": "T₃₂+3T₁₅",
       "method": "528+3·120=888",
       "classification": "FOUNDATION"
@@ -6101,6 +6161,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 3492,
+      "label": "H37 □ S4 · Cartesian graph edges",
+      "method": "90×24+36×37=3492",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 3680,
       "label": "שלושים ושבע שבעים ושלוש",
       "method": "Talmudic Milui",
@@ -6929,6 +6995,55 @@
         "Time/order choices and modulus selection can cause predictable coincidences",
         "Predeclare operators and control vocabulary before p-values"
       ]
+    },
+    "q4_h37_reproduced_2026_10_11": {
+      "date": "2026-10-11",
+      "status": "verified_mathematical_model",
+      "research": "research/q4-h37-coupled-2026-10-11.md",
+      "library_source_file": "Q4_H37_followup_verified.zip",
+      "original_code": [
+        "audit.py",
+        "coupled.py"
+      ],
+      "H37": {
+        "sites": 37,
+        "edges": 90,
+        "triangles": 54
+      },
+      "Q4": {
+        "vertices": 16,
+        "edges": 32
+      },
+      "S4": {
+        "permutations": 24,
+        "edges": 36
+      },
+      "combined": {
+        "states": 888,
+        "base_edges": 3492,
+        "symmetry_group_order": 288,
+        "symmetric_quotient_dimension": 6
+      },
+      "spectral_gaps": {
+        "base_total": 0.4582808243057805,
+        "coupled_total": 0.5857864376269049,
+        "base_hex": 0.4582808243057805,
+        "coupled_hex_recalculated": 0.8791010114953062,
+        "reported_readme_hex_gap_rejected": 0.8458174928
+      },
+      "caveats": [
+        "Reduction exact only on D6×S4 invariant states and forcing",
+        "Affine injection is not a metric-preserving embedding",
+        "No physical law or measured material is inferred"
+      ]
+    },
+    "q3_alpha_exclusion_inventory_2026_10_11": {
+      "archive_source": "Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip",
+      "report": "research/q3-spectral-projector-2026-10-11.md",
+      "verified_model_theorem": "W_d=P_(d+1)R_d iff d=3 under explicit W,P,R definitions",
+      "alpha_fit": "F(0)=137+36/1000-1/(888×37²); chosen with knowledge of target, no independent prediction",
+      "negative_controls": "329460 post-hoc expressions scanned; counterformula matches possible",
+      "status": "mathematics preserved, physical implication open"
     }
   },
   "corrections": {
@@ -6947,6 +7062,12 @@
         "ב×1000=2000 is not ב^1000",
         "Megillah 15b: consonantal וְרֹב is written ורב, lacking medial ו, yields 208"
       ]
+    },
+    "q4_h37_2026_10_11": {
+      "source": "Q4_H37_followup_verified.zip / README_HE.txt",
+      "incorrect": "H37+K spectral gap 0.8458174928",
+      "verified": "H37+K spectral gap 0.8791010114953062 using archived operator CSV and independent eigenvalue computation",
+      "unchanged": "Full 888-state spectral gap after coupling 0.5857864376269049"
     }
   }
 }
