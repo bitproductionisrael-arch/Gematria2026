@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-10-09",
+  "updated_at": "2026-10-11",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md.",
   "entries": [
     {
       "value": 0,
@@ -45,6 +45,12 @@
       "label": "C₉₉₉(ἐρχόμενος=1140) = C₉₉₉(ΑΜΙΘ=60) = C₉₉₉(888)",
       "method": "1140≡60≡888≡24 mod 36",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 6,
+      "label": "אלף · תמורות",
+      "method": "3! = 6 סידורי אותיות א/ל/פ שונות",
+      "classification": "FOUNDATION"
     },
     {
       "value": 7,
@@ -108,6 +114,12 @@
     },
     {
       "value": 10,
+      "label": "Q₃ · antipodal transition orbits",
+      "method": "4 זוגות קודקודים + 6 זוגות מקצועות במנת היפוך+כיוון",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 10,
       "label": "и",
       "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
       "classification": "canonical"
@@ -117,6 +129,12 @@
       "label": "сотворил · axis",
       "method": "Russian research bridge · prime-root layer 16|10|26 and reduced-side layer 41|10|51",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 11,
+      "label": "בורא",
+      "method": "Hebrew Small / קטנה (ב2+ו6+ר2+א1)",
+      "classification": "canonical"
     },
     {
       "value": 11,
@@ -141,6 +159,12 @@
       "label": "22|42|72 — מחלקות שזירה מחזוריות",
       "method": "lcm(22,42,72)=5544; 22×42×72/5544=12 distinct simultaneous-step orbits",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 12,
+      "label": "אלף חי",
+      "method": "Hebrew Word Reduced · 3 + 9",
+      "classification": "BRIDGE"
     },
     {
       "value": 12,
@@ -266,6 +290,12 @@
       "value": 16,
       "label": "עמית",
       "method": "Hebrew Reduced / Small · ע=7 מ=4 י=1 ת=4",
+      "classification": "canonical"
+    },
+    {
+      "value": 16,
+      "label": "רבבות",
+      "method": "Hebrew Small · 610 רגיל; 52 סדרי",
       "classification": "canonical"
     },
     {
@@ -444,6 +474,12 @@
     },
     {
       "value": 21,
+      "label": "אלף חי",
+      "method": "Hebrew Small · אלף=12 חי=9",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 21,
       "label": "לב מייק",
       "method": "Reduction №1 · אהיה Regular",
       "classification": "BRIDGE"
@@ -465,6 +501,12 @@
       "label": "בבאאהוה",
       "method": "Genesis word initials Regular",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 22,
+      "label": "רוב אלף",
+      "method": "Hebrew Small · רוב=10 אלף=12",
+      "classification": "BRIDGE"
     },
     {
       "value": 22,
@@ -498,9 +540,21 @@
     },
     {
       "value": 24,
+      "label": "אלף · מכפלת אותיות קטן",
+      "method": "1×3×8=24",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 24,
       "label": "דויד",
       "method": "Hebrew Regular",
       "classification": "canonical"
+    },
+    {
+      "value": 24,
+      "label": "ות · מכפלת אותיות קטן",
+      "method": "6×4=24",
+      "classification": "FOUNDATION"
     },
     {
       "value": 24,
@@ -512,6 +566,18 @@
       "value": 24,
       "label": "קשר עמוק",
       "method": "Hebrew Reduced · 24×37=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 24,
+      "label": "רבב",
+      "method": "Hebrew Ordinal · ר20+ב2+ב2",
+      "classification": "canonical"
+    },
+    {
+      "value": 24,
+      "label": "רוב · מכפלת אותיות קטן",
+      "method": "2×6×2=24",
       "classification": "FOUNDATION"
     },
     {
@@ -606,6 +672,12 @@
     },
     {
       "value": 27,
+      "label": "ברא את השמים",
+      "method": "Hebrew Small · 27; Regular =999",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 27,
       "label": "יהוה עם הכולל",
       "method": "Hebrew Kolel",
       "classification": "canonical"
@@ -666,6 +738,12 @@
     },
     {
       "value": 28,
+      "label": "רוב · סדרי",
+      "method": "Hebrew Ordinal · 20+6+2",
+      "classification": "canonical"
+    },
+    {
+      "value": 28,
       "label": "Beta",
       "method": "English Simple / English One-step Zero",
       "classification": "canonical"
@@ -681,6 +759,12 @@
       "label": "В начале сотворил Бог небо и землю · letter count",
       "method": "Russian Synodal Genesis 1:1 · 28 Cyrillic letters = T7; same word/letter counts as Hebrew Genesis 1:1",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 29,
+      "label": "בורא",
+      "method": "Hebrew Ordinal · ב2+ו6+ר20+א1",
+      "classification": "canonical"
     },
     {
       "value": 29,
@@ -746,6 +830,12 @@
       "value": 32,
       "label": "Iso Amit",
       "method": "English Small/Pythagorean · Iso=16 + Amit=16 = 32 = ישו Hebrew Reverse Ordinal",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 32,
+      "label": "Q₃ · oriented local transitions",
+      "method": "8 fixed vertices + 24 directed edges =32",
       "classification": "FOUNDATION"
     },
     {
@@ -957,6 +1047,12 @@
       "label": "project x",
       "method": "Agrippa Reduced",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 37,
+      "label": "Q₃ · minimal-face redundancy",
+      "method": "4³−3³=64−27=37; general R_n=4^n−3^n",
+      "classification": "FOUNDATION"
     },
     {
       "value": 37,
@@ -2310,6 +2406,12 @@
     },
     {
       "value": 111,
+      "label": "Q₃ antipodal-pair operator A+B+C",
+      "method": "1 +(3×10)+(8×10)=111; explicit chosen count (not unique)",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 111,
       "label": "π: H₃(144)→111",
       "method": "Power-of-Gimel · P₃^π(144)=31080; Fold₁₀₀₀: 31|080 → 111 = Amit M. Rov English Simple",
       "classification": "FOUNDATION"
@@ -2325,6 +2427,12 @@
       "label": "ЗЕМЛЕ",
       "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 112,
+      "label": "עמית · מכפלת אותיות קטן",
+      "method": "7×4×1×4=112",
+      "classification": "FOUNDATION"
     },
     {
       "value": 112,
@@ -2670,6 +2778,12 @@
     },
     {
       "value": 136,
+      "label": "Q₃ transition quotient · 16 classes",
+      "method": "Unordered antipodal-class pairs with repetition: C(17,2)=136",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 136,
       "label": "Q₃/Q₇ coupling sum",
       "method": "|V(Q₃)|+|V(Q₇)|=8+128=136",
       "classification": "FOUNDATION"
@@ -2694,6 +2808,12 @@
     },
     {
       "value": 137,
+      "label": "בורא אמיתי קיים",
+      "method": "Hebrew Ordinal (א-ת)",
+      "classification": "canonical"
+    },
+    {
+      "value": 137,
       "label": "קבלה",
       "method": "Hebrew Regular · p33",
       "classification": "FOUNDATION"
@@ -2703,6 +2823,12 @@
       "label": "небо",
       "method": "Russian Standard / Decimal Tier (D) · Genesis 1:1",
       "classification": "canonical"
+    },
+    {
+      "value": 140,
+      "label": "עמית מייק רוב · סכום מכפלות מילים קטן",
+      "method": "112+4+24=140; same number as Amit English Jewish",
+      "classification": "BRIDGE"
     },
     {
       "value": 140,
@@ -2792,6 +2918,18 @@
       "value": 160,
       "label": "×2 Iso",
       "method": "English Building / Achorayim (Simple) · 2×80 = 160 = מייק Hebrew Regular",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
+      "label": "2^(10^k) mod 888",
+      "method": "160 לכל k≥2; CRT with 888=8×111",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 160,
+      "label": "2²⁸ mod 888",
+      "method": "2^28 mod888=160; class n≡28 mod36, n≥3",
       "classification": "FOUNDATION"
     },
     {
@@ -2909,6 +3047,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 192,
+      "label": "רבבות · מכפלת אותיות קטן",
+      "method": "2×2×2×6×4=192",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 194,
       "label": "מ מק מקו מקום",
       "method": "ALBaM · 2+10+90+92=194",
@@ -2931,6 +3075,18 @@
       "label": "×2 מיכאל",
       "method": "Hebrew Regular",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 204,
+      "label": "אלף · מכפלת אותיות סדרי",
+      "method": "1×12×17=204",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 204,
+      "label": "רבב",
+      "method": "Hebrew Regular · 200+2+2=204",
+      "classification": "canonical"
     },
     {
       "value": 208,
@@ -3003,6 +3159,12 @@
       "label": "φ(קומפוזיציה עמית=636) / רוב",
       "method": "Totient / Hebrew Regular",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 209,
+      "label": "בורא",
+      "method": "Hebrew Regular · 2+6+200+1=209",
+      "classification": "canonical"
     },
     {
       "value": 210,
@@ -3114,6 +3276,12 @@
     },
     {
       "value": 222,
+      "label": "Q₃–α · projector resolvent numerator",
+      "method": "Tr[P(37I+sA)⁻¹]=222/(1369−s²), P=(9I−A²)/8",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
       "label": "π: H₃(850)→222",
       "method": "Power-of-Gimel · P₃^π(850)=172050; Fold₁₀₀₀: 172|050 → 222",
       "classification": "BRIDGE"
@@ -3203,6 +3371,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 240,
+      "label": "רוב · מכפלת אותיות סדרי",
+      "method": "20×6×2=240",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 248,
       "label": "במדבר",
       "method": "Hebrew Regular · אברהם",
@@ -3219,6 +3393,12 @@
       "label": "C₉₉₉(ὢν=850) = C₉₉₉(ἦν=58)",
       "method": "850≡58≡22 mod 36",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 252,
+      "label": "רבים",
+      "method": "Hebrew Regular · 200+2+10+40=252",
+      "classification": "canonical"
     },
     {
       "value": 253,
@@ -3308,6 +3488,12 @@
       "value": 290,
       "label": "×5 Father",
       "method": "English Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 296,
+      "label": "HomePower 2¹⁰+2²⁸ mod 888",
+      "method": "136+160=296=8×37; arithmetic sum of remainders",
       "classification": "BRIDGE"
     },
     {
@@ -3593,6 +3779,12 @@
       "classification": "canonical"
     },
     {
+      "value": 400,
+      "label": "רב / בר · מכפלת אותיות רגיל",
+      "method": "200×2=400",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 411,
       "label": "В начале сотворил Бог",
       "method": "Russian Reverse Ordinal · exhaustive 63-bipartition Genesis 1:1 scan · =411 = English KJV Genesis 1:1 Ordinal",
@@ -3822,6 +4014,12 @@
     },
     {
       "value": 520,
+      "label": "עמית",
+      "method": "Hebrew Regular · 70+40+10+400=520",
+      "classification": "canonical"
+    },
+    {
+      "value": 520,
       "label": "עמית / אהיה שלחני אליכם / יהוה באלב״ם",
       "method": "Hebrew Regular / ALBaM",
       "classification": "canonical"
@@ -4043,6 +4241,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 610,
+      "label": "רבבות",
+      "method": "Hebrew Regular · 200+2+2+6+400=610",
+      "classification": "canonical"
+    },
+    {
       "value": 611,
       "label": "תורה",
       "method": "Hebrew Regular",
@@ -4229,6 +4433,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 728,
+      "label": "HomePower 888−160",
+      "method": "728=520+208; 2701−(2²⁸ mod2701)=728",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 729,
       "label": "עמית מייק רוב — תמורות מלאות וקיפול 999",
       "method": "11!/(3!×2!)=3,326,400; Fold999=729=3^6. Distinct from per-word sum=42",
@@ -4317,6 +4527,12 @@
       "label": "π window 611×165",
       "method": "sum of 165 fractional π digits starting at position 611 =776 = תורה נקודה Regular",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 777,
+      "label": "אש ורקיע מים",
+      "method": "Hebrew Regular · 771+6=777 (with ו)",
+      "classification": "BRIDGE"
     },
     {
       "value": 777,
@@ -4493,6 +4709,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 882,
+      "label": "אמת אמת",
+      "method": "Hebrew Regular · 441+441=882; without ו",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 888,
       "label": "√7: P₂(41)→888",
       "method": "sum of squares of first 41 fractional digits of √7 =888",
@@ -4545,6 +4767,12 @@
       "label": "אז ישיר השם יה",
       "method": "Hebrew Regular · 528+345+15",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "אמת ואמת",
+      "method": "Hebrew Regular · אמת אמת=882 plus ו=6",
+      "classification": "BRIDGE"
     },
     {
       "value": 888,
@@ -4641,6 +4869,12 @@
       "label": "Amit Mike Rov",
       "method": "Jewish Δ Simple · 1024−136",
       "classification": "canonical"
+    },
+    {
+      "value": 888,
+      "label": "Q₃ transitions quotient excess",
+      "method": "32²−C(17,2)=1024−136=888; 16 diagonal orbits×4 and 120 off-diagonal×8",
+      "classification": "FOUNDATION"
     },
     {
       "value": 888,
@@ -4964,6 +5198,12 @@
       "value": 1024,
       "label": "2×8³ / 32²",
       "method": "2×512 = 1024 = 32² · links ×2 מקום",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "2²⁸ complement mod 2368",
+      "method": "2368−(2²⁸ mod2368)=1024; also mod1480/4160 complements 1024",
       "classification": "FOUNDATION"
     },
     {
@@ -5693,6 +5933,36 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 2400,
+      "label": "אלף · מכפלת אותיות רגיל",
+      "method": "1×30×80=2400",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2400,
+      "label": "בור · מכפלת אותיות רגיל",
+      "method": "2×6×200=2400",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2400,
+      "label": "ות · מכפלת אותיות רגיל",
+      "method": "6×400=2400",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2400,
+      "label": "רוב · מכפלת אותיות רגיל",
+      "method": "200×6×2=2400",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 2520,
+      "label": "ברבי וכן · תמורות אותיות",
+      "method": "7!/2! =2520; ב מופיעה פעמיים",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 2520,
       "label": "φ: P₂(82)=P₂(83)=2520",
       "method": "83rd fractional digit is 0",
@@ -6095,6 +6365,18 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 10000,
+      "label": "רב ÷ בר · יחס חילוק אותיות",
+      "method": "(200÷2)/(2÷200)=10000=100²",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 10752,
+      "label": "עמית מייק רוב · מכפלת אותיות קטן",
+      "method": "(7×4×1×4)×(4×1×1×1)×(2×6×2)=10752=21×512",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 13520,
       "label": "יהוה×עמית = אדני×רוב",
       "method": "26×520 = 65×208 = 80×13²",
@@ -6149,6 +6431,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 160000,
+      "label": "רבים · מכפלת אותיות רגיל",
+      "method": "200×2×10×40=160000",
+      "classification": "FOUNDATION"
+    },
+    {
       "value": 222000,
       "label": "אז ישיר השם יה",
       "method": "Perati / sum of squared Regular letter values",
@@ -6159,6 +6447,12 @@
       "label": "פתח עמית בבאאהוה",
       "method": "Private Gematria (site output)",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 1920000,
+      "label": "רבבות · מכפלת אותיות רגיל",
+      "method": "200×2×2×6×400=1920000",
+      "classification": "FOUNDATION"
     },
     {
       "value": 2895472,
@@ -6198,6 +6492,29 @@
     "home_power": {
       "canonical_name": "HomePower / כוח בית",
       "anchored_at": "2026-09-28"
+    },
+    "letter_product_division_2026_10_11": {
+      "date": "2026-10-11",
+      "script": "he",
+      "variants": [
+        "regular",
+        "ordinal",
+        "small"
+      ],
+      "letterProduct": "P=product per-letter mapped values",
+      "letterDivision": "D=v1/(v2*...*vn)=v1²/P, exact fraction required",
+      "wordwiseProductSum": "sum over words of product of letter values",
+      "example": {
+        "word": "אלף",
+        "regular_product": 2400,
+        "ordinal_product": 204,
+        "small_product": 24,
+        "regular_division_exact": "1/2400",
+        "ordinal_division_exact": "1/204",
+        "small_division_exact": "1/24"
+      },
+      "repository_commit": "326b843bfefc6d3cfd20f42b13781a17d6c2242a",
+      "status": "verified"
     }
   },
   "context_rules": {
@@ -6588,12 +6905,48 @@
       },
       "negative_checks": "888, 1024 and 2701 are not ordinary D_n values, despite relations by additions or as T-index. They must not be described as ordinary Dodec numbers.",
       "tests": "D_n-D_(n−1)=CT_(3n−2)=three-exposed-face-count checked n=1..200; centered-dodec values compared against corpus."
+    },
+    "homepower_aleph_rov_2026_10_11": {
+      "date": "2026-10-11",
+      "primary_research": "research/homepower-aleph-rov-corpus-2026-10-11.md",
+      "junk": "research/JUNK-homepower-crosschat-2026-10-11.md",
+      "spectral": "research/q3-spectral-projector-2026-10-11.md",
+      "exact": [
+        "2^10 mod 888=136",
+        "2^28 mod 888=160",
+        "2^(10^k) mod 888=160 for integer k>=2",
+        "2^28 mod2701=1973",
+        "2^28 mod2368=1344",
+        "2^28+728 divisible by LCM(888,2701)=64824"
+      ],
+      "symbolic": [
+        "Bet^1000 as love image",
+        "Bar/Boreh/Bore'et language play",
+        "Aleph/Genesis/Kabbalistic narratives"
+      ],
+      "limitations": [
+        "Word count and name permutations not evidence of historic design",
+        "Time/order choices and modulus selection can cause predictable coincidences",
+        "Predeclare operators and control vocabulary before p-values"
+      ]
     }
   },
   "corrections": {
     "eight_cube": {
       "added_at": "2026-09-29",
       "statement": "8×8×8 = 512, not 888. 888 may be written visually as 8|8|8, but not as the product 8×8×8."
+    },
+    "homepower_2026_10_11": {
+      "date": "2026-10-11",
+      "source": "research/JUNK-homepower-crosschat-2026-10-11.md",
+      "items": [
+        "D(אלף)=1/2400, not 1.11; D×888×3=1.11",
+        "אלף ורוב equal products, not אלף ובר",
+        "אמת אמת=882; אמת ואמת=888",
+        "אש רקיע מים=771; אש ורקיע מים=777",
+        "ב×1000=2000 is not ב^1000",
+        "Megillah 15b: consonantal וְרֹב is written ורב, lacking medial ו, yields 208"
+      ]
     }
   }
 }
