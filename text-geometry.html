@@ -471,7 +471,7 @@ function saveGeometryPng(){
  },'image/png');
 }
 $('saveGeometry').addEventListener('click',saveGeometryPng);
-open.addEventListener('click',goGeometry);$('calculatorLink').addEventListener('click',goCalculator);$('copyProof').addEventListener('click',copyResult);window.addEventListener('resize',drawPreview);
+open.addEventListener('click',goGeometry);$('calculatorLink').addEventListener('click',goCalculator);$('copyProof').addEventListener('click',copyResult);window.addEventListener('resize',()=>drawPreview());
 loadCalculatorImport();update();
 window.TextGeometryBridge={formula,exactMatches,wordValue,countLetters,tokenize,pointsForShape,getReading,getPlacement:()=>placement.value,getDisplay:()=>display.value,select,update};
 })();
