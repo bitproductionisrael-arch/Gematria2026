@@ -1,0 +1,18 @@
+.geometry-ai-chat{border:1px solid #35515c;border-radius:14px;background:#101b25;padding:14px;margin:16px 0;color:#e3f0f6;min-width:0}
+.geometry-ai-chat .ga-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:15px;color:#eac68c}
+.geometry-ai-chat #gaStatus{font-size:11px;font-weight:650;color:#f0bc79}
+.geometry-ai-chat #gaStatus.ga-online{color:#91e2bf}
+.geometry-ai-chat .ga-log{max-height:330px;min-height:116px;overflow:auto;display:flex;flex-direction:column;gap:9px;margin:12px 0;padding:9px;border-radius:9px;background:#08131d;overscroll-behavior:contain}
+.geometry-ai-chat .ga-bubble{font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;padding:9px 12px;border-radius:10px;max-width:96%}
+.geometry-ai-chat .ga-bot{align-self:flex-start;background:#1a333d;color:#e0f2f7}
+.geometry-ai-chat .ga-user{align-self:flex-end;background:#3d3320;color:#fff0ca}
+.geometry-ai-chat .ga-examples{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.geometry-ai-chat .ga-examples button{border:1px solid #456777;border-radius:8px;padding:6px 9px;background:#1a3040;color:#d7f0f6;font-size:12px}
+.geometry-ai-chat .ga-label{display:block;margin-bottom:7px;color:#b9cfda;font-weight:700;font-size:12px}
+.geometry-ai-chat textarea{width:100%;min-height:68px;border-radius:10px;background:#07131e;border:1px solid #4c6475;color:#f1f8fb;padding:11px;resize:vertical;font-size:15px;line-height:1.6}
+.geometry-ai-chat .ga-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.geometry-ai-chat .ga-controls button{border-radius:9px;border:1px solid #4f6c7b;background:#1b303e;color:#edf5f8;padding:10px 17px;min-height:44px;font-size:13px;font-weight:700}
+.geometry-ai-chat #gaSend{background:#e5ae56;color:#14120f;border-color:#efc785}
+.geometry-ai-chat button:disabled{opacity:.55;cursor:wait}
+.geometry-ai-chat .ga-help{font-size:11px;line-height:1.65;color:#a7bdc9;margin-top:10px}
+@media(max-width:580px){.geometry-ai-chat{padding:12px}.geometry-ai-chat .ga-log{max-height:270px}}
