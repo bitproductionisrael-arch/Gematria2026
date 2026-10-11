@@ -481,7 +481,7 @@ const wordsOf=t=>t.trim().split(/\s+/).filter(Boolean);
 const gcd=(a,b)=>{a=Math.abs(Math.trunc(a));b=Math.abs(Math.trunc(b));while(b){const t=a%b;a=b;b=t}return a};
 const lcm=(a,b)=>a&&b?Math.abs(a/gcd(a,b)*b):0;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-const fmt=n=>Number.isInteger(n)?n.toLocaleString('en-US'):String(n);
+const fmt=n=>typeof n==='string'&&/^-?\d+$/.test(n)?n.replace(/\B(?=(\d{3})+(?!\d))/g,','):(Number.isInteger(n)?n.toLocaleString('en-US'):String(n));
 
 /* ---------- alphabets ---------- */
 const HE_ORDER=Array.from('אבגדהוזחטיכלמנסעפצקרשת');
@@ -646,7 +646,10 @@ const METHODS={
   {key:'perati',cat:'cipher',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
   {key:'kolel',cat:'cipher',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
   {key:'musafi',cat:'cipher',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
-  {key:'piAlphabetHebrew',cat:'ops',name:'אלפבית (π) פי',map:HE_PI,research:true},
+  {key:'letterProductRegular',cat:'ops',name:'מכפלת אותיות (רגיל) / Letter Product (Regular)',map:HE_VAL,letterProduct:true,research:true},
+   {key:'letterProductOrdinal',cat:'ops',name:'מכפלת אותיות (סדרי) / Letter Product (Ordinal)',map:HE_ORD,letterProduct:true,research:true},
+   {key:'letterProductSmall',cat:'ops',name:'מכפלת אותיות (קטן) / Letter Product (Small)',map:HE_KATAN,letterProduct:true,research:true},
+   {key:'piAlphabetHebrew',cat:'ops',name:'אלפבית (π) פי',map:HE_PI,research:true},
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
   {key:'positional',cat:'ops',name:'גימטריה מיקום · מגרעת / Positional',map:HE_VAL,transform:positional,transformName:'position × value'},
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
@@ -750,6 +753,7 @@ const METHOD_EN_NAMES={
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
  milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
+ letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
  ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction',
  ruReverseOrdinal:'Russian Reverse Ordinal',ruZeroStep:'Russian One-step Zero',
@@ -773,6 +777,9 @@ const METHOD_EN_HISTORY={
  reverseOrdinal:'A derived operator equivalent to taking the ordinal value after the Atbash mirror: position → 23−position.',
  zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
  redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
+ letterProductRegular:'Research operator: multiply the standard Hebrew numeric values of every recognized letter, across all words; not a sum.',
+ letterProductOrdinal:'Research operator: multiply the Hebrew alphabet positions 1–22 of every recognized letter, across all words; not a sum.',
+ letterProductSmall:'Research operator: multiply the Hebrew reduced letter values 1–9 of every recognized letter, across all words; not a sum.',
  harmonicHalf:'Site-developed research operator (2026). Starts from the D1 / Reduction №1 total and repeatedly halves the whole result only while each next value remains a positive integer; it stops before fractions. The square view follows the accepted generations only.',
  achorayim:'Naming conflict under review: the code computes cumulative prefix sums. The older Achorayim label does not describe this algorithm precisely.',
  positional:'Naming conflict under review. The algorithm is unambiguous: multiply each letter value by its position in the word.',
@@ -906,7 +913,21 @@ function calculateReductionResearch(text,m,mode){
  }
  return {method:m,total:harmonic[1]??h0,words:L.words,harmonicHalf:true,ladder:L.stageTotals,h0,harmonic};
 }
+// Letter Product: one exact product over all recognized letters, ignoring word boundaries.
+function calculateLetterProduct(text,script,m){
+ const words=[];let total=1n,hasLetters=false;
+ for(const raw of wordsOf(text)){
+  const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
+  const baseVals=toks.map(t=>t.value);
+  const subtotal=baseVals.reduce((p,v)=>p*BigInt(v),1n);
+  words.push({raw,toks,baseVals,vals:[...baseVals],subtotal:productPublicValue(subtotal)});
+  total*=subtotal;hasLetters=true;
+ }
+ return {method:m,total:hasLetters?productPublicValue(total):0,words,letterProduct:true};
+}
+function productPublicValue(v){return v<=BigInt(Number.MAX_SAFE_INTEGER)?Number(v):v.toString()}
 function calculate(text,script,m){
+ if(m.letterProduct)return calculateLetterProduct(text,script,m);
  if(m.custom==='redLadder')return calculateReductionResearch(text,m,'ladder');
  if(m.custom==='harmonicHalf')return calculateReductionResearch(text,m,'harmonic');
  if(m.custom==='agrippaDeltaSimple')return calculateAgrippaDeltaSimple(text);
@@ -930,6 +951,9 @@ function calculateAll(text){const script=detectScript(text);return {script,resul
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+  'he:letterProductRegular':{plain:'מכפלת אותיות (רגיל)',original:'Letter Product · Regular',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם ערכי הגימטריה הרגילה, כולל אותיות סופיות בערך האות הבסיסית. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π value(letter), regular Hebrew map. אלף: 1 × 30 × 80 = 2400.'},
+  'he:letterProductOrdinal':{plain:'מכפלת אותיות (סדרי)',original:'Letter Product · Ordinal',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם מיקומן באלפבית העברי, 1–22. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π position(letter), Hebrew alphabet positions 1…22. אלף: 1 × 12 × 17 = 204.'},
+  'he:letterProductSmall':{plain:'מכפלת אותיות (קטן)',original:'Letter Product · Small',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם הערכים המצומצמים 1–9. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π reducedValue(letter), Hebrew 1…9. אלף: 1 × 3 × 8 = 24.'},
  'he:piAlphabetHebrew':{plain:'אלפבית (π) פי',original:'אלפבית (π) פי · Hebrew Pi Alphabet',status:'modern',history:'22 האותיות א–ת מקבלות לפי הסדר את 22 הספרות הראשונות אחרי הנקודה של π. החלק השלם 3 אינו נכלל. אותיות סופיות מקבלות את ערך האות הרגילה; ניקוד, רווחים וסימני פיסוק אינם נספרים.',formula:'π = 3.1415926535897932384626…; א–ת → 1415926535897932384626; sum the assigned letter values.'},
  'en:piAlphabet':{plain:'אלף־בית של פאי / Pi π Alphabet',original:'Pi π Alphabet · A–Z from π',status:'modern',history:'מצמידים את 26 הספרות הראשונות אחרי הנקודה של π לאותיות A–Z לפי הסדר. החלק השלם 3 אינו נכלל. אותיות גדולות וקטנות מקבלות אותו ערך; רווחים וסימני פיסוק אינם נספרים. Amit Mike Rov = 17 + 27 + 17 = 61.',formula:'π = 3.14159265358979323846264338…; A–Z → 14159265358979323846264338; sum the assigned letter values.'},
  'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
@@ -1269,7 +1293,7 @@ function queryMultiplier(){return Math.max(1,Math.trunc(Number(state.queryMultip
 function updateQueryMultiplierUI(){const el=document.getElementById('queryMultValue');if(el){el.textContent='×'+queryMultiplier();el.classList.toggle('active',!!state.queryMultiplierActive)}const minus=document.getElementById('queryMultMinus');if(minus)minus.disabled=!state.queryMultiplierActive||queryMultiplier()<=1}
 function scaleCurrentResults(data){
  const n=queryMultiplier();if(!state.queryMultiplierActive||n===1)return data;
- return {script:data.script,results:data.results.map(r=>({...r,baseTotal:r.total,total:r.total*n,queryMultiplier:n}))}
+ return {script:data.script,results:data.results.map(r=>({...r,baseTotal:r.total,total:r.letterProduct?productPublicValue(BigInt(r.total)*BigInt(n)):r.total*n,queryMultiplier:n}))}
 }
 function magnetQueryPrefix(r){
  if(r?.comboMeta?.phrase)return r.comboMeta.phrase;
@@ -1329,6 +1353,7 @@ function buildingMilestoneText(w){
  return rows.length?'אבני דרך: '+rows.map(x=>`${x.label} ${fmt(x.value)}=${x.anchor}`).join(' · '):''
 }
 function wordDescription(r,idx){
+ if(r.letterProduct){const w=r.words[idx];if(!w)return'אין פירוק';return w.raw+'\n'+w.toks.map((t,i)=>t.label+'('+fmt(w.baseVals[i])+')').join(' × ')+' = '+fmt(w.subtotal)+'\nמכפלת כל האותיות: '+fmt(r.total)}
  if(r.redLadder){const w=r.words[idx];if(!w)return'אין פירוק';const paths=w.toks.map((t,i)=>t.label+': '+w.stages.map(st=>fmt(st[i])).join(' → ')).join('\n');return w.raw+'\n'+paths+'\n'+r.ladder.map((v,k)=>'D'+k+' total = '+fmt(v)).join('\n')+'\nStable: D'+(r.ladder.length-1)}
  if(r.harmonicHalf){const w=r.words[idx];const d1=w?w.stages[Math.min(1,w.stages.length-1)]:[];return (w?w.raw+'\nD1: ['+d1.map(fmt).join(', ')+'] = '+fmt(sum(d1))+'\n':'')+r.harmonic.map((v,k)=>'H'+k+' = '+fmt(v)).join('\n')+'\nSTOP before fractions · only positive integers are accepted\nSquare: generations follow accepted integer halvings only · string analogy: L/2 → frequency ×2'}
  if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
@@ -1339,6 +1364,7 @@ function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';r
 function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
 function squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}
 function wordBreakdownHtml(r,w){
+ if(r.letterProduct){const chips=w.toks.map((t,i)=>'<span class="letter-chip"><b>'+esc(t.label)+'</b><strong>'+fmt(w.baseVals[i])+'</strong></span>').join('');return '<div class="word-block"><div class="word-title">'+esc(w.raw)+'</div><div class="letter-grid">'+chips+'</div><div class="transform-note" style="direction:ltr;text-align:left">'+w.baseVals.map(fmt).join(' × ')+' = <b>'+fmt(w.subtotal)+'</b></div><div class="word-total"><span>'+L('מכפלה','Product')+'</span><b>'+fmt(w.subtotal)+'</b></div></div>'}
  if(r.cycleBkr){const rows=[0,1,2].map(i=>`<div class="transform-note"><b>מצב ${i}:</b> [${esc(w.cycleVectors[i].join('|'))}] · ${esc(w.cycleTexts[i])} = <b>${fmt(w.cycleValues[i])}</b></div>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div>${rows}<div class="transform-note"><b>חזרה:</b> ${esc(w.cycleTexts[3])} = <b>${fmt(w.cycleValues[3])}</b></div><div class="transform-note"><b>זהות:</b> Σ3 = 111×${fmt(w.chamberSum)}</div><div class="word-total"><span>Σ3</span><b>${fmt(w.subtotal)}</b></div></div>`}
  if(r.milui){const chips=w.parts.map(p=>`<span class="letter-chip"><b>${esc(p.letter)}</b><small>${esc(p.name)}</small><strong>${fmt(p.value)}</strong></span>`).join('');return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div><div class="word-total"><span>סכום</span><b>${fmt(w.subtotal)}</b></div></div>`}
  if(r.method.perati||r.method.key==='perati'){
@@ -1363,7 +1389,7 @@ function richBreakdownHtml(r){
  if(r?.harmonicHalf)return harmonicResearchHtml(r);
  if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
  if(r?.repeatMeta)return `<div class="transform-note"><b>${esc(r.repeatMeta.phrase)}</b> ×${r.repeatMeta.count} · ${esc(r.repeatMeta.methodName)} = <b>${fmt(r.total)}</b></div>`;
- return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join(''):'<div class="tiny">אין פירוק</div>'
+ return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join('')+(r.letterProduct?'<div class="transform-note">'+L('מכפלת כל האותיות','All-letter product')+' = <b>'+fmt(r.total)+'</b></div>':''):'<div class="tiny">אין פירוק</div>'
 }
 const CARD_ANCHORS=[1024,888,768,666,640,576,543,520,512,444,384,368,344,316,296,288,232,222,216,208,160,148,141,136,128,111,104,96,88,74,73,72,64,59,55,52,43,42,38,37,36,33,32,28,27,24,21,20,18,16,12,11,10,8,7,6,5,4,3,2];
 function shortCorpusLabel(v){
@@ -1473,6 +1499,7 @@ function baseLetterValueText(r,w){
  }).join(' ')
 }
 function magnetTokenText(r,w){
+ if(r.letterProduct)return w.baseVals.map(fmt).join(' × ')+' = '+fmt(w.subtotal);
  const m=r.method,letters=baseLetterValueText(r,w);
  if(r?.milui)return letters;
  if(m.ratzo||m.key==='ratzo'){
@@ -1499,6 +1526,7 @@ function magnetBreakdown(r){
   const expr=magnetTokenText(r,w);
   return multi?(w.raw+': '+expr):expr
  }).join('\n');
+ if(r.letterProduct)out+='\n'+L('מכפלת כל האותיות','All-letter product')+' = '+fmt(r.total);
  if(r.method?.post){
   const base=r.words.reduce((acc,w)=>acc+(r.method.fold==='word'?Number(w.folded||0):sum(w.vals||w.baseVals||[])),0);
   out+='\nבסיס='+fmt(base)+' → '+minimalMethodName(r)+'='+fmt(r.total)
@@ -1723,7 +1751,7 @@ function renderNumber(){ensureSelection();const src=document.getElementById('num
 
 function renderRelations(){const q=document.getElementById('q').value,active=syncRelevantResults(q,current.results),H=harmony(active),rels=buildRelations(active);state.relationRows=rels;document.getElementById('harmonyPct').textContent=H.pct+'%';document.getElementById('harmonyFill').style.width=H.pct+'%';document.getElementById('harmonyText').textContent=`${H.connected}/${H.pairs} זוגות מחוברים`;document.getElementById('strongCount').textContent=H.strong;const vals=active.map(r=>r.total);const repeated=CORPUS.filter(c=>vals.includes(c.value)).slice(0,8);document.getElementById('relationCorpus').innerHTML=repeated.map(c=>`<span class="badge gold">${esc(c.label)}=${c.value}</span>`).join('')||'<span class="tiny">אין התאמות קורפוס</span>';const per=6,pages=Math.max(1,Math.ceil(rels.length/per));state.relPage=Math.min(state.relPage,pages-1);const page=rels.slice(state.relPage*per,state.relPage*per+per);document.getElementById('relationList').innerHTML=Array.from({length:per},(_,i)=>{const x=page[i];if(!x)return'<div class="relation-row" style="opacity:.2"></div>';return `<div class="relation-row" data-relidx="${state.relPage*per+i}" title="לחץ לפירוט מלא"><div><div class="pair">${fmt(x.a.total)} ↔ ${fmt(x.b.total)}</div><div class="why">${esc(x.rels.map(r=>r[0]).join(' · '))}</div></div><div class="tiny">${esc(x.a.method.name)} ↔ ${esc(x.b.method.name)}</div></div>`}).join('');document.getElementById('relPage').textContent=`${state.relPage+1}/${pages}`;document.getElementById('relPrev').disabled=state.relPage===0;document.getElementById('relNext').disabled=state.relPage>=pages-1}
 
-function relationRuleText(r){const m=r.method;if(r.cycleBkr)return 'חוק: שלושה מצבי אי״ק בכ״ר מחזוריים; כל אות עוברת לחברה הבאה בלשכה, ולאחר שלושה צעדים חוזרת למקור. הערך המוצג הוא Σ3 של שלושת המצבים הייחודיים.';if(r.milui)return 'חוק: פירוק כל אות לשם המלא שלה וסכימת האותיות.';if(m.sub)return 'חוק: החלפת כל אות לפי טבלת הצופן של השיטה, ואז סכימת הערכים.';if(m.key==='positional')return 'חוק: ערך כל אות מוכפל במיקום שלה בתוך המילה.';if(m.transformName)return `חוק: ${m.transformName} על סדר ערכי האותיות.`;if(m.fold==='word')return 'חוק: סכום כל מילה ולאחר מכן צמצום של אותה מילה.';if(m.post)return 'חוק: סכום בסיס ולאחר מכן תוספת קבועה של השיטה.';return 'חוק: סכום ערכי האותיות לפי טבלת השיטה.'}
+function relationRuleText(r){const m=r.method;if(r.letterProduct)return 'חוק: מכפלת הערכים של כל האותיות המזוהות בטקסט לפי טבלת השיטה, גם מעבר לרווחים.';if(r.cycleBkr)return 'חוק: שלושה מצבי אי״ק בכ״ר מחזוריים; כל אות עוברת לחברה הבאה בלשכה, ולאחר שלושה צעדים חוזרת למקור. הערך המוצג הוא Σ3 של שלושת המצבים הייחודיים.';if(r.milui)return 'חוק: פירוק כל אות לשם המלא שלה וסכימת האותיות.';if(m.sub)return 'חוק: החלפת כל אות לפי טבלת הצופן של השיטה, ואז סכימת הערכים.';if(m.key==='positional')return 'חוק: ערך כל אות מוכפל במיקום שלה בתוך המילה.';if(m.transformName)return `חוק: ${m.transformName} על סדר ערכי האותיות.`;if(m.fold==='word')return 'חוק: סכום כל מילה ולאחר מכן צמצום של אותה מילה.';if(m.post)return 'חוק: סכום בסיס ולאחר מכן תוספת קבועה של השיטה.';return 'חוק: סכום ערכי האותיות לפי טבלת השיטה.'}
 function relationFullBreakdown(r){const out=[relationRuleText(r),''];if(!r.words?.length)return out.concat(['אין פירוק אותיות זמין.']).join('\n');for(let i=0;i<r.words.length;i++){out.push(wordDescription(r,i));if(i<r.words.length-1)out.push('')}return out.join('\n')}
 function openRelationDetail(idx){const x=state.relationRows[idx];if(!x)return;state.relationOpen=x;const exact=x.a.total===x.b.total;document.getElementById('relationDetailTitle').textContent=`${x.a.method.name} ↔ ${x.b.method.name}`;document.getElementById('relationDetailSub').textContent=`${fmt(x.a.total)} ↔ ${fmt(x.b.total)}`;document.getElementById('relationDetailWhy').innerHTML=`<span class="badge ${exact?'green':'cyan'}">✓ ${exact?'שוויון מאומת':'קשר מתמטי מאומת'}</span>`+x.rels.map(r=>`<span class="badge gold">${esc(r[0])}</span>`).join('');document.getElementById('relationLeftTitle').textContent=`${x.a.method.name} = ${fmt(x.a.total)}`;document.getElementById('relationRightTitle').textContent=`${x.b.method.name} = ${fmt(x.b.total)}`;document.getElementById('relationLeftBody').textContent=relationFullBreakdown(x.a);document.getElementById('relationRightBody').textContent=relationFullBreakdown(x.b);const modal=document.getElementById('relationModal');modal.classList.add('open');modal.setAttribute('aria-hidden','false')}
 function closeRelationDetail(){const modal=document.getElementById('relationModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');state.relationOpen=null}
@@ -2462,6 +2490,15 @@ window.onSiteLanguageChange=function(lang){
    }
  };
 
+ // Regression: exact letter products across all three Hebrew base maps.
+ try{
+  const examples=[['letterProductRegular',2400],['letterProductOrdinal',204],['letterProductSmall',24]];
+  for(const [key,want] of examples){
+   const m=METHODS.he.find(x=>x.key===key);
+   console.assert(calculate('אלף','he',m).total===want,'Letter Product regression failed: '+key);
+   console.assert(calculate('א לף','he',m).total===want,'Letter Product whitespace regression failed: '+key);
+  }
+ }catch(err){console.warn('Letter Product self-test failed',err)}
  // Regression: Genesis 1:1, Hebrew Regular must contain 999×2, 888×1, 777×1.
  try{
    const t=autoCombinationHits('בראשית ברא אלהים את השמים ואת הארץ').filter(x=>x.method.key==='regular');
