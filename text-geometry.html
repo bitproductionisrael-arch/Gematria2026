@@ -260,7 +260,7 @@ function drawPreview(exportCanvas=null){
  if(!exporting){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
  pen.setTransform(dpr,0,0,dpr,0,0);
  pen.fillStyle='#0a111b';pen.fillRect(0,0,w,h);
- if(!selected||selected.count>20100){if(!exporting){viewNote.textContent='אין ייצוג נבחר';$('emptyGeometry').hidden=false;zoomText.textContent='×1.0';}return;}
+ if(!selected||selected.count>20100){if(!exporting){viewNote.textContent='אין ייצוג נבחר';$('emptyGeometry').hidden=false;$('emptyGeometry').firstChild.textContent='אין ציור אוטומטי';$('emptyGeometry').lastElementChild.textContent='הסבר לעוזר איך לייצג את הנקודות.';zoomText.textContent='×1.0';}return;}
  if(!exporting)$('emptyGeometry').hidden=true;
  const p=pointsForShape(selected);if(!p.length){if(!exporting){viewNote.textContent=selected?.family==='DODEC'?'Dodec: ייצוג מרחבי במעבדת Geometry Lab':'אין נקודות להצגה';$('emptyGeometry').hidden=false;$('emptyGeometry').firstChild.textContent=selected?.family==='DODEC'?'צורת Dodec מדויקת': 'אין ציור אוטומטי';$('emptyGeometry').lastElementChild.textContent=selected?.family==='DODEC'?'פתח את הצורה המרחבית במעבדת Geometry Lab.':'הסבר לעוזר איך לייצג את הנקודות.';}return;}
  let minx=Infinity,maxx=-Infinity,miny=Infinity,maxy=-Infinity;
