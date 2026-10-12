@@ -72,6 +72,23 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 .key.black.ab-selected{z-index:8}
 @media(max-width:550px){.ab-tools{gap:5px}.ab-tools button{padding:8px 7px;font-size:11px}.ab-field select{max-width:148px;font-size:11px}}
 
+
+.five-panel{background:linear-gradient(105deg,#1c212a,#101720 75%);border-color:#746247}
+.five-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+.five-top h2{margin:0;color:#f5d4a1;font-size:19px}
+.five-top span{font-size:12px;color:#a5bac9}
+.five-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.five-grid button{background:#0b1720;border:1px solid #405363;border-radius:10px;text-align:right;min-height:83px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px}
+.five-grid button strong{font-size:13px}.five-grid button span{font-size:11px;color:#a8bac8;line-height:1.4}
+.five-grid button.active{background:#42351e;border-color:#edc37a}.five-grid button.active strong{color:#ffe1a3}
+.five-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.five-actions button{font-size:12px}
+.five-stats{color:#cbe0e9;font-size:12px;line-height:1.7;margin:10px 0 4px}
+.old-ab{margin-bottom:12px}.old-ab>summary{color:#94aaba;cursor:pointer;font-size:12px;padding:6px}
+.old-ab .ab-panel{margin-top:8px}.old-chords summary{font-size:12px;cursor:pointer;color:#a9bac8}.old-chords button{margin:4px}
+@media(max-width:870px){.five-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:540px){.five-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.five-grid button{min-height:73px;padding:8px}.five-grid button strong{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -79,8 +96,26 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <main>
 <div class="eyebrow">FREQUENCY PIANO · INDEPENDENT LAB</div>
 <h1>פסנתר <span>תדרים</span></h1>
-<p class="sub">מחלקה עצמאית באתר · 88 קלידים · A0=111Hz עד C8=16,640Hz · יחסים מדויקים · D=592</p>
+<p class="sub">5 כיוונים מוזיקליים חדשים · בחר כיוון ונגן · 88 קלידים החל ב־A=111Hz</p>
 
+
+<section class="panel five-panel" id="fivePiano">
+ <div class="five-top"><h2>5 כיוונים חדשים · עמית</h2><span>88 קלידים · חמש שיטות · A=111Hz</span></div>
+ <div class="five-grid" role="group" aria-label="בחירת כיוון פסנתר">
+  <button data-fresh="fresh_piano"><strong>1 · פסנתר אמיתי</strong><span>12 חצאי טונים שווים</span></button>
+  <button data-fresh="fresh_anchors"><strong>2 · עוגני עמית</strong><span>הכי שומר את המספרים</span></button>
+  <button data-fresh="fresh_warm"><strong>3 · נעים ומאוזן</strong><span>מעברים חלקים יותר</span></button>
+  <button data-fresh="fresh_just"><strong>4 · הרמוניה טהורה</strong><span>יחסים פשוטים ומדויקים</span></button>
+  <button data-fresh="fresh_pyth"><strong>5 · פיתגוראי</strong><span>קווינטות טהורות</span></button>
+ </div>
+ <div class="five-actions">
+  <button type="button" id="fiveWalk">▶ בדוק מעבר: E → F → F♯ → G → G♯ → A</button>
+  <button type="button" id="fiveStop">■ עצור</button>
+ </div>
+ <p class="five-stats" id="fiveStats" aria-live="polite"></p>
+ <p class="small" id="fiveDetails">תו בודד בכל פעם, ללא אקורדים. מעבר בין הפריסטים משנה את המקלדת מיד, ולא מוחק שום מיפוי שמור.</p>
+</section>
+<details class="old-ab"><summary>השוואת A/B הישנה (מתקדם · אקורדים)</summary>
 <section class="panel ab-panel" id="abCompare" aria-label="השוואת סולמות A ו-B">
  <div class="ab-title"><strong>השוואה מבוקרת · A / B</strong><span id="abStatus">אותו גל מסור · אותה עוצמה · אותו אקורד</span></div>
  <div class="ab-tools">
@@ -118,12 +153,11 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
    <p class="small">שרשרת פיבונאצ׳י בגרסה B: 13×111=1443Hz על F, ‏21×111=2331Hz על D, ‏34×111=3774Hz על A♯. זו תוצאה של היחסים שנבחרו, לא תכונת תהודה אוניברסלית של 888Hz.</p>
  </details>
 </section>
-
+</details>
 
 <section class="panel">
 <div class="tools">
-<button id="major">▶ 444 · 555 · 666 (מז'ור)</button>
-<button id="minor">▶ 444 · 520 · 666 (מינור)</button>
+<details class="old-chords"><summary>אקורדים ישנים (אופציונלי)</summary><button id="major">▶ 444 · 555 · 666 (מז'ור)</button><button id="minor">▶ 444 · 520 · 666 (מינור)</button></details>
 <button id="stop">■ עצור</button>
 <button id="smaller">− הקטן</button>
 <button id="larger">+ הגדל</button>
@@ -180,8 +214,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <section class="tile focus"><strong>444 + 520 + 666 Hz</strong><p>מינור בברירת המחדל; 528Hz זמין לכיוון כפריסט נפרד.</p></section>
 </div>
 <section class="panel" style="margin-top:14px">
-<h2>חוק המקלדת</h2>
-<p class="small">מיפוי ראשי מדויק: A=1, A♯=15/14, B=9/8, C=130/111, C♯=5/4, D=4/3, D♯=52/37, E=3/2, F=355/222, F♯=5/3, G=7/4, G♯=15/8. כל אוקטבה מכפילה את התדר פי 2; הקליד ה־88 הוא C8=16,640Hz. ערכי השמע והפריסטים שומרים שברים; המספרים על הקלידים מעוגלים לתצוגה בלבד. המיפוי הישן 111–999 זמין כפריסט ״ישן״. הפריסטים האישיים לא נמחקים. בצלילים הגבוהים מאוד ייתכן שהרמקול לא ישמיע צליל מורגש.</p>
+<h2>חוק הכיוון שבחרת</h2><p class="small" id="currentScaleDescription">בחר אחת מחמש שיטות הכיוון. לכל פריסט 88 קלידים ואוקטבות מדויקות. פריסטים אישיים וכיווני A/B קודמים נשמרים בטיונר.</p>
 </section>
 </main>
 <script>
@@ -219,6 +252,32 @@ for(let a=0;a<legacyAnchors.length-1;a++){
   legacyNotes[i]=Math.round(p.f*Math.pow(q.f/p.f,(i-p.i)/(q.i-p.i)));
  }
 }
+
+// FIVE NEW MUSICAL PRESETS. Each map has 88 ascending keys and exact octave doubling.
+// Legacy factoryNotes / harmonicBNotes and browser localStorage are never overwritten.
+const FRESH_DEFS=[
+ {id:"fresh_piano",title:"1 · פסנתר אמיתי",desc:"12 חצאי טונים שווים, בדיוק כמו פסנתר מושווה. A=111Hz הוא תדר הייחוס.",ratios:Array.from({length:12},(_,i)=>2**(i/12))},
+ {id:"fresh_anchors",title:"2 · עוגני עמית",desc:"מעדיף עוגנים מדויקים: C=520, C♯=555, D=592, D♯=624, E=666, F=710, F♯=740, G=777, G♯=832.5 וגם A ו־B.",ratios:[1,Math.sqrt(9/8),9/8,520/444,5/4,4/3,624/444,3/2,710/444,740/444,7/4,15/8]},
+ {id:"fresh_warm",title:"3 · נעים ומאוזן",desc:"פשרה מחושבת בסנטים בין הפסנתר המושווה לעוגנים, עם מעבר חלק יותר באזור F–G. ניסוי שמיעתי, לא הבטחה לנעימות.",ratios:null},
+ {id:"fresh_just",title:"4 · הרמוניה טהורה",desc:"5-limit Just Intonation: יחסים רציונליים קטנים; למשל A–C♯–E ביחס 4:5:6 ואקורדים עם טרצות טהורות.",ratios:[1,16/15,9/8,6/5,5/4,4/3,45/32,3/2,8/5,5/3,9/5,15/8]},
+ {id:"fresh_pyth",title:"5 · פיתגוראי",desc:"בנוי מיחסי קווינטה 3:2 ואוקטבה 2:1. עקבי בקווינטות, אך טרצות עשויות להישמע שונות מפסנתר מושווה.",ratios:[1,256/243,9/8,32/27,81/64,4/3,729/512,3/2,128/81,27/16,16/9,243/128]}
+];
+const WARM_TARGET=[1,15/14,9/8,520/444,5/4,4/3,624/444,3/2,710/444,740/444,7/4,15/8];
+const WARM_WEIGHTS=[1,.25,1,.32,1,1,.4,1,.25,.25,.27,1];
+FRESH_DEFS[2].ratios=WARM_TARGET.map((ratio,pc)=>Math.pow(2,pc/12)**(1-WARM_WEIGHTS[pc])*ratio**WARM_WEIGHTS[pc]);
+const freshMaps=Object.create(null);
+for(const d of FRESH_DEFS){
+ const vals=Array.from({length:COUNT},(_,i)=>BASE_HZ*2**Math.floor(i/12)*d.ratios[i%12]);
+ if(vals.length!==88||!near(vals[0],111)||vals.some((v,i)=>!Number.isFinite(v)||v<=0||v>20000||(i>0&&v<=vals[i-1]))||
+ vals.some((v,i)=>i+12<COUNT&&!near(vals[i+12],2*v)))throw Error("Five piano map validation: "+d.id);
+ freshMaps[d.id]={name:d.title,desc:d.desc,notes:Object.freeze(vals)};
+}
+const isFresh=id=>Object.prototype.hasOwnProperty.call(freshMaps,id);
+const builtinMap=id=>isFresh(id)?freshMaps[id].notes:id==="__factory__"?factoryNotes:id==="__harmonicB__"?harmonicBNotes:id==="__legacy__"?legacyNotes:null;
+const isBuiltin=id=>!!builtinMap(id);
+const anchorChecks=[[0,111],[12,222],[19,333],[24,444],[27,520],[28,555],[29,592],[30,624],[31,666],[32,710],[33,740],[34,777],[35,832.5],[36,888],[38,999]];
+const anchorCount=notes=>anchorChecks.filter(([i,n])=>near(notes[i],n)).length;
+
 const anchorSet=new Set([111,222,333,444,555,666,777,888,999,1776,1998,592,2368]);
 const specialSet=new Set([520,624,710]);
 const isBlack=i=>[1,4,6,9,11].includes(i%12);
