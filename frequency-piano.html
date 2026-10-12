@@ -89,6 +89,25 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 @media(max-width:870px){.five-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:540px){.five-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.five-grid button{min-height:73px;padding:8px}.five-grid button strong{font-size:12px}}
 
+
+/* User-approved Web MIDI input: explicit browser permission request and hotplug. */
+.midi-panel{border-color:#426c70;background:linear-gradient(115deg,#10252c,#101923 78%)}
+.midi-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.midi-heading h2{margin:0;color:#bcefee;font-size:18px}
+.midi-heading span{font-size:12px;color:#a9c9d2}
+.midi-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.midi-controls .midi-connect{background:#1e5a5d;border:1px solid #81cfd1;color:#efffff;font-weight:800;min-height:42px}
+.midi-controls .midi-connect:disabled{opacity:.65;cursor:wait}
+.midi-controls label{font-size:12px;color:#c6dce4;display:flex;align-items:center;gap:7px}
+.midi-controls select{max-width:210px;min-width:145px;background:#091923;border:1px solid #58727e;border-radius:8px;color:#e7f2f4;padding:9px;font:inherit}
+.midi-controls select:disabled{opacity:.6}
+.midi-led{color:#8195a2;border:1px solid #354855;border-radius:20px;font-size:11px;font-weight:700;padding:7px 10px}
+.midi-led.connected{color:#a9dbd9;border-color:#5e9495}
+.midi-led.playing{color:#151f1e;background:#78d8b3;border-color:#a9ffcc}
+.midi-message{font-size:12px;margin:10px 0 4px;line-height:1.7;color:#d3e5ed}
+.midi-guide{margin:3px 0 0;font-size:11px;line-height:1.7;color:#a4bac6}
+@media(max-width:550px){.midi-controls{gap:7px}.midi-controls .midi-connect{font-size:12px}.midi-controls select{max-width:148px;min-width:125px}.midi-panel{padding:11px}}
+
 </style>
 </head>
 <body>
@@ -115,6 +134,23 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
  <p class="five-stats" id="fiveStats" aria-live="polite"></p>
  <p class="small" id="fiveDetails">תו בודד בכל פעם, ללא אקורדים. מעבר בין הפריסטים משנה את המקלדת מיד, ולא מוחק שום מיפוי שמור.</p>
 </section>
+
+<section class="panel midi-panel" id="midiPanel" aria-label="חיבור מקלדת שליטה MIDI">
+  <div class="midi-heading"><h2>מקלדת שליטה MIDI</h2><span>נגן בפסנתר דרך USB / MIDI · כל חמשת הכיוונים</span></div>
+  <div class="midi-controls">
+    <button id="midiConnect" class="midi-connect" type="button">🎹 חבר מקלדת MIDI</button>
+    <label for="midiInputSelect">מקלדת
+      <select id="midiInputSelect" disabled aria-label="בחר התקן MIDI מחובר">
+        <option value="">לא מחובר</option>
+      </select>
+    </label>
+    <button id="midiDisconnect" type="button" disabled>נתק</button>
+    <span id="midiActivity" class="midi-led" aria-label="סטטוס MIDI">● לא מחובר</span>
+  </div>
+  <p id="midiStatus" class="midi-message" role="status" aria-live="polite">חבר מקלדת למחשב או לטלפון שתומך בכך, ואז לחץ ״חבר מקלדת MIDI״ כדי לאפשר גישה בדפדפן.</p>
+  <p class="midi-guide">הערה: נדרש דפדפן עם Web MIDI והרשאת אתר. הנתונים נשארים בדפדפן; אין שליחה של MIDI לשרת. טווח הנגינה A0–C8 (תווים 21–108), כולל עוצמת לחיצה ודוושת Sustain (CC64).</p>
+</section>
+
 <details class="old-ab"><summary>השוואת A/B הישנה (מתקדם · אקורדים)</summary>
 <section class="panel ab-panel" id="abCompare" aria-label="השוואת סולמות A ו-B">
  <div class="ab-title"><strong>השוואה מבוקרת · A / B</strong><span id="abStatus">אותו גל מסור · אותה עוצמה · אותו אקורד</span></div>
@@ -318,14 +354,16 @@ function release(id){
  for(const o of v.oscs){try{o.stop(now+seconds+.08)}catch(_){}}
  document.querySelector('[data-index="'+id+'"]')?.classList.remove("pressed");
 }
-function play(id){
+function play(id,velocity=127){
  if(!Number.isInteger(id)||id<0||id>=COUNT)return;
  release(id);
  const f=notes[id],ctx=context(),now=ctx.currentTime,voice=presets[sound.preset];
  const amp=ctx.createGain();amp.gain.setValueAtTime(0,now);amp.connect(sound.master);
- amp.gain.linearRampToValueAtTime(voice.level,now+voice.attack);
+ const velocityGain=.20+.80*Math.max(0,Math.min(127,velocity))/127;
+ const peak=voice.level*velocityGain;
+ amp.gain.linearRampToValueAtTime(peak,now+voice.attack);
  if(voice.decay>0)
-   amp.gain.setTargetAtTime(voice.level*voice.hold,now+voice.attack,voice.decay);
+   amp.gain.setTargetAtTime(peak*voice.hold,now+voice.attack,voice.decay);
  const oscs=[];
  for(const [mult,level,type] of voice.partials){
   const osc=ctx.createOscillator(),vol=ctx.createGain();
@@ -614,6 +652,7 @@ document.getElementById("repairBlackKeys").onclick=()=>{
 };
 function loadMap(values,name){
  if(!validMap(values)){informTuner("המיפוי שנבחר פגום או אינו תקין.");return false}
+ if(typeof midiPanic==="function")midiPanic();
  stopAll();
  if(typeof fiveStopWalk==="function")fiveStopWalk();
  for(let i=0;i<COUNT;i++)notes[i]=values[i];
@@ -881,6 +920,177 @@ document.getElementById("fiveWalk").onclick=fivePlayWalk;
 document.getElementById("fiveStop").onclick=fiveStopWalk;
 loadMap(freshMaps.fresh_piano.notes,"fresh_piano");
 keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
+
+
+
+// Web MIDI: one selected input, no SysEx and no permission request until user click.
+// Standard MIDI note numbers 21..108 map exactly to key indices 0..87 (A0..C8).
+const MIDI_NOTE_MIN=21, MIDI_NOTE_MAX=108;
+const midiState={
+ access:null,input:null,held:new Set(),latched:new Set(),sustain:false,
+ attached:false
+};
+const midiConnectButton=document.getElementById("midiConnect");
+const midiDisconnectButton=document.getElementById("midiDisconnect");
+const midiInputSelect=document.getElementById("midiInputSelect");
+const midiStatus=document.getElementById("midiStatus");
+const midiActivity=document.getElementById("midiActivity");
+function midiInfo(message){midiStatus.textContent=message;}
+function midiLight(){
+ const active=midiState.held.size+midiState.latched.size;
+ midiActivity.classList.toggle("connected",!!midiState.input);
+ midiActivity.classList.toggle("playing",active>0);
+ midiActivity.textContent=active?"● MIDI · "+active+" תווים":midiState.input?"● MIDI מחובר":"● לא מחובר";
+}
+function midiPanic(){
+ // Release ONLY the notes held by MIDI and reset sustain state, e.g. on device removal.
+ const all=new Set([...midiState.held,...midiState.latched]);
+ for(const keyIndex of all)release(keyIndex);
+ midiState.held.clear();
+ midiState.latched.clear();
+ midiState.sustain=false;
+ midiLight();
+}
+function midiNoteOn(note,velocity){
+ const index=note-MIDI_NOTE_MIN;
+ if(index<0||index>=COUNT)return;
+ // Make live playing take priority over optional comparison/demo playback.
+ if(typeof fiveStopWalk==="function"&&walkNow)fiveStopWalk();
+ if(typeof abStopAudio==="function"&&abState.synth)abStopAudio();
+ midiState.held.add(index);
+ midiState.latched.delete(index);
+ play(index,velocity);
+ midiInfo("מנגן "+pitchLabel(index)+" · "+formatHz(notes[index])+"Hz · עוצמה "+velocity+"/127");
+ midiLight();
+}
+function midiNoteOff(note){
+ const index=note-MIDI_NOTE_MIN;
+ if(index<0||index>=COUNT)return;
+ if(!midiState.held.has(index))return;
+ midiState.held.delete(index);
+ if(midiState.sustain)midiState.latched.add(index);
+ else{midiState.latched.delete(index);release(index);}
+ midiLight();
+}
+function midiPedal(value){
+ const down=value>=64;
+ if(down===midiState.sustain)return;
+ midiState.sustain=down;
+ if(!down){
+  for(const index of midiState.latched)if(!midiState.held.has(index))release(index);
+  midiState.latched.clear();
+ }
+ midiLight();
+}
+function midiOnMessage(event){
+ const data=event.data;
+ if(!data||data.length<2)return;
+ const kind=data[0]&0xf0;
+ const note=data[1];
+ const velocity=data.length>2?data[2]:0;
+ if(kind===0x90){
+  if(velocity>0)midiNoteOn(note,velocity);
+  else midiNoteOff(note); // MIDI Note On with velocity=0 means note off.
+ }else if(kind===0x80){
+  midiNoteOff(note);
+ }else if(kind===0xb0){
+  if(note===64)midiPedal(velocity);
+  else if(note===120||note===123)midiPanic(); // all sound/notes off
+ }
+}
+function midiDetachInput(){
+ if(midiState.input){
+  midiState.input.removeEventListener("midimessage",midiOnMessage);
+  midiState.input=null;
+ }
+ midiPanic();
+}
+function midiAttachInput(input){
+ if(input===midiState.input)return;
+ midiDetachInput();
+ midiState.input=input||null;
+ if(input)input.addEventListener("midimessage",midiOnMessage);
+ midiLight();
+}
+function midiRefreshInputs(){
+ if(!midiState.access)return;
+ const connected=[...midiState.access.inputs.values()].filter(p=>p.state==="connected");
+ const currentId=midiState.input?.id||midiInputSelect.value;
+ const selected=connected.find(p=>p.id===currentId)||connected[0]||null;
+ midiInputSelect.textContent="";
+ if(!connected.length){
+  const option=document.createElement("option");
+  option.value="";option.textContent="אין מקלדת מחוברת";midiInputSelect.appendChild(option);
+ }else{
+  for(const input of connected){
+   const option=document.createElement("option");
+   option.value=input.id;
+   option.textContent=input.name||input.manufacturer||"מקלדת MIDI";
+   midiInputSelect.appendChild(option);
+  }
+ }
+ midiInputSelect.disabled=connected.length===0;
+ midiInputSelect.value=selected?.id||"";
+ const changed=selected!==midiState.input;
+ midiAttachInput(selected);
+ midiDisconnectButton.disabled=false;
+ if(!selected)midiInfo("הרשאת MIDI התקבלה, אך לא נמצאה מקלדת מחוברת. חבר מקלדת USB MIDI ובחר בה כאשר תופיע.");
+ else if(changed)midiInfo("מחובר: "+(selected.name||"מקלדת MIDI")+" · נגן עכשיו. תווים 21–108 מפעילים את הפסנתר בכיוון הנבחר.");
+ midiLight();
+}
+function midiStateChanged(){
+ midiRefreshInputs(); // handles hotplug and auto-disconnection
+}
+midiInputSelect.onchange=()=>{
+ if(!midiState.access)return;
+ const selected=midiState.access.inputs.get(midiInputSelect.value);
+ midiAttachInput(selected&&selected.state==="connected"?selected:null);
+ if(midiState.input)midiInfo("נבחרה: "+(midiState.input.name||"מקלדת MIDI")+". ניתן לנגן.");
+};
+midiConnectButton.onclick=async()=>{
+ if(typeof navigator.requestMIDIAccess!=="function"){
+  midiInfo("הדפדפן הזה אינו תומך ב־Web MIDI. פתח את האתר ב־Chrome או Edge בגרסה תומכת דרך HTTPS.");
+  return;
+ }
+ midiConnectButton.disabled=true;
+ midiConnectButton.textContent="ממתין להרשאת MIDI…";
+ midiInfo("מבקש הרשאת MIDI מהדפדפן. אפשר גישה למכשירי MIDI אם מופיעה בקשה.");
+ try{
+  // Must be called synchronously as part of a user's click before awaiting.
+  const access=await navigator.requestMIDIAccess({sysex:false});
+  if(midiState.access)midiState.access.removeEventListener("statechange",midiStateChanged);
+  midiState.access=access;
+  midiState.access.addEventListener("statechange",midiStateChanged);
+  midiRefreshInputs();
+ }catch(error){
+  const name=error?.name||"";
+  if(name==="NotAllowedError"||name==="SecurityError"){
+   midiInfo("הגישה ל־MIDI נחסמה או נדחתה. אפשר הרשאת MIDI בהגדרות האתר בדפדפן ונסה שוב.");
+  }else{
+   midiInfo("לא ניתן להפעיל MIDI: "+(error?.message||name||"שגיאה לא ידועה")+". בדוק שהמקלדת והדפדפן תומכים ב־Web MIDI.");
+  }
+ }finally{
+  midiConnectButton.disabled=false;
+  midiConnectButton.textContent="↻ חבר / סרוק MIDI";
+ }
+};
+midiDisconnectButton.onclick=()=>{
+ midiDetachInput();
+ if(midiState.access)midiState.access.removeEventListener("statechange",midiStateChanged);
+ midiState.access=null;
+ midiInputSelect.textContent="";
+ const option=document.createElement("option");option.value="";option.textContent="לא מחובר";midiInputSelect.appendChild(option);
+ midiInputSelect.disabled=true;
+ midiDisconnectButton.disabled=true;
+ midiInfo("ההאזנה למקלדת הופסקה. אפשר לחבר מחדש בכל עת. הרשאה שניתנה מנוהלת בהגדרות הדפדפן.");
+ midiLight();
+};
+if(typeof navigator.requestMIDIAccess!=="function"){
+ midiInfo("Web MIDI אינו זמין בדפדפן הנוכחי. נסה לפתוח את האתר ב־Chrome או Edge עם תמיכת MIDI.");
+}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)midiPanic()});
+window.addEventListener("blur",()=>midiPanic());
+midiLight();
 
 </script>
 </body>
