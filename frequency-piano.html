@@ -13,9 +13,9 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 .scroll{overflow-x:auto;overscroll-behavior-inline:contain;overflow-y:hidden;direction:ltr;background:#080d14;border:1px solid #2a3643;border-radius:12px;padding:11px 6px 13px;scrollbar-color:#52667a #131d28;touch-action:none}
 .keys{position:relative;display:flex;width:max-content;height:calc(var(--white-height)*1px);direction:ltr;user-select:none;-webkit-user-select:none}.key{touch-action:none;cursor:pointer;transition:filter .06s}.white{flex:0 0 calc(var(--white)*1px);width:calc(var(--white)*1px);height:calc(var(--white-height)*1px);background:linear-gradient(#f4f7f6,#aebdcb);border:1px solid #657786;border-radius:0 0 4px 4px;position:relative;color:#243242}.black{width:calc(var(--black)*1px);height:calc(var(--black-height)*1px);position:absolute;top:0;z-index:2;border:1px solid #536477;border-radius:0 0 3px 3px;background:linear-gradient(#35475c,#0b1017);box-shadow:1px 2px 3px #060b12;color:#eef3f9}
 .white.anchor{background:linear-gradient(#ffe5a4,#c49d48)}.black.anchor{background:linear-gradient(#916c37,#38250f);border-color:#ffcb66}.white.special{background:linear-gradient(#c7f5fa,#62b7c1)}.black.special{background:linear-gradient(#358994,#114753);border-color:#8df4f9}.key.pressed{filter:brightness(1.4);box-shadow:0 0 12px #ffdf8f inset;z-index:3}
-.key .name{position:absolute;top:7px;left:0;width:100%;text-align:center;font-size:10px;font-weight:800}
-.key .freq{position:absolute;bottom:9px;left:0;width:100%;text-align:center;font-size:9px;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:750;direction:ltr;letter-spacing:-.25px}
-.black .name{top:6px;font-size:8px}.black .freq{bottom:9px;font-size:7px;color:#f8fcff;letter-spacing:-.4px}
+.key .name{position:absolute;top:5px;left:0;width:100%;text-align:center;font-size:9px;font-weight:850;white-space:nowrap;letter-spacing:-.4px}
+.key .freq{position:absolute;top:29px;left:50%;width:auto;max-height:calc(100% - 34px);font-size:9px;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:750;direction:ltr;letter-spacing:-.2px;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg)}
+.black .name{top:4px;font-size:7px}.black .freq{top:25px;font-size:7.5px;color:#f8fcff;letter-spacing:-.15px}
 .key.anchor .freq,.key.special .freq{font-weight:950}
 .voice-picker{display:flex;align-items:center;gap:8px;font-size:13px;color:#c9d8e4}
 .voice-picker select{background:#182333;color:#f5f6f8;border:1px solid #596b7b;border-radius:9px;padding:9px 11px;font:inherit;min-width:132px}
@@ -47,7 +47,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 @media(max-width:550px){.tuner-dock{padding:9px 7px}.preset-name input{width:120px}.preset-select select{width:118px}.tuner-heading{font-size:12px}.tuner-line{gap:5px}.tuner-line button{padding:7px 9px}}
 .tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
 @media(min-width:720px){:root{--white:36;--black:24;--white-height:202;--black-height:130}main{margin-top:35px}}
-@media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.white .freq{font-size:9px}.black .freq{font-size:7px}.key .name{font-size:8px}}
+@media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.white .freq{font-size:9px}.black .freq{font-size:7.5px}.white .name{font-size:9px}.black .name{font-size:7px}}
 </style>
 </head>
 <body>
@@ -55,11 +55,11 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <main>
 <div class="eyebrow">FREQUENCY PIANO · INDEPENDENT LAB</div>
 <h1>פסנתר <span>תדרים</span></h1>
-<p class="sub">מחלקה עצמאית באתר · 88 קלידים · 111Hz בקצה הראשון ו־999Hz בקצה האחרון · תדרים שלמים בלבד · מקלדת קומפקטית לטלפון</p>
+<p class="sub">מחלקה עצמאית באתר · 88 קלידים · A0=111Hz עד C8=16,640Hz · יחסים מדויקים · D=592</p>
 <section class="panel">
 <div class="tools">
 <button id="major">▶ 444 · 555 · 666 (מז'ור)</button>
-<button id="minor">▶ 444 · 528 · 666 (מינור)</button>
+<button id="minor">▶ 444 · 520 · 666 (מינור)</button>
 <button id="stop">■ עצור</button>
 <button id="smaller">− הקטן</button>
 <button id="larger">+ הגדל</button>
@@ -83,13 +83,13 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 </div>
 <div class="status" aria-live="polite"><strong id="frequency">111 Hz</strong><span id="activeText">הקליד הראשון · לחץ על קליד לנגינה</span></div>
 <div class="tools" style="margin-bottom:12px">
-<button data-hz="111">111</button><button data-hz="222">222</button><button data-hz="333">333</button><button data-hz="444">444</button><button data-hz="528">528</button><button data-hz="555">555</button><button data-hz="666">666</button><button data-hz="777">777</button><button data-hz="888">888</button><button data-hz="999">999</button>
+<button data-hz="111">111</button><button data-hz="222">222</button><button data-hz="333">333</button><button data-hz="444">444</button><button data-hz="520">520</button><button data-hz="592">592</button><button data-hz="624">624</button><button data-hz="555">555</button><button data-hz="666">666</button><button data-hz="777">777</button><button data-hz="888">888</button><button data-hz="999">999</button>
 </div>
 <div class="tuner-dock" id="tunerDock" hidden aria-label="טיונר קלידים ושמירת מיפויים">
   <div class="tuner-line">
     <strong class="tuner-heading">טיונינג · קליד <span id="tunerKeyNo">1</span></strong>
     <button id="tuneMinus" type="button" aria-label="הפחת הרץ אחד">−1 Hz</button>
-    <label class="tuner-input-wrap"><input id="tuneHz" type="number" inputmode="numeric" min="20" max="5000" step="1" value="111" aria-label="תדר הקליד בהרצים"><span>Hz</span></label>
+    <label class="tuner-input-wrap"><input id="tuneHz" type="number" inputmode="numeric" min="20" max="20000" step="any" value="111" aria-label="תדר הקליד בהרצים"><span>Hz</span></label>
     <button id="tunePlus" type="button" aria-label="הוסף הרץ אחד">+1 Hz</button>
     <button id="tunePreview" type="button" title="השמע את התדר המעודכן">▶ שמע</button>
     <button id="tuneReset" type="button" title="החזר את הקליד לתדר המקורי">↺ קליד</button>
@@ -99,47 +99,53 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
   <div class="tuner-line preset-line">
     <label class="preset-name">שם מיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
     <button id="savePreset" type="button" class="save-preset">💾 שמור מיפוי</button>
-    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">מקור 111–999</option></select></label>
+    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">ראשי · A=111</option><option value="__legacy__">ישן · 111–999</option></select></label>
     <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
     <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
   </div>
   <p class="tuner-note" id="tunerStatus" aria-live="polite">בחר קליד ונגן; ‎+ / − או הקלדה ישנו אותו מיד. "תקן שחורים" מחלק לשניים כל מרווח בין קלידים לבנים סמוכים, בלי לשנות אותם. שמור את המיפוי המתוקן בשם חדש.</p>
 </div>
-<div class="legend"><span><i class="dot"></i> 111–999 המקוריים</span><span><i class="dot cyan"></i> 528 הניסוי</span><span>יתר הקלידים: השלמה מתמטית בתדרים שלמים</span></div>
-<div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 999"></div></div>
+<div class="legend"><span><i class="dot"></i> עוגני 111–999, 592, 1776, 1998, 2368</span><span><i class="dot cyan"></i> 520 · 624 · 710</span><span>יחסים מדויקים בנגינה; תדרים עשרוניים מקוצרים בתצוגה</span></div>
+<div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 16640 הרץ, 88 קלידים"></div></div>
 <div class="scroll-hint">⇆ גע וגרור את הקלידים לצדדים כדי לעבור בין כל 88 התדרים</div>
-<div class="endpoints"><span>111Hz · התחלה</span><span>999Hz · סוף</span></div>
+<div class="endpoints"><span>A0 · 111Hz</span><span>C8 · 16640Hz</span></div>
 <p class="small" style="margin:10px 0 0">בטלפון: רוחב קליד לבן 26px, וכל קליד מציג את התדר שלו ב־Hz. גרירה אופקית על הקלידים מזיזה את המקלדת; אפשר להשתמש גם בכפתורי הקודמים והבאים.</p>
 </section>
 <div class="grid">
 <section class="tile focus"><strong>444 + 555 + 666 Hz</strong><p>שלישיית מז'ור ביחס מדויק 4:5:6.</p></section>
-<section class="tile focus"><strong>444 + 528 + 666 Hz</strong><p>שלישיית מינור ניסויית; 528 נשמר בדיוק.</p></section>
+<section class="tile focus"><strong>444 + 520 + 666 Hz</strong><p>מינור בברירת המחדל; 528Hz זמין לכיוון כפריסט נפרד.</p></section>
 </div>
 <section class="panel" style="margin-top:14px">
 <h2>חוק המקלדת</h2>
-<p class="small">88 קלידים בין 111 ל־999Hz אינם 88 חצאי־טונים רגילים. כדי לשמור את שני הקצוות ואת העוגנים ללא שינוי, הקלידים החסרים הושלמו בהתפלגות לוגריתמית בין 111, 222, 333, 444, 528, 555, 666, 777, 888 ו־999Hz, ועוגלו למספרי הרץ שלמים. הקלידים מסודרים כמו פסנתר לצורך נגינה, אך תדירותם אינה בהתאם לשמות התווים הסטנדרטיים. אין חיבור למחשבון הגימטריה או שינוי באופרטורים שלו.</p>
+<p class="small">מיפוי ראשי מדויק: A=1, A♯=15/14, B=9/8, C=130/111, C♯=5/4, D=4/3, D♯=52/37, E=3/2, F=355/222, F♯=5/3, G=7/4, G♯=15/8. כל אוקטבה מכפילה את התדר פי 2; הקליד ה־88 הוא C8=16,640Hz. ערכי השמע והפריסטים שומרים שברים; המספרים על הקלידים מעוגלים לתצוגה בלבד. המיפוי הישן 111–999 זמין כפריסט ״ישן״. הפריסטים האישיים לא נמחקים. בצלילים הגבוהים מאוד ייתכן שהרמקול לא ישמיע צליל מורגש.</p>
 </section>
 </main>
 <script>
 
 "use strict";
-// Frequency assignment intentionally non-standard: 88 equal-index keys span 111 to 999 Hz,
-// exact integer Hz, with original 111-multiples and the 528 Hz experiment locked.
-const COUNT=88, MIN=111, MAX=999;
-const anchorHz=[111,222,333,444,528,555,666,777,888,999];
-const rawIndex=f=>Math.round((COUNT-1)*Math.log(f/MIN)/Math.log(MAX/MIN));
-const anchors=anchorHz.map(f=>({i:rawIndex(f),f}));
-const notes=new Array(COUNT);
-for(let a=0;a<anchors.length-1;a++){
- const p=anchors[a],q=anchors[a+1];
- for(let i=p.i;i<=q.i;i++) notes[i]=Math.round(p.f*Math.pow(q.f/p.f,(i-p.i)/(q.i-p.i)));
+// Canonical main preset: A0=111Hz, 12 rational ratios, D=4/3, ending C8=16640Hz.
+const COUNT=88, BASE_HZ=111;
+const pitchNames=["A","A♯","B","C","C♯","D","D♯","E","F","F♯","G","G♯"];
+const RATIOS=[[1,1],[15,14],[9,8],[130,111],[5,4],[4,3],[52,37],[3,2],[355,222],[5,3],[7,4],[15,8]];
+const factoryNotes=Array.from({length:COUNT},(_,i)=>{const [p,q]=RATIOS[i%12];return BASE_HZ*Math.pow(2,Math.floor(i/12))*p/q;});
+const notes=factoryNotes.slice();
+const near=(a,b)=>Math.abs(a-b)<1e-8;
+if(!near(notes[0],111)||!near(notes[87],16640)||!near(notes[29],592)||!near(notes[53],2368) ||notes.some((v,i)=>!Number.isFinite(v)||(i>0&&v<=notes[i-1])))throw Error("Factory tuning failed");
+const legacyNotes=new Array(COUNT);
+const legacyAnchors=[111,222,333,444,528,555,666,777,888,999].map(f=>({i:Math.round(87*Math.log(f/111)/Math.log(9)),f}));
+for(let a=0;a<legacyAnchors.length-1;a++){
+ const p=legacyAnchors[a],q=legacyAnchors[a+1];
+ for(let i=p.i;i<=q.i;i++){
+  legacyNotes[i]=Math.round(p.f*Math.pow(q.f/p.f,(i-p.i)/(q.i-p.i)));
+ }
 }
-if(notes.length!==88||notes[0]!==111||notes[87]!==999||
-   notes.some((v,i)=>!Number.isInteger(v)||(i>0&&v<=notes[i-1]))||
-   anchors.some(x=>notes[x.i]!==x.f)) throw new Error("Frequency map failed validation");
-const factoryNotes=notes.slice();
-const anchorSet=new Set(anchorHz);
+const anchorSet=new Set([111,222,333,444,555,666,777,888,999,1776,1998,592,2368]);
+const specialSet=new Set([520,624,710]);
 const isBlack=i=>[1,4,6,9,11].includes(i%12);
+const pitchLabel=i=>pitchNames[i%12]+(Math.floor(i/12)+(i%12>=3?1:0));
+const formatHz=n=>String(Number(n.toFixed(6)));
+const keyHz=n=>String(Number(n.toFixed(n>=10000?2:n>=1000?3:4)));
+const ratioLabel=i=>{const [p,q]=RATIOS[i%12];return p+"/"+q+" × 2^"+Math.floor(i/12)};
 const presets={
  piano:{partials:[[1,.82,"sine"],[2,.14,"sine"],[3,.06,"sine"]],attack:.008,decay:1.0,hold:.025,level:.17},
  sine:{partials:[[1,1,"sine"]],attack:.014,decay:0,hold:1,level:.17},
@@ -184,25 +190,26 @@ function play(id){
  const oscs=[];
  for(const [mult,level,type] of voice.partials){
   const osc=ctx.createOscillator(),vol=ctx.createGain();
+  if(f*mult>=(ctx.sampleRate||48000)/2*.98)continue;
   osc.type=type;osc.frequency.setValueAtTime(f*mult,now);
   vol.gain.setValueAtTime(level,now);
   osc.connect(vol).connect(amp);osc.start(now);oscs.push(osc);
  }
- sound.voices.set(id,{ctx,gain:amp,oscs,mults:voice.partials.map(x=>x[0])});
+ sound.voices.set(id,{ctx,gain:amp,oscs,mults:voice.partials.filter(x=>f*x[0]<(ctx.sampleRate||48000)/2*.98).map(x=>x[0])});
  document.querySelector('[data-index="'+id+'"]')?.classList.add("pressed");
- document.getElementById("frequency").textContent=f+" Hz";
+ document.getElementById("frequency").textContent=formatHz(f)+" Hz";
  document.getElementById("activeText").textContent="קליד "+(id+1)+" מתוך 88"+(anchorSet.has(f)?" · תדר עוגן":" · תדר מחושב");
 }
 let chordTimer=0;
 function stopAll(){clearTimeout(chordTimer);Array.from(sound.voices.keys()).forEach(release)}
 function chord(frequencies){
  stopAll();
- const ids=frequencies.map(f=>factoryNotes.indexOf(f)).filter(id=>id>=0);
+ const ids=frequencies.map(f=>factoryNotes.findIndex(n=>near(n,f))).filter(id=>id>=0);
  ids.forEach(play);
  chordTimer=setTimeout(()=>ids.forEach(release),1600);
 }
 document.getElementById("major").onclick=()=>chord([444,555,666]);
-document.getElementById("minor").onclick=()=>chord([444,528,666]);
+document.getElementById("minor").onclick=()=>chord([444,520,666]);
 document.getElementById("stop").onclick=stopAll;
 document.getElementById("voice").onchange=e=>{sound.preset=e.target.value;if(!presets[sound.preset])sound.preset="piano"};
 document.getElementById("release").oninput=e=>{
@@ -216,22 +223,24 @@ for(let i=0;i<COUNT;i++){
  if(!isBlack(i)){
   whiteIndex[i]=whiteCount++;
   const el=document.createElement("div");
-  el.className="key white"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");
+  el.className="key white"+(specialSet.has(notes[i])?" special":anchorSet.has(notes[i])?" anchor":"");
   el.dataset.index=i;
   el.setAttribute("role","button");el.tabIndex=0;
-  el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");
-  el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+notes[i]+'</span>';
+  el.setAttribute("aria-label","קליד "+(i+1)+" "+pitchLabel(i)+" · "+formatHz(notes[i])+" הרץ");
+  el.setAttribute("title",pitchLabel(i)+" · "+formatHz(notes[i])+"Hz · "+ratioLabel(i));
+  el.innerHTML='<span class="name">'+pitchLabel(i)+'</span><span class="freq">'+keyHz(notes[i])+'</span>';
   keys.appendChild(el);
  }
 }
 for(let i=0;i<COUNT;i++){
  if(isBlack(i)){
   const el=document.createElement("div");
-  el.className="key black"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");
+  el.className="key black"+(specialSet.has(notes[i])?" special":anchorSet.has(notes[i])?" anchor":"");
   el.dataset.index=i;
   el.setAttribute("role","button");el.tabIndex=0;
-  el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");
-  el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+notes[i]+'</span>';
+  el.setAttribute("aria-label","קליד "+(i+1)+" "+pitchLabel(i)+" · "+formatHz(notes[i])+" הרץ");
+  el.setAttribute("title",pitchLabel(i)+" · "+formatHz(notes[i])+"Hz · "+ratioLabel(i));
+  el.innerHTML='<span class="name">'+pitchLabel(i)+'</span><span class="freq">'+keyHz(notes[i])+'</span>';
   keys.appendChild(el);
   blacks.push({element:el,prev:i-1});
  }
@@ -298,7 +307,7 @@ keys.addEventListener("keyup",e=>{
 });
 document.querySelectorAll("[data-hz]").forEach(btn=>{
  btn.onclick=()=>{
-  const hz=Number(btn.dataset.hz),idx=factoryNotes.indexOf(hz);if(idx<0)return;
+  const hz=Number(btn.dataset.hz),idx=factoryNotes.findIndex(n=>near(n,hz));if(idx<0)return;
   const key=keys.querySelector('[data-index="'+idx+'"]');
   scroller.scrollTo({left:Math.max(0,key.offsetLeft-scroller.clientWidth/2),behavior:"smooth"});
   if(tunerVisible())selectTunerKey(idx);
@@ -311,7 +320,7 @@ document.querySelectorAll("[data-hz]").forEach(btn=>{
 // The base mapping is immutable; changes affect this working copy until Save.
 const STORE_KEY="gematria2026.frequencyPiano.tuningPresets.v1";
 const STORE_LIMIT=60;
-const TUNE_MIN=20,TUNE_MAX=5000;
+const TUNE_MIN=20,TUNE_MAX=20000;
 const tunerDock=document.getElementById("tunerDock"),tunerToggle=document.getElementById("tunerToggle");
 const tuneInput=document.getElementById("tuneHz"),presetName=document.getElementById("presetName");
 const presetSelect=document.getElementById("presetSelect"),tunerStatus=document.getElementById("tunerStatus");
@@ -319,7 +328,7 @@ let tuningKey=0,loadedPreset="__factory__",unsaved=false,previewTimer=0;
 let savedPresets=Object.create(null);
 function tunerVisible(){return !tunerDock.hidden}
 function validMap(arr){
- return Array.isArray(arr)&&arr.length===COUNT&&arr.every(n=>Number.isInteger(n)&&n>=TUNE_MIN&&n<=TUNE_MAX);
+ return Array.isArray(arr)&&arr.length===COUNT&&arr.every(n=>typeof n==="number"&&Number.isFinite(n)&&n>=TUNE_MIN&&n<=TUNE_MAX);
 }
 function informTuner(msg){tunerStatus.textContent=msg}
 function readPresets(){
@@ -338,22 +347,24 @@ function writePresets(){
 }
 function refreshPresetList(){
  presetSelect.textContent="";
- const base=document.createElement("option");base.value="__factory__";base.textContent="מקור 111–999";presetSelect.appendChild(base);
+ const base=document.createElement("option");base.value="__factory__";base.textContent="ראשי · A=111";presetSelect.appendChild(base);
+ const previous=document.createElement("option");previous.value="__legacy__";previous.textContent="ישן · 111–999";presetSelect.appendChild(previous);
  Object.keys(savedPresets).sort((a,b)=>a.localeCompare(b,"he")).forEach(name=>{
   const option=document.createElement("option");option.value=name;option.textContent=name;presetSelect.appendChild(option);
  });
- presetSelect.value=Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
- document.getElementById("deletePreset").disabled=loadedPreset==="__factory__";
+ presetSelect.value=loadedPreset==="__legacy__"||loadedPreset==="__factory__"||Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
+ document.getElementById("deletePreset").disabled=loadedPreset==="__factory__"||loadedPreset==="__legacy__";
 }
 function refreshKey(id){
  const el=keys.querySelector('[data-index="'+id+'"]');
  if(!el)return;
  const hz=notes[id],original=factoryNotes[id],isOriginalAnchor=anchorSet.has(original);
- el.classList.toggle("tuning-changed",hz!==original);
- el.classList.toggle("special",original===528);
- el.classList.toggle("anchor",original!==528&&isOriginalAnchor);
- el.querySelector(".freq").textContent=hz;
- el.setAttribute("aria-label","קליד "+(id+1)+" תדר "+hz+" הרץ"+(hz===original?"":" שונה מ"+original));
+ el.classList.toggle("tuning-changed",!near(hz,original));
+ el.classList.toggle("special",specialSet.has(original));
+ el.classList.toggle("anchor",!specialSet.has(original)&&isOriginalAnchor);
+ el.querySelector(".freq").textContent=keyHz(hz);
+ el.setAttribute("aria-label","קליד "+(id+1)+" "+pitchLabel(id)+" · "+formatHz(hz)+" הרץ");
+ el.setAttribute("title",pitchLabel(id)+" · "+formatHz(hz)+"Hz · יחס "+ratioLabel(id));
 }
 function refreshAllKeys(){for(let i=0;i<COUNT;i++)refreshKey(i)}
 function selectTunerKey(id){
@@ -362,12 +373,12 @@ function selectTunerKey(id){
  tuningKey=id;
  keys.querySelector('[data-index="'+id+'"]')?.classList.add("tuning-target");
  document.getElementById("tunerKeyNo").textContent=String(id+1);
- tuneInput.value=String(notes[id]);
+ tuneInput.value=formatHz(notes[id]);
  showTuningOffset();
 }
 function showTuningOffset(){
  const diff=notes[tuningKey]-factoryNotes[tuningKey];
- document.getElementById("tunerDelta").textContent="מקורי "+factoryNotes[tuningKey]+"Hz"+(diff?(" · "+(diff>0?"+":"")+diff+"Hz"):"");
+ document.getElementById("tunerDelta").textContent="ראשי "+formatHz(factoryNotes[tuningKey])+"Hz"+(!near(diff,0)?(" · "+(diff>0?"+":"")+formatHz(diff)+"Hz"):"");
 }
 function markUnsaved(){
  unsaved=true;
@@ -390,14 +401,14 @@ function previewKey(id){
  }
 }
 function setKeyHz(id,hz,{audition=true}={}){
- if(!Number.isInteger(hz)||hz<TUNE_MIN||hz>TUNE_MAX){
-  informTuner("תדר חוקי: מספר שלם בין 20 ל־5000Hz.");
+ if(!Number.isFinite(hz)||hz<TUNE_MIN||hz>TUNE_MAX){
+  informTuner("תדר חוקי: 20–20,000Hz, כולל שברים עשרוניים.");
   return false;
  }
- if(notes[id]===hz){tuneInput.value=String(hz);if(audition)previewKey(id);return true;}
+ if(near(notes[id],hz)){tuneInput.value=formatHz(hz);if(audition)previewKey(id);return true;}
  notes[id]=hz;
  refreshKey(id);
- if(id===tuningKey){tuneInput.value=String(hz);showTuningOffset()}
+ if(id===tuningKey){tuneInput.value=formatHz(hz);showTuningOffset()}
  markUnsaved();
  if(audition)previewKey(id);
  return true;
@@ -415,7 +426,7 @@ document.getElementById("tunePreview").onclick=()=>previewKey(tuningKey);
 document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,factoryNotes[tuningKey]);
 tuneInput.addEventListener("change",()=>{
  const value=Number(tuneInput.value);
- if(!setKeyHz(tuningKey,value)){tuneInput.value=String(notes[tuningKey])}
+ if(!setKeyHz(tuningKey,value)){tuneInput.value=formatHz(notes[tuningKey])}
 });
 tuneInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();tuneInput.blur()}});
 // Gentle chromatic repair for an ear-tuned piano:
@@ -458,17 +469,17 @@ function loadMap(values,name){
  stopAll();
  for(let i=0;i<COUNT;i++)notes[i]=values[i];
  loadedPreset=name;
- presetName.value=name==="__factory__"?"":name;
+ presetName.value=name==="__factory__"||name==="__legacy__"?"":name;
  refreshAllKeys();
  selectTunerKey(tuningKey);
  clearDirty();refreshPresetList();
- informTuner(name==="__factory__"?"נטען המיפוי המקורי: 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
+ informTuner(name==="__factory__"?"נטען הפריסט הראשי A=111, D=592, C8=16640Hz.":name==="__legacy__"?"נטען המיפוי הקודם 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
  return true;
 }
 document.getElementById("savePreset").onclick=()=>{
  const name=presetName.value.trim().replace(/\s+/g," ");
  if(!name||name.length>50){informTuner("יש להזין שם מיפוי באורך 1–50 תווים.");presetName.focus();return}
- if(name==="__factory__"){informTuner("שם זה שמור למיפוי המקורי. בחר שם אחר.");return}
+ if(name==="__factory__"||name==="__legacy__"){informTuner("שם זה שמור למיפוי מובנה. בחר שם אחר.");return}
  if(!Object.prototype.hasOwnProperty.call(savedPresets,name)&&Object.keys(savedPresets).length>=STORE_LIMIT){
   informTuner("מגבלת "+STORE_LIMIT+" פריסטים הושגה; מחק פריסט ישן לשמירה חדשה.");return
  }
@@ -481,12 +492,13 @@ document.getElementById("savePreset").onclick=()=>{
 presetSelect.onchange=()=>{
  const name=presetSelect.value;
  if(name==="__factory__")loadMap(factoryNotes,"__factory__");
+ else if(name==="__legacy__")loadMap(legacyNotes,"__legacy__");
  else if(Object.prototype.hasOwnProperty.call(savedPresets,name))loadMap(savedPresets[name],name);
 };
 document.getElementById("restoreFactory").onclick=()=>loadMap(factoryNotes,"__factory__");
 document.getElementById("deletePreset").onclick=()=>{
  const name=loadedPreset;
- if(name==="__factory__"||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
+ if(name==="__factory__"||name==="__legacy__"||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
  if(!window.confirm("למחוק את הפריסט '"+name+"' מהמכשיר הזה?"))return;
  const copy=savedPresets[name].slice();
  delete savedPresets[name];
