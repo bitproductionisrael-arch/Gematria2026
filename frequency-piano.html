@@ -93,6 +93,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
     <button id="tunePlus" type="button" aria-label="הוסף הרץ אחד">+1 Hz</button>
     <button id="tunePreview" type="button" title="השמע את התדר המעודכן">▶ שמע</button>
     <button id="tuneReset" type="button" title="החזר את הקליד לתדר המקורי">↺ קליד</button>
+    <button id="repairBlackKeys" type="button" class="save-preset" title="תקן את הקלידים השחורים לפי שני הקלידים הלבנים הסמוכים. הקלידים הלבנים לא משתנים.">♫ תקן שחורים</button>
     <span class="tuner-delta" id="tunerDelta">מקורי 111Hz</span>
   </div>
   <div class="tuner-line preset-line">
@@ -102,7 +103,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
     <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
     <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
   </div>
-  <p class="tuner-note" id="tunerStatus" aria-live="polite">בחר קליד ונגן; ‎+ / − או הקלדה ישנו אותו מיד. פריסטים נשמרים בדפדפן במכשיר זה.</p>
+  <p class="tuner-note" id="tunerStatus" aria-live="polite">בחר קליד ונגן; ‎+ / − או הקלדה ישנו אותו מיד. "תקן שחורים" מחלק לשניים כל מרווח בין קלידים לבנים סמוכים, בלי לשנות אותם. שמור את המיפוי המתוקן בשם חדש.</p>
 </div>
 <div class="legend"><span><i class="dot"></i> 111–999 המקוריים</span><span><i class="dot cyan"></i> 528 הניסוי</span><span>יתר הקלידים: השלמה מתמטית בתדרים שלמים</span></div>
 <div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 999"></div></div>
@@ -417,6 +418,41 @@ tuneInput.addEventListener("change",()=>{
  if(!setKeyHz(tuningKey,value)){tuneInput.value=String(notes[tuningKey])}
 });
 tuneInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();tuneInput.blur()}});
+// Gentle chromatic repair for an ear-tuned piano:
+ // Only black keys between two increasing white keys are adjusted.
+ // Equal distance in musical cents corresponds to their geometric mean.
+ // Restrict to the visible C4–C6 style tuning area; preserve user's white-key anchors.
+function suggestedBlackCorrections(map,low=240,high=1100){
+ const edits=[];
+ for(let i=1;i<COUNT-1;i++){
+  if(!isBlack(i))continue;
+  const L=map[i-1],R=map[i+1],current=map[i];
+  if(!Number.isInteger(L)||!Number.isInteger(R)||L<low||R>high||R<=L)continue;
+  const corrected=Math.round(Math.sqrt(L*R));
+  if(corrected>=TUNE_MIN&&corrected<=TUNE_MAX&&current!==corrected)
+   edits.push({i,previous:current,corrected,left:L,right:R});
+ }
+ return edits;
+}
+document.getElementById("repairBlackKeys").onclick=()=>{
+ const edits=suggestedBlackCorrections(notes);
+ if(!edits.length){informTuner("לא נמצאו זיופים שחורים לתיקון באזור 240–1100Hz. טען את המיפוי שכיוונת בעצמך ונסה שוב.");return}
+ stopAll();
+ for(const {i,corrected} of edits){notes[i]=corrected;refreshKey(i)}
+ selectTunerKey(tuningKey);
+ markUnsaved();
+ const original=presetName.value.trim();
+ if(!original||original==="__factory__")presetName.value="כיוון אינטואיטיבי — מתוקן";
+ else if(Object.prototype.hasOwnProperty.call(savedPresets,original)){
+  let suggested=(original+" — מתוקן").slice(0,50);
+  let suffix=2;
+  while(Object.prototype.hasOwnProperty.call(savedPresets,suggested)&&suffix<60)
+   suggested=(original.slice(0,41)+" — "+suffix++).slice(0,50);
+  presetName.value=suggested;
+ }
+ const sample=edits.slice(0,3).map(e=>e.previous+"→"+e.corrected).join(" · ");
+ informTuner("תוקנו "+edits.length+" קלידים שחורים לפי ממוצע גאומטרי בין הלבנים: "+sample+". הלבנים והפריסט השמור המקורי לא השתנו. נגן כדי לשמוע ואז לחץ ״שמור מיפוי״ כדי לשמור עותק.");
+};
 function loadMap(values,name){
  if(!validMap(values)){informTuner("המיפוי שנבחר פגום או אינו תקין.");return false}
  stopAll();
