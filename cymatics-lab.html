@@ -21,14 +21,14 @@ main{width:min(1230px,95vw);margin:26px auto 65px}.eyebrow{font-size:11px;color:
 <div class="intro">
 <div class="eyebrow">STANDING WAVES · EIGENMODES · NODAL GEOMETRY</div>
 <h1>מעבדת <b>סימטיקה</b></h1>
-<p>ויזואליזציה מחושבת של גלים עומדים ותהודה — לא תמונה שנבחרת לפי משמעות מספרית. השווה 108Hz מול 216Hz באותה מערכת ובאותם תנאים; החלף גיאומטריה כדי לראות כיצד היא משנה את קווי הצומת.</p>
+<p>גיאומטריה חדה באור אדום, ירוק וכחול על רקע שחור — בהשראת דוגמת 108Hz. ברירת המחדל היא ציור דטרמיניסטי של תדר וקווים סימטריים, לא פיזור חול. מצב ״קווי צומת״ מצייר בנפרד את הקווים שמתקבלים מהמודל הפיזיקלי.</p>
 </div>
 <section class="bar">
 <div class="controls">
 <label class="control"><span class="ctrlLabel">מודל</span>
 <select id="geometry"><option value="box">תיבה אקוסטית · 4:10:13</option><option value="rect">קרום מלבני · 10:13</option><option value="circle">קרום עגול · רדיוס 13</option></select></label>
 <label class="control"><span class="ctrlLabel">תצוגה</span>
-<select id="visual"><option value="sand">קווי צומת / חול מודלי</option><option value="amplitude">משרעת מרחבית</option><option value="wave">גל בתנועה איטית</option></select></label>
+<select id="visual"><option value="geometry">סמל אור · צורה חדה</option><option value="nodes">קווי צומת · קווים חדים</option><option value="amplitude">משרעת מחושבת</option><option value="wave">גל בתנועה איטית</option></select></label>
 <label class="control"><span class="ctrlLabel">יחידת אורך</span><input id="scale" type="range" min="0.06" max="0.20" value="0.10" step="0.005"><output id="scaleLabel">0.100 m</output></label>
 <label class="control"><span class="ctrlLabel">מהירות גל</span><input id="speed" type="range" min="70" max="450" step="1" value="343"><output id="speedLabel">343 m/s</output></label>
 <label class="control"><span class="ctrlLabel">שיכוך</span><input id="damping" type="range" min="0.008" max="0.20" step="0.004" value="0.032"><output id="dampingLabel">0.032</output></label>
@@ -63,17 +63,17 @@ main{width:min(1230px,95vw);margin:26px auto 65px}.eyebrow{font-size:11px;color:
 </div>
 <section class="panel">
 <h2>מה המשוואות מחשבות?</h2>
-<div class="infoRow"><span class="pill">התיבה 4:10:13 · מודל לחץ אקוסטי קשיח</span><span class="pill">הקרומים · גלים עומדים עם קצוות מקובעים</span><span class="pill">חול = הדגמה חזותית של צמתים</span></div>
+<div class="infoRow"><span class="pill">התיבה 4:10:13 · מודל לחץ אקוסטי קשיח</span><span class="pill">הקרומים · גלים עומדים עם קצוות מקובעים</span><span class="pill">סמל אור = בנייה גיאומטרית; קווי צומת = מודל פיזיקלי</span></div>
 <p class="fact" id="finding"><strong>216Hz מול 108Hz:</strong> המערכת מחשבת את תדרי התהודה של המבנה הנבחר. התאמה דורשת ציון ממדים פיזיים, מהירות גלים ותנאי שפה — לא מספר בלבד.</p>
 <code class="eq" id="equation">f_mnp = c/2 · √[(m/Lx)² + (n/Ly)² + (p/Lz)²]</code>
-<p class="notes" id="modelNotes">בתיבה קשיחה משווים שדה לחץ לחתך של חלל תהודה. זו אינה צלחת עם חול. בממברנה נעשה שימוש במשוואת הגלים ובמפות משרעת; תצוגת החול היא המחשה של צפיפות סביב קווי צומת ולא הדמיה מלאה של גרגרי חול.</p>
+<p class="notes" id="modelNotes">בתיבה קשיחה משווים שדה לחץ לחתך של חלל תהודה. זו אינה צלחת עם חול. בממברנה נעשה שימוש במשוואת הגלים ובמפות משרעת; תצוגת ״סמל אור״ היא איור מחושב ולא תצפית פיזיקלית. במצב ״קווי צומת״ מצוירים קווים רציפים ללא גרגרים.</p>
 </section>
 <section class="panel">
 <h2>הקשר ל־108 ולצורות שבתמונה</h2>
 <p class="notes">סימטריה של ארבע זרועות או של מנדלה יכולה להופיע ממגוון מערכות בעלות סימטריה סיבובית. <strong>108Hz אינו קובע צורה אחת לכל מכשיר</strong>. כשמשנים תדר פי שניים, ייתכן שיופיע מצב תנודה אחר עם יותר קווי צומת — לא בהכרח הגדלה של אותה צורה. חישוב זה משתמש בתהודות של ממברנות/חלל, לא במודל המלא של לוח מתכת גמיש. לוח מתכת דורש משוואת כפיפה מסדר רביעי ותנאי שפה אחרים.</p>
 <p class="notes" style="margin-top:10px"><strong>מקורות פיזיקליים:</strong> <a target="_blank" rel="noopener" href="https://www.acs.psu.edu/drussell/Demos/rect-membrane/rect-mem.html">Penn State — Rectangular Membranes</a> · <a target="_blank" rel="noopener" href="https://www.acs.psu.edu/drussell/Demos/MembraneCircle/Circle.html">Penn State — Circular Membrane Modes</a> · <a target="_blank" rel="noopener" href="https://physicslabs.colorado.edu/demos/oscillations-and-waves/instruments/resonance-in-plates-bars-solids/chladni-figures/">University of Colorado — Chladni Figures</a> · <a target="_blank" rel="noopener" href="https://ucscphysicsdemo.sites.ucsc.edu/physics-5b6b-demos/oscillations-and-waves/chladni-figures/">UC Santa Cruz — Chladni Figures</a>.</p>
 </section>
-<div class="foot">Gematria2026 · Cymatics Lab v1 · חישוב דטרמיניסטי של מצבים עצמיים ותגובה מאולצת בסכום מצבים, לא אימות ניסויי של תדרי תהודה בחומר מסוים. שמירה כ־PNG נובעת מציור המחושב בדפדפן.</div>
+<div class="foot">Gematria2026 · Cymatics Lab v2 · ברירת מחדל: סמל אור וקטורי חד, ללא חול. קווי צומת פיזיקליים מוצגים בנפרד. אין כאן הוכחה לצורה ייחודית של תדר. שמירה כ־PNG נובעת מציור המחושב בדפדפן.</div>
 </main>
 <script>
 "use strict";
@@ -88,7 +88,7 @@ const ROOTS=[
 [8.7714838160,12.3386041975,15.700174079,18.98013387],
 [9.9361095242,13.589290171,17.003819667,20.320789]
 ];
-const state={geometry:"box",visual:"sand",scale:.10,speed:343,damping:.032,a:108,b:216,run:true,model:{a:null,b:null},runningAudio:null};
+const state={geometry:"box",visual:"geometry",scale:.10,speed:343,damping:.032,a:108,b:216,run:true,model:{a:null,b:null},runningAudio:null};
 let nextFrame=0,lastBuild=0;
 function besselJ(n,x){
  if(x===0)return n===0?1:0;
@@ -183,15 +183,7 @@ function colorField(data,visual,phase){
   if(!mask[i]){pix[o]=7;pix[o+1]=12;pix[o+2]=18;continue}
   const amp=Math.min(1,Math.hypot(re[i],im[i])/max);
   let r,g,b;
-  if(visual==="sand"){
-   // Probability-density proxy: modeled particles accumulate where the field moves least.
-   // This is NOT a fluid/grain-motion simulation.
-   const node=Math.exp(-Math.pow(amp/.105,2));
-   const grain=((i*1103515245+12345)>>>16)&255;
-   const speckle=grain/255;
-   const shine=node*(.65+.35*speckle);
-   r=13+225*shine;g=21+187*shine;b=30+99*shine;
-  }else if(visual==="amplitude"){
+  if(visual==="amplitude"){
    r=10+Math.pow(amp,.6)*227;
    g=21+Math.sqrt(amp)*130;
    b=35+(1-amp)*95;
@@ -206,12 +198,105 @@ function colorField(data,visual,phase){
  }
  return img;
 }
+
+const HIRES=720;
+function trace(ctx,p,color,width=1.5,blur=10){
+ ctx.save();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap="round";ctx.lineJoin="round";
+ ctx.shadowColor=color;ctx.shadowBlur=blur;ctx.stroke(p);
+ ctx.shadowBlur=0;ctx.lineWidth=Math.max(.7,width*.65);ctx.stroke(p);ctx.restore();
+}
+function ring(x,y,r){
+ const p=new Path2D();p.arc(x,y,r,0,TWO_PI);return p;
+}
+// Artistic, reproducible geometry based on f: NOT a physical Chladni prediction.
+function drawGlyph(ctx,frequency){
+ const N=HIRES,R=310,order=Math.max(2,Math.min(12,Math.round(frequency/54)));
+ const blue="#287cff",cyan="#72ecff",red="#ff344d",green="#5cff54";
+ ctx.fillStyle="#02030a";ctx.fillRect(0,0,N,N);
+ ctx.save();ctx.translate(N/2,N/2);
+ for(const [radius,opacity] of [[R,2.5],[R-9,1],[R-30,1]])
+  trace(ctx,ring(0,0,radius),radius===R?cyan:blue,opacity,radius===R?12:6);
+ // Red left/right, green top/bottom; every line has an exact mirrored partner.
+ for(let arm=0;arm<4;arm++){
+  ctx.save();ctx.rotate(arm*Math.PI/2);
+  const color=arm%2?green:red;
+  const axis=new Path2D();axis.moveTo(71,0);axis.lineTo(R-8,0);
+  trace(ctx,axis,color,1.6,8);
+  const count=3+Math.min(4,Math.floor(order/2));
+  for(let j=0;j<count;j++){
+   const rad=74+j*8,spread=24+j*11,reach=Math.min(R-10,258+j*4);
+   for(const side of [-1,1]){
+    const p=new Path2D();p.moveTo(rad,0);
+    p.bezierCurveTo(132,side*spread*1.9,214,side*spread*.85,reach,0);
+    trace(ctx,p,color,j===0?2.2:1.25,j===0?14:7);
+   }
+  }
+  for(let j=0;j<Math.min(5,order);j++){
+   const p=new Path2D();
+   p.ellipse(168+j*20,0,4+j*3,24+(j%3)*7,0,0,TWO_PI);
+   trace(ctx,p,color,1.1,8);
+  }
+  ctx.restore();
+ }
+ // Blue shell curves connect the cardinal arms in four mirrored sectors.
+ for(let q=0;q<4;q++){
+  ctx.save();ctx.rotate(q*Math.PI/2);
+  for(let j=0;j<3;j++){
+   const p=new Path2D();
+   p.moveTo(83+j*10,-15);
+   p.bezierCurveTo(105+j*12,-157,231-j*9,-210,280,-136);
+   trace(ctx,p,j===0?cyan:blue,j===0?1.7:1.1,j===0?12:5);
+  }
+  ctx.restore();
+ }
+ for(const r of [74,64,49])trace(ctx,ring(0,0,r),r===74?cyan:blue,r===74?2:1.15,11);
+ for(let q=0;q<4;q++){
+  const p=new Path2D();p.ellipse(0,0,62,27,q*Math.PI/4,0,TWO_PI);
+  trace(ctx,p,cyan,1,6);
+ }
+ for(const r of [110,250])for(let q=0;q<4;q++){
+  const t=q*Math.PI/2+Math.PI/4,p=ring(r*Math.cos(t),r*Math.sin(t),r===110?3.5:2.1);
+  ctx.fillStyle=r===110?green:blue;ctx.fill(p);
+ }
+ const center=ring(0,0,3.8);ctx.shadowColor=cyan;ctx.shadowBlur=18;ctx.fillStyle="#ffffff";ctx.fill(center);ctx.shadowBlur=0;
+ ctx.restore();
+}
+// Sharp exact isolines of the signed, computed standing-wave response.
+// This rendering draws contour lines, not random grains.
+function drawNodalContours(ctx,data){
+ const S=HIRES,field=data.re,mask=data.mask;
+ ctx.fillStyle="#02060d";ctx.fillRect(0,0,S,S);
+ const p=new Path2D(),n=SIZE-1;
+ for(let y=0;y<n;y++)for(let x=0;x<n;x++){
+  const k=y*SIZE+x;
+  if(!mask[k]||!mask[k+1]||!mask[k+SIZE]||!mask[k+SIZE+1])continue;
+  const v=[field[k],field[k+1],field[k+SIZE+1],field[k+SIZE]],pos=[[x,y],[x+1,y],[x+1,y+1],[x,y+1]],cuts=[];
+  for(let e=0;e<4;e++){
+   const z=(e+1)%4,a=v[e],b=v[z];
+   if((a<0)===(b<0))continue;
+   const t=a/(a-b);
+   cuts.push([pos[e][0]+t*(pos[z][0]-pos[e][0]),pos[e][1]+t*(pos[z][1]-pos[e][1])]);
+  }
+  for(let k=0;k+1<cuts.length;k+=2){
+   p.moveTo(cuts[k][0]*S/n,cuts[k][1]*S/n);
+   p.lineTo(cuts[k+1][0]*S/n,cuts[k+1][1]*S/n);
+  }
+ }
+ trace(ctx,p,"#61e1fa",1.55,9);
+ const b=state.geometry==="circle"?CIRCLE:SQUARE,bound=new Path2D();
+ if(state.geometry==="circle")bound.arc(S/2,S/2,(b.x1-b.x0)*S/2,0,TWO_PI);
+ else bound.rect(b.x0*S,b.y0*S,(b.x1-b.x0)*S,(b.y1-b.y0)*S);
+ trace(ctx,bound,"#367bb4",2,7);
+}
 function paint(which,phase=0){
- const canvas=$(which==="a"?"canvasA":"canvasB");
- const model=state.model[which];
+ const canvas=$(which==="a"?"canvasA":"canvasB"),model=state.model[which];
  if(!model)return;
+ const vector=state.visual==="geometry"||state.visual==="nodes";
+ const resolution=vector?HIRES:SIZE;
+ if(canvas.width!==resolution){canvas.width=resolution;canvas.height=resolution}
  const ctx=canvas.getContext("2d");
- if(canvas.width!==SIZE){canvas.width=SIZE;canvas.height=SIZE}
+ if(state.visual==="geometry"){drawGlyph(ctx,model.f);return}
+ if(state.visual==="nodes"){drawNodalContours(ctx,model.field);return}
  ctx.putImageData(colorField(model.field,state.visual,phase),0,0);
  ctx.save();ctx.strokeStyle="#a8b9c3";ctx.lineWidth=1;
  const b=state.geometry==="circle"?CIRCLE:SQUARE;
@@ -220,6 +305,7 @@ function paint(which,phase=0){
  else ctx.strokeRect(x,y,w,h);
  ctx.restore();
 }
+
 function format(n,p=2){return Number(n).toFixed(p)}
 function updateModelDescription(){
  const d=dims(),g=state.geometry;
