@@ -72,17 +72,6 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 .key.black.ab-selected{z-index:8}
 @media(max-width:550px){.ab-tools{gap:5px}.ab-tools button{padding:8px 7px;font-size:11px}.ab-field select{max-width:148px;font-size:11px}}
 
-
-.f-lab{border-color:#6c5744;background:linear-gradient(115deg,#1c1918,#111e27 75%)}
-.f-lab h2{margin:0;font-size:18px;color:#f0d4a6}
-.f-lab .f-toolbar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:11px}
-.f-lab .f-toolbar button{min-height:38px;font-size:12px}
-.f-lab button.f-selected{background:#735630;border-color:#edc27b;color:#fff4df}
-.f-lab .f-context{font-size:12px;color:#c3d2df;display:flex;align-items:center;gap:6px}
-.f-lab .f-context select{max-width:172px;background:#182333;color:#e3eef5;border:1px solid #556f80;padding:8px;border-radius:7px}
-.f-lab .f-desc{margin:9px 0 0;color:#c1cfda;font-size:12px;line-height:1.8}
-.f-lab .f-desc strong{color:#efd89b}
-
 </style>
 </head>
 <body>
@@ -130,28 +119,6 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
  </details>
 </section>
 
-
-<section class="panel f-lab" id="fLaboratory" aria-label="בדיקת כיוון תו F ללא שינוי פריסטים">
- <div class="ab-title"><h2>בדיקת F (פה)</h2><span>ארבע אפשרויות · אותו גל מסור ואותה עוצמה · בלי לשנות גרסאות A/B</span></div>
- <div class="f-toolbar" role="group" aria-label="בחר תדר F לניסוי">
-   <button type="button" class="f-option" data-fhz="710">A · 710Hz</button>
-   <button type="button" class="f-option" data-fhz="721.5">B · 721.5Hz</button>
-   <button type="button" class="f-option f-selected" data-fhz="705">ניסוי · 705Hz</button>
-   <button type="button" class="f-option" data-fhz="699">ניסוי · 699Hz</button>
-   <label class="f-context">השוואה מול
-     <select id="fContext">
-       <option value="all">E–F–G יחד</option>
-       <option value="ef">E–F</option>
-       <option value="fg">F–G</option>
-       <option value="solo">F לבד</option>
-     </select>
-   </label>
-   <button type="button" id="fPlay" class="save-preset">▶ השמע</button>
-   <button type="button" id="fStop">■ עצור</button>
- </div>
- <p class="f-desc" id="fReadout" aria-live="polite">F=705Hz · מרווח E–F כ־98.5 סנט; F–G כ־168.0 סנט · E=666, G=777 קבועים.</p>
- <p class="f-desc">נקודת ייחוס: כאשר A=444Hz, התדר של F בפסנתר מושווה הוא כ־704.806Hz. מכיוון שהמרווח E=666 עד G=777 קצר יותר משלושה חצאי טונים מושווים, לא ניתן לקבל יחד מרווח של 100 סנט מ־E אל F ומרווח של 200 סנט מ־F אל G מבלי לכוון גם את E או G. הבדיקה עצמאית ואינה שומרת שינויים.</p>
-</section>
 
 <section class="panel">
 <div class="tools">
@@ -774,76 +741,6 @@ function renderABTable(){
 renderABTable();
 updateABControls();
 
-
-// Non-destructive F diagnostic; separate from Version A, B and localStorage presets.
-const fLab={hz:705,ctx:null,master:null,oscs:null};
-function fStopAudio(){
- if(!fLab.oscs)return;
- const now=fLab.ctx.currentTime;
- fLab.master.gain.cancelScheduledValues(now);
- fLab.master.gain.setTargetAtTime(0,now,.018);
- for(const osc of fLab.oscs)try{osc.stop(now+.2)}catch(_){}
- fLab.oscs=null;
- document.getElementById("fPlay").textContent="▶ השמע";
-}
-function fUpdateText(){
- const f=fLab.hz;
- const centsEF=1200*Math.log2(f/666),centsFG=1200*Math.log2(777/f);
- const eq=444*Math.pow(2,8/12);
- const eqOffset=1200*Math.log2(f/eq);
- document.getElementById("fReadout").textContent=
-  "F="+formatHz(f)+"Hz · E–F="+centsEF.toFixed(1)+"¢ · F–G="+centsFG.toFixed(1)+"¢ · מול F מושווה לפי A=444: "+
-  (eqOffset>0?"+":"")+eqOffset.toFixed(1)+"¢. תדרי E=666 ו־G=777 נשמרים.";
- for(const btn of document.querySelectorAll("[data-fhz]")){
-  const on=Number(btn.dataset.fhz)===f;
-  btn.classList.toggle("f-selected",on);
-  btn.setAttribute("aria-pressed",String(on));
- }
-}
-function fPlayAudio(){
- fStopAudio();
- abStopAudio();
- stopAll();
- const ctx=context(),now=ctx.currentTime,master=ctx.createGain();
- const selection=document.getElementById("fContext").value;
- const freqs=selection==="ef"?[666,fLab.hz]:selection==="fg"?[fLab.hz,777]:selection==="solo"?[fLab.hz]:[666,fLab.hz,777];
- master.gain.setValueAtTime(0,now);
- master.gain.linearRampToValueAtTime(.18/Math.max(freqs.length,2),now+.018);
- master.connect(sound.master);
- const oscs=[];
- for(const hz of freqs){
-  const osc=ctx.createOscillator();
-  osc.type="sawtooth";
-  osc.frequency.setValueAtTime(hz,now);
-  osc.connect(master);osc.start(now);oscs.push(osc);
- }
- fLab.ctx=ctx;fLab.oscs=oscs;fLab.master=master;
- document.getElementById("fPlay").textContent="↻ נגן מחדש";
-}
-for(const btn of document.querySelectorAll("[data-fhz]")){
- btn.addEventListener("click",()=>{
-  const frequency=Number(btn.dataset.fhz);
-  if(!Number.isFinite(frequency))return;
-  const playing=!!fLab.oscs;
-  fLab.hz=frequency;fUpdateText();
-  if(playing&&fLab.oscs){
-   const now=fLab.ctx.currentTime;
-   const contextType=document.getElementById("fContext").value;
-   const fOsc=contextType==="ef"?fLab.oscs[1]:fLab.oscs[0];
-   if(contextType==="all")fLab.oscs[1].frequency.setTargetAtTime(frequency,now,.012);
-   else fOsc.frequency.setTargetAtTime(frequency,now,.012);
-  }else{
-   // All audition buttons are gestures, so begin audio immediately.
-   fPlayAudio();
-  }
- });
-}
-document.getElementById("fContext").onchange=()=>{
- if(fLab.oscs)fPlayAudio();fUpdateText();
-};
-document.getElementById("fPlay").onclick=fPlayAudio;
-document.getElementById("fStop").onclick=fStopAudio;
-fUpdateText();
 
 </script>
 </body>
