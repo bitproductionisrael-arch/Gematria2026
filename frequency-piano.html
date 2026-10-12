@@ -197,9 +197,9 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
   <div class="tuner-line preset-line">
     <label class="preset-name">שם מיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
     <button id="savePreset" type="button" class="save-preset">💾 שמור מיפוי</button>
-    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">גרסה A · ראשית</option><option value="__harmonicB__">גרסה B · D♯=45/32</option><option value="__legacy__">ישן · 111–999</option></select></label>
+    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="fresh_piano">1 · פסנתר אמיתי</option><option value="fresh_anchors">2 · עוגני עמית</option><option value="fresh_warm">3 · נעים ומאוזן</option><option value="fresh_just">4 · הרמוניה טהורה</option><option value="fresh_pyth">5 · פיתגוראי</option><option value="__factory__">ארכיון · A</option><option value="__harmonicB__">ארכיון · B</option><option value="__legacy__">ישן · 111–999</option></select></label>
     <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
-    <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
+    <button id="restoreFactory" type="button" title="חזרה לכיוון 1, פסנתר מושווה עם A=111Hz">חזור לכיוון 1</button>
   </div>
   <p class="tuner-note" id="tunerStatus" aria-live="polite">בחר קליד ונגן; ‎+ / − או הקלדה ישנו אותו מיד. "תקן שחורים" מחלק לשניים כל מרווח בין קלידים לבנים סמוכים, בלי לשנות אותם. שמור את המיפוי המתוקן בשם חדש.</p>
 </div>
@@ -466,7 +466,7 @@ const TUNE_MIN=20,TUNE_MAX=20000;
 const tunerDock=document.getElementById("tunerDock"),tunerToggle=document.getElementById("tunerToggle");
 const tuneInput=document.getElementById("tuneHz"),presetName=document.getElementById("presetName");
 const presetSelect=document.getElementById("presetSelect"),tunerStatus=document.getElementById("tunerStatus");
-let tuningKey=0,loadedPreset="__factory__",unsaved=false,previewTimer=0;
+let tuningKey=0,loadedPreset="fresh_piano",unsaved=false,previewTimer=0;
 let savedPresets=Object.create(null);
 function tunerVisible(){return !tunerDock.hidden}
 function validMap(arr){
@@ -489,19 +489,22 @@ function writePresets(){
 }
 function refreshPresetList(){
  presetSelect.textContent="";
- const base=document.createElement("option");base.value="__factory__";base.textContent="ראשי · A=111";presetSelect.appendChild(base);
- const versionB=document.createElement("option");versionB.value="__harmonicB__";versionB.textContent="גרסה B · הרמונית (D♯=45/32)";presetSelect.appendChild(versionB);
- const previous=document.createElement("option");previous.value="__legacy__";previous.textContent="ישן · 111–999";presetSelect.appendChild(previous);
+ for(const d of FRESH_DEFS){
+  const item=document.createElement("option");item.value=d.id;item.textContent=d.title;presetSelect.appendChild(item);
+ }
+ for(const [id,title] of [["__factory__","ארכיון · A"],["__harmonicB__","ארכיון · B"],["__legacy__","ארכיון · 111–999"]]){
+  const item=document.createElement("option");item.value=id;item.textContent=title;presetSelect.appendChild(item);
+ }
  Object.keys(savedPresets).sort((a,b)=>a.localeCompare(b,"he")).forEach(name=>{
   const option=document.createElement("option");option.value=name;option.textContent=name;presetSelect.appendChild(option);
  });
- presetSelect.value=["__factory__","__harmonicB__","__legacy__"].includes(loadedPreset)||Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
- document.getElementById("deletePreset").disabled=["__factory__","__harmonicB__","__legacy__"].includes(loadedPreset);
+ presetSelect.value=isBuiltin(loadedPreset)||Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"fresh_piano";
+ document.getElementById("deletePreset").disabled=isBuiltin(loadedPreset);
 }
 function refreshKey(id){
  const el=keys.querySelector('[data-index="'+id+'"]');
  if(!el)return;
- const original=loadedPreset==="__harmonicB__"?harmonicBNotes[id]:factoryNotes[id];
+ const base=builtinMap(loadedPreset);const original=base?base[id]:notes[id];
  const hz=notes[id],isOriginalAnchor=anchorSet.has(original);
  el.classList.toggle("tuning-changed",!near(hz,original));
  el.classList.toggle("special",specialSet.has(original));
@@ -521,9 +524,9 @@ function selectTunerKey(id){
  showTuningOffset();
 }
 function showTuningOffset(){
- const basis=loadedPreset==="__harmonicB__"?harmonicBNotes[tuningKey]:factoryNotes[tuningKey];
+ const map=builtinMap(loadedPreset);const basis=map?map[tuningKey]:notes[tuningKey];
  const diff=notes[tuningKey]-basis;
- document.getElementById("tunerDelta").textContent=(loadedPreset==="__harmonicB__"?"B ":"A ")+formatHz(basis)+"Hz"+(!near(diff,0)?(" · "+(diff>0?"+":"")+formatHz(diff)+"Hz"):"");
+ document.getElementById("tunerDelta").textContent="בסיס "+formatHz(basis)+"Hz"+(!near(diff,0)?(" · "+(diff>0?"+":"")+formatHz(diff)+"Hz"):"");
 }
 function markUnsaved(){
  unsaved=true;
@@ -568,7 +571,7 @@ tunerToggle.onclick=()=>{
 document.getElementById("tuneMinus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]-1);
 document.getElementById("tunePlus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]+1);
 document.getElementById("tunePreview").onclick=()=>previewKey(tuningKey);
-document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,loadedPreset==="__harmonicB__"?harmonicBNotes[tuningKey]:factoryNotes[tuningKey]);
+document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,(builtinMap(loadedPreset)||factoryNotes)[tuningKey]);
 tuneInput.addEventListener("change",()=>{
  const value=Number(tuneInput.value);
  if(!setKeyHz(tuningKey,value)){tuneInput.value=formatHz(notes[tuningKey])}
@@ -612,20 +615,22 @@ document.getElementById("repairBlackKeys").onclick=()=>{
 function loadMap(values,name){
  if(!validMap(values)){informTuner("המיפוי שנבחר פגום או אינו תקין.");return false}
  stopAll();
+ if(typeof fiveStopWalk==="function")fiveStopWalk();
  for(let i=0;i<COUNT;i++)notes[i]=values[i];
  loadedPreset=name;
- presetName.value=["__factory__","__harmonicB__","__legacy__"].includes(name)?"":name;
+ presetName.value=isBuiltin(name)?"":name;
  refreshAllKeys();
  selectTunerKey(tuningKey);
  clearDirty();refreshPresetList();
- informTuner(name==="__factory__"?"נטענה גרסה A המקורית ללא שינוי.":name==="__harmonicB__"?"נטענה גרסה B מעודכנת: D♯=45/32 · A0=111 · C8=16872Hz.":name==="__legacy__"?"נטען המיפוי הקודם 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
+ informTuner(isFresh(name)?"נטען "+freshMaps[name].name+" · 88 קלידים.":name==="__factory__"?"נטענה גרסה A מהארכיון.":name==="__harmonicB__"?"נטענה גרסה B מהארכיון.":name==="__legacy__"?"נטען המיפוי 111–999 מהארכיון.":"נטען הפריסט '"+name+"'.");
  if(typeof updateABControls==="function")updateABControls();
+ if(typeof updateFivePanel==="function")updateFivePanel();
  return true;
 }
 document.getElementById("savePreset").onclick=()=>{
  const name=presetName.value.trim().replace(/\s+/g," ");
  if(!name||name.length>50){informTuner("יש להזין שם מיפוי באורך 1–50 תווים.");presetName.focus();return}
- if(["__factory__","__harmonicB__","__legacy__"].includes(name)){informTuner("שם זה שמור למיפוי מובנה. בחר שם אחר.");return}
+ if(isBuiltin(name)){informTuner("שם זה שמור למיפוי מובנה. בחר שם אחר.");return}
  if(!Object.prototype.hasOwnProperty.call(savedPresets,name)&&Object.keys(savedPresets).length>=STORE_LIMIT){
   informTuner("מגבלת "+STORE_LIMIT+" פריסטים הושגה; מחק פריסט ישן לשמירה חדשה.");return
  }
@@ -637,19 +642,20 @@ document.getElementById("savePreset").onclick=()=>{
 };
 presetSelect.onchange=()=>{
  const name=presetSelect.value;
- if(name==="__factory__")loadMap(factoryNotes,"__factory__");
+ if(isFresh(name))loadMap(freshMaps[name].notes,name);
+ else if(name==="__factory__")loadMap(factoryNotes,"__factory__");
  else if(name==="__harmonicB__")loadMap(harmonicBNotes,"__harmonicB__");
  else if(name==="__legacy__")loadMap(legacyNotes,"__legacy__");
  else if(Object.prototype.hasOwnProperty.call(savedPresets,name))loadMap(savedPresets[name],name);
 };
-document.getElementById("restoreFactory").onclick=()=>loadMap(factoryNotes,"__factory__");
+document.getElementById("restoreFactory").onclick=()=>loadMap(freshMaps.fresh_piano.notes,"fresh_piano");
 document.getElementById("deletePreset").onclick=()=>{
  const name=loadedPreset;
- if(["__factory__","__harmonicB__","__legacy__"].includes(name)||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
+ if(isBuiltin(name)||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
  if(!window.confirm("למחוק את הפריסט '"+name+"' מהמכשיר הזה?"))return;
  const copy=savedPresets[name].slice();
  delete savedPresets[name];
- if(writePresets()){loadMap(factoryNotes,"__factory__");informTuner("הפריסט '"+name+"' נמחק מהמכשיר.")}
+ if(writePresets()){loadMap(freshMaps.fresh_piano.notes,"fresh_piano");informTuner("הפריסט '"+name+"' נמחק מהמכשיר.")}
  else savedPresets[name]=copy;
 };
 readPresets();
@@ -800,6 +806,81 @@ function renderABTable(){
 renderABTable();
 updateABControls();
 
+
+
+// Five-mode UI and simple ONE NOTE AT A TIME low-volume melody for the troublesome F–G interval.
+let walkNow=null;
+function fiveStopWalk(){
+ if(!walkNow)return;
+ const now=walkNow.ctx.currentTime;
+ walkNow.out.gain.cancelScheduledValues(now);
+ walkNow.out.gain.setTargetAtTime(0,now,.012);
+ for(const osc of walkNow.oscs)try{osc.stop(now+.05)}catch(_){}
+ walkNow=null;
+ document.getElementById("fiveWalk").textContent="▶ בדוק מעבר: E → F → F♯ → G → G♯ → A";
+}
+function fivePlayWalk(){
+ fiveStopWalk();
+ stopAll();
+ if(typeof abStopAudio==="function")abStopAudio();
+ const ctx=context(),t=ctx.currentTime+.04,out=ctx.createGain(),oscs=[];
+ out.gain.setValueAtTime(.55,t);out.connect(sound.master);
+ const steps=[31,32,33,34,35,36],spacing=.38,duration=.255;
+ for(let i=0;i<steps.length;i++){
+  const hz=notes[steps[i]],start=t+i*spacing;
+  for(const [harm,volume] of [[1,.10],[2,.017]]){
+   const osc=ctx.createOscillator(),env=ctx.createGain();
+   osc.type="sine";osc.frequency.setValueAtTime(hz*harm,start);
+   env.gain.setValueAtTime(0,start);
+   env.gain.linearRampToValueAtTime(volume,start+.022);
+   env.gain.setValueAtTime(volume,start+duration-.07);
+   env.gain.linearRampToValueAtTime(0,start+duration-.018);
+   osc.connect(env).connect(out);osc.start(start);osc.stop(start+duration);
+   oscs.push(osc);
+  }
+ }
+ walkNow={ctx,out,oscs};
+ document.getElementById("fiveWalk").textContent="↻ שמע שוב";
+}
+function updateFivePanel(){
+ const map=builtinMap(loadedPreset)||notes;
+ for(const btn of document.querySelectorAll("[data-fresh]")){
+  const selected=btn.dataset.fresh===loadedPreset;
+  btn.classList.toggle("active",selected);
+  btn.setAttribute("aria-pressed",String(selected));
+ }
+ const id=loadedPreset;
+ const selected=FRESH_DEFS.find(x=>x.id===id);
+ const frequencies=[31,32,33,34,35,36].map(i=>formatHz(map[i]));
+ const glide=1200*Math.log2(map[34]/map[32]);
+ document.getElementById("fiveStats").textContent=
+  (selected?selected.title:"פריסט קודם או אישי")+" · "+
+  ["E","F","F♯","G","G♯","A"].map((note,i)=>note+"="+frequencies[i]).join(" · ")+
+  "Hz · F→G="+glide.toFixed(1)+" סנט · "+anchorCount(map)+"/"+anchorChecks.length+" עוגנים מדויקים";
+ document.getElementById("fiveDetails").textContent=selected?
+   selected.desc+" · אפשר לנגן כל קליד. מעבר הבדיקה משמיע תו אחד בכל פעם, בלי חפיפה ובלי אקורד.":
+   "פריסט מהארכיון או מיפוי אישי. חמשת הכיוונים החדשים עדיין זמינים.";
+ document.getElementById("currentScaleDescription").textContent=selected?
+   selected.desc+" כל אוקטבה מוכפלת בדיוק פי 2. המספרים בתצוגה מקוצרים, אבל השמע משתמש בתדר המדויק.":
+   "זהו מיפוי ישן או אישי. חמשת הכיוונים החדשים מופיעים בראש העמוד.";
+ document.querySelector(".endpoints").lastElementChild.textContent="C8 · "+keyHz(map[87])+"Hz";
+ // Anchor jump buttons always display the frequency they actually play.
+ for(const btn of document.querySelectorAll("[data-hz]")){
+  const ref=Number(btn.dataset.hz),i=factoryNotes.findIndex(n=>near(n,ref));
+  if(i>=0){btn.textContent=keyHz(notes[i]);btn.title=pitchLabel(i)+" · "+formatHz(notes[i])+"Hz";}
+ }
+}
+for(const btn of document.querySelectorAll("[data-fresh]")){
+ btn.onclick=()=>{
+  if(unsaved&&!window.confirm("יש כיוון אישי שלא נשמר. לעבור לגרסה אחרת בלי לשמור אותו?"))return;
+  const id=btn.dataset.fresh;
+  loadMap(freshMaps[id].notes,id);
+ };
+}
+document.getElementById("fiveWalk").onclick=fivePlayWalk;
+document.getElementById("fiveStop").onclick=fiveStopWalk;
+loadMap(freshMaps.fresh_piano.notes,"fresh_piano");
+keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
 
 </script>
 </body>
