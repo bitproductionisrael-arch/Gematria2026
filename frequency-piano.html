@@ -6,17 +6,26 @@
 <meta name="theme-color" content="#090d13">
 <title>פסנתר תדרים | Gematria2026</title>
 <style>
-:root{color-scheme:dark;--bg:#090d13;--panel:#101721;--border:#303d49;--gold:#d8ad55;--cyan:#6bdbde;--muted:#96a6b7;--white:22;--black:14.5;--white-height:124;--black-height:79}
+:root{color-scheme:dark;--bg:#090d13;--panel:#101721;--border:#303d49;--gold:#d8ad55;--cyan:#6bdbde;--muted:#96a6b7;--white:26;--black:17.1;--white-height:147;--black-height:95}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#152337,var(--bg) 48%);color:#ecf1f6;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:#182333;border:1px solid #415365;padding:9px 12px;border-radius:9px;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}button:hover{border-color:var(--gold)}button:active{transform:translateY(1px)}.active{background:#55421f;border-color:var(--gold)}
 header{border-bottom:1px solid #273546;background:#0b1119;position:sticky;top:0;z-index:30}header .inner{width:min(1150px,96vw);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:13px 4px;gap:12px}.brand{font-weight:850;letter-spacing:.03em}.brand b{color:var(--gold)}.back{font-size:13px;color:#d2e1ee}
 main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.14em}h1{font-size:clamp(27px,5vw,44px);margin:5px 0 7px}h1 span{color:var(--gold)}h2{font-size:17px;margin:0 0 14px}.sub{margin:0 0 20px;color:#b0bfcb;font-size:14px;line-height:1.8}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin:0 0 14px}.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.small{font-size:12px;color:var(--muted);line-height:1.65}.status{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:14px 0 5px}.status strong{color:var(--gold);font-size:25px;direction:ltr}.status span{color:#c4d3dc;font-size:13px}.legend{display:flex;gap:13px;flex-wrap:wrap;color:#bdcbd8;font-size:12px;margin:12px 0 6px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-left:4px}.dot.cyan{background:var(--cyan)}
-.scroll{overflow-x:auto;overscroll-behavior-inline:contain;overflow-y:hidden;direction:ltr;background:#080d14;border:1px solid #2a3643;border-radius:12px;padding:11px 6px 13px;scrollbar-color:#52667a #131d28;touch-action:pan-x}
+.scroll{overflow-x:auto;overscroll-behavior-inline:contain;overflow-y:hidden;direction:ltr;background:#080d14;border:1px solid #2a3643;border-radius:12px;padding:11px 6px 13px;scrollbar-color:#52667a #131d28;touch-action:none}
 .keys{position:relative;display:flex;width:max-content;height:calc(var(--white-height)*1px);direction:ltr;user-select:none;-webkit-user-select:none}.key{touch-action:none;cursor:pointer;transition:filter .06s}.white{flex:0 0 calc(var(--white)*1px);width:calc(var(--white)*1px);height:calc(var(--white-height)*1px);background:linear-gradient(#f4f7f6,#aebdcb);border:1px solid #657786;border-radius:0 0 4px 4px;position:relative;color:#243242}.black{width:calc(var(--black)*1px);height:calc(var(--black-height)*1px);position:absolute;top:0;z-index:2;border:1px solid #536477;border-radius:0 0 3px 3px;background:linear-gradient(#35475c,#0b1017);box-shadow:1px 2px 3px #060b12;color:#eef3f9}
 .white.anchor{background:linear-gradient(#ffe5a4,#c49d48)}.black.anchor{background:linear-gradient(#916c37,#38250f);border-color:#ffcb66}.white.special{background:linear-gradient(#c7f5fa,#62b7c1)}.black.special{background:linear-gradient(#358994,#114753);border-color:#8df4f9}.key.pressed{filter:brightness(1.4);box-shadow:0 0 12px #ffdf8f inset;z-index:3}
-.key .name{position:absolute;bottom:24px;left:0;width:100%;text-align:center;font-size:8px;font-weight:800}.key .freq{position:absolute;bottom:5px;left:0;width:100%;text-align:center;font-size:8px;font-variant-numeric:tabular-nums;overflow:visible;white-space:nowrap}.black .name{bottom:19px;font-size:7px}.black .freq{bottom:4px;font-size:7px}
-.key:not(.anchor):not(.special) .freq{display:none}.key:not(.anchor):not(.special) .name{display:none}.key.anchor .freq,.key.special .freq{font-weight:900}.tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
-@media(min-width:720px){:root{--white:32;--black:21;--white-height:166;--black-height:106}main{margin-top:35px}}
-@media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.key .freq{font-size:7px}.key .name{font-size:7px}}
+.key .name{position:absolute;top:7px;left:0;width:100%;text-align:center;font-size:10px;font-weight:800}
+.key .freq{position:absolute;bottom:9px;left:0;width:100%;text-align:center;font-size:9px;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:750;direction:ltr;letter-spacing:-.25px}
+.black .name{top:6px;font-size:8px}.black .freq{bottom:9px;font-size:7px;color:#f8fcff;letter-spacing:-.4px}
+.key.anchor .freq,.key.special .freq{font-weight:950}
+.voice-picker{display:flex;align-items:center;gap:8px;font-size:13px;color:#c9d8e4}
+.voice-picker select{background:#182333;color:#f5f6f8;border:1px solid #596b7b;border-radius:9px;padding:9px 11px;font:inherit;min-width:132px}
+.release-control{display:flex;gap:8px;align-items:center;background:#0e1722;border:1px solid #354456;padding:7px 11px;border-radius:9px;font-size:13px;white-space:nowrap}
+.release-control input{width:135px;max-width:28vw;accent-color:#d8ad55}
+.release-control output{direction:ltr;display:inline-block;min-width:53px;color:#f3d391;font-variant-numeric:tabular-nums}
+.scroll-hint{text-align:center;font-size:12px;color:#83d5d8;margin:8px 0 0}
+.tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
+@media(min-width:720px){:root{--white:36;--black:24;--white-height:202;--black-height:130}main{margin-top:35px}}
+@media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.white .freq{font-size:9px}.black .freq{font-size:7px}.key .name{font-size:8px}}
 </style>
 </head>
 <body>
@@ -32,7 +41,22 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <button id="stop">■ עצור</button>
 <button id="smaller">− הקטן</button>
 <button id="larger">+ הגדל</button>
-<label class="small"><input id="rich" type="checkbox" checked> הרמוניות</label>
+<button id="previous">◀ הקודמים</button>
+<button id="next">הבאים ▶</button>
+<label class="voice-picker">סוג צליל
+<select id="voice" aria-label="בחירת סוג צליל">
+<option value="piano">פסנתר</option>
+<option value="sine">סינוס נקי</option>
+<option value="organ">אורגן</option>
+<option value="bell">פעמון</option>
+<option value="pad">פאד רך</option>
+<option value="synth">סינתיסייזר</option>
+</select>
+</label>
+<label class="release-control">Release · דעיכה
+<input id="release" type="range" min="0.05" max="3" step="0.05" value="0.65" aria-label="משך דעיכה לאחר שחרור קליד">
+<output id="releaseValue" for="release">0.65 שנ׳</output>
+</label>
 </div>
 <div class="status" aria-live="polite"><strong id="frequency">111 Hz</strong><span id="activeText">הקליד הראשון · לחץ על קליד לנגינה</span></div>
 <div class="tools" style="margin-bottom:12px">
@@ -40,8 +64,9 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 </div>
 <div class="legend"><span><i class="dot"></i> 111–999 המקוריים</span><span><i class="dot cyan"></i> 528 הניסוי</span><span>יתר הקלידים: השלמה מתמטית בתדרים שלמים</span></div>
 <div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 999"></div></div>
+<div class="scroll-hint">⇆ גע וגרור את הקלידים לצדדים כדי לעבור בין כל 88 התדרים</div>
 <div class="endpoints"><span>111Hz · התחלה</span><span>999Hz · סוף</span></div>
-<p class="small" style="margin:10px 0 0">בטלפון: רוחב קליד לבן 22px, מחצית מהמקלדת הקודמת (44px). אפשר להחליק אופקית לראות את כולם; לשינוי גודל השתמש בכפתורים.</p>
+<p class="small" style="margin:10px 0 0">בטלפון: רוחב קליד לבן 26px, וכל קליד מציג את התדר שלו ב־Hz. גרירה אופקית על הקלידים מזיזה את המקלדת; אפשר להשתמש גם בכפתורי הקודמים והבאים.</p>
 </section>
 <div class="grid">
 <section class="tile focus"><strong>444 + 555 + 666 Hz</strong><p>שלישיית מז'ור ביחס מדויק 4:5:6.</p></section>
@@ -53,7 +78,10 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 </section>
 </main>
 <script>
+
 "use strict";
+// Frequency assignment intentionally non-standard: 88 equal-index keys span 111 to 999 Hz,
+// exact integer Hz, with original 111-multiples and the 528 Hz experiment locked.
 const COUNT=88, MIN=111, MAX=999;
 const anchorHz=[111,222,333,444,528,555,666,777,888,999];
 const rawIndex=f=>Math.round((COUNT-1)*Math.log(f/MIN)/Math.log(MAX/MIN));
@@ -63,37 +91,176 @@ for(let a=0;a<anchors.length-1;a++){
  const p=anchors[a],q=anchors[a+1];
  for(let i=p.i;i<=q.i;i++) notes[i]=Math.round(p.f*Math.pow(q.f/p.f,(i-p.i)/(q.i-p.i)));
 }
-if(notes.length!==88||notes[0]!==111||notes[87]!==999||notes.some((v,i)=>!Number.isInteger(v)||(i>0&&v<=notes[i-1]))||anchors.some(x=>notes[x.i]!==x.f)) throw new Error("Frequency map failed validation");
+if(notes.length!==88||notes[0]!==111||notes[87]!==999||
+   notes.some((v,i)=>!Number.isInteger(v)||(i>0&&v<=notes[i-1]))||
+   anchors.some(x=>notes[x.i]!==x.f)) throw new Error("Frequency map failed validation");
 const anchorSet=new Set(anchorHz);
-const labels=["A","A♯","B","C","C♯","D","D♯","E","F","F♯","G","G♯"];
-const isBlack=i=>[1,4,6,9,11].includes((i+0)%12); // A0 sequence, black keys A# C# D# F# G#
-const sound={ctx:null,voices:new Map(),rich:true};
-function context(){if(!sound.ctx)sound.ctx=new(window.AudioContext||window.webkitAudioContext)();if(sound.ctx.state==="suspended")sound.ctx.resume();return sound.ctx;}
-function release(id){let v=sound.voices.get(id);if(!v)return;sound.voices.delete(id);const now=v.ctx.currentTime;v.gain.gain.cancelScheduledValues(now);v.gain.gain.setTargetAtTime(0,now,0.045);v.oscs.forEach(o=>{try{o.stop(now+0.3)}catch(_){}});document.querySelector('[data-index="'+id+'"]')?.classList.remove("pressed");}
-function play(id){if(id<0||id>=COUNT)return;release(id);let f=notes[id],ctx=context(),gain=ctx.createGain(),now=ctx.currentTime;gain.gain.value=0;gain.connect(ctx.destination);const parts=sound.rich?[[1,0.72],[2,0.16],[3,0.06]]:[[1,0.9]];const oscs=[];for(const [harm,amp] of parts){let o=ctx.createOscillator(),vol=ctx.createGain();o.type="sine";o.frequency.value=f*harm;vol.gain.value=amp;o.connect(vol).connect(gain);o.start(now);oscs.push(o)}gain.gain.setTargetAtTime(0.13,now,0.012);sound.voices.set(id,{ctx,gain,oscs});document.querySelector('[data-index="'+id+'"]')?.classList.add("pressed");document.getElementById("frequency").textContent=f+" Hz";document.getElementById("activeText").textContent="קליד "+(id+1)+" מתוך 88"+(anchorSet.has(f)?" · תדר עוגן":" · תדר מחושב");}
-function stopAll(){Array.from(sound.voices.keys()).forEach(release);window.clearTimeout(chordTimer)}
+const isBlack=i=>[1,4,6,9,11].includes(i%12);
+const presets={
+ piano:{partials:[[1,.82,"sine"],[2,.14,"sine"],[3,.06,"sine"]],attack:.008,decay:1.0,hold:.025,level:.17},
+ sine:{partials:[[1,1,"sine"]],attack:.014,decay:0,hold:1,level:.17},
+ organ:{partials:[[1,.7,"sine"],[2,.24,"sine"],[3,.15,"sine"],[4,.08,"sine"]],attack:.028,decay:0,hold:1,level:.145},
+ bell:{partials:[[1,.84,"sine"],[2,.25,"sine"],[3,.1,"sine"],[5,.035,"sine"]],attack:.004,decay:.65,hold:.002,level:.155},
+ pad:{partials:[[1,.8,"sine"],[2,.14,"sine"],[3,.06,"sine"]],attack:.18,decay:0,hold:1,level:.16},
+ synth:{partials:[[1,.9,"triangle"],[2,.10,"sine"]],attack:.012,decay:0,hold:1,level:.16}
+};
+const sound={ctx:null,master:null,voices:new Map(),preset:"piano",release:.65};
+function context(){
+ if(!sound.ctx){
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  sound.ctx=ctx;
+  const limiter=ctx.createDynamicsCompressor();
+  limiter.threshold.value=-12;limiter.knee.value=12;limiter.ratio.value=6;
+  limiter.attack.value=.003;limiter.release.value=.22;
+  limiter.connect(ctx.destination);sound.master=limiter;
+ }
+ if(sound.ctx.state==="suspended")sound.ctx.resume();
+ return sound.ctx;
+}
+function release(id){
+ const v=sound.voices.get(id);
+ if(!v)return;
+ sound.voices.delete(id);
+ const now=v.ctx.currentTime, param=v.gain.gain;
+ if(typeof param.cancelAndHoldAtTime==="function") param.cancelAndHoldAtTime(now);
+ else {const current=Math.max(0.0001,param.value);param.cancelScheduledValues(now);param.setValueAtTime(current,now);}
+ const seconds=sound.release;
+ param.setTargetAtTime(0,now,Math.max(.008,seconds/5));
+ for(const o of v.oscs){try{o.stop(now+seconds+.08)}catch(_){}}
+ document.querySelector('[data-index="'+id+'"]')?.classList.remove("pressed");
+}
+function play(id){
+ if(!Number.isInteger(id)||id<0||id>=COUNT)return;
+ release(id);
+ const f=notes[id],ctx=context(),now=ctx.currentTime,voice=presets[sound.preset];
+ const amp=ctx.createGain();amp.gain.setValueAtTime(0,now);amp.connect(sound.master);
+ amp.gain.linearRampToValueAtTime(voice.level,now+voice.attack);
+ if(voice.decay>0)
+   amp.gain.setTargetAtTime(voice.level*voice.hold,now+voice.attack,voice.decay);
+ const oscs=[];
+ for(const [mult,level,type] of voice.partials){
+  const osc=ctx.createOscillator(),vol=ctx.createGain();
+  osc.type=type;osc.frequency.setValueAtTime(f*mult,now);
+  vol.gain.setValueAtTime(level,now);
+  osc.connect(vol).connect(amp);osc.start(now);oscs.push(osc);
+ }
+ sound.voices.set(id,{ctx,gain:amp,oscs});
+ document.querySelector('[data-index="'+id+'"]')?.classList.add("pressed");
+ document.getElementById("frequency").textContent=f+" Hz";
+ document.getElementById("activeText").textContent="קליד "+(id+1)+" מתוך 88"+(anchorSet.has(f)?" · תדר עוגן":" · תדר מחושב");
+}
 let chordTimer=0;
-function chord(frequencies){stopAll();const ids=frequencies.map(f=>notes.indexOf(f));ids.forEach(play);chordTimer=setTimeout(()=>ids.forEach(release),2000)}
+function stopAll(){clearTimeout(chordTimer);Array.from(sound.voices.keys()).forEach(release)}
+function chord(frequencies){
+ stopAll();
+ const ids=frequencies.map(f=>notes.indexOf(f)).filter(id=>id>=0);
+ ids.forEach(play);
+ chordTimer=setTimeout(()=>ids.forEach(release),1600);
+}
 document.getElementById("major").onclick=()=>chord([444,555,666]);
 document.getElementById("minor").onclick=()=>chord([444,528,666]);
 document.getElementById("stop").onclick=stopAll;
-document.getElementById("rich").onchange=e=>sound.rich=e.target.checked;
-const keys=document.getElementById("keys"),scroll=document.getElementById("scroll");
-const whiteIndex=[];let whiteCount=0;
-for(let i=0;i<COUNT;i++)if(!isBlack(i)){whiteIndex[i]=whiteCount++;let el=document.createElement("div");el.className="key white"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");el.dataset.index=i;el.setAttribute("role","button");el.setAttribute("tabindex","0");el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+(anchorSet.has(notes[i])?notes[i]:'')+'</span>';keys.appendChild(el)}
-const blacks=[];
-for(let i=0;i<COUNT;i++)if(isBlack(i)){let el=document.createElement("div");el.className="key black"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");el.dataset.index=i;el.setAttribute("role","button");el.setAttribute("tabindex","0");el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+(anchorSet.has(notes[i])?notes[i]:'')+'</span>';keys.appendChild(el);blacks.push({element:el,prev:i-1})}
-let width=window.matchMedia("(max-width:719px)").matches?22:32;
-function setWidth(next){width=Math.max(16,Math.min(44,next));let bw=width*(14.5/22);document.documentElement.style.setProperty("--white",width);document.documentElement.style.setProperty("--black",bw);document.documentElement.style.setProperty("--white-height",Math.round(width*5.64));document.documentElement.style.setProperty("--black-height",Math.round(width*3.6));for(const b of blacks)b.element.style.left=(whiteIndex[b.prev]*width+width-bw/2)+"px"}
+document.getElementById("voice").onchange=e=>{sound.preset=e.target.value;if(!presets[sound.preset])sound.preset="piano"};
+document.getElementById("release").oninput=e=>{
+ sound.release=Number(e.target.value);
+ document.getElementById("releaseValue").textContent=sound.release.toFixed(2)+" שנ׳";
+};
+const keys=document.getElementById("keys"),scroller=document.getElementById("scroll");
+const whiteIndex=[],blacks=[];
+let whiteCount=0;
+for(let i=0;i<COUNT;i++){
+ if(!isBlack(i)){
+  whiteIndex[i]=whiteCount++;
+  const el=document.createElement("div");
+  el.className="key white"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");
+  el.dataset.index=i;
+  el.setAttribute("role","button");el.tabIndex=0;
+  el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");
+  el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+notes[i]+'</span>';
+  keys.appendChild(el);
+ }
+}
+for(let i=0;i<COUNT;i++){
+ if(isBlack(i)){
+  const el=document.createElement("div");
+  el.className="key black"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");
+  el.dataset.index=i;
+  el.setAttribute("role","button");el.tabIndex=0;
+  el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");
+  el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+notes[i]+'</span>';
+  keys.appendChild(el);
+  blacks.push({element:el,prev:i-1});
+ }
+}
+let width=window.matchMedia("(max-width:719px)").matches?26:36;
+function setWidth(next){
+ width=Math.max(20,Math.min(44,next));
+ const bw=width*(17.1/26);
+ document.documentElement.style.setProperty("--white",width);
+ document.documentElement.style.setProperty("--black",bw);
+ document.documentElement.style.setProperty("--white-height",Math.round(width*5.64));
+ document.documentElement.style.setProperty("--black-height",Math.round(width*3.64));
+ for(const b of blacks)b.element.style.left=(whiteIndex[b.prev]*width+width-bw/2)+"px";
+}
 setWidth(width);
-document.getElementById("smaller").onclick=()=>setWidth(width===22?16:width===32?22:width===44?32:16);
-document.getElementById("larger").onclick=()=>setWidth(width===16?22:width===22?32:44);
+const sizes=[20,26,32,36,44];
+document.getElementById("smaller").onclick=()=>setWidth(sizes[Math.max(0,sizes.findIndex(v=>v>=width)-1)]);
+document.getElementById("larger").onclick=()=>setWidth(sizes[Math.min(sizes.length-1,sizes.findIndex(v=>v>=width)+1)]);
+document.getElementById("previous").onclick=()=>scroller.scrollBy({left:-scroller.clientWidth*.78,behavior:"smooth"});
+document.getElementById("next").onclick=()=>scroller.scrollBy({left:scroller.clientWidth*.78,behavior:"smooth"});
+// Manual pointer drag: works even when the finger begins ON a white or black key.
+// Pointer capture belongs to the scroll container (not the key).
 const pointers=new Map();
-keys.addEventListener("pointerdown",e=>{const key=e.target.closest(".key");if(!key)return;e.preventDefault();const id=Number(key.dataset.index);key.setPointerCapture(e.pointerId);pointers.set(e.pointerId,id);play(id)});
-for(const evt of ["pointerup","pointercancel","lostpointercapture"])keys.addEventListener(evt,e=>{const id=pointers.get(e.pointerId);if(id!==undefined){release(id);pointers.delete(e.pointerId)}});
-keys.addEventListener("keydown",e=>{if(e.key!==" "&&e.key!=="Enter")return;let k=e.target.closest(".key");if(!k)return;e.preventDefault();if(!e.repeat)play(Number(k.dataset.index))});
-keys.addEventListener("keyup",e=>{if(e.key!==" "&&e.key!=="Enter")return;let k=e.target.closest(".key");if(k)release(Number(k.dataset.index))});
-document.querySelectorAll("[data-hz]").forEach(btn=>btn.onclick=()=>{const hz=Number(btn.dataset.hz),idx=notes.indexOf(hz);if(idx<0)return;let key=keys.querySelector('[data-index="'+idx+'"]');scroll.scrollTo({left:Math.max(0,key.offsetLeft-scroll.clientWidth/2),behavior:"smooth"});play(idx);setTimeout(()=>release(idx),550)});
+scroller.addEventListener("pointerdown",e=>{
+ if(e.pointerType==="mouse"&&e.button!==0)return;
+ const key=e.target.closest(".key"),id=key?Number(key.dataset.index):null;
+ const state={x:e.clientX,left:scroller.scrollLeft,drag:false,id};
+ pointers.set(e.pointerId,state);
+ try{scroller.setPointerCapture(e.pointerId)}catch(_){}
+ if(id!==null)play(id);
+ e.preventDefault();
+});
+scroller.addEventListener("pointermove",e=>{
+ const state=pointers.get(e.pointerId);
+ if(!state)return;
+ const dx=e.clientX-state.x;
+ if(!state.drag&&Math.abs(dx)>7){
+  state.drag=true;
+  if(state.id!==null)release(state.id);
+ }
+ if(state.drag){
+  scroller.scrollLeft=state.left-dx;
+  e.preventDefault();
+ }
+});
+function endPointer(e){
+ const state=pointers.get(e.pointerId);
+ if(!state)return;
+ pointers.delete(e.pointerId);
+ if(state.id!==null)release(state.id);
+}
+for(const eventName of ["pointerup","pointercancel","lostpointercapture"])
+ scroller.addEventListener(eventName,endPointer);
+keys.addEventListener("keydown",e=>{
+ if(e.key!==" "&&e.key!=="Enter")return;
+ const key=e.target.closest(".key");
+ if(!key)return;
+ e.preventDefault();if(!e.repeat)play(Number(key.dataset.index));
+});
+keys.addEventListener("keyup",e=>{
+ if(e.key!==" "&&e.key!=="Enter")return;
+ const key=e.target.closest(".key");
+ if(key)release(Number(key.dataset.index));
+});
+document.querySelectorAll("[data-hz]").forEach(btn=>{
+ btn.onclick=()=>{
+  const hz=Number(btn.dataset.hz),idx=notes.indexOf(hz);if(idx<0)return;
+  const key=keys.querySelector('[data-index="'+idx+'"]');
+  scroller.scrollTo({left:Math.max(0,key.offsetLeft-scroller.clientWidth/2),behavior:"smooth"});
+  play(idx);setTimeout(()=>release(idx),550);
+ };
+});
+
 </script>
 </body>
 </html>
