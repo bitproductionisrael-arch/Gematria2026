@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d13">
+<title>פסנתר תדרים | Gematria2026</title>
+<style>
+:root{color-scheme:dark;--bg:#090d13;--panel:#101721;--border:#303d49;--gold:#d8ad55;--cyan:#6bdbde;--muted:#96a6b7;--white:22;--black:14.5;--white-height:124;--black-height:79}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#152337,var(--bg) 48%);color:#ecf1f6;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:#182333;border:1px solid #415365;padding:9px 12px;border-radius:9px;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}button:hover{border-color:var(--gold)}button:active{transform:translateY(1px)}.active{background:#55421f;border-color:var(--gold)}
+header{border-bottom:1px solid #273546;background:#0b1119;position:sticky;top:0;z-index:30}header .inner{width:min(1150px,96vw);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:13px 4px;gap:12px}.brand{font-weight:850;letter-spacing:.03em}.brand b{color:var(--gold)}.back{font-size:13px;color:#d2e1ee}
+main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.14em}h1{font-size:clamp(27px,5vw,44px);margin:5px 0 7px}h1 span{color:var(--gold)}h2{font-size:17px;margin:0 0 14px}.sub{margin:0 0 20px;color:#b0bfcb;font-size:14px;line-height:1.8}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin:0 0 14px}.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.small{font-size:12px;color:var(--muted);line-height:1.65}.status{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:14px 0 5px}.status strong{color:var(--gold);font-size:25px;direction:ltr}.status span{color:#c4d3dc;font-size:13px}.legend{display:flex;gap:13px;flex-wrap:wrap;color:#bdcbd8;font-size:12px;margin:12px 0 6px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-left:4px}.dot.cyan{background:var(--cyan)}
+.scroll{overflow-x:auto;overscroll-behavior-inline:contain;overflow-y:hidden;direction:ltr;background:#080d14;border:1px solid #2a3643;border-radius:12px;padding:11px 6px 13px;scrollbar-color:#52667a #131d28;touch-action:pan-x}
+.keys{position:relative;display:flex;width:max-content;height:calc(var(--white-height)*1px);direction:ltr;user-select:none;-webkit-user-select:none}.key{touch-action:none;cursor:pointer;transition:filter .06s}.white{flex:0 0 calc(var(--white)*1px);width:calc(var(--white)*1px);height:calc(var(--white-height)*1px);background:linear-gradient(#f4f7f6,#aebdcb);border:1px solid #657786;border-radius:0 0 4px 4px;position:relative;color:#243242}.black{width:calc(var(--black)*1px);height:calc(var(--black-height)*1px);position:absolute;top:0;z-index:2;border:1px solid #536477;border-radius:0 0 3px 3px;background:linear-gradient(#35475c,#0b1017);box-shadow:1px 2px 3px #060b12;color:#eef3f9}
+.white.anchor{background:linear-gradient(#ffe5a4,#c49d48)}.black.anchor{background:linear-gradient(#916c37,#38250f);border-color:#ffcb66}.white.special{background:linear-gradient(#c7f5fa,#62b7c1)}.black.special{background:linear-gradient(#358994,#114753);border-color:#8df4f9}.key.pressed{filter:brightness(1.4);box-shadow:0 0 12px #ffdf8f inset;z-index:3}
+.key .name{position:absolute;bottom:24px;left:0;width:100%;text-align:center;font-size:8px;font-weight:800}.key .freq{position:absolute;bottom:5px;left:0;width:100%;text-align:center;font-size:8px;font-variant-numeric:tabular-nums;overflow:visible;white-space:nowrap}.black .name{bottom:19px;font-size:7px}.black .freq{bottom:4px;font-size:7px}
+.key:not(.anchor):not(.special) .freq{display:none}.key:not(.anchor):not(.special) .name{display:none}.key.anchor .freq,.key.special .freq{font-weight:900}.tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
+@media(min-width:720px){:root{--white:32;--black:21;--white-height:166;--black-height:106}main{margin-top:35px}}
+@media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.key .freq{font-size:7px}.key .name{font-size:7px}}
+</style>
+</head>
+<body>
+<header><div class="inner"><a class="brand" href="index.html">GEMATRIA<b>2026</b></a><a class="back" href="index.html">← חזרה לאתר</a></div></header>
+<main>
+<div class="eyebrow">FREQUENCY PIANO · INDEPENDENT LAB</div>
+<h1>פסנתר <span>תדרים</span></h1>
+<p class="sub">מחלקה עצמאית באתר · 88 קלידים · 111Hz בקצה הראשון ו־999Hz בקצה האחרון · תדרים שלמים בלבד · מקלדת קומפקטית לטלפון</p>
+<section class="panel">
+<div class="tools">
+<button id="major">▶ 444 · 555 · 666 (מז'ור)</button>
+<button id="minor">▶ 444 · 528 · 666 (מינור)</button>
+<button id="stop">■ עצור</button>
+<button id="smaller">− הקטן</button>
+<button id="larger">+ הגדל</button>
+<label class="small"><input id="rich" type="checkbox" checked> הרמוניות</label>
+</div>
+<div class="status" aria-live="polite"><strong id="frequency">111 Hz</strong><span id="activeText">הקליד הראשון · לחץ על קליד לנגינה</span></div>
+<div class="tools" style="margin-bottom:12px">
+<button data-hz="111">111</button><button data-hz="222">222</button><button data-hz="333">333</button><button data-hz="444">444</button><button data-hz="528">528</button><button data-hz="555">555</button><button data-hz="666">666</button><button data-hz="777">777</button><button data-hz="888">888</button><button data-hz="999">999</button>
+</div>
+<div class="legend"><span><i class="dot"></i> 111–999 המקוריים</span><span><i class="dot cyan"></i> 528 הניסוי</span><span>יתר הקלידים: השלמה מתמטית בתדרים שלמים</span></div>
+<div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 999"></div></div>
+<div class="endpoints"><span>111Hz · התחלה</span><span>999Hz · סוף</span></div>
+<p class="small" style="margin:10px 0 0">בטלפון: רוחב קליד לבן 22px, מחצית מהמקלדת הקודמת (44px). אפשר להחליק אופקית לראות את כולם; לשינוי גודל השתמש בכפתורים.</p>
+</section>
+<div class="grid">
+<section class="tile focus"><strong>444 + 555 + 666 Hz</strong><p>שלישיית מז'ור ביחס מדויק 4:5:6.</p></section>
+<section class="tile focus"><strong>444 + 528 + 666 Hz</strong><p>שלישיית מינור ניסויית; 528 נשמר בדיוק.</p></section>
+</div>
+<section class="panel" style="margin-top:14px">
+<h2>חוק המקלדת</h2>
+<p class="small">88 קלידים בין 111 ל־999Hz אינם 88 חצאי־טונים רגילים. כדי לשמור את שני הקצוות ואת העוגנים ללא שינוי, הקלידים החסרים הושלמו בהתפלגות לוגריתמית בין 111, 222, 333, 444, 528, 555, 666, 777, 888 ו־999Hz, ועוגלו למספרי הרץ שלמים. הקלידים מסודרים כמו פסנתר לצורך נגינה, אך תדירותם אינה בהתאם לשמות התווים הסטנדרטיים. אין חיבור למחשבון הגימטריה או שינוי באופרטורים שלו.</p>
+</section>
+</main>
+<script>
+"use strict";
+const COUNT=88, MIN=111, MAX=999;
+const anchorHz=[111,222,333,444,528,555,666,777,888,999];
+const rawIndex=f=>Math.round((COUNT-1)*Math.log(f/MIN)/Math.log(MAX/MIN));
+const anchors=anchorHz.map(f=>({i:rawIndex(f),f}));
+const notes=new Array(COUNT);
+for(let a=0;a<anchors.length-1;a++){
+ const p=anchors[a],q=anchors[a+1];
+ for(let i=p.i;i<=q.i;i++) notes[i]=Math.round(p.f*Math.pow(q.f/p.f,(i-p.i)/(q.i-p.i)));
+}
+if(notes.length!==88||notes[0]!==111||notes[87]!==999||notes.some((v,i)=>!Number.isInteger(v)||(i>0&&v<=notes[i-1]))||anchors.some(x=>notes[x.i]!==x.f)) throw new Error("Frequency map failed validation");
+const anchorSet=new Set(anchorHz);
+const labels=["A","A♯","B","C","C♯","D","D♯","E","F","F♯","G","G♯"];
+const isBlack=i=>[1,4,6,9,11].includes((i+0)%12); // A0 sequence, black keys A# C# D# F# G#
+const sound={ctx:null,voices:new Map(),rich:true};
+function context(){if(!sound.ctx)sound.ctx=new(window.AudioContext||window.webkitAudioContext)();if(sound.ctx.state==="suspended")sound.ctx.resume();return sound.ctx;}
+function release(id){let v=sound.voices.get(id);if(!v)return;sound.voices.delete(id);const now=v.ctx.currentTime;v.gain.gain.cancelScheduledValues(now);v.gain.gain.setTargetAtTime(0,now,0.045);v.oscs.forEach(o=>{try{o.stop(now+0.3)}catch(_){}});document.querySelector('[data-index="'+id+'"]')?.classList.remove("pressed");}
+function play(id){if(id<0||id>=COUNT)return;release(id);let f=notes[id],ctx=context(),gain=ctx.createGain(),now=ctx.currentTime;gain.gain.value=0;gain.connect(ctx.destination);const parts=sound.rich?[[1,0.72],[2,0.16],[3,0.06]]:[[1,0.9]];const oscs=[];for(const [harm,amp] of parts){let o=ctx.createOscillator(),vol=ctx.createGain();o.type="sine";o.frequency.value=f*harm;vol.gain.value=amp;o.connect(vol).connect(gain);o.start(now);oscs.push(o)}gain.gain.setTargetAtTime(0.13,now,0.012);sound.voices.set(id,{ctx,gain,oscs});document.querySelector('[data-index="'+id+'"]')?.classList.add("pressed");document.getElementById("frequency").textContent=f+" Hz";document.getElementById("activeText").textContent="קליד "+(id+1)+" מתוך 88"+(anchorSet.has(f)?" · תדר עוגן":" · תדר מחושב");}
+function stopAll(){Array.from(sound.voices.keys()).forEach(release);window.clearTimeout(chordTimer)}
+let chordTimer=0;
+function chord(frequencies){stopAll();const ids=frequencies.map(f=>notes.indexOf(f));ids.forEach(play);chordTimer=setTimeout(()=>ids.forEach(release),2000)}
+document.getElementById("major").onclick=()=>chord([444,555,666]);
+document.getElementById("minor").onclick=()=>chord([444,528,666]);
+document.getElementById("stop").onclick=stopAll;
+document.getElementById("rich").onchange=e=>sound.rich=e.target.checked;
+const keys=document.getElementById("keys"),scroll=document.getElementById("scroll");
+const whiteIndex=[];let whiteCount=0;
+for(let i=0;i<COUNT;i++)if(!isBlack(i)){whiteIndex[i]=whiteCount++;let el=document.createElement("div");el.className="key white"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");el.dataset.index=i;el.setAttribute("role","button");el.setAttribute("tabindex","0");el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+(anchorSet.has(notes[i])?notes[i]:'')+'</span>';keys.appendChild(el)}
+const blacks=[];
+for(let i=0;i<COUNT;i++)if(isBlack(i)){let el=document.createElement("div");el.className="key black"+(notes[i]===528?" special":anchorSet.has(notes[i])?" anchor":"");el.dataset.index=i;el.setAttribute("role","button");el.setAttribute("tabindex","0");el.setAttribute("aria-label","קליד "+(i+1)+" תדר "+notes[i]+" הרץ");el.innerHTML='<span class="name">'+(anchorSet.has(notes[i])?'●':'')+'</span><span class="freq">'+(anchorSet.has(notes[i])?notes[i]:'')+'</span>';keys.appendChild(el);blacks.push({element:el,prev:i-1})}
+let width=window.matchMedia("(max-width:719px)").matches?22:32;
+function setWidth(next){width=Math.max(16,Math.min(44,next));let bw=width*(14.5/22);document.documentElement.style.setProperty("--white",width);document.documentElement.style.setProperty("--black",bw);document.documentElement.style.setProperty("--white-height",Math.round(width*5.64));document.documentElement.style.setProperty("--black-height",Math.round(width*3.6));for(const b of blacks)b.element.style.left=(whiteIndex[b.prev]*width+width-bw/2)+"px"}
+setWidth(width);
+document.getElementById("smaller").onclick=()=>setWidth(width===22?16:width===32?22:width===44?32:16);
+document.getElementById("larger").onclick=()=>setWidth(width===16?22:width===22?32:44);
+const pointers=new Map();
+keys.addEventListener("pointerdown",e=>{const key=e.target.closest(".key");if(!key)return;e.preventDefault();const id=Number(key.dataset.index);key.setPointerCapture(e.pointerId);pointers.set(e.pointerId,id);play(id)});
+for(const evt of ["pointerup","pointercancel","lostpointercapture"])keys.addEventListener(evt,e=>{const id=pointers.get(e.pointerId);if(id!==undefined){release(id);pointers.delete(e.pointerId)}});
+keys.addEventListener("keydown",e=>{if(e.key!==" "&&e.key!=="Enter")return;let k=e.target.closest(".key");if(!k)return;e.preventDefault();if(!e.repeat)play(Number(k.dataset.index))});
+keys.addEventListener("keyup",e=>{if(e.key!==" "&&e.key!=="Enter")return;let k=e.target.closest(".key");if(k)release(Number(k.dataset.index))});
+document.querySelectorAll("[data-hz]").forEach(btn=>btn.onclick=()=>{const hz=Number(btn.dataset.hz),idx=notes.indexOf(hz);if(idx<0)return;let key=keys.querySelector('[data-index="'+idx+'"]');scroll.scrollTo({left:Math.max(0,key.offsetLeft-scroll.clientWidth/2),behavior:"smooth"});play(idx);setTimeout(()=>release(idx),550)});
+</script>
+</body>
+</html>
