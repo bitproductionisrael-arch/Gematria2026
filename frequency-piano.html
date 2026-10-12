@@ -652,7 +652,7 @@ document.getElementById("repairBlackKeys").onclick=()=>{
 };
 function loadMap(values,name){
  if(!validMap(values)){informTuner("המיפוי שנבחר פגום או אינו תקין.");return false}
- if(typeof midiPanic==="function")midiPanic();
+ if(typeof midiPanic==="function"&&midiState)midiPanic();
  stopAll();
  if(typeof fiveStopWalk==="function")fiveStopWalk();
  for(let i=0;i<COUNT;i++)notes[i]=values[i];
@@ -926,7 +926,7 @@ keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
 // Web MIDI: one selected input, no SysEx and no permission request until user click.
 // Standard MIDI note numbers 21..108 map exactly to key indices 0..87 (A0..C8).
 const MIDI_NOTE_MIN=21, MIDI_NOTE_MAX=108;
-const midiState={
+var midiState={
  access:null,input:null,held:new Set(),latched:new Set(),sustain:false,
  attached:false
 };
