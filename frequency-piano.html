@@ -48,6 +48,30 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 .tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
 @media(min-width:720px){:root{--white:36;--black:24;--white-height:202;--black-height:130}main{margin-top:35px}}
 @media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.white .freq{font-size:9px}.black .freq{font-size:7.5px}.white .name{font-size:9px}.black .name{font-size:7px}}
+
+/* Compact fixed-level A/B listening comparison; keyboard remains separately playable. */
+.ab-panel{border-color:#6a583a;background:linear-gradient(110deg,#221c17,#121a25 70%)}
+.ab-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.ab-title strong{font-size:18px;color:#f5d59b}
+.ab-title span{font-size:12px;color:#b6cad6}
+.ab-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.ab-tools button{min-height:38px}
+.ab-tools button.active{background:#6d5329;border-color:#f1cf88;color:#fff5e3}
+.ab-tools .ab-primary{background:#38504d;border-color:#7de3d1}
+.ab-field{display:flex;align-items:center;gap:6px;font-size:12px;color:#cfdfeb}
+.ab-field select{font:inherit;max-width:180px;padding:8px 6px;background:#0d151c;color:#f3f5f6;border:1px solid #536675;border-radius:8px}
+.ab-readout{margin:11px 0 0;font-size:12px;line-height:1.8;color:#c8d8de}
+.ab-details{margin:10px 0 0;border-top:1px solid #3e4851;padding-top:9px}
+.ab-details summary{cursor:pointer;color:#a7d7dd;font-size:12px}
+.ab-table-wrap{margin-top:10px;max-width:100%;overflow-x:auto;direction:ltr}
+.ab-table{border-collapse:collapse;width:100%;min-width:410px;direction:ltr;font-variant-numeric:tabular-nums;font-size:12px}
+.ab-table th,.ab-table td{border-bottom:1px solid #354451;text-align:center;padding:6px 9px;white-space:nowrap}
+.ab-table th{color:#a0b7c4}
+.ab-table tr.is-different td{color:#f1d399}
+.key.ab-selected{outline:3px solid #efbb67;outline-offset:-3px}
+.key.black.ab-selected{z-index:8}
+@media(max-width:550px){.ab-tools{gap:5px}.ab-tools button{padding:8px 7px;font-size:11px}.ab-field select{max-width:148px;font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -56,6 +80,45 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <div class="eyebrow">FREQUENCY PIANO · INDEPENDENT LAB</div>
 <h1>פסנתר <span>תדרים</span></h1>
 <p class="sub">מחלקה עצמאית באתר · 88 קלידים · A0=111Hz עד C8=16,640Hz · יחסים מדויקים · D=592</p>
+
+<section class="panel ab-panel" id="abCompare" aria-label="השוואת סולמות A ו-B">
+ <div class="ab-title"><strong>השוואה מבוקרת · A / B</strong><span id="abStatus">אותו גל מסור · אותה עוצמה · אותו אקורד</span></div>
+ <div class="ab-tools">
+  <button id="abA" type="button" class="active" aria-pressed="true">A · מקורי</button>
+  <button id="abB" type="button" aria-pressed="false">B · הרמוני</button>
+  <button id="abBoth" type="button" aria-pressed="false">A+B · פעימות</button>
+  <label class="ab-field">אקורד
+    <select id="abChord" aria-label="אקורד להשוואה">
+     <option value="Am">A – C – E · מינור</option>
+     <option value="ADF">A – D – F</option>
+     <option value="CM">C – E – G</option>
+     <option value="DF">D – F♯ – A</option>
+     <option value="Amaj">A – C♯ – E · מז׳ור (בקרה)</option>
+     <option value="custom">בחירה אישית מהקלידים</option>
+    </select>
+  </label>
+  <label class="ab-field">אוקטבה A
+    <select id="abOctave" aria-label="אוקטבה להשוואת אקורד">
+     <option value="0">111Hz</option><option value="1">222Hz</option>
+     <option value="2" selected>444Hz</option><option value="3">888Hz</option>
+     <option value="4">1776Hz</option><option value="5">3552Hz</option>
+    </select>
+  </label>
+  <button id="abPlay" class="ab-primary" type="button">▶ נגן / החזק</button>
+  <button id="abStop" type="button">■ עצור השוואה</button>
+  <button id="abClear" type="button" hidden>נקה בחירה</button>
+ </div>
+ <p class="ab-readout" id="abReadout" aria-live="polite">A מינור: 444, 520, 666 מול 444, 527.25, 666Hz · תו C משתנה ב־7.25Hz.</p>
+ <details class="ab-details">
+   <summary>טבלת 12 התווים · הפרש סנטים, הרצים ויחסי הרמוניה</summary>
+   <div class="ab-table-wrap">
+    <table class="ab-table"><thead><tr><th>תו</th><th>A (Hz)</th><th>B (Hz)</th><th>B−A (סנט)</th><th>ΔHz</th></tr></thead><tbody id="abDiffRows"></tbody></table>
+   </div>
+   <p class="small">A וב׳ זהות בדיוק בתווים A, B, C♯, E, G, G♯. ״A+B״ משמיע שתי גרסאות יחד; ערך ΔHz בכל תו שונה הוא קצב פעימה צפוי בין היסודות שלו, בתנאי ששניהם נשמעים בו־זמנית. בהחלפה A↔B אין פעימה בין הגרסאות שלא הושמעו יחד. הגל הוא מסור עשיר בהרמוניות, עם הגבר קבוע, ללא רנדומליות.</p>
+   <p class="small">שרשרת פיבונאצ׳י בגרסה B: 13×111=1443Hz על F, ‏21×111=2331Hz על D, ‏34×111=3774Hz על A♯. זו תוצאה של היחסים שנבחרו, לא תכונת תהודה אוניברסלית של 888Hz.</p>
+ </details>
+</section>
+
 <section class="panel">
 <div class="tools">
 <button id="major">▶ 444 · 555 · 666 (מז'ור)</button>
@@ -99,7 +162,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
   <div class="tuner-line preset-line">
     <label class="preset-name">שם מיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
     <button id="savePreset" type="button" class="save-preset">💾 שמור מיפוי</button>
-    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">ראשי · A=111</option><option value="__legacy__">ישן · 111–999</option></select></label>
+    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">גרסה A · ראשית</option><option value="__harmonicB__">גרסה B · הרמוניות</option><option value="__legacy__">ישן · 111–999</option></select></label>
     <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
     <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
   </div>
@@ -131,6 +194,21 @@ const factoryNotes=Array.from({length:COUNT},(_,i)=>{const [p,q]=RATIOS[i%12];re
 const notes=factoryNotes.slice();
 const near=(a,b)=>Math.abs(a-b)<1e-8;
 if(!near(notes[0],111)||!near(notes[87],16640)||!near(notes[29],592)||!near(notes[53],2368) ||notes.some((v,i)=>!Number.isFinite(v)||(i>0&&v<=notes[i-1])))throw Error("Factory tuning failed");
+
+// Built-in VERSION B: selected harmonics 16...32, repeated by exact powers of two.
+// Version A / RATIOS / factoryNotes remain immutable.
+const RATIOS_B=[[1,1],[17,16],[9,8],[19,16],[5,4],[21,16],[11,8],[3,2],[13,8],[27,16],[7,4],[15,8]];
+const harmonicBNotes=Array.from({length:COUNT},(_,i)=>{
+ const [p,q]=RATIOS_B[i%12];return BASE_HZ*Math.pow(2,Math.floor(i/12))*p/q;
+});
+if(!near(harmonicBNotes[0],111)||!near(harmonicBNotes[87],16872)
+ ||!near(harmonicBNotes[27],527.25)||!near(harmonicBNotes[29],582.75)
+ ||harmonicBNotes.some((v,i)=>!Number.isFinite(v)||(i>0&&v<=harmonicBNotes[i-1])))
+ throw Error("Version B self-test failed");
+for(const pc of [0,2,4,7,10,11]){
+ for(let i=pc;i<COUNT;i+=12)if(!near(factoryNotes[i],harmonicBNotes[i]))throw Error("Version A/B fixed tone mismatch: "+i);
+}
+
 const legacyNotes=new Array(COUNT);
 const legacyAnchors=[111,222,333,444,528,555,666,777,888,999].map(f=>({i:Math.round(87*Math.log(f/111)/Math.log(9)),f}));
 for(let a=0;a<legacyAnchors.length-1;a++){
@@ -290,7 +368,10 @@ function endPointer(e){
  const state=pointers.get(e.pointerId);
  if(!state)return;
  pointers.delete(e.pointerId);
- if(state.id!==null)release(state.id);
+ if(state.id!==null){
+  release(state.id);
+  if(!state.drag&&e.type==="pointerup")toggleABCustomKey(state.id);
+ }
 }
 for(const eventName of ["pointerup","pointercancel","lostpointercapture"])
  scroller.addEventListener(eventName,endPointer);
@@ -348,17 +429,19 @@ function writePresets(){
 function refreshPresetList(){
  presetSelect.textContent="";
  const base=document.createElement("option");base.value="__factory__";base.textContent="ראשי · A=111";presetSelect.appendChild(base);
+ const versionB=document.createElement("option");versionB.value="__harmonicB__";versionB.textContent="גרסה B · הרמוניות 16–32";presetSelect.appendChild(versionB);
  const previous=document.createElement("option");previous.value="__legacy__";previous.textContent="ישן · 111–999";presetSelect.appendChild(previous);
  Object.keys(savedPresets).sort((a,b)=>a.localeCompare(b,"he")).forEach(name=>{
   const option=document.createElement("option");option.value=name;option.textContent=name;presetSelect.appendChild(option);
  });
- presetSelect.value=loadedPreset==="__legacy__"||loadedPreset==="__factory__"||Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
- document.getElementById("deletePreset").disabled=loadedPreset==="__factory__"||loadedPreset==="__legacy__";
+ presetSelect.value=["__factory__","__harmonicB__","__legacy__"].includes(loadedPreset)||Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
+ document.getElementById("deletePreset").disabled=["__factory__","__harmonicB__","__legacy__"].includes(loadedPreset);
 }
 function refreshKey(id){
  const el=keys.querySelector('[data-index="'+id+'"]');
  if(!el)return;
- const hz=notes[id],original=factoryNotes[id],isOriginalAnchor=anchorSet.has(original);
+ const original=loadedPreset==="__harmonicB__"?harmonicBNotes[id]:factoryNotes[id];
+ const hz=notes[id],isOriginalAnchor=anchorSet.has(original);
  el.classList.toggle("tuning-changed",!near(hz,original));
  el.classList.toggle("special",specialSet.has(original));
  el.classList.toggle("anchor",!specialSet.has(original)&&isOriginalAnchor);
@@ -377,8 +460,9 @@ function selectTunerKey(id){
  showTuningOffset();
 }
 function showTuningOffset(){
- const diff=notes[tuningKey]-factoryNotes[tuningKey];
- document.getElementById("tunerDelta").textContent="ראשי "+formatHz(factoryNotes[tuningKey])+"Hz"+(!near(diff,0)?(" · "+(diff>0?"+":"")+formatHz(diff)+"Hz"):"");
+ const basis=loadedPreset==="__harmonicB__"?harmonicBNotes[tuningKey]:factoryNotes[tuningKey];
+ const diff=notes[tuningKey]-basis;
+ document.getElementById("tunerDelta").textContent=(loadedPreset==="__harmonicB__"?"B ":"A ")+formatHz(basis)+"Hz"+(!near(diff,0)?(" · "+(diff>0?"+":"")+formatHz(diff)+"Hz"):"");
 }
 function markUnsaved(){
  unsaved=true;
@@ -423,7 +507,7 @@ tunerToggle.onclick=()=>{
 document.getElementById("tuneMinus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]-1);
 document.getElementById("tunePlus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]+1);
 document.getElementById("tunePreview").onclick=()=>previewKey(tuningKey);
-document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,factoryNotes[tuningKey]);
+document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,loadedPreset==="__harmonicB__"?harmonicBNotes[tuningKey]:factoryNotes[tuningKey]);
 tuneInput.addEventListener("change",()=>{
  const value=Number(tuneInput.value);
  if(!setKeyHz(tuningKey,value)){tuneInput.value=formatHz(notes[tuningKey])}
@@ -469,17 +553,18 @@ function loadMap(values,name){
  stopAll();
  for(let i=0;i<COUNT;i++)notes[i]=values[i];
  loadedPreset=name;
- presetName.value=name==="__factory__"||name==="__legacy__"?"":name;
+ presetName.value=["__factory__","__harmonicB__","__legacy__"].includes(name)?"":name;
  refreshAllKeys();
  selectTunerKey(tuningKey);
  clearDirty();refreshPresetList();
- informTuner(name==="__factory__"?"נטען הפריסט הראשי A=111, D=592, C8=16640Hz.":name==="__legacy__"?"נטען המיפוי הקודם 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
+ informTuner(name==="__factory__"?"נטענה גרסה A המקורית ללא שינוי.":name==="__harmonicB__"?"נטענה גרסה B: הרמוניות 16–32 · A0=111 · C8=16872Hz.":name==="__legacy__"?"נטען המיפוי הקודם 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
+ if(typeof updateABControls==="function")updateABControls();
  return true;
 }
 document.getElementById("savePreset").onclick=()=>{
  const name=presetName.value.trim().replace(/\s+/g," ");
  if(!name||name.length>50){informTuner("יש להזין שם מיפוי באורך 1–50 תווים.");presetName.focus();return}
- if(name==="__factory__"||name==="__legacy__"){informTuner("שם זה שמור למיפוי מובנה. בחר שם אחר.");return}
+ if(["__factory__","__harmonicB__","__legacy__"].includes(name)){informTuner("שם זה שמור למיפוי מובנה. בחר שם אחר.");return}
  if(!Object.prototype.hasOwnProperty.call(savedPresets,name)&&Object.keys(savedPresets).length>=STORE_LIMIT){
   informTuner("מגבלת "+STORE_LIMIT+" פריסטים הושגה; מחק פריסט ישן לשמירה חדשה.");return
  }
@@ -492,13 +577,14 @@ document.getElementById("savePreset").onclick=()=>{
 presetSelect.onchange=()=>{
  const name=presetSelect.value;
  if(name==="__factory__")loadMap(factoryNotes,"__factory__");
+ else if(name==="__harmonicB__")loadMap(harmonicBNotes,"__harmonicB__");
  else if(name==="__legacy__")loadMap(legacyNotes,"__legacy__");
  else if(Object.prototype.hasOwnProperty.call(savedPresets,name))loadMap(savedPresets[name],name);
 };
 document.getElementById("restoreFactory").onclick=()=>loadMap(factoryNotes,"__factory__");
 document.getElementById("deletePreset").onclick=()=>{
  const name=loadedPreset;
- if(name==="__factory__"||name==="__legacy__"||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
+ if(["__factory__","__harmonicB__","__legacy__"].includes(name)||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
  if(!window.confirm("למחוק את הפריסט '"+name+"' מהמכשיר הזה?"))return;
  const copy=savedPresets[name].slice();
  delete savedPresets[name];
@@ -509,6 +595,149 @@ readPresets();
 refreshPresetList();
 selectTunerKey(0);
 keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
+
+
+
+// A/B auditory comparison: same chord keys, twin sawtooth oscillators per key,
+// continuous audio and fixed gain. Switching A↔B crossfades without re-trigger.
+const AB_RATIOS_FIXED=[0,2,4,7,10,11];
+const AB_CHORDS={
+ Am:[0,3,7],
+ ADF:[0,5,8],
+ CM:[3,7,10],
+ DF:[5,9,12],
+ Amaj:[0,4,7]
+};
+const abState={mode:"A",synth:null,voices:[],ids:[],chosen:new Set()};
+const abChordEl=document.getElementById("abChord"),abOctaveEl=document.getElementById("abOctave");
+const abA=document.getElementById("abA"),abB=document.getElementById("abB"),abBoth=document.getElementById("abBoth");
+function abChordIds(){
+ if(abChordEl.value==="custom")return [...abState.chosen].sort((a,b)=>a-b);
+ const octave=Number(abOctaveEl.value),steps=AB_CHORDS[abChordEl.value]||AB_CHORDS.Am;
+ return steps.map(offset=>12*octave+offset).filter(i=>i>=0&&i<COUNT);
+}
+function abStopAudio(){
+ const c=abState.synth;if(!c)return;
+ const now=c.ctx.currentTime;
+ c.master.gain.cancelScheduledValues(now);
+ c.master.gain.setTargetAtTime(0,now,.018);
+ for(const pair of c.pairs)for(const osc of [pair.oscA,pair.oscB])try{osc.stop(now+.25)}catch(_){}
+ abState.synth=null;abState.ids=[];
+ document.getElementById("abPlay").textContent="▶ נגן / החזק";
+}
+function abStartAudio(){
+ const ids=abChordIds();
+ if(!ids.length){document.getElementById("abReadout").textContent="בחר תחילה קלידים לאקורד אישי.";return}
+ abStopAudio();
+ const ctx=context(),now=ctx.currentTime,master=ctx.createGain();
+ master.gain.setValueAtTime(0,now);
+ master.gain.linearRampToValueAtTime(.23/Math.max(2,ids.length),now+.025);
+ master.connect(sound.master);
+ const pairs=[];
+ for(const i of ids){
+  const pair={};
+  const ga=ctx.createGain(),gb=ctx.createGain(),oa=ctx.createOscillator(),ob=ctx.createOscillator();
+  oa.type=ob.type="sawtooth";oa.frequency.setValueAtTime(factoryNotes[i],now);
+  ob.frequency.setValueAtTime(harmonicBNotes[i],now);
+  ga.gain.setValueAtTime(abState.mode==="A"?1:abState.mode==="both"?.5:0,now);
+  gb.gain.setValueAtTime(abState.mode==="B"?1:abState.mode==="both"?.5:0,now);
+  oa.connect(ga).connect(master);ob.connect(gb).connect(master);
+  oa.start(now);ob.start(now);
+  Object.assign(pair,{oscA:oa,oscB:ob,ga,gb});
+  pairs.push(pair);
+ }
+ abState.synth={ctx,master,pairs};
+ abState.ids=ids;
+ document.getElementById("abPlay").textContent="↻ נגן מחדש";
+}
+function abRetuneActive(){
+ const c=abState.synth;if(!c)return;
+ const now=c.ctx.currentTime;
+ const aLevel=abState.mode==="A"?1:abState.mode==="both"?.5:0;
+ const bLevel=abState.mode==="B"?1:abState.mode==="both"?.5:0;
+ c.pairs.forEach(pair=>{
+  pair.ga.gain.setTargetAtTime(aLevel,now,.018);
+  pair.gb.gain.setTargetAtTime(bLevel,now,.018);
+ });
+}
+function updateABControls(){
+ abA.classList.toggle("active",abState.mode==="A");
+ abB.classList.toggle("active",abState.mode==="B");
+ abBoth.classList.toggle("active",abState.mode==="both");
+ abA.setAttribute("aria-pressed",String(abState.mode==="A"));
+ abB.setAttribute("aria-pressed",String(abState.mode==="B"));
+ abBoth.setAttribute("aria-pressed",String(abState.mode==="both"));
+ const mode=abState.mode==="both"?"A+B יחד":abState.mode==="A"?"A · מקורי":"B · הרמוני";
+ const ids=abChordIds();
+ const changed=ids.filter(i=>!near(factoryNotes[i],harmonicBNotes[i]));
+ const details=changed.map(i=>pitchLabel(i)+": "+formatHz(factoryNotes[i])+"→"+formatHz(harmonicBNotes[i])+"Hz (Δ"+formatHz(Math.abs(harmonicBNotes[i]-factoryNotes[i]))+"Hz)");
+ const same=ids.length-changed.length;
+ document.getElementById("abStatus").textContent="מצב "+mode+" · גל מסור זהה · עוצמה קבועה";
+ document.getElementById("abReadout").textContent=ids.length?
+  "אקורד "+ids.map(pitchLabel).join(" · ")+" · "+(changed.length?("ההבדלים: "+details.join("; ")):"כל התווים באקורד זהים בין A ל־B")+
+  (same?" · "+same+" תווים משותפים":"")+
+  (abState.mode==="both"&&changed.length?" · אלה קצבי פעימה צפויים ב־A+B, לא בהחלפה.":""):
+  "בחר קלידים אישיים: לחץ על קלידים במקלדת, ואז נגן להשוואה.";
+ document.getElementById("abClear").hidden=abChordEl.value!=="custom";
+}
+function chooseAB(mode){
+ if(!["A","B","both"].includes(mode))return;
+ if(mode!=="both"){
+  if(unsaved&&!window.confirm("יש שינויים לא שמורים במיפוי הפעיל. לעבור לגרסה "+mode+" בלי לשמור?"))return;
+  const map=mode==="A"?factoryNotes:harmonicBNotes;
+  const builtin=mode==="A"?"__factory__":"__harmonicB__";
+  // Preset switching does not write/delete any browser-local personal preset.
+  if(loadedPreset!==builtin)loadMap(map,builtin);
+ }
+ abState.mode=mode;
+ updateABControls();
+ if(!abState.synth)abStartAudio();
+ else abRetuneActive();
+}
+abA.onclick=()=>chooseAB("A");
+abB.onclick=()=>chooseAB("B");
+abBoth.onclick=()=>chooseAB("both");
+document.getElementById("abPlay").onclick=abStartAudio;
+document.getElementById("abStop").onclick=abStopAudio;
+abChordEl.onchange=()=>{
+ if(abChordEl.value==="custom"&&abState.chosen.size===0)for(const id of [24,27,31])abState.chosen.add(id);
+ updateABControls();showABCustomKeys();if(abState.synth)abStartAudio();
+};
+abOctaveEl.onchange=()=>{updateABControls();if(abState.synth)abStartAudio()};
+document.getElementById("abClear").onclick=()=>{
+ abState.chosen.clear();showABCustomKeys();updateABControls();
+ if(abState.synth)abStopAudio();
+};
+function showABCustomKeys(){
+ for(const el of keys.querySelectorAll(".key")){
+  const id=Number(el.dataset.index);
+  el.classList.toggle("ab-selected",abChordEl.value==="custom"&&abState.chosen.has(id));
+ }
+}
+function toggleABCustomKey(i){
+ if(abChordEl.value!=="custom")return;
+ if(abState.chosen.has(i))abState.chosen.delete(i);
+ else if(abState.chosen.size<8)abState.chosen.add(i);
+ showABCustomKeys();updateABControls();
+ if(abState.synth&&abState.chosen.size)abStartAudio();
+ else if(abState.synth)abStopAudio();
+}
+function renderABTable(){
+ const tbody=document.getElementById("abDiffRows");
+ tbody.textContent="";
+ for(let i=0;i<12;i++){
+  const hzA=factoryNotes[24+i],hzB=harmonicBNotes[24+i];
+  const cents=1200*Math.log2(hzB/hzA),delta=hzB-hzA;
+  const tr=document.createElement("tr");
+  if(!near(hzA,hzB))tr.classList.add("is-different");
+  for(const v of [pitchNames[i],formatHz(hzA),formatHz(hzB),(near(cents,0)?"0":(cents>0?"+":"")+cents.toFixed(1)),(near(delta,0)?"0":(delta>0?"+":"")+formatHz(delta))]){
+   const td=document.createElement("td");td.textContent=v;tr.appendChild(td);
+  }
+  tbody.appendChild(tr);
+ }
+}
+renderABTable();
+updateABControls();
 
 </script>
 </body>
