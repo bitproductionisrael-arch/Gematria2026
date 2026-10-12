@@ -87,17 +87,17 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 </div>
 <div class="tuner-dock" id="tunerDock" hidden aria-label="טיונר קלידים ושמירת מיפויים">
   <div class="tuner-line">
-    <strong class="tuner-heading">כיוון קליד <span id="tunerKeyNo">1</span></strong>
-    <button id="tuneMinus" type="button" aria-label="הפחת הרץ אחד">−</button>
+    <strong class="tuner-heading">טיונינג · קליד <span id="tunerKeyNo">1</span></strong>
+    <button id="tuneMinus" type="button" aria-label="הפחת הרץ אחד">−1 Hz</button>
     <label class="tuner-input-wrap"><input id="tuneHz" type="number" inputmode="numeric" min="20" max="5000" step="1" value="111" aria-label="תדר הקליד בהרצים"><span>Hz</span></label>
-    <button id="tunePlus" type="button" aria-label="הוסף הרץ אחד">+</button>
+    <button id="tunePlus" type="button" aria-label="הוסף הרץ אחד">+1 Hz</button>
     <button id="tunePreview" type="button" title="השמע את התדר המעודכן">▶ שמע</button>
     <button id="tuneReset" type="button" title="החזר את הקליד לתדר המקורי">↺ קליד</button>
     <span class="tuner-delta" id="tunerDelta">מקורי 111Hz</span>
   </div>
   <div class="tuner-line preset-line">
-    <label class="preset-name">שם המיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
-    <button id="savePreset" type="button" class="save-preset">שמור מיפוי</button>
+    <label class="preset-name">שם מיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
+    <button id="savePreset" type="button" class="save-preset">💾 שמור מיפוי</button>
     <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">מקור 111–999</option></select></label>
     <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
     <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
@@ -374,7 +374,7 @@ function markUnsaved(){
  informTuner("שינויים לא נשמרו · כתוב שם למיפוי ולחץ שמור. הבחירה נשמרת גם בזמן נגינה.");
 }
 function clearDirty(){
- unsaved=false;document.getElementById("savePreset").textContent="שמור מיפוי";
+ unsaved=false;document.getElementById("savePreset").textContent="💾 שמור מיפוי";
 }
 function previewKey(id){
  clearTimeout(previewTimer);
