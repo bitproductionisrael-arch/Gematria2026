@@ -300,6 +300,7 @@ document.querySelectorAll("[data-hz]").forEach(btn=>{
   const hz=Number(btn.dataset.hz),idx=factoryNotes.indexOf(hz);if(idx<0)return;
   const key=keys.querySelector('[data-index="'+idx+'"]');
   scroller.scrollTo({left:Math.max(0,key.offsetLeft-scroller.clientWidth/2),behavior:"smooth"});
+  if(tunerVisible())selectTunerKey(idx);
   play(idx);setTimeout(()=>release(idx),550);
  };
 });
