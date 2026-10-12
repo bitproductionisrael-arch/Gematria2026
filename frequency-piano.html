@@ -23,6 +23,28 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 .release-control input{width:135px;max-width:28vw;accent-color:#d8ad55}
 .release-control output{direction:ltr;display:inline-block;min-width:53px;color:#f3d391;font-variant-numeric:tabular-nums}
 .scroll-hint{text-align:center;font-size:12px;color:#83d5d8;margin:8px 0 0}
+.tuner-dock{padding:10px 12px;margin:12px 0 10px;border:1px solid #826331;border-radius:12px;background:linear-gradient(110deg,#211a12,#101b25 65%);box-shadow:0 0 0 1px #392d1a inset}
+.tuner-dock[hidden]{display:none!important}
+.tuner-line{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:0 0 8px}
+.tuner-line:last-of-type{margin-bottom:0}
+.tuner-heading{font-size:13px;white-space:nowrap;color:#ffd98a}
+.tuner-line button{padding:7px 11px;min-height:36px}
+.tuner-input-wrap{display:flex;align-items:center;gap:5px;direction:ltr}
+.tuner-input-wrap input{width:76px;padding:6px 5px;border-radius:8px;border:1px solid #8598ac;background:#0c121a;color:#fff;font-weight:800;font-size:16px;text-align:center;direction:ltr;appearance:textfield;-moz-appearance:textfield}
+.tuner-input-wrap input::-webkit-outer-spin-button,.tuner-input-wrap input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.tuner-input-wrap span{font-size:12px;color:#cfdae5}
+.tuner-delta{font-size:11px;color:#a9c8d0;white-space:nowrap}
+.preset-line{border-top:1px solid #384553;padding-top:8px}
+.preset-name,.preset-select{display:flex;align-items:center;gap:6px;font-size:12px;color:#cbdae7}
+.preset-name input,.preset-select select{background:#0b151f;color:#eff4fa;border:1px solid #51677c;border-radius:8px;min-height:36px;padding:6px 9px;font:inherit}
+.preset-name input{width:145px;max-width:40vw}
+.preset-select select{max-width:190px;width:145px}
+.save-preset{background:#685020;border-color:#c19b52;color:#fff6dc;font-weight:800}
+.tuner-note{margin:8px 0 0;font-size:11px;color:#9cb6c8;line-height:1.6}
+.key.tuning-target{outline:2px solid #5ff2ef;outline-offset:-3px;box-shadow:0 0 8px #5ff2ef70 inset}
+.key.black.tuning-target{z-index:6;outline-offset:0}
+.key.tuning-changed .freq{text-decoration:underline;text-underline-offset:2px}
+@media(max-width:550px){.tuner-dock{padding:9px 7px}.preset-name input{width:120px}.preset-select select{width:118px}.tuner-heading{font-size:12px}.tuner-line{gap:5px}.tuner-line button{padding:7px 9px}}
 .tile{background:#0c131d;border:1px solid #2b3742;border-radius:10px;padding:11px 13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.tile strong{font-size:17px;color:#f1c575;direction:ltr}.tile p{color:#a8bac8;margin:5px 0 0;font-size:12px}.focus{border-color:#8b6c37}.endpoints{display:flex;justify-content:space-between;font-size:12px;color:#bdcbd7;direction:ltr;margin-top:7px}.tips{line-height:1.7;margin:0;padding-right:20px;color:#b7c4d0;font-size:13px}
 @media(min-width:720px){:root{--white:36;--black:24;--white-height:202;--black-height:130}main{margin-top:35px}}
 @media(max-width:550px){main{width:96vw;margin-top:17px}.panel{padding:10px}button{font-size:12px;padding:9px 10px}.sub{font-size:12px}.tools{gap:6px}.white .freq{font-size:9px}.black .freq{font-size:7px}.key .name{font-size:8px}}
@@ -43,6 +65,7 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <button id="larger">+ הגדל</button>
 <button id="previous">◀ הקודמים</button>
 <button id="next">הבאים ▶</button>
+<button id="tunerToggle" aria-expanded="false" aria-controls="tunerDock" title="פתח/סגור טיונר, בלי להפריע לנגינה">🎛 טיונר / פריסטים</button>
 <label class="voice-picker">סוג צליל
 <select id="voice" aria-label="בחירת סוג צליל">
 <option value="piano">פסנתר</option>
@@ -61,6 +84,25 @@ main{width:min(1150px,96vw);margin:24px auto 48px}.eyebrow{color:var(--cyan);fon
 <div class="status" aria-live="polite"><strong id="frequency">111 Hz</strong><span id="activeText">הקליד הראשון · לחץ על קליד לנגינה</span></div>
 <div class="tools" style="margin-bottom:12px">
 <button data-hz="111">111</button><button data-hz="222">222</button><button data-hz="333">333</button><button data-hz="444">444</button><button data-hz="528">528</button><button data-hz="555">555</button><button data-hz="666">666</button><button data-hz="777">777</button><button data-hz="888">888</button><button data-hz="999">999</button>
+</div>
+<div class="tuner-dock" id="tunerDock" hidden aria-label="טיונר קלידים ושמירת מיפויים">
+  <div class="tuner-line">
+    <strong class="tuner-heading">כיוון קליד <span id="tunerKeyNo">1</span></strong>
+    <button id="tuneMinus" type="button" aria-label="הפחת הרץ אחד">−</button>
+    <label class="tuner-input-wrap"><input id="tuneHz" type="number" inputmode="numeric" min="20" max="5000" step="1" value="111" aria-label="תדר הקליד בהרצים"><span>Hz</span></label>
+    <button id="tunePlus" type="button" aria-label="הוסף הרץ אחד">+</button>
+    <button id="tunePreview" type="button" title="השמע את התדר המעודכן">▶ שמע</button>
+    <button id="tuneReset" type="button" title="החזר את הקליד לתדר המקורי">↺ קליד</button>
+    <span class="tuner-delta" id="tunerDelta">מקורי 111Hz</span>
+  </div>
+  <div class="tuner-line preset-line">
+    <label class="preset-name">שם המיפוי <input id="presetName" type="text" maxlength="50" placeholder="לדוגמה: ROV Minor" autocomplete="off" aria-label="שם מיפוי תדרים"></label>
+    <button id="savePreset" type="button" class="save-preset">שמור מיפוי</button>
+    <label class="preset-select">פריסטים <select id="presetSelect" aria-label="בחירת מיפוי שמור"><option value="__factory__">מקור 111–999</option></select></label>
+    <button id="deletePreset" type="button" title="מחק פריסט שמור" disabled>מחק</button>
+    <button id="restoreFactory" type="button" title="החזר את כל 88 התדרים למיפוי המקורי">אפס הכל</button>
+  </div>
+  <p class="tuner-note" id="tunerStatus" aria-live="polite">בחר קליד ונגן; ‎+ / − או הקלדה ישנו אותו מיד. פריסטים נשמרים בדפדפן במכשיר זה.</p>
 </div>
 <div class="legend"><span><i class="dot"></i> 111–999 המקוריים</span><span><i class="dot cyan"></i> 528 הניסוי</span><span>יתר הקלידים: השלמה מתמטית בתדרים שלמים</span></div>
 <div class="scroll" id="scroll" aria-label="מקלדת 88 קלידים בגלילה אופקית"><div class="keys" id="keys" role="group" aria-label="פסנתר תדרים 111 עד 999"></div></div>
@@ -94,6 +136,7 @@ for(let a=0;a<anchors.length-1;a++){
 if(notes.length!==88||notes[0]!==111||notes[87]!==999||
    notes.some((v,i)=>!Number.isInteger(v)||(i>0&&v<=notes[i-1]))||
    anchors.some(x=>notes[x.i]!==x.f)) throw new Error("Frequency map failed validation");
+const factoryNotes=notes.slice();
 const anchorSet=new Set(anchorHz);
 const isBlack=i=>[1,4,6,9,11].includes(i%12);
 const presets={
@@ -144,7 +187,7 @@ function play(id){
   vol.gain.setValueAtTime(level,now);
   osc.connect(vol).connect(amp);osc.start(now);oscs.push(osc);
  }
- sound.voices.set(id,{ctx,gain:amp,oscs});
+ sound.voices.set(id,{ctx,gain:amp,oscs,mults:voice.partials.map(x=>x[0])});
  document.querySelector('[data-index="'+id+'"]')?.classList.add("pressed");
  document.getElementById("frequency").textContent=f+" Hz";
  document.getElementById("activeText").textContent="קליד "+(id+1)+" מתוך 88"+(anchorSet.has(f)?" · תדר עוגן":" · תדר מחושב");
@@ -153,7 +196,7 @@ let chordTimer=0;
 function stopAll(){clearTimeout(chordTimer);Array.from(sound.voices.keys()).forEach(release)}
 function chord(frequencies){
  stopAll();
- const ids=frequencies.map(f=>notes.indexOf(f)).filter(id=>id>=0);
+ const ids=frequencies.map(f=>factoryNotes.indexOf(f)).filter(id=>id>=0);
  ids.forEach(play);
  chordTimer=setTimeout(()=>ids.forEach(release),1600);
 }
@@ -217,7 +260,7 @@ scroller.addEventListener("pointerdown",e=>{
  const state={x:e.clientX,left:scroller.scrollLeft,drag:false,id};
  pointers.set(e.pointerId,state);
  try{scroller.setPointerCapture(e.pointerId)}catch(_){}
- if(id!==null)play(id);
+ if(id!==null){if(tunerVisible())selectTunerKey(id);play(id);}
  e.preventDefault();
 });
 scroller.addEventListener("pointermove",e=>{
@@ -245,7 +288,7 @@ keys.addEventListener("keydown",e=>{
  if(e.key!==" "&&e.key!=="Enter")return;
  const key=e.target.closest(".key");
  if(!key)return;
- e.preventDefault();if(!e.repeat)play(Number(key.dataset.index));
+ e.preventDefault();if(!e.repeat){if(tunerVisible())selectTunerKey(Number(key.dataset.index));play(Number(key.dataset.index));}
 });
 keys.addEventListener("keyup",e=>{
  if(e.key!==" "&&e.key!=="Enter")return;
@@ -254,12 +297,169 @@ keys.addEventListener("keyup",e=>{
 });
 document.querySelectorAll("[data-hz]").forEach(btn=>{
  btn.onclick=()=>{
-  const hz=Number(btn.dataset.hz),idx=notes.indexOf(hz);if(idx<0)return;
+  const hz=Number(btn.dataset.hz),idx=factoryNotes.indexOf(hz);if(idx<0)return;
   const key=keys.querySelector('[data-index="'+idx+'"]');
   scroller.scrollTo({left:Math.max(0,key.offsetLeft-scroller.clientWidth/2),behavior:"smooth"});
   play(idx);setTimeout(()=>release(idx),550);
  };
 });
+
+
+// INLINE TUNER: independent frequency map editing, browser-local named presets.
+// The base mapping is immutable; changes affect this working copy until Save.
+const STORE_KEY="gematria2026.frequencyPiano.tuningPresets.v1";
+const STORE_LIMIT=60;
+const TUNE_MIN=20,TUNE_MAX=5000;
+const tunerDock=document.getElementById("tunerDock"),tunerToggle=document.getElementById("tunerToggle");
+const tuneInput=document.getElementById("tuneHz"),presetName=document.getElementById("presetName");
+const presetSelect=document.getElementById("presetSelect"),tunerStatus=document.getElementById("tunerStatus");
+let tuningKey=0,loadedPreset="__factory__",unsaved=false,previewTimer=0;
+let savedPresets=Object.create(null);
+function tunerVisible(){return !tunerDock.hidden}
+function validMap(arr){
+ return Array.isArray(arr)&&arr.length===COUNT&&arr.every(n=>Number.isInteger(n)&&n>=TUNE_MIN&&n<=TUNE_MAX);
+}
+function informTuner(msg){tunerStatus.textContent=msg}
+function readPresets(){
+ try{
+  const payload=JSON.parse(localStorage.getItem(STORE_KEY)||"{}");
+  if(!payload||payload.version!==1||!payload.presets)return;
+  for(const [name,values] of Object.entries(payload.presets)){
+   if(name.length<=50&&name.length>0&&validMap(values)&&Object.keys(savedPresets).length<STORE_LIMIT)
+    savedPresets[name]=values.slice();
+  }
+ }catch(err){informTuner("אין גישה לפריסטים השמורים בדפדפן זה. ניתן לנגן ולכוון גם ללא שמירה.");}
+}
+function writePresets(){
+ try{localStorage.setItem(STORE_KEY,JSON.stringify({version:1,presets:savedPresets}));return true}
+ catch(err){informTuner("לא ניתן לשמור בדפדפן זה. ייתכן שהאחסון חסום או מלא.");return false}
+}
+function refreshPresetList(){
+ presetSelect.textContent="";
+ const base=document.createElement("option");base.value="__factory__";base.textContent="מקור 111–999";presetSelect.appendChild(base);
+ Object.keys(savedPresets).sort((a,b)=>a.localeCompare(b,"he")).forEach(name=>{
+  const option=document.createElement("option");option.value=name;option.textContent=name;presetSelect.appendChild(option);
+ });
+ presetSelect.value=Object.prototype.hasOwnProperty.call(savedPresets,loadedPreset)?loadedPreset:"__factory__";
+ document.getElementById("deletePreset").disabled=loadedPreset==="__factory__";
+}
+function refreshKey(id){
+ const el=keys.querySelector('[data-index="'+id+'"]');
+ if(!el)return;
+ const hz=notes[id],original=factoryNotes[id],isOriginalAnchor=anchorSet.has(original);
+ el.classList.toggle("tuning-changed",hz!==original);
+ el.classList.toggle("special",original===528);
+ el.classList.toggle("anchor",original!==528&&isOriginalAnchor);
+ el.querySelector(".freq").textContent=hz;
+ el.setAttribute("aria-label","קליד "+(id+1)+" תדר "+hz+" הרץ"+(hz===original?"":" שונה מ"+original));
+}
+function refreshAllKeys(){for(let i=0;i<COUNT;i++)refreshKey(i)}
+function selectTunerKey(id){
+ if(!Number.isInteger(id)||id<0||id>=COUNT)return;
+ keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
+ tuningKey=id;
+ keys.querySelector('[data-index="'+id+'"]')?.classList.add("tuning-target");
+ document.getElementById("tunerKeyNo").textContent=String(id+1);
+ tuneInput.value=String(notes[id]);
+ showTuningOffset();
+}
+function showTuningOffset(){
+ const diff=notes[tuningKey]-factoryNotes[tuningKey];
+ document.getElementById("tunerDelta").textContent="מקורי "+factoryNotes[tuningKey]+"Hz"+(diff?(" · "+(diff>0?"+":"")+diff+"Hz"):"");
+}
+function markUnsaved(){
+ unsaved=true;
+ const b=document.getElementById("savePreset");
+ b.textContent="● שמור מיפוי";
+ informTuner("שינויים לא נשמרו · כתוב שם למיפוי ולחץ שמור. הבחירה נשמרת גם בזמן נגינה.");
+}
+function clearDirty(){
+ unsaved=false;document.getElementById("savePreset").textContent="שמור מיפוי";
+}
+function previewKey(id){
+ clearTimeout(previewTimer);
+ const voice=sound.voices.get(id);
+ if(voice){
+  const now=voice.ctx.currentTime;
+  voice.oscs.forEach((osc,i)=>osc.frequency.setTargetAtTime(notes[id]*voice.mults[i],now,.012));
+ }else{
+  play(id);
+  previewTimer=setTimeout(()=>release(id),600);
+ }
+}
+function setKeyHz(id,hz,{audition=true}={}){
+ if(!Number.isInteger(hz)||hz<TUNE_MIN||hz>TUNE_MAX){
+  informTuner("תדר חוקי: מספר שלם בין 20 ל־5000Hz.");
+  return false;
+ }
+ if(notes[id]===hz){tuneInput.value=String(hz);if(audition)previewKey(id);return true;}
+ notes[id]=hz;
+ refreshKey(id);
+ if(id===tuningKey){tuneInput.value=String(hz);showTuningOffset()}
+ markUnsaved();
+ if(audition)previewKey(id);
+ return true;
+}
+tunerToggle.onclick=()=>{
+ tunerDock.hidden=!tunerDock.hidden;
+ tunerToggle.setAttribute("aria-expanded",String(!tunerDock.hidden));
+ tunerToggle.classList.toggle("active",!tunerDock.hidden);
+ if(!tunerDock.hidden){selectTunerKey(tuningKey);informTuner("בחר קליד במקלדת, שנה תדר בשורה זו והאזן מיד. שינויים נשמרים רק בלחיצה על 'שמור מיפוי'.")}
+ else keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
+};
+document.getElementById("tuneMinus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]-1);
+document.getElementById("tunePlus").onclick=()=>setKeyHz(tuningKey,notes[tuningKey]+1);
+document.getElementById("tunePreview").onclick=()=>previewKey(tuningKey);
+document.getElementById("tuneReset").onclick=()=>setKeyHz(tuningKey,factoryNotes[tuningKey]);
+tuneInput.addEventListener("change",()=>{
+ const value=Number(tuneInput.value);
+ if(!setKeyHz(tuningKey,value)){tuneInput.value=String(notes[tuningKey])}
+});
+tuneInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();tuneInput.blur()}});
+function loadMap(values,name){
+ if(!validMap(values)){informTuner("המיפוי שנבחר פגום או אינו תקין.");return false}
+ stopAll();
+ for(let i=0;i<COUNT;i++)notes[i]=values[i];
+ loadedPreset=name;
+ presetName.value=name==="__factory__"?"":name;
+ refreshAllKeys();
+ selectTunerKey(tuningKey);
+ clearDirty();refreshPresetList();
+ informTuner(name==="__factory__"?"נטען המיפוי המקורי: 111–999Hz.":"נטען המיפוי '"+name+"'. אפשר להמשיך לכוון ולנגן.");
+ return true;
+}
+document.getElementById("savePreset").onclick=()=>{
+ const name=presetName.value.trim().replace(/\s+/g," ");
+ if(!name||name.length>50){informTuner("יש להזין שם מיפוי באורך 1–50 תווים.");presetName.focus();return}
+ if(name==="__factory__"){informTuner("שם זה שמור למיפוי המקורי. בחר שם אחר.");return}
+ if(!Object.prototype.hasOwnProperty.call(savedPresets,name)&&Object.keys(savedPresets).length>=STORE_LIMIT){
+  informTuner("מגבלת "+STORE_LIMIT+" פריסטים הושגה; מחק פריסט ישן לשמירה חדשה.");return
+ }
+ savedPresets[name]=notes.slice();
+ if(writePresets()){
+  loadedPreset=name;clearDirty();refreshPresetList();
+  informTuner("המיפוי '"+name+"' נשמר במכשיר זה · "+COUNT+" תדרים.");
+ }else delete savedPresets[name];
+};
+presetSelect.onchange=()=>{
+ const name=presetSelect.value;
+ if(name==="__factory__")loadMap(factoryNotes,"__factory__");
+ else if(Object.prototype.hasOwnProperty.call(savedPresets,name))loadMap(savedPresets[name],name);
+};
+document.getElementById("restoreFactory").onclick=()=>loadMap(factoryNotes,"__factory__");
+document.getElementById("deletePreset").onclick=()=>{
+ const name=loadedPreset;
+ if(name==="__factory__"||!Object.prototype.hasOwnProperty.call(savedPresets,name))return;
+ if(!window.confirm("למחוק את הפריסט '"+name+"' מהמכשיר הזה?"))return;
+ const copy=savedPresets[name].slice();
+ delete savedPresets[name];
+ if(writePresets()){loadMap(factoryNotes,"__factory__");informTuner("הפריסט '"+name+"' נמחק מהמכשיר.")}
+ else savedPresets[name]=copy;
+};
+readPresets();
+refreshPresetList();
+selectTunerKey(0);
+keys.querySelector(".tuning-target")?.classList.remove("tuning-target");
 
 </script>
 </body>
