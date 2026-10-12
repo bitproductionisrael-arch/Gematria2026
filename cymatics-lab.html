@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a0f">
+<meta name="description" content="מעבדת סימטיקה: השוואת גלים עומדים ותדרי תהודה 108 ו-216Hz בממברנות ובתיבה האקוסטית 4:10:13.">
+<title>מעבדת סימטיקה | GEMATRIA2026</title>
+<style>
+:root{color-scheme:dark;--bg:#070a0f;--panel:#111824;--panel2:#0d141f;--border:#303c48;--line:#203041;--gold:#e4bc71;--cyan:#7ae4ea;--ink:#f0f3f8;--muted:#9cb0bd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -8%,#172b38,var(--bg) 42%);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}
+button,input,select{font:inherit;color:inherit}button,select,input[type=number]{border:1px solid #425369;background:#182637;border-radius:9px}button{padding:9px 12px;cursor:pointer}button:hover{border-color:var(--gold)}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}button.active{background:#44371e;border-color:var(--gold);color:#ffe1a4}button.primary{background:#382e19;border-color:#79633b;color:#ffe1a4}input[type=range]{accent-color:#d7b16c;width:min(180px,39vw)}input[type=number]{width:85px;padding:9px;direction:ltr;text-align:center;font-variant-numeric:tabular-nums}select{padding:10px 12px;max-width:100%}a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:#0b121acc;border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}.nav{width:min(1230px,95vw);margin:auto;display:flex;align-items:center;gap:15px;justify-content:space-between;padding:14px 0}.brand{font-weight:950;letter-spacing:.03em;font-size:16px}.brand em{font-style:normal;color:var(--gold)}.navlinks{display:flex;flex-wrap:wrap;gap:13px;font-size:12px;color:#cedbe7}
+main{width:min(1230px,95vw);margin:26px auto 65px}.eyebrow{font-size:11px;color:var(--cyan);letter-spacing:.15em}.intro h1{font-size:clamp(31px,5vw,51px);margin:6px 0 7px}.intro h1 b{color:var(--gold)}.intro p{margin:0 0 20px;line-height:1.9;color:#b4c2ce;max-width:930px}.bar,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:15px;margin-bottom:14px}.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.control{display:flex;gap:7px;align-items:center;font-size:12px;color:#c2d0de}.ctrlLabel{font-weight:800;color:#eed69f}.tight{gap:7px}.hint{color:var(--muted);font-size:12px;margin:10px 0 0;line-height:1.6}.mini{font-size:11px;color:#9eafbd}.subtitle{color:#bbc9d6;font-size:12px}.frequency-presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.frequency-presets button{padding:7px 10px;font-size:12px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.specimen{min-width:0}.specimen header{position:static;background:transparent;border:0;backdrop-filter:none;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:0 0 12px}.specimen h2{margin:0;font-size:19px}.freqValue{color:var(--gold);font-size:22px;font-variant-numeric:tabular-nums;font-weight:850;direction:ltr;display:inline-block}.canvaswrap{background:#060a10;border:1px solid #344454;border-radius:10px;padding:8px;display:flex;justify-content:center;position:relative;min-height:280px}.canvaswrap canvas{display:block;width:min(100%,420px);height:auto;aspect-ratio:1;image-rendering:auto}.canvasbadge{position:absolute;left:12px;top:12px;background:#131f2ac7;border:1px solid #40566c;border-radius:6px;padding:5px 7px;color:#b6cbd5;font-size:10px}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0}.stat{background:#0b111a;border:1px solid #243446;border-radius:9px;padding:10px;line-height:1.5}.stat span{display:block;color:#9db0c0;font-size:11px}.stat strong{display:block;color:#ecf4fa;font-size:15px;direction:ltr;text-align:right}.status{margin:8px 0;color:#d3dde5;font-size:12px;line-height:1.6;min-height:36px}.cardactions{display:flex;gap:7px;flex-wrap:wrap}.fact{padding:13px;border-right:3px solid #caab69;background:#151e28;margin-bottom:11px;line-height:1.8;color:#e3ebf2}.fact code{color:#e8c77f;direction:ltr;display:inline-block}.eq{font:13px ui-monospace,SFMono-Regular,Consolas,monospace;direction:ltr;overflow-x:auto;text-align:left;display:block;white-space:nowrap;color:#87d4db;background:#080f16;padding:11px;border-radius:8px}.notes{color:#aebdcb;font-size:12px;line-height:1.9;margin:0}.notes a{color:#8de2ea;text-decoration:underline}.infoRow{display:flex;gap:10px;flex-wrap:wrap;color:#c9d5dd;font-size:12px}.pill{padding:5px 9px;background:#1b2733;border:1px solid #354656;border-radius:50px}.warn{color:#f0cd88}.mode{font-variant-numeric:tabular-nums}.screenReader{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.foot{font-size:11px;color:#95a6b4;padding-top:7px}
+@media(max-width:700px){.cols{grid-template-columns:1fr}.bar,.panel{padding:11px}.navlinks{gap:10px}.intro p{font-size:12px}.controls{gap:9px}.canvaswrap{min-height:0}.specimen header{gap:7px}main{margin-top:18px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html">GEMATRIA<em>2026</em></a><div class="navlinks"><a href="frequency-piano.html">♫ פסנתר תדרים</a><a href="geometry-lab.html">△ Geometry Lab</a><a href="index.html">← בית</a></div></div></header>
+<main>
+<div class="intro">
+<div class="eyebrow">STANDING WAVES · EIGENMODES · NODAL GEOMETRY</div>
+<h1>מעבדת <b>סימטיקה</b></h1>
+<p>ויזואליזציה מחושבת של גלים עומדים ותהודה — לא תמונה שנבחרת לפי משמעות מספרית. השווה 108Hz מול 216Hz באותה מערכת ובאותם תנאים; החלף גיאומטריה כדי לראות כיצד היא משנה את קווי הצומת.</p>
+</div>
+<section class="bar">
+<div class="controls">
+<label class="control"><span class="ctrlLabel">מודל</span>
+<select id="geometry"><option value="box">תיבה אקוסטית · 4:10:13</option><option value="rect">קרום מלבני · 10:13</option><option value="circle">קרום עגול · רדיוס 13</option></select></label>
+<label class="control"><span class="ctrlLabel">תצוגה</span>
+<select id="visual"><option value="sand">קווי צומת / חול מודלי</option><option value="amplitude">משרעת מרחבית</option><option value="wave">גל בתנועה איטית</option></select></label>
+<label class="control"><span class="ctrlLabel">יחידת אורך</span><input id="scale" type="range" min="0.06" max="0.20" value="0.10" step="0.005"><output id="scaleLabel">0.100 m</output></label>
+<label class="control"><span class="ctrlLabel">מהירות גל</span><input id="speed" type="range" min="70" max="450" step="1" value="343"><output id="speedLabel">343 m/s</output></label>
+<label class="control"><span class="ctrlLabel">שיכוך</span><input id="damping" type="range" min="0.008" max="0.20" step="0.004" value="0.032"><output id="dampingLabel">0.032</output></label>
+</div>
+<div class="frequency-presets">
+<span class="control">תדרים מהירים:</span>
+<button data-compare="108,216" class="primary">108 ↔ 216</button>
+<button data-compare="111,222">111 ↔ 222</button>
+<button data-compare="216,432">216 ↔ 432</button>
+<button data-compare="444,888">444 ↔ 888</button>
+<button data-compare="528,1056">528 ↔ 1056</button>
+<button id="doubleRight">ימין = שמאל ×2</button>
+<button id="redraw">↻ חשב מחדש</button>
+</div>
+<p class="hint" id="dimensions">תיבה קשיחה 0.40 × 1.00 × 1.30 מטר; חתך במישור 10×13, במיקום 37% מציר 4.</p>
+</section>
+<div class="cols">
+<section class="panel specimen">
+<header><h2>בדיקה A <span class="freqValue" id="aTitle">108 Hz</span></h2><label class="control">תדר <input type="number" id="freqA" min="20" max="2000" step="1" value="108"> Hz</label></header>
+<div class="canvaswrap"><canvas id="canvasA" width="220" height="220" role="img" aria-label="תצוגת קווי צומת בתדר הראשון"></canvas><span class="canvasbadge" id="badgeA">108Hz · חישוב</span></div>
+<div class="stats"><div class="stat"><span>התהודה הקרובה ביותר</span><strong id="nearestA">—</strong></div><div class="stat"><span>אינדקס מצב (m,n,p)</span><strong id="modeA">—</strong></div><div class="stat"><span>הפרש מהתהודה</span><strong id="detuneA">—</strong></div><div class="stat"><span>סוג הזיהוי</span><strong id="flagA">—</strong></div></div>
+<p id="statusA" class="status" aria-live="polite">מחשב...</p>
+<div class="cardactions"><button id="soundA">▶ האזן ל־108Hz</button><button id="captureA">↓ תמונה PNG</button></div>
+</section>
+<section class="panel specimen">
+<header><h2>בדיקה B <span class="freqValue" id="bTitle">216 Hz</span></h2><label class="control">תדר <input type="number" id="freqB" min="20" max="2000" step="1" value="216"> Hz</label></header>
+<div class="canvaswrap"><canvas id="canvasB" width="220" height="220" role="img" aria-label="תצוגת קווי צומת בתדר השני"></canvas><span class="canvasbadge" id="badgeB">216Hz · חישוב</span></div>
+<div class="stats"><div class="stat"><span>התהודה הקרובה ביותר</span><strong id="nearestB">—</strong></div><div class="stat"><span>אינדקס מצב (m,n,p)</span><strong id="modeB">—</strong></div><div class="stat"><span>הפרש מהתהודה</span><strong id="detuneB">—</strong></div><div class="stat"><span>סוג הזיהוי</span><strong id="flagB">—</strong></div></div>
+<p id="statusB" class="status" aria-live="polite">מחשב...</p>
+<div class="cardactions"><button id="soundB">▶ האזן ל־216Hz</button><button id="captureB">↓ תמונה PNG</button></div>
+</section>
+</div>
+<section class="panel">
+<h2>מה המשוואות מחשבות?</h2>
+<div class="infoRow"><span class="pill">התיבה 4:10:13 · מודל לחץ אקוסטי קשיח</span><span class="pill">הקרומים · גלים עומדים עם קצוות מקובעים</span><span class="pill">חול = הדגמה חזותית של צמתים</span></div>
+<p class="fact" id="finding"><strong>216Hz מול 108Hz:</strong> המערכת מחשבת את תדרי התהודה של המבנה הנבחר. התאמה דורשת ציון ממדים פיזיים, מהירות גלים ותנאי שפה — לא מספר בלבד.</p>
+<code class="eq" id="equation">f_mnp = c/2 · √[(m/Lx)² + (n/Ly)² + (p/Lz)²]</code>
+<p class="notes" id="modelNotes">בתיבה קשיחה משווים שדה לחץ לחתך של חלל תהודה. זו אינה צלחת עם חול. בממברנה נעשה שימוש במשוואת הגלים ובמפות משרעת; תצוגת החול היא המחשה של צפיפות סביב קווי צומת ולא הדמיה מלאה של גרגרי חול.</p>
+</section>
+<section class="panel">
+<h2>הקשר ל־108 ולצורות שבתמונה</h2>
+<p class="notes">סימטריה של ארבע זרועות או של מנדלה יכולה להופיע ממגוון מערכות בעלות סימטריה סיבובית. <strong>108Hz אינו קובע צורה אחת לכל מכשיר</strong>. כשמשנים תדר פי שניים, ייתכן שיופיע מצב תנודה אחר עם יותר קווי צומת — לא בהכרח הגדלה של אותה צורה. חישוב זה משתמש בתהודות של ממברנות/חלל, לא במודל המלא של לוח מתכת גמיש. לוח מתכת דורש משוואת כפיפה מסדר רביעי ותנאי שפה אחרים.</p>
+<p class="notes" style="margin-top:10px"><strong>מקורות פיזיקליים:</strong> <a target="_blank" rel="noopener" href="https://www.acs.psu.edu/drussell/Demos/rect-membrane/rect-mem.html">Penn State — Rectangular Membranes</a> · <a target="_blank" rel="noopener" href="https://physicslabs.colorado.edu/demos/oscillations-and-waves/instruments/resonance-in-plates-bars-solids/chladni-figures/">University of Colorado — Chladni Figures</a> · <a target="_blank" rel="noopener" href="https://ucscphysicsdemo.sites.ucsc.edu/physics-5b6b-demos/oscillations-and-waves/chladni-figures/">UC Santa Cruz — Chladni Figures</a>.</p>
+</section>
+<div class="foot">Gematria2026 · Cymatics Lab v1 · חישוב דטרמיניסטי של מצבים עצמיים ותגובה מאולצת בסכום מצבים, לא אימות ניסויי של תדרי תהודה בחומר מסוים. שמירה כ־PNG נובעת מציור המחושב בדפדפן.</div>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const TWO_PI=2*Math.PI;
+const ROOTS=[
+[2.4048255577,5.5200781103,8.6537279129,11.791534439],
+[3.8317059702,7.0155866698,10.1734681351,13.3236919363],
+[5.1356223018,8.4172441404,11.6198411721,14.795951782],
+[6.3801618952,9.7610231299,13.0152007217,16.22346616],
+[7.5883424345,11.0647094885,14.37253667,17.61596605],
+[8.7714838160,12.3386041975,15.700174079,18.98013387],
+[9.9361095242,13.589290171,17.003819667,20.320789]
+];
+const state={geometry:"box",visual:"sand",scale:.10,speed:343,damping:.032,a:108,b:216,run:true,model:{a:null,b:null},runningAudio:null};
+let nextFrame=0,lastBuild=0;
+function besselJ(n,x){
+ if(x===0)return n===0?1:0;
+ let t=1;for(let j=1;j<=n;j++)t*=x/(2*j);
+ let sum=t;
+ for(let k=1;k<54;k++){t*=-(x*x/4)/(k*(n+k));sum+=t;if(Math.abs(t)<1e-13)break}
+ return sum;
+}
+function dims(){
+ const k=state.scale;
+ if(state.geometry==="box")return [4*k,10*k,13*k];
+ if(state.geometry==="rect")return [10*k,13*k];
+ return [13*k];
+}
+function buildModes(){
+ const modes=[],d=dims(),c=state.speed,kind=state.geometry;
+ if(kind==="box"){
+  for(let m=0;m<=5;m++)for(let n=0;n<=7;n++)for(let p=0;p<=7;p++){
+   if(m===0&&n===0&&p===0)continue;
+   const f=c/2*Math.hypot(m/d[0],n/d[1],p/d[2]);
+   const drive=Math.cos(m*Math.PI*.29)*Math.cos(n*Math.PI*.31)*Math.cos(p*Math.PI*.41);
+   modes.push({m,n,p,f,drive,weight:1/Math.sqrt(1+m*m+n*n+p*p),name:"("+m+","+n+","+p+")"});
+  }
+ }else if(kind==="rect"){
+  for(let m=1;m<=12;m++)for(let n=1;n<=12;n++){
+   const f=c/2*Math.hypot(m/d[0],n/d[1]);
+   const drive=Math.sin(m*Math.PI*.31)*Math.sin(n*Math.PI*.39);
+   modes.push({m,n,p:null,f,drive,weight:1/Math.sqrt(m*m+n*n),name:"("+m+","+n+")"});
+  }
+ }else{
+  for(let m=0;m<ROOTS.length;m++)for(let j=0;j<ROOTS[m].length;j++){
+   const alpha=ROOTS[m][j],f=c*alpha/(TWO_PI*d[0]);
+   const drive=besselJ(m,alpha*.43)*Math.cos(m*(.60-.22));
+   modes.push({m,n:j+1,p:null,alpha,f,drive,weight:1/Math.sqrt(1+m*m+(j+1)*(j+1)),name:"("+m+","+(j+1)+")"});
+  }
+ }
+ return modes.sort((a,b)=>a.f-b.f);
+}
+let fullModes=buildModes();
+function point(mode,u,v){
+ if(state.geometry==="box")return Math.cos(mode.m*Math.PI*.37)*Math.cos(mode.n*Math.PI*u)*Math.cos(mode.p*Math.PI*v);
+ if(state.geometry==="rect")return Math.sin(mode.m*Math.PI*u)*Math.sin(mode.n*Math.PI*v);
+ const x=(u-.5)*2,y=(v-.5)*2,r=Math.hypot(x,y);
+ if(r>1)return 0;
+ return besselJ(mode.m,mode.alpha*r)*Math.cos(mode.m*(Math.atan2(y,x)-.22));
+}
+function response(f){
+ const nearest=fullModes.reduce((a,b)=>Math.abs(b.f-f)<Math.abs(a.f-f)?b:a);
+ const selected=fullModes.map(mode=>{
+  const ratio=f/mode.f;
+  const real=1-ratio*ratio,imag=2*state.damping*ratio;
+  const den=Math.max(1e-8,real*real+imag*imag);
+  const weight=mode.weight*mode.drive/den;
+  const cr=weight*real,ci=-weight*imag;
+  return {mode,cr,ci,power:Math.hypot(cr,ci)};
+ }).sort((a,b)=>b.power-a.power).slice(0,12);
+ const detune=Math.abs(f-nearest.f);
+ const close=detune<=Math.max(1.5,2*state.damping*nearest.f);
+ return {nearest,selected,detune,close,f};
+}
+const SIZE=200;
+const SQUARE={x0:.105,x1:.895,y0:.052,y1:.948};
+const CIRCLE={x0:.065,x1:.935,y0:.065,y1:.935};
+function inside(x,y){
+ const b=state.geometry==="circle"?CIRCLE:SQUARE;
+ const u=(x/(SIZE-1)-b.x0)/(b.x1-b.x0),v=(y/(SIZE-1)-b.y0)/(b.y1-b.y0);
+ if(u<0||u>1||v<0||v>1)return null;
+ if(state.geometry==="circle"&&Math.hypot((u-.5)*2,(v-.5)*2)>1)return null;
+ return [u,v];
+}
+function fieldAt(selected){
+ const count=SIZE*SIZE,re=new Float32Array(count),im=new Float32Array(count),mask=new Uint8Array(count);
+ // Coefficients reflect driven response; the spatial basis is the exact eigenfunction
+ // for the idealized fixed membrane/rigid cavity under the stated conditions.
+ for(let y=0;y<SIZE;y++)for(let x=0;x<SIZE;x++){
+  const uv=inside(x,y),idx=y*SIZE+x;
+  if(!uv)continue;mask[idx]=1;
+  let a=0,b=0;
+  for(const s of selected){const val=point(s.mode,uv[0],uv[1]);a+=s.cr*val;b+=s.ci*val}
+  re[idx]=a;im[idx]=b;
+ }
+ let max=1e-10;
+ for(let k=0;k<count;k++)if(mask[k])max=Math.max(max,Math.hypot(re[k],im[k]));
+ return {re,im,mask,max};
+}
+function makeModel(f){const info=response(f);return {...info,field:fieldAt(info.selected)}}
+function colorField(data,visual,phase){
+ const {re,im,mask,max}=data,count=SIZE*SIZE;
+ const img=new ImageData(SIZE,SIZE),pix=img.data;
+ for(let i=0;i<count;i++){
+  const o=i*4;pix[o+3]=255;
+  if(!mask[i]){pix[o]=7;pix[o+1]=12;pix[o+2]=18;continue}
+  const amp=Math.min(1,Math.hypot(re[i],im[i])/max);
+  let r,g,b;
+  if(visual==="sand"){
+   // Probability-density proxy: modeled particles accumulate where the field moves least.
+   // This is NOT a fluid/grain-motion simulation.
+   const node=Math.exp(-Math.pow(amp/.105,2));
+   const grain=((i*1103515245+12345)>>>16)&255;
+   const speckle=grain/255;
+   const shine=node*(.65+.35*speckle);
+   r=13+225*shine;g=21+187*shine;b=30+99*shine;
+  }else if(visual==="amplitude"){
+   r=10+Math.pow(amp,.6)*227;
+   g=21+Math.sqrt(amp)*130;
+   b=35+(1-amp)*95;
+  }else{
+   const w=(re[i]*Math.cos(phase)+im[i]*Math.sin(phase))/max;
+   const z=Math.min(1,Math.abs(w));
+   r=w>0?16+232*z:11+20*z;
+   g=25+122*z;
+   b=w<0?35+211*z:38+36*z;
+  }
+  pix[o]=Math.min(255,r)|0;pix[o+1]=Math.min(255,g)|0;pix[o+2]=Math.min(255,b)|0;
+ }
+ return img;
+}
+function paint(which,phase=0){
+ const canvas=$(which==="a"?"canvasA":"canvasB");
+ const model=state.model[which];
+ if(!model)return;
+ const ctx=canvas.getContext("2d");
+ if(canvas.width!==SIZE){canvas.width=SIZE;canvas.height=SIZE}
+ ctx.putImageData(colorField(model.field,state.visual,phase),0,0);
+ ctx.save();ctx.strokeStyle="#a8b9c3";ctx.lineWidth=1;
+ const b=state.geometry==="circle"?CIRCLE:SQUARE;
+ const x=b.x0*(SIZE-1),y=b.y0*(SIZE-1),w=(b.x1-b.x0)*(SIZE-1),h=(b.y1-b.y0)*(SIZE-1);
+ if(state.geometry==="circle"){ctx.beginPath();ctx.arc(SIZE/2,SIZE/2,w/2,0,TWO_PI);ctx.stroke()}
+ else ctx.strokeRect(x,y,w,h);
+ ctx.restore();
+}
+function format(n,p=2){return Number(n).toFixed(p)}
+function updateModelDescription(){
+ const d=dims(),g=state.geometry;
+ let txt,eq,note;
+ if(g==="box"){
+  txt="תיבה ביחס 4:10:13 · אורך פיזי "+d.map(x=>format(x,2)).join(" × ")+" מטר · חתך 10×13 במיקום 37% מציר 4. ברירת המחדל: מהירות קול 343m/s, יחידה 10 ס״מ.";
+  eq="f(m,n,p) = c/2 · √[(m/L4)² + (n/L10)² + (p/L13)²]";
+  note="תיבת תהודה עם דפנות קשיחות (תנאי Neumann), והדמיית חתך של שדה לחץ. לא ניסוי חול על לוח מתכת. במצב (0,1,1) הממד 4 אינו משתתף בנוסחת התדר.";
+ }else if(g==="rect"){
+  txt="קרום מתוח עם קצוות מקובעים · מידות "+d.map(x=>format(x,2)).join(" × ")+" מטר · מהירות הגל תלויה במתיחות ובצפיפות הממברנה.";
+  eq="f(m,n) = c/2 · √[(m/L10)² + (n/L13)²];   Ψ = sin(mπx/L10)sin(nπy/L13)";
+  note="מודל קרום מלבני אידיאלי עם תנאי Dirichlet, לא לוח מתכת בעל קשיחות כפיפה. קווי הצומת נגזרים ישירות מהפונקציות העצמיות של משוואת הגלים.";
+ }else{
+  txt="קרום עגול מקובע בקצוות · רדיוס "+format(d[0],2)+" מטר (13 יחידות) · מהירות גל לפי שליטתך.";
+  eq="f(m,n) = c·α(m,n)/(2πR);   Ψ = J_m(α(m,n)·r/R)cos(mθ)";
+  note="מודל קרום עגול אידיאלי. α(m,n) הם האפסים הראשונים של פונקציית בסל J_m. המודל יכול ליצור טבעות וזרועות, בלי להניח מראש צורת סמל.";
+ }
+ $("dimensions").textContent=txt;$("equation").textContent=eq;$("modelNotes").textContent=note;
+ $("scaleLabel").textContent=format(state.scale,3)+" m";
+ $("speedLabel").textContent=state.speed+" m/s";
+ $("dampingLabel").textContent=format(state.damping,3);
+}
+function updateCard(which){
+ const id=which.toUpperCase(),f=state[which],data=state.model[which],near=data.nearest;
+ $(which+"Title").textContent=f+" Hz";
+ $("badge"+id).textContent=f+"Hz · "+state.geometry;
+ $("nearest"+id).textContent=format(near.f,2)+" Hz";
+ $("mode"+id).textContent=near.name;
+ $("detune"+id).textContent=format(data.detune,2)+" Hz ("+format(100*data.detune/near.f,1)+"%)";
+ $("flag"+id).textContent=data.close?"קרוב לתהודה":"לא בתהודה";
+ $("flag"+id).style.color=data.close?"#e6c679":"#9fb6c8";
+ $("status"+id).textContent=data.close?
+  "העירור קרוב לתדר עצמי של המבנה. דגם צמתי צפוי להיות מובחן יותר במודל האידיאלי.":
+  "אין כאן תהודה קרובה. התמונה מציגה תגובה מחושבת מאולצת, אך אין לצפות לדגם חול יציב ומובהק בניסוי פיזי.";
+ $("sound"+id).textContent="▶ האזן ל־"+f+"Hz";
+}
+function rebuild(){
+ fullModes=buildModes();updateModelDescription();
+ state.model.a=makeModel(state.a);
+ state.model.b=makeModel(state.b);
+ updateCard("a");updateCard("b");
+ paint("a");paint("b");
+ const isBox=state.geometry==="box"&&Math.abs(state.scale-.10)<.00001&&state.speed===343;
+ if(isBox){
+  const mode=fullModes.find(m=>m.m===0&&m.n===1&&m.p===1);
+  $("finding").textContent="תיבת 4:10:13, יחידה 0.10m: מצב (0,1,1) נותן f="+format(mode.f,3)+"Hz. לכן 216Hz סמוך לתהודה הזאת, ו־108Hz אינו תדר עצמי שלה. זו תוצאה שתלויה בממדים ובמהירות הגל שנבחרו, ואינה מאמתת קשר היסטורי או תדר אוניברסלי.";
+ }else{
+  $("finding").textContent="בדיקה מבוקרת: שני התדרים חושבו לאותם ממדים, מהירות גל, שיכוך ותנאי שפה. השתמש במודל ובערכי הפרמטרים כדי לבחון היכן מופיעות תהודות — מבלי לבחור צורה לפי התדר.";
+ }
+}
+function redraw(){rebuild()}
+function setFrequency(which,v){
+ v=Math.round(Number(v));
+ if(!Number.isFinite(v)||v<20||v>2000)return;
+ state[which]=v;$("freq"+which.toUpperCase()).value=v;redraw();
+}
+$("geometry").addEventListener("change",e=>{
+ state.geometry=e.target.value;
+ state.speed=state.geometry==="box"?343:171;
+ $("speed").value=state.speed;
+ redraw();
+});
+$("visual").addEventListener("change",e=>{state.visual=e.target.value;paint("a");paint("b")});
+for(const [id,key] of [["scale","scale"],["speed","speed"],["damping","damping"]]){
+ $(id).addEventListener("input",e=>{
+  state[key]=Number(e.target.value);
+  $("scaleLabel").textContent=format(state.scale,3)+" m";
+  $("speedLabel").textContent=state.speed+" m/s";
+  $("dampingLabel").textContent=format(state.damping,3);
+  clearTimeout(lastBuild);lastBuild=setTimeout(redraw,110);
+ });
+ $(id).addEventListener("change",redraw);
+}
+for(const [id,which] of [["freqA","a"],["freqB","b"]]){
+ $(id).addEventListener("change",e=>setFrequency(which,e.target.value));
+ $(id).addEventListener("keydown",e=>{if(e.key==="Enter")e.target.blur()});
+}
+document.querySelectorAll("[data-compare]").forEach(btn=>btn.onclick=()=>{
+ const values=btn.dataset.compare.split(",").map(Number);
+ state.a=values[0];state.b=values[1];$("freqA").value=state.a;$("freqB").value=state.b;redraw();
+});
+$("doubleRight").onclick=()=>setFrequency("b",Math.min(2000,state.a*2));
+$("redraw").onclick=redraw;
+function playTone(which){
+ if(state.runningAudio)try{state.runningAudio.stop()}catch(_){}
+ const AudioCtx=window.AudioContext||window.webkitAudioContext;
+ if(!AudioCtx)return;
+ const ctx=window.__cymaticsAudio||(window.__cymaticsAudio=new AudioCtx());
+ if(ctx.state==="suspended")ctx.resume();
+ const osc=ctx.createOscillator(),amp=ctx.createGain(),f=state[which];
+ osc.type="sine";osc.frequency.value=f;osc.connect(amp);amp.connect(ctx.destination);
+ const now=ctx.currentTime;
+ amp.gain.setValueAtTime(0,now);amp.gain.linearRampToValueAtTime(.14,now+.025);
+ amp.gain.setTargetAtTime(0,now+1.15,.16);
+ osc.start(now);osc.stop(now+2.2);
+ state.runningAudio=osc;
+}
+for(const which of ["a","b"]){
+ const id=which.toUpperCase();
+ $("sound"+id).onclick=()=>playTone(which);
+ $("capture"+id).onclick=()=>{
+  const canvas=$("canvas"+id),link=document.createElement("a");
+  link.href=canvas.toDataURL("image/png");
+  link.download="cymatics-"+state.geometry+"-"+state[which]+"Hz.png";
+  link.click();
+ };
+}
+function tick(time){
+ if(state.visual==="wave"&&state.model.a&&state.model.b){
+  const phase=time*.001*2.6;
+  paint("a",phase);paint("b",phase);
+ }
+ nextFrame=requestAnimationFrame(tick);
+}
+const params=new URLSearchParams(location.search);
+const parameterHz=Number(params.get("f"));
+if(Number.isInteger(parameterHz)&&parameterHz>=20&&parameterHz<=2000){
+ state.a=parameterHz;state.b=Math.min(2000,parameterHz*2);
+ $("freqA").value=state.a;$("freqB").value=state.b;
+}
+redraw();
+nextFrame=requestAnimationFrame(tick);
+</script>
+</body>
+</html>
