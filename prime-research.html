@@ -43,7 +43,7 @@ h1{font-size:clamp(27px,4vw,48px);margin:8px 0 10px;line-height:1.15}h2{font-siz
 <div>
 <h2>הפעלת הקופסה</h2>
 <p class="muted">השעון מתחיל מ־1 (שאינו ראשוני), מזהה ראשוניים מ־2 ומעלה ומשתמש במסננת מקטעים מדויקת. עם שרת מחקר מחובר, כל דפדפן מקבל טווח עבודה נפרד.</p>
-<div class="controls"><button id="playBtn" class="primary">▶ Play — התחל סריקה</button><button id="pauseBtn" class="secondary" disabled>Ⅱ עצור ושמור</button><button id="soundBtn" class="secondary" aria-pressed="false">♫ צליל כבוי</button></div>
+<div class="controls"><button id="playBtn" class="primary">▶ Play — התחל סריקה</button><button id="pauseBtn" class="secondary" disabled>Ⅱ עצור ושמור</button><button id="soundBtn" class="secondary" aria-pressed="false">♫ צליל כבוי</button></div><div class="mini"><label for="notesSpeed">מהירות הטינגים כשצליל פעיל · <span id="speedValue">40</span> בשנייה</label><input type="range" id="notesSpeed" min="2" max="80" value="40" style="width:100%;accent-color:#d8ad55"></div>
 <div class="progress" aria-label="התקדמות מקטע"><i id="progressBar"></i></div>
 <div class="metrics"><span>טווח עבודה נוכחי <b class="mono" id="currentRange">—</b></span><span>המספר הבא במצב מקומי <b class="mono" id="nextPosition">2</b></span><span>משך המקטע האחרון <b class="mono" id="elapsed">—</b></span></div>
 <div class="mini"><label for="startInput">קפיצה לניסוי מקומי (ללא שינוי בתור המשותף, עד ‎10¹⁴)</label><div class="row"><input id="startInput" class="field" type="number" min="2" max="99999999900000" step="1" value="2"><button id="setStart">כוון שעון מקומי</button></div></div>
@@ -89,7 +89,7 @@ local.tings=Number.isFinite(local.tings)?local.tings:0;
 local.days=local.days&&typeof local.days==="object"?local.days:{};
 local.pending=Array.isArray(local.pending)?local.pending:[];
 let api=String(window.PRIME_CLOCK_API||"").trim().replace(/\/+$/,"");
-let worker=null,proofWorker=null,playing=false,busy=false,activeTask=null,soundOn=false,ctx=null,network=null;
+let worker=null,proofWorker=null,playing=false,busy=false,activeTask=null,soundOn=false,ctx=null,network=null,runId=0;
 const chunk=30000,clientIdKey="gematria-prime-session-v1";
 let clientId=localStorage.getItem(clientIdKey);
 if(!clientId){clientId=crypto.randomUUID();localStorage.setItem(clientIdKey,clientId);}
@@ -140,6 +140,9 @@ async function getTask(){
  }
  const start=local.next;return {start,end:Math.min(start+chunk,100000000000001),shared:false,id:"local-"+start};
 }
+async function replayTings(primes,token){
+ for(const n of primes){if(!playing||token!==runId||!soundOn)break;ting(n);await new Promise(resolve=>setTimeout(resolve,1000/Number($("notesSpeed").value)));}
+}
 async function scanNext(){
  if(!playing||busy)return;busy=true;
  try{
@@ -150,35 +153,36 @@ async function scanNext(){
  }catch(e){busy=false;log("שגיאת הפעלה: "+String(e.message||e));pause();}
 }
 function pause(){
- playing=false;busy=false;activeTask=null;if(worker){worker.terminate();worker=null;}
+ runId++;playing=false;busy=false;activeTask=null;if(worker){worker.terminate();worker=null;}
  $("progressBar").style.width="0";updateUI();
  if(api)heartbeat();
 }
 function start(){
  if(playing)return;
  if(typeof Worker==="undefined"){log("הדפדפן לא תומך ב־Web Workers.");return;}
- worker=new Worker("prime-worker.js");
+ runId++;worker=new Worker("prime-worker.js");
  worker.onmessage=async e=>{
   if(e.data.type==="error"){log("תקלה: "+e.data.message);pause();return;}
   if(e.data.type!=="scan-result")return;
-  const t=activeTask,r=e.data.result;if(!t||r.start!==t.start||r.end!==t.end)return;
+  const t=activeTask,r=e.data.result,token=runId;if(!t||r.start!==t.start||r.end!==t.end)return;
   busy=false;activeTask=null;
   // A checkpoint is committed only after the complete exact segment finishes.
   if(!t.shared)local.next=r.end;
   local.total+=r.end-r.start;local.tings+=r.count;
   const day=new Date().toISOString().slice(0,10);local.days[day]=(local.days[day]||0)+(r.end-r.start);
-  save();$("progressBar").style.width="100%";$("elapsed").textContent=r.elapsedMs+" ms";ting(r.last);
+  save();$("progressBar").style.width="100%";$("elapsed").textContent=r.elapsedMs+" ms";if(!soundOn)ting(r.last);
   log("טינגים: "+fmt(r.count)+" | "+fmt(r.start)+"–"+fmt(r.end-1)+" | האחרון "+fmt(r.last));
   if(t.shared&&api){
    const report={clientId,id:t.id,start:t.start,end:t.end,count:r.count,hash:r.hash,elapsedMs:r.elapsedMs};
    try{await request("report",report);}catch(_){local.pending.push(report);local.pending=local.pending.slice(-30);save();log("תוצאת מקטע נשמרה להעלאה חוזרת כשהשרת יחזור.");}
   }
-  updateUI();if(playing)scanNext();
+  updateUI();if(soundOn&&Array.isArray(r.primes))await replayTings(r.primes,token);if(playing&&token===runId)scanNext();
  };
  worker.onerror=err=>{log("שגיאת מנוע: "+err.message);pause();};
  playing=true;updateUI();log("Play — השעון התחיל להסתובב.");if(api)heartbeat();scanNext();
 }
 $("playBtn").onclick=start;$("pauseBtn").onclick=()=>{pause();log("עצירה. כל מקטע שהושלם נשמר.");};
+$("notesSpeed").oninput=()=>{$("speedValue").textContent=$("notesSpeed").value;};
 $("soundBtn").onclick=()=>{soundOn=!soundOn;$("soundBtn").textContent=soundOn?"♫ צליל פעיל":"♫ צליל כבוי";$("soundBtn").setAttribute("aria-pressed",String(soundOn));};
 $("setStart").onclick=()=>{
  if(playing){log("עצור את השעון לפני שינוי הטווח.");return;}
