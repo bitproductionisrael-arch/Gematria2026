@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080d13">
+<title>מחקר ראשוניים | Gematria2026</title>
+<style>
+:root{color-scheme:dark;--bg:#080d13;--panel:#111923;--line:#2a3946;--gold:#d8ad55;--cyan:#5fd3cf;--muted:#94a4b4;--text:#edf3f8;--good:#62d69d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% -22%,#1b3342 0,#0b131c 40%,#080d13 90%);font:15px system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text)}
+button,input{font:inherit;color:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:12px 19px;background:#1b2732}button:hover{border-color:#65939c}button:disabled{opacity:.5;cursor:not-allowed}
+a{color:inherit;text-decoration:none}.top{position:sticky;top:0;z-index:10;background:#0a1119ed;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}.nav{max-width:1220px;margin:auto;min-height:60px;padding:9px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{font-weight:950;letter-spacing:.06em}.brand b{color:var(--gold)}.navlinks{display:flex;gap:18px;margin-inline-start:auto;font-size:13px;color:#bfceda;flex-wrap:wrap}.navlinks a:hover{color:var(--gold)}
+main{max-width:1220px;margin:auto;padding:30px 18px 65px}.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--cyan)}
+h1{font-size:clamp(27px,4vw,48px);margin:8px 0 10px;line-height:1.15}h2{font-size:19px;margin:0 0 15px}p{line-height:1.6}.intro{color:#b6c5d3;max-width:800px;margin:0 0 20px}.tag{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px;color:#d0deea;background:#0f1923}.signal{width:8px;height:8px;border-radius:50%;background:#c9a057}.signal.online{background:var(--good)}.signal.running{background:var(--cyan);box-shadow:0 0 13px var(--cyan)}
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:22px 0}.card,.panel{border:1px solid var(--line);background:linear-gradient(155deg,#14212b,#101720);border-radius:15px}.card{padding:17px 15px;min-height:107px}.card .label{color:var(--muted);font-size:12px}.card .num{font-weight:820;font-size:clamp(20px,2.6vw,31px);margin:9px 0 3px;font-variant-numeric:tabular-nums;direction:ltr;text-align:right}.card small{font-size:11px;color:#a4b5c3}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:21px;margin-bottom:14px;min-width:0}.operation{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:center}.clock{width:220px;height:220px;border-radius:50%;position:relative;margin:auto;background:conic-gradient(from 0deg,#40546c,#1c2836 26%,#d8ad55 32%,#1b2836 40%,#286577 70%,#40546c);box-shadow:0 0 0 10px #0c141d,0 0 0 11px #344753,inset 0 0 0 26px #0c141de5}
+.clock:before{content:"";position:absolute;inset:15px;border:2px dashed #ffffff4b;border-radius:50%}.dial{position:absolute;inset:39px;border:1px solid #5f7d86;border-radius:50%;background:#0c131a;display:flex;flex-direction:column;align-items:center;justify-content:center}.dial strong{font-size:32px;color:var(--gold);font-variant-numeric:tabular-nums;direction:ltr}.dial span{font-size:11px;color:var(--muted)}.needle{position:absolute;width:2px;height:90px;background:linear-gradient(var(--cyan),#b4fff4);bottom:50%;left:calc(50% - 1px);transform-origin:bottom;transform:rotate(0deg);transition:transform .35s}.axis{position:absolute;top:calc(50% - 6px);left:calc(50% - 6px);width:12px;height:12px;background:var(--gold);border-radius:50%;border:2px solid #10151a}.controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:16px 0}.primary{background:linear-gradient(105deg,#d8ad55,#edce88);color:#111;min-width:130px;font-weight:850;border-color:#eed49c}.secondary{min-width:100px}.field{padding:10px 11px;background:#0b1219;border:1px solid var(--line);border-radius:9px;width:min(100%,230px);direction:ltr}.muted{font-size:12px;color:var(--muted)}.progress{height:10px;overflow:hidden;border-radius:999px;background:#263646;margin:16px 0 8px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold));transition:width .2s}.mono{direction:ltr;unicode-bidi:embed;font-variant-numeric:tabular-nums;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;word-break:break-word}.metrics{display:flex;gap:22px;flex-wrap:wrap}.metrics span{font-size:12px;color:var(--muted)}.metrics b{display:block;color:#f0f5f8;font-size:17px;margin-top:5px}.chart{height:145px;display:flex;align-items:flex-end;gap:3px;border-bottom:1px solid #40505c;padding:4px 0}.bar{flex:1;min-width:3px;background:linear-gradient(0deg,#2f7782,#7acbc5);border-radius:3px 3px 0 0;min-height:1px;position:relative}.bar:hover{background:var(--gold)}.log{min-height:130px;max-height:245px;overflow:auto;font:12px/1.65 ui-monospace,Consolas,monospace;direction:rtl;color:#c4d0db}.log div{padding:6px 0;border-bottom:1px solid #ffffff0e}.log time{color:var(--cyan)}.hint{background:#0e1b22;border-right:3px solid var(--cyan);padding:12px 14px;border-radius:8px;font-size:12px;color:#b8c9d4}.warning{border-right-color:var(--gold)}.fineprint{font-size:12px;color:#9fafbc}.overline{font-size:11px;color:var(--gold)}.mini{background:#0b1219;border-radius:10px;padding:12px;margin-top:9px}.mini label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}.mini .row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}.operation{grid-template-columns:1fr}.clock{width:195px;height:195px}.needle{height:80px}.panel{padding:16px}.navlinks{margin-inline-start:0;gap:12px}}
+@media(max-width:430px){.card{padding:12px}.card .num{font-size:22px}.cards .card:last-child{grid-column:span 2}.controls button{flex:1}.nav{gap:8px}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="nav">
+<a href="index.html" class="brand">GEMATRIA<b>2026</b></a>
+<div class="navlinks"><a href="calculator.html">מחשבון</a><a href="blog.html">מחקר</a><a href="prime-research.html" style="color:#e8bc65" aria-current="page">מחקר ראשוניים</a></div>
+</nav></header>
+<main>
+<div class="eyebrow">PRIME RESEARCH / PRIME CLOCK</div>
+<h1>מחקר ראשוניים <span style="color:var(--gold)">· שעון הטינגים</span></h1>
+<p class="intro">לוח מחקר חי: לוחצים <b>Play</b>, הדפדפן סורק ומצלצל כשנמצא ראשוני. השעון שומר התקדמות בין כניסות, מציג התנגשות חוקי פסילה, ומאפשר אימות ראשוניות במבחן לוקאס–להמר למשפחת מרסן.</p>
+<span class="tag"><i id="networkLamp" class="signal"></i><span id="networkState">מצב מקומי — רשת המחקר טרם חוברה</span></span>
+<span class="tag"><i id="runLamp" class="signal"></i><span id="runState">מושהה</span></span>
+<section class="cards" aria-label="מדדי מחקר">
+<div class="card"><div class="label">מחוברים כרגע · רשת</div><div class="num" id="onlineCount">—</div><small>סשנים פעילים ב־40 השניות האחרונות</small></div>
+<div class="card"><div class="label">סורקים כרגע · רשת</div><div class="num" id="scannerCount">—</div><small>דפדפנים שהפעילו Play</small></div>
+<div class="card"><div class="label">מקטעים מוצלבים · רשת</div><div class="num" id="verifiedChunks">—</div><small>שני דיווחים תואמים ממחשבים נפרדים</small></div>
+<div class="card"><div class="label">עבודה ב־30 ימים · רשת</div><div class="num" id="monthCount">—</div><small>אינדקסים שדווחו — לא תעודת פרס</small></div>
+<div class="card"><div class="label">נסרקו בדפדפן הזה</div><div class="num" id="localCount">0</div><small>נשמר כאן בלבד, גם לאחר עצירה</small></div>
+</section>
+<div class="panel operation">
+<div class="clock" role="img" aria-label="שעון המחקר"><div id="needle" class="needle"></div><div class="axis"></div><div class="dial"><span>הטינג האחרון</span><strong id="lastTing">2</strong><span id="tickLabel">START · 1</span></div></div>
+<div>
+<h2>הפעלת הקופסה</h2>
+<p class="muted">השעון מתחיל מ־1 (שאינו ראשוני), מזהה ראשוניים מ־2 ומעלה ומשתמש במסננת מקטעים מדויקת. עם שרת מחקר מחובר, כל דפדפן מקבל טווח עבודה נפרד.</p>
+<div class="controls"><button id="playBtn" class="primary">▶ Play — התחל סריקה</button><button id="pauseBtn" class="secondary" disabled>Ⅱ עצור ושמור</button><button id="soundBtn" class="secondary" aria-pressed="false">♫ צליל כבוי</button></div>
+<div class="progress" aria-label="התקדמות מקטע"><i id="progressBar"></i></div>
+<div class="metrics"><span>טווח עבודה נוכחי <b class="mono" id="currentRange">—</b></span><span>המספר הבא במצב מקומי <b class="mono" id="nextPosition">2</b></span><span>משך המקטע האחרון <b class="mono" id="elapsed">—</b></span></div>
+<div class="mini"><label for="startInput">קפיצה לניסוי מקומי (ללא שינוי בתור המשותף, עד ‎10¹⁴)</label><div class="row"><input id="startInput" class="field" type="number" min="2" max="99999999900000" step="1" value="2"><button id="setStart">כוון שעון מקומי</button></div></div>
+</div>
+</div>
+<div class="grid">
+<section class="panel">
+<h2>התקדמות 30 הימים האחרונים</h2><p class="muted" id="chartCaption">נתוני הדפדפן הזה. נתוני רשת יוצגו רק אחרי חיבור השירות.</p>
+<div id="monthChart" class="chart" role="img" aria-label="גרף סריקות בשלושים הימים האחרונים"></div>
+<div class="metrics" style="margin-top:17px"><span>טווח רציף מוצלב <b class="mono" id="sharedFrontier">—</b></span><span>מקטעים שדווחו <b class="mono" id="reportedChunks">—</b></span></div>
+<p class="fineprint">הספירה המשותפת אינה הוכחת ראשוניות של מספר ענק. אין מציגים נתון לא זמין כאפס.</p>
+</section>
+<section class="panel">
+<h2>טינגים ואירועים בזמן אמת</h2><div class="log" id="eventLog" aria-live="polite"><div>הקופסה מוכנה. לחץ Play כדי להתחיל.</div></div>
+</section>
+</div>
+<div class="grid">
+<section class="panel">
+<h2>חותם הוכחה · Lucas–Lehmer</h2>
+<p class="muted">מספר מרסן מהצורה <span class="mono">2^p − 1</span>. כאן לא מנחשים: חותם אפס מוכיח ראשוניות כאשר \(p\) ראשוני.</p>
+<div class="mini"><label for="mersenneExponent">מעריך ראשוני (3–1279, בדיקת הדפדפן)</label><div class="row"><input id="mersenneExponent" type="number" class="field" min="3" max="1279" value="127"><button id="proveBtn">בדוק תעודה</button></div></div>
+<p id="proofStatus" class="hint">עדיין לא הופעלה בדיקת תעודה.</p>
+</section>
+<section class="panel">
+<h2>רמות המחקר</h2>
+<div class="hint"><b>שכבה 1 — טינג:</b> ראשוניים מדויקים בטווחי סריקה בטוחים.</div>
+<div class="hint" style="margin-top:8px"><b>שכבה 2 — שיתוף:</b> חלוקת מקטעים ודיווח הצלבות כאשר מחובר שרת.</div>
+<div class="hint warning" style="margin-top:8px"><b>שכבה 3 — הוכחה:</b> תעודות ראשוניות למשפחות מיוחדות. המועמד בן 100 מיליון הספרות טרם הוכרע.</div>
+<p class="fineprint">ארכיון המחקר האחרון: שרשרת של 8 דורות מוכחים, האחרון בן 9,519 ספרות. הנתון היסטורי ואינו נחשב למדידת משתמשים בזמן אמת.</p>
+</section>
+</div>
+</main>
+<script src="prime-config.js"></script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const fmt=n=>typeof n==="number"?new Intl.NumberFormat("en-US").format(n):n;
+const STORE="gematria-prime-clock-v1";
+let local;try{local=JSON.parse(localStorage.getItem(STORE)||"{}")}catch(_){local={}}
+if(!Number.isSafeInteger(local.next)||local.next<2)local.next=2;
+local.total=Number.isFinite(local.total)?local.total:0;
+local.tings=Number.isFinite(local.tings)?local.tings:0;
+local.days=local.days&&typeof local.days==="object"?local.days:{};
+local.pending=Array.isArray(local.pending)?local.pending:[];
+let api=String(window.PRIME_CLOCK_API||"").trim().replace(/\/+$/,"");
+let worker=null,proofWorker=null,playing=false,busy=false,activeTask=null,soundOn=false,ctx=null,network=null;
+const chunk=30000,clientIdKey="gematria-prime-session-v1";
+let clientId=localStorage.getItem(clientIdKey);
+if(!clientId){clientId=crypto.randomUUID();localStorage.setItem(clientIdKey,clientId);}
+function save(){localStorage.setItem(STORE,JSON.stringify(local));}
+function log(s){const div=document.createElement("div"),t=document.createElement("time");t.textContent=new Date().toLocaleTimeString("he-IL")+" · ";div.append(t,document.createTextNode(s));$("eventLog").prepend(div);while($("eventLog").children.length>13)$("eventLog").lastElementChild.remove();}
+function updateUI(){
+ $("localCount").textContent=fmt(local.total);
+ $("nextPosition").textContent=fmt(local.next);
+ $("runState").textContent=playing?"השעון מסתובב":"מושהה";
+ $("runLamp").className="signal"+(playing?" running":"");
+ $("playBtn").disabled=playing;
+ $("pauseBtn").disabled=!playing;
+ if(!network){$("onlineCount").textContent="—";$("scannerCount").textContent="—";$("verifiedChunks").textContent="—";$("monthCount").textContent="—";$("sharedFrontier").textContent="—";$("reportedChunks").textContent="—";}
+ updateChart();
+}
+function updateChart(){
+ const dates=Array.from({length:30},(_,i)=>{const d=new Date();d.setUTCHours(12,0,0,0);d.setUTCDate(d.getUTCDate()-29+i);return d.toISOString().slice(0,10)});
+ const days=network&&network.daily?network.daily:local.days;
+ const vals=dates.map(d=>Math.max(0,Number(days[d]||0)));
+ const maximum=Math.max(1,...vals),host=$("monthChart");host.replaceChildren();
+ dates.forEach((d,i)=>{const el=document.createElement("div");el.className="bar";el.style.height=(1+99*vals[i]/maximum)+"%";el.title=d+" · "+fmt(vals[i])+" נסרקו";host.append(el);});
+ $("chartCaption").textContent=network?"סריקות שדווחו לרשת ב־30 הימים האחרונים (מאז הפעלת השירות).":"סריקות בדפדפן הזה ב־30 הימים האחרונים — לא נתוני משתמשים אחרים.";
+}
+function ting(n){
+ if(n!==null&&n!==undefined){$("lastTing").textContent=fmt(n);$("tickLabel").textContent="PRIME TING";$("needle").style.transform="rotate("+((n%360+360)%360)+"deg)";}
+ if(soundOn){try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.setValueAtTime(660,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(990,ctx.currentTime+.13);g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.09,ctx.currentTime+.018);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.25);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.27);}catch(_){}}
+}
+async function request(path,body){
+ if(!api)throw Error("לא חובר שרת שיתופי");
+ const ctrl=new AbortController(),timeout=setTimeout(()=>ctrl.abort(),8000);
+ try{const r=await fetch(api+"/api/"+path,{method:body?"POST":"GET",headers:{"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined,signal:ctrl.signal});if(!r.ok)throw Error("HTTP "+r.status);return await r.json();}finally{clearTimeout(timeout);}
+}
+function onNetworkDown(){
+ network=null;$("networkLamp").className="signal";$("networkState").textContent=api?"השרת לא זמין — נתוני דפדפן מקומיים":"מצב מקומי — רשת המחקר טרם חוברה";updateUI();
+}
+async function heartbeat(){
+ if(!api)return;
+ try{await request("heartbeat",{clientId,scanning:playing});const s=await request("state");network=s;$("networkLamp").className="signal online";$("networkState").textContent="מחובר לשירות המחקר המשותף";$("onlineCount").textContent=fmt(s.online);$("scannerCount").textContent=fmt(s.scanners);$("verifiedChunks").textContent=fmt(s.confirmedChunks);$("monthCount").textContent=fmt(s.last30Scanned);$("sharedFrontier").textContent=fmt(s.confirmedThrough);$("reportedChunks").textContent=fmt(s.reportedChunks);updateUI();await flushPending();}catch(_){onNetworkDown();}
+}
+async function flushPending(){
+ if(!api||!network||!local.pending.length)return;
+ const remain=[];for(const r of local.pending){try{await request("report",r);}catch(_){remain.push(r);}}
+ local.pending=remain.slice(-30);save();
+}
+async function getTask(){
+ if(api&&network){
+  try{const job=await request("claim",{clientId});if(job&&Number.isSafeInteger(job.start)&&Number.isSafeInteger(job.end))return {...job,shared:true};}catch(_){onNetworkDown();}
+ }
+ const start=local.next;return {start,end:Math.min(start+chunk,100000000000001),shared:false,id:"local-"+start};
+}
+async function scanNext(){
+ if(!playing||busy)return;busy=true;
+ try{
+  const task=await getTask();if(!playing){busy=false;return;}
+  if(task.end<=task.start){pause();log("הגעת לתקרת הסריקה המקומית.");return;}
+  activeTask=task;$("currentRange").textContent=fmt(task.start)+" — "+fmt(task.end-1);$("progressBar").style.width="22%";
+  worker.postMessage({type:"scan",start:task.start,end:task.end,id:task.id});
+ }catch(e){busy=false;log("שגיאת הפעלה: "+String(e.message||e));pause();}
+}
+function pause(){
+ playing=false;busy=false;activeTask=null;if(worker){worker.terminate();worker=null;}
+ $("progressBar").style.width="0";updateUI();
+ if(api)heartbeat();
+}
+function start(){
+ if(playing)return;
+ if(typeof Worker==="undefined"){log("הדפדפן לא תומך ב־Web Workers.");return;}
+ worker=new Worker("prime-worker.js");
+ worker.onmessage=async e=>{
+  if(e.data.type==="error"){log("תקלה: "+e.data.message);pause();return;}
+  if(e.data.type!=="scan-result")return;
+  const t=activeTask,r=e.data.result;if(!t||r.start!==t.start||r.end!==t.end)return;
+  busy=false;activeTask=null;
+  // A checkpoint is committed only after the complete exact segment finishes.
+  if(!t.shared)local.next=r.end;
+  local.total+=r.end-r.start;local.tings+=r.count;
+  const day=new Date().toISOString().slice(0,10);local.days[day]=(local.days[day]||0)+(r.end-r.start);
+  save();$("progressBar").style.width="100%";$("elapsed").textContent=r.elapsedMs+" ms";ting(r.last);
+  log("טינגים: "+fmt(r.count)+" | "+fmt(r.start)+"–"+fmt(r.end-1)+" | האחרון "+fmt(r.last));
+  if(t.shared&&api){
+   const report={clientId,id:t.id,start:t.start,end:t.end,count:r.count,hash:r.hash,elapsedMs:r.elapsedMs};
+   try{await request("report",report);}catch(_){local.pending.push(report);local.pending=local.pending.slice(-30);save();log("תוצאת מקטע נשמרה להעלאה חוזרת כשהשרת יחזור.");}
+  }
+  updateUI();if(playing)scanNext();
+ };
+ worker.onerror=err=>{log("שגיאת מנוע: "+err.message);pause();};
+ playing=true;updateUI();log("Play — השעון התחיל להסתובב.");if(api)heartbeat();scanNext();
+}
+$("playBtn").onclick=start;$("pauseBtn").onclick=()=>{pause();log("עצירה. כל מקטע שהושלם נשמר.");};
+$("soundBtn").onclick=()=>{soundOn=!soundOn;$("soundBtn").textContent=soundOn?"♫ צליל פעיל":"♫ צליל כבוי";$("soundBtn").setAttribute("aria-pressed",String(soundOn));};
+$("setStart").onclick=()=>{
+ if(playing){log("עצור את השעון לפני שינוי הטווח.");return;}
+ const n=Number($("startInput").value);
+ if(!Number.isSafeInteger(n)||n<2||n>99999999900000){log("יש להזין מספר שלם בין 2 לבין ‎10¹⁴.");return;}
+ local.next=n;save();updateUI();log("השעון המקומי מכוון ל־"+fmt(n)+".");};
+$("proveBtn").onclick=()=>{
+ const p=Number($("mersenneExponent").value);
+ if(!Number.isInteger(p)||p<3||p>1279){$("proofStatus").textContent="נא להזין מעריך שלם בין 3 ל־1279.";return;}
+ if(proofWorker)proofWorker.terminate();proofWorker=new Worker("prime-worker.js");$("proveBtn").disabled=true;$("proofStatus").textContent="הוכחה בתהליך — סדרת לוקאס–להמר...";
+ proofWorker.onmessage=e=>{
+  if(e.data.type==="mersenne-progress"){$("proofStatus").textContent="צעדי הוכחה: "+fmt(e.data.done)+" / "+fmt(e.data.total);}
+  if(e.data.type==="mersenne-result"){
+   const r=e.data.result;$("proofStatus").textContent=r.verdict==="proven-prime"?"חותם אפס ✓ הוכח ראשוני: 2^"+r.p+" − 1 ("+fmt(r.digits)+" ספרות).":"לא הוכחה ראשוניות — "+(r.reason||"מספר מרסן פריק");
+   log("חותם מרסן p="+r.p+" — "+r.verdict);$("proveBtn").disabled=false;proofWorker.terminate();proofWorker=null;
+  }
+  if(e.data.type==="error"){$("proofStatus").textContent=e.data.message;$("proveBtn").disabled=false;proofWorker.terminate();proofWorker=null;}
+ };
+ proofWorker.onerror=e=>{$("proofStatus").textContent=e.message;$("proveBtn").disabled=false;proofWorker.terminate();proofWorker=null;};
+ proofWorker.postMessage({type:"mersenne",p});
+};
+updateUI();if(api)heartbeat();setInterval(()=>{if(api)heartbeat();},12000);
+</script>
+</body>
+</html>
