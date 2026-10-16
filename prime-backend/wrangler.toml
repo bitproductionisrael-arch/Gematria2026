@@ -1,0 +1,11 @@
+name = "gematria-prime-hub"
+main = "worker.mjs"
+compatibility_date = "2026-10-01"
+
+[[durable_objects.bindings]]
+name = "PRIME_HUB"
+class_name = "PrimeHub"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["PrimeHub"]
