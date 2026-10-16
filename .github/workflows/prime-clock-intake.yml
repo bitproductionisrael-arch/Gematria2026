@@ -1,0 +1,33 @@
+name: Prime Clock – volunteer intake
+on:
+  pull_request:
+    paths:
+      - 'prime-clock-network/contributions/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Trusted code from base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: trusted
+          persist-credentials: false
+      - name: Submitted data from contributor branch
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: incoming
+          persist-credentials: false
+      - name: Fast trusted regression tests
+        run: python3 trusted/prime-clock-network/tests/test_reference.py
+      - name: Validate contributions as data only
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 trusted/prime-clock-network/ci_validate.py incoming/prime-clock-network/contributions
