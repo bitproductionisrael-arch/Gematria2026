@@ -31,7 +31,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
 #scriptBadge{display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;color:var(--gold);background:#0a1016;white-space:nowrap}
 .top-actions{display:flex;gap:6px;align-items:center}.iconbtn{width:42px;height:42px;padding:0;display:grid;place-items:center;font-size:17px}
-.main-tabs{height:var(--tabs);display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:6px 10px;border-bottom:1px solid var(--line);background:#0b1016}
+.main-tabs{height:var(--tabs);display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:6px 10px;border-bottom:1px solid var(--line);background:#0b1016}
 .main-tabs button{padding:5px 6px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .workspace{min-height:0;overflow:hidden;padding:10px}
 .tab-panel{display:none;height:100%;min-height:0;overflow:hidden}.tab-panel.active{display:block}
@@ -282,6 +282,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 /* Emergency rule: only long continuous tokens are allowed to break. */
 .long-token{overflow-wrap:anywhere;word-break:break-word}
 
+.main-tabs .prime-nav-link{display:flex;align-items:center;justify-content:center;padding:5px 6px;border:1px solid #846b3e;border-radius:10px;color:#eed39b;background:#211b11;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.main-tabs .prime-nav-link:hover{background:#342811;border-color:#d8ad55}
 </style>
 <style>
 /* Distinct letter permutations · independent operator, not additive gematria */
@@ -342,6 +343,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <button data-tab="compare" data-i18n="tab_compare">השוואה</button>
     <button data-tab="repeat" data-i18n="tab_repeat">חזרות</button>
     <button data-tab="forms" data-i18n="tab_forms">מילוי / גבול</button>
+    <a href="prime-research.html" class="prime-nav-link" title="Prime Clock · מחקר ראשוניים">◉ מחקר ראשוניים</a>
   </nav>
 
   <main class="workspace">
