@@ -26,16 +26,16 @@ function scan(start,end){
     for(let v=first;v<end;v+=p)marks[v-start]=0;
   }
   let count=0,first=null,last=null,hash=2166136261>>>0;
-  const samples=[];
+  const samples=[],primes=[];
   for(let i=0;i<marks.length;i++)if(marks[i]){
-    const n=start+i;count++;if(first===null)first=n;last=n;
+    const n=start+i;count++;primes.push(n);if(first===null)first=n;last=n;
     if(samples.length<7)samples.push(n);
     // Independent browsers use the same stable FNV-1a-style 32-bit checksum.
     const lo=n>>>0,hi=Math.floor(n/4294967296)>>>0;
     hash=Math.imul((hash^lo)>>>0,16777619)>>>0;
     hash=Math.imul((hash^hi)>>>0,16777619)>>>0;
   }
-  return {start,end,count,first,last,samples,hash:hash.toString(16).padStart(8,"0"),elapsedMs:Math.round(performance.now()-t),basePrimes:basePrimes.length};
+  return {start,end,count,first,last,samples,primes,hash:hash.toString(16).padStart(8,"0"),elapsedMs:Math.round(performance.now()-t),basePrimes:basePrimes.length};
 }
 function isPrimeSmall(n){if(n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true;}
 function mersenne(p){
