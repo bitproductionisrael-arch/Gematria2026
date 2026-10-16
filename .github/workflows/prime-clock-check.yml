@@ -1,0 +1,67 @@
+name: Prime Clock browser checks
+
+on:
+  push:
+    paths:
+      - 'prime-research.html'
+      - 'prime-worker.js'
+      - 'prime-config.js'
+      - 'prime-backend/**'
+      - '.github/workflows/prime-clock-check.yml'
+  pull_request:
+    paths:
+      - 'prime-research.html'
+      - 'prime-worker.js'
+      - 'prime-config.js'
+      - 'prime-backend/**'
+      - '.github/workflows/prime-clock-check.yml'
+  workflow_dispatch:
+
+jobs:
+  browser-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: |
+          node --check prime-worker.js
+          node --check prime-config.js
+          node --check prime-backend/worker.mjs
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('prime-research.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script\b[^>]*>([\s\S]*?)</script>',s)
+          assert scripts and scripts[-1].strip(), 'Expected inline app script'
+          Path('/tmp/prime-inline.js').write_text(scripts[-1],encoding='utf-8')
+          assert 'href="prime-research.html"' in Path('index.html').read_text()
+          assert 'href="prime-research.html"' in Path('calculator.html').read_text()
+          PY
+          node --check /tmp/prime-inline.js
+      - name: Exact prime clock and Lucas-Lehmer regression tests
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+          const replies=[], context={Uint8Array,Number,Math,BigInt,performance:require('node:perf_hooks').performance,postMessage:m=>replies.push(m)};
+          vm.createContext(context);
+          vm.runInContext(fs.readFileSync('prime-worker.js','utf8'),context);
+          function send(data){replies.length=0;context.onmessage({data});const error=replies.find(x=>x.type==='error');assert.equal(error,undefined,JSON.stringify(error));return replies[replies.length-1];}
+          let a=send({type:'scan',id:'a',start:2,end:100000});
+          assert.equal(a.result.count,9592);
+          assert.equal(a.result.first,2);
+          assert.equal(a.result.last,99991);
+          assert.equal(a.result.primes.length,a.result.count);
+          let left=send({type:'scan',id:'l',start:100000,end:130000}).result;
+          let right=send({type:'scan',id:'r',start:130000,end:160000}).result;
+          let joined=send({type:'scan',id:'j',start:100000,end:160000}).result;
+          assert.equal(left.count+right.count,joined.count);
+          assert.equal(left.primes.join(',')+','+right.primes.join(','),joined.primes.join(','));
+          let prime=send({type:'mersenne',p:31});
+          assert.equal(prime.result.verdict,'proven-prime');
+          let composite=send({type:'mersenne',p:11});
+          assert.equal(composite.result.verdict,'composite');
+          console.log('PASS exact segmented sieve, segment continuity, and LL');
+          JS
