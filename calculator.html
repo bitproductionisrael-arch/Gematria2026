@@ -31,7 +31,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 #sampleSelect,#scriptBadge{height:25px;padding:2px 8px;font-size:12px}
 #scriptBadge{display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;color:var(--gold);background:#0a1016;white-space:nowrap}
 .top-actions{display:flex;gap:6px;align-items:center}.iconbtn{width:42px;height:42px;padding:0;display:grid;place-items:center;font-size:17px}
-.main-tabs{height:var(--tabs);display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:6px 10px;border-bottom:1px solid var(--line);background:#0b1016}
+.main-tabs{height:var(--tabs);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;padding:6px 8px;border-bottom:1px solid var(--line);background:#0b1016}
 .main-tabs button{padding:5px 6px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .workspace{min-height:0;overflow:hidden;padding:10px}
 .tab-panel{display:none;height:100%;min-height:0;overflow:hidden}.tab-panel.active{display:block}
@@ -44,7 +44,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .results-layout{height:100%;display:grid;grid-template-columns:clamp(320px,24vw,390px) minmax(0,1fr);gap:14px;min-height:0}
 .method-pane,.detail-pane{min-height:0;overflow:hidden}.method-pane{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:10px;padding:12px;border:1px solid #253444;border-radius:18px;background:radial-gradient(circle at 80% 0%,rgba(99,169,255,.11),transparent 32%),linear-gradient(180deg,#0d151f,#0a1017);box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 14px 40px rgba(0,0,0,.18)}
 .dock-title{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}.dock-title b{font-size:15px}.dock-title span{font-size:10px;color:var(--muted)}
-.category-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.category-tabs button{font-size:12px;padding:9px 5px;border-radius:12px}
+.category-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.category-tabs button{font-size:12px;padding:9px 5px;border-radius:12px}
 .method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(68px,auto);gap:8px;min-height:0;overflow:auto;padding-inline-end:2px;align-content:start}.method-btn{text-align:right;padding:9px 10px;min-width:0;border-radius:13px;background:#0b121a}.method-btn:hover{background:#101b27}.method-btn .mn{font-size:11px;line-height:1.25;white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.method-btn .mv{font-size:24px;font-weight:900;direction:ltr;color:var(--blue);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.method-btn.active{box-shadow:0 0 0 1px rgba(216,173,85,.28),0 0 22px rgba(216,173,85,.08)}.method-btn.active .mv{color:#ffe2a0}.method-delta{margin-top:4px;font-size:9px;line-height:1.2;color:var(--muted);white-space:normal}.method-delta.ok{color:#b9f4c8}.method-delta.no{color:#ffc1bd}
 .mobile-method{display:none;width:100%;height:42px;padding:6px}
 .detail-pane{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:8px}.detail-head{display:flex;align-items:flex-start;gap:10px;justify-content:space-between}.detail-title{min-width:0}.detail-title .biglabel{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-title .tiny{margin-top:3px}.detail-actions{display:flex;gap:5px}
@@ -149,16 +149,16 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .toast{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:#131c26;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
 @media(max-width:820px){
   :root{--top:0px;--tabs:46px}
-  .topbar{min-height:0;grid-template-columns:1fr;grid-template-rows:auto auto;padding:7px 8px 6px;gap:6px}
-  .brand{display:none}.querybox{grid-column:1;grid-row:1;width:100%}.top-actions{grid-column:1;grid-row:2;justify-content:center;flex-wrap:wrap}.queryside{min-width:100px}
-  .main-tabs{grid-template-columns:repeat(3,1fr);height:auto;min-height:var(--tabs);padding:4px 6px;gap:4px}
-  .main-tabs button{font-size:11px;padding:5px 3px}
+  .topbar{min-height:0;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;padding:6px 7px;gap:5px}
+  .brand{display:none}.querybox{grid-column:1;grid-row:1;width:100%}.top-actions{grid-column:1;grid-row:2;width:100%;min-width:0;justify-content:space-between;flex-wrap:nowrap;gap:3px}.top-actions .iconbtn{flex:0 1 38px;min-width:0}.queryside{min-width:100px}
+  .main-tabs{grid-template-columns:repeat(6,minmax(0,1fr));height:var(--tabs);min-height:var(--tabs);padding:4px 5px;gap:3px}
+  .main-tabs button{font-size:clamp(9px,2.45vw,11px);padding:5px 1px;min-width:0}
   .workspace{padding:6px}.results-layout{grid-template-columns:1fr;grid-template-rows:auto auto}
   .method-pane{display:grid}.category-tabs,.method-grid{display:grid}.mobile-method{display:none}
   .detail-body{grid-template-columns:1fr 1fr}.relations-layout{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr;grid-template-rows:auto}.relation-summary .box:last-child{display:none}.compare-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}.compare-head #swapCompare{display:none}.compare-head #autoCompare{display:block}.repeat-controls{grid-template-columns:minmax(0,1fr) 74px 54px;gap:6px}.repeat-controls input{display:none}.repeat-controls #repeatMethod{grid-column:1/3}.repeat-controls #repeatMax{grid-column:3}.repeat-controls #repeatMatrixToggle{grid-column:1}.repeat-controls #repeatMatrixDouble{grid-column:2}.repeat-controls #saveRepeatMatrix{grid-column:3}.repeat-grid.matrix-mode{max-width:100%;overflow:auto}.repeat-matrix th,.repeat-matrix td{width:74px;min-width:74px;height:44px;padding:5px 6px}.repeat-matrix .repeat-matrix-corner,.repeat-matrix .repeat-matrix-method{width:126px;min-width:126px;max-width:126px;padding-inline:7px;font-size:10px}.repeat-matrix-cell b{font-size:12px}.repeat-matrix-cell span{max-width:68px;font-size:8px}.forms-grid{grid-template-columns:1fr 1fr}.form-card:last-child{grid-column:1/-1}.kvgrid,.analysis-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bigvalue{font-size:34px}
 }
 @media(max-width:480px){
-  :root{--top:118px}.topbar{grid-template-columns:1fr auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto auto auto}.queryside{display:none}.query-quick{width:36px;height:58px}.query-mult{height:58px;grid-template-columns:24px 36px 24px}.query-mult button{font-size:18px}#queryMultValue{font-size:12px}#q{height:58px;font-size:16px}.iconbtn{width:38px;height:38px}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
+  :root{--top:0px}.topbar{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}.querybox{grid-template-columns:minmax(0,1fr) auto auto auto auto;gap:4px}.queryside{display:none}.query-quick{width:32px;height:48px;font-size:15px}.query-mult{height:48px;grid-template-columns:22px 32px 22px}.query-mult button{font-size:16px}#queryMultValue{font-size:11px}#q{height:48px;font-size:15px}.top-actions .iconbtn{width:38px;height:36px}.category-tabs button{font-size:11px;padding:8px 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detail-body{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.forms-grid{grid-template-columns:1fr}.form-tabs{display:grid}.forms-grid .form-card{display:none}.forms-grid .form-card.active{display:block}.repeat-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(4,1fr)}.compare-row{grid-template-columns:minmax(0,1.3fr) .55fr .55fr}.compare-row .delta{display:none}.subtabs{grid-template-columns:repeat(2,1fr)}.relations-layout{grid-template-rows:auto minmax(0,1fr)}.relation-summary{grid-template-columns:1fr 1fr}.relation-summary .box:nth-child(3){display:none}}
 @media(min-width:1400px){.workspace{padding:14px}.topbar{padding:12px 18px}.main-tabs{padding-inline:14px}.panel{padding:12px}.detail-pane.multi-mode{padding:18px}.multi-detail-grid{gap:16px}.multi-detail-card{min-height:330px}.letter-chip{min-width:70px}}
 
 /* Mobile relations: grow naturally with content instead of squeezing 6 rows into the viewport */
@@ -316,7 +316,6 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <button id="rabbatiBtn" class="query-quick rabbati-btn" title="רבתי · הכפל את האות שלפני הסמן ב־1000" aria-label="רבתי פי אלף"><span class="ancient-aleph">𐤀</span></button>
       <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><button id="queryMultValue" aria-label="הפעל מכפיל">×1</button><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
-      <button id="runDeepScan" class="query-quick" title="הרץ בדיקה מלאה בלחיצה בלבד">סריקה ▶</button>
       <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
@@ -344,7 +343,6 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <button data-tab="compare" data-i18n="tab_compare">השוואה</button>
     <button data-tab="repeat" data-i18n="tab_repeat">חזרות</button>
     <button data-tab="forms" data-i18n="tab_forms">מילוי / גבול</button>
-    <a href="prime-research.html" class="prime-nav-link" title="Prime Clock · מחקר ראשוניים">◉ מחקר ראשוניים</a>
   </nav>
 
   <main class="workspace">
@@ -829,7 +827,7 @@ function methodUiName(m){
  if(METHOD_EN_NAMES[m.key])return METHOD_EN_NAMES[m.key];
  return m.name||'';
 }
-function categoryUiName(c){return calcLang()==='en'?({base:'Base',cipher:'Ciphers / Extensions',ops:'Operators',power:'HomePower'}[c]||c):(CAT_LABELS[c]||c)}
+function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()==='en'?({base:'Base',cipher:small?'Ciphers':'Ciphers / Extensions',ops:'Operators',power:'HomePower'}[c]||c):(c==='cipher'&&small?'תמורות':CAT_LABELS[c]||c)}
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
@@ -2179,7 +2177,7 @@ async function saveSelectedPoster(){
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
 let lightCalcTimer;
  document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>renderAll(false),220)});
- document.getElementById('runDeepScan').addEventListener('click',()=>{clearTimeout(lightCalcTimer);renderAll();toast('סריקה מלאה הושלמה')});
+ 
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){clearMatrixComparisonSelections();document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
 document.getElementById('repeatPhrase').addEventListener('input',()=>{clearMatrixComparisonSelections();renderRepeat();renderResults()});
 document.getElementById('rabbatiBtn').addEventListener('click',insertRabbatiMark);
