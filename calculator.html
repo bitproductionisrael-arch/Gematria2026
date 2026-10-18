@@ -754,7 +754,7 @@ const METHODS={
   {key:'agrippaWordReduced',cat:'cipher',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
  ]
 };
-for(const [script,order] of Object.entries({he:HE_ORDER,en:EN_ORDER,el:GR_ORDER,ru:RU_ORDER}))METHODS[script].push(...homePowerMethods(order));
+for(const [script,order] of Object.entries({he:HE_ORDER,en:EN_ORDER,el:GR_MODERN_ORDER,ru:RU_ORDER}))METHODS[script].push(...homePowerMethods(order));
 const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים',power:'כוח בית'};
 const METHOD_EN_NAMES={
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
