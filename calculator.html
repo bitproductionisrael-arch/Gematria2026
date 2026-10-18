@@ -962,6 +962,31 @@ function calculateLetterDivision(text,script,m){
  const num=numerator/g,den=denominator/g;
  return {method:m,total:Number(num)/Number(den),words,letterDivision:true,exactFraction:den===1n?num.toString():num.toString()+'/'+den.toString()};
 }
+
+/* Rational division display; integer remainders avoid floating-point rounding. */
+function divisionDecimal(frac,maxDigits=90){
+ if(!frac)return null;
+ const parts=frac.split('/');let n=BigInt(parts[0]),d=BigInt(parts[1]||'1');
+ if(d===0n)return 'undefined';
+ const neg=(n<0n)!==(d<0n);
+ if(n<0n)n=-n;if(d<0n)d=-d;
+ const whole=n/d;let rem=n%d;
+ if(!rem)return (neg?'-':'')+whole.toString();
+ const seen=new Map();let digits='',repeat=-1;
+ while(rem&&digits.length<maxDigits){
+  const key=rem.toString();
+  if(seen.has(key)){repeat=seen.get(key);break}
+  seen.set(key,digits.length);
+  rem*=10n;digits+=(rem/d).toString();rem%=d;
+ }
+ const fractional=repeat>=0?digits.slice(0,repeat)+'('+digits.slice(repeat)+')':digits+(rem?'…':'');
+ return (neg?'-':'')+whole.toString()+'.'+fractional;
+}
+function resultExactDisplay(r){
+ if(r&&r.letterDivision&&r.exactFraction)return divisionDecimal(r.exactFraction);
+ return fmt(r.total);
+}
+
 function bigIntGcd(a,b){
  a=a<0n?-a:a;b=b<0n?-b:b;
  while(b!==0n){const r=a%b;a=b;b=r}
