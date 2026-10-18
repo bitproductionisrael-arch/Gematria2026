@@ -316,6 +316,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <textarea id="q" spellcheck="false" dir="auto">עמית מייק רוב</textarea>
       <button id="rabbatiBtn" class="query-quick rabbati-btn" title="רבתי · הכפל את האות שלפני הסמן ב־1000" aria-label="רבתי פי אלף"><span class="ancient-aleph">𐤀</span></button>
       <div class="query-mult" title="הכפל את ערך הביטוי"><button id="queryMultMinus" aria-label="הפחת מכפיל">−</button><button id="queryMultValue" aria-label="הפעל מכפיל">×1</button><button id="queryMultPlus" aria-label="הוסף מכפיל">＋</button></div>
+      <button id="runDeepScan" class="query-quick" title="הרץ בדיקה מלאה בלחיצה בלבד">סריקה ▶</button>
       <button id="saveQuery" class="query-quick" title="שמור בהתאמות בלי להכניס לקורפוס">💾</button>
       <button id="openSaved" class="query-quick" title="פתח התאמות וקורפוסים">📚</button>
       <div class="queryside">
@@ -628,6 +629,12 @@ function tokensForWord(word,script,map){
 }
 function letterCount(text,script,map){return wordsOf(text).flatMap(w=>tokensForWord(w,script,map)).length}
 
+
+/* HomePower alphabet family: decimal digits after the point, zero-based not excluded. */
+const HOMEPOWER_CONSTANTS=[["pi","π / Pi","1415926535897932384626433832795028841971693993751058209"],["e","e / Euler","7182818284590452353602874713526624977572470936999595749"],["phi","φ / Golden Ratio","6180339887498948482045868343656381177203091798057628621"],["root2","√2","4142135623730950488016887242096980785696718753769480731"],["root3","√3","7320508075688772935274463415058723669428052538103806280"],["root5","√5","2360679774997896964091736687312762354406183596115257242"],["golden9","זווית הזהב במעגל 9 / Golden 9","4376941012509463661587184907092569405172173817481342407"],["root37","√37","0827625302982196889996842452020670620849700947864111864"],["root73","√73","5440037453175311678716483262397064345944553295332822419"],["root888","√888","7993288515026794386636320922479022804690433243624946761"],["inv2701","1 / 2701 · 24","000370233246945575712699000370233246945575712699000370233246945575712699"],["inv37","1 / 37 · 3","027027027027027027027027027027027027027027027027027027027027"],["inv73","1 / 73 · 8","0136986301369863013698630136986301369863013698630136986301369863"]];
+function homePowerMap(order,digits){const out={};Array.from(order).forEach((c,i)=>{out[c]=Number(digits[i]);if(c.toUpperCase()!==c)out[c.toUpperCase()]=Number(digits[i])});return out}
+function homePowerMethods(order){return HOMEPOWER_CONSTANTS.map(([key,name,digits])=>({key:'homePower_'+key,cat:'power',name:'אלפבית כוח בית · '+name,map:homePowerMap(order,digits),research:true,constantDigits:digits}))}
+
 /* ---------- methods ---------- */
 const METHODS={
  he:[
@@ -654,7 +661,7 @@ const METHODS={
    {key:'letterDivisionRegular',cat:'ops',name:'חילוק אותיות (רגיל) / Letter Division (Regular)',map:HE_VAL,letterDivision:true,research:true},
    {key:'letterDivisionOrdinal',cat:'ops',name:'חילוק אותיות (סדרי) / Letter Division (Ordinal)',map:HE_ORD,letterDivision:true,research:true},
    {key:'letterDivisionSmall',cat:'ops',name:'חילוק אותיות (קטן) / Letter Division (Small)',map:HE_KATAN,letterDivision:true,research:true},
-   {key:'piAlphabetHebrew',cat:'ops',name:'אלפבית (π) פי',map:HE_PI,research:true},
+ 
   {key:'achorayim',cat:'ops',name:'מספר האחור · תוספת / Achorayim',map:HE_VAL,transform:cumulative,transformName:'prefix sums'},
   {key:'positional',cat:'ops',name:'גימטריה מיקום · מגרעת / Positional',map:HE_VAL,transform:positional,transformName:'position × value'},
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
@@ -733,7 +740,7 @@ const METHODS={
   {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
   {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
   {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
-  {key:'piAlphabet',cat:'ops',name:'Pi π Alphabet / אלף־בית של פאי',map:EN_PI,research:true},
+
   {key:'building',cat:'ops',name:'English Building / Achorayim (Simple)',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},
   {key:'achorayimRegular',cat:'ops',name:'English Achorayim / Building (Regular)',map:EN_REG,transform:cumulative,transformName:'prefix sums'},
   {key:'buildingSumerian',cat:'ops',name:'English Building Gematria',map:EN_SUM,transform:cumulative,transformName:'prefix sums'},
@@ -747,7 +754,8 @@ const METHODS={
   {key:'agrippaWordReduced',cat:'cipher',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
  ]
 };
-const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים'};
+for(const [script,order] of Object.entries({he:HE_ORDER,en:EN_ORDER,el:GR_ORDER,ru:RU_ORDER}))METHODS[script].push(...homePowerMethods(order));
+const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים',power:'כוח בית'};
 const METHOD_EN_NAMES={
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
@@ -821,7 +829,7 @@ function methodUiName(m){
  if(METHOD_EN_NAMES[m.key])return METHOD_EN_NAMES[m.key];
  return m.name||'';
 }
-function categoryUiName(c){return calcLang()==='en'?({base:'Base',cipher:'Ciphers / Extensions',ops:'Operators'}[c]||c):(CAT_LABELS[c]||c)}
+function categoryUiName(c){return calcLang()==='en'?({base:'Base',cipher:'Ciphers / Extensions',ops:'Operators',power:'HomePower'}[c]||c):(CAT_LABELS[c]||c)}
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
@@ -1958,7 +1966,7 @@ function renderForms(){const text=document.getElementById('q').value,script=dete
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
  }else{document.getElementById('miluiValue').textContent='—';document.getElementById('milui2Value').textContent='—';document.getElementById('miluiMayimValue').textContent='—';document.getElementById('miluiText').textContent='מילוי פעיל בעברית';document.getElementById('miluiMeta').innerHTML='';document.getElementById('yhvhMilui').textContent='';document.getElementById('boundaryTitle').textContent='אפקט גבול זמין בכל שפה';document.getElementById('boundaryDiffs').innerHTML=diffRows(text,boundaryless(text));document.getElementById('finalTitle').textContent='אותיות סופיות רלוונטיות לעברית';document.getElementById('finalDiffs').innerHTML=''} }
 
-function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',ru:'Russian',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',ru:'רוסית · Russian',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}
+function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',ru:'Russian',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',ru:'רוסית · Russian',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();if(arguments[0]!==false){renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}}
 
 /* ---------- report / export ---------- */
 function buildReport(text,data){const out=[text,''];for(const r of data.results){out.push(`${r.method.name} = ${r.total}`);const a=analyzeNumber(r.total);if(a){out.push(`φ=${a.phi} | τ=${a.tau} | σ=${a.sigma} | λ=${a.lambda} | rad=${a.rad}`);out.push(`${a.prime?'Prime #'+a.primeIndex:'Composite #'+(a.compositeIndex??'—')} | factors: ${fmtFactors(a.factors)}`);if(a.forms.length||a.binom.length)out.push(`Forms: ${a.forms.concat(a.binom).join(' | ')}`);const h=corpusHits(r.total);if(h.length)out.push(`Corpus: ${h.map(x=>x.label+' ['+x.method+']').join(' | ')}`)}out.push('')}return out.join('\n')}
@@ -2144,7 +2152,9 @@ async function saveSelectedPoster(){
 
 /* ---------- events ---------- */
 document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
-document.getElementById('q').addEventListener('input',()=>{clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;renderAll()});
+let lightCalcTimer;
+ document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>renderAll(false),220)});
+ document.getElementById('runDeepScan').addEventListener('click',()=>{clearTimeout(lightCalcTimer);renderAll();toast('סריקה מלאה הושלמה')});
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){clearMatrixComparisonSelections();document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
 document.getElementById('repeatPhrase').addEventListener('input',()=>{clearMatrixComparisonSelections();renderRepeat();renderResults()});
 document.getElementById('rabbatiBtn').addEventListener('click',insertRabbatiMark);
@@ -2354,7 +2364,7 @@ try{
  }
 }catch(err){console.warn('Text Geometry return unavailable:',err)}
 
-loadSavedItems();loadCorpusOverrides();applyCorpusOverrides();renderAll();syncSharedCorpus();
+loadSavedItems();loadCorpusOverrides();applyCorpusOverrides();renderAll(false);syncSharedCorpus();
 if(location.hash==='#methods')setTimeout(()=>openMethodBook(),0);
 </script>
 
