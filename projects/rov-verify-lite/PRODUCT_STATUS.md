@@ -35,3 +35,12 @@ This subproject is hosted in `Gematria2026/projects/rov-verify-lite/` and does n
 No file upload or user tracking service, no sales or subscriptions, no validated physical manufacturing claims, no automatic scheduled work, no primes/records competition claims in this industrial product.
 
 Contact: blaze@djblaze.co.il.
+
+## Unlisted live preview — 2026-10-27
+
+- The separate GitHub Pages preview route was verified publicly reachable over HTTPS.
+- The preview includes `robots: noindex,nofollow,noarchive,nosnippet,noimageindex` (verified from the live response).
+- Its URL is intentionally omitted from public project documentation; it is not linked from the existing Gematria2026 home page.
+- Anyone who knows the direct URL can load it, without a sign-in. This is **not true access control**: the source repository is public, and search engines may not universally honor noindex.
+- HTML app processes STL input locally in the browser; feedback uses the visitor's email client. No shared backend data collection exists.
+- Remote GitHub Pages rendering checked; local Chromium checks verified identical and modified cubes and JSON download.
