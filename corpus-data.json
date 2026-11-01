@@ -2790,6 +2790,12 @@
     },
     {
       "value": 136,
+      "label": "מטריצה עברית · 1600−576−888=136",
+      "method": "מטריצה רגילה: Mx=1600,My=576; Mx−My=1024, 1024−888=136",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 136,
       "label": "מטריצת שם עברי · אבג״ד זוגי",
       "method": "59+52+25=136; סכום U של עמית מייק רוב לאחר חילוף זוגות סדרי",
       "classification": "FOUNDATION"
@@ -4959,12 +4965,6 @@
       "label": "חלל → משוואת השם",
       "method": "Ordinal(חלל)² − Equivalence(חלל) = 32²−136 = 1024−136 =888 = עמית מייק רוב Hebrew Regular",
       "classification": "FOUNDATION"
-    },
-    {
-      "value": 888,
-      "label": "מומנטים עבריים · 1600−576−888",
-      "method": "מטריצה רגילה: Mx=1600,My=576; Mx−My=1024, 1024−888=136",
-      "classification": "BRIDGE"
     },
     {
       "value": 888,
