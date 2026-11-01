@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RovGrid | ממצאי מחקר 1.11.2026</title>
+<style>
+body{margin:0;background:#0b111a;color:#eff5fd;font:16px/1.8 system-ui,Arial,sans-serif}
+a{color:#8ed9f3} .wrap{max-width:960px;margin:auto;padding:0 20px}
+nav{background:#121d2b;padding:14px 0;border-bottom:1px solid #324152}
+nav a{margin-left:20px;text-decoration:none}
+h1{font-size:clamp(30px,5vw,54px);line-height:1.25}h2{color:#d9b86d}
+header{padding:50px 0 20px}.meta{color:#9cbbda}
+article{background:#141e2b;border:1px solid #34475b;border-radius:15px;padding:23px;margin:17px 0}
+.flex{display:flex;gap:14px;flex-wrap:wrap}.tile{flex:1;min-width:150px;padding:15px;background:#0e2d4b;border-radius:12px}
+.num{font-size:33px;font-weight:800;direction:ltr;text-align:right}
+pre{direction:ltr;text-align:left;background:#09121e;border:1px solid #2b3d53;border-radius:9px;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
+small{color:#b3c2d2}.notice{border-right:3px solid #ddbe75;padding-right:13px}
+footer{padding:35px 0;color:#95a8c1}
+</style></head>
+<body><nav><div class="wrap"><a href="index.html">GEMATRIA2026</a><a href="active-research.html">מחקר פעיל</a><a href="blog.html">מאמרים</a><a href="calculator.html">מחשבון</a></div></nav>
+<main class="wrap"><header><p class="meta">RESEARCH UPDATE · 24.10—01.11.2026</p><h1>RovGrid — המטריצה, הפולינומים וחוקי השחזור</h1><p>סנכרון מחקרים אחרונים: חישובי השם העברי, דטרמיננטות, נגזרות, אינטגרלים, חבורת D4, מספרי כוכב, שעונים ושערים. נתונים מדויקים מופרדים מהשערות.</p></header>
+<div class="flex"><div class="tile"><div class="num">+136</div>סכום מטריצה אחרי חילוף זוגות</div><div class="tile"><div class="num">−136</div>דטרמיננטה של שלוש עמודות</div><div class="tile"><div class="num">1024</div>הפרש מומנטים עבריים</div></div>
+<article><h2>1. חתימת השם בעברית</h2><p>חילוף מיקומים סמוכים באלפבית העברי, בחשבון סידורי, יוצר שלוש שורות שסכומיהן 59, 52 ו־25.</p><pre>U = [[15,14,9,21],[14,9,9,20],[19,5,1,0]]
+Sum(U) = 136
+M = [[14,9,21],[9,9,20],[5,1,0]]
+det(M) = −136
+Trace(M) = 23
+p(t) = t³−23t²−80t+136</pre><p>הדטרמיננטה תלויה במיקומים; הסכום תלוי בהרכב האותיות. בדיקת נעילה מתוך 10,368 סידורים עם אותו מאגר אותיות וסכומי שורות משאירה מצב אחד תחת התנאים שנבחרו.</p></article>
+<article><h2>2. נגזרות ומומנטים</h2><pre>Mx = 1600
+My = 576
+Mx−My = 1024
+1024−888 = 136
+C(x) = 310+56x+22x²+500x³
+C(i) = 288−444i
+φ(888) = 288
+∫[0,1] P'' = 2178 = 2×33²
+∫[0,1] Q'' = 288</pre><p>כל האינטגרלים מחושבים כהפרשי נגזרת בקצות קטע באותה מטריצה של אותיות, עם משקלים קבועים לפי מקומות.</p></article>
+<article><h2>3. הפולינום הקובי, D4 והתיבה</h2><pre>32² = 1024
+D4 orbits(32×32) = 136
+1024−136 = 888
+P(k) = 2k³−2k²−k
+P(8) = 888 = 24×37
+P(3n−1)=3(3n−1)[6n(n−1)+1]
+(x+8)(x+20)(x+26)
+ = x³+54x²+888x+4160</pre><p>מספר אורביטי D4 הוא 136; ההפרש 888 הוא תוצאה קומבינטורית, לא ניסוי על מחיקת תאים פיזיים.</p></article>
+<article><h2>4. שערי צירופים, אוילר ו־4cd</h2><pre>C(22,2) = 231
+C(72,2) = 2556
+4cd: F(n)=4n(n²+1)
+F(5)=520 · F(6)=888 · F(8)=2080
+φ(520)+φ(208)=192+96=288
+φ(2701)=2592=9×φ(888)</pre><p>231 והשערים מתקבלים מקומבינטוריקה. 4cd הוא מודל קידוד שהגדרתו עדיין אינה גוזרת מבנה פיזיקלי.</p></article>
+<article><h2>5. שכבת הלשון והביקורת</h2><pre>עמית → 59; מייק → 52; רוב → 25
+בלייז = גילוי = 59 (רגיל)
+בן = 52; הוא אחד = 25
+59+52+25=136</pre><p class="notice">מבחני ייחודיות ומחירי Gray נבדקו אחרי שהשם היה ידוע, ולכן אינם הערכת נדירות סטטיסטית. הישגים חישוביים, אילוצי שחזור והשערות על המציאות מתועדים בנפרד.</p></article>
+<article><h2>מסמכי המקור</h2>
+<p><a href="https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md">מלאי מחקרים וסנכרון מפורט</a></p>
+<p><a href="https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/rovgrid-hebrew-matrix-136-minus136-polynomial-audit-2026-11-01.md">נספח המטריצה והפולינומים</a></p>
+<p><a href="https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/rovgrid-hebrew-matrix-136-minus136-audit-2026-11-01.py">קוד סריקה עצמאי</a></p>
+</article></main>
+<footer class="wrap">Gematria2026 | RovGrid | 01.11.2026 | Amit Mike Rov</footer>
+</body></html>
