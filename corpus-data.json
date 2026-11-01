@@ -3564,9 +3564,9 @@
     },
     {
       "value": 306,
-      "label": "קומפוזיציית מייק · דרגה 2.5 רגילה / מם יוד יוד קוף",
-      "method": "Standard Milui · 17×18 · phi=96",
-      "classification": "FOUNDATION"
+      "label": "קומפוזיציית מייק · מילוי ארכיוני / מם יוד יוד קוף",
+      "method": "Legacy Milui (עד 2026-11-01) · 17×18 · phi=96",
+      "classification": "ARCHIVE"
     },
     {
       "value": 311,
@@ -3612,9 +3612,9 @@
     },
     {
       "value": 316,
-      "label": "קומפוזיציית מייק · דרגה מלאה מים / מים יוד יוד קוף",
-      "method": "Milui Mayim expansion · 306+10 · 288+28",
-      "classification": "FOUNDATION"
+      "label": "מילוי מייק · מים יוד יוד קוף",
+      "method": "Distinguished Standard Milui (current) / Milui Mayim · legacy 306+10",
+      "classification": "canonical"
     },
     {
       "value": 317,
@@ -4308,20 +4308,20 @@
     },
     {
       "value": 636,
-      "label": "מילוי עמית",
-      "method": "Standard Milui",
-      "classification": "canonical"
+      "label": "מילוי עמית · ערך ארכיוני",
+      "method": "Legacy Milui (עד 2026-11-01)",
+      "classification": "ARCHIVE"
     },
     {
       "value": 636,
       "label": "קומפוזיציה עמית / עין מם יוד תו",
-      "method": "Standard Milui · φ=208",
-      "classification": "FOUNDATION"
+      "method": "Legacy Milui · φ=208",
+      "classification": "ARCHIVE"
     },
     {
       "value": 636,
       "label": "π: P₂(20)=636",
-      "method": "Power-of-Bet · exact raw hit; n=20 = י״י Regular / ×5 Father Word Reduced; 636 = מילוי עמית",
+      "method": "Power-of-Bet · exact raw hit; n=20 = י״י Regular / ×5 Father Word Reduced; 636 = מילוי עמית הארכיוני",
       "classification": "BRIDGE"
     },
     {
@@ -4346,6 +4346,12 @@
       "value": 640,
       "label": "Beta",
       "method": "English Running & Returning",
+      "classification": "canonical"
+    },
+    {
+      "value": 646,
+      "label": "מילוי עמית · עין מים יוד תו",
+      "method": "Distinguished Standard Milui (current) · φ=288",
       "classification": "canonical"
     },
     {
@@ -5016,15 +5022,21 @@
     },
     {
       "value": 935,
-      "label": "מילוי רוב",
-      "method": "Standard Milui",
-      "classification": "canonical"
+      "label": "מילוי רוב · ערך ארכיוני",
+      "method": "Legacy Milui (עד 2026-11-01)",
+      "classification": "ARCHIVE"
     },
     {
       "value": 935,
       "label": "קומפוזיציית רוב · 2.5 ביטים / ריש ואו בית",
-      "method": "Hebrew Regular · מילוי רוב",
-      "classification": "FOUNDATION"
+      "method": "Hebrew Regular · Legacy Milui",
+      "classification": "ARCHIVE"
+    },
+    {
+      "value": 944,
+      "label": "מילוי רוב · ריש ויו בית",
+      "method": "Distinguished Standard Milui (current)",
+      "classification": "canonical"
     },
     {
       "value": 944,
@@ -6354,15 +6366,21 @@
     },
     {
       "value": 5467,
-      "label": "בראשית א:א · מילוי רגיל",
-      "method": "Standard Milui · 71×77 = 74²−3²",
-      "classification": "RESEARCH"
+      "label": "בראשית א:א · מילוי ארכיוני",
+      "method": "Legacy Milui · 71×77 = 74²−3²",
+      "classification": "ARCHIVE"
     },
     {
       "value": 5476,
       "label": "בראשית א:א · מילוי תלמודי",
       "method": "Talmudic Milui · 74² = 4×37²",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 5486,
+      "label": "בראשית א:א · מילוי רגיל מעודכן",
+      "method": "Distinguished Standard Milui (current) · ויו, מים/מם",
+      "classification": "canonical"
     },
     {
       "value": 5968,
