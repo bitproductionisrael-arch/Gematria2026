@@ -403,7 +403,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <section id="tab-forms" class="tab-panel"><div class="panel forms-layout">
       <div class="sectionbar"><div class="grow"><b data-i18n="transformations">טרנספורמציות של הביטוי</b><div class="tiny" data-i18n="transformations_sub">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui" data-i18n="form_milui">מילוי</button><button data-form="boundary" data-i18n="form_boundary">גבול</button><button data-form="finals" data-i18n="form_finals">סופיות</button></div></div></div>
       <div class="forms-grid">
-        <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל / Standard</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
+        <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל · ו→ויו, מ→מים, ם→מם</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
         <div class="form-card" data-formcard="boundary"><h3 data-i18n="boundary_title">אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
         <div class="form-card" data-formcard="finals"><h3 data-i18n="finals_title">סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
@@ -509,12 +509,15 @@ for(const [f,b] of Object.entries(FINAL_TO_BASE)){
 const AYAK_CHAMBERS=[];for(let d=0;d<9;d++)AYAK_CHAMBERS.push([HE_ORDER[d],HE_ORDER[d+9],d<4?HE_ORDER[d+18]:FINAL_ORDER[d-4]]);
 const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={},HE_AYAK_TIER={},HE_AYAK_DIGIT={};AYAK_CHAMBERS.forEach((triad,d)=>{const nm=triad[0]+triad[1]+'״'+triad[2];triad.forEach((L,j)=>{const mate=triad[(j+1)%3];HE_AYAK_LETTER[L]=mate;HE_AYAK[L]=HE_SOFIT[mate];HE_CHAMBER[L]=nm;HE_AYAK_TIER[L]=j;HE_AYAK_DIGIT[L]=d+1})});
 
-const MILUI_NAMES={
+// Archive the previous profile so published 2026-10 results remain reproducible.
+const MILUI_NAMES_LEGACY={
   'א':'אלף','ב':'בית','ג':'גימל','ד':'דלת','ה':'הא','ו':'ואו','ז':'זין','ח':'חית','ט':'טית','י':'יוד','כ':'כף','ל':'למד','מ':'מם','נ':'נון','ס':'סמך','ע':'עין','פ':'פא','צ':'צדי','ק':'קוף','ר':'ריש','ש':'שין','ת':'תו'
 };
-const MILUI_NAMES_TALMUDIC={...MILUI_NAMES,'ו':'ויו'}; // מילוי תלמודי: ו→ויו; בראשית א:א = 5476 = 74².
-const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ו':'ויו','ת':'תיו'}; // מחקר: מ→מים, ו→ויו, ת→תיו; נשמר בנפרד מן המילוי הסטנדרטי.
-function miluiNameForLetter(ch,names=MILUI_NAMES){return names[FINAL_TO_BASE[ch]||ch]||''}
+// Current default: distinguish מ (מים) from final ם (מם), and spell ו as ויו.
+const MILUI_NAMES={...MILUI_NAMES_LEGACY,'ו':'ויו','מ':'מים','ם':'מם'};
+const MILUI_NAMES_TALMUDIC={...MILUI_NAMES_LEGACY,'ו':'ויו'}; // Historical talmudic profile remains reproducible.
+const MILUI_NAMES_MAYIM={...MILUI_NAMES,'ת':'תיו'}; // Research profile retains its distinct ת→תיו.
+function miluiNameForLetter(ch,names=MILUI_NAMES){return names[ch]||names[FINAL_TO_BASE[ch]||ch]||''}
 function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLetter(ch,names);for(let d=1;d<depth;d++)out=Array.from(out).map(c=>miluiNameForLetter(c,names)).join('');return out}
 
 
@@ -669,7 +672,8 @@ const METHODS={
   {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
   {key:'latinMiluiUserReduced',cat:'ops',name:'מילוי לטיני v0 → English Reduced / Research',custom:'latinMiluiUserReduced',research:true},
   {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
-  {key:'milui',cat:'ops',name:'מילוי רגיל / Standard Letter-name Milui',custom:'milui'},
+  {key:'milui',cat:'ops',name:'מילוי רגיל · ויו, מים/מם / Distinguished Letter-name Milui',custom:'milui'},
+   {key:'miluiLegacy',cat:'ops',name:'מילוי ארכיוני · ואו/מם (עד 2026-11-01) / Legacy Milui',custom:'miluiLegacy'},
   {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי / Talmudic Milui',custom:'miluiTalmudic'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true},
@@ -763,7 +767,7 @@ const METHOD_EN_NAMES={
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
- milui:'Standard Letter-name Milui',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
+ milui:'Distinguished Letter-name Milui (Vav=Viyu, Mem=Mayim, Final Mem=Mem)',miluiLegacy:'Legacy Milui (Vav=Vav)',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
@@ -831,7 +835,7 @@ function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()=
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
- const names=profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES);
+ const names=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES));
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
@@ -1000,7 +1004,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
  if(m.custom==='latinMiluiUserReduced')return calculateLatinMiluiUser(text,'reduced','latinMiluiUserReduced');
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
- if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
+ if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiLegacy')return calculateMilui(text,'legacy',1,'miluiLegacy');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
   const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
@@ -1283,7 +1287,7 @@ function harmony(results){const nodes=results.filter(r=>Number.isInteger(r.total
 /* ---------- transforms ---------- */
 function openFinals(t){return Array.from(t).map(c=>FINAL_TO_BASE[c]||c).join('')}
 function boundaryless(t){return t.replace(/\s+/g,'')}
-function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
+function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES));const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
 const FINAL_SENSITIVE_METHODS=new Set(['final','smallFinals']);
 function hasHebrewFinalLetters(text){return /[ךםןףץ]/.test(String(text||''))}
 function syncRelevantMethods(text,methods,otherText=''){
@@ -1543,6 +1547,7 @@ function compactMethodFont(name){
 function minimalMethodName(r){
  const k=r?.method?.key;
  if(k==='miluiMayim')return 'מילוי מים';
+  if(k==='miluiLegacy')return 'מילוי ארכיוני';
  if(k==='milui2')return 'מילוי דמילוי';
  if(k==='miluiTalmudic')return 'מילוי תלמודי';
  if(k==='milui')return 'מילוי רגיל';
@@ -2338,10 +2343,17 @@ console.assert(calculateLatinMiluiUser('עמית מייק רוב','reduced','lat
 console.assert(calculateLatinMiluiUser('עמית מייק רוב','regular','latinMiluiUserRegular').total===5343,'Latin Milui v0 Regular 5343');
 console.assert(T('Amit Mike Rov','en','agrippa')===1024,'Jewish Gematria 1024');
 console.assert(T('Amit Mike Rov','en','agrippaDeltaSimple')===888,'Jewish∆Simple 888');
-console.assert(calculateMilui('עמית').total===636,'Milui Amit 636');
-console.assert(calculateMilui('מייק').total===306,'Milui Mike 306');
-console.assert(calculateMilui('רוב').total===935,'Milui Rov 935');
-console.assert(calculateMilui('עמית','standard',2,'milui2').total===1302,'Milui of Milui Amit 1302');
+console.assert(calculateMilui('עמית').total===646,'Milui Amit 646 (distinguished)');
+console.assert(calculateMilui('מייק').total===316,'Milui Mike 316 (distinguished)');
+console.assert(calculateMilui('רוב').total===944,'Milui Rov 944 (distinguished)');
+console.assert(calculateMilui('עמית','standard',2,'milui2').total===1350,'Milui of Milui Amit 1350 (distinguished)');
+console.assert(calculateMilui('השמים האזינו').total===888,'Distinguished milui: השמים האזינו = 888');
+console.assert(calculateMilui('האזינו השמים').total===888,'Distinguished milui: האזינו השמים = 888');
+console.assert(calculateMilui('השמים האזינו','mayim',1,'miluiMayim').total===888,'Milui Mayim: השמים האזינו = 888');
+console.assert(calculateMilui('השמים האזינו','legacy',1,'miluiLegacy').total===869,'Legacy milui retains 869');
+console.assert(calculateMilui('עמית','legacy',1,'miluiLegacy').total===636,'Legacy Amit = 636');
+console.assert(calculateMilui('מייק','legacy',1,'miluiLegacy').total===306,'Legacy Mike = 306');
+console.assert(calculateMilui('רוב','legacy',1,'miluiLegacy').total===935,'Legacy Rov = 935');
 console.assert(calculateMilui('עמית','mayim',1,'miluiMayim').total===656,'Milui Mayim Amit 656');
 console.assert(calculateMilui('משה','mayim',1,'miluiMayim').total===456,'Milui Mayim Moshe 456');
 console.assert(compositeIndex(456)===368,'456 composite #368');
