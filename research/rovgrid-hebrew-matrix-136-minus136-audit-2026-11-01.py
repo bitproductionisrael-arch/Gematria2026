@@ -61,7 +61,6 @@ M=[r[1:] for r in U]
 assert [sum(r) for r in U]==[59,52,25]
 assert sum(map(sum,U))==136
 assert det3(M)==-136
-assert sum(M[0][i]*M[0][i] for i in ())==0 # no-op sanity
 assert sum(M[i][i] for i in range(3))==23
 # Characteristic polynomial: t^3 - tr t^2 + (sum principal 2x2 minors)t - det
 principal=sum(M[i][i]*M[j][j]-M[i][j]*M[j][i] for i in range(3) for j in range(i+1,3))
