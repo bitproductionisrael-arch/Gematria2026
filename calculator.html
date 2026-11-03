@@ -488,9 +488,9 @@ const HE_PI_DIGITS='1415926535897932384626';
 const HE_PI=Object.fromEntries(HE_ORDER.map((letter,i)=>[letter,Number(HE_PI_DIGITS[i])]));
 const FINAL_TO_BASE={'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
 const FINAL_ORDER=Array.from('ךםןףץ');
-const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_REV_ORD={},HE_KIDMI={},HE_PERATI={},HE_PERATI_ORD={};
-HE_ORDER.forEach((L,i)=>{HE_VAL[L]=tiered(i);HE_ORD[L]=i+1;HE_KATAN[L]=(i%9)+1;HE_REV_ORD[L]=22-i;HE_PERATI[L]=HE_VAL[L]**2;HE_PERATI_ORD[L]=HE_ORD[L]**2});
-Object.entries(FINAL_TO_BASE).forEach(([f,b])=>{for(const m of [HE_VAL,HE_ORD,HE_KATAN,HE_REV_ORD,HE_PERATI,HE_PERATI_ORD])m[f]=m[b]});
+const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_KIDMI={},HE_PERATI={},HE_PERATI_ORD={};
+HE_ORDER.forEach((L,i)=>{HE_VAL[L]=tiered(i);HE_ORD[L]=i+1;HE_KATAN[L]=(i%9)+1;HE_PERATI[L]=HE_VAL[L]**2;HE_PERATI_ORD[L]=HE_ORD[L]**2});
+Object.entries(FINAL_TO_BASE).forEach(([f,b])=>{for(const m of [HE_VAL,HE_ORD,HE_KATAN,HE_PERATI,HE_PERATI_ORD])m[f]=m[b]});
 Object.assign(HE_SOFIT,HE_VAL);FINAL_ORDER.forEach((L,i)=>HE_SOFIT[L]=tiered(22+i));
 Object.assign(HE_KATAN_SOFIT,HE_KATAN);FINAL_ORDER.forEach((L,i)=>HE_KATAN_SOFIT[L]=((22+i)%9)+1);
 let _kid=0;HE_ORDER.forEach(L=>{_kid+=HE_VAL[L];HE_KIDMI[L]=_kid});Object.entries(FINAL_TO_BASE).forEach(([f,b])=>HE_KIDMI[f]=HE_KIDMI[b]);
@@ -512,7 +512,6 @@ const MILUI_NAMES_LEGACY={
 };
 // Current default: distinguish מ (מים) from final ם (מם), and spell ו as ויו.
 const MILUI_NAMES={...MILUI_NAMES_LEGACY,'ו':'ויו'}; // Standard: מ/ם→מם. Alternative Mayim profile changes medial מ→מים.
-const MILUI_NAMES_TALMUDIC={...MILUI_NAMES}; // Explicit historical name, same letter mappings as current standard.
 const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ם':'מם','ת':'תיו'}; // Research profile retains its distinct ת→תיו.
 function miluiNameForLetter(ch,names=MILUI_NAMES){return names[ch]||names[FINAL_TO_BASE[ch]||ch]||''}
 function expandMiluiName(ch,names=MILUI_NAMES,depth=1){let out=miluiNameForLetter(ch,names);for(let d=1;d<depth;d++)out=Array.from(out).map(c=>miluiNameForLetter(c,names)).join('');return out}
@@ -559,7 +558,7 @@ for(const map of [GR_ATBASH_LETTER,GR_HALFSHIFT_LETTER,GR_AVGAD_LETTER]){
 function normalizeGreekChar(ch){const base=String(ch).normalize('NFD').replace(/[\u0300-\u036f]/g,'');return base.charAt(0)||ch}
 
 const EN_ORDER=Array.from('abcdefghijklmnopqrstuvwxyz');const makeEn=fn=>{const m={};EN_ORDER.forEach((L,i)=>{m[L]=fn(i);m[L.toUpperCase()]=m[L]});return m};
-const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REV=makeEn(i=>26-i),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
+const EN_ORD=makeEn(i=>i+1),EN_SUM=makeEn(i=>(i+1)*6),EN_REG=makeEn(tiered),EN_RED=makeEn(i=>(i%9)+1);
 // Pi alphabet: A-Z use the first 26 digits after the decimal point (exclude 3).
 const EN_PI_DIGITS='14159265358979323846264338';
 const EN_PI=makeEn(i=>Number(EN_PI_DIGITS[i]));
@@ -642,18 +641,17 @@ const METHODS={
   {key:'reduced',cat:'base',name:'גימטריה קטנה / Reduced',map:HE_KATAN,aliasNote:'≡ צמצום №2'},
   {key:'smallFinals',cat:'base',name:'גימטריה קטנה סופית / Small Finals',map:HE_KATAN_SOFIT},
   {key:'wordReduced',cat:'base',name:'גימטריה מצומצמת / Word Reduced',map:HE_KATAN,fold:'word'},
-  {key:'reverseOrdinal',cat:'base',name:'סדרי הפוך / Reverse Ordinal',map:HE_REV_ORD},
   {key:'zeroStep',cat:'base',name:'צמצום №1 / Reduction №1',map:HE_ZERO_STEP,research:true},
   {key:'atbash',cat:'cipher',name:'אתב״ש / Atbash',map:HE_ATBASH,sub:HE_ATBASH_LETTER},
-   {key:'atbashOrdinal',cat:'cipher',name:'אתב״ש סדרי / Atbash Ordinal',map:HE_ATBASH_ORD,sub:HE_ATBASH_LETTER,aliasNote:'≡ סדרי הפוך'},
+   {key:'atbashOrdinal',cat:'cipher',name:'אתב״ש סדרי / Atbash Ordinal',map:HE_ATBASH_ORD,sub:HE_ATBASH_LETTER,aliasNote:'אות מראה → ערך סדרי'},
   {key:'albam',cat:'cipher',name:'אלב״ם / ALBaM',map:HE_ALBAM,sub:HE_ALBAM_LETTER},
   {key:'avgad',cat:'cipher',name:'אבג״ד / AVGaD',map:HE_AVGAD,sub:HE_AVGAD_LETTER},
   {key:'ayak',cat:'cipher',name:'אי״ק בכ״ר / AIQ BKR',map:HE_AYAK,sub:HE_AYAK_LETTER,family:HE_CHAMBER},
-  {key:'kidmi',cat:'cipher',name:'מספר קדמי / Kidmi',map:HE_KIDMI},
-  {key:'peratiOrdinal',cat:'cipher',name:'פרטי סדרי / Hebrew Perati — Ordinal²',map:HE_PERATI_ORD,perati:true,research:true},
-  {key:'perati',cat:'cipher',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
-  {key:'kolel',cat:'cipher',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
-  {key:'musafi',cat:'cipher',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
+  {key:'kidmi',cat:'base',name:'מספר קדמי / Kidmi',map:HE_KIDMI},
+  {key:'peratiOrdinal',cat:'base',name:'פרטי סדרי / Hebrew Perati — Ordinal²',map:HE_PERATI_ORD,perati:true,research:true},
+  {key:'perati',cat:'base',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
+  {key:'kolel',cat:'base',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
+  {key:'musafi',cat:'base',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
   {key:'letterProductRegular',cat:'ops',name:'מכפלת אותיות (רגיל) / Letter Product (Regular)',map:HE_VAL,letterProduct:true,research:true},
    {key:'letterProductOrdinal',cat:'ops',name:'מכפלת אותיות (סדרי) / Letter Product (Ordinal)',map:HE_ORD,letterProduct:true,research:true},
    {key:'letterProductSmall',cat:'ops',name:'מכפלת אותיות (קטן) / Letter Product (Small)',map:HE_KATAN,letterProduct:true,research:true},
@@ -666,13 +664,12 @@ const METHODS={
   {key:'equivalence',cat:'ops',name:'שווי / Equivalence',map:HE_VAL,transform:balanced,transformName:'balanced weight'},
   {key:'ratzo',cat:'ops',name:'רצוא ושוב / Running and Returning',map:HE_VAL,transform:pyramid,transformName:'prefixes out + return',ratzo:true},
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
-  {key:'cycleBkr',cat:'ops',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
+  {key:'cycleBkr',cat:'cipher',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
   {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
   {key:'latinMiluiUserReduced',cat:'ops',name:'מילוי לטיני v0 → English Reduced / Research',custom:'latinMiluiUserReduced',research:true},
   {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
   {key:'milui',cat:'ops',name:'מילוי רגיל · ויו, מם / Standard Letter-name Milui',custom:'milui'},
    {key:'miluiLegacy',cat:'ops',name:'מילוי ארכיוני · ואו/מם (עד 2026-11-01) / Legacy Milui',custom:'miluiLegacy'},
-  {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי / Talmudic Milui',custom:'miluiTalmudic'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true},
   {key:'redLadder',cat:'ops',name:'סולם צמצום · Reduction Ladder / Research',custom:'redLadder',map:HE_VAL,research:true},
@@ -685,17 +682,17 @@ const METHODS={
   {key:'ordinalAncient27',cat:'base',name:'Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות',map:GR_ORD_ANCIENT,research:true},
   {key:'ordinal',cat:'base',name:'Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות',map:GR_ORD},
   {key:'ordinalReduced',cat:'base',name:'Greek Ordinal Reduced',map:GR_ORD_RED,research:true},
-  {key:'reverseOrdinal',cat:'base',name:'Greek Reverse Ordinal',map:GR_REV_ORD,research:true},
+  {key:'reverseOrdinal',cat:'cipher',name:'Greek Atbash Ordinal',map:GR_REV_ORD,sub:GR_ATBASH_LETTER,research:true},
   {key:'zeroStep',cat:'base',name:'Greek Reduction №1 / One-step Zero',map:GR_ZERO_STEP,research:true},
 
   {key:'atbash',cat:'cipher',name:'Greek Atbash analogue / Alphabet Mirror → Isopsephy',map:GR_ATBASH,sub:GR_ATBASH_LETTER,research:true},
   {key:'halfShift',cat:'cipher',name:'Greek 12+12 Half-shift / ALBaM analogue → Isopsephy',map:GR_HALFSHIFT,sub:GR_HALFSHIFT_LETTER,research:true},
   {key:'avgad',cat:'cipher',name:'Greek +1 / AVGaD analogue → Isopsephy',map:GR_AVGAD,sub:GR_AVGAD_LETTER,research:true},
-  {key:'kidmi',cat:'cipher',name:'Greek Cumulative Alphabet / Kidmi analogue',map:GR_KIDMI,research:true},
-  {key:'perati',cat:'cipher',name:'Greek Perati — Isopsephy²',map:GR_PERATI,perati:true,research:true},
-  {key:'peratiOrdinal',cat:'cipher',name:'Greek Perati — Ordinal²',map:GR_PERATI_ORD,perati:true,research:true},
-  {key:'kolel',cat:'cipher',name:'Greek Isopsephy + Kolel (+1)',map:GR_VAL,post:(t,v)=>v+1,research:true},
-  {key:'musafi',cat:'cipher',name:'Greek Isopsephy + Musafi (+letters)',map:GR_VAL,post:(t,v,s)=>v+letterCount(t,s,GR_VAL),research:true},
+  {key:'kidmi',cat:'base',name:'Greek Cumulative Alphabet / Kidmi analogue',map:GR_KIDMI,research:true},
+  {key:'perati',cat:'base',name:'Greek Perati — Isopsephy²',map:GR_PERATI,perati:true,research:true},
+  {key:'peratiOrdinal',cat:'base',name:'Greek Perati — Ordinal²',map:GR_PERATI_ORD,perati:true,research:true},
+  {key:'kolel',cat:'base',name:'Greek Isopsephy + Kolel (+1)',map:GR_VAL,post:(t,v)=>v+1,research:true},
+  {key:'musafi',cat:'base',name:'Greek Isopsephy + Musafi (+letters)',map:GR_VAL,post:(t,v,s)=>v+letterCount(t,s,GR_VAL),research:true},
 
   {key:'building',cat:'ops',name:'Greek Building / Achorayim — Isopsephy',map:GR_VAL,transform:cumulative,transformName:'prefix sums',research:true},
   {key:'buildingOrdinal',cat:'ops',name:'Greek Building / Achorayim — Ordinal',map:GR_ORD,transform:cumulative,transformName:'prefix sums',research:true},
@@ -713,7 +710,7 @@ const METHODS={
   {key:'ruOrdinal',cat:'base',name:'Русский порядковый / Russian Ordinal (O)',map:RU_ORD},
   {key:'ruReduced',cat:'base',name:'Полное сокращение / Russian Full Reduction (R)',map:RU_RED},
   {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Word Reduction (W)',map:RU_RED,fold:'word'},
-  {key:'ruReverseOrdinal',cat:'base',name:'Обратный порядковый / Russian Reverse Ordinal',map:RU_REV_ORD,research:true},
+  {key:'ruReverseOrdinal',cat:'cipher',name:'Русский Атбаш порядковый / Russian Atbash Ordinal',map:RU_REV_ORD,sub:RU_MIRROR_LETTER,research:true},
   {key:'ruZeroStep',cat:'base',name:'Одношаговое десятичное сокращение / Russian One-step Zero',map:RU_ZERO_STEP,research:true},
 
   {key:'ruShiftD',cat:'cipher',name:'Сдвиг +1 / Russian +1 Shift → D',map:RU_SHIFT_D,sub:RU_SHIFT_LETTER,research:true},
@@ -728,17 +725,16 @@ const METHODS={
   {key:'pythagorean',cat:'base',name:'English Small/Pythagorean',map:EN_RED},
   {key:'wordReduced',cat:'base',name:'English Word Reduced',map:EN_RED,fold:'word'},
   {key:'sumerian',cat:'base',name:'English Gematria',map:EN_SUM},
-  {key:'reverse',cat:'base',name:'English Reverse Ordinal',map:EN_REV},
   {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
   {key:'atbashOrdinal',cat:'cipher',name:'English Atbash Ordinal',map:EN_ATBASH_ORD,sub:EN_ATBASH_LETTER,research:true},
   {key:'albamRegular',cat:'cipher',name:'English ALBaM analogue / ROT13 → Regular / Research',map:EN_ALBAM,sub:EN_ALBAM_LETTER,research:true},
   {key:'avgadRegular',cat:'cipher',name:'English AVGaD analogue / +1 → Regular / Research',map:EN_AVGAD,sub:EN_AVGAD_LETTER,research:true},
-  {key:'kidmiEnglish',cat:'cipher',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
-  {key:'peratiSimple',cat:'cipher',name:'English Perati — Simple² / Research',map:EN_PERATI_SIMPLE,perati:true,research:true},
-  {key:'peratiEnglish',cat:'cipher',name:'English Perati — Regular² / Research',map:EN_PERATI,perati:true,research:true},
-  {key:'peratiAgrippa',cat:'cipher',name:'English Perati — Jewish² / Research',map:AGR_PERATI,perati:true,research:true,agrippa:true},
-  {key:'kolelRegular',cat:'cipher',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
-  {key:'musafiRegular',cat:'cipher',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
+  {key:'kidmiEnglish',cat:'base',name:'English Cumulative Alphabet / Kidmi analogue / Research',map:EN_KIDMI,research:true},
+  {key:'peratiSimple',cat:'base',name:'English Perati — Simple² / Research',map:EN_PERATI_SIMPLE,perati:true,research:true},
+  {key:'peratiEnglish',cat:'base',name:'English Perati — Regular² / Research',map:EN_PERATI,perati:true,research:true},
+  {key:'peratiAgrippa',cat:'base',name:'English Perati — Jewish² / Research',map:AGR_PERATI,perati:true,research:true,agrippa:true},
+  {key:'kolelRegular',cat:'base',name:'English Regular + Kolel (+1)',map:EN_REG,post:(t,v)=>v+1},
+  {key:'musafiRegular',cat:'base',name:'English Regular + Musafi (+letters)',map:EN_REG,post:(t,v,s)=>v+letterCount(t,s,EN_REG)},
   {key:'zeroStepEnglish',cat:'base',name:'English One-step Zero / Research',map:EN_ZERO_STEP,research:true},
 
   {key:'building',cat:'ops',name:'English Building / Achorayim (Simple)',map:EN_ORD,transform:cumulative,transformName:'prefix sums'},
@@ -748,29 +744,29 @@ const METHODS={
   {key:'equivalenceRegular',cat:'ops',name:'English Equivalence / שיווי',map:EN_REG,transform:balanced,transformName:'balanced weight'},
   {key:'ratzoRegular',cat:'ops',name:'English Running & Returning / רצוא ושוב',map:EN_REG,transform:pyramid,transformName:'prefixes out + return',ratzo:true},
   {key:'addsubRegular',cat:'ops',name:'English Addition & Subtraction / תוספת ומגרעת',map:EN_REG,transform:ladder,transformName:'prefixes + suffixes'},
-  {key:'agrippa',cat:'cipher',name:'Jewish Gematria',map:AGR,agrippa:true},
-  {key:'agrippaDeltaSimple',cat:'cipher',name:'Jewish∆Simple',custom:'agrippaDeltaSimple',research:true},
-  {key:'agrippaReduced',cat:'cipher',name:'Jewish Reduced',map:AGR_RED,agrippa:true},
-  {key:'agrippaWordReduced',cat:'cipher',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
+  {key:'agrippa',cat:'base',name:'Jewish Gematria',map:AGR,agrippa:true},
+  {key:'agrippaDeltaSimple',cat:'base',name:'Jewish∆Simple',custom:'agrippaDeltaSimple',research:true},
+  {key:'agrippaReduced',cat:'base',name:'Jewish Reduced',map:AGR_RED,agrippa:true},
+  {key:'agrippaWordReduced',cat:'base',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
  ]
 };
 for(const [script,order] of Object.entries({he:HE_ORDER,en:EN_ORDER,el:GR_MODERN_ORDER,ru:RU_ORDER}))METHODS[script].push(...homePowerMethods(order));
-const CAT_LABELS={base:'בסיס',cipher:'תמורות / הרחבות',ops:'אופרטורים',power:'כוח בית'};
+const CAT_LABELS={base:'בסיס',cipher:'תמורות אותיות',ops:'אופרטורים',power:'כוח בית'};
 const METHOD_EN_NAMES={
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
- smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Reverse Ordinal',zeroStep:'One-Step Decimal Reduction',
+ smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'One-Step Decimal Reduction',
  atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
- milui:'Standard Letter-name Milui (Vav=Viyu, Mem=Mem)',miluiLegacy:'Legacy Milui (Vav=Vav)',miluiTalmudic:'Talmudic Milui',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
+ milui:'Standard Letter-name Milui (Vav=Viyu, Mem=Mem)',miluiLegacy:'Legacy Milui (Vav=Vav)',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
  ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction',
- ruReverseOrdinal:'Russian Reverse Ordinal',ruZeroStep:'Russian One-step Zero',
+ ruReverseOrdinal:'Russian Atbash Ordinal',ruZeroStep:'Russian One-step Zero',
  ruMirrorD:'Russian Alphabet Mirror → D',ruShiftD:'Russian +1 Shift → D',ruKidmiD:'Russian Cumulative Alphabet → D',
  ruPeratiD:'Russian Perati · D²',ruPeratiOrdinal:'Russian Perati · Ordinal²',ruKolelD:'Russian D + Kolel (+1)',ruMusafiD:'Russian D + Letter Count',
  ruBuildingD:'Russian Prefix Building · D',ruBuildingOrdinal:'Russian Prefix Building · Ordinal',
@@ -830,11 +826,11 @@ function methodUiName(m){
  if(METHOD_EN_NAMES[m.key])return METHOD_EN_NAMES[m.key];
  return m.name||'';
 }
-function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()==='en'?({base:'Base',cipher:small?'Ciphers':'Ciphers / Extensions',ops:'Operators',power:'HomePower'}[c]||c):(c==='cipher'&&small?'תמורות':CAT_LABELS[c]||c)}
+function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()==='en'?({base:'Base',cipher:small?'Ciphers':'Letter Ciphers',ops:'Operators',power:'HomePower'}[c]||c):(c==='cipher'&&small?'תמורות':CAT_LABELS[c]||c)}
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
- const names=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES));
+ const names=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES);
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
@@ -1004,7 +1000,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
  if(m.custom==='latinMiluiUserReduced')return calculateLatinMiluiUser(text,'reduced','latinMiluiUserReduced');
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
- if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiLegacy')return calculateMilui(text,'legacy',1,'miluiLegacy');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
+ if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiLegacy')return calculateMilui(text,'legacy',1,'miluiLegacy');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
   const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
@@ -1324,7 +1320,7 @@ function harmony(results){const nodes=results.filter(r=>Number.isInteger(r.total
 /* ---------- transforms ---------- */
 function openFinals(t){return Array.from(t).map(c=>FINAL_TO_BASE[c]||c).join('')}
 function boundaryless(t){return t.replace(/\s+/g,'')}
-function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='talmudic'?MILUI_NAMES_TALMUDIC:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES));const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
+function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='legacy'?MILUI_NAMES_LEGACY:(profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES);const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
 const FINAL_SENSITIVE_METHODS=new Set(['final','smallFinals']);
 function hasHebrewFinalLetters(text){return /[ךםןףץ]/.test(String(text||''))}
 function syncRelevantMethods(text,methods,otherText=''){
@@ -1586,7 +1582,7 @@ function minimalMethodName(r){
  if(k==='miluiMayim')return 'מילוי מים';
   if(k==='miluiLegacy')return 'מילוי ארכיוני';
  if(k==='milui2')return 'מילוי דמילוי';
- if(k==='miluiTalmudic')return 'מילוי תלמודי';
+ 
  if(k==='milui')return 'מילוי רגיל';
  return String(r?.method?.name||'').split(' / ')[0].trim()
 }
@@ -1740,10 +1736,10 @@ function canonicalIdentitySeriesText(q){
 'עמית, מייק, רוב (LCM) = 2080',
 'LCM(520,160,208) = 2080',
 '',
-'×8 Rov = 208 (English Reverse Ordinal)',
+'×8 Rov = 208 (English Atbash Ordinal)',
 'R=9 o=12 v=5 = 26',
 '',
-'×20 Rov = 520 (English Reverse Ordinal)',
+'×20 Rov = 520 (English Atbash Ordinal)',
 'R=9 o=12 v=5 = 26',
 '',
 '×64 Rov = 1,024',
@@ -2347,7 +2343,7 @@ console.assert(T('τὸ Ἄλφα καὶ τὸ Ὦ','el','reduced')===42,'Greek
 console.assert(T('ב¹⁰⁰⁰','he','regular')===2000,'Rabbati superscript multiplier: Bet ×1000 = 2000');
 console.assert(T('חכמה','he','regular')===73,'Hokhmah regular 73');
 console.assert(T('חכמה','he','ordinal')===37,'Hokhmah ordinal 37');
-console.assert(T('חכמה','he','reverseOrdinal')===55,'Hokhmah reverse ordinal 55');
+console.assert(T('חכמה','he','atbashOrdinal')===55,'Hokhmah reverse ordinal 55');
 console.assert(compositeIndex(28)===18,'28 composite #18 = Chai');
 console.assert(T('רוב','he','ordinal')===28,'Rov ordinal 28');
 console.assert(T('רוב','he','ayak')===82,'Rov AIQ BKR 82');
@@ -2364,7 +2360,7 @@ console.assert(T('אשר א אהיה משה אשר','he','reduced')===37,'Asher 
 console.assert(T('משה','he','atbash')===102,'Moshe Atbash 102');
 console.assert(T('משה משה משה משה משה משה משה משה','he','atbash')===816,'Moshe x8 Atbash 816');
 console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen Milui Mayim 307');
-console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','reverseOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
+console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','atbashOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
 const __redAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='redLadder'));console.assert(__redAmit.ladder.join(',')==='520,52,16'&&__redAmit.total===16,'Reduction Ladder Amit 520→52→16');
 const __halfAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='harmonicHalf'));console.assert(__halfAmit.harmonic.join(',')==='52,26,13'&&__halfAmit.total===26,'Harmonic Half Amit 52→26→13 then STOP before 6.5');
@@ -2376,7 +2372,7 @@ console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordina
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew Reduction №1 96');
 console.assert(T('תור','he','zeroStep')===66,'תור Reduction №1 = 66');
 console.assert(T('תור','he','reduced')===12,'תור traditional Reduced = 12 = Reduction №2');
-console.assert(T('בראשית ברא אלהים את השמים ואת הארץ','he','miluiTalmudic')===5476,'Talmudic Milui Genesis 1:1 = 5476 = 74²');
+console.assert(T('בראשית ברא אלהים את השמים ואת הארץ','he','milui')===5476,'Talmudic Milui Genesis 1:1 = 5476 = 74²');
 console.assert(!syncRelevantMethods('תור',METHODS.he).some(m=>m.key==='final'||m.key==='smallFinals'),'No final-letter comparison methods without finals');
 console.assert(syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='final')&&syncRelevantMethods('מלך',METHODS.he).some(m=>m.key==='smallFinals'),'Final-letter methods active when finals exist');
 console.assert(T('Rov','en','atbashOrdinal')===26,'Rov English Atbash Ordinal 26');
@@ -2443,7 +2439,7 @@ console.assert(permutationData('עמית מ רוב').total===20160n,'Permutation
 console.assert(permutationData('Amit M Rov').total===20160n,'Permutation English short 20160');
 console.assert(permutationData('פפפחחחחח').total===56n,'Permutation 8!/(3!5!)=56');
 console.assert(T('עמית מייק רוב','he','atbashOrdinal')===112,'Atbash Ordinal full name = 112');
-console.assert(T('עמית מייק רוב','he','atbashOrdinal')===T('עמית מייק רוב','he','reverseOrdinal'),'Atbash Ordinal equivalent to Reverse Ordinal');
+console.assert(!METHODS.he.some(m=>m.key==='reverseOrdinal')&&!METHODS.en.some(m=>m.key==='reverse'),'No redundant reverse alias methods');
 console.assert(T('א','he','atbashOrdinal')===22&&T('ת','he','atbashOrdinal')===1&&T('ך','he','atbashOrdinal')===12,'Atbash Ordinal letter/final mappings');
 }
 
