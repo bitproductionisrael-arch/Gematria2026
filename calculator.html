@@ -499,12 +499,12 @@ Object.assign(HE_KATAN_SOFIT,HE_KATAN);FINAL_ORDER.forEach((L,i)=>HE_KATAN_SOFIT
 let _kid=0;HE_ORDER.forEach(L=>{_kid+=HE_VAL[L];HE_KIDMI[L]=_kid});Object.entries(FINAL_TO_BASE).forEach(([f,b])=>HE_KIDMI[f]=HE_KIDMI[b]);
 const HE_ZERO_STEP={};Object.keys(HE_VAL).forEach(k=>{const v=HE_VAL[k];HE_ZERO_STEP[k]=(v>=10&&v%10===0)?v/10:v});
 
-const HE_ATBASH={},HE_ATBASH_LETTER={},HE_ALBAM={},HE_ALBAM_LETTER={},HE_AVGAD={},HE_AVGAD_LETTER={};
-HE_ORDER.forEach((L,i)=>{const mate=HE_ORDER[21-i];HE_ATBASH[L]=HE_VAL[mate];HE_ATBASH_LETTER[L]=mate});
+const HE_ATBASH={},HE_ATBASH_ORD={},HE_ATBASH_LETTER={},HE_ALBAM={},HE_ALBAM_LETTER={},HE_AVGAD={},HE_AVGAD_LETTER={};
+HE_ORDER.forEach((L,i)=>{const mate=HE_ORDER[21-i];HE_ATBASH[L]=HE_VAL[mate];HE_ATBASH_ORD[L]=HE_ORD[mate];HE_ATBASH_LETTER[L]=mate});
 for(let i=0;i<11;i++){const a=HE_ORDER[i],b=HE_ORDER[i+11];HE_ALBAM_LETTER[a]=b;HE_ALBAM_LETTER[b]=a;HE_ALBAM[a]=HE_VAL[b];HE_ALBAM[b]=HE_VAL[a]}
 HE_ORDER.forEach((L,i)=>{const mate=HE_ORDER[(i+1)%22];HE_AVGAD_LETTER[L]=mate;HE_AVGAD[L]=HE_VAL[mate]});
 for(const [f,b] of Object.entries(FINAL_TO_BASE)){
-  HE_ATBASH[f]=HE_ATBASH[b];HE_ATBASH_LETTER[f]=HE_ATBASH_LETTER[b];HE_ALBAM[f]=HE_ALBAM[b];HE_ALBAM_LETTER[f]=HE_ALBAM_LETTER[b];HE_AVGAD[f]=HE_AVGAD[b];HE_AVGAD_LETTER[f]=HE_AVGAD_LETTER[b];
+  HE_ATBASH[f]=HE_ATBASH[b];HE_ATBASH_ORD[f]=HE_ATBASH_ORD[b];HE_ATBASH_LETTER[f]=HE_ATBASH_LETTER[b];HE_ALBAM[f]=HE_ALBAM[b];HE_ALBAM_LETTER[f]=HE_ALBAM_LETTER[b];HE_AVGAD[f]=HE_AVGAD[b];HE_AVGAD_LETTER[f]=HE_AVGAD_LETTER[b];
 }
 const AYAK_CHAMBERS=[];for(let d=0;d<9;d++)AYAK_CHAMBERS.push([HE_ORDER[d],HE_ORDER[d+9],d<4?HE_ORDER[d+18]:FINAL_ORDER[d-4]]);
 const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={},HE_AYAK_TIER={},HE_AYAK_DIGIT={};AYAK_CHAMBERS.forEach((triad,d)=>{const nm=triad[0]+triad[1]+'״'+triad[2];triad.forEach((L,j)=>{const mate=triad[(j+1)%3];HE_AYAK_LETTER[L]=mate;HE_AYAK[L]=HE_SOFIT[mate];HE_CHAMBER[L]=nm;HE_AYAK_TIER[L]=j;HE_AYAK_DIGIT[L]=d+1})});
@@ -648,6 +648,7 @@ const METHODS={
   {key:'reverseOrdinal',cat:'base',name:'סדרי הפוך / Reverse Ordinal',map:HE_REV_ORD},
   {key:'zeroStep',cat:'base',name:'צמצום №1 / Reduction №1',map:HE_ZERO_STEP,research:true},
   {key:'atbash',cat:'cipher',name:'אתב״ש / Atbash',map:HE_ATBASH,sub:HE_ATBASH_LETTER},
+   {key:'atbashOrdinal',cat:'cipher',name:'אתב״ש סדרי / Atbash Ordinal',map:HE_ATBASH_ORD,sub:HE_ATBASH_LETTER,aliasNote:'≡ סדרי הפוך'},
   {key:'albam',cat:'cipher',name:'אלב״ם / ALBaM',map:HE_ALBAM,sub:HE_ALBAM_LETTER},
   {key:'avgad',cat:'cipher',name:'אבג״ד / AVGaD',map:HE_AVGAD,sub:HE_AVGAD_LETTER},
   {key:'ayak',cat:'cipher',name:'אי״ק בכ״ר / AIQ BKR',map:HE_AYAK,sub:HE_AYAK_LETTER,family:HE_CHAMBER},
@@ -763,7 +764,7 @@ const METHOD_EN_NAMES={
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
  smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Reverse Ordinal',zeroStep:'One-Step Decimal Reduction',
- atbash:'Atbash',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
+ atbash:'Atbash',atbashOrdinal:'Atbash Ordinal (Hebrew)',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
@@ -791,6 +792,7 @@ const METHOD_EN_HISTORY={
  smallFinals:'Extended final-letter values are applied first and then reduced to 1–9; kept distinct from ordinary Mispar Katan.',
  wordReduced:'A modern site operator: each word is reduced separately and the resulting word values are summed.',
  reverseOrdinal:'A derived operator equivalent to taking the ordinal value after the Atbash mirror: position → 23−position.',
+  atbashOrdinal:'Mirror Hebrew letters using Atbash then sum their ordinal positions. Numerically equal to Reverse Ordinal, with explicit letter substitutions.',
  zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
  redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
  letterProductRegular:'Research operator: multiply the standard Hebrew numeric values of every recognized letter, across all words; not a sum.',
@@ -1035,6 +1037,7 @@ const METHOD_BOOK_DOCS={
  'he:smallFinals':{plain:'גימטריה קטנה סופית',original:'Reduced extended finals',status:'mixed',history:'וריאנט שבו ערכי הסופיות המורחבים 500–900 מצטמצמים ל־5–9. נשמר בנפרד מן המספר הקטן הרגיל.',formula:'Use extended finals first; then reduce each letter value to 1–9.'},
  'he:wordReduced':{plain:'צמצום לפי מילה',original:'Wordwise reduction',status:'modern',history:'אופרטור מודרני של האתר. אינו מוצג כשם קבלי עתיק. כל מילה מצטמצמת בנפרד ואז תוצאות המילים מתחברות.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
  'he:reverseOrdinal':{plain:'סדרי הפוך',original:'Reverse Ordinal / Atbash-Ordinal equivalent',status:'derived',history:'הגדרה אלגוריתמית שקולה לסידורי של אות המראה באתב״ש: position → 23−position.',formula:'For Hebrew ordinal position n, use 23−n; then sum.'},
+  'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. זהה מספרית לסדרי הפוך, אך מציג את ההחלפות.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).',aliases:['סדרי הפוך / Reverse Ordinal']},
  'he:zeroStep':{plain:'צמצום עשרוני חד־שלבי',original:'שם מסורתי: לא נטען',status:'modern',history:'פיתוח מחקרי של האתר (2026). השם הישן באתר היה “צמצום №1”. השיטה מורידה שכבת עשרות אחת בלבד מערכים עשרוניים שמסתיימים באפס.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1'],conflict:true},
  'he:redLadder':{plain:'סולם צמצום',original:'Reduction Ladder · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). מפעיל שוב ושוב את אותו כלל צמצום חד־שלבי על כל אות בנפרד ושומר את כל דרגות D0,D1,D2… עד קיבוע.',formula:'D0 = standard Hebrew letter values. D(k+1): divide each value by 10 only when it is ≥10 and divisible by 10; otherwise keep it. Continue until stable. Stage totals are summed per level.'},
  'he:harmonicHalf':{plain:'חצי הרמוני',original:'Harmonic Half · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). אופרטור נפרד מסולם הצמצום: מתחיל מסכום D1 ומחלק את התוצאה השלמה בחזקות של 2. תצוגת הריבועים היא מודל גאומטרי של שטח/קנה־מידה.',formula:'H0 = D1 total. Hk = H0 / 2^k. Square model: count=2^k, area each=A0/2^k, side ratio=1/sqrt(2^k).'},
