@@ -4,9 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0d1117">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Gematria Calculator · Research Engine</title>
 <style>
 :root{
@@ -1194,9 +1191,23 @@ function closeMethodBook(){const modal=document.getElementById('methodBookModal'
 const _factorCache=new Map(),_primeCache=new Map(),_primeCountCache=new Map(),_pIndexCache=new Map(),_cIndexCache=new Map(),_nthPrimeCache=new Map(),_nthCompositeCache=new Map();
 function factorize(n){n=Math.abs(Math.trunc(n));if(_factorCache.has(n))return _factorCache.get(n);if(n<2){_factorCache.set(n,[]);return[]}const out=[];let m=n;for(let p=2;p*p<=m;p+=(p===2?1:2)){if(m%p)continue;let e=0;while(m%p===0){m/=p;e++}out.push([p,e])}if(m>1)out.push([m,1]);_factorCache.set(n,out);return out}
 function isPrime(n){n=Math.trunc(n);if(_primeCache.has(n))return _primeCache.get(n);let ok=true;if(n<2)ok=false;else if(n%2===0)ok=n===2;else for(let p=3;p*p<=n;p+=2)if(n%p===0){ok=false;break}_primeCache.set(n,ok);return ok}
-function primeCount(n){n=Math.trunc(n);if(_primeCountCache.has(n))return _primeCountCache.get(n);let c=0;for(let i=2;i<=n;i++)if(isPrime(i))c++;_primeCountCache.set(n,c);return c}
-function primeIndex(n){n=Math.trunc(n);if(_pIndexCache.has(n))return _pIndexCache.get(n);const v=isPrime(n)&&n<=250000?primeCount(n):null;_pIndexCache.set(n,v);return v}
-function compositeIndex(n){n=Math.trunc(n);if(_cIndexCache.has(n))return _cIndexCache.get(n);const v=n>=4&&!isPrime(n)?n-1-primeCount(n):null;_cIndexCache.set(n,v);return v}
+/* Prime-count prefix sieve replaces repeated trial division over every integer. */
+let _primeSieveLimit=1,_primePrefix=new Uint32Array(2);
+function primeCount(n){
+ n=Math.trunc(n);if(n<2)return 0;
+ if(n>1000000)return null;
+ if(n>_primeSieveLimit){
+  const limit=Math.min(1000000,Math.max(n,_primeSieveLimit*2,1024));
+  const composite=new Uint8Array(limit+1);
+  for(let p=2;p*p<=limit;p++)if(!composite[p])for(let j=p*p;j<=limit;j+=p)composite[j]=1;
+  const prefix=new Uint32Array(limit+1);
+  for(let i=2;i<=limit;i++)prefix[i]=prefix[i-1]+(composite[i]?0:1);
+  _primePrefix=prefix;_primeSieveLimit=limit;
+ }
+ return _primePrefix[n];
+}
+function primeIndex(n){n=Math.trunc(n);if(_pIndexCache.has(n))return _pIndexCache.get(n);const v=isPrime(n)&&n<=1000000?primeCount(n):null;_pIndexCache.set(n,v);return v}
+function compositeIndex(n){n=Math.trunc(n);if(_cIndexCache.has(n))return _cIndexCache.get(n);const v=n>=4&&n<=1000000&&!isPrime(n)?n-1-primeCount(n):null;_cIndexCache.set(n,v);return v}
 function nthPrime(k){k=Math.trunc(k);if(_nthPrimeCache.has(k))return _nthPrimeCache.get(k);if(k<1||k>5000)return null;let c=0,n=1;while(c<k){n++;if(isPrime(n))c++}_nthPrimeCache.set(k,n);return n}
 function nthComposite(k){k=Math.trunc(k);if(_nthCompositeCache.has(k))return _nthCompositeCache.get(k);if(k<1||k>5000)return null;let c=0,n=3;while(c<k){n++;if(!isPrime(n))c++}_nthCompositeCache.set(k,n);return n}
 function factorPairs(n){const out=[];n=Math.abs(Math.trunc(n));for(let i=1;i*i<=n;i++)if(n%i===0)out.push([i,n/i]);return out}
@@ -1222,7 +1233,7 @@ function stripZeros(n){const s=String(Math.abs(Math.trunc(n))).replace(/0/g,'');
 function reverseDigits(n){return Number(String(Math.abs(Math.trunc(n))).split('').reverse().join(''))}
 function digitSum(n){return String(Math.abs(Math.trunc(n))).split('').reduce((a,c)=>a+Number(c),0)}
 function digitProduct(n){return String(Math.abs(Math.trunc(n))).split('').reduce((a,c)=>a*Number(c),1)}
-function analyzeNumber(n){if(!Number.isInteger(n)||n<1)return null;const f=factorize(n),pn=prevNextPrime(n);return {n,factors:f,pairs:factorPairs(n),prime:isPrime(n),primeIndex:primeIndex(n),compositeIndex:compositeIndex(n),phi:totient(n),tau:tau(n),sigma:sigma(n),lambda:carmichael(n),rad:radical(n),omega:omega(n),Omega:bigOmega(n),squarefree:isSquarefree(n),powerful:isPowerful(n),aliquot:aliquotClass(n),forms:shapes(n),binom:binomialMatches(n),root:dr(n),phiChain:phiChain(n),prevPrime:pn.prev,nextPrime:pn.next,nthPrime:nthPrime(n),nthComposite:nthComposite(n),strip:stripZeros(n),reverse:reverseDigits(n),digitSum:digitSum(n),digitProduct:digitProduct(n),pal:String(n)===String(n).split('').reverse().join(''),mods:Object.fromEntries([8,9,11,24,36,37,72].map(m=>[m,n%m]))}}
+function analyzeNumber(n){if(!Number.isSafeInteger(n)||n<1||n>10000000000)return null;const f=factorize(n),pn=prevNextPrime(n);return {n,factors:f,pairs:factorPairs(n),prime:isPrime(n),primeIndex:primeIndex(n),compositeIndex:compositeIndex(n),phi:totient(n),tau:tau(n),sigma:sigma(n),lambda:carmichael(n),rad:radical(n),omega:omega(n),Omega:bigOmega(n),squarefree:isSquarefree(n),powerful:isPowerful(n),aliquot:aliquotClass(n),forms:shapes(n),binom:binomialMatches(n),root:dr(n),phiChain:phiChain(n),prevPrime:pn.prev,nextPrime:pn.next,nthPrime:nthPrime(n),nthComposite:nthComposite(n),strip:stripZeros(n),reverse:reverseDigits(n),digitSum:digitSum(n),digitProduct:digitProduct(n),pal:String(n)===String(n).split('').reverse().join(''),mods:Object.fromEntries([8,9,11,24,36,37,72].map(m=>[m,n%m]))}}
 const supers={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'};const sup=n=>String(n).split('').map(c=>supers[c]||c).join('');const fmtFactors=f=>f.length?f.map(([p,e])=>e>1?`${p}${sup(e)}`:`${p}`).join(' × '):'1';
 
 /* ---------- corpus / central reference bank ---------- */
@@ -1241,7 +1252,7 @@ function applyCorpusOverrides(){
 }
 async function syncSharedCorpus(){
  try{
-  const res=await fetch('corpus-data.json?v='+Date.now(),{cache:'no-store'});
+  const res=await fetch('corpus-data.json',{cache:'default'});
   if(!res.ok)throw new Error('HTTP '+res.status);
   const data=await res.json(),entries=Array.isArray(data)?data:data.entries;
   if(!Array.isArray(entries)||!entries.length)throw new Error('empty corpus');
@@ -1249,7 +1260,7 @@ async function syncSharedCorpus(){
   if(!clean.length)throw new Error('no valid entries');
   CORPUS_SOURCE=clean;applyCorpusOverrides();SHARED_CORPUS_META={source:data.source||'corpus-data.json',updated_at:data.updated_at||null,schema:data.schema||null};
   window.__gematriaSharedCorpus={meta:SHARED_CORPUS_META,entries:CORPUS};
-  if(document.getElementById('q'))renderAll();
+  if(document.getElementById('q')){renderResults();if(state.tab==='number')renderNumber();if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}
   if(document.getElementById('savedModal')&&document.getElementById('savedModal').classList.contains('open'))renderSavedManager();
  }catch(e){console.warn('Shared corpus fallback:',e)}
 }
@@ -1997,7 +2008,27 @@ function renderForms(){const text=document.getElementById('q').value,script=dete
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
  }else{document.getElementById('miluiValue').textContent='—';document.getElementById('milui2Value').textContent='—';document.getElementById('miluiMayimValue').textContent='—';document.getElementById('miluiText').textContent='מילוי פעיל בעברית';document.getElementById('miluiMeta').innerHTML='';document.getElementById('yhvhMilui').textContent='';document.getElementById('boundaryTitle').textContent='אפקט גבול זמין בכל שפה';document.getElementById('boundaryDiffs').innerHTML=diffRows(text,boundaryless(text));document.getElementById('finalTitle').textContent='אותיות סופיות רלוונטיות לעברית';document.getElementById('finalDiffs').innerHTML=''} }
 
-function renderAll(){const text=document.getElementById('q').value;current=scaleCurrentResults(calculateAll(text));updateQueryMultiplierUI();if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}state.lastScript=current.script;const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',ru:'Russian',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',ru:'רוסית · Russian',en:'אנגלית · English'};document.getElementById('scriptBadge').textContent=names[current.script];ensureSelection();if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;if(state.compareAuto)refreshAutoCompareTarget();renderResults();if(arguments[0]!==false){renderNumber();renderRelations();renderCompare();renderRepeat();renderForms();window.__report=buildReport(text,current)}}
+/* Render only the active tab. Invisible analysis, comparison and repeat grids stay lazy. */
+function renderAll(full=true){
+ const text=document.getElementById('q').value;
+ current=scaleCurrentResults(calculateAll(text));
+ updateQueryMultiplierUI();
+ if(state.lastScript&&state.lastScript!==current.script){state.selectionTouched=false;state.selectedMethods=[];state.methodKey=null;state.category='base'}
+ state.lastScript=current.script;
+ const names=calcLang()==='en'?{he:'Hebrew',el:'Greek',ru:'Russian',en:'English'}:{he:'עברית · Hebrew',el:'יוונית · Greek',ru:'רוסית · Russian',en:'אנגלית · English'};
+ document.getElementById('scriptBadge').textContent=names[current.script];
+ ensureSelection();
+ if(!document.getElementById('compareA').value)document.getElementById('compareA').value=text;
+ if(!document.getElementById('repeatPhrase').value)document.getElementById('repeatPhrase').value=text;
+ renderResults();
+ if(full!==false){
+  if(state.tab==='number')renderNumber();
+  if(state.tab==='relations')renderRelations();
+  if(state.tab==='compare'){if(state.compareAuto)refreshAutoCompareTarget();renderCompare()}
+  if(state.tab==='repeat')renderRepeat();
+  if(state.tab==='forms')renderForms();
+ }
+}
 
 /* ---------- report / export ---------- */
 function buildReport(text,data){const out=[text,''];for(const r of data.results){out.push(`${r.method.name} = ${r.total}`);const a=analyzeNumber(r.total);if(a){out.push(`φ=${a.phi} | τ=${a.tau} | σ=${a.sigma} | λ=${a.lambda} | rad=${a.rad}`);out.push(`${a.prime?'Prime #'+a.primeIndex:'Composite #'+(a.compositeIndex??'—')} | factors: ${fmtFactors(a.factors)}`);if(a.forms.length||a.binom.length)out.push(`Forms: ${a.forms.concat(a.binom).join(' | ')}`);const h=corpusHits(r.total);if(h.length)out.push(`Corpus: ${h.map(x=>x.label+' ['+x.method+']').join(' | ')}`)}out.push('')}return out.join('\n')}
@@ -2263,7 +2294,8 @@ document.getElementById('copyAllMath').addEventListener('click',async()=>{if(sta
 document.getElementById('saveView').addEventListener('click',async()=>{if(state.tab==='results'&&selectedResults().length){const ok=await saveSelectedPoster();if(ok)toast('נשמרה תמונת השוואה מעוצבת');return}if(state.tab==='repeat'){const ok=await saveRepeatMatrixImage(false);toast(ok?'דוח המטריקס הופק':'שגיאה בהפקת הדוח');return}const el=activePanel();const name=document.getElementById('q').value+' - '+state.tab;const ok=await savePanelAsPng(el,name);if(ok)toast('נשמר צילום של הטאב')});
 
 
-/* ---------- self tests ---------- */
+/* ---------- self tests (run with ?selftest=1) ---------- */
+if(new URLSearchParams(location.search).has('selftest')){
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
 console.assert(Math.abs(T('אלף','he','letterDivisionRegular')-1/2400)<1e-18,'Letter Division Regular Alef 1/2400');
 console.assert(Math.abs(T('אלף','he','letterDivisionOrdinal')-1/204)<1e-16,'Letter Division Ordinal Alef 1/204');
@@ -2387,6 +2419,10 @@ console.assert(permutationData('Amit Mike Rov').total===9979200n,'Permutation En
 console.assert(permutationData('עמית מ רוב').total===20160n,'Permutation Hebrew short 20160');
 console.assert(permutationData('Amit M Rov').total===20160n,'Permutation English short 20160');
 console.assert(permutationData('פפפחחחחח').total===56n,'Permutation 8!/(3!5!)=56');
+console.assert(T('עמית מייק רוב','he','atbashOrdinal')===112,'Atbash Ordinal full name = 112');
+console.assert(T('עמית מייק רוב','he','atbashOrdinal')===T('עמית מייק רוב','he','reverseOrdinal'),'Atbash Ordinal equivalent to Reverse Ordinal');
+console.assert(T('א','he','atbashOrdinal')===22&&T('ת','he','atbashOrdinal')===1&&T('ך','he','atbashOrdinal')===12,'Atbash Ordinal letter/final mappings');
+}
 
 /* Text Geometry: forward selected result without changing calculation algorithms. */
 document.getElementById('textGeometryBridgeLink').addEventListener('click',()=>{
@@ -2612,7 +2648,7 @@ window.onSiteLanguageChange=function(lang){
      'Auto Matrix hard-rule regression failed: whole query must never be emitted as a hit');
  }catch(err){console.warn('Auto combination matrix self-test failed',err)}
 
- try{renderRepeat()}catch(_){}
+ if(state.tab==='repeat')try{renderRepeat()}catch(_){}
 })();
 </script>
 
