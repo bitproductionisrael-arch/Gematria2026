@@ -784,7 +784,7 @@ const METHOD_EN_HISTORY={
  reduced:'Traditional reduction in which each Hebrew letter is reduced to a 1–9 value before summation.',
  smallFinals:'Extended final-letter values are applied first and then reduced to 1–9; kept distinct from ordinary Mispar Katan.',
  wordReduced:'A modern site operator: each word is reduced separately and the resulting word values are summed.',
- reverseOrdinal:'A derived operator equivalent to taking the ordinal value after the Atbash mirror: position → 23−position.',
+ reverseOrdinal:'Greek Atbash Ordinal: mirror the 24 modern Greek letters and sum their ordinal positions.',
   atbashOrdinal:'Mirror each alphabetic character using Atbash, then sum its ordinal position. Hebrew uses 22 letters and English uses 26.',
  zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
  redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
@@ -798,7 +798,7 @@ const METHOD_EN_HISTORY={
  ruOrdinal:'Modern alphabet-position mapping for the 33-letter Russian alphabet, with Ё in position 7.',
  ruReduced:'The audited R layer: reduce each Russian alphabet index to its repeating 1–9 digit before summing.',
  ruWordReduced:'The audited W layer: digital-root each word’s R subtotal, then sum the word results.',
- ruReverseOrdinal:'Modern 33-letter mirror-position operator: i → 34−i. П at position 17 is fixed.',
+ ruReverseOrdinal:'Russian Atbash Ordinal: mirror alphabetic position i to 34−i. П at position 17 is unchanged.',
  ruZeroStep:'Site one-step decimal reduction applied to Russian D values.',
  ruMirrorD:'Modern alphabet-mirror analogue on the 33-letter Russian alphabet; mirrored letters are evaluated with D. No historical Russian cipher attribution is claimed.',
  ruShiftD:'Modern cyclic +1 alphabet shift; Я wraps to А; substituted letters are evaluated with D.',
@@ -1052,8 +1052,8 @@ const METHOD_BOOK_DOCS={
  'he:reduced':{plain:'גימטריה קטנה',original:'מספר קטן / Mispar Katan',status:'traditional',history:'שיטת צמצום מסורתית: כל אות מצטמצמת לספרה 1–9 לפני הסכימה.',formula:'Reduce each standard Hebrew letter value to its non-zero decimal digit, then sum.'},
  'he:smallFinals':{plain:'גימטריה קטנה סופית',original:'Reduced extended finals',status:'mixed',history:'וריאנט שבו ערכי הסופיות המורחבים 500–900 מצטמצמים ל־5–9. נשמר בנפרד מן המספר הקטן הרגיל.',formula:'Use extended finals first; then reduce each letter value to 1–9.'},
  'he:wordReduced':{plain:'צמצום לפי מילה',original:'Wordwise reduction',status:'modern',history:'אופרטור מודרני של האתר. אינו מוצג כשם קבלי עתיק. כל מילה מצטמצמת בנפרד ואז תוצאות המילים מתחברות.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
- 'he:reverseOrdinal':{plain:'סדרי הפוך',original:'Reverse Ordinal / Atbash-Ordinal equivalent',status:'derived',history:'הגדרה אלגוריתמית שקולה לסידורי של אות המראה באתב״ש: position → 23−position.',formula:'For Hebrew ordinal position n, use 23−n; then sum.'},
-  'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. זהה מספרית לסדרי הפוך, אך מציג את ההחלפות.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).',aliases:['סדרי הפוך / Reverse Ordinal']},
+
+  'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. מציג את חילופי האותיות ואת ערכיהן הסידוריים במפורש.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).'},
  'he:zeroStep':{plain:'צמצום עשרוני חד־שלבי',original:'שם מסורתי: לא נטען',status:'modern',history:'פיתוח מחקרי של האתר (2026). השם הישן באתר היה “צמצום №1”. השיטה מורידה שכבת עשרות אחת בלבד מערכים עשרוניים שמסתיימים באפס.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1'],conflict:true},
  'he:redLadder':{plain:'סולם צמצום',original:'Reduction Ladder · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). מפעיל שוב ושוב את אותו כלל צמצום חד־שלבי על כל אות בנפרד ושומר את כל דרגות D0,D1,D2… עד קיבוע.',formula:'D0 = standard Hebrew letter values. D(k+1): divide each value by 10 only when it is ≥10 and divisible by 10; otherwise keep it. Continue until stable. Stage totals are summed per level.'},
  'he:harmonicHalf':{plain:'חצי הרמוני',original:'Harmonic Half · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). אופרטור נפרד מסולם הצמצום: מתחיל מסכום D1 ומחלק את התוצאה השלמה בחזקות של 2. תצוגת הריבועים היא מודל גאומטרי של שטח/קנה־מידה.',formula:'H0 = D1 total. Hk = H0 / 2^k. Square model: count=2^k, area each=A0/2^k, side ratio=1/sqrt(2^k).'},
@@ -1066,7 +1066,8 @@ const METHOD_BOOK_DOCS={
  'ru:ruOrdinal':{plain:'Russian Ordinal',original:'Modern 33-letter alphabet index',status:'modern',history:'ערך מיקום מודרני לפי האלפבית הרוסי בן 33 אותיות, עם Ё במקום השביעי.',formula:'А=1, Б=2, …, Ё=7, …, Я=33; then sum.'},
  'ru:ruReduced':{plain:'Russian Full Reduction',original:'Index digit d in i=9q+d',status:'modern',history:'שכבת R של מנוע הביקורת: כל מיקום אלפביתי מצטמצם למחזור 1–9 לפני הסכימה.',formula:'For alphabet index i, use d=((i−1) mod 9)+1; then sum all letters.'},
  'ru:ruWordReduced':{plain:'Russian Word Reduction',original:'Wordwise digital-root of R',status:'modern',history:'שכבת W של מנוע הביקורת: מחשבים R לכל מילה, מצמצמים את סכום המילה לשורש ספרתי, ואז מחברים את המילים.',formula:'For each word: digital_root(sum(R(letter))); then sum the word results.'},
- 'ru:ruReverseOrdinal':{plain:'Russian Reverse Ordinal',original:'Modern mirror-position operator',status:'modern',history:'אופרטור מודרני על 33 האותיות: מיקום i מוחלף ב־34−i. האות П במיקום 17 היא נקודת האמצע ולכן נשארת 17.',formula:'For ordinal position i, use 34−i. Thus А=33, Б=32, …, П=17, …, Я=1.'},
+  'el:reverseOrdinal':{plain:'Greek Atbash Ordinal',original:'24-letter Greek alphabet mirror → Ordinal',status:'modern',history:'אנלוג מחקרי לאתב״ש על 24 אותיות האלפבית היווני: כל אות מוחלפת במיקומה המשוקף, ואז נסכמים הערכים הסידוריים. אין טענה לכינוי היסטורי עתיק.',formula:'α→ω=24, β→ψ=23, …, ω→α=1; sum the ordinal positions.'},
+ 'ru:ruReverseOrdinal':{plain:'Russian Atbash Ordinal',original:'Russian alphabet mirror → Ordinal',status:'modern',history:'תמורת אתב״ש רוסית: כל אות מוחלפת באות שבמיקום 34−i ונמדדת בסידורי. האות П במיקום 17 היא נקודת האמצע ולכן נשארת 17.',formula:'For ordinal position i, use 34−i. Thus А=33, Б=32, …, П=17, …, Я=1.'},
  'ru:ruZeroStep':{plain:'Russian One-step Zero',original:'Site one-step decimal reduction on D',status:'modern',history:'אנלוג ישיר לאופרטור הצמצום החד־שלבי של האתר, המופעל על ערכי D הרוסיים.',formula:'For each D value v: if v≥10 and v ends in 0, use v/10 once; otherwise keep v. Then sum.'},
  'ru:ruMirrorD':{plain:'Russian Alphabet Mirror → D',original:'33-letter alphabet mirror · site analogue',status:'modern',history:'שיקוף מלא של האלפבית הרוסי: אות במיקום i מוחלפת באות במיקום 34−i, ואז נמדדת בערכי D. בגלל האורך האי־זוגי, П היא אות מרכזית קבועה.',formula:'Substitute letter i by letter 34−i, then sum D values. П↔П.'},
  'ru:ruShiftD':{plain:'Russian +1 Shift → D',original:'Cyclic alphabet shift · site analogue',status:'modern',history:'אופרטור מחזורי מודרני: כל אות עוברת לאות הבאה באלפבית הרוסי, כאשר Я חוזרת ל־А.',formula:'А→Б→В→…→Я→А; evaluate each substituted letter with D.'},
@@ -2492,7 +2493,7 @@ window.PAGE_I18N={
  }
 };
 const CALC_TEXT_EN={
- 'בסיס':'Base','תמורות / הרחבות':'Ciphers / Extensions','אופרטורים':'Operators',
+ 'בסיס':'Base','תמורות אותיות':'Letter Ciphers','אופרטורים':'Operators',
  'מרכז השוואה':'Comparison Stage','חתימת מספר':'Number Signature','פירוק החישוב':'Calculation Breakdown',
  'שמורים':'Saved','התאמות':'Matches','קורפוסים':'Corpora','פתח':'Open','ערוך':'Edit','הסתר':'Hide','מקור':'Source',
  'סגור':'Close','נקה':'Clear','הכל':'All','השוואה':'Compare','תוצאות':'Results','מספר':'Number','קשרים':'Relations','חזרות':'Repeats'
