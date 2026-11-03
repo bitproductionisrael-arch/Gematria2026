@@ -400,7 +400,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <section id="tab-forms" class="tab-panel"><div class="panel forms-layout">
       <div class="sectionbar"><div class="grow"><b data-i18n="transformations">טרנספורמציות של הביטוי</b><div class="tiny" data-i18n="transformations_sub">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui" data-i18n="form_milui">מילוי</button><button data-form="boundary" data-i18n="form_boundary">גבול</button><button data-form="finals" data-i18n="form_finals">סופיות</button></div></div></div>
       <div class="forms-grid">
-        <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל · ו→ויו, ת→תיו</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי תלמודי · ו→ויו, ת→תו</span><b id="miluiTalmudicValue">—</b></div><div class="milui-row"><span class="tiny">מילוי מים · מ→מים, ו→ויו, ת→תיו (מחקר)</span><b id="miluiMayimValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
+        <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי תלמודי</span><b id="miluiTalmudicValue">—</b></div><div class="milui-row"><span class="tiny">מילוי מים</span><b id="miluiMayimValue">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
         <div class="form-card" data-formcard="boundary"><h3 data-i18n="boundary_title">אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
         <div class="form-card" data-formcard="finals"><h3 data-i18n="finals_title">סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
@@ -654,9 +654,9 @@ const METHODS={
   {key:'perati',cat:'base',name:'מספר פרטי / Perati (Regular²)',map:HE_PERATI,perati:true},
   {key:'kolel',cat:'base',name:'עם הכולל / Kolel (+1)',map:HE_VAL,post:(t,v)=>v+1},
   {key:'musafi',cat:'base',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
-  {key:'milui',cat:'ops',name:'מילוי רגיל · ויו, תיו / Standard Milui',custom:'milui'},
-  {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי · ויו, תו / Talmudic Milui',custom:'miluiTalmudic'},
-  {key:'miluiMayim',cat:'ops',name:'מילוי מים (מ→מים, ו→ויו, ת→תיו) / Research',custom:'miluiMayim',research:true},
+  {key:'milui',cat:'ops',name:'מילוי רגיל',custom:'milui'},
+  {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי',custom:'miluiTalmudic'},
+  {key:'miluiMayim',cat:'ops',name:'מילוי מים',custom:'miluiMayim',research:true},
   {key:'miluiLegacy',cat:'ops',name:'מילוי ארכיוני · ואו/מם (עד 2026-11-01) / Legacy Milui',custom:'miluiLegacy'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
   {key:'letterProductRegular',cat:'ops',name:'מכפלת אותיות (רגיל) / Letter Product (Regular)',map:HE_VAL,letterProduct:true,research:true},
@@ -764,7 +764,7 @@ const METHOD_EN_NAMES={
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
- milui:'Standard Milui (Vav=Viyu, Tav=Tiyu)',miluiTalmudic:'Talmudic Milui (Vav=Viyu, Tav=Tav)',miluiLegacy:'Legacy Milui (Vav=Vav)',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
+ milui:'Standard Milui',miluiTalmudic:'Talmudic Milui',miluiLegacy:'Legacy Milui (Vav=Vav)',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
@@ -2028,7 +2028,7 @@ function diffRows(aText,bText){const rows=compareResults(aText,bText);return row
 function renderForms(){const text=document.getElementById('q').value,script=detectScript(text);if(script==='he'){
  const mil=calculateMilui(text,'standard',1,'milui'),talmudic=calculateMilui(text,'talmudic',1,'miluiTalmudic'),mil2=calculateMilui(text,'standard',2,'milui2'),mayim=calculateMilui(text,'mayim',1,'miluiMayim'),a=analyzeNumber(mil.total);
  document.getElementById('miluiValue').textContent=fmt(mil.total);document.getElementById('miluiTalmudicValue').textContent=fmt(talmudic.total);document.getElementById('milui2Value').textContent=fmt(mil2.total);document.getElementById('miluiMayimValue').textContent=fmt(mayim.total);
- document.getElementById('miluiText').innerHTML=`<b>רגיל:</b> ${esc(miluiExpansion(text,'standard',1))}<br><b>תלמודי:</b> ${esc(miluiExpansion(text,'talmudic',1))}<br><b>מים:</b> ${esc(miluiExpansion(text,'mayim',1))}<br><b>דמילוי:</b> ${esc(miluiExpansion(text,'standard',2))}`;
+ document.getElementById('miluiText').innerHTML=`<b>מילוי רגיל:</b> ${esc(miluiExpansion(text,'standard',1))}<br><b>מילוי תלמודי:</b> ${esc(miluiExpansion(text,'talmudic',1))}<br><b>מילוי מים:</b> ${esc(miluiExpansion(text,'mayim',1))}<br><b>דמילוי:</b> ${esc(miluiExpansion(text,'standard',2))}`;
  const extraHits=corpusHits(mil.total).filter(h=>!(a.prime&&h.label===`Prime #${a.primeIndex}`));document.getElementById('miluiMeta').innerHTML=`<span class="badge">φ=${a.phi}</span>${a.prime?`<span class="badge green">Prime #${a.primeIndex}</span>`:`<span class="badge">Composite #${a.compositeIndex}</span>`}${extraHits.map(h=>`<span class="badge gold">${esc(h.label)}</span>`).join('')}`;
  const compact=openFinals(text).replace(/\s+/g,'');const yh=document.getElementById('yhvhMilui');yh.textContent=compact==='יהוה'?'מילויי יהוה הקבליים: ע״ב 72 · ס״ג 63 · מ״ה 45 · ב״ן 52':'';
  const flat=boundaryless(text);document.getElementById('boundaryTitle').innerHTML=`עם גבול: <b>${esc(text)}</b><br>בלי גבול: <b>${esc(flat)}</b>`;document.getElementById('boundaryDiffs').innerHTML=diffRows(text,flat);const opened=openFinals(text);document.getElementById('finalTitle').innerHTML=`סגור: <b>${esc(text)}</b><br>פתוח: <b>${esc(opened)}</b>`;document.getElementById('finalDiffs').innerHTML=diffRows(text,opened)
