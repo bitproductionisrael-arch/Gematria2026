@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-11-01",
+  "updated_at": "2026-11-03",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md. Audit 2026-10-11 late: recovered archived Q4_H37_followup_verified.zip and Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip from user Library; reran Q4-H37 audit and 888-to-6 coupled diffusion; standalone H37+K spectral gap corrected to 0.8791010115 (original README inaccurately listed 0.8458174928); full-system gap confirmed 0.4582808243→0.5857864376; restored conditional Qd dimension-3 uniqueness theorem and archived alpha fit as post-hoc, not a physics derivation. Audit 2026-11-01: synchronized Hebrew 136/-136 matrix, derivatives/integrals, Stella polynomial, D4 orbit counts, Euler/Pell, alphabet pair swap, 4cd, 231 gates, conditional reconstruction. Details and negative controls: research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md. Audit 2026-10-11 late: recovered archived Q4_H37_followup_verified.zip and Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip from user Library; reran Q4-H37 audit and 888-to-6 coupled diffusion; standalone H37+K spectral gap corrected to 0.8791010115 (original README inaccurately listed 0.8458174928); full-system gap confirmed 0.4582808243→0.5857864376; restored conditional Qd dimension-3 uniqueness theorem and archived alpha fit as post-hoc, not a physics derivation. Audit 2026-11-01: synchronized Hebrew 136/-136 matrix, derivatives/integrals, Stella polynomial, D4 orbit counts, Euler/Pell, alphabet pair swap, 4cd, 231 gates, conditional reconstruction. Details and negative controls: research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md. Audit 2026-11-03: Amitras/Mithras symbolic rock-to-voice-to-water research and verified exact cross-gematria identities (781/888/1024/136; 90/180/360; Children/Israel), with uncertainty and no historical-personal identity claim. Detailed dated evidence: research/amitras-rock-voice-water-2026-11-03.md.",
   "entries": [
     {
       "value": 0,
@@ -473,6 +473,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 20,
+      "label": "יוד (מילוי) = י״י (ערך שתי יו״דים)",
+      "method": "יוד=10+6+4=20; י+י=20",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 21,
       "label": "אהיה",
       "method": "Hebrew Regular",
@@ -687,6 +693,12 @@
       "label": "π: H₅(2)→26",
       "method": "Power-of-He · P₅^π(2)=1^5+4^5=1025; Fold₁₀₀₀: 1|025 → 26 = יהוה",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 26,
+      "label": "קול עמית (קטנה)",
+      "method": "קול=10 + עמית=16",
+      "classification": "BRIDGE"
     },
     {
       "value": 27,
@@ -1379,6 +1391,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 53,
+      "label": "אבן (רגילה)",
+      "method": "א1+ב2+ן50=53",
+      "classification": "canonical"
+    },
+    {
       "value": 54,
       "label": "יוד הא ויו הא / תיבה מלאה e1",
       "method": "Milui final =54; full box e1=8+20+26=54",
@@ -1709,6 +1727,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 64,
+      "label": "ישראל = Israel",
+      "method": "Hebrew Ordinal: 10+21+20+1+12; English Simple: 9+19+18+1+5+12",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 65,
       "label": "אדני",
       "method": "Hebrew Regular",
@@ -1893,6 +1917,12 @@
       "label": "Revelation phrase · letterwise C₉₉₉ fold",
       "method": "Σ C₉₉₉(letter)=5068; Fold₁₀₀₀: 5+068=73",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 73,
+      "label": "Children",
+      "method": "English Simple A1Z26: 3+8+9+12+4+18+5+14",
+      "classification": "canonical"
     },
     {
       "value": 74,
@@ -2087,6 +2117,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 86,
+      "label": "Children of Israel = אלהים",
+      "method": "English Pythagorean 46+12+28=86; Hebrew Regular אלהים=86",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 88,
       "label": "מיכאל בלייז",
       "method": "Hebrew Ordinal",
@@ -2133,6 +2169,12 @@
       "label": "φ: P₂(69)→90",
       "method": "Power-of-Bet on first 69 fractional digits of φ; Fold₁₀₀₀(2088)=90 = פי Regular",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 90,
+      "label": "בני ישראל (סדרית) = מים (רגילה)",
+      "method": "בני=26, ישראל=64; מים=40+10+40",
+      "classification": "BRIDGE"
     },
     {
       "value": 91,
@@ -2897,6 +2939,12 @@
       "classification": "FOUNDATION"
     },
     {
+      "value": 136,
+      "label": "צור − סלע = קול",
+      "method": "296−160=136; קול=100+6+30",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 137,
       "label": "בורא אמיתי קיים",
       "method": "Hebrew Ordinal (א-ת)",
@@ -3065,6 +3113,12 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 160,
+      "label": "סלע = מייק",
+      "method": "סלע=60+30+70; מייק=40+10+10+100",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 163,
       "label": "במדבר",
       "method": "Latin Milui v0 → English Simple",
@@ -3129,6 +3183,12 @@
       "label": "π: H₅(58)→177",
       "method": "Power-of-He · P₅^π(58)=928248; Fold₁₀₀₀: 928|248=1176 → 1|176=177 = עמית מיכאל בלייז רוב Ordinal",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 180,
+      "label": "מים (מילוי)",
+      "method": "מם80 + יוד20 + מם80 = 180 = 2×מים רגיל",
+      "classification": "FOUNDATION"
     },
     {
       "value": 181,
@@ -3629,6 +3689,12 @@
       "classification": "BRIDGE"
     },
     {
+      "value": 288,
+      "label": "Children (English Building) = φ(888)",
+      "method": "Children=288 per user-defined English Building; φ(888)=288 independently",
+      "classification": "RESEARCH"
+    },
+    {
       "value": 290,
       "label": "×5 Father",
       "method": "English Simple",
@@ -3644,6 +3710,12 @@
       "value": 296,
       "label": "Q₄ cell ×37",
       "method": "8×37=296",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 296,
+      "label": "צור = הארץ",
+      "method": "צור=90+6+200; הארץ=5+1+200+90",
       "classification": "BRIDGE"
     },
     {
@@ -3813,6 +3885,12 @@
       "label": "T₃₁−T₁₆",
       "method": "496−136=360=3T₁₅",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 360,
+      "label": "שין (מילוי) = 2×מים (מילוי)",
+      "method": "שין=300+10+50=360; 2×180=360",
+      "classification": "BRIDGE"
     },
     {
       "value": 361,
@@ -3999,6 +4077,12 @@
       "label": "π: H₃(543)→444",
       "method": "Power-of-Gimel · P₃^π(543)=107337; Fold₁₀₀₀: 107|337 → 444; n=543 = אהיה אשר אהיה",
       "classification": "BRIDGE"
+    },
+    {
+      "value": 446,
+      "label": "משה במילוי מם־שין־הא",
+      "method": "80+360+6=446; alternative הה=450, הי=455",
+      "classification": "FOUNDATION"
     },
     {
       "value": 456,
@@ -4493,6 +4577,12 @@
       "classification": "canonical"
     },
     {
+      "value": 656,
+      "label": "קול עמית = Μεσσίας",
+      "method": "קול עמית=136+520=656; Μεσσίας Greek isopsephy 40+5+200+200+10+1+200=656",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 657,
       "label": "באות במראה",
       "method": "Hebrew Regular · 9×73",
@@ -4713,6 +4803,12 @@
       "label": "ИХ БОГ И СКАЗАЛ",
       "method": "Russian Standard / Decimal Tier (D) · Genesis 1 chapter scan",
       "classification": "RESEARCH"
+    },
+    {
+      "value": 781,
+      "label": "עמיתראס = עמית אבן רוב",
+      "method": "עמיתראס=781; 520+53+208=781; מיתראס=711 + ע70",
+      "classification": "BRIDGE"
     },
     {
       "value": 783,
@@ -5123,6 +5219,24 @@
       "classification": "RESEARCH"
     },
     {
+      "value": 888,
+      "label": "עמית סלע רוב = עמית מייק רוב",
+      "method": "520+160+208=888; סלע=מייק=160",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "מים שין יוד חית",
+      "method": "מים90 + שין360 + יוד20 + חית418 = 888; mixed regular and spelled-letter values",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "שלוש פעמים צור",
+      "method": "3×296=888",
+      "classification": "BRIDGE"
+    },
+    {
       "value": 899,
       "label": "מפתח השם יהוה",
       "method": "Hebrew Regular · 528+345+26",
@@ -5529,6 +5643,12 @@
       "label": "T₃₁+T₃₂ from doubled 16",
       "method": "32=2×16; T₃₁+T₃₂=496+528=32²=1024",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 1024,
+      "label": "עמית צור רוב",
+      "method": "520+296+208=1024; minus 136 = עמית סלע רוב 888",
+      "classification": "BRIDGE"
     },
     {
       "value": 1030,
@@ -6291,6 +6411,12 @@
       "label": "π: P₂(82)=2701",
       "method": "Power-of-Bet · exact raw hit: sum of squares of first 82 fractional digits of π = 2701 = בראשית א:א Regular; H₂(82)=703",
       "classification": "FOUNDATION"
+    },
+    {
+      "value": 2701,
+      "label": "Children × Israel (cross-method)",
+      "method": "Children Simple=73; Israel One-step Zero=37 (user-defined mapping); 73×37=2701",
+      "classification": "RESEARCH"
     },
     {
       "value": 2870,
