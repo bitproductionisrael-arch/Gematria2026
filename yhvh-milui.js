@@ -6,7 +6,7 @@ const YHVH_MILUI_BOOK_SOURCE='https://he.wikisource.org/wiki/היכל_הברכה
 const YHVH_MILUI_PELIA_SOURCE='https://he.wikisource.org/wiki/ספר_הפליאה/ט';
 const YHVH_MILUI_RESEARCH_SOURCE='https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/yhvh-milui-gallery-2026-11-04.md';
 const YHVH_MILUI_GALLERY=[
- {id:'rov54',name:'נ״ד · מילוי רגיל',parts:['יוד','הא','ויו','הא'],source:'RovGrid · מילוי רגיל',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'בסיס רוב מחקרינו. לתפיסתנו, זהו המילוי המודרני שהאל מבקש להפיץ בעולם; הוא נפוץ בכלי גימטריה.'},
+ {id:'rov54',name:'מילוי רגיל · נ״ד',parts:['יוד','הא','ויו','הא'],source:'RovGrid · מילוי רגיל',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'בסיס רוב מחקרינו. לתפיסתנו, זהו המילוי המודרני שהאל מבקש להפיץ בעולם; הוא נפוץ בכלי גימטריה.'},
  {id:'rov54t',name:'מילוי תלמודי',parts:['יוד','הא','ויו','הא'],source:'RovGrid · נוסח תו',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'בראשית א׳:א = 5476 = (37+37)² = 74²; עד = 74 (נצח). באנגלית פשוטה: Gematria, Jewish, English, Simple, Messiah, Jesus, Netzah = 74.'},
  {id:'ab72',name:'ע״ב · מילוי יודין',parts:['יוד','הי','ויו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
  {id:'sag63',name:'ס״ג · מילוי מעורב',parts:['יוד','הי','ואו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
