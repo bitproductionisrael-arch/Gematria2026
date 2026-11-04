@@ -280,6 +280,13 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .long-token{overflow-wrap:anywhere;word-break:break-word}
 
 .main-tabs .prime-nav-link{display:flex;align-items:center;justify-content:center;padding:5px 6px;border:1px solid #846b3e;border-radius:10px;color:#eed39b;background:#211b11;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.main-tabs .prime-nav-link:hover{background:#342811;border-color:#d8ad55}
+
+.stage-harmony{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;border:1px solid #2b4050;border-radius:11px;background:#0c1822;padding:8px 11px;font-size:11px;color:#bfd1df}
+.stage-harmony b{font-weight:800;color:#eaf2fa}
+.stage-harmony button,.harmony-relations-copy{border:1px solid #47728a;border-radius:9px;background:#102434;color:#d8edfc;padding:7px 9px;font-size:11px;font-weight:750;white-space:nowrap;cursor:pointer}
+.stage-harmony button:hover,.harmony-relations-copy:hover{background:#17334a;border-color:#8ab7d1}
+.harmony-relations-copy{width:100%;margin-top:9px}
+@media(max-width:670px){.stage-harmony{flex-direction:column;align-items:stretch;text-align:center}.stage-harmony button{width:100%}}
 </style>
 <style>
 /* Distinct letter permutations · independent operator, not additive gematria */
@@ -378,7 +385,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 
     <section id="tab-relations" class="tab-panel"><div class="panel relations-layout">
       <div class="relation-summary">
-        <div class="box"><h3 data-i18n="harmony">הרמוניה</h3><div id="harmonyPct" class="bigvalue">0%</div><div class="meter"><div id="harmonyFill"></div></div><div id="harmonyText" class="tiny" style="margin-top:6px"></div></div>
+        <div class="box"><h3 data-i18n="harmony">הרמוניה</h3><div id="harmonyPct" class="bigvalue">0%</div><div class="meter"><div id="harmonyFill"></div></div><div id="harmonyText" class="tiny" style="margin-top:6px"></div><button id="copyHarmonyRelations" type="button" class="harmony-relations-copy" title="העתק הרמוניה וכל הקשרים">🧲 העתק הרמוניה</button></div>
         <div class="box"><h3 data-i18n="strong_relations">קשרים חזקים</h3><div id="strongCount" class="bigvalue">0</div><div class="tiny">φ, אינדקסים, שוויון, +1000, zero-strip</div></div>
         <div class="box"><h3 data-i18n="repeated_signatures">חתימות חוזרות</h3><div id="relationCorpus" class="chiprow"></div></div>
       </div>
@@ -1373,6 +1380,48 @@ function pairRelations(a,b,allVals){a=Math.abs(Math.trunc(a));b=Math.abs(Math.tr
 function buildRelations(results){const nodes=results.filter(r=>Number.isInteger(r.total)&&r.total>0);const vals=nodes.map(r=>r.total);const out=[];for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const rs=pairRelations(nodes[i].total,nodes[j].total,vals);if(rs.length)out.push({a:nodes[i],b:nodes[j],rels:rs,score:Math.max(...rs.map(x=>x[1]))})}return out.sort((x,y)=>y.score-x.score)}
 function harmony(results){const nodes=results.filter(r=>Number.isInteger(r.total)&&r.total>0),vals=nodes.map(r=>r.total);let c=0,strong=0,pairs=0;for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){pairs++;const rs=pairRelations(nodes[i].total,nodes[j].total,vals);if(rs.length)c++;if(rs.some(x=>x[1]>=80))strong++}return {pct:pairs?Math.round(c/pairs*100):0,connected:c,pairs,strong}}
 
+
+/* Harmony export: identical computation to the Relations summary. */
+const HARMONY_COPY_LABELS={
+ 'he:regular':'Regular','he:ordinal':'Ordinal','he:reduced':'Small','he:wordReduced':'Reduced','he:digitReduced':'Digit Reduced',
+ 'he:latinMiluiUserReduced':'Reduced English Filling',
+ 'en:pythagorean':'English Small','en:wordReduced':'English Reduced','en:digitReduced':'English Digit Reduced',
+ 'en:agrippaReduced':'Jewish Small','en:agrippaWordReduced':'Jewish Reduced','en:agrippaDigitReduced':'Jewish Digit Reduced',
+ 'el:reduced':'Greek Small','el:wordReduced':'Greek Reduced','el:digitReduced':'Greek Digit Reduced',
+ 'ru:ruReduced':'Russian Small','ru:ruWordReduced':'Russian Reduced','ru:ruDigitReduced':'Russian Digit Reduced'
+};
+function harmonyCopyLabel(r,script){
+ const m=r.method,v=HARMONY_COPY_LABELS[script+':'+m.key];if(v)return v;
+ const parts=String(m.name||'').split(' / ').map(x=>x.trim()).filter(x=>x&&x!=='Research');
+ return parts.find(x=>/[A-Za-z]/.test(x))||parts[0]||m.key;
+}
+function harmonyCopyData(text,results){
+ const phrase=String(text||'').trim(),active=syncRelevantResults(phrase,results||[]);
+ return {phrase,script:detectScript(phrase),H:harmony(active),pairs:buildRelations(active)};
+}
+function harmonyCopyText(text,results){
+ const {phrase,script,H,pairs}=harmonyCopyData(text,results);
+ const lines=[H.pct+'% = '+phrase,'קשרים חזקים: '+H.strong,'הרמוניה: '+H.connected+' זוגות מחוברים','','פירוט הקשרים:'];
+ for(const pair of pairs){
+  const a=phrase+'('+harmonyCopyLabel(pair.a,script)+')',b=phrase+'('+harmonyCopyLabel(pair.b,script)+')';
+  if(pair.a.total===pair.b.total)lines.push(a+' = '+b+' = '+fmt(pair.a.total));
+  else lines.push(a+' = '+fmt(pair.a.total)+' ↔ '+b+' = '+fmt(pair.b.total)+' · '+pair.rels.map(x=>x[0]).join(' · '));
+ }
+ if(!pairs.length)lines.push('אין קשרים בין השיטות המחושבות לביטוי זה.');
+ return lines.join('\n');
+}
+let harmonyStageCache={key:'',data:null};
+function harmonyStageData(){
+ const phrase=document.getElementById('q').value;
+ const key=current.script+'|'+phrase+'|'+current.results.map(r=>r.total).join('|');
+ if(harmonyStageCache.key!==key)harmonyStageCache={key,data:harmony(syncRelevantResults(phrase,current.results))};
+ return harmonyStageCache.data;
+}
+function harmonyStageHtml(){
+ const h=harmonyStageData();
+ return '<div class="stage-harmony"><span>הרמוניה: <b>'+h.pct+'%</b> · קשרים חזקים: <b>'+h.strong+'</b> · <b>'+h.connected+'</b> זוגות מחוברים</span><button type="button" data-copy-harmony="1" title="העתק סיכום הרמוניה וכל הקשרים">🧲 העתק הרמוניה</button></div>';
+}
+
 /* ---------- transforms ---------- */
 function openFinals(t){return Array.from(t).map(c=>FINAL_TO_BASE[c]||c).join('')}
 function boundaryless(t){return t.replace(/\s+/g,'')}
@@ -1818,7 +1867,7 @@ function canonicalIdentitySeriesHtml(q){
  const t=canonicalIdentitySeriesText(q);if(!t)return'';
  return '<div class="box" style="grid-column:1/-1"><h3>Canonical Series</h3><pre style="margin:0;white-space:pre-wrap;direction:ltr;text-align:left;font:600 14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace">'+esc(t)+'</pre></div>';
 }
-function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button data-copy-selected-broken title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length+(permutationSelected?1:0)} בחירות</div></div></div>`+canonicalIdentitySeriesHtml(q)+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="copy-method" data-copy-broken-method="${esc(sk)}" title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}${methodAliasNote(r)?`<div class="tiny" style="margin-top:3px;opacity:.72">${esc(methodAliasNote(r))}</div>`:''}</div><div class="mv">${esc(resultExactDisplay(r))}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')+(permutationSelected?permutationComparisonCardHtml():'')}
+function renderMultiDetails(rows){const pane=document.getElementById('detailPane'),grid=document.getElementById('multiDetailGrid');pane.classList.add('multi-mode');const q=document.getElementById('q').value;grid.innerHTML=`<div class="stage-head"><div><div class="stage-title">מרכז השוואה</div><div class="stage-sub">${esc(q)}</div></div><div class="stage-actions"><button data-copy-selected title="העתק את כל הבחירות שסומנו">🧲</button><button data-copy-selected-broken title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="math-magnet" data-copy-selected-math title="העתק את כל הבחירות + מתמטיקה">🧲∑</button><div class="stage-count">${rows.length+(permutationSelected?1:0)} בחירות</div></div></div>`+harmonyStageHtml()+canonicalIdentitySeriesHtml(q)+rows.map(r=>{const sk=resultSelectionKey(r),dn=resultDisplayName(r);return `<div class="multi-detail-card" data-detail-method="${esc(sk)}"><div class="mh"><div class="card-actions"><button class="copy-rich-method" data-copy-rich-method="${esc(sk)}" title="העתק בחירה + פירוקים ותכונות">🧲∑</button><button class="copy-method" data-copy-method="${esc(sk)}" title="העתק רק את הבחירה">🧲</button><button class="copy-method" data-copy-broken-method="${esc(sk)}" title="מגנט שבור — תוצאה (שיטה)">🧲½</button><button class="remove-method" data-remove-method="${esc(sk)}" title="הסר מהבחירה">✕</button></div><div class="mn" style="font-size:${compactMethodFont(dn)}px">${esc(dn)}${methodAliasNote(r)?`<div class="tiny" style="margin-top:3px;opacity:.72">${esc(methodAliasNote(r))}</div>`:''}</div><div class="mv">${esc(resultExactDisplay(r))}</div></div>${compactFactsHtml(r.total)}<div class="multi-breakdown">${richBreakdownHtml(r)}</div></div>`}).join('')+(permutationSelected?permutationComparisonCardHtml():'')}
 
 /* Independent structural operator: n! / product(k!). Values are BigInt and never enter additive gematria totals. */
 let permutationSelected=false,permutationDistinctFinals=false;
@@ -2326,6 +2375,7 @@ document.getElementById('multiDetailGrid').addEventListener('change',e=>{
  if(e.target.matches('[data-permutation-finals]')){permutationDistinctFinals=e.target.checked;renderResults()}
 });
 document.getElementById('multiDetailGrid').addEventListener('click',async e=>{
+ if(e.target.closest('[data-copy-harmony]')){const ok=await copyText(harmonyCopyText(document.getElementById('q').value,current.results));toast(ok?'ההרמוניה וכל הקשרים הועתקו':'שגיאה בהעתקה');return}
  const permutationMagnet=e.target.closest('[data-permutation-copy]');
  if(permutationMagnet){
   const mode=permutationMagnet.dataset.permutationCopy;
@@ -2346,7 +2396,7 @@ document.getElementById('multiDetailGrid').addEventListener('click',async e=>{
 document.getElementById('copyOne').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;const ok=await copyText(minimalResultText(r));toast(ok?'הועתק':'שגיאה בהעתקה')});
 document.getElementById('copyOneBroken').addEventListener('click',async()=>{const r=methodByKey(state.methodKey);if(!r)return;const ok=await copyText(brokenResultText(r));toast(ok?'המגנט השבור הועתק':'שגיאה בהעתקה')});
 document.getElementById('numSource').addEventListener('change',e=>{state.numKey=e.target.value;materializeDeferredOperators([state.numKey]);renderNumber()});document.getElementById('numberSubtabs').addEventListener('click',e=>{const b=e.target.closest('[data-sub]');if(!b)return;state.numSub=b.dataset.sub;document.querySelectorAll('#numberSubtabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.analysis-page').forEach(x=>x.hidden=x.dataset.page!==state.numSub)});
-document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
+document.getElementById('relPrev').addEventListener('click',()=>{state.relPage=Math.max(0,state.relPage-1);renderRelations()});document.getElementById('relNext').addEventListener('click',()=>{state.relPage++;renderRelations()});document.getElementById('relationList').addEventListener('click',e=>{const row=e.target.closest('[data-relidx]');if(!row)return;openRelationDetail(Number(row.dataset.relidx))});document.getElementById('closeRelation').addEventListener('click',closeRelationDetail);document.getElementById('relationModal').addEventListener('click',e=>{if(e.target.id==='relationModal')closeRelationDetail()});document.getElementById('copyHarmonyRelations').addEventListener('click',async()=>{const ok=await copyText(harmonyCopyText(document.getElementById('q').value,current.results));toast(ok?'ההרמוניה וכל הקשרים הועתקו':'שגיאה בהעתקה')});document.getElementById('copyRelation').addEventListener('click',async()=>{const ok=await copyText(relationPlainText());toast(ok?'פירוט הקשר הועתק':'שגיאה בהעתקה')});document.getElementById('saveRelation').addEventListener('click',async()=>{const x=state.relationOpen;if(!x)return;const ok=await savePanelAsPng(document.getElementById('relationCard'),`relation - ${x.a.total} - ${x.b.total}`);if(ok)toast('נשמר צילום קשר מאומת')});
 document.getElementById('compareA').addEventListener('input',()=>{state.cmpPage=0;if(state.compareAuto)refreshAutoCompareTarget();renderCompare()});document.getElementById('compareB').addEventListener('input',()=>{state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';state.cmpPage=0;renderCompare()});document.getElementById('autoCompare').addEventListener('click',()=>{state.compareAuto=true;state.cmpPage=0;refreshAutoCompareTarget();renderCompare()});document.getElementById('swapCompare').addEventListener('click',()=>{const a=document.getElementById('compareA'),b=document.getElementById('compareB');[a.value,b.value]=[b.value,a.value];state.compareAuto=false;document.getElementById('autoCompare').classList.remove('active');document.getElementById('compareHint').textContent='השוואה ידנית';renderCompare()});document.getElementById('cmpPrev').addEventListener('click',()=>{state.cmpPage=Math.max(0,state.cmpPage-1);renderCompare()});document.getElementById('cmpNext').addEventListener('click',()=>{state.cmpPage++;renderCompare()});
 ['repeatPhrase','repeatMethod','repeatMax'].forEach(id=>document.getElementById(id).addEventListener(id==='repeatPhrase'?'input':'change',()=>{state.repeatPage=0;if(id==='repeatPhrase'){state.repeatMatrixScale=1;state.repeatHitSelected=[]}renderRepeat()}));
 document.getElementById('repeatMatrixToggle').addEventListener('click',async()=>{const ok=await saveRepeatMatrixImage(false);toast(ok?'דוח המטריקס הופק':'שגיאה בהפקת הדוח')});
