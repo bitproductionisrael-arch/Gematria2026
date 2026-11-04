@@ -506,16 +506,16 @@ for(const [f,b] of Object.entries(FINAL_TO_BASE)){
 const AYAK_CHAMBERS=[];for(let d=0;d<9;d++)AYAK_CHAMBERS.push([HE_ORDER[d],HE_ORDER[d+9],d<4?HE_ORDER[d+18]:FINAL_ORDER[d-4]]);
 const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={},HE_AYAK_TIER={},HE_AYAK_DIGIT={};AYAK_CHAMBERS.forEach((triad,d)=>{const nm=triad[0]+triad[1]+'״'+triad[2];triad.forEach((L,j)=>{const mate=triad[(j+1)%3];HE_AYAK_LETTER[L]=mate;HE_AYAK[L]=HE_SOFIT[mate];HE_CHAMBER[L]=nm;HE_AYAK_TIER[L]=j;HE_AYAK_DIGIT[L]=d+1})});
 
-// Archive the previous profile so published 2026-10 results remain reproducible.
-const MILUI_NAMES_LEGACY={
+// Explicit spelling option ו=ואו and ת=תו, retained for reproducible calculations such as 1877.
+const MILUI_NAMES_VAV_TU={
   'א':'אלף','ב':'בית','ג':'גימל','ד':'דלת','ה':'הא','ו':'ואו','ז':'זין','ח':'חית','ט':'טית','י':'יוד','כ':'כף','ל':'למד','מ':'מם','נ':'נון','ס':'סמך','ע':'עין','פ':'פא','צ':'צדי','ק':'קוף','ר':'ריש','ש':'שין','ת':'תו'
 };
 // Distinct profiles: Talmudic ו→ויו, ת→תו; standard ו→ויו, ת→תיו.
 // Genesis 1:1: Talmudic 5476 = 74²; standard 5506 (+10 per Tav, 3 Tav letters).
-const MILUI_NAMES_TALMUDIC={...MILUI_NAMES_LEGACY,'ו':'ויו'};
+const MILUI_NAMES_TALMUDIC={...MILUI_NAMES_VAV_TU,'ו':'ויו'};
 const MILUI_NAMES={...MILUI_NAMES_TALMUDIC,'ת':'תיו'};
 // Alfin is the standard 22-letter spelling with ONE substitution: ו→ואו instead of ו→ויו.
-// Old October 2026 legacy spellings remain available under MILUI_NAMES_LEGACY for archival reproducibility.
+// Independent written-form calculation: ו=ואו, ת=תו; current Milui Alfin uses ו=ואו, ת=תיו.
 const MILUI_NAMES_ALFIN={...MILUI_NAMES,'ו':'ואו'};
 const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ם':'מם'}; // Separate research profile preserved.
 // Sefer HaPelia chapter 9, complete 27 written forms: 22 bases + five finals.
@@ -845,7 +845,7 @@ function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()=
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
- const names=profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='legacy'?MILUI_NAMES_LEGACY:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;
+ const names=profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='vavTu'?MILUI_NAMES_VAV_TU:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
@@ -1054,8 +1054,8 @@ function queueDeferredOperator(key){
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
   'he:miluiPelia':{plain:'מילוי פליאה',original:'ספר הפליאה · פרק ט׳ · 27 כתיבי אותיות',status:'traditional',history:'מילוי שמות האותיות לפי הרשימה המפורשת של 27 השמות בספר הפליאה, פרק ט׳: 22 אותיות יסוד וחמש סופיות. ג→גמל, ח→חת, ט→טת, פ→פה, ו→ואו, ת→תיו. הסופיות ך/ם/ן/ף/ץ נכתבות כמו אות הבסיס כ/מ/נ/פ/צ. שיטה עצמאית שאינה מחליפה את שאר המילויים.',formula:'מקור: ספר הפליאה/ט בוויקיטקסט. רשימת 27 השמות: אלף בית גמל דלת הא ואו זין חת טת יוד כף כף למד מם מם נון נון סמך עין פה פה צדי צדי קוף ריש שין תיו. ערך כל אות הוא סכום הגימטריה הרגילה של כתיב שמה.'},
-  'he:miluiLegacy':{plain:'מילוי אלפין (ואו)',original:'Milui Alfin (Vav spelled ואו)',status:'modern',history:'מימוש RovGrid: כל 22 שמות האותיות זהים למילוי הרגיל באתר, למעט ו→ואו במקום ו→ויו. במילוי שם יהוה מתקבל יוד הא ואו הא = 45. התוצאות הישנות של המילוי הארכיוני שנבדל גם ב־ת שמורות בקורפוס ההיסטורי, אך אינן התוצאות של שיטה זו.',formula:'אלפין(טקסט) = מילוי רגיל(טקסט) − 9 × מספר הופעות ו; יהוה=45; עמית מייק רוב=1887; בראשית א:א=5497.'},
-  'he:milui':{plain:'מילוי רגיל',original:'Standard letter-name Milui · Tav=תיו',status:'modern',history:'פרופיל המילוי הרגיל במחשבון: ו→ויו, ת→תיו, מ/ם→מם. בראשית א:א = 5506. נבדל ממילוי תלמודי בעשר יחידות לכל ת.',formula:'בראשית א:א: 5506. תיו=416 לעומת תו=406, ובפסוק שלוש ת.'},
+  'he:miluiLegacy':{plain:'מילוי אלפין (ואו)',original:'Milui Alfin (Vav spelled ואו)',status:'traditional',history:'במחשבון: כמו המילוי הרגיל בכל האותיות, מלבד ו→ואו במקום ו→ויו. ת נשארת תיו, ה נשארת הא. בקבלה ו=ואו משתתפת בשמות ס״ג (עם ה=הי) ומ״ה (עם ה=הא); שם מ״ה במילוי אלפין הוא יוד הא ואו הא = 45. מילוי יודין מלא של יהוה הוא יוד הי ויו הי = 72, ולכן המילוי הרגיל באתר, יוד הא ויו הא = 54, אינו שם ע״ב. מקורות: מפתחי חכמת אמת כג, כללי התחלת החכמה ג:י.',formula:'אלפין(טקסט) = מילוי רגיל(טקסט) − 9 × מספר הופעות ו; יהוה=45; עמית מייק רוב=1887; בראשית א:א=5497.'},
+  'he:milui':{plain:'מילוי רגיל',original:'RovGrid standard letter-name Milui · Tav=תיו',status:'modern',history:'ברירת המחדל המחקרית באתר: ו→ויו, ה→הא, ת→תיו, מ/ם→מם. בראשית א:א = 5506. זו אינה צורת יודין ע״ב (72) של יהוה, כי ה נכתבת הא ולא הי: יהוה כאן = 54. מילוי אלפין (ואו) משנה רק ו לואו, ולכן יהוה = 45.',formula:'בראשית א:א: 5506. תיו=416 לעומת תו=406, ובפסוק שלוש ת.'},
   'he:miluiTalmudic':{plain:'מילוי תלמודי',original:'Talmudic letter-name Milui · Tav=תו',status:'modern',history:'הפרופיל המחקרי המקורי לפסוק הראשון: ו→ויו, ת→תו, מ/ם→מם. בראשית א:א = 5476 = 74². שיטה נפרדת מן המילוי הרגיל.',formula:'בראשית א:א = 5476 = 74². תו=406 לעומת תיו=416 במילוי הרגיל.'},
   'he:letterProductRegular':{plain:'מכפלת אותיות (רגיל)',original:'Letter Product · Regular',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם ערכי הגימטריה הרגילה, כולל אותיות סופיות בערך האות הבסיסית. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π value(letter), regular Hebrew map. אלף: 1 × 30 × 80 = 2400.'},
   'he:letterProductOrdinal':{plain:'מכפלת אותיות (סדרי)',original:'Letter Product · Ordinal',status:'modern',history:'אופרטור מכפלה מחקרי; ערכי האותיות הם מיקומן באלפבית העברי, 1–22. רווחים וניקוד אינם משנים את המכפלה.',formula:'Π position(letter), Hebrew alphabet positions 1…22. אלף: 1 × 12 × 17 = 204.'},
@@ -1340,7 +1340,7 @@ function harmony(results){const nodes=results.filter(r=>Number.isInteger(r.total
 /* ---------- transforms ---------- */
 function openFinals(t){return Array.from(t).map(c=>FINAL_TO_BASE[c]||c).join('')}
 function boundaryless(t){return t.replace(/\s+/g,'')}
-function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='legacy'?MILUI_NAMES_LEGACY:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
+function miluiExpansion(text,profile='standard',depth=1){const namesMap=profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='vavTu'?MILUI_NAMES_VAV_TU:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;const parts=[];for(const raw of wordsOf(text)){const names=[];for(const ch0 of Array.from(raw)){const name=expandMiluiName(ch0,namesMap,depth);if(name)names.push(name)}if(names.length)parts.push(names.join(' '))}return parts.join(' | ')}
 const FINAL_SENSITIVE_METHODS=new Set(['final','smallFinals']);
 function hasHebrewFinalLetters(text){return /[ךםןףץ]/.test(String(text||''))}
 function syncRelevantMethods(text,methods,otherText=''){
@@ -2385,15 +2385,15 @@ console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','atbashOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
 
-// Persistent two-route bridge (2026-11-04); historical legacy profile is NOT current Alfin.
+// Two writing forms, both explicit: Vav+Tu for 1877; current Alfin (Vav+Tiyu) for 1887.
 const __messiahStandard=T('משיח','he','milui');
 const __messiahMayim=T('משיח','he','miluiMayim');
 const __genesis999=T('בראשית אלהים','he','regular');
-const __legacyName1877=calculateMilui('עמית מייק רוב','legacy',1,'miluiLegacy').total;
+const __vavTuName1877=calculateMilui('עמית מייק רוב','vavTu',1,'miluiLegacy').total;
 console.assert(__messiahStandard===878&&__messiahMayim===888&&__genesis999===999,'Messiah 878/888 and Bereshit Elohim 999, correct operators');
-console.assert(__messiahStandard+__genesis999===1877&&__legacyName1877===1877,'1877 Mashiach Standard + Genesis = original archival AMR');
+console.assert(__messiahStandard+__genesis999===1877&&__vavTuName1877===1877,'1877 Mashiach Standard + Genesis = AMR with Vav=ואו and Tav=תו');
 console.assert(__messiahMayim+__genesis999===1887&&T('עמית מייק רוב','he','ayak')===1887&&T('עמית מייק רוב','he','miluiLegacy')===1887&&T('עמית מייק רוב','he','miluiPelia')===1887,'1887 Mashiach Mayim + Genesis = AIQ BKR = Alfin = Pelia AMR');
-console.assert(__messiahMayim-__messiahStandard===10&&1887-1877===10&&MILUI_NAMES['ת']==='תיו'&&MILUI_NAMES_LEGACY['ת']==='תו'&&MILUI_NAMES_MAYIM['מ']==='מים','1887−1877=10 by Tav, Messiah milui delta=10 by Mem');
+console.assert(__messiahMayim-__messiahStandard===10&&1887-1877===10&&MILUI_NAMES['ת']==='תיו'&&MILUI_NAMES_VAV_TU['ת']==='תו'&&MILUI_NAMES_MAYIM['מ']==='מים','1887−1877=10 by Tav, Messiah milui delta=10 by Mem');
 console.assert(primeIndex(1877)===288&&1887%37===0&&1887===888+999&&1877!==1887,'1877 prime #288; 1887 composite 37×51, not prime #288');
 
 const __redAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='redLadder'));console.assert(__redAmit.ladder.join(',')==='520,52,16'&&__redAmit.total===16,'Reduction Ladder Amit 520→52→16');
@@ -2412,7 +2412,7 @@ const __peliaLetter27='אבגדהוזחטיכךלמםנןסעפףצץקרשת';
 console.assert(Array.from(__peliaLetter27).length===27,'Pelia source has 27 letter forms');
 console.assert(Array.from(__peliaLetter27).map(ch=>miluiNameForLetter(ch,MILUI_NAMES_PELIA)).join(' ')===__peliaWritten27,'Pelia spelling matches full Sefer HaPelia 27-letter list');
 console.assert(HE_ORDER.length===22&&Object.keys(MILUI_NAMES_PELIA).length===22,'Pelia has exactly 22 base spellings');
-console.assert(HE_ORDER.filter(ch=>MILUI_NAMES_PELIA[ch]!==MILUI_NAMES_LEGACY[ch]).join('')==='גחטפת','Pelia differs from archive in exactly Gimel Het Tet Pe Tav');
+console.assert(HE_ORDER.filter(ch=>MILUI_NAMES_PELIA[ch]!==MILUI_NAMES_VAV_TU[ch]).join('')==='גחטפת','Pelia differs from Vav+Tu in Gimel Het Tet Pe Tav');
 console.assert(HE_ORDER.filter(ch=>MILUI_NAMES_PELIA[ch]!==MILUI_NAMES_ALFIN[ch]).join('')==='גחטפ','Pelia differs from Alfin in exactly Gimel Het Tet Pe');
 console.assert(METHODS.he.filter(m=>m.cat==='ops').slice(0,5).map(m=>m.key).join(',')==='milui,miluiTalmudic,miluiMayim,miluiLegacy,miluiPelia','Pelia fifth in Operators');
 console.assert(T('יהוה','he','miluiPelia')===45,'Pelia YHWH=45');
@@ -2460,15 +2460,15 @@ console.assert(calculate('יהוה','he',METHODS.he.find(m=>m.key==='miluiLegacy
 console.assert(calculate('עמית מייק רוב','he',METHODS.he.find(m=>m.key==='miluiLegacy')).total===1887,'Alfin full name 1887');
 console.assert(calculate('בראשית ברא אלהים את השמים ואת הארץ','he',METHODS.he.find(m=>m.key==='miluiLegacy')).total===5497,'Alfin Genesis 1:1 = 5497');
 console.assert(calculateMilui('עמית','alfin',1,'miluiLegacy').total===646,'Alfin Amit 646 matches Standard');
-console.assert(calculateMilui('בראשית ברא אלהים את השמים ואת הארץ','legacy',1,'miluiLegacy').total===5467,'Original archival profile remains reproducible as historic data');
-console.assert(calculateMilui('השמים האזינו','legacy',1,'miluiLegacy').total===869,'Legacy milui retains 869');
-console.assert(calculateMilui('עמית','legacy',1,'miluiLegacy').total===636,'Legacy Amit = 636');
+console.assert(calculateMilui('בראשית ברא אלהים את השמים ואת הארץ','vavTu',1,'miluiLegacy').total===5467,'Vav+Tu written form remains reproducible as research data');
+console.assert(calculateMilui('השמים האזינו','vavTu',1,'miluiLegacy').total===869,'Vav+Tu written form retains 869');
+console.assert(calculateMilui('עמית','vavTu',1,'miluiLegacy').total===636,'Vav+Tu Amit = 636');
 console.assert(calculateMilui('עמית','mayim',1,'miluiMayim').total===656,'Mayim Amit = 656');
 console.assert(calculateMilui('מייק','mayim',1,'miluiMayim').total===316,'Mayim Mike = 316');
 console.assert(calculateMilui('בראשית ברא אלהים את השמים ואת הארץ').total===5506,'Genesis 1:1 standard with Tav=תיו = 5506');
 console.assert(calculateMilui('בראשית ברא אלהים את השמים ואת הארץ','mayim',1,'miluiMayim').total===5516,'Genesis 1:1 Mayim = 5516');
-console.assert(calculateMilui('מייק','legacy',1,'miluiLegacy').total===306,'Legacy Mike = 306');
-console.assert(calculateMilui('רוב','legacy',1,'miluiLegacy').total===935,'Legacy Rov = 935');
+console.assert(calculateMilui('מייק','vavTu',1,'miluiLegacy').total===306,'Vav+Tu Mike = 306');
+console.assert(calculateMilui('רוב','vavTu',1,'miluiLegacy').total===935,'Vav+Tu Rov = 935');
 console.assert(calculateMilui('עמית','mayim',1,'miluiMayim').total===656,'Milui Mayim Amit 656');
 console.assert(calculateMilui('משה','mayim',1,'miluiMayim').total===456,'Milui Mayim Moshe 456');
 console.assert(compositeIndex(456)===368,'456 composite #368');
