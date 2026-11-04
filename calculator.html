@@ -682,9 +682,10 @@ const METHODS={
   {key:'regular',cat:'base',name:'גימטריה הכרחית / Regular',map:HE_VAL},
   {key:'final',cat:'base',name:'גימטריה סופית / Final Letters',map:HE_SOFIT},
   {key:'ordinal',cat:'base',name:'גימטריה סדרית / Ordinal',map:HE_ORD},
-  {key:'reduced',cat:'base',name:'גימטריה קטנה / Reduced',map:HE_KATAN,aliasNote:'≡ צמצום №2'},
+  {key:'reduced',cat:'base',name:'קטן / Small',map:HE_KATAN},
   {key:'smallFinals',cat:'base',name:'גימטריה קטנה סופית / Small Finals',map:HE_KATAN_SOFIT},
-  {key:'wordReduced',cat:'base',name:'גימטריה מצומצמת / Word Reduced',map:HE_KATAN,fold:'word'},
+  {key:'wordReduced',cat:'base',name:'צמצום / Reduced',map:HE_KATAN,fold:'word'},
+   {key:'digitReduced',cat:'base',name:'צמצום דיגיטלי / Digit Reduced',map:HE_KATAN,fold:'total'},
   {key:'zeroStep',cat:'base',name:'צמצום №1 / Reduction №1',map:HE_ZERO_STEP,research:true},
   {key:'atbash',cat:'cipher',name:'אתב״ש / Atbash',map:HE_ATBASH,sub:HE_ATBASH_LETTER},
    {key:'atbashOrdinal',cat:'cipher',name:'אתב״ש סדרי / Atbash Ordinal',map:HE_ATBASH_ORD,sub:HE_ATBASH_LETTER,aliasNote:'אות מראה → ערך סדרי'},
@@ -710,7 +711,7 @@ const METHODS={
   {key:'addsub',cat:'ops',name:'תוספת ומגרעת / Addition and Subtraction',map:HE_VAL,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'cycleBkr',cat:'cipher',name:'סייקל בכ״ר / Cycle BKR (Σ3)',custom:'cycleBkr',research:true},
   {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
-  {key:'latinMiluiUserReduced',cat:'ops',name:'מילוי לטיני v0 → English Reduced / Research',custom:'latinMiluiUserReduced',research:true},
+  {key:'latinMiluiUserReduced',cat:'ops',name:'Reduced English Filling',custom:'latinMiluiUserReduced',research:true},
   {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
   {key:'redLadder',cat:'ops',name:'סולם צמצום · Reduction Ladder / Research',custom:'redLadder',map:HE_VAL,research:true},
   {key:'harmonicHalf',cat:'ops',name:'חצי הרמוני · Harmonic Half / Research',custom:'harmonicHalf',map:HE_VAL,research:true},
@@ -723,8 +724,9 @@ const METHODS={
  ],
  el:[
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},
-  {key:'reduced',cat:'base',name:'Greek Isopsephy Reduced / Small',map:GR_VAL_RED},
-  {key:'wordReduced',cat:'base',name:'Greek Word Reduced',map:GR_VAL,fold:'word',research:true},
+  {key:'reduced',cat:'base',name:'Greek Small',map:GR_VAL_RED},
+  {key:'wordReduced',cat:'base',name:'Greek Reduced',map:GR_VAL,fold:'word',research:true},
+   {key:'digitReduced',cat:'base',name:'Greek Digit Reduced',map:GR_VAL_RED,fold:'total',research:true},
   {key:'ordinalAncient27',cat:'base',name:'Greek Ordinal — Ancient Letter Count / שיטה עתיקה של כמות האותיות',map:GR_ORD_ANCIENT,research:true},
   {key:'ordinal',cat:'base',name:'Greek Ordinal — Modern 24 Letters / שיטה מודרנית 24 אותיות',map:GR_ORD},
   {key:'ordinalReduced',cat:'base',name:'Greek Ordinal Reduced',map:GR_ORD_RED,research:true},
@@ -754,8 +756,9 @@ const METHODS={
  ru:[
   {key:'ruRegular',cat:'base',name:'Русская стандартная / Russian Standard · Decimal Tier (D)',map:RU_DECIMAL},
   {key:'ruOrdinal',cat:'base',name:'Русский порядковый / Russian Ordinal (O)',map:RU_ORD},
-  {key:'ruReduced',cat:'base',name:'Полное сокращение / Russian Full Reduction (R)',map:RU_RED},
-  {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Word Reduction (W)',map:RU_RED,fold:'word'},
+  {key:'ruReduced',cat:'base',name:'Русский малый / Russian Small (R)',map:RU_RED},
+  {key:'ruWordReduced',cat:'base',name:'Сокращение слов / Russian Reduced (W)',map:RU_RED,fold:'word'},
+   {key:'ruDigitReduced',cat:'base',name:'Цифровое сокращение / Russian Digit Reduced',map:RU_RED,fold:'total'},
   {key:'ruReverseOrdinal',cat:'cipher',name:'Русский Атбаш порядковый / Russian Atbash Ordinal',map:RU_REV_ORD,sub:RU_MIRROR_LETTER,research:true},
   {key:'ruZeroStep',cat:'base',name:'Одношаговое десятичное сокращение / Russian One-step Zero',map:RU_ZERO_STEP,research:true},
 
@@ -768,8 +771,9 @@ const METHODS={
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
   {key:'regular',cat:'base',name:'English Isopsephy',map:EN_REG},
-  {key:'pythagorean',cat:'base',name:'English Small/Pythagorean',map:EN_RED},
-  {key:'wordReduced',cat:'base',name:'English Simple Reduced',map:EN_RED,fold:'word'},
+  {key:'pythagorean',cat:'base',name:'English Small / Pythagorean',map:EN_RED},
+  {key:'wordReduced',cat:'base',name:'English Reduced',map:EN_RED,fold:'word'},
+   {key:'digitReduced',cat:'base',name:'English Digit Reduced',map:EN_RED,fold:'total'},
   {key:'sumerian',cat:'base',name:'English Gematria',map:EN_SUM},
   {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
   {key:'atbashOrdinal',cat:'cipher',name:'English Atbash Ordinal',map:EN_ATBASH_ORD,sub:EN_ATBASH_LETTER,research:true},
@@ -792,8 +796,9 @@ const METHODS={
   {key:'addsubRegular',cat:'ops',name:'English Addition & Subtraction / תוספת ומגרעת',map:EN_REG,transform:ladder,transformName:'prefixes + suffixes'},
   {key:'agrippa',cat:'base',name:'Jewish Gematria',map:AGR,agrippa:true},
   {key:'agrippaDeltaSimple',cat:'base',name:'Jewish∆Simple',custom:'agrippaDeltaSimple',research:true},
-  {key:'agrippaReduced',cat:'base',name:'Jewish Reduced',map:AGR_RED,agrippa:true},
-  {key:'agrippaWordReduced',cat:'base',name:'Jewish Word Reduced',map:AGR,fold:'word',agrippa:true}
+  {key:'agrippaReduced',cat:'base',name:'Jewish Small',map:AGR_RED,agrippa:true},
+  {key:'agrippaWordReduced',cat:'base',name:'Jewish Reduced',map:AGR,fold:'word',agrippa:true},
+   {key:'agrippaDigitReduced',cat:'base',name:'Jewish Digit Reduced',map:AGR_RED,fold:'total',agrippa:true}
  ]
 };
 for(const [script,order] of Object.entries({he:HE_ORDER,en:EN_ORDER,el:GR_MODERN_ORDER,ru:RU_ORDER}))METHODS[script].push(...homePowerMethods(order));
@@ -801,17 +806,17 @@ const CAT_LABELS={base:'בסיס',cipher:'תמורות אותיות',ops:'אופ
 const METHOD_EN_NAMES={
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
- regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Reduced / Mispar Katan',
- smallFinals:'Reduced Extended Finals',wordReduced:'Wordwise Reduction',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'One-Step Decimal Reduction',
+ regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Small',
+ smallFinals:'Small Finals',wordReduced:'Reduced',digitReduced:'Digit Reduced',pythagorean:'English Small / Pythagorean',agrippaReduced:'Jewish Small',agrippaWordReduced:'Jewish Reduced',agrippaDigitReduced:'Jewish Digit Reduced',ruReduced:'Russian Small',ruWordReduced:'Russian Reduced',ruDigitReduced:'Russian Digit Reduced',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'One-Step Zero',
  atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
- latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Latin Milui v0 → English Reduced',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
+ latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Reduced English Filling',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
  milui:'Standard Milui',miluiTalmudic:'Talmudic Milui',miluiLegacy:'מילוי אלפין (ואו)',miluiPelia:'Milui Peliah',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
  redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
- ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',ruReduced:'Russian Full Reduction',ruWordReduced:'Russian Word Reduction',
+ ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',
  ruReverseOrdinal:'Russian Atbash Ordinal',ruZeroStep:'Russian One-step Zero',
  ruMirrorD:'Russian Alphabet Mirror → D',ruShiftD:'Russian +1 Shift → D',ruKidmiD:'Russian Cumulative Alphabet → D',
  ruPeratiD:'Russian Perati · D²',ruPeratiOrdinal:'Russian Perati · Ordinal²',ruKolelD:'Russian D + Kolel (+1)',ruMusafiD:'Russian D + Letter Count',
@@ -1056,6 +1061,7 @@ function calculate(text,script,m){
   wordRows.push({raw,toks,baseVals,vals,folded});
  }
  if(m.post)total=m.post(text,total,script);
+ if(m.fold==='total')total=dr(total);
  return {method:m,total,words:wordRows};
 }
 /* Heavy BigInt letter products and quotients are opt-in for long inputs. */
@@ -1099,10 +1105,15 @@ const METHOD_BOOK_DOCS={
  'he:regular':{plain:'גימטריה הכרחית',original:'מספר הכרחי / Mispar Hechrachi',status:'traditional',history:'שיטה עברית מסורתית. תיארוך מקור ראשוני מדויק נמצא בבדיקת המקורות של הפרויקט.',formula:'Σ value(letter), using א=1…ט=9, י=10…צ=90, ק=100…ת=400.'},
  'he:final':{plain:'גימטריה סופית',original:'Final-letter values / Mispar Gadol variant',status:'traditional',history:'וריאנט מסורתי שבו ךםןףץ מקבלות ערכים מורחבים. שם ותיארוך מדויק יסומנו לאחר אימות מקור ראשוני.',formula:'Regular values, but ך=500, ם=600, ן=700, ף=800, ץ=900.'},
  'he:ordinal':{plain:'גימטריה סדרית',original:'מספר סידורי / Mispar Siduri',status:'traditional',history:'שיטה מסורתית המבוססת על מיקום האות באלפבית.',formula:'א=1, ב=2, …, ת=22; sum the letter positions.'},
- 'he:reduced':{plain:'גימטריה קטנה',original:'מספר קטן / Mispar Katan',status:'traditional',history:'שיטת צמצום מסורתית: כל אות מצטמצמת לספרה 1–9 לפני הסכימה.',formula:'Reduce each standard Hebrew letter value to its non-zero decimal digit, then sum.'},
+ 'he:reduced':{plain:'קטן / Small',original:'מספר קטן / Mispar Katan',status:'traditional',history:'שיטת צמצום מסורתית: כל אות מצטמצמת לספרה 1–9 לפני הסכימה.',formula:'Reduce each standard Hebrew letter value to its non-zero decimal digit, then sum.'},
  'he:smallFinals':{plain:'גימטריה קטנה סופית',original:'Reduced extended finals',status:'mixed',history:'וריאנט שבו ערכי הסופיות המורחבים 500–900 מצטמצמים ל־5–9. נשמר בנפרד מן המספר הקטן הרגיל.',formula:'Use extended finals first; then reduce each letter value to 1–9.'},
- 'he:wordReduced':{plain:'צמצום לפי מילה',original:'Wordwise reduction',status:'modern',history:'אופרטור מודרני של האתר. אינו מוצג כשם קבלי עתיק. כל מילה מצטמצמת בנפרד ואז תוצאות המילים מתחברות.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
+ 'he:wordReduced':{plain:'צמצום / Reduced',original:'Wordwise reduction',status:'modern',history:'אופרטור מודרני של האתר. אינו מוצג כשם קבלי עתיק. כל מילה מצטמצמת בנפרד ואז תוצאות המילים מתחברות.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
 
+  'he:digitReduced':{plain:'צמצום דיגיטלי / Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי יחיד לסכום Small של הביטוי המלא, ללא הפרדת מילים.',formula:'DR(Small(text)) = DR(Regular(text)).'},
+  'el:digitReduced':{plain:'Greek Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Greek Small של הביטוי.',formula:'DR(sum Greek Small letters).'},
+  'en:digitReduced':{plain:'English Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום English Small של הביטוי.',formula:'DR(sum English Small letters).'},
+  'en:agrippaDigitReduced':{plain:'Jewish Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Jewish Small של הביטוי.',formula:'DR(sum Jewish Small letters).'},
+  'ru:ruDigitReduced':{plain:'Russian Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Russian Small של הביטוי.',formula:'DR(sum Russian Small letters).'},
   'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. מציג את חילופי האותיות ואת ערכיהן הסידוריים במפורש.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).'},
  'he:zeroStep':{plain:'צמצום עשרוני חד־שלבי',original:'שם מסורתי: לא נטען',status:'modern',history:'פיתוח מחקרי של האתר (2026). השם הישן באתר היה “צמצום №1”. השיטה מורידה שכבת עשרות אחת בלבד מערכים עשרוניים שמסתיימים באפס.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1'],conflict:true},
  'he:redLadder':{plain:'סולם צמצום',original:'Reduction Ladder · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). מפעיל שוב ושוב את אותו כלל צמצום חד־שלבי על כל אות בנפרד ושומר את כל דרגות D0,D1,D2… עד קיבוע.',formula:'D0 = standard Hebrew letter values. D(k+1): divide each value by 10 only when it is ≥10 and divisible by 10; otherwise keep it. Continue until stable. Stage totals are summed per level.'},
@@ -1110,12 +1121,12 @@ const METHOD_BOOK_DOCS={
  'he:achorayim':{plain:'בניין קידומות',original:'Mispar Boneh-like prefix building',status:'conflict',history:'קונפליקט שם פתוח: הקוד מבצע סכומי קידומות מצטברים. התווית הישנה “מספר האחור · תוספת” אינה מתארת היטב את האלגוריתם.',formula:'For letters a₁…aₙ: sum (a₁)+(a₁+a₂)+…+(a₁+…+aₙ).',aliases:['מספר האחור · תוספת / Achorayim'],conflict:true},
  'he:positional':{plain:'ערך × מיקום',original:'Mispar Ha-Achor candidate',status:'conflict',history:'קונפליקט שם פתוח. האלגוריתם עצמו חד: כל ערך אות מוכפל במיקומו במילה.',formula:'Σ i·aᵢ, with positions i=1…n.',aliases:['גימטריה מיקום · מגרעת / Positional'],conflict:true},
  'el:isopsephy':{plain:'Greek Isopsephy',original:'ἰσοψηφία / isopsephy',status:'traditional',history:'שיטת המספרים האלפביתיים היוונית העתיקה; תיעוד כרונולוגי מפורט יתווסף עם מקורות.',formula:'Sum traditional Greek alphabetic numeral values.'},
- 'el:reduced':{plain:'Reduced Isopsephy',original:'Modern reduced analogue',status:'modern',history:'אנלוג מודרני לצמצום 1–9 המופעל על ערכי האיזופספיה; אינו מוצג כאן כשיטה יוונית עתיקה.',formula:'Digital-root each isopsephy letter value to 1–9, then sum.'},
- 'el:wordReduced':{plain:'Wordwise Isopsephy Reduction',original:'Modern wordwise reduction',status:'modern',history:'אופרטור מחקרי מודרני: כל מילה מצטמצמת בנפרד.',formula:'For each word: digital-root(sum(isopsephy values)); then sum the word results.'},
+ 'el:reduced':{plain:'Greek Small',original:'Modern reduced analogue',status:'modern',history:'אנלוג מודרני לצמצום 1–9 המופעל על ערכי האיזופספיה; אינו מוצג כאן כשיטה יוונית עתיקה.',formula:'Digital-root each isopsephy letter value to 1–9, then sum.'},
+ 'el:wordReduced':{plain:'Greek Reduced',original:'Modern wordwise reduction',status:'modern',history:'אופרטור מחקרי מודרני: כל מילה מצטמצמת בנפרד.',formula:'For each word: digital-root(sum(isopsephy values)); then sum the word results.'},
  'ru:ruRegular':{plain:'Russian Standard · Decimal Tier',original:'Gematria2026 locked Russian D mapping',status:'modern',history:'מיפוי מחקרי נעול של Gematria2026 לאלפבית הרוסי המודרני בן 33 אותיות, כולל Ё במקום השביעי. הוא נגזר מאותו פירוק אינדקס i=9q+d ששימש בביקורת הרב־לשונית; אין כאן טענה שזו שיטת מספור רוסית עתיקה.',formula:'For alphabet index i=9q+d with d=1…9, assign D(letter)=d×10^q; sum all letters. Ё is the 7th letter.'},
  'ru:ruOrdinal':{plain:'Russian Ordinal',original:'Modern 33-letter alphabet index',status:'modern',history:'ערך מיקום מודרני לפי האלפבית הרוסי בן 33 אותיות, עם Ё במקום השביעי.',formula:'А=1, Б=2, …, Ё=7, …, Я=33; then sum.'},
- 'ru:ruReduced':{plain:'Russian Full Reduction',original:'Index digit d in i=9q+d',status:'modern',history:'שכבת R של מנוע הביקורת: כל מיקום אלפביתי מצטמצם למחזור 1–9 לפני הסכימה.',formula:'For alphabet index i, use d=((i−1) mod 9)+1; then sum all letters.'},
- 'ru:ruWordReduced':{plain:'Russian Word Reduction',original:'Wordwise digital-root of R',status:'modern',history:'שכבת W של מנוע הביקורת: מחשבים R לכל מילה, מצמצמים את סכום המילה לשורש ספרתי, ואז מחברים את המילים.',formula:'For each word: digital_root(sum(R(letter))); then sum the word results.'},
+ 'ru:ruReduced':{plain:'Russian Small',original:'Index digit d in i=9q+d',status:'modern',history:'שכבת R של מנוע הביקורת: כל מיקום אלפביתי מצטמצם למחזור 1–9 לפני הסכימה.',formula:'For alphabet index i, use d=((i−1) mod 9)+1; then sum all letters.'},
+ 'ru:ruWordReduced':{plain:'Russian Reduced',original:'Wordwise digital-root of R',status:'modern',history:'שכבת W של מנוע הביקורת: מחשבים R לכל מילה, מצמצמים את סכום המילה לשורש ספרתי, ואז מחברים את המילים.',formula:'For each word: digital_root(sum(R(letter))); then sum the word results.'},
   'el:reverseOrdinal':{plain:'Greek Atbash Ordinal',original:'24-letter Greek alphabet mirror → Ordinal',status:'modern',history:'אנלוג מחקרי לאתב״ש על 24 אותיות האלפבית היווני: כל אות מוחלפת במיקומה המשוקף, ואז נסכמים הערכים הסידוריים. אין טענה לכינוי היסטורי עתיק.',formula:'α→ω=24, β→ψ=23, …, ω→α=1; sum the ordinal positions.'},
  'ru:ruReverseOrdinal':{plain:'Russian Atbash Ordinal',original:'Russian alphabet mirror → Ordinal',status:'modern',history:'תמורת אתב״ש רוסית: כל אות מוחלפת באות שבמיקום 34−i ונמדדת בסידורי. האות П במיקום 17 היא נקודת האמצע ולכן נשארת 17.',formula:'For ordinal position i, use 34−i. Thus А=33, Б=32, …, П=17, …, Я=1.'},
  'ru:ruZeroStep':{plain:'Russian One-step Zero',original:'Site one-step decimal reduction on D',status:'modern',history:'אנלוג ישיר לאופרטור הצמצום החד־שלבי של האתר, המופעל על ערכי D הרוסיים.',formula:'For each D value v: if v≥10 and v ends in 0, use v/10 once; otherwise keep v. Then sum.'},
@@ -1137,7 +1148,7 @@ const METHOD_BOOK_DOCS={
  'ru:ruLadderD':{plain:'Russian Addition & Subtraction / Ladder · D',original:'Prefix + suffix operator',status:'modern',history:'מחברים את כל הקידומות ואת כל הסיומות של כל מילה לפי D.',formula:'Sum all prefixes and all suffixes using D values.'},
  'ru:ruLadderOrdinal':{plain:'Russian Addition & Subtraction / Ladder · Ordinal',original:'Prefix + suffix operator',status:'modern',history:'מחברים את כל הקידומות ואת כל הסיומות לפי הערכים הסידוריים.',formula:'Sum all prefixes and all suffixes using ordinal values.'},
  'en:ordinal':{plain:'English Ordinal',original:'A1Z26 / Simple',status:'modern-standard',history:'מיפוי לטיני מודרני נפוץ. מנועים שונים משתמשים בכינויים Simple או Ordinal.',formula:'A=1, B=2, …, Z=26; then sum.',aliases:['English Simple']},
- 'en:pythagorean':{plain:'English Full Reduction',original:'Pythagorean / Reduction',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
+ 'en:pythagorean':{plain:'English Small',original:'Pythagorean / Small',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
  'en:wordReduced':{plain:'English Simple Reduced',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(English Simple A=1…Z=26 letter values)); then sum words.'},
  'en:sumerian':{plain:'English ×6',original:'Gematrix “English” / commonly called Sumerian in some engines',status:'engine',history:'שם מנוע מודרני; האלגוריתם הוא פשוט פי 6 מ־A1Z26.',formula:'6×English Ordinal letter value; then sum.',aliases:['English Gematria']},
  'en:regular':{plain:'English Extended',original:'Extended / Standard in modern engines',status:'engine',history:'מיפוי מודרני מדורג 1–9, 10–90, 100–800. “English Isopsephy” הוא שם עבודה ישן באתר ודורש החלפה.',formula:'A–I=1–9; J–R=10–90; S–Z=100–800.',aliases:['English Isopsephy'],conflict:true},
@@ -1545,7 +1556,7 @@ function richBreakdownHtml(r){
  if(r?.harmonicHalf)return harmonicResearchHtml(r);
  if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
  if(r?.repeatMeta)return `<div class="transform-note"><b>${esc(r.repeatMeta.phrase)}</b> ×${r.repeatMeta.count} · ${esc(r.repeatMeta.methodName)} = <b>${fmt(r.total)}</b></div>`;
- return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join('')+(r.letterProduct?'<div class="transform-note">'+L('מכפלת כל האותיות','All-letter product')+' = <b>'+fmt(r.total)+'</b></div>':''):'<div class="tiny">אין פירוק</div>'
+ return r?.words?.length?r.words.map(w=>wordBreakdownHtml(r,w)).join('')+(r.letterProduct?'<div class="transform-note">'+L('מכפלת כל האותיות','All-letter product')+' = <b>'+fmt(r.total)+'</b></div>':'')+(r.method?.fold==='total'?'<div class="transform-note">'+L('צמצום דיגיטלי של כל הסכום','Digit Reduced of full sum')+': '+fmt(sum(r.words.map(w=>sum(w.baseVals))))+' → <b>'+fmt(r.total)+'</b></div>':''):'<div class="tiny">אין פירוק</div>'
 }
 const CARD_ANCHORS=[1024,888,768,666,640,576,543,520,512,444,384,368,344,316,296,288,232,222,216,208,160,148,141,136,128,111,104,96,88,74,73,72,64,59,55,52,43,42,38,37,36,33,32,28,27,24,21,20,18,16,12,11,10,8,7,6,5,4,3,2];
 function shortCorpusLabel(v){
