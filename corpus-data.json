@@ -259,7 +259,7 @@
     {
       "value": 16,
       "label": "×4 Father",
-      "method": "English Word Reduced",
+      "method": "English Simple Reduced",
       "classification": "BRIDGE"
     },
     {
@@ -451,7 +451,7 @@
     {
       "value": 20,
       "label": "×5 Father",
-      "method": "English Word Reduced · matches י״י Regular",
+      "method": "English Simple Reduced · matches י״י Regular",
       "classification": "BRIDGE"
     },
     {
@@ -745,7 +745,7 @@
     {
       "value": 28,
       "label": "×4 Mother",
-      "method": "English Word Reduced · matches רוב Ordinal",
+      "method": "English Simple Reduced · matches רוב Ordinal",
       "classification": "FOUNDATION"
     },
     {
