@@ -754,7 +754,7 @@ const METHODS={
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
   {key:'regular',cat:'base',name:'English Isopsephy',map:EN_REG},
   {key:'pythagorean',cat:'base',name:'English Small/Pythagorean',map:EN_RED},
-  {key:'wordReduced',cat:'base',name:'English Word Reduced',map:EN_RED,fold:'word'},
+  {key:'wordReduced',cat:'base',name:'English Simple Reduced',map:EN_RED,fold:'word'},
   {key:'sumerian',cat:'base',name:'English Gematria',map:EN_SUM},
   {key:'atbashRegular',cat:'cipher',name:'English Atbash → Regular',map:EN_ATBASH,sub:EN_ATBASH_LETTER,research:true},
   {key:'atbashOrdinal',cat:'cipher',name:'English Atbash Ordinal',map:EN_ATBASH_ORD,sub:EN_ATBASH_LETTER,research:true},
@@ -1123,7 +1123,7 @@ const METHOD_BOOK_DOCS={
  'ru:ruLadderOrdinal':{plain:'Russian Addition & Subtraction / Ladder · Ordinal',original:'Prefix + suffix operator',status:'modern',history:'מחברים את כל הקידומות ואת כל הסיומות לפי הערכים הסידוריים.',formula:'Sum all prefixes and all suffixes using ordinal values.'},
  'en:ordinal':{plain:'English Ordinal',original:'A1Z26 / Simple',status:'modern-standard',history:'מיפוי לטיני מודרני נפוץ. מנועים שונים משתמשים בכינויים Simple או Ordinal.',formula:'A=1, B=2, …, Z=26; then sum.',aliases:['English Simple']},
  'en:pythagorean':{plain:'English Full Reduction',original:'Pythagorean / Reduction',status:'modern-standard',history:'שיטה מודרנית נפוצה במנועי נומרולוגיה וגימטריה אנגלית.',formula:'A=1… I=9, J=1… R=9, S=1… Z=8; then sum.',aliases:['English Small/Pythagorean']},
- 'en:wordReduced':{plain:'English Wordwise Reduction',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(Pythagorean letter values)); then sum words.'},
+ 'en:wordReduced':{plain:'English Simple Reduced',original:'Wordwise reduction',status:'modern',history:'צמצום כל מילה בנפרד; נשמר בנפרד מ־Full Reduction.',formula:'For each word: digital-root(sum(English Simple A=1…Z=26 letter values)); then sum words.'},
  'en:sumerian':{plain:'English ×6',original:'Gematrix “English” / commonly called Sumerian in some engines',status:'engine',history:'שם מנוע מודרני; האלגוריתם הוא פשוט פי 6 מ־A1Z26.',formula:'6×English Ordinal letter value; then sum.',aliases:['English Gematria']},
  'en:regular':{plain:'English Extended',original:'Extended / Standard in modern engines',status:'engine',history:'מיפוי מודרני מדורג 1–9, 10–90, 100–800. “English Isopsephy” הוא שם עבודה ישן באתר ודורש החלפה.',formula:'A–I=1–9; J–R=10–90; S–Z=100–800.',aliases:['English Isopsephy'],conflict:true},
  'en:agrippa':{plain:'Agrippa Latin',original:'Agrippa cipher / Latin alphabetic values',status:'historical-modern',history:'מיפוי לטיני המזוהה עם מסורת אגריפה; תיעוד ביבליוגרפי מדויק יתווסף. הכינוי “Jewish Gematria” נשמר כ־engine alias בלבד.',formula:'Use the Agrippa Latin value table defined by the engine.',aliases:['Jewish Gematria'],conflict:true}
@@ -2443,7 +2443,7 @@ console.assert(T('Rov','en','atbashOrdinal')===26,'Rov English Atbash Ordinal 26
 console.assert(T('Amit Mike Rov','en','ordinal')===136,'English Simple 136');
 console.assert(T('Amit Mike Rov','en','sumerian')===816,'English Gematria 816');
 console.assert(T('Amit Mike Rov','en','regular')===874,'English Regular 874');
-console.assert(T('Amit Mike Rov','en','wordReduced')===10,'English Word Reduced 10');
+console.assert(T('Amit Mike Rov','en','wordReduced')===10,'English Simple Reduced 10');
 console.assert(T('Amit Mike Rov','en','achorayimRegular')===1364,'English Achorayim Regular 1364');
 console.assert(T('Amit Mike Rov','en','positionalRegular')===2456,'English Positional Regular 2456');
 console.assert(T('Amit Mike Rov','en','equivalenceRegular')===1910,'English Equivalence Regular 1910');
