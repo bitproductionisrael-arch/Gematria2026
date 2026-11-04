@@ -11,6 +11,7 @@
 .yhvh-milui-source{font-size:10.5px;color:#aebdca;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.5;direction:rtl}
 .yhvh-milui-source a{color:#aebdca;text-decoration:underline;text-decoration-color:#526777;text-underline-offset:2px}
 .yhvh-milui-source a:hover{color:#e8f4ff}
+.yhvh-milui-note{font-size:10px;line-height:1.45;color:#9ba9b8;text-align:center;direction:rtl;overflow-wrap:anywhere;margin:0 2px 2px}
 .yhvh-milui-origin{font-size:15px;letter-spacing:.06em;color:#ecf2f8;font-weight:700;line-height:1.1;margin-top:2px}
 .yhvh-milui-letters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;direction:rtl}
 .yhvh-milui-letter{display:flex;flex-direction:column;align-items:center;justify-content:start;gap:2px;min-width:0;direction:rtl}
