@@ -2,14 +2,14 @@
 /* Source-linked four-letter YHWH Milui cards.
  * Traditional sources are distinguished from RovGrid-defined and newly derived spellings.
  * Add entries to this array; cards automatically wrap into rows of three on desktop. */
-const YHVH_MILUI_BOOK_SOURCE='https://wiki.jewishbooks.org.il/mediawiki/wiki/מפתחי_חכמת_אמת/כג';
+const YHVH_MILUI_BOOK_SOURCE='https://he.wikisource.org/wiki/היכל_הברכה/דברים';
 const YHVH_MILUI_PELIA_SOURCE='https://he.wikisource.org/wiki/ספר_הפליאה/ט';
-const YHVH_MILUI_RESEARCH_SOURCE='https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/milui-correction-2026-11-01.md';
+const YHVH_MILUI_RESEARCH_SOURCE='https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/yhvh-milui-gallery-2026-11-04.md';
 const YHVH_MILUI_GALLERY=[
- {id:'ab72',name:'ע״ב · מילוי יודין',parts:['יוד','הי','ויו','הי'],source:'מפתחי חכמת אמת, כג',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
- {id:'sag63',name:'ס״ג · מילוי מעורב',parts:['יוד','הי','ואו','הי'],source:'מפתחי חכמת אמת, כג',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
- {id:'mah45',name:'מ״ה · מילוי אלפין',parts:['יוד','הא','ואו','הא'],source:'מפתחי חכמת אמת, כג',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
- {id:'ban52',name:'ב״ן · מילוי ההין',parts:['יוד','הה','וו','הה'],source:'מפתחי חכמת אמת, כג',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
+ {id:'ab72',name:'ע״ב · מילוי יודין',parts:['יוד','הי','ויו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
+ {id:'sag63',name:'ס״ג · מילוי מעורב',parts:['יוד','הי','ואו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
+ {id:'mah45',name:'מ״ה · מילוי אלפין',parts:['יוד','הא','ואו','הא'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
+ {id:'ban52',name:'ב״ן · מילוי ההין',parts:['יוד','הה','וו','הה'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
  {id:'rov54',name:'נ״ד · מילוי רגיל',parts:['יוד','הא','ויו','הא'],source:'RovGrid · מילוי רגיל',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site'},
  {id:'rov45',name:'מילוי אלפין (ואו)',parts:['יוד','הא','ואו','הא'],source:'RovGrid · מיפוי אלפין',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site'},
  {id:'rov54t',name:'מילוי תלמודי',parts:['יוד','הא','ויו','הא'],source:'RovGrid · נוסח תו',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site'},
