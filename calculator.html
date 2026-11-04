@@ -2384,6 +2384,18 @@ console.assert(T('משה משה משה משה משה משה משה משה','he',
 console.assert(calculateMilui('אמן','mayim',1,'miluiMayim').total===307,'Amen Milui Mayim 307');
 console.assert(T('תדר תדר תדר תדר תדר תדר תדר תדר תדר ת','he','atbashOrdinal')===208,'9 Teder + Tav reverse ordinal 208');
 console.assert(T('עמית מייק רוב','he','regular')===888,'Hebrew regular 888');
+
+// Persistent two-route bridge (2026-11-04); historical legacy profile is NOT current Alfin.
+const __messiahStandard=T('משיח','he','milui');
+const __messiahMayim=T('משיח','he','miluiMayim');
+const __genesis999=T('בראשית אלהים','he','regular');
+const __legacyName1877=calculateMilui('עמית מייק רוב','legacy',1,'miluiLegacy').total;
+console.assert(__messiahStandard===878&&__messiahMayim===888&&__genesis999===999,'Messiah 878/888 and Bereshit Elohim 999, correct operators');
+console.assert(__messiahStandard+__genesis999===1877&&__legacyName1877===1877,'1877 Mashiach Standard + Genesis = original archival AMR');
+console.assert(__messiahMayim+__genesis999===1887&&T('עמית מייק רוב','he','ayak')===1887&&T('עמית מייק רוב','he','miluiLegacy')===1887&&T('עמית מייק רוב','he','miluiPelia')===1887,'1887 Mashiach Mayim + Genesis = AIQ BKR = Alfin = Pelia AMR');
+console.assert(__messiahMayim-__messiahStandard===10&&1887-1877===10&&MILUI_NAMES['ת']==='תיו'&&MILUI_NAMES_LEGACY['ת']==='תו'&&MILUI_NAMES_MAYIM['מ']==='מים','1887−1877=10 by Tav, Messiah milui delta=10 by Mem');
+console.assert(primeIndex(1877)===288&&1887%37===0&&1887===888+999&&1877!==1887,'1877 prime #288; 1887 composite 37×51, not prime #288');
+
 const __redAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='redLadder'));console.assert(__redAmit.ladder.join(',')==='520,52,16'&&__redAmit.total===16,'Reduction Ladder Amit 520→52→16');
 const __halfAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='harmonicHalf'));console.assert(__halfAmit.harmonic.join(',')==='52,26,13'&&__halfAmit.total===26,'Harmonic Half Amit 52→26→13 then STOP before 6.5');
 console.assert(T('יהוה','he','albam')===520&&T('עמית','he','regular')===520&&__halfAmit.total===T('יהוה','he','regular'),'ALBaM(YHWH)=Regular(Amit)=520; Harmonic H1(Amit)=Regular(YHWH)=26');
