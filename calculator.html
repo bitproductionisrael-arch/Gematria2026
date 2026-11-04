@@ -713,7 +713,6 @@ const METHODS={
   {key:'latinMiluiUserSimple',cat:'ops',name:'מילוי לטיני v0 → English Simple / Research',custom:'latinMiluiUserSimple',research:true},
   {key:'latinMiluiUserReduced',cat:'ops',name:'Reduced English Filling',custom:'latinMiluiUserReduced',research:true},
   {key:'latinMiluiUserRegular',cat:'ops',name:'מילוי לטיני v0 → English Regular / Research',custom:'latinMiluiUserRegular',research:true},
-  {key:'redLadder',cat:'ops',name:'סולם צמצום · Reduction Ladder / Research',custom:'redLadder',map:HE_VAL,research:true},
   {key:'harmonicHalf',cat:'ops',name:'חצי הרמוני · Harmonic Half / Research',custom:'harmonicHalf',map:HE_VAL,research:true},
   {key:'letterProductRegular',cat:'ops',name:'מכפלת אותיות (רגיל) / Letter Product (Regular)',map:HE_VAL,letterProduct:true,research:true},
   {key:'letterProductOrdinal',cat:'ops',name:'מכפלת אותיות (סדרי) / Letter Product (Ordinal)',map:HE_ORD,letterProduct:true,research:true},
@@ -815,7 +814,6 @@ const METHOD_EN_NAMES={
  milui:'Standard Milui',miluiTalmudic:'Talmudic Milui',miluiLegacy:'מילוי אלפין (ואו)',miluiPelia:'Milui Peliah',milui2:'Milui of Milui',miluiMayim:'Milui Mayim',
  letterProductRegular:'Letter Product (Regular)',letterProductOrdinal:'Letter Product (Ordinal)',letterProductSmall:'Letter Product (Small)',
  letterDivisionRegular:'Letter Division (Regular)',letterDivisionOrdinal:'Letter Division (Ordinal)',letterDivisionSmall:'Letter Division (Small)',
- redLadder:'Reduction Ladder · Research',harmonicHalf:'Harmonic Half · Research',
  ruRegular:'Russian Standard · Decimal Tier',ruOrdinal:'Russian Ordinal',
  ruReverseOrdinal:'Russian Atbash Ordinal',ruZeroStep:'Russian One-step Zero',
  ruMirrorD:'Russian Alphabet Mirror → D',ruShiftD:'Russian +1 Shift → D',ruKidmiD:'Russian Cumulative Alphabet → D',
@@ -838,7 +836,6 @@ const METHOD_EN_HISTORY={
  reverseOrdinal:'Greek Atbash Ordinal: mirror the 24 modern Greek letters and sum their ordinal positions.',
   atbashOrdinal:'Mirror each alphabetic character using Atbash, then sum its ordinal position. Hebrew uses 22 letters and English uses 26.',
  zeroStep:'A site-developed research operator (2026). The previous label was “Reduction №1”. It removes one decimal layer only from values ending in zero.',
- redLadder:'Site-developed research operator (2026). Repeats the same per-letter decimal reduction until every Hebrew letter value is stable; all intermediate D-levels are preserved.',
  letterProductRegular:'Research operator: multiply the standard Hebrew numeric values of every recognized letter, across all words; not a sum.',
  letterProductOrdinal:'Research operator: multiply the Hebrew alphabet positions 1–22 of every recognized letter, across all words; not a sum.',
  letterProductSmall:'Research operator: multiply the Hebrew reduced letter values 1–9 of every recognized letter, across all words; not a sum.',
@@ -941,7 +938,7 @@ function calculateAgrippaDeltaSimple(text){
  const total=agr.total-simple.total;
  return {method,total,words:[],deltaMeta:{left:'Agrippa/Jewish',leftValue:agr.total,right:'English Simple',rightValue:simple.total,operation:'−'}};
 }
-/* ---------- research: full reduction ladder + harmonic halving ---------- */
+/* ---------- shared D-step data for Harmonic Half ---------- */
 const reductionStepResearch=v=>(Math.abs(v)>=10&&Number.isInteger(v)&&v%10===0)?v/10:v;
 function reductionLadderData(text,script='he',map=HE_VAL){
  const words=[];
@@ -963,9 +960,8 @@ function exactHalfFraction(n,k){
  const den=2**k,g=gcd(Math.abs(n),den)||1,num=n/g,d=den/g;
  return d===1?String(num):num+'/'+d;
 }
-function calculateReductionResearch(text,m,mode){
+function calculateReductionResearch(text,m){
  const L=reductionLadderData(text,'he',HE_VAL);
- if(mode==='ladder')return {method:m,total:L.stageTotals[L.stageTotals.length-1],words:L.words,redLadder:true,ladder:L.stageTotals};
  const h0=L.stageTotals[Math.min(1,L.stageTotals.length-1)]||0;
  const harmonic=[h0];
  while(harmonic.length<32){
@@ -1044,8 +1040,7 @@ function bigIntGcd(a,b){
 function calculate(text,script,m){
  if(m.letterProduct)return calculateLetterProduct(text,script,m);
  if(m.letterDivision)return calculateLetterDivision(text,script,m);
- if(m.custom==='redLadder')return calculateReductionResearch(text,m,'ladder');
- if(m.custom==='harmonicHalf')return calculateReductionResearch(text,m,'harmonic');
+ if(m.custom==='harmonicHalf')return calculateReductionResearch(text,m);
  if(m.custom==='agrippaDeltaSimple')return calculateAgrippaDeltaSimple(text);
  if(m.custom==='cycleBkr')return calculateCycleBkr(text);
  if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
@@ -1116,8 +1111,7 @@ const METHOD_BOOK_DOCS={
   'ru:ruDigitReduced':{plain:'Russian Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Russian Small של הביטוי.',formula:'DR(sum Russian Small letters).'},
   'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. מציג את חילופי האותיות ואת ערכיהן הסידוריים במפורש.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).'},
  'he:zeroStep':{plain:'צמצום עשרוני חד־שלבי',original:'שם מסורתי: לא נטען',status:'modern',history:'פיתוח מחקרי של האתר (2026). השם הישן באתר היה “צמצום №1”. השיטה מורידה שכבת עשרות אחת בלבד מערכים עשרוניים שמסתיימים באפס.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1'],conflict:true},
- 'he:redLadder':{plain:'סולם צמצום',original:'Reduction Ladder · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). מפעיל שוב ושוב את אותו כלל צמצום חד־שלבי על כל אות בנפרד ושומר את כל דרגות D0,D1,D2… עד קיבוע.',formula:'D0 = standard Hebrew letter values. D(k+1): divide each value by 10 only when it is ≥10 and divisible by 10; otherwise keep it. Continue until stable. Stage totals are summed per level.'},
- 'he:harmonicHalf':{plain:'חצי הרמוני',original:'Harmonic Half · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). אופרטור נפרד מסולם הצמצום: מתחיל מסכום D1 ומחלק את התוצאה השלמה בחזקות של 2. תצוגת הריבועים היא מודל גאומטרי של שטח/קנה־מידה.',formula:'H0 = D1 total. Hk = H0 / 2^k. Square model: count=2^k, area each=A0/2^k, side ratio=1/sqrt(2^k).'},
+ 'he:harmonicHalf':{plain:'חצי הרמוני',original:'Harmonic Half · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). אופרטור נפרד משלוש דרגות הצמצום: מתחיל מסכום D1 ומחלק את התוצאה השלמה בחזקות של 2. תצוגת הריבועים היא מודל גאומטרי של שטח/קנה־מידה.',formula:'H0 = D1 total. Hk = H0 / 2^k. Square model: count=2^k, area each=A0/2^k, side ratio=1/sqrt(2^k).'},
  'he:achorayim':{plain:'בניין קידומות',original:'Mispar Boneh-like prefix building',status:'conflict',history:'קונפליקט שם פתוח: הקוד מבצע סכומי קידומות מצטברים. התווית הישנה “מספר האחור · תוספת” אינה מתארת היטב את האלגוריתם.',formula:'For letters a₁…aₙ: sum (a₁)+(a₁+a₂)+…+(a₁+…+aₙ).',aliases:['מספר האחור · תוספת / Achorayim'],conflict:true},
  'he:positional':{plain:'ערך × מיקום',original:'Mispar Ha-Achor candidate',status:'conflict',history:'קונפליקט שם פתוח. האלגוריתם עצמו חד: כל ערך אות מוכפל במיקומו במילה.',formula:'Σ i·aᵢ, with positions i=1…n.',aliases:['גימטריה מיקום · מגרעת / Positional'],conflict:true},
  'el:isopsephy':{plain:'Greek Isopsephy',original:'ἰσοψηφία / isopsephy',status:'traditional',history:'שיטת המספרים האלפביתיים היוונית העתיקה; תיעוד כרונולוגי מפורט יתווסף עם מקורות.',formula:'Sum traditional Greek alphabetic numeral values.'},
@@ -1521,7 +1515,6 @@ function buildingMilestoneText(w){
 }
 function wordDescription(r,idx){
  if(r.letterProduct){const w=r.words[idx];if(!w)return'אין פירוק';return w.raw+'\n'+w.toks.map((t,i)=>t.label+'('+fmt(w.baseVals[i])+')').join(' × ')+' = '+fmt(w.subtotal)+'\nמכפלת כל האותיות: '+fmt(r.total)}
- if(r.redLadder){const w=r.words[idx];if(!w)return'אין פירוק';const paths=w.toks.map((t,i)=>t.label+': '+w.stages.map(st=>fmt(st[i])).join(' → ')).join('\n');return w.raw+'\n'+paths+'\n'+r.ladder.map((v,k)=>'D'+k+' total = '+fmt(v)).join('\n')+'\nStable: D'+(r.ladder.length-1)}
  if(r.harmonicHalf){const w=r.words[idx];const d1=w?w.stages[Math.min(1,w.stages.length-1)]:[];return (w?w.raw+'\nD1: ['+d1.map(fmt).join(', ')+'] = '+fmt(sum(d1))+'\n':'')+r.harmonic.map((v,k)=>'H'+k+' = '+fmt(v)).join('\n')+'\nSTOP before fractions · only positive integers are accepted\nSquare: generations follow accepted integer halvings only · string analogy: L/2 → frequency ×2'}
  if(r.cycleBkr){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\nוקטור [H,T,U]: ${w.cycleVectors[0].join('|')} → ${w.cycleVectors[1].join('|')} → ${w.cycleVectors[2].join('|')}\nמצב 0: ${w.cycleTexts[0]} = ${w.cycleValues[0]}\nמצב 1: ${w.cycleTexts[1]} = ${w.cycleValues[1]}\nמצב 2: ${w.cycleTexts[2]} = ${w.cycleValues[2]}\nחזרה: ${w.cycleTexts[3]} = ${w.cycleValues[3]}\nΣ3 = ${w.subtotal} = 111×${w.chamberSum}`}
 if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw}\n${w.parts.map(p=>`${p.letter}→${p.name}(${p.value})`).join(' + ')}\n= ${w.subtotal}`}
@@ -1540,11 +1533,6 @@ function wordBreakdownHtml(r,w){
  }
  const m=r.method;const chips=w.toks.map((t,i)=>{const meta=[];if(m.sub&&m.sub[t.base])meta.push(`${t.label}→${m.sub[t.base]}`);if(t.multiplier>1)meta.push(`${fmt(t.rawValue)}×${fmt(t.multiplier)}`);const sub=meta.length?`<small>${esc(meta.join(' · '))}</small>`:'';return `<span class="letter-chip"><b>${esc(t.label)}</b>${sub}<strong>${fmt(w.baseVals[i])}</strong></span>`}).join('');let note='';if(m.ratzo||m.key==='ratzo'){const rt=ratzoTextTerms(w);note=`<div class="transform-note"><b>רצוא ושוב:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${rt.map(esc).join(' → ')}</div><div>${ratzoAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div></div>`}else if(isBuildingMethod(m)){const bt=buildingTextTerms(w),ms=buildingMilestoneText(w);note=`<div class="transform-note"><b>בניין / Building:</b><div style="font-size:16px;font-weight:850;margin:5px 0;direction:ltr;text-align:left">${bt.map(esc).join(' → ')}</div><div>${buildingAnnotatedTerms(w).map(esc).join(' + ')} = <b>${fmt(sum(w.vals))}</b></div>${ms?`<div style="font-size:11px;opacity:.72;margin-top:5px">${esc(ms)}</div>`:''}</div>`}else if(m.transform)note=`<div class="transform-note">${esc(m.transformName)} · <b>${esc(w.vals.join(' + '))}</b> = <b>${fmt(sum(w.vals))}</b></div>`;else if(m.fold==='word')note=`<div class="transform-note">${fmt(sum(w.vals))} → <b>${fmt(w.folded)}</b></div>`;const subtotal=m.fold==='word'?w.folded:(m.transform?sum(w.vals):sum(w.baseVals));return `<div class="word-block"><div class="word-title">${esc(w.raw)}</div><div class="letter-grid">${chips}</div>${note}<div class="word-total"><span>סכום</span><b>${fmt(subtotal)}</b></div></div>`
 }
-function reductionResearchHtml(r){
- const global=r.ladder.map((v,k)=>'<div class="research-stage"><b>D'+k+'</b><code>'+fmt(v)+'</code></div>').join('');
- const perWord=r.words.map(w=>{const paths=w.toks.map((t,i)=>'<div class="transform-note"><b>'+esc(t.label)+'</b> · '+w.stages.map(st=>fmt(st[i])).join(' → ')+'</div>').join('');return '<div class="word-block"><div class="word-title">'+esc(w.raw)+'</div>'+paths+'</div>'}).join('');
- return '<div class="research-operator-box"><b>סולם צמצום · Reduction Ladder</b><div class="tiny">D0 הוא הערך ההכרחי. בכל שלב מקצרים כל ערך עשרוני כשאפשר, עד קיבוע.</div>'+global+'</div>'+perWord;
-}
 function harmonicResearchHtml(r){
  const levels=r.harmonic.map((v,k)=>'<div class="research-stage"><b>H'+k+'</b><code>'+fmt(v)+'</code></div>').join('');
  let squares='';
@@ -1552,7 +1540,6 @@ function harmonicResearchHtml(r){
  return '<div class="research-operator-box"><b>חצי הרמוני · Harmonic Half</b><div class="tiny">H0 = D1 total. מחלקים ב־2 רק כל עוד התוצאה הבאה היא מספר שלם חיובי. עוצרים לפני השבר הראשון.</div>'+levels+'<div class="square-halving"><b>חלוקת ריבוע · Square Halving</b><div class="tiny">מוצגים רק הדורות שאושרו על־ידי חצי הרמוני: אין דור שברי. אלה ריבועים מוקטנים שווי־שטח, לא חיתוך ישר יחיד.</div>'+squares+'<div class="tiny">אנלוגיית מיתר בלבד: חצי אורך → פי 2 תדירות.</div></div></div>';
 }
 function richBreakdownHtml(r){
- if(r?.redLadder)return reductionResearchHtml(r);
  if(r?.harmonicHalf)return harmonicResearchHtml(r);
  if(r?.deltaMeta)return `<div class="delta-match"><div class="delta-title">Δ MATCH:</div><div><b>Jewish:</b> ${fmt(r.deltaMeta.leftValue)}</div><div><b>Simple:</b> ${fmt(r.deltaMeta.rightValue)}</div><div class="delta-sep"></div><div><b>Δ:</b></div><div class="delta-result">${fmt(r.deltaMeta.leftValue)} − ${fmt(r.deltaMeta.rightValue)} = ${fmt(r.total)}</div></div>`;
  if(r?.repeatMeta)return `<div class="transform-note"><b>${esc(r.repeatMeta.phrase)}</b> ×${r.repeatMeta.count} · ${esc(r.repeatMeta.methodName)} = <b>${fmt(r.total)}</b></div>`;
@@ -2438,7 +2425,6 @@ console.assert(__messiahMayim+__genesis999===1887&&T('עמית מייק רוב',
 console.assert(__messiahMayim-__messiahStandard===10&&1887-1877===10&&MILUI_NAMES['ת']==='תיו'&&MILUI_NAMES_VAV_TU['ת']==='תו'&&MILUI_NAMES_MAYIM['מ']==='מים','1887−1877=10 by Tav, Messiah milui delta=10 by Mem');
 console.assert(primeIndex(1877)===288&&1887%37===0&&1887===888+999&&1877!==1887,'1877 prime #288; 1887 composite 37×51, not prime #288');
 
-const __redAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='redLadder'));console.assert(__redAmit.ladder.join(',')==='520,52,16'&&__redAmit.total===16,'Reduction Ladder Amit 520→52→16');
 const __halfAmit=calculate('עמית','he',METHODS.he.find(m=>m.key==='harmonicHalf'));console.assert(__halfAmit.harmonic.join(',')==='52,26,13'&&__halfAmit.total===26,'Harmonic Half Amit 52→26→13 then STOP before 6.5');
 console.assert(T('יהוה','he','albam')===520&&T('עמית','he','regular')===520&&__halfAmit.total===T('יהוה','he','regular'),'ALBaM(YHWH)=Regular(Amit)=520; Harmonic H1(Amit)=Regular(YHWH)=26');
 console.assert(T('עמית מייק רוב','he','regular')*2===1776,'Query multiplier arithmetic 888×2=1776');
