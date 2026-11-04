@@ -304,6 +304,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .perm-inline-formula{direction:ltr;text-align:left;unicode-bidi:plaintext;overflow-wrap:anywhere;font:600 14px/1.6 ui-monospace,Consolas,monospace;margin:8px 0}
 .perm-inline-card .perm-final-label{display:flex;gap:6px;align-items:center;margin-top:8px;color:#aebdc9;font-size:12px}
 </style>
+<link rel="stylesheet" href="./yhvh-milui.css">
 </head>
 <body>
 <div class="app">
@@ -340,6 +341,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     <button data-tab="compare" data-i18n="tab_compare">השוואה</button>
     <button data-tab="repeat" data-i18n="tab_repeat">חזרות</button>
     <button data-tab="forms" data-i18n="tab_forms">מילוי / גבול</button>
+    <button data-tab="yhvh-milui" data-i18n="tab_yhvh_milui">מילויי יהוה</button>
   </nav>
 
   <main class="workspace">
@@ -405,6 +407,18 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
         <div class="form-card" data-formcard="finals"><h3 data-i18n="finals_title">סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
     </div></section>
+    <section id="tab-yhvh-milui" class="tab-panel" aria-label="מילויי יהוה">
+      <div class="panel yhvh-guide-panel">
+        <div class="yhvh-guide-head">
+          <div>
+            <h2 class="yhvh-guide-title" data-i18n="yhvh_guide_title">מילויי יהוה</h2>
+            <p class="yhvh-guide-intro" data-i18n="yhvh_guide_intro">אותן ארבע אותיות, כתיבים שונים. ארבע צורות קבליות מרכזיות לצד מיפויי RovGrid וצירופים מחושבים. תוצאה זהה אינה מחייבת כתיב זהה.</p>
+          </div>
+          <div id="yhvhGuideCount" class="yhvh-guide-count"></div>
+        </div>
+        <div id="yhvhMiluiGrid" class="yhvh-gallery-grid" aria-label="כרטיסי מילויי השם יהוה"></div>
+      </div>
+    </section>
   </main>
 
   <div id="savedModal" class="saved-modal" aria-hidden="true">
@@ -2528,7 +2542,7 @@ if(location.hash==='#methods')setTimeout(()=>openMethodBook(),0);
 window.PAGE_I18N={
  brand_sub:{he:'מחשבון גימטריה + מנוע גילוי קשרים',en:'Gematria calculator + connection discovery engine'},
  samples:{he:'דוגמאות',en:'Examples'},
- tab_results:{he:'תוצאות',en:'Results'},tab_number:{he:'מספר',en:'Number'},tab_relations:{he:'קשרים',en:'Relations'},tab_compare:{he:'השוואה',en:'Compare'},tab_repeat:{he:'חזרות',en:'Repeats'},tab_forms:{he:'מילוי / גבול',en:'Expansion / Boundary'},
+ tab_results:{he:'תוצאות',en:'Results'},tab_number:{he:'מספר',en:'Number'},tab_relations:{he:'קשרים',en:'Relations'},tab_compare:{he:'השוואה',en:'Compare'},tab_repeat:{he:'חזרות',en:'Repeats'},tab_forms:{he:'מילוי / גבול',en:'Expansion / Boundary'},tab_yhvh_milui:{he:'מילויי יהוה',en:'YHWH Milui'},yhvh_guide_title:{he:'מילויי יהוה',en:'YHWH Letter-name Expansions'},yhvh_guide_intro:{he:'אותן ארבע אותיות, כתיבים שונים. ארבע צורות קבליות מרכזיות לצד מיפויי RovGrid וצירופים מחושבים. תוצאה זהה אינה מחייבת כתיב זהה.',en:'The same four letters with different expansions. Four traditional Kabbalistic forms, RovGrid methods and clearly marked calculated variants. Equal totals need not mean identical spellings.'},
  pick_methods:{he:'בחר מה להוסיף למרכז',en:'Choose methods for the comparison stage'},pick_hint:{he:'לחיצה מוסיפה · ✕ מסיר',en:'Click to add · ✕ removes'},
  number_signature:{he:'חתימת מספר',en:'Number Signature'},calculation_breakdown:{he:'פירוק החישוב',en:'Calculation Breakdown'},
  sub_core:{he:'ליבה',en:'Core'},sub_div:{he:'מחלקים',en:'Divisors'},sub_index:{he:'אינדקסים',en:'Indices'},sub_digits:{he:'ספרות / מוד',en:'Digits / Mod'},
@@ -2725,6 +2739,7 @@ window.onSiteLanguageChange=function(lang){
  if(state.tab==='repeat')try{renderRepeat()}catch(_){}
 })();
 </script>
+<script src="./yhvh-milui.js"></script>
 
 </body>
 </html>
