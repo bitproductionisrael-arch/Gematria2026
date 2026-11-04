@@ -139,7 +139,7 @@
     {
       "value": 10,
       "label": "פער בין המסלולים 1877 → 1887",
-      "method": "1887−1877=10=י; בארכיוני→אלפין תו406→תיו416; במשיח רגיל→מים מם80→מים90",
+      "method": "1887−1877=10=י; בכתיב ואו+תו→מילוי אלפין (ואו) עם תיו: 406→416; במשיח מילוי רגיל→מילוי מים: מם80→מים90",
       "classification": "BRIDGE"
     },
     {
@@ -3871,7 +3871,7 @@
     {
       "value": 306,
       "label": "מילוי מייק · מם יוד יוד קוף",
-      "method": "Standard, Talmudic and Legacy Milui · 17×18 · φ(306)=96",
+      "method": "מילוי רגיל, תלמודי ואלפין (ואו), וגם כתיב ואו+תו: 17×18; φ(306)=96",
       "classification": "canonical"
     },
     {
@@ -4686,20 +4686,20 @@
     },
     {
       "value": 636,
-      "label": "מילוי עמית · תלמודי / ארכיוני",
-      "method": "Talmudic and Legacy Milui (ת=תו; מ=מם)",
+      "label": "מילוי עמית · תלמודי / כתיב תו",
+      "method": "מילוי תלמודי (ת=תו) וכן כתיב ואו+תו (ת=תו, מ=מם); תיו אינו נותן 636",
       "classification": "canonical"
     },
     {
       "value": 636,
       "label": "קומפוזיציה עמית / עין מם יוד תו",
-      "method": "Talmudic and Legacy Milui · φ(636)=208",
+      "method": "מילוי תלמודי או כתיב ואו+תו; ת=תו; φ(636)=208",
       "classification": "FOUNDATION"
     },
     {
       "value": 636,
       "label": "π: P₂(20)=636",
-      "method": "Power-of-Bet · n=20; 636 = מילוי עמית התלמודי / הארכיוני",
+      "method": "Power-of-Bet · n=20; 636 = מילוי עמית בנוסח תו (תלמודי)",
       "classification": "BRIDGE"
     },
     {
@@ -5466,15 +5466,15 @@
     },
     {
       "value": 935,
-      "label": "מילוי רוב · ערך ארכיוני",
-      "method": "Legacy Milui (עד 2026-11-01)",
-      "classification": "ARCHIVE"
+      "label": "מילוי רוב · אלפין (ואו)",
+      "method": "מילוי אלפין (ואו): ריש500 + ואו13 + בית422 = 935",
+      "classification": "RESEARCH"
     },
     {
       "value": 935,
       "label": "קומפוזיציית רוב · 2.5 ביטים / ריש ואו בית",
-      "method": "Hebrew Regular · Legacy Milui",
-      "classification": "ARCHIVE"
+      "method": "Hebrew Regular · Milui Alfin (ואו)",
+      "classification": "RESEARCH"
     },
     {
       "value": 944,
@@ -6240,20 +6240,20 @@
     },
     {
       "value": 1877,
-      "label": "מילוי עמית מייק רוב · ארכיוני",
-      "method": "Legacy Milui (ו=ואו, ת=תו) · Prime #288 = φ(888)",
-      "classification": "ARCHIVE"
+      "label": "עמית מייק רוב · כתיב ואו+תו",
+      "method": "כתיב נבדק: ו→ואו, ת→תו, שאר האותיות לפי מיפוי האתר; 1877 הוא הראשוני ה־288, φ(888)=288; מילוי אלפין (ואו) הפעיל עם תיו נותן 1887",
+      "classification": "BRIDGE"
     },
     {
       "value": 1877,
       "label": "משיח במילוי רגיל + בראשית אלהים רגיל",
-      "method": "878+999=1877 = מילוי ארכיוני היסטורי(עמית מייק רוב); ראשוני #288; φ(888)=288",
+      "method": "878+999=1877 = שם עמית מייק רוב בכתיב ואו+תו; ראשוני #288; φ(888)=288",
       "classification": "BRIDGE"
     },
     {
       "value": 1886,
       "label": "מילוי עמית מייק רוב · תלמודי",
-      "method": "Talmudic Milui (ו=ויו, ת=תו); legacy 1877 +9",
+      "method": "Talmudic Milui (ו=ויו, ת=תו); תוספת 9 לעומת כתיב ואו+תו שנותן 1877",
       "classification": "RESEARCH"
     },
     {
@@ -6966,9 +6966,9 @@
     },
     {
       "value": 5467,
-      "label": "בראשית א:א · מילוי ארכיוני",
-      "method": "Legacy Milui · 71×77 = 74²−3²",
-      "classification": "ARCHIVE"
+      "label": "בראשית א:א · כתיב ואו+תו",
+      "method": "מיפוי אותיות בכתיב ואו+תו (ת=תו) = 5467 = 71×77 = 74²−3²; אלפין הפעיל עם ת=תיו נותן 5497",
+      "classification": "RESEARCH"
     },
     {
       "value": 5476,
