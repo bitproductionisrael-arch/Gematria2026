@@ -32,18 +32,130 @@ function yhvhMiluiValues(def){
  if(!def||def.parts.length!==4||def.parts.some((p,i)=>!p.startsWith(letters[i])))throw new Error('YHWH Milui must expand four source letters: '+(def?.id||''));
  return def.parts.map(yhvhMiluiLetterValue);
 }
-function renderYhvhMiluiTab(){
- const root=document.getElementById('yhvhMiluiGrid');
- if(!root)return;
- const baseLetters=Array.from('יהוה');
- root.innerHTML=YHVH_MILUI_GALLERY.map(def=>{
-  const vals=yhvhMiluiValues(def);
-  const columns=def.parts.map((part,i)=>'<div class="yhvh-milui-letter"><span class="base">'+esc(baseLetters[i])+'</span><span class="arrow" aria-hidden="true">↓</span><strong class="expanded">'+esc(part)+'</strong><span class="value">'+fmt(vals[i])+'</span></div>').join('');
-  const addition=vals.map((v,i)=>'<span>'+fmt(v)+'</span>'+(i<3?'<span class="plus" aria-hidden="true">+</span>':'')).join('');
-  return '<article class="yhvh-milui-card" data-milui-id="'+esc(def.id)+'" data-milui-kind="'+esc(def.kind)+'"><h3>'+esc(def.name)+'</h3><div class="yhvh-milui-source" title="מקור: '+esc(def.source)+'">מקור: <a href="'+esc(def.url)+'" target="_blank" rel="noopener noreferrer">'+esc(def.source)+'</a></div>'+(def.note?'<div class="yhvh-milui-note">'+esc(def.note)+'</div>':'')+'<div class="yhvh-milui-origin" aria-label="שם המקור: יהוה">יהוה</div><div class="yhvh-milui-letters">'+columns+'</div><div class="yhvh-milui-math" aria-label="סכום ערכי המילוי">'+addition+'</div><div class="yhvh-milui-equals">=</div><div class="yhvh-milui-total" aria-label="התוצאה">'+fmt(sum(vals))+'</div></article>';
- }).join('');
+
+const YHVH_COMPARE_PROFILES={rov54:'standard',rov54t:'talmudic',rov54m:'mayim',rov45:'alfin',peliah45:'pelia'};
+const YHVH_COMPARE_PRESETS=['יהוה','בראשית','בראשית ברא אלהים את השמים ואת הארץ','משיח','עמית מייק רוב','שמות'];
+let yhvhCompareText='יהוה';
+function yhvhCleanPhrase(value){
+ return String(value||'').normalize('NFC').replace(/[\u0591-\u05c7]/g,'').replace(/[^א-תךםןףץ\s]/g,' ').replace(/\s+/g,' ').trim().slice(0,180);
+}
+function yhvhFlattenMilui(text,profile){
+ const calc=calculateMilui(text,profile);
+ return {parts:calc.words.flatMap(w=>w.parts.map(p=>({letter:p.letter,name:p.name,value:p.value}))),total:calc.total};
+}
+function yhvhComputeMilui(def,text){
+ if(text==='יהוה'){
+  const names=def.parts,letters=Array.from('יהוה');
+  const parts=names.map((name,i)=>({letter:letters[i],name,value:yhvhMiluiLetterValue(name)}));
+  return {parts,total:sum(parts.map(p=>p.value)),scope:''};
+ }
+ const profile=YHVH_COMPARE_PROFILES[def.id];
+ if(profile)return {...yhvhFlattenMilui(text,profile),scope:''};
+ if(def.kind==='derived')return null; // asymmetric ה spellings do not define an alphabet-wide rule
+ if(def.kind==='traditional'){
+  if(def.parts[1]!==def.parts[3])return null;
+  // Explicit site-level extrapolation: source documents the four-letter divine name,
+  // while other letters take RovGrid standard spellings. Do not claim historical source.
+  const map={...MILUI_NAMES,'ה':def.parts[1],'ו':def.parts[2]};
+  const parts=Array.from(text).flatMap(letter=>{
+   const name=miluiNameForLetter(letter,map);
+   return name?[{letter,name,value:yhvhMiluiLetterValue(name)}]:[];
+  });
+  return {parts,total:sum(parts.map(p=>p.value)),scope:'הרחבה מחקרית של נוסח יהוה; שאר האותיות לפי המילוי הרגיל באתר'};
+ }
+ return null;
+}
+function yhvhComparisonDetail(parts,baseline){
+ const diffs=new Map();
+ parts.forEach((p,i)=>{
+  const base=baseline.parts[i];
+  if(!base||p.name===base.name)return;
+  const key=p.letter+'|'+base.name+'|'+p.name;
+  const found=diffs.get(key)||{letter:p.letter,before:base.name,after:p.name,count:0,delta:0};
+  found.count++;found.delta+=p.value-base.value;diffs.set(key,found);
+ });
+ return [...diffs.values()].map(d=>d.letter+': '+d.before+'→'+d.after+(d.count>1?' ×'+d.count:'')+' ('+(d.delta>0?'+':'')+d.delta+')').join(' · ');
+}
+function yhvhMiluiSourceHtml(def){
+ return '<div class="yhvh-milui-source" title="מקור: '+esc(def.source)+'">מקור: <a href="'+esc(def.url)+'" target="_blank" rel="noopener noreferrer">'+esc(def.source)+'</a></div>';
+}
+function yhvhMiluiLettersHtml(parts,baseline,extraClass=''){
+ return '<div class="yhvh-milui-letters'+(extraClass?' '+extraClass:'')+'">'+parts.map((p,i)=>{
+  const changed=!!baseline?.parts[i]&&baseline.parts[i].name!==p.name;
+  return '<div class="yhvh-milui-letter'+(changed?' changed':'')+'"><span class="base">'+esc(p.letter)+'</span><span class="arrow" aria-hidden="true">↓</span><strong class="expanded">'+esc(p.name)+'</strong><span class="value">'+fmt(p.value)+'</span></div>';
+ }).join('')+'</div>';
+}
+function yhvhMiluiCardHtml(def,phrase,baseline){
+ const heading='<h3>'+esc(def.name)+'</h3>'+yhvhMiluiSourceHtml(def)+(def.note?'<div class="yhvh-milui-note">'+esc(def.note)+'</div>':'');
+ const computed=yhvhComputeMilui(def,phrase);
+ if(!computed){
+  return '<article class="yhvh-milui-card" data-milui-id="'+esc(def.id)+'" data-milui-kind="'+esc(def.kind)+'">'+heading+
+    '<div class="yhvh-milui-no-result">צירוף המוגדר לשם יהוה בלבד; אין ממנו כלל מילוי מוסכם לביטוי הנבחר.</div>'+
+    '<div class="yhvh-milui-scope">דוגמת המקור: יהוה = '+fmt(sum(yhvhMiluiValues(def)))+'</div></article>';
+ }
+ if(computed.parts.length!==baseline.parts.length)throw new Error('YHWH comparison letter count differs from standard');
+ const delta=computed.total-baseline.total;
+ const detail=yhvhComparisonDetail(computed.parts,baseline);
+ const many=computed.parts.length>9;
+ const displayParts=many?computed.parts.slice(0,8):computed.parts;
+ const displayBaseline=many?{parts:baseline.parts.slice(0,8)}:baseline;
+ const letters=yhvhMiluiLettersHtml(displayParts,displayBaseline,many?'yhvh-many-letters':'');
+ const math=computed.parts.length<=7
+  ?'<div class="yhvh-milui-math" aria-label="סכום ערכי המילוי">'+computed.parts.map((p,i)=>'<span>'+fmt(p.value)+'</span>'+(i<computed.parts.length-1?'<span class="plus" aria-hidden="true">+</span>':'')).join('')+'</div>'
+  :'<div class="yhvh-milui-math yhvh-sum-short">סכום '+computed.parts.length+' מילויי אותיות</div>';
+ const expanded=many?'<details class="yhvh-milui-details"><summary>הצג את כל '+computed.parts.length+' האותיות והמילויים</summary>'+
+   yhvhMiluiLettersHtml(computed.parts,baseline,'yhvh-many-letters')+
+   '<div class="yhvh-milui-math yhvh-sum-short">'+computed.parts.map((p,i)=>fmt(p.value)+(i<computed.parts.length-1?' + ':'')).join('')+'</div></details>':'';
+ const difference=phrase==='יהוה'?'':('<div class="yhvh-milui-delta'+(delta?' different':'')+'">'+
+   (delta?(detail||'שינוי לעומת רגיל: '+(delta>0?'+':'')+delta):'זהה למילוי הרגיל בביטוי זה')+'</div>');
+ const total='<div class="yhvh-milui-total-row"><span class="yhvh-milui-total">'+fmt(computed.total)+'</span>'+
+   (phrase!=='יהוה'?'<span class="yhvh-milui-relative'+(delta?' changed':'')+'">('+(delta>0?'+':'')+fmt(delta)+' לעומת רגיל)</span>':'')+'</div>';
+ return '<article class="yhvh-milui-card" data-milui-id="'+esc(def.id)+'" data-milui-kind="'+esc(def.kind)+'">'+heading+
+  (computed.scope?'<div class="yhvh-milui-scope">'+esc(computed.scope)+'</div>':'')+
+  '<div class="yhvh-milui-origin" aria-label="הביטוי הנבחר">'+esc(phrase)+'</div>'+letters+expanded+
+  difference+math+'<div class="yhvh-milui-equals">=</div>'+total+'</article>';
+}
+function renderYhvhMiluiTab(inputText=yhvhCompareText){
+ const root=document.getElementById('yhvhMiluiGrid');if(!root)return;
+ const phrase=yhvhCleanPhrase(inputText);
+ if(!phrase){
+  root.innerHTML='<p class="yhvh-milui-no-result">הקלד ביטוי בעברית כדי להשוות מילויים.</p>';
+  const summary=document.getElementById('yhvhCompareSummary');
+  if(summary)summary.textContent='יש להזין לפחות אות עברית אחת';
+  return;
+ }
+ yhvhCompareText=phrase;
+ const baseline=yhvhFlattenMilui(phrase,'standard');
+ root.innerHTML=YHVH_MILUI_GALLERY.map(def=>yhvhMiluiCardHtml(def,phrase,baseline)).join('');
  const count=document.getElementById('yhvhGuideCount');
  if(count)count.textContent=YHVH_MILUI_GALLERY.length+' מילויים';
+ const summary=document.getElementById('yhvhCompareSummary');
+ if(summary){
+  if(phrase==='יהוה')summary.textContent='יהוה · 15 כרטיסים · ארבעת מילויי השם הקבליים ושיטות האתר';
+  else{
+   const vals=['standard','talmudic','mayim','alfin','pelia'].map(profile=>calculateMilui(phrase,profile).total);
+   summary.textContent=phrase+' · 5 שיטות מלאות · '+new Set(vals).size+' תוצאות מספריות שונות · 4 נוסחי יהוה בהרחבה מחקרית · 6 צירופים המוגדרים ליהוה בלבד';
+  }
+ }
+}
+function bindYhvhMiluiComparison(){
+ const select=document.getElementById('yhvhComparePreset');
+ const input=document.getElementById('yhvhCompareInput');
+ const reset=document.getElementById('yhvhCompareReset');
+ if(!select||!input||!reset)return;
+ select.addEventListener('change',()=>{
+  if(select.value==='__custom'){input.focus();input.select();return}
+  input.value=select.value;
+  renderYhvhMiluiTab(select.value);
+ });
+ input.addEventListener('input',()=>{
+  const phrase=yhvhCleanPhrase(input.value);
+  select.value=YHVH_COMPARE_PRESETS.includes(phrase)?phrase:'__custom';
+  renderYhvhMiluiTab(phrase);
+ });
+ reset.addEventListener('click',()=>{
+  select.value='יהוה';input.value='יהוה';renderYhvhMiluiTab('יהוה');
+ });
 }
 (function verifyYhvhMiluiGallery(){
  const expected=[54,54,72,63,45,52,45,54,45,63,63,54,54,53,53];
@@ -56,4 +168,5 @@ function renderYhvhMiluiTab(){
   if(byId(id)!==calculateMilui('יהוה',profile).total)throw new Error('Calculator/profile mismatch: '+id);
  }
 })();
+bindYhvhMiluiComparison();
 renderYhvhMiluiTab();
