@@ -1742,7 +1742,17 @@ function magnetBreakdown(r){
  }
  return out
 }
+/* Full regular magnet: readable per-letter Latin/English Milui, keeping broken and math magnets unchanged. */
+function latinMiluiFullMagnetText(r){
+ const words=r.words||[];
+ const blocks=words.map(w=>(w.parts||[]).map(p=>`${p.name} (${p.letter}) = ${fmt(p.value)}`).join('\n')).filter(Boolean);
+ const subtotals=words.map(w=>Number(w.subtotal)||0),baseTotal=sum(subtotals);
+ let equation=subtotals.map(fmt).join(' + ')+' = '+fmt(baseTotal);
+ if(r.queryMultiplier>1)equation+='; '+fmt(baseTotal)+' × '+fmt(r.queryMultiplier)+' = '+fmt(r.total);
+ return `${magnetQueryPrefix(r)} = ${fmt(r.total)}\n(${minimalMethodName(r)})\n${blocks.join('\n\n')}\nMillui Sum: ${equation}`;
+}
 function minimalResultText(r){
+ if(r?.latinMilui&&r.words?.length)return latinMiluiFullMagnetText(r);
  const prefix=magnetQueryPrefix(r);
  if(r?.deltaMeta)return `${prefix} = ${fmt(r.total)} (${minimalMethodName(r)})\nΔ MATCH: Jewish ${fmt(r.deltaMeta.leftValue)} − Simple ${fmt(r.deltaMeta.rightValue)}`;
  if(r?.repeatMeta){
