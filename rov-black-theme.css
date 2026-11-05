@@ -1,0 +1,115 @@
+/* Gematria2026 · black canvas and color family masks · 2026-11-05
+   Visual-only layer. No calculation or clipboard changes. */
+:root{
+ color-scheme:dark;
+ --bg:#000000;--panel:#101010;--panel2:#161616;--line:#393939;
+ --text:#f7f7f7;--muted:#b8b8b8;
+ --gold:#ffcd50;--orange:#ff9e3c;--blue:#ffd16c;
+ --green:#a7ceab;--red:#ff615b;--violet:#bd97ff;--cyan:#ffae52;
+}
+html,body{background:#000;color:var(--text)}
+button,input,textarea,select{background:#171717;border-color:#414141;color:#f6f6f6}
+button:hover{background:#222;border-color:#777}
+button.active,.category-tabs button.active{background:#292012;color:#ffe4a4;border-color:#eabb55}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline-color:var(--gold)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.theme-calculator .topbar,.theme-calculator .main-tabs{background:#080808;border-color:#303030}
+.theme-calculator .workspace{background:#000}
+.theme-calculator .panel{background:#101010}
+.theme-calculator .method-pane{background:linear-gradient(180deg,#131313,#0b0b0b);border-color:#393939;box-shadow:none}
+.theme-calculator .detail-pane.multi-mode{background:#090909;border-color:#303030;box-shadow:none}
+.theme-calculator .multi-detail-card{background:#141414;border-color:#393939}
+.theme-calculator .multi-detail-card:before{background:none}
+.theme-calculator .stage-count{color:#ffdb82;border-color:#6d5129}
+.theme-calculator .stage-harmony{background:#1d1710;border-color:#614529;color:#f0ded0}
+.theme-calculator .stage-harmony button,.theme-calculator .harmony-relations-copy{background:#281c10;border-color:#946331;color:#ffd9a5}
+.theme-calculator .stage-harmony button:hover,.theme-calculator .harmony-relations-copy:hover{background:#382515;border-color:#ffb464}
+.theme-calculator .compact-facts,.theme-calculator .letter-chip,.theme-calculator .transform-note,
+.theme-calculator .research-operator-box,.theme-calculator .kv,.theme-calculator .box,
+.theme-calculator .chain,.theme-calculator .form-card,.theme-calculator .relation-row,
+.theme-calculator .compare-row,.theme-calculator .repeat-cell,.theme-calculator .repeat-hit-panel,
+.theme-calculator .repeat-hit-cell,.theme-calculator .methodbook-box,.theme-calculator .cipher-cell,
+.theme-calculator .saved-card,.theme-calculator .saved-row,.theme-calculator .relation-card,
+.theme-calculator .relation-side{background-color:#151515;border-color:#373737}
+.theme-calculator .fact-line,.theme-calculator .multi-breakdown,
+.theme-calculator .math-chip,.theme-calculator .word-total b{color:#f0f0f0}
+.theme-calculator .fact-line b,.theme-calculator .box h3,.theme-calculator .methodbook-box h3{color:#fafafa}
+.theme-calculator .fact-line.corpus-line,.theme-calculator .math-chip.anchor,
+.theme-calculator .fact-line.anchor-line{color:#ffd06b}
+.theme-calculator .fact-sep{color:#909090}
+.theme-calculator .letter-chip strong,.theme-calculator .research-stage code,
+.theme-calculator .methodbook-bigformula{color:#ffd585}
+.theme-calculator .bigvalue,.theme-calculator .form-main,.theme-calculator .milui-row b,
+.theme-calculator .yhvh-milui-total{color:#ffcf60}
+.theme-calculator .math-magnet,.theme-calculator .multi-detail-card .copy-rich-method{border-color:#987337;color:#ffe0a0}
+.theme-calculator .multi-detail-card .copy-method{border-color:#875e31;color:#ffd5a0}
+.theme-calculator .methodbook-shell,.theme-calculator .methodbook-nav,.theme-calculator .methodbook-head{background:#101010}
+.theme-calculator .methodbook-disclaimer{background:linear-gradient(90deg,rgba(255,196,67,.09),transparent)}
+.theme-calculator .permutation-panel{background:#111;border-color:#393939}
+.theme-calculator .permutation-panel .perm-big,.theme-calculator .permutation-method-btn .mv{color:#ffcf60!important}
+.theme-calculator .permutation-panel .perm-box,.theme-calculator .permutation-panel .perm-chip,
+.theme-calculator .permutation-panel .perm-equation{background:#161616;border-color:#3c3c3c}
+.theme-calculator .yhvh-milui-card,.theme-calculator .yhvh-compare-controls{background:#151515;border-color:#383838}
+.theme-calculator .yhvh-milui-letter .arrow{color:#ffae52}
+.theme-calculator .yhvh-milui-source,.theme-calculator .yhvh-milui-note,
+.theme-calculator .yhvh-milui-letter .value{color:#b8b8b8}
+/* Method families: grey = traditional/core; red = mirrors/Atbash;
+   violet = all reduction tiers; orange = shifts and operators; yellow = fillings/power. */
+[data-tone="classic"]{--tone-rgb:176,176,176;--tone-color:#e0e0e0}
+[data-tone="mirror"]{--tone-rgb:255,82,75;--tone-color:#ff9791}
+[data-tone="reduction"]{--tone-rgb:178,129,255;--tone-color:#d0b1ff}
+[data-tone="cipher"]{--tone-rgb:255,111,59;--tone-color:#ffb18e}
+[data-tone="filling"]{--tone-rgb:255,201,72;--tone-color:#ffdb83}
+[data-tone="operator"]{--tone-rgb:255,158,53;--tone-color:#ffcb8c}
+[data-tone="power"]{--tone-rgb:252,180,43;--tone-color:#ffe18a}
+.theme-calculator .method-btn[data-tone],.theme-calculator .multi-detail-card[data-tone],
+.theme-calculator .compare-row[data-tone],.theme-calculator .repeat-cell[data-tone],
+.theme-calculator .repeat-hit-cell[data-tone]{
+ background:linear-gradient(120deg,rgba(var(--tone-rgb),.115),rgba(var(--tone-rgb),.045) 50%,transparent 90%),#121212;
+ border-color:rgba(var(--tone-rgb),.32);
+ border-inline-start:3px solid rgba(var(--tone-rgb),.78)
+}
+.theme-calculator .method-btn[data-tone]:hover,.theme-calculator .repeat-cell[data-tone]:hover,
+.theme-calculator .repeat-hit-cell[data-tone]:hover{
+ background:linear-gradient(120deg,rgba(var(--tone-rgb),.17),rgba(var(--tone-rgb),.05) 70%),#171717;
+ border-color:rgba(var(--tone-rgb),.66)
+}
+.theme-calculator .method-btn[data-tone].active,.theme-calculator .repeat-cell[data-tone].selected,
+.theme-calculator .repeat-hit-cell[data-tone].selected{
+ background:linear-gradient(120deg,rgba(var(--tone-rgb),.23),rgba(var(--tone-rgb),.07) 78%),#171717;
+ border-color:rgba(var(--tone-rgb),.83);
+ box-shadow:0 0 0 1px rgba(var(--tone-rgb),.16)
+}
+.theme-calculator .multi-detail-card[data-tone]:before{
+ background:linear-gradient(115deg,rgba(var(--tone-rgb),.08),transparent 55%)
+}
+.theme-calculator .method-btn[data-tone] .mn,.theme-calculator .multi-detail-card[data-tone] .mn,
+.theme-calculator .compare-row[data-tone] .n,.theme-calculator .repeat-hit-cell[data-tone] .repeat-hit-method{color:var(--tone-color)}
+.theme-calculator .method-btn[data-tone] .mv,.theme-calculator .method-btn[data-tone].active .mv,
+.theme-calculator .multi-detail-card[data-tone] .mv,.theme-calculator .repeat-hit-cell[data-tone] .repeat-hit-v{color:#fff;text-shadow:none}
+.theme-calculator .multi-detail-card[data-tone] .compact-facts,.theme-calculator .multi-detail-card[data-tone] .letter-chip{background:#101010;border-color:#383838}
+.theme-calculator .methodbook-doc[data-tone] .methodbook-name{color:var(--tone-color)}
+.theme-calculator .methodbook-doc[data-tone] .formula-box{border-color:rgba(var(--tone-rgb),.38);background:linear-gradient(145deg,rgba(var(--tone-rgb),.08),transparent),#141414}
+/* Front page follows the same black/gold/orange/white color language. */
+.theme-home{background:#000}
+.theme-home .top{background:rgba(5,5,5,.94);border-color:#303030}
+.theme-home .links a{color:#e1e1e1}
+.theme-home .links a:hover{background:#1d1d1d}
+.theme-home .cta,.theme-home .btn.primary{background:#302111!important;border-color:#a7782c!important;color:#ffe09b!important}
+.theme-home .eyebrow{color:#ffae52}
+.theme-home .lead{color:#d2d2d2}
+.theme-home .btn{background:#181818;border-color:#3b3b3b}
+.theme-home .orbit:before{background:radial-gradient(circle,rgba(255,147,51,.13),transparent 66%)}
+.theme-home .card{background:linear-gradient(180deg,#1a1a1a,#111);border-color:#3a3a3a}
+.theme-home .card:hover{border-color:#d39a4e}
+.theme-home .card .num{color:#ffbb65}
+.theme-home .card p,.theme-home .note p,.theme-home .corpus-text p{color:#c1c1c1}
+.theme-home .shape,.theme-home .note{background:#151515;border-color:#393939}
+.theme-home .corpus-band{background:linear-gradient(115deg,#171717,#231a0f);border-color:#6c4c24}
+.theme-home .tag{border-color:#555;color:#e0e0e0}
+.theme-home .geo [stroke="#5fd3cf"],.theme-home .geo [stroke="#63a9ff"]{stroke:#ff9e3c}
+.theme-home .geo [fill="#5fd3cf"],.theme-home .geo stop[stop-color="#5fd3cf"]{fill:#ffba58;stop-color:#ff9e3c}
+.theme-home .geo [stroke="#263443"]{stroke:#474747}
+@media(prefers-reduced-motion:reduce){
+ .theme-calculator .method-btn,.theme-calculator .repeat-cell,.theme-calculator .repeat-hit-cell{transition:none}
+}
