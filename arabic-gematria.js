@@ -30,7 +30,7 @@ HIJAI.forEach((ch,i)=>{
 
 // Every ordinary calculation still calls the same original engine.
 const originalDetect=detectScript;
-detectScript=function(t){return /[ء-غف-يٱ]/.test(String(t))?'ar':originalDetect(t)};
+detectScript=function(t){const str=String(t);if(/[֐-׿]/.test(str))return originalDetect(str);return /[ء-غف-يٱ]/.test(str)?'ar':originalDetect(str)};
 const originalTokens=tokensForWord;
 const unicodeForms=/[\ufb50-\ufdff\ufe70-\ufeff]/g;
 function normalizeArabicText(input){
