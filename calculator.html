@@ -287,6 +287,28 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .stage-harmony button:hover,.harmony-relations-copy:hover{background:#17334a;border-color:#8ab7d1}
 .harmony-relations-copy{width:100%;margin-top:9px}
 @media(max-width:670px){.stage-harmony{flex-direction:column;align-items:stretch;text-align:center}.stage-harmony button{width:100%}}
+
+/* HomePower guide: every alphabet reuses the calculator's own constant maps. */
+.forms-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.forms-grid .form-card:last-child{grid-column:auto}
+.forms-grid [data-formcard="mapping"]{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.homepower-map-controls{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 9px}
+.homepower-map-controls select{flex:1 1 155px;min-width:0;max-width:100%;font-size:12px;background:#0a1016}
+.homepower-map-controls button{font-size:11px;padding:6px 9px}
+.homepower-map-title{color:#aebbc9;font-size:12px;margin:8px 0 6px}
+.homepower-map-digits{direction:ltr;text-align:center;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(15px,1.75vw,24px);font-weight:800;letter-spacing:.045em;white-space:nowrap;overflow-x:auto;scrollbar-width:thin;padding:12px 7px;background:#0b1017;border:1px solid #27303b;border-radius:10px;color:#fff}
+.homepower-map-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(65px,1fr));gap:6px;margin-top:11px}
+.homepower-map-tile{border-radius:10px;background:#22262b;border:1px solid #2a3039;min-width:0;min-height:93px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:8px 3px}
+.homepower-map-tile .letter{color:#c9cfd8;font-size:21px;line-height:1.35}
+.homepower-map-tile .digit{color:#fff;font-size:27px;font-weight:900;direction:ltr;line-height:1.15}
+.homepower-map-tile .count{color:#a4adb8;font-size:12px;font-weight:700;direction:ltr}
+.homepower-map-tile.unused{opacity:.46}
+.homepower-map-explanation{font-size:12px;line-height:1.45;color:#aeb9c6;margin:10px 0 6px}
+.homepower-map-total{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border:1px solid #334050;background:#101922;border-radius:10px;padding:9px;margin-top:8px;font-size:12px}
+.homepower-map-total b{color:#fff;direction:ltr;font-size:22px}
+@media(max-width:820px){.forms-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.forms-grid{grid-template-columns:minmax(0,1fr)}.form-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.homepower-map-digits{font-size:19px}.homepower-map-tiles{grid-template-columns:repeat(auto-fill,minmax(67px,1fr))}}
+
 </style>
 <style>
 /* Distinct letter permutations · independent operator, not additive gematria */
@@ -408,9 +430,10 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
     </div></section>
 
     <section id="tab-forms" class="tab-panel"><div class="panel forms-layout">
-      <div class="sectionbar"><div class="grow"><b data-i18n="transformations">טרנספורמציות של הביטוי</b><div class="tiny" data-i18n="transformations_sub">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui" data-i18n="form_milui">מילוי</button><button data-form="boundary" data-i18n="form_boundary">גבול</button><button data-form="finals" data-i18n="form_finals">סופיות</button></div></div></div>
+      <div class="sectionbar"><div class="grow"><b data-i18n="transformations">טרנספורמציות של הביטוי</b><div class="tiny" data-i18n="transformations_sub">מילוי פשוט, רווח כגבול, אותיות סופיות סגור↔פתוח</div><div id="formTabs" class="form-tabs"><button class="active" data-form="milui" data-i18n="form_milui">מילוי</button><button data-form="mapping">מיפויים</button><button data-form="boundary" data-i18n="form_boundary">גבול</button><button data-form="finals" data-i18n="form_finals">סופיות</button></div></div></div>
       <div class="forms-grid">
         <div class="form-card active" data-formcard="milui"><h3 data-i18n="milui_title">מילויים · שמות האותיות</h3><div class="milui-rows"><div class="milui-row"><span class="tiny">מילוי רגיל</span><b id="miluiValue">—</b></div><div class="milui-row"><span class="tiny">מילוי תלמודי</span><b id="miluiTalmudicValue">—</b></div><div class="milui-row"><span class="tiny">מילוי מים</span><b id="miluiMayimValue">—</b></div><div class="milui-row"><span class="tiny">מילוי אלפין (ואו)</span><b id="miluiAlfinValue">—</b></div><div class="milui-row"><span class="tiny">מילוי פליאה</span><b id="miluiPeliaValue">—</b></div><div class="milui-row"><span class="tiny" title="מחקר: ריש→רש, ויו ותיו נשארים. בראשית א׳:א׳ = 5476">מילוי רש · בראשית 74² (מחקר)</span><b id="miluiGenesis74Value">—</b></div><div class="milui-row"><span class="tiny">מילוי דמילוי / Milui of Milui</span><b id="milui2Value">—</b></div></div><div id="miluiText" class="form-text"></div><div id="miluiMeta" class="badges" style="margin-top:7px"></div><div id="yhvhMilui" class="tiny" style="margin-top:7px"></div></div>
+        <div class="form-card" data-formcard="mapping"><h3>מיפויי אלפבית · כוח בית</h3><div class="homepower-map-controls"><select id="homePowerMapSelect" aria-label="בחירת קבוע כוח בית"></select><button type="button" id="homePowerMapToggle">כל האלפבית</button><button type="button" id="homePowerMapCopy" title="העתק פירוט מיפוי">העתק</button></div><div id="homePowerMapTitle" class="homepower-map-title"></div><div id="homePowerMapDigits" class="homepower-map-digits" dir="ltr"></div><div id="homePowerMapTiles" class="homepower-map-tiles"></div><div id="homePowerMapExplanation" class="homepower-map-explanation"></div><div class="homepower-map-total"><span id="homePowerMapTotalLabel">סכום האותיות</span><b id="homePowerMapTotal">—</b></div></div>
         <div class="form-card" data-formcard="boundary"><h3 data-i18n="boundary_title">אפקט הגבול · עם/בלי רווח</h3><div id="boundaryTitle" class="form-text"></div><div id="boundaryDiffs" class="diff-list"></div></div>
         <div class="form-card" data-formcard="finals"><h3 data-i18n="finals_title">סגור ↔ פתוח · אותיות סופיות</h3><div id="finalTitle" class="form-text"></div><div id="finalDiffs" class="diff-list"></div></div>
       </div>
@@ -1453,7 +1476,7 @@ function syncRelevantResults(text,results,otherText=''){const allowed=new Set(sy
 function compareResults(textA,textB){const a=calculateAll(textA),b=calculateAll(textB);if(a.script!==b.script)return[];const active=syncRelevantResults(textA,a.results,textB),byB=Object.fromEntries(b.results.map(r=>[r.method.key,r]));return active.map(x=>({method:x.method,a:x.total,b:byB[x.method.key]?.total??null,delta:byB[x.method.key]!=null?byB[x.method.key].total-x.total:null})).filter(x=>x.b!=null&&!byB[x.method.key]?.deferred)}
 
 /* ---------- state ---------- */
-const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,queryMultiplierActive:false,formView:'milui',compareAuto:true,relationRows:[],relationOpen:null};
+const state={tab:'results',category:'base',methodKey:null,selectedMethods:[],derivedSelections:[],selectionTouched:false,lastScript:null,word:0,numKey:null,numSub:'core',relPage:0,cmpPage:0,repeatPage:0,repeatMatrixView:false,repeatMatrixScale:1,repeatHitSelected:[],queryMultiplier:1,queryMultiplierActive:false,formView:'milui',homePowerMappingKey:'homePower_pi',homePowerMappingAll:false,compareAuto:true,relationRows:[],relationOpen:null};
 let current={script:'he',results:[]};
 function clearMatrixComparisonSelections(){state.derivedSelections=[];state.repeatHitSelected=[];state.autoComboSelected=[];state.repeatPage=0}
 
@@ -2144,7 +2167,46 @@ async function saveRepeatMatrixImage(hitOnly=false){
 }
 
 function diffRows(aText,bText){const rows=compareResults(aText,bText);return rows.filter(x=>x.a!==x.b).slice(0,7).map(x=>`<div class="diff-row"><span>${esc(x.method.name)}</span><span>${fmt(x.a)}</span><span>${fmt(x.b)}</span></div>`).join('')||'<div class="tiny">אין שינוי בשיטות הפעילות.</div>'}
-function renderForms(){const text=document.getElementById('q').value,script=detectScript(text);if(script==='he'){
+
+/* HomePower alphabet mappings: post-decimal digits, zero retained. */
+let homePowerMapCopyValue='';
+function renderHomePowerMapping(){
+ const text=document.getElementById('q').value,script=detectScript(text);
+ const methods=(METHODS[script]||[]).filter(m=>m.key.startsWith('homePower_')&&m.map&&m.constantDigits);
+ const select=document.getElementById('homePowerMapSelect');
+ const chosen=methods.find(m=>m.key===state.homePowerMappingKey)||methods[0];
+ if(!chosen){select.innerHTML='';document.getElementById('homePowerMapTiles').textContent='אין מיפוי זמין';return}
+ select.innerHTML=methods.map(m=>'<option value="'+esc(m.key)+'">'+esc(m.name.replace('אלפבית כוח בית · ','').replace(' / Pi',''))+'</option>').join('');
+ select.value=chosen.key;
+ const alphabet=Object.keys(chosen.map).filter(c=>c.toLowerCase()===c);
+ const digits=chosen.constantDigits.slice(0,alphabet.length),counts=Object.create(null);
+ for(const word of wordsOf(text)){
+  for(const token of tokensForWord(word,script,chosen.map)){
+   const letter=script==='he'?(FINAL_TO_BASE[token.base]||token.base):token.base.toLowerCase();
+   counts[letter]=(counts[letter]||0)+token.multiplier;
+  }
+ }
+ const multiple=state.queryMultiplierActive?queryMultiplier():1;
+ const baseTotal=alphabet.reduce((sum,letter)=>sum+chosen.map[letter]*(counts[letter]||0),0);
+ const total=baseTotal*multiple;
+ const shown=state.homePowerMappingAll?alphabet:alphabet.filter(letter=>counts[letter]>0);
+ const english=calcLang()==='en';
+ const languageNames=english?{he:'Hebrew',en:'English',el:'Greek',ru:'Russian',ar:'Arabic'}:{he:'עברי',en:'אנגלי',el:'יווני',ru:'רוסי',ar:'ערבי'};
+ const constant=chosen.name.replace('אלפבית כוח בית · ','').split(' / ')[0];
+ document.getElementById('homePowerMapTitle').textContent=english?(alphabet.length+' digits from '+constant+' · '+(languageNames[script]||script)+' alphabet'):(alphabet.length+' הספרות של אלפבית '+constant+' · '+(languageNames[script]||script));
+ document.getElementById('homePowerMapDigits').textContent=digits;
+ document.getElementById('homePowerMapTiles').innerHTML=shown.map(letter=>{
+  const count=(counts[letter]||0)*multiple,unused=count===0;
+  return '<div class="homepower-map-tile'+(unused?' unused':'')+'"><span class="letter">'+esc(letter)+'</span><span class="digit">'+chosen.map[letter]+'</span><span class="count">'+count+'×</span></div>';
+ }).join('')||'<div class="tiny">'+(english?'Enter an expression to see its letters.':'הקלד ביטוי כדי לראות את האותיות שלו.')+'</div>';
+ document.getElementById('homePowerMapExplanation').textContent=english?'Each letter receives the corresponding post-decimal digit, including zero. Under it is the number of appearances in the expression'+(multiple>1?' (including ×'+multiple+').':'.'):'לכל אות משויכת הספרה במקום שלה אחרי הנקודה העשרונית, כולל אפס. מתחתיה מופיע מספר הופעותיה בביטוי'+(multiple>1?' לאחר הכפלה ב־'+multiple+'.':'.');
+ document.getElementById('homePowerMapTotalLabel').textContent=english?'Mapped expression total':'סכום מיפוי הביטוי';
+ document.getElementById('homePowerMapTotal').textContent=fmt(total);
+ document.getElementById('homePowerMapToggle').textContent=state.homePowerMappingAll?(english?'Phrase letters':'אותיות הביטוי'):(english?'Full alphabet':'כל האלפבית');
+ homePowerMapCopyValue=(multiple>1?'×'+multiple+' ':'')+text+' = '+fmt(total)+' ('+chosen.name+')\n'+alphabet.length+' digits: '+digits+'\n'+alphabet.filter(letter=>counts[letter]>0).map(letter=>letter+'='+chosen.map[letter]+' ('+(counts[letter]*multiple)+'×)').join(' · ');
+}
+
+function renderForms(){renderHomePowerMapping();const text=document.getElementById('q').value,script=detectScript(text);if(script==='he'){
  const mil=calculateMilui(text,'standard',1,'milui'),talmudic=calculateMilui(text,'talmudic',1,'miluiTalmudic'),mil2=calculateMilui(text,'standard',2,'milui2'),mayim=calculateMilui(text,'mayim',1,'miluiMayim'),alfin=calculateMilui(text,'alfin',1,'miluiLegacy'),pelia=calculateMilui(text,'pelia',1,'miluiPelia'),genesis74=calculateMilui(text,'genesis74',1,'milui'),a=analyzeNumber(mil.total);
  document.getElementById('miluiValue').textContent=fmt(mil.total);document.getElementById('miluiTalmudicValue').textContent=fmt(talmudic.total);document.getElementById('milui2Value').textContent=fmt(mil2.total);document.getElementById('miluiMayimValue').textContent=fmt(mayim.total);document.getElementById('miluiAlfinValue').textContent=fmt(alfin.total);document.getElementById('miluiPeliaValue').textContent=fmt(pelia.total);document.getElementById('miluiGenesis74Value').textContent=fmt(genesis74.total);
  document.getElementById('miluiText').innerHTML=`<b>מילוי רגיל:</b> ${esc(miluiExpansion(text,'standard',1))}<br><b>מילוי תלמודי:</b> ${esc(miluiExpansion(text,'talmudic',1))}<br><b>מילוי מים:</b> ${esc(miluiExpansion(text,'mayim',1))}<br><b>מילוי אלפין (ואו):</b> ${esc(miluiExpansion(text,'alfin',1))}<br><b>מילוי פליאה:</b> ${esc(miluiExpansion(text,'pelia',1))}<br><b>מילוי רש (מחקר, ויו + תיו):</b> ${esc(miluiExpansion(text,'genesis74',1))}<br><b>דמילוי:</b> ${esc(miluiExpansion(text,'standard',2))}`;
@@ -2358,9 +2420,9 @@ async function saveSelectedPoster(){
 }
 
 /* ---------- events ---------- */
-document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms')renderForms()}));
+document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms'){if(state.methodKey&&state.methodKey.startsWith('homePower_'))state.homePowerMappingKey=state.methodKey;renderForms()}}));
 let lightCalcTimer;
- document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>renderAll(false),220)});
+ document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>{renderAll(false);if(state.tab==='forms')renderForms()},220)});
  
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){clearMatrixComparisonSelections();document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
 document.getElementById('repeatPhrase').addEventListener('input',()=>{clearMatrixComparisonSelections();renderRepeat();renderResults()});
@@ -2433,7 +2495,10 @@ document.getElementById('repeatHitAll').addEventListener('click',()=>{state.repe
 document.getElementById('repeatHitClear').addEventListener('click',()=>{state.repeatHitSelected=[];state.autoComboSelected=[];renderRepeat()});
 document.getElementById('repeatHitAdd').addEventListener('click',()=>{const comboChosen=new Set(state.autoComboSelected||[]),comboRows=typeof window.__autoCombinationHits==='function'?window.__autoCombinationHits(document.getElementById('q').value||'').filter(x=>comboChosen.has(x.selectionKey)):[];let added=0;for(const x of comboRows)if(!state.derivedSelections.some(y=>y.selectionKey===x.selection.selectionKey)){state.derivedSelections.push(x.selection);added++}if(comboRows.length){state.selectionTouched=true;renderResults()}toast(added?added+' צירופים נוספו למרכז ההשוואה':'אין צירופים חדשים להוסיף');renderRepeat()});
 document.getElementById('repeatGrid').addEventListener('click',e=>{const cell=e.target.closest('[data-repeat-n]');if(!cell)return;const phrase=document.getElementById('repeatPhrase').value||document.getElementById('q').value,script=detectScript(phrase),methods=METHODS[script],methodKey=cell.dataset.repeatMethod||document.getElementById('repeatMethod').value,m=methods.find(x=>x.key===methodKey)||methods[0],n=Number(cell.dataset.repeatN),r=makeRepeatSelection(phrase,script,m,n),i=state.derivedSelections.findIndex(x=>x.selectionKey===r.selectionKey);if(i>=0){state.derivedSelections.splice(i,1);toast('הוסר ממרכז ההשוואה')}else{state.derivedSelections.push(r);state.selectionTouched=true;toast('נוסף להשוואה: '+m.name+' ×'+n)}renderRepeat();renderResults()});
-document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
+document.getElementById('repeatPrev').addEventListener('click',()=>{state.repeatPage=Math.max(0,state.repeatPage-1);renderRepeat()});document.getElementById('repeatNext').addEventListener('click',()=>{state.repeatPage++;renderRepeat()});document.getElementById('homePowerMapSelect').addEventListener('change',e=>{state.homePowerMappingKey=e.target.value;renderHomePowerMapping()});
+document.getElementById('homePowerMapToggle').addEventListener('click',()=>{state.homePowerMappingAll=!state.homePowerMappingAll;renderHomePowerMapping()});
+document.getElementById('homePowerMapCopy').addEventListener('click',async()=>{const ok=await copyText(homePowerMapCopyValue);toast(ok?'המיפוי הועתק':'שגיאה בהעתקה')});
+document.getElementById('formTabs').addEventListener('click',e=>{const b=e.target.closest('[data-form]');if(!b)return;state.formView=b.dataset.form;document.querySelectorAll('#formTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('[data-formcard]').forEach(x=>x.classList.toggle('active',x.dataset.formcard===state.formView))});
 document.getElementById('copyAll').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsPlainText());toast(ok?'כל שיטות הגימטריה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllBroken').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsBrokenText());toast(ok?'הפתגם + כל התוצאות הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
 document.getElementById('copyAllMath').addEventListener('click',async()=>{if(state.tab==='results'){const ok=await copyText(allResultsRichText());toast(ok?'כל השיטות + מתמטיקה הועתקו':'שגיאה בהעתקה');return}const el=activeExportTarget();const ok=await copyText(exportVisibleLines(el).join('\n'));toast(ok?'הטאב הועתק כטקסט':'שגיאה בהעתקה')});
@@ -2442,6 +2507,7 @@ document.getElementById('saveView').addEventListener('click',async()=>{if(state.
 
 /* ---------- self tests (run with ?selftest=1) ---------- */
 if(new URLSearchParams(location.search).has('selftest')){
+console.assert(['pi','phi','root3','root5','inv37'].every(key=>calculate('אור','he',METHODS.he.find(m=>m.key==='homePower_'+key)).total===9),'HomePower אור five mappings all 9');
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
 console.assert(Math.abs(T('אלף','he','letterDivisionRegular')-1/2400)<1e-18,'Letter Division Regular Alef 1/2400');
 console.assert(Math.abs(T('אלף','he','letterDivisionOrdinal')-1/204)<1e-16,'Letter Division Ordinal Alef 1/204');
