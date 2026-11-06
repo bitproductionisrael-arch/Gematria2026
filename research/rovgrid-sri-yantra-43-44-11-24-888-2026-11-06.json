@@ -1,0 +1,120 @@
+{
+  "schema": "rovgrid-sri-yantra-research-v1",
+  "record_id": "RG-SY-43-44-11-20261106",
+  "date": "2026-11-06",
+  "title": "Saundaryalaharī 11 × 11-letter name: 43 / 44 / 24 / 888",
+  "author_hypothesis": "עמית מייק רוב",
+  "sources": {
+    "verse": "https://poorvam.com/pore/corpus/saundaryalahari/chapter/1/verse/11",
+    "commentary": "https://www.sriyantrageometry.com/book/04-saundaryalahari-11",
+    "figure": "https://sriyantrageometry.com/book/01-the-figure",
+    "variant": "https://www.sanatanarahasya.com/lineages/tantra-foundations/the-sri-yantra/",
+    "classic": "https://www.indiadivine.org/content/topic/1305196-soundarya-lahiri-verse-11-of-sri-samkara-bhagavatpade/"
+  },
+  "normalization": {
+    "hebrew": "Hebrew ordinary gematria, final mem as 40 for שם/משה; count letters ignoring whitespace",
+    "latin": "English Simple A1Z26, case-folded, whitespace ignored"
+  },
+  "base_figures": {
+    "verse": 11,
+    "shiva": 4,
+    "shakti": 5,
+    "main_triangles": 9,
+    "subtriangle_layers": [
+      14,
+      10,
+      10,
+      8,
+      1
+    ],
+    "triangle_regions": 43,
+    "bindu": 1,
+    "extended_count": 44,
+    "lotus_petals": [
+      8,
+      16
+    ],
+    "lotus_total": 24,
+    "tri_circles": 3,
+    "tri_lines": 3
+  },
+  "name_values": {
+    "hebrew": "עמית מייק רוב",
+    "hebrew_letters": [
+      4,
+      4,
+      3
+    ],
+    "latin": "Amit Mike Rov",
+    "latin_letters": [
+      4,
+      4,
+      3
+    ],
+    "total_letters": 11,
+    "amit_english_simple": 43,
+    "hebrew_regular_name": 888,
+    "yhwh_chai_regular": 44,
+    "yechida_regular": 37,
+    "elohim_regular": 86
+  },
+  "equations": [
+    "4+4+3=11",
+    "4+5=9",
+    "14+10+10+8+1=43",
+    "43+1=44",
+    "11*4=44",
+    "11*4-1=43",
+    "1+13+9+20=43",
+    "26+18=44",
+    "26+17=43",
+    "43*2=86",
+    "8+16=24",
+    "24*37=888",
+    "520+160+208=888",
+    "4+9+11+48+11+9+4=96"
+  ],
+  "construction_specific": {
+    "name": "Chattampi Swami proportions quoted by Sri Yantra Geometry",
+    "pattern": [
+      4,
+      9,
+      11,
+      48,
+      11,
+      9,
+      4
+    ],
+    "total": 96,
+    "inner_diameter": 48,
+    "inner_radius": 24,
+    "universal": false
+  },
+  "status_legend": {
+    "A": "verified arithmetic",
+    "S": "sourced traditional/textual",
+    "B": "cross-system bridge arithmetic true, interpretation tentative",
+    "D": "hypothesis/symbolism",
+    "N": "counting/interpretative boundary"
+  },
+  "notes": [
+    "43 geometric triangular chambers; 44 counts 43 chambers plus Bindu, NOT 44 geometric triangles",
+    "verse 11 is an indexed verse, not a gematria value",
+    "historical identity of Moses and Buddha not asserted",
+    "Amitābha and Hebrew עמית are not shown to be etymologically identical"
+  ],
+  "corpus_entry_labels": [
+    "Sri Cakra · Bindu",
+    "Sri Yantra · תשעת משולשי היסוד",
+    "עמית מייק רוב / Amit Mike Rov · 11 אותיות",
+    "Saundaryalaharī · פסוק 11",
+    "Sri Yantra · שני חוגי עלי הלוטוס",
+    "Sri Yantra · 43 אזורים משולשים",
+    "Amit ↔ Sri Yantra 43",
+    "Sri Yantra · 43 אזורים + Bindu",
+    "11 אותיות × 4 = יהוה חי",
+    "Sri Yantra petals ↔ יחידה ↔ עמית מייק רוב"
+  ],
+  "main_appendix": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md",
+  "verifier": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06-verify.py"
+}
