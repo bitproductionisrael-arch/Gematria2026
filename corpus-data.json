@@ -1,8 +1,8 @@
 {
   "schema": "gematria2026-corpus-v1",
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-07",
   "source": "Corpus YHWH #2 / Gematria2026 canonical shared bank",
-  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md. Audit 2026-10-11 late: recovered archived Q4_H37_followup_verified.zip and Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip from user Library; reran Q4-H37 audit and 888-to-6 coupled diffusion; standalone H37+K spectral gap corrected to 0.8791010115 (original README inaccurately listed 0.8458174928); full-system gap confirmed 0.4582808243→0.5857864376; restored conditional Qd dimension-3 uniqueness theorem and archived alpha fit as post-hoc, not a physics derivation. Audit 2026-11-01: synchronized Hebrew 136/-136 matrix, derivatives/integrals, Stella polynomial, D4 orbit counts, Euler/Pell, alphabet pair swap, 4cd, 231 gates, conditional reconstruction. Details and negative controls: research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md. Audit 2026-11-03: Amitras/Mithras symbolic rock-to-voice-to-water research and verified exact cross-gematria identities (781/888/1024/136; 90/180/360; Children/Israel), with uncertainty and no historical-personal identity claim. Detailed dated evidence: research/amitras-rock-voice-water-2026-11-03.md. Audit 2026-11-04: appended Nov 03–04 infinite self-mapping/55/136/absence, mirror/product operators, lexical chains and ABA/A^520 entries; detailed appendix at research/rovgrid-origin-self-mapping-2026-11-04.md; previous entries retained. Audit 2026-11-04: dual 1877/1887 Mashiach+Genesis 999 versus AMR archive/Alfin/Pelia/AIQ BKR identity; historical Milui provenance retained; details: research/1877-1887-milui-mashiach-name-bridge-2026-11-04.md. Audit 2026-11-06: Saundaryalaharī verse 11 Sri Cakra geometry, 43 chambers + Bindu = 44 textual variant, 4+5=9, 14+10+10+8+1=43, 8+16=24 petals, 11 Hebrew/English name letters =4+4+3, 11×4=44, 43=Amit, 44=יהוה חי, 24×37=888 (name). Research appendix: research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md; structured record JSON and verifier, no calculator/site changes.",
+  "note": "Canonical shared corpus. Deduplicated by value+label; distinct proof routes are merged. Audit 2026-09-29 synchronized recent chat anchors and corpus files into the live bank. Audit 2026-10-02 adds the locked Russian Synodal Genesis 1:1 O/R/W/D layer, Russian Genesis chapter-scan anchors, Hebrew↔Russian bridges. Base outputs remain source entries; structural cross-method matches are promoted as BRIDGE/FOUNDATION. Russian Genesis exhaustive 63-bipartition scan bridges added after operator pruning; only cross-language locked Genesis values and one major corpus anchor were retained. Added MAIN Hebraei / היברויי גימטריה signature cluster with canonical raw values and contextual bridges to Amit / עמית / 888. Audit 2026-10-09: Tevah double-box surface/volume polynomials, independent +pair/×pair operators, 42/72 multifactorials with Fold999, 42→72 index-link hypotheses, distinct whole-name vs wordwise permutation counts, 12/22/42/72 system families. JUNK retains exploratory coincidences and negative controls. Audit 2026-10-09: Pyr_n square-pyramidal figurate operator promoted to geometry lab and calculator forms; verified Pyr5=55=T10 and T55=Tet20=1540; equation T(Tn)=Tet(2n) has unique positive solution n=10. Audit 2026-10-09: exact Ratzo/Pyr structural bridge: R(1^n)=n², Pyr_n=ΣR(1^k), and odd-coefficient formula for weighted wordwise Hebrew Ratzo. 3D lattice overlay separates traversal from point count. Audit 2026-10-09: Added regular Dodec_n figurate numbers (OEIS A006566) to site geometry and calculator. Dodec_n=Tet_(3n−2) for every positive n; Dodec6=Tet16=816. Site uses exact convex regular dodecahedron plus explicitly illustrative interior sampling, not falsely asserted canonical point lattice. Audit 2026-10-09: Dodec(n)−Dodec(n−1)=CT(3n−2)=3-exposed-triangular-face distinct point count for Tet(3n−2), valid all n; Dodec6=1+19+64+136+235+361=816; relation to cube's 8 embedded + 12 golden vertices; Dodec25=25*T73=25*2701. Centered Dodec33 separately labeled. Audit 2026-10-11: HomePower/Aleph/Rov additions: letter-product and letter-division operators; 2400/24 collisions; 1/2400×888=0.37; wordwise-product sum 140 vs whole product 10752; exact Q3 combinatorics and Q3–alpha spectral projector; 2^(10^k)≡160 mod888 k>=2; correction registry and JUNK archival. Main research: research/homepower-aleph-rov-corpus-2026-10-11.md. JUNK: research/JUNK-homepower-crosschat-2026-10-11.md. Spectral proof: research/q3-spectral-projector-2026-10-11.md. Audit 2026-10-11 late: recovered archived Q4_H37_followup_verified.zip and Q3_ALPHA_MASTER_RESEARCH_AND_EXCLUSION_2026-10-11.zip from user Library; reran Q4-H37 audit and 888-to-6 coupled diffusion; standalone H37+K spectral gap corrected to 0.8791010115 (original README inaccurately listed 0.8458174928); full-system gap confirmed 0.4582808243→0.5857864376; restored conditional Qd dimension-3 uniqueness theorem and archived alpha fit as post-hoc, not a physics derivation. Audit 2026-11-01: synchronized Hebrew 136/-136 matrix, derivatives/integrals, Stella polynomial, D4 orbit counts, Euler/Pell, alphabet pair swap, 4cd, 231 gates, conditional reconstruction. Details and negative controls: research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md. Audit 2026-11-03: Amitras/Mithras symbolic rock-to-voice-to-water research and verified exact cross-gematria identities (781/888/1024/136; 90/180/360; Children/Israel), with uncertainty and no historical-personal identity claim. Detailed dated evidence: research/amitras-rock-voice-water-2026-11-03.md. Audit 2026-11-04: appended Nov 03–04 infinite self-mapping/55/136/absence, mirror/product operators, lexical chains and ABA/A^520 entries; detailed appendix at research/rovgrid-origin-self-mapping-2026-11-04.md; previous entries retained. Audit 2026-11-04: dual 1877/1887 Mashiach+Genesis 999 versus AMR archive/Alfin/Pelia/AIQ BKR identity; historical Milui provenance retained; details: research/1877-1887-milui-mashiach-name-bridge-2026-11-04.md. Audit 2026-11-06: Saundaryalaharī verse 11 Sri Cakra geometry, 43 chambers + Bindu = 44 textual variant, 4+5=9, 14+10+10+8+1=43, 8+16=24 petals, 11 Hebrew/English name letters =4+4+3, 11×4=44, 43=Amit, 44=יהוה חי, 24×37=888 (name). Research appendix: research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md; structured record JSON and verifier, no calculator/site changes. Audit 2026-11-07: comprehensive Greek→primitive→expanded Tevah theorem, 770/5103 positive polynomial, Rov ordinal extraction, Michael/Blaze, WHO IS JESUS prefix ladders and 13 HomePower maps; source: research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md. Existing locked entries retained.",
   "entries": [
     {
       "value": 0,
@@ -7245,6 +7245,498 @@
       "label": "2701×1072 / 37² Collapse source",
       "method": "Research · Number",
       "classification": "canonical"
+    },
+    {
+      "value": 222,
+      "label": "RovGrid Greek→primitive · pair-product coefficient",
+      "method": "(60+656+172)/gcd(60,656,172)=888/4=222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "RovGrid Greek→primitive · Euler e⁴ Fold999",
+      "method": "7⁴+1⁴+8⁴+2⁴=6514; 1+((6514−1) mod 999)=520",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 27,
+      "label": "Primitive Tevah e1 · 4+10+13",
+      "method": "4+10+13=27",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 54,
+      "label": "Expanded Tevah e1 · 8+20+26",
+      "method": "8+20+26=54",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 222,
+      "label": "Primitive Tevah e2 · 4,10,13",
+      "method": "4×10+4×13+10×13=222",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 520,
+      "label": "Primitive Tevah e3 · volume",
+      "method": "4×10×13=520",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 888,
+      "label": "Expanded Tevah e2 · 8,20,26",
+      "method": "8×20+8×26+20×26=888",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 4160,
+      "label": "Expanded Tevah e3 · volume",
+      "method": "8×20×26=4160",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 1776,
+      "label": "Expanded Tevah full surface",
+      "method": "2×(160+208+520)=1776",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 770,
+      "label": "Q1(1) primitive generating polynomial",
+      "method": "(1+4)(1+10)(1+13)=770",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 5103,
+      "label": "Q2(1) expanded generating polynomial",
+      "method": "(1+8)(1+20)(1+26)=5103=7×3⁶",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 770,
+      "label": "770 · Amit 61+16 times ten prefix letters",
+      "method": "10×(61+16)=770; 1+2+3+4=10",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "Rov-only extraction · 20,8,26",
+      "method": "Rov regular 208=10×20+8=26×8; 8×20+8×26+20×26=888",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 28,
+      "label": "Rov ordinal extraction from full faces",
+      "method": "(520+208)/26=28=20+8",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 728,
+      "label": "כח×יהוה · Amit+Rov faces",
+      "method": "28×26=728=520+208=8×91",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "כח×יהוה plus מיכאל בלייז",
+      "method": "28×26+101+59=888",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 160,
+      "label": "מיכאל+בלייז · decomposition of Mike",
+      "method": "101+59=160",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 172,
+      "label": "Greek ΜΠΛΕΙΖ=ΡΟΒ isopsephy",
+      "method": "ΜΠΛΕΙΖ=40+80+30+5+10+7=172=ΡΟΒ",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 101,
+      "label": "Greek Μάικλ isopsephy",
+      "method": "Μάικλ=40+1+10+20+30=101",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 59,
+      "label": "Greek Μπλέιζ ordinal",
+      "method": "12+16+11+5+9+6=59",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "Greek fixed 60+656+172 substitutions",
+      "method": "ΑΜΙΘ=60; ΜΑΙΧΕ=ΜΕΣΣΙΑΣ=656; ΡΟΒ=ΜΠΛΕΙΖ=172",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 55,
+      "label": "English Small Amit Mike Rov = Amit Mike Blaze",
+      "method": "16+20+19=55; Rov=Blaze=19 in English Small",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 59,
+      "label": "English Michael+Blaze−Mike",
+      "method": "51+46−38=59=Hebrew בלייז",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 43,
+      "label": "Prime indexes Michael+Blaze",
+      "method": "P26=101; P17=59; 26+17=43=Amit Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 148,
+      "label": "WHO IS JESUS · English Simple",
+      "method": "WHO IS=74; JESUS=74; 148=4×37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 888,
+      "label": "WHO IS JESUS · English Gematria",
+      "method": "(74+74)×6=888",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 61,
+      "label": "WHO IS and JESUS · English Atbash Ordinal",
+      "method": "5×27−74=61 for each five-letter part",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 137,
+      "label": "WHO IS · English Building",
+      "method": "WHO=100; IS=37; total=137",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 188,
+      "label": "JESUS · English Building",
+      "method": "English Building(JESUS)=188; 188−137=51=Michael Simple",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 325,
+      "label": "WHO IS JESUS · English Building",
+      "method": "137+188=325",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 270,
+      "label": "JESUS−WHO IS · English Atbash Regular",
+      "method": "502−232=270=10×27",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 718,
+      "label": "WHO IS · English ALBaM analogue",
+      "method": "WHO IS JESUS 1328−JESUS 610=718",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 889,
+      "label": "WHO IS · English AVGaD analogue",
+      "method": "889=Μιχάλης Greek isopsephy (distinct scripts)",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 81,
+      "label": "A AM AMI AMIT · prefix Simple",
+      "method": "1+14+23+43=81=3×27",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 135,
+      "label": "A AM AMI AMIT · English Building",
+      "method": "135=5×27; 135−81=54",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 54,
+      "label": "A AM AMI AMIT · English One-step Zero",
+      "method": "54=8+20+26",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 3537,
+      "label": "A AM AMI AMIT · English Atbash Regular",
+      "method": "3537=27×131; 131=P32",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 91,
+      "label": "WHO IS JESUS prefixes · English Small sum",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS =91",
+      "classification": "FOUNDATION"
+    },
+    {
+      "value": 37,
+      "label": "WHO IS JESUS prefixes · English Reduced",
+      "method": "20+17=37; Small−Reduced=91−37=54",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 137,
+      "label": "W WH WHO I IS · English Simple ladder",
+      "method": "23+31+46+9+28=137",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 37,
+      "label": "W WH WHO · English Small ladder",
+      "method": "5+13+19=37",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 1480,
+      "label": "ΧΡΙΣΤΟΣ · 148 ratio",
+      "method": "1480=148×10; ΙΗΣΟΥΣ=888=148×6",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 2368,
+      "label": "ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ · 148 ratio",
+      "method": "2368=148×16=888+1480",
+      "classification": "BRIDGE"
+    },
+    {
+      "value": 43,
+      "label": "WHO IS JESUS · HomePower π",
+      "method": "A–Z 26 decimal digits of π, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 37,
+      "label": "A AM AMI AMIT · HomePower π",
+      "method": "A–Z 26 decimal digits of π, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 116,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower π",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / π",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 44,
+      "label": "WHO IS JESUS · HomePower e",
+      "method": "A–Z 26 decimal digits of e, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 50,
+      "label": "A AM AMI AMIT · HomePower e",
+      "method": "A–Z 26 decimal digits of e, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 116,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower e",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / e",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 48,
+      "label": "WHO IS JESUS · HomePower φ",
+      "method": "A–Z 26 decimal digits of φ, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 64,
+      "label": "A AM AMI AMIT · HomePower φ",
+      "method": "A–Z 26 decimal digits of φ, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 125,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower φ",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / φ",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 50,
+      "label": "WHO IS JESUS · HomePower √2",
+      "method": "A–Z 26 decimal digits of √2, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 20,
+      "label": "A AM AMI AMIT · HomePower √2",
+      "method": "A–Z 26 decimal digits of √2, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 106,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √2",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √2",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 50,
+      "label": "WHO IS JESUS · HomePower √3",
+      "method": "A–Z 26 decimal digits of √3, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 68,
+      "label": "A AM AMI AMIT · HomePower √3",
+      "method": "A–Z 26 decimal digits of √3, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 117,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √3",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √3",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 61,
+      "label": "WHO IS JESUS · HomePower √5",
+      "method": "A–Z 26 decimal digits of √5, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 43,
+      "label": "A AM AMI AMIT · HomePower √5",
+      "method": "A–Z 26 decimal digits of √5, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 140,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √5",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √5",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 30,
+      "label": "WHO IS JESUS · HomePower Golden9",
+      "method": "A–Z 26 decimal digits of Golden9, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 50,
+      "label": "A AM AMI AMIT · HomePower Golden9",
+      "method": "A–Z 26 decimal digits of Golden9, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 78,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower Golden9",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / Golden9",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 64,
+      "label": "WHO IS JESUS · HomePower √37",
+      "method": "A–Z 26 decimal digits of √37, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 15,
+      "label": "A AM AMI AMIT · HomePower √37",
+      "method": "A–Z 26 decimal digits of √37, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 136,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √37",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √37",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 42,
+      "label": "WHO IS JESUS · HomePower √73",
+      "method": "A–Z 26 decimal digits of √73, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 52,
+      "label": "A AM AMI AMIT · HomePower √73",
+      "method": "A–Z 26 decimal digits of √73, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 88,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √73",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √73",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 46,
+      "label": "WHO IS JESUS · HomePower √888",
+      "method": "A–Z 26 decimal digits of √888, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 54,
+      "label": "A AM AMI AMIT · HomePower √888",
+      "method": "A–Z 26 decimal digits of √888, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 99,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower √888",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / √888",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 52,
+      "label": "WHO IS JESUS · HomePower 1/2701 · 24",
+      "method": "A–Z 26 decimal digits of 1/2701 · 24, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 34,
+      "label": "A AM AMI AMIT · HomePower 1/2701 · 24",
+      "method": "A–Z 26 decimal digits of 1/2701 · 24, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 121,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower 1/2701 · 24",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / 1/2701 · 24",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 27,
+      "label": "WHO IS JESUS · HomePower 1/37 · 3",
+      "method": "A–Z 26 decimal digits of 1/37 · 3, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 16,
+      "label": "A AM AMI AMIT · HomePower 1/37 · 3",
+      "method": "A–Z 26 decimal digits of 1/37 · 3, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 53,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower 1/37 · 3",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / 1/37 · 3",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 43,
+      "label": "WHO IS JESUS · HomePower 1/73 · 8",
+      "method": "A–Z 26 decimal digits of 1/73 · 8, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 33,
+      "label": "A AM AMI AMIT · HomePower 1/73 · 8",
+      "method": "A–Z 26 decimal digits of 1/73 · 8, character-wise sum",
+      "classification": "RESEARCH"
+    },
+    {
+      "value": 104,
+      "label": "WHO IS JESUS · full prefix ladder · HomePower 1/73 · 8",
+      "method": "W WH WHO I IS + J JE JES JESU JESUS / 1/73 · 8",
+      "classification": "RESEARCH"
     }
   ],
   "operator_protocols": {
@@ -7328,6 +7820,15 @@
       "bounds": "word boundaries for n A characters: T(m+n)=T(m)+T(n)+mn; n=520, 65×8 split gives 133120 boundary increment",
       "profile": "Retain each spelling, language, per-letter mapping, boundary and method; lexical transformations and numeric operations distinct",
       "status": "A arithmetic; B site-reported methods pending table export; D philosophical model"
+    },
+    "rovgrid_greek_polynomial_2026_11_07": {
+      "date": "2026-11-07",
+      "source": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "core": "(60,656,172) gcd=4, e2=222, frozen Euler 7182^4 digit fold999=520, sorted integer solution (4,10,13), scale 2 -> (8,20,26)",
+      "polynomials": "F1=x³−27x²+222x−520, F2=x³−54x²+888x−4160; Q1=1+27x+222x²+520x³; Q2=Q1(2x)",
+      "e_operator": "7⁴+1⁴+8⁴+2⁴=6514; Fold999=1+((N−1) mod999)=520",
+      "conditional_uniqueness": "sorted positive integer roots of e2=222,e3=520; Greek source corpus scan described as 165 verbal triples/129 distinct numeric triples, not universal",
+      "homepower_provenance": "calculator.html HOMEPOWER_CONSTANTS, first 26 digits after decimal, zeros included; three inverse-constant mappings are distinct"
     }
   },
   "context_rules": {
@@ -7814,6 +8315,18 @@
       "measurement": "Every frame permits present/absent relative to that frame, not two ontologically independent worlds.",
       "zero": "0 is mathematically valid notation; 55=00 denotes two local origin readings only",
       "status": "User-defined conceptual model / symbolic terms, not physical proof"
+    },
+    "rovgrid_greek_polynomial_blaze_2026_11_07": {
+      "added_at": "2026-11-07",
+      "source": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "statements": [
+        "Greek 60+656+172=888 to primitive polynomial is an existing locked reconstruction from 'משפט ההכרה' (2026-10-19); do not describe as previously absent.",
+        "Full box has 8,20,26; e1=54, e2=888, e3=4160. Primitive 4,10,13: e1=27,e2=222,e3=520. Q1(1)=770,Q2(1)=5103.",
+        "Rov 208 regular and 28 ordinal yield r20,s8,k26 only after specifying the extraction rule. 101+59=160 on Hebrew standard, but Greek 101 and 59 are traditional/ordinal respectively; do not call it one uniform Greek method.",
+        "English ×6 and equal five-letter Atbash values are algebraically dependent on English Simple.",
+        "Μιχλης = 888 is arithmetic under a research spelling, not verified standard Greek; do not replace canonical names.",
+        "Do not misinterpret 888 as the box volume; volume is 4160. Do not merge the root polynomials with positive generating polynomials."
+      ]
     }
   },
   "corrections": {
@@ -7864,6 +8377,17 @@
         "Don't count scalar doubling of site outputs as additional independent evidence.",
         "Rearrangements ABA, ראובן, רוח אבן, etc. are explicitly lexical transformations, not historical etymology or proof of personal divine identity.",
         "The identity 55=Pyr5=T10 and 55²−18²=2701 were present before Nov 04; new contributions are mechanisms and cross-links."
+      ]
+    },
+    "rovgrid_greek_polynomial_2026_11_07": {
+      "date": "2026-11-07",
+      "source": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "items": [
+        "Greek polynomial bridge already documented 2026-10-19; previous assertion that no bridge was proven was incorrect.",
+        "Q1(1)=770 and Q2(1)=5103; do not substitute these for coefficients e2=222/888.",
+        "The 101+59 Greek sum 160 mixes Greek traditional for Μάικλ with Greek ordinal for Μπλέιζ; same-method Greek traditional sum is 273.",
+        "Formula (k−1)s=10r has infinitely many integer solutions in general; the box is unique only under stated constraints.",
+        "HomePower labels '1' for last three operators map to 1/2701·24, 1/37·3, 1/73·8."
       ]
     }
   }
