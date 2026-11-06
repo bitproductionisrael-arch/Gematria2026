@@ -4,6 +4,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [נספח תיאולוגי השוואתי 07.11: עמיתי בזכריה, יחיד/יחידה, אל־חי 49, אמיטאבה וישוע 888](research/rovgrid-theological-comparative-43-44-11-2026-11-07.md)
+
 - [חוק 43–44–11, פסוק 11 בשְׁרִי יאנטרה, 24 עלי הלוטוס ו־888](research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md)
 - [נתונים מובנים לחוק 43–44–11](research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.json)
 - [קוד אימות לחוק 43–44–11](research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06-verify.py)
