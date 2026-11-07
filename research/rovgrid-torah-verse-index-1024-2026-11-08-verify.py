@@ -23,6 +23,9 @@ assert len(opening)==7 and len(ending)==6
 assert (v(opening,ordinal),v(ending,ordinal))==(73,67)
 assert (v(opening,regular),v(ending,regular))==(703,697)
 assert 7*73+6*67==913==v("בראשית",regular)
+assert v("וליצחק",ordinal)==v(opening,ordinal)==73
+assert v("וליצחק",small)==v(opening,small)==28
+assert v("וליצחק",regular)==244
 assert v(verse,regular)==4862==11*26*17==13*22*17
 assert v(verse,small)==191
 assert 191==[n for n in range(2,192) if all(n%d for d in range(2,isqrt(n)+1))][42]
