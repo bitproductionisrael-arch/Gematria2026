@@ -65,4 +65,7 @@ Repository initialized for the Gematria HTML app.
 - [ספר שמות: אינדקסי 160, 208, 520, 888 — פרק ח׳ כ״ו, עשרת הדיברות, חכמה ותבונה](research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08.md)
 - [קוד בדיקה ל־4 אינדקסי הפסוקים בספר שמות](research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08-verify.py)
 
+- [ספר שמות פרק א׳ — סריקה מלאה של 22 פסוקים: 137, 443, שמות=שפרה+פועה, וביתו=שפרה−פועה, הילוד²=3025](research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08.md)
+- [קוד אימות לכל 22 הפסוקים ויחס המקפים](research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08-verify.py)
+
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
