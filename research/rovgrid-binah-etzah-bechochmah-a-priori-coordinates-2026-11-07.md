@@ -152,3 +152,7 @@
 - `research/rovgrid-hebrew-matrix-136-minus136-polynomial-audit-2026-11-01.md` — אבג״ד זוגי לעומת קדימה.
 - `AMIT_MIKE_ROV_MASTER_CORPUS_2026-11-01_UPDATED(1).md` — 2.37: ״השם הוא האינדקס״, S1/S2, מיקומים, ניסוי נעול.
 - https://pi.thefirstverse.com/about — Power-of-Bet, חיפוש מחרוזות/חלונות.
+
+## 7. מסמך מקור קדום — בינה ליד בראשית בתוך π
+
+המחקר החיצוני `Formless and Void` מציג את הרצף `2701|93852|11055` במספר π, החל במקום 165 (אחרי הנקודה); `11055=165×67`, כאשר 67=בינה ו־165=נקודה. נבדק מחדש מול ספרות π: 2701 במקומות 165–168, 93852 במקומות 169–173, 11055 במקומות 174–178. מקור: https://www.dafyomi.co.il/general/info/torahau/torah_numerology.php?d=24 . פירוט מלא, קרדיט ומתודולוגיית מיקום במסמך Power-of-Bet המקביל.
