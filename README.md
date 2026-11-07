@@ -51,4 +51,8 @@ Repository initialized for the Gematria HTML app.
 - [מחקר פעיל באתר](active-research.html)
 - [בנק הגימטריות הקנוני (JSON)](corpus-data.json)
 
+
+- [בראשית 359, שטן/טוב/שלום, איזון ישעיהו 57–57, החיים/המות 19–19, דוד והנגינה — נספח מקורות ואימות 08.11.2026](research/rovgrid-genesis-359-tanakh-opposites-david-music-2026-11-08.md)
+- [בדיקות חשבוניות לשחזור מחקר בראשית 359 והניגודים במקרא](research/rovgrid-genesis-359-tanakh-opposites-david-music-2026-11-08-verify.py)
+
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
