@@ -1775,6 +1775,7 @@ function magnetTokenText(r,w){
   return letters+'\n'+m.transformName+': '+w.vals.map(v=>fmt(v)).join(' + ')+' = '+fmt(sum(w.vals))
  }
  if(m.fold==='word'){
+  if(m.key==='wordReducedFinals')return letters+'\n'+fmt(sum(w.baseVals))+' → '+fmt(w.folded)
   return letters+' → '+fmt(w.folded)
  }
  return letters
