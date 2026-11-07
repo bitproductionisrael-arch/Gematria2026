@@ -537,6 +537,7 @@ const positional=a=>a.map((x,i)=>x*(i+1));
 const balanced=a=>a.map(x=>x*(a.length+1)/2);
 const pyramid=a=>{const p=cumulative(a);return p.concat(p.slice(0,-1).reverse())};
 const ladder=a=>{const p=cumulative(a);const s=a.map((_,i)=>a.slice(i).reduce((x,y)=>x+y,0));return p.concat(s)};
+const wordPositionWeight=a=>a.map(v=>v*a.length); // Letter value × number of letters in its own word.
 const wordsOf=t=>t.trim().split(/\s+/).filter(Boolean);
 const gcd=(a,b)=>{a=Math.abs(Math.trunc(a));b=Math.abs(Math.trunc(b));while(b){const t=a%b;a=b;b=t}return a};
 const lcm=(a,b)=>a&&b?Math.abs(a/gcd(a,b)*b):0;
@@ -718,6 +719,9 @@ const METHODS={
   {key:'ordinal',cat:'base',name:'גימטריה סדרית / Ordinal',map:HE_ORD},
   {key:'reduced',cat:'base',name:'קטן / Small',map:HE_KATAN},
   {key:'smallFinals',cat:'base',name:'גימטריה קטנה סופית / Small Finals',map:HE_KATAN_SOFIT},
+  {key:'wordPositionRegular',cat:'ops',name:'אות × אותיות בערך רגיל / Hebrew Word Position × Regular',map:HE_VAL,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
+  {key:'wordPositionSmall',cat:'ops',name:'אות × אותיות בערך קטן / Hebrew Word Position × Small',map:HE_KATAN,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
+  {key:'wordPositionOrdinal',cat:'ops',name:'אות × אותיות בערך סדרי / Hebrew Word Position × Ordinal',map:HE_ORD,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
   {key:'wordReduced',cat:'base',name:'צמצום / Reduced',map:HE_KATAN,fold:'word'},
    {key:'digitReduced',cat:'base',name:'צמצום דיגיטלי / Digit Reduced',map:HE_KATAN,fold:'total'},
   {key:'zeroStep',cat:'base',name:'הסרת אפס חד־שלבית / One-step Zero',map:HE_ZERO_STEP,research:true},
@@ -803,6 +807,8 @@ const METHODS={
  ],
  en:[
   {key:'ordinal',cat:'base',name:'English Simple',map:EN_ORD},
+  {key:'wordPositionEnglish',cat:'ops',name:'English Word Position ×',map:EN_SUM,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
+  {key:'wordPositionSimple',cat:'ops',name:'Simple Word Position ×',map:EN_ORD,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
   {key:'regular',cat:'base',name:'English Isopsephy',map:EN_REG},
   {key:'pythagorean',cat:'base',name:'English Small / Pythagorean',map:EN_RED},
   {key:'wordReduced',cat:'base',name:'English Reduced',map:EN_RED,fold:'word'},
