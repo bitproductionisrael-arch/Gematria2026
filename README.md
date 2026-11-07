@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [תיקון רף המחקר: טורוס 520² שדורש 3 שעונים, חבורת 888, וחוק שימור מודולו 37](research/rovgrid-structural-discovery-torus-sandpile-2026-11-07.md)
+  - [קוד אימות מלא ל־270400 מצבי הטורוס ול־888 מחלקות הסריג](research/rovgrid-structural-discovery-torus-sandpile-2026-11-07-verify.py)
+
 - [משפט שלוש הפאות: הרחבות מינימליות פי 1/5/13 והסגירה 65×52×80=520²](research/rovgrid-three-faces-minimal-fourth-axis-2026-11-07.md)
 - [5 גילויים נוספים: גרף K4, סדרת 1:4:16, פולינום הפיך, משפחת K=65n² וזהות 6929](research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07.md)
   - [קוד אימות של חמש התוצאות](research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07-verify.py)
