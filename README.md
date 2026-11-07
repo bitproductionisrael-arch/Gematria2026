@@ -62,4 +62,7 @@ Repository initialized for the Gematria HTML app.
 - [שלושת אינדקסי השם: פסוקים #160, #208, #520 והסכום #888 — משוואות, נוסחים, סריג 24](research/rovgrid-torah-name-verse-indices-160-208-520-888-2026-11-08.md)
 - [קוד אימות פסוקי 160, 208, 520, 888](research/rovgrid-torah-name-verse-indices-160-208-520-888-2026-11-08-verify.py)
 
+- [ספר שמות: אינדקסי 160, 208, 520, 888 — פרק ח׳ כ״ו, עשרת הדיברות, חכמה ותבונה](research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08.md)
+- [קוד בדיקה ל־4 אינדקסי הפסוקים בספר שמות](research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08-verify.py)
+
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
