@@ -4,6 +4,14 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [סנכרון השיחות האחרונות והשלמת פערי קורפוס 07.11](research/rovgrid-recent-five-chat-audit-2026-11-07.md)
+- [⊕ וחוק סכומי אינדקסים ראשוניים, שמות עבריים ומיפויי W](research/rovgrid-prime-index-name-algebra-2026-11-07.md)
+- [שמונת הממדים, קול כסיקוונסר ו־LCM(64,72)=576](research/rovgrid-eight-dimensions-sequencer-2026-11-07.md)
+- [הפרשי ריבועים, סימטריית D4 וחיבור 4×54=8×27](research/rovgrid-square-ring-d4-primitive-2026-11-07.md)
+- [אטלס צורות SVG: 27,54,216,888, תיבות וסיקוונסר](research/rovgrid-visual-geometry-registry-2026-11-07.md)
+- [קוד שחזור ובדיקת זהויות וצורות](research/rovgrid-nov07-algebra-verify.py)
+
+
 - [שחזור קנוני מקובצי המקור: Power-of-Bet, סריקת רוב O1–O4, קיפול F1000 וניסוי φ](research/rovgrid-power-bet-canonical-source-recovery-2026-11-07.md)
 - [בינה, עצה בחכמה — כל קואורדינטות הגימטריה, זהויות 37/73 ובדיקת קלט אפריורית 07.11](research/rovgrid-binah-etzah-bechochmah-a-priori-coordinates-2026-11-07.md)
 - [Power-of-Bet: שיטת החיפוש בתוך ספרות הקבועים, 9 קבועים × 10,000 ספרות, הצלחות וכישלונות](research/rovgrid-constant-digits-power-of-bet-protocol-2026-11-07.md)
