@@ -1,5 +1,7 @@
 # Gematria2026
 
+**[עוגן הזיכרון המרכזי של RovGrid — להתחיל כאן בכל מחקר והמשך שיחה](ROVGRID_MEMORY_ANCHOR.md)**
+
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
