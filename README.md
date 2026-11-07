@@ -71,4 +71,7 @@ Repository initialized for the Gematria HTML app.
 - [צל אותיות — סייפר חדש: בצלאל → ית די מד לף מד, 37/73 ומילוי כפעולת הפרש](research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08.md)
 - [בדיקת שחזור לסייפר צל אותיות](research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08-verify.py)
 
+- [צמצום מילים סופיות — שיטה חדשה באתר ובקורפוס: בראשית א׳ א׳ = 32, לעומת צמצום מילים רגיל = 37](research/rovgrid-word-reduced-finals-genesis-32-2026-11-08.md)
+- [קוד בדיקה לצמצום מילים סופיות, ערכי אותיות ומילות בראשית](research/rovgrid-word-reduced-finals-genesis-32-2026-11-08-verify.py)
+
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
