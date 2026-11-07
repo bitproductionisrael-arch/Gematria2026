@@ -4,6 +4,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 - [משפט שלוש הפאות: הרחבות מינימליות פי 1/5/13 והסגירה 65×52×80=520²](research/rovgrid-three-faces-minimal-fourth-axis-2026-11-07.md)
+- [5 גילויים נוספים: גרף K4, סדרת 1:4:16, פולינום הפיך, משפחת K=65n² וזהות 6929](research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07.md)
+  - [קוד אימות של חמש התוצאות](research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07-verify.py)
   - [קוד אימות של שלוש הסגירות](research/rovgrid-three-faces-minimal-fourth-axis-2026-11-07-verify.py)
   - [תרשים SVG של שלוש הפאות והצלעות הרביעיות](assets/rovgrid-three-faces-fourth-axis-2026-11-07.svg)
 
