@@ -1754,6 +1754,13 @@ function magnetTokenText(r,w){
  if(r.letterProduct)return w.baseVals.map(fmt).join(' × ')+' = '+fmt(w.subtotal);
  const m=r.method,letters=baseLetterValueText(r,w);
  if(r?.milui)return letters;
+ // Word Position ×: show the actual per-word letter count and the multiplication for each letter.
+ // Display-only branch: the existing baseVals, vals and calculator logic are left unchanged.
+ if(['wordPositionRegular','wordPositionSmall','wordPositionOrdinal','wordPositionEnglish','wordPositionSimple'].includes(m?.key)){
+  const count=w.toks.length;
+  const terms=w.toks.map((t,i)=>t.label+'='+fmt(w.baseVals[i])+' × '+fmt(count)+' = '+fmt(w.vals[i]));
+  return fmt(count)+' '+L('אותיות','letters')+'\n'+terms.join(' | ')+'\n'+w.vals.map(fmt).join(' + ')+' = '+fmt(sum(w.vals))
+ }
  if(m.ratzo||m.key==='ratzo'){
   return letters+'\nרצוא ושוב: '+ratzoAnnotatedTerms(w).join(' + ')+' = '+fmt(sum(w.vals))
  }
@@ -1778,6 +1785,11 @@ function magnetBreakdown(r){
   const expr=magnetTokenText(r,w);
   return multi?(w.raw+': '+expr):expr
  }).join('\n');
+ if(['wordPositionRegular','wordPositionSmall','wordPositionOrdinal','wordPositionEnglish','wordPositionSimple'].includes(r.method?.key)&&r.words.length>1){
+  const subtotals=r.words.map(w=>sum(w.vals)),baseTotal=sum(subtotals),multiplier=Number(r.queryMultiplier)||1;
+  out+='\n'+subtotals.map(fmt).join(' + ')+' = '+fmt(baseTotal);
+  if(multiplier>1)out+='; '+fmt(baseTotal)+' × '+fmt(multiplier)+' = '+fmt(r.total)
+ }
  if(r.letterProduct)out+='\n'+L('מכפלת כל האותיות','All-letter product')+' = '+fmt(r.total);
  if(r.method?.post){
   const base=r.words.reduce((acc,w)=>acc+(r.method.fold==='word'?Number(w.folded||0):sum(w.vals||w.baseVals||[])),0);
