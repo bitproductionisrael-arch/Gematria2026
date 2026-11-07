@@ -68,4 +68,7 @@ Repository initialized for the Gematria HTML app.
 - [ספר שמות פרק א׳ — סריקה מלאה של 22 פסוקים: 137, 443, שמות=שפרה+פועה, וביתו=שפרה−פועה, הילוד²=3025](research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08.md)
 - [קוד אימות לכל 22 הפסוקים ויחס המקפים](research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08-verify.py)
 
+- [צל אותיות — סייפר חדש: בצלאל → ית די מד לף מד, 37/73 ומילוי כפעולת הפרש](research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08.md)
+- [בדיקת שחזור לסייפר צל אותיות](research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08-verify.py)
+
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
