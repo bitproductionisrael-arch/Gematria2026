@@ -723,6 +723,7 @@ const METHODS={
   {key:'wordPositionSmall',cat:'ops',name:'אות × אותיות בערך קטן / Hebrew Word Position × Small',map:HE_KATAN,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
   {key:'wordPositionOrdinal',cat:'ops',name:'אות × אותיות בערך סדרי / Hebrew Word Position × Ordinal',map:HE_ORD,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
   {key:'wordReduced',cat:'base',name:'צמצום מילים / Word Reduced',map:HE_KATAN,fold:'word'},
+  {key:'wordReducedFinals',cat:'base',name:'צמצום מילים סופיות / Word Reduced (Finals)',map:HE_KATAN_SOFIT,fold:'word',research:true},
    {key:'digitReduced',cat:'base',name:'צמצום דיגיטלי / Digit Reduced',map:HE_KATAN,fold:'total'},
   {key:'zeroStep',cat:'base',name:'צמצום אפס #1 / Zero Reduction #1',map:HE_ZERO_STEP,research:true},
   {key:'atbash',cat:'cipher',name:'אתב״ש / Atbash',map:HE_ATBASH,sub:HE_ATBASH_LETTER},
@@ -857,7 +858,7 @@ const METHOD_EN_NAMES={
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Small',
- smallFinals:'Small Finals',wordReduced:'Reduced',digitReduced:'Digit Reduced',pythagorean:'English Small / Pythagorean',agrippaReduced:'Jewish Small',agrippaWordReduced:'Jewish Reduced',agrippaDigitReduced:'Jewish Digit Reduced',ruReduced:'Russian Small',ruWordReduced:'Russian Reduced',ruDigitReduced:'Russian Digit Reduced',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'Zero Reduction #1',
+ smallFinals:'Small Finals',wordReduced:'Reduced',wordReducedFinals:'Word Reduced (Finals)',digitReduced:'Digit Reduced',pythagorean:'English Small / Pythagorean',agrippaReduced:'Jewish Small',agrippaWordReduced:'Jewish Reduced',agrippaDigitReduced:'Jewish Digit Reduced',ruReduced:'Russian Small',ruWordReduced:'Russian Reduced',ruDigitReduced:'Russian Digit Reduced',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'Zero Reduction #1',
  atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
@@ -884,6 +885,7 @@ const METHOD_EN_HISTORY={
  reduced:'Traditional reduction in which each Hebrew letter is reduced to a 1–9 value before summation.',
  smallFinals:'Extended final-letter values are applied first and then reduced to 1–9; kept distinct from ordinary Mispar Katan.',
  wordReduced:'A modern site operator: each word is reduced separately and the resulting word values are summed.',
+ wordReducedFinals:'Word Reduced (Finals): first apply Hebrew Small Finals (ך=5, ם=6, ן=7, ף=8, ץ=9), take each word\'s digital root separately, then sum the word roots. Genesis 1:1 = 32; ordinary Word Reduced = 37.',
  reverseOrdinal:'Greek Atbash Ordinal: mirror the 24 modern Greek letters and sum their ordinal positions.',
   atbashOrdinal:'Mirror each alphabetic character using Atbash, then sum its ordinal position. Hebrew uses 22 letters and English uses 26.',
  zeroStep:'Zero Reduction #1: remove one trailing zero from each letter value (400→40), then sum. Zero Reduction #2 (Small) removes all place-value zeros (400→4); word reduction is separate.',
@@ -1154,6 +1156,7 @@ const METHOD_BOOK_DOCS={
  'he:reduced':{plain:'קטן (צמצום אפס #2)',original:'מספר קטן / Mispar Katan',status:'traditional',history:'צמצום אפס #2: כל אפסי ערך האות מוסרים לפני חיבור ערכי האותיות. בכתיב הרגיל ת=400→4. שיטת קטן המסורתית שומרת על הסכום לפני צמצום מילים.',formula:'For each Hebrew letter, remove all place-value zeros from its standard value (400→4); then sum letter values. This is letter-level reduction, not word-level reduction.'},
  'he:smallFinals':{plain:'גימטריה קטנה סופית',original:'Reduced extended finals',status:'mixed',history:'וריאנט שבו ערכי הסופיות המורחבים 500–900 מצטמצמים ל־5–9. נשמר בנפרד מן המספר הקטן הרגיל.',formula:'Use extended finals first; then reduce each letter value to 1–9.'},
  'he:wordReduced':{plain:'צמצום מילים',original:'Wordwise reduction',status:'modern',history:'פעולה ברמת המילה, נפרדת מצמצום אפס #1/#2 הפועלים ברמת האות. כל מילה מצטמצמת בנפרד לשורש ספרתי ואז מחברים את תוצאות המילים.',formula:'For each word: digital-root(sum(reduced letter values)); then sum the word results.'},
+ 'he:wordReducedFinals':{plain:'צמצום מילים סופיות',original:'Word Reduced (Hebrew Small Finals)',status:'modern',history:'שיטת RovGrid: משתמשים בערכי קטן סופיות (ך=5, ם=6, ן=7, ף=8, ץ=9). מחברים את אותיות כל מילה, מצמצמים כל סכום בנפרד לספרה אחת ורק אז מחברים את תוצאות המילים. בראשית א׳ א׳ = 32, לעומת צמצום מילים רגיל = 37. אין צמצום נוסף לסכום הסופי.',formula:'Sum digital-root(word sum in Hebrew Small Finals) across words. Letter values: ך=5, ם=6, ן=7, ף=8, ץ=9; example Genesis 1:1 gives 4+5+7+5+1+2+8=32.'},
 
   'he:digitReduced':{plain:'צמצום דיגיטלי / Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי יחיד לסכום Small של הביטוי המלא, ללא הפרדת מילים.',formula:'DR(Small(text)) = DR(Regular(text)).'},
   'el:digitReduced':{plain:'Greek Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Greek Small של הביטוי.',formula:'DR(sum Greek Small letters).'},
@@ -1428,7 +1431,7 @@ function harmony(results){const nodes=results.filter(r=>Number.isInteger(r.total
 
 /* Harmony export: identical computation to the Relations summary. */
 const HARMONY_COPY_LABELS={
- 'he:regular':'Regular','he:ordinal':'Ordinal','he:reduced':'Small','he:wordReduced':'Reduced','he:digitReduced':'Digit Reduced',
+ 'he:regular':'Regular','he:ordinal':'Ordinal','he:reduced':'Small','he:wordReduced':'Reduced','he:wordReducedFinals':'Word Reduced (Finals)','he:digitReduced':'Digit Reduced',
  'he:latinMiluiUserReduced':'Reduced English Filling',
  'en:pythagorean':'English Small','en:wordReduced':'English Reduced','en:digitReduced':'English Digit Reduced',
  'en:agrippaReduced':'Jewish Small','en:agrippaWordReduced':'Jewish Reduced','en:agrippaDigitReduced':'Jewish Digit Reduced',
