@@ -4,6 +4,10 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [בינה, עצה בחכמה — כל קואורדינטות הגימטריה, זהויות 37/73 ובדיקת קלט אפריורית 07.11](research/rovgrid-binah-etzah-bechochmah-a-priori-coordinates-2026-11-07.md)
+- [Power-of-Bet: שיטת החיפוש בתוך ספרות הקבועים, 9 קבועים × 10,000 ספרות, הצלחות וכישלונות](research/rovgrid-constant-digits-power-of-bet-protocol-2026-11-07.md)
+- [קוד שחזור Power-of-Bet / Pi Position](research/rovgrid-constant-digits-audit-2026-11-07.py)
+
 - [אטלס טופולוגי של הסריגים: 888 עצים, 4160 קוביות, 520²](research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07.md)
 - [קוד אימות אטלס הסריגים](research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07-verify.py)
 
