@@ -4,6 +4,13 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [אינדקס מחקרי תיבה, 888 / 2080 / 4160, π ורשתות — 07.11.2026](research/rovgrid-2026-11-07-structural-corpora-index.md)
+  - [אלגברת LCM, פרוני, דיסקרימיננטה ו־520²](research/rovgrid-algebra-pronic-lcm-discriminant-2026-11-07.md)
+  - [מצולעים, כוכבים ובסיסי ספירה](research/rovgrid-polygon-star-base-systems-2026-11-07.md)
+  - [רשת 1024, 32×32, π, מראות 141/33 וראשוני 137](research/rovgrid-binary-grid-pi-prime-indices-2026-11-07.md)
+  - [תצפית חשמלית #1, אקוסטיקה, נפח ודציבלים](research/rovgrid-electric-observation-acoustics-volume-2026-11-07.md)
+  - [ארכיון השערות מורפיות ופיזיקה, בקרת טענות ו־JUNK](research/rovgrid-morphic-fields-physics-hypotheses-audit-2026-11-07.md)
+
 - [נספח תיאולוגי השוואתי 07.11: עמיתי בזכריה, יחיד/יחידה, אל־חי 49, אמיטאבה וישוע 888](research/rovgrid-theological-comparative-43-44-11-2026-11-07.md)
 
 - [חוק 43–44–11, פסוק 11 בשְׁרִי יאנטרה, 24 עלי הלוטוס ו־888](research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md)
