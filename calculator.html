@@ -1609,7 +1609,8 @@ if(r.milui){const w=r.words[idx];if(!w)return'אין פירוק';return `${w.raw
  const w=r.words[idx];if(!w)return'אין פירוק';const m=r.method;const base=w.toks.map((t,i)=>{let lab=t.label;if(m.sub&&m.sub[t.base])lab+=`→${m.sub[t.base]}`;const v=t.multiplier>1?`${fmt(t.rawValue)}×${fmt(t.multiplier)}=${fmt(w.baseVals[i])}`:fmt(w.baseVals[i]);return `${lab}(${v})`}).join(' + ');let out=`${w.raw}\n${base}`;if(m.ratzo||m.key==='ratzo')out+=`\nרצוא ושוב: ${ratzoAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;else if(isBuildingMethod(m)){out+=`\nבניין / Building: ${buildingAnnotatedTerms(w).join(' + ')}\n= ${sum(w.vals)}`;const ms=buildingMilestoneText(w);if(ms)out+=`\n${ms}`}else if(m.transform)out+=`\n${m.transformName}: [${w.vals.join(', ')}]\n= ${sum(w.vals)}`;else if(m.fold==='word')out+=`\n= ${sum(w.vals)} → ${w.folded}`;else out+=`\n= ${sum(w.baseVals)}`;if(m.post)out+=`\nכולל/מוספי → ${r.total}`;return out}
 
 function allWordsDescription(r){if(!r?.words?.length)return'אין פירוק';return r.words.map((_,i)=>wordDescription(r,i)).join('\n\n')}
-function peratiBaseValue(t){const ch=FINAL_TO_BASE[t.base]||t.base;return HE_VAL[ch]??Math.round(Math.sqrt(Number(t.value)||0))}
+/* Perati breakdowns must use the selected squared alphabet, not Hebrew regular values. */
+function peratiBaseValue(t){return Math.sqrt(t.rawValue)}
 function squaredWordLabel(w){return w.toks.map(t=>t.label+'²').join('')}
 function wordBreakdownHtml(r,w){
  if(r.letterProduct){const chips=w.toks.map((t,i)=>'<span class="letter-chip"><b>'+esc(t.label)+'</b><strong>'+fmt(w.baseVals[i])+'</strong></span>').join('');return '<div class="word-block"><div class="word-title">'+esc(w.raw)+'</div><div class="letter-grid">'+chips+'</div><div class="transform-note" style="direction:ltr;text-align:left">'+w.baseVals.map(fmt).join(' × ')+' = <b>'+fmt(w.subtotal)+'</b></div><div class="word-total"><span>'+L('מכפלה','Product')+'</span><b>'+fmt(w.subtotal)+'</b></div></div>'}
@@ -2572,6 +2573,11 @@ console.assert(T('יהוה','he','albam')===520&&T('עמית','he','regular')===
 console.assert(T('עמית מייק רוב','he','regular')*2===1776,'Query multiplier arithmetic 888×2=1776');
 console.assert(T('עמית','he','perati')===166600,'Amit Perati 166600');
 console.assert(T('עמית מייק רוב','he','peratiOrdinal')===2179,'Hebrew Perati Ordinal full name 2179');
+const __rovPeratiOrdinal=calculate('רוב','he',METHODS.he.find(m=>m.key==='peratiOrdinal'));
+const __rovPeratiRegular=calculate('רוב','he',METHODS.he.find(m=>m.key==='perati'));
+console.assert(__rovPeratiOrdinal.total===440&&__rovPeratiRegular.total===40040,'Rov Perati numerical totals stay unchanged');
+console.assert(magnetBreakdown(__rovPeratiOrdinal)==='ר²=(20²=400) ו²=(6²=36) ב²=(2²=4)'&&magnetBreakdown(__rovPeratiRegular)==='ר²=(200²=40,000) ו²=(6²=36) ב²=(2²=4)','Perati magnets display the method-specific squared letter values');
+console.assert(peratiBaseValue(calculate('Rov','en',METHODS.en.find(m=>m.key==='peratiSimple')).words[0].toks[0])===18,'Perati display base works outside Hebrew');
 console.assert(T('עמית מייק רוב','he','ordinal')===141,'Hebrew ordinal 141');
 console.assert(T('עמית מייק רוב','he','zeroStep')===96,'Hebrew Reduction №1 96');
 console.assert(T('תור','he','zeroStep')===66,'תור Reduction №1 = 66');
