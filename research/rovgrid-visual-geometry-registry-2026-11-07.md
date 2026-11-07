@@ -11,6 +11,7 @@
 | 64 / 72 / 136 / 576 | שני לופים, ממד 3 כסכום, 4–8 כהכפלה | [סיקוונסר](../assets/rovgrid-eight-dimension-sequencer.svg) |
 | 32×32 / π / 1024 | ריבוע ומעגל חסום, יחס שטחים π/4 | [מחקר גיאומטרי](rovgrid-square-ring-d4-primitive-2026-11-07.md) |
 | סריג 888 וטופולוגיה | אטלס הסריגים המפורט שכבר קיים | [אטלס קיים](rovgrid-lattice-atlas-topological-correspondences-2026-11-07.md) |
+| 520² / 65,52,80 / הרחבות 1,5,13 | שלוש פאות, שלושה זוגות מכפלות ושתי הסגירות 520² ו־LCM=65; תרשים סכמטי לא היטל 4D | [אטלס הצירים הרביעיים](../assets/rovgrid-three-faces-fourth-axis-2026-11-07.svg) · [הוכחה מלאה](rovgrid-three-faces-minimal-fourth-axis-2026-11-07.md) |
 | Q4 / טסרקט | איור טסרקט המקורי, נשמר ללא שינוי | [SVG קיים](../assets/tesseract-convergence.svg) |
 
 ## קואורדינטות לשחזור מסגרת D4
