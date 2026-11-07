@@ -4,6 +4,7 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [שחזור קנוני מקובצי המקור: Power-of-Bet, סריקת רוב O1–O4, קיפול F1000 וניסוי φ](research/rovgrid-power-bet-canonical-source-recovery-2026-11-07.md)
 - [בינה, עצה בחכמה — כל קואורדינטות הגימטריה, זהויות 37/73 ובדיקת קלט אפריורית 07.11](research/rovgrid-binah-etzah-bechochmah-a-priori-coordinates-2026-11-07.md)
 - [Power-of-Bet: שיטת החיפוש בתוך ספרות הקבועים, 9 קבועים × 10,000 ספרות, הצלחות וכישלונות](research/rovgrid-constant-digits-power-of-bet-protocol-2026-11-07.md)
 - [קוד שחזור Power-of-Bet / Pi Position](research/rovgrid-constant-digits-audit-2026-11-07.py)
