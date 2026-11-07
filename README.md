@@ -4,6 +4,9 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- [אטלס טופולוגי של הסריגים: 888 עצים, 4160 קוביות, 520²](research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07.md)
+- [קוד אימות אטלס הסריגים](research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07-verify.py)
+
 - [אינדקס מחקרי תיבה, 888 / 2080 / 4160, π ורשתות — 07.11.2026](research/rovgrid-2026-11-07-structural-corpora-index.md)
   - [אלגברת LCM, פרוני, דיסקרימיננטה ו־520²](research/rovgrid-algebra-pronic-lcm-discriminant-2026-11-07.md)
   - [מצולעים, כוכבים ובסיסי ספירה](research/rovgrid-polygon-star-base-systems-2026-11-07.md)
