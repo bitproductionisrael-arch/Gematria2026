@@ -49,6 +49,8 @@ check("Deut 30:15 death small",value("המות",SMALL),19)
 check("Deut 30:15 life regular",value("החיים",REG),73)
 check("Shalom equals Satan plus Tov",value("שלום",REG),value("שטן",REG)+value("טוב",REG))
 check("Shatan small equals Tov small",value("שטן",SMALL),value("טוב",SMALL))
+check("YHWH small equals Tov equals Satan", (value("יהוה",SMALL),value("טוב",SMALL),value("שטן",SMALL)),(17,17,17))
+check("1Kings11:14 small",value("ויקם יהוה שטן לשלמה",SMALL),64)
 name="עמית מייק רוב"
 check("Name regular weighted",weighted(name,REG),3344)
 check("Name ordinal weighted",weighted(name,ORD),536)
