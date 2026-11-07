@@ -65,4 +65,38 @@ check("Five-name small finals",value("שטן דוד יהוה אדני אלהים
 check("Five-name reduced",reduced("שטן דוד יהוה אדני אלהים"),28)
 check("Music 1Sam16:16",weighted("ונגן בידו וטוב לך"),230)
 check("Music 1Sam16:23",weighted("וסרה מעליו רוח הרעה"),305)
+
+# Genesis 6:6 — maqaf-sensitive reductions and new triangular-name links
+gen6="וינחם יהוה כי־עשה את־האדם בארץ ויתעצב אל־לבו"
+gen6_sep=gen6.replace("־"," ")
+gen6_join=gen6.replace("־","")
+check("Genesis 6:6 small",value(gen6,SMALL),136)
+check("Genesis 6:6 reduced with maqaf",reduced(gen6),37)
+check("Genesis 6:6 reduced split",reduced(gen6_sep),46)
+check("Genesis 6:6 weighted small split",weighted(gen6_sep),576)
+check("Genesis 6:6 weighted small joined",weighted(gen6_join),697)
+check("Genesis 6:6 segmentation delta",697-576,121)
+check("small word values split",tuple(value(w,SMALL) for w in gen6_sep.split()),(24,17,3,15,5,14,14,29,4,11))
+check("T13",t(13),91)
+check("T16",t(16),136)
+check("T16 minus T13 = Adam",t(16)-t(13),value("אדם",REG))
+check("Amen 91",value("אמן",REG),91)
+check("Echad 13",value("אחד",REG),13)
+check("Kol 136",value("קול",REG),136)
+check("Bereshit small 13",value("בראשית",SMALL),13)
+check("Amit small 16",value("עמית",SMALL),16)
+check("136 = eight Tov",136,8*value("טוב",REG))
+check("Blaze regular",value("בלייז",REG),59)
+check("Michael regular",value("מיכאל",REG),101)
+check("Blaze + Michael = Mike",value("בלייז",REG)+value("מיכאל",REG),value("מייק",REG))
+check("YHWH + Tov = Amit English Simple",value("יהוה",REG)+value("טוב",REG),1+13+9+20)
+def prime_index(n):
+    idx=0
+    for x in range(2,n+1):
+        if all(x%y for y in range(2,int(x**0.5)+1)):
+            idx+=1
+    return idx
+check("prime index of Blaze 59",prime_index(59),17)
+check("prime index of Michael 101",prime_index(101),26)
+
 print("All checks passed.")
