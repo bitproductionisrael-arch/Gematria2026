@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [משפט נקודת הסריג היחידה — הכוכבים 37/73, בלייז 59, הפינה 89, ופיתגורס 13](research/rovgrid-star-primes-37-59-73-pick-theorem-2026-11-08.md)
+  - [איור SVG מדויק של משולש 4×6 ומשפט פיק](assets/rovgrid-star-primes-37-59-73-pick-2026-11-08.svg)
+  - [קוד אימות](research/rovgrid-star-primes-37-59-73-verify-2026-11-08.py)
 - [לייבניץ והתרשים הסיני המקורי 1701: 64 הקסגרמות, Q6, 18 ראשוניים, מראות C(n)=63−n וביקורת הסרטון](research/rovgrid-yijing-leibniz-original-sources-2026-11-08.md)
   - [ממחישייזר SVG: כל 64 המצבים, קווים וראשוניים](assets/rovgrid-fuxi-binary-64-primes-2026-11-08.svg)
 - [שיטת צימוד מיקומי: האפס כערך מקום, סכום 888 ללא נשיאה, הבדלי נשיאות בין השמות ובסיסים 10/16/20](research/rovgrid-positional-concatenation-zero-name-2026-11-08.md)
