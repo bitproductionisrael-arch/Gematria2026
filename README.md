@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [אטלס חזותי: 49 עמודי Kathara / Merkaba / Ecka–Veca / Lotus, כולל 24+20=44, 12/15 ו־45°](research/kathara-merkaba-49-page-rovgrid-atlas-2026-11-08.md)
+  - [JSON מפת עמודים, סיווג ובקרת מקור](research/kathara-merkaba-49-page-map-2026-11-08.json)
+  - [קוד בדיקה: 4×5=20, 7+1+7=15, 4×3=12, 24×37=888 וכפילות עמודים](research/kathara-merkaba-structural-verify-2026-11-08.py)
 - **[קורפוס חנוך — תולדות המתמטיקה שילדה את ישראל: 364 ימים, 22 דורות, 7000, 84, שערים ומחזורי קומראן](research/enoch/README.md)**
   - [מאמר מחקר מלא עם המקורות, ההוכחות ונספחי התיאולוגיה ההשוואתית](research/enoch/enoch-364-patriarchs-gates-cycles-2026-11-08.md)
   - [קוד Python לשחזור חשבוני](research/enoch/enoch-364-patriarchs-verify.py)
