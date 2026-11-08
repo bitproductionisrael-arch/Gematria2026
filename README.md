@@ -5,6 +5,10 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [מפקד כל 2,024 השלשות: 524 משולשים ישרים, משולש חדש 13+13=26, חצאי מלבן 163/169, בקרה אקראית](research/rovgrid-prime-4x6-complete-triangle-census-2026-11-08.md)
+  - [SVG מלבן 37/73, שני חצאים 163/169](assets/rovgrid-prime-4x6-star-rectangle-163-169-2026-11-08.svg)
+  - [SVG פיתגורס במשולש 2/37/73: 13+13=26](assets/rovgrid-prime-4x6-isosceles-13-13-26-2026-11-08.svg)
+  - [קוד בדיקה מלא של כל המשולשים](research/rovgrid-prime-4x6-triangle-census-verify-2026-11-08.py)
 - [הקריאה הלשונית למשולש הכוכבים: דיג׳יי 37, בלייז 59, אני הוא 73, אחד²](assets/rovgrid-dj-blaze-ani-hu-13-square-2026-11-08.svg)
 - [הסגירה החדשה: 59/61 ו־71/73 זוגות ראשוניים תאומים סביב 12, שתי דרכים אל 13²](research/rovgrid-residue-12-twin-primes-star-square-2026-11-08.md)
   - [תרשים SVG של זוגות התאומים במטריצת 4×6](assets/rovgrid-residue-12-star-twins-2026-11-08.svg)
