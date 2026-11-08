@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[מחקר עומק Kathara: איזון 26–32–37, ארבע שכבות 6+5, שתי גרסאות גרף, 90° ו־12×24=288](research/rovgrid-kathara-deep-structural-proof-audit-2026-11-09.md)**
+  - [קוד אימות משחזר לגרפים ולמשוואות](research/rovgrid-kathara-deep-structural-verify-2026-11-09.py)
 - [אטלס חזותי: 49 עמודי Kathara / Merkaba / Ecka–Veca / Lotus, כולל 24+20=44, 12/15 ו־45°](research/kathara-merkaba-49-page-rovgrid-atlas-2026-11-08.md)
   - [JSON מפת עמודים, סיווג ובקרת מקור](research/kathara-merkaba-49-page-map-2026-11-08.json)
   - [קוד בדיקה: 4×5=20, 7+1+7=15, 4×3=12, 24×37=888 וכפילות עמודים](research/kathara-merkaba-structural-verify-2026-11-08.py)
