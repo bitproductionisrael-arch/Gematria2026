@@ -47,7 +47,8 @@ assert factorial(7) // factorial(2) == 2520  # permutations of מייקרוב
 
 name = "עמיתמייקרוב"
 hebrew = {"ע":70, "מ":40, "י":10, "ת":400, "ק":100,
-          "ר":200, "ו":6, "ב":2}
+          "ר":200, "ו":6, "ב":2, "ד":4, "פ":80,
+          "ח":8, "ל":30}
 assert len(name) == 11 and name[5] == "י"
 weights = [comb(10, i) for i in range(11)]
 full_pascal_fold = sum(hebrew[c] * weights[i] for i, c in enumerate(name))
