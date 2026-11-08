@@ -1,0 +1,469 @@
+{
+  "schema": "RovGrid.visual-source-map.v1",
+  "document": "324044.pdf",
+  "document_page_count": 49,
+  "unique_page_images": 48,
+  "source_sha256": "5733a4c96cd6763d19b188a24d6ed9f2562aaf668c20d040cb7d3a6f79c9d28b",
+  "created": "2026-11-08",
+  "ocr": "none; visual reading of raster images, not exhaustive transcription",
+  "source_family": "Ashayana/Azurite Deane, MCEO Freedom Teachings (per visible copyright and titles)",
+  "classification": {
+    "observed": "V",
+    "arithmetically_verified": "A",
+    "cross_system": "B",
+    "hypothesis": "H",
+    "uncertain": "U"
+  },
+  "categories": {
+    "K": "סריג Kathara/Signets",
+    "M": "מרכבה וסיבוב",
+    "E": "קוסמולוגיה Ecka–Veca",
+    "L": "Lotus/להבות",
+    "C": "קריסטל, DNA והטלות",
+    "V": "מחזוריות, מערבולות וזוויות",
+    "G": "שערי Amenti"
+  },
+  "pages": [
+    {
+      "pdf_page": 1,
+      "heading": "Lotus Bud Breath & Azura Lotus Flow",
+      "category": "L",
+      "source_observation": "מרכז גוף וסדרה סימטרית של קשתות לוטוס, מוקדי זרימה ותוויות צפיפות",
+      "rovgrid_mapping": "לסרוק מוקדים וזוגות שיקוף; כפילות מדויקת עם עמוד 48",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 2,
+      "heading": "שרטוט קוסמולוגי בכתב יד: אליפסות, קווי ציר ומשולשים",
+      "category": "V",
+      "source_observation": "אליפסה, צירים חוצים, כוכבים וצמתים ממוספרים; חלק מהכיתוב צפוף",
+      "rovgrid_mapping": "העתקת קואורדינטות, סיבובים והטלות רק לאחר קריאה מוגדלת",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 3,
+      "heading": "שדות Merkaba ותבניות PCM/PKA",
+      "category": "M",
+      "source_observation": "השוואה חזותית בין כמה תצורות מרכבה, טבעות וצירי צפיפות",
+      "rovgrid_mapping": "מיון זהויות טופולוגיות תחת שינוי קנה מידה/סיבוב",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 4,
+      "heading": "45° Lotus Projection Phase — Great Exhale",
+      "category": "V",
+      "source_observation": "גלגל זוויות ומוטיבי עלים סימטריים, סיבוב 45 מעלות ושלבי נשיפה",
+      "rovgrid_mapping": "R(45°)^8=זהות; לבדוק חוג C8 ומעבר בין טבעות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 5,
+      "heading": "The 8 Octaves of the Ecka",
+      "category": "E",
+      "source_observation": "חלוקת קשתות ל־8 אזורי Ecka סביב מוקד ושדות פנימיים",
+      "rovgrid_mapping": "מחזור בן שמונה מצבים; השוואה לסימטריית 8 ללא הנחת זהות קוסמולוגית",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 6,
+      "heading": "Manifestation Transduction Sequence: seed atoms / base shields / pillars",
+      "category": "C",
+      "source_observation": "אוסף תרשימים היוצרים שכבות של שדות, זרעים, בסיסים, קשתות ועמודים",
+      "rovgrid_mapping": "לייצג כגרף שכבות עם גרעין/מעטפת",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 7,
+      "heading": "The Halls of Amenti Star Gate System",
+      "category": "G",
+      "source_observation": "התאמת שערי כוכבים, שדות חלקיק/אנטי־חלקיק וזוויות סיבוב",
+      "rovgrid_mapping": "לבחון את ערכי הסיבוב הסמליים ולמפות שתי שכבות מקבילות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 8,
+      "heading": "God's House of Many Mansions: Creation Worlds / DNA Accretion",
+      "category": "E",
+      "source_observation": "סדרת חמש דיאגרמות מקושרות עם מספרים 12, 24, 36, 48 ורמות ביניים",
+      "rovgrid_mapping": "מיון סולמות הכפלה לעומת תוספת; אין לאחד 'ממד' עם 'בסיס' בלי הגדרה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 9,
+      "heading": "Merkaba Phases — Building the Merkaba Vehicle",
+      "category": "M",
+      "source_observation": "דגמי Halah, Quatra, Mahunta ו־Rahunta; כוכבים ומטריצת 12 גדילים",
+      "rovgrid_mapping": "להשוות שינויים במצולעים, צירי 6/9/12/15 במינוח המקור",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 10,
+      "heading": "In-Breath & Out-Breath of God and the Christos Seed Atom",
+      "category": "M",
+      "source_observation": "תנועה נטענת של שתי ספירלות נגדיות בין שדות PCM/PKA",
+      "rovgrid_mapping": "מודל זוג סיבובים הפוכים, נפרד מטענת אנרגיה פיזיקלית",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 11,
+      "heading": "Density-1 Embedded Density & Kathara Grids and Merkaba Fields",
+      "category": "K",
+      "source_observation": "הטמעת סריגי צפיפות בתוך גוף עם משולשים ותיבות חופפות",
+      "rovgrid_mapping": "להבחין בין קודקודי גריד, קווי עזר ופרספקטיבה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 12,
+      "heading": "Universal Life Force Currents / Embodied Kathara Grid",
+      "category": "K",
+      "source_observation": "12 מרכזים, קווי קישור וזרימות מתוארות לאורך הציר המרכזי",
+      "rovgrid_mapping": "הכנת רשימת V ממוספרת וקשתות E לאחר דיגיטציה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 13,
+      "heading": "Density-1 Transharmonic Density Kathara Grid",
+      "category": "K",
+      "source_observation": "12/13 מרכיבים מוצמדים לציר גוף ולמוקדי צפיפות",
+      "rovgrid_mapping": "גרף מקביל/צירי ושכבות אופקיות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 14,
+      "heading": "Eckasha-Aah: Cosmic Krist and 12 Reuche Pillars",
+      "category": "E",
+      "source_observation": "סריג אנכי ממוספר 1–12 ומוקדי R1–R12 סביבו",
+      "rovgrid_mapping": "השוואת פריסה דו־צדדית ושיקוף צירים; לא למזג שתי סדרות המספור",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 15,
+      "heading": "Level-2 Kathara Crystal Seals Grid & Chakras",
+      "category": "K",
+      "source_observation": "15 chakras מוגדרים כ־7 primary ו־8 morphogenetic; עוד 15 star seals",
+      "rovgrid_mapping": "7+8=15; לשמר הבחנה בין שתי רשימות נפרדות באורך 15",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 16,
+      "heading": "Silicate Matrix 12-Strand DNA Template",
+      "category": "C",
+      "source_observation": "12 קרניים; 12 base codes לכל strand, 12 acceleration codes לכל strand, ו־fire codes",
+      "rovgrid_mapping": "מטריצת אינדקס 12×12; הכיתוב מציין במפורש תרשים מושגי, לא תיאור DNA נצפה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 17,
+      "heading": "Density-1 / D-13 Monad Placement",
+      "category": "M",
+      "source_observation": "גוף עם שני אגפי מרכבה, קשתות מקבילות וסימוני D-1/D-13",
+      "rovgrid_mapping": "מיפוי זוגי של שכבות וסימטריה אנכית",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 18,
+      "heading": "Veca Quadrant #2 / Parallel Primal Light-Sound Field",
+      "category": "E",
+      "source_observation": "סריג תלת־ממדי של quadrants, שערים ולוקים סביב מוקדים 1–12",
+      "rovgrid_mapping": "הגדרת קוביות/גרף רב־שכבתי וללא טענות על מרחב פיזיקלי",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 19,
+      "heading": "Section Seven: Crystal Body Templates and Seed Flames",
+      "category": "C",
+      "source_observation": "עמוד תוכן מלווה מטרות הכשרה ומינוחים של שלבי crystal body",
+      "rovgrid_mapping": "למפות כמילון מונחים ומקור למסמכי תרשים 20–24",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 20,
+      "heading": "The Double Bi-Veca Merkaba Field",
+      "category": "M",
+      "source_observation": "שתי מערכות מרכבה בעלות שדות נגדיים ו־universal monad",
+      "rovgrid_mapping": "לבחון שיקוף, זוויות יחס ושימור צמתים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 21,
+      "heading": "Stage-2 Ecka-Veca Body / 24 LoT'E cells",
+      "category": "C",
+      "source_observation": "עמודי LoT'E מרובי קווים, 24 תאים ופריסות שטחים עגולות",
+      "rovgrid_mapping": "לייצג 24 כקבוצת אינדקסים; לא להניח שזו אותה קבוצה של Lotus page 33",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 22,
+      "heading": "Stage-1 Ecka-Veca Body / Reuche spindles and staff",
+      "category": "C",
+      "source_observation": "רצף תהליכי של קווי תווך, קשתות עליונות וזרועות משולבות",
+      "rovgrid_mapping": "גרף מצבים מכוון; לבודד רצף פעולה מהכיתוב הטקסי",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 23,
+      "heading": "Initiation of Ecka-Veca Body Manifestation",
+      "category": "C",
+      "source_observation": "הטלה של רשת seed לעליונים ותחתונים, משולשים ומרכזים ממוספרים",
+      "rovgrid_mapping": "מעקב אחר אופרטור ההטלה בין שתי רשתות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 24,
+      "heading": "Personal Eukatharista Cosmic External Flame Body",
+      "category": "E",
+      "source_observation": "מספר שלבי flame bodies במעטפות אליפטיות קונצנטריות",
+      "rovgrid_mapping": "עץ היררכי, הכלה וקנים שונים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 25,
+      "heading": "שרטוט קוסמולוגי בכתב יד: טבעות וצירי סיבוב",
+      "category": "E",
+      "source_observation": "טבעות אליפטיות מקוננות, ציר אלכסוני ואזורי seed",
+      "rovgrid_mapping": "בדיקת יחס מיקום/הכלה; חלק מהמונחים בכתב יד אינם קריאים ברמת ודאות גבוהה",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 26,
+      "heading": "Eckasha-Aah-A'La Body / 15 Reshadon Cells",
+      "category": "E",
+      "source_observation": "טבעות תאים סביב מוקד ומבנים פנימיים שמסומנים כ־15 תאים",
+      "rovgrid_mapping": "מעבר מן רשתות סביב נקודה לספירת אזורים; להבחין בין cells ו־pillars",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 27,
+      "heading": "Veca Codes & Radial Body Kernel",
+      "category": "E",
+      "source_observation": "מערכת צירים, שערי קוד ושדות ספירליים מול סילואטת אדם",
+      "rovgrid_mapping": "קואורדינטות של נקודות בקרה לפני שיוך גימטרי",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 28,
+      "heading": "Intricate Signet & Shield Alignments / Monad Beam",
+      "category": "C",
+      "source_observation": "שש תחנות מסומנות: chambers, shields, crystal body, templates, alignments, beam",
+      "rovgrid_mapping": "מפת טרנספורמציות מרצף של שש פעולות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 29,
+      "heading": "תרשים רדיאלי בכתב יד: שדות ושכבות",
+      "category": "C",
+      "source_observation": "גרעין מרכזי, תחומי מעגל ושדה מרכבה מרובד",
+      "rovgrid_mapping": "דגימת טבעות ומחיצות; אי־ודאות לגבי כיתובים",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 30,
+      "heading": "Natural Reu-Sha-TA Spiral & Reuche Base Shield",
+      "category": "V",
+      "source_observation": "ספירלות נגדיות; סימונים 33⅓ CW ו־11⅔ CCW; 15 זרמים נזכרים בטקסט",
+      "rovgrid_mapping": "33⅓+11⅔=45; להשוות למשפחת 45° ללא הוכחת סיבתיות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 31,
+      "heading": "Densification 3C/3D / 12 TIL'E Vector Projection Planes",
+      "category": "V",
+      "source_observation": "הטלות מרחביות בעלות 12 מישורים וצירים, עם מסכי refraction",
+      "rovgrid_mapping": "12×קואורדינטות; להפריד תלת־ממד גיאומטרי מן הסיווג האזוטרי",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 32,
+      "heading": "Ecka-Veca Crystal Body Template: Seed Atoms",
+      "category": "C",
+      "source_observation": "מבטי הקרנה והתרחבות של שדות seed/base shield עם צבעי שכבה",
+      "rovgrid_mapping": "למפות שיקוף מול הגדלה וקומפוזיציה של מעגלים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 33,
+      "heading": "The 24 Lotus Points & 20 Embodied Ethos Etheric Flames",
+      "category": "L",
+      "source_observation": "המקור מציין 5 להבות לכל אחד מ־4 סריגי צפיפות =20; 24 נקודות Lotus",
+      "rovgrid_mapping": "עוגן מרכזי: 4×5=20; 24+20=44; 24×37=888; 20×26=520",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 34,
+      "heading": "Ecka-LoTa, Veca-PCM LoT'E & PKA Loti Chambers",
+      "category": "C",
+      "source_observation": "רצף יצירה של קריסטל דרך chambers, ליבות ו־density templates",
+      "rovgrid_mapping": "גרף שכבות ממספר מוקדים וטבעות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 35,
+      "heading": "Matradon, Lotos, Logos & Photos Radiation Matrices",
+      "category": "E",
+      "source_observation": "מערך הקרנות בגריד מרכזי ומספר תאי מקור סביבו",
+      "rovgrid_mapping": "לבחון מספרי תאים ומסלולי הקרנה בגרף",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 36,
+      "heading": "Michael–Mary Line: אליפסות משיקות בכתב יד",
+      "category": "V",
+      "source_observation": "שני גלגלים זוויתיים ופריסות אליפטיות; צילום מסך כולל ממשק קורא",
+      "rovgrid_mapping": "להפריד רקע מסך מהתרשים; לא לייחס כותרת הקובץ לנוסח המלא",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 37,
+      "heading": "12-Dimensional Christos Divine Blueprint",
+      "category": "C",
+      "source_observation": "דיאגרמות Signet עם 12 מוקדים, היטל על 'Krist Cross' וצפיפויות",
+      "rovgrid_mapping": "מיפוי נקודות ושדות מאוחדים; לא תחליף למדידת ממדים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 38,
+      "heading": "Yan-Yun Electromagnetic Density Flow / Lotus Merkaba",
+      "category": "M",
+      "source_observation": "רשת עיגולים וסימני זרימת שדות מקבילים עם טבעות CCW/CW",
+      "rovgrid_mapping": "מודל רוטציות ואספקת שכבות מקור",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 39,
+      "heading": "Eye BRA / Photo-Familial Morphogenetic Field",
+      "category": "V",
+      "source_observation": "שלושה שרטוטי ספירלות/טורוסים בכתב יד, חיצים וצירי סיבוב",
+      "rovgrid_mapping": "השוואת צורת המסלולים, ללא שיוך פיזיקלי",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 40,
+      "heading": "Ethos-Eiros / Five Etheric-Fire Chambers",
+      "category": "C",
+      "source_observation": "מעברים בין chambers ומערכות star tetrahedra, רוחב וגובה משתנים",
+      "rovgrid_mapping": "לייצג שכבות כקבוצות גרפים מרוכבים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 41,
+      "heading": "שדות רדיאליים ופילוג טבעתי של אשכולות",
+      "category": "K",
+      "source_observation": "אשכולות עגולים מחוברים, חזרות אנכיות ומוקדי חוג סימטריים",
+      "rovgrid_mapping": "לסרוק מספרי מחלקות ובקרת אי־ודאות לנוכח טקסט זעיר",
+      "confidence": "partial",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 42,
+      "heading": "The 3 Embedded Crystal Body Light Grids of the LoTA",
+      "category": "C",
+      "source_observation": "שלושה גופי קריסטל דמויי פוליהדרון, תשתית 12 shield nodes",
+      "rovgrid_mapping": "השוואת שינויי סריג בין שלוש הטלות תלת־ממדיות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 43,
+      "heading": "Stage-3 Ecka Veca Projection / 24 LoT'E rods",
+      "category": "C",
+      "source_observation": "רשת תלת־ממדית של צמתים והטלת מוטות למבנה כדורי",
+      "rovgrid_mapping": "מיפוי קשתות ורודסים מסודרים; נדרשת דיגיטציה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 44,
+      "heading": "Etheric & Etheric-Atomic Spark-Pulse Currents",
+      "category": "V",
+      "source_observation": "תרשימי Ethos/Eiros/Electros/Magnos/Manos/Lotos כולל טבעות ווקטורים",
+      "rovgrid_mapping": "הפרדת מחזוריות תצפיתית מזיהוי זרמים פיזיקליים",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 45,
+      "heading": "Christiac Vortex Mechanics / Merkaba Fields / Universal Monad",
+      "category": "V",
+      "source_observation": "מודל סיבוב 360° ו־4 quadrants של 90°, יחד עם 45° ו־CW/CCW",
+      "rovgrid_mapping": "360=4×90=8×45; חבורת סיבובים C4/C8 כבדיקת מבנה",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 46,
+      "heading": "The 15 Manifestation Fields of the Universal Veca",
+      "category": "E",
+      "source_observation": "הטקסט מציין 4 סריגי Kathara שנפגשים ב־12/13; 7 lower, 7 higher ושדה מרכזי",
+      "rovgrid_mapping": "7+1+7=15; ההפכיות היא השערת מיפוי על ציר שכבות",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 47,
+      "heading": "Life Force / Shields / Signets / Kathara Grid",
+      "category": "K",
+      "source_observation": "12 מוקדי 12-tree; ארבעת shields הראשונים מחולקים ל־3 signets כל אחד",
+      "rovgrid_mapping": "4×3=12; נדרש תיעוד קשתות שלא יערבב אותן עם 15 Kathara lines",
+      "confidence": "visual",
+      "duplicate_of": null
+    },
+    {
+      "pdf_page": 48,
+      "heading": "Lotus Bud Breath & Azura Lotus Flow — duplicate",
+      "category": "L",
+      "source_observation": "תמונה זהה פיקסל־לפיקסל לעמוד 1",
+      "rovgrid_mapping": "לסמן source duplicate, לא תצפית עצמאית",
+      "confidence": "visual",
+      "duplicate_of": 1
+    },
+    {
+      "pdf_page": 49,
+      "heading": "Density-1 Transharmonic Density Bi-Veca Merkaba",
+      "category": "M",
+      "source_observation": "גוף, וקטורי Merkaba וכפילות שדות בצירי D1, D13 ובמרחב חופף",
+      "rovgrid_mapping": "סימטריות משולש/צירים וזיקה למסלולי סיבוב",
+      "confidence": "visual",
+      "duplicate_of": null
+    }
+  ]
+}
