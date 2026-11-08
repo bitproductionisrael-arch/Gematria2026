@@ -45,8 +45,7 @@ assert len(a["squares_any"])==91
 assert [t for t in a["q13"] if t==(37,73,89)]==[(37,73,89)]
 assert (37,73,89) in [t for t,inner,hyp,value in a["match"] if inner==59 and value==169]
 assert [x for x in a["match"] if x[0] in a["q13"]]==[((37,73,89),59,(37,73),169)]
-assert sum(a["distances"](t)==[13,13,26] for t in combinations(P,3) if t in a["q13"] or t in [t for t in combinations(P,3) if sum(a["distances"](t))==52])==0 if False else True
-isos=[t for t in combinations(P,3) if t in [t for t in combinations(P,3) if sum(a["distances"](t))==52] and a["distances"](t)==[13,13,26]]
+isos=[t for t in combinations(P,3) if a["distances"](t)==[13,13,26]]
 assert set(isos)=={(2,37,73),(5,61,67),(7,41,89),(13,17,79)}
 assert (a["pos"][2],a["pos"][37],a["pos"][73])==((0,0),(5,1),(2,3))
 assert a["inside"]((23,37,73))==[53] and a["inside"]((37,73,89))==[59]
@@ -68,7 +67,7 @@ def det(a,b,c):
 pidx={v:i for i,v in enumerate(P)}
 slots=[]
 for t in a["q13"]:
-    u,v=max(combinations(t,2),key=lambda pair:sum((a["pos"][u][j]-a["pos"][v][j])**2 for j in range(2)))
+    u,v=max(combinations(t,2),key=lambda pair:sum((a["pos"][pair[0]][j]-a["pos"][pair[1]][j])**2 for j in range(2)))
     w=a["inside"](t)[0]
     slots.append((pidx[u],pidx[v],pidx[w]))
 rng=Random(20261108)
