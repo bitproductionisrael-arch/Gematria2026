@@ -20,7 +20,7 @@ def source_arithmetic():
     assert 24*(37-32) == 20*(32-26) == 120
     assert 15*16//2 == 120
     assert (6*5 + 6*5 + 5*4//2) == 70  # example only, not used as evidence
-    assert 6*5+6*5//2+5*4//2 == 55 # C(6,2)+6*5+C(5,2) = 15+30+10
+    assert 6*5//2+6*5+5*4//2 == 55 # C(6,2)+6*5+C(5,2) = 15+30+10
     angles=(Fraction(45),Fraction(100,3),Fraction(35,3))
     assert sum(angles)==90
     assert tuple(int(x*Fraction(3,5)) for x in angles)==(27,20,7)
