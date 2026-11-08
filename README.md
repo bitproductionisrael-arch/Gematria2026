@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [הסגירה החדשה: 59/61 ו־71/73 זוגות ראשוניים תאומים סביב 12, שתי דרכים אל 13²](research/rovgrid-residue-12-twin-primes-star-square-2026-11-08.md)
+  - [תרשים SVG של זוגות התאומים במטריצת 4×6](assets/rovgrid-residue-12-star-twins-2026-11-08.svg)
+  - [קוד בדיקה](research/rovgrid-residue-12-star-twins-verify-2026-11-08.py)
 - [משפט נקודת הסריג היחידה — הכוכבים 37/73, בלייז 59, הפינה 89, ופיתגורס 13](research/rovgrid-star-primes-37-59-73-pick-theorem-2026-11-08.md)
   - [איור SVG מדויק של משולש 4×6 ומשפט פיק](assets/rovgrid-star-primes-37-59-73-pick-2026-11-08.svg)
   - [קוד אימות](research/rovgrid-star-primes-37-59-73-verify-2026-11-08.py)
