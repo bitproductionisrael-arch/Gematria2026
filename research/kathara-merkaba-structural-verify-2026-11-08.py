@@ -21,10 +21,12 @@ def verify_arithmetic():
     assert 7+8 == 15                # PDF 15: named chakra categories
     assert 7+1+7 == 15              # PDF 46: named manifestation fields
     assert 4*3 == 12                # PDF 47: shields x signets
+    assert 15-12+1 == 4         # conditional: connected graph with V=12 and E=15
+    assert 2*15/12 == 2.5       # conditional mean graph degree
     assert 12*12 == 144             # PDF 16: hypothetical indexed code matrix
     assert 360//45 == 8
     assert 360//90 == 4
-    assert Fraction(100,3)+Fraction(35,3)==45  # PDF 30 labels 33 1/3 and 11 2/3
+    assert Fraction(100,3)+Fraction(35,3)==45  # PDF 30 absolute angle sizes, *not* net rotation
     # Rotation by 45 degrees forms cyclic group of order 8 on orientations:
     assert [(n+8)%8 for n in range(8)] == list(range(8))
     print("PASS: source counts and arithmetic connections, no physical inference")
