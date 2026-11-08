@@ -1,0 +1,952 @@
+{
+  "passed": true,
+  "verse_count": 5853,
+  "chapter_count": 187,
+  "missing": [],
+  "duplicates": [],
+  "first": "Gen.1.1",
+  "last": "Deut.34.12",
+  "raw_total_rechecks": 333621,
+  "independent_engine_interval_rechecks": 333621,
+  "stored_interval_values": 38132715,
+  "stored_word_values": 4558974,
+  "verified_findings": 14355,
+  "engine_blob": "9c6d579b63c9d98ac66e7823ea6d1c961ea7b43e",
+  "chapter_hashes": [
+    {
+      "file": "chapters/Gen.01.json.gz",
+      "bytes": 927662,
+      "sha256": "ab25f35ce52b4f4b754dd42d0686b77ea0f43754b9fdee5f0dee52b2aed4a555"
+    },
+    {
+      "file": "chapters/Gen.02.json.gz",
+      "bytes": 682137,
+      "sha256": "d7a60ccf8ce2166c7b1e255f62b2f522a1e378403c538eb02f74d58473b98296"
+    },
+    {
+      "file": "chapters/Gen.03.json.gz",
+      "bytes": 761573,
+      "sha256": "606b8d3cdde45b6ee15c333e3c05cdc5ec380858779e196e7a13717eae29f647"
+    },
+    {
+      "file": "chapters/Gen.04.json.gz",
+      "bytes": 676442,
+      "sha256": "8fbb74c6c7a2adfd126750262b6a045a652b186c2bf9d9c0e06e8b1f01a3510e"
+    },
+    {
+      "file": "chapters/Gen.05.json.gz",
+      "bytes": 705659,
+      "sha256": "5667288c28b2d2b9ae081a8c88f67a3b351303665a201128f1ed5424db014b28"
+    },
+    {
+      "file": "chapters/Gen.06.json.gz",
+      "bytes": 632179,
+      "sha256": "b28bc13d2da9cafa2eeaccda4647a82d31617ac1e5dfd97d7f9a204f991a1f29"
+    },
+    {
+      "file": "chapters/Gen.07.json.gz",
+      "bytes": 694580,
+      "sha256": "8d0361633543be2cf7bd0470c8238a9f85707ed76058bea499d10bf90e8a391d"
+    },
+    {
+      "file": "chapters/Gen.08.json.gz",
+      "bytes": 687727,
+      "sha256": "312ea7e56effc8da7f17b0dd77978ccd36d8f42cb79e7408b4da87ac2fec497a"
+    },
+    {
+      "file": "chapters/Gen.09.json.gz",
+      "bytes": 710407,
+      "sha256": "b99bfcf58c4cc4dabed9997987b74dd816e2d729ae46878782145706746dcb18"
+    },
+    {
+      "file": "chapters/Gen.10.json.gz",
+      "bytes": 521450,
+      "sha256": "aca13017e8611f59a7d2352be315d47d94d7b90667a3b792de09a8e76a76555b"
+    },
+    {
+      "file": "chapters/Gen.11.json.gz",
+      "bytes": 811151,
+      "sha256": "81d2ade7b50cffc93fb7a031b41a95c09384b7cdef2f5f6c531433e6b876dac9"
+    },
+    {
+      "file": "chapters/Gen.12.json.gz",
+      "bytes": 556196,
+      "sha256": "a91a021f481bd34b1da3258db51de600a354fb5b69d6143032f7a919bc8336fc"
+    },
+    {
+      "file": "chapters/Gen.13.json.gz",
+      "bytes": 496985,
+      "sha256": "e1a3e74427d0b5e4db2bd30b7d744bddd0665d200ae56f907624396d5def862d"
+    },
+    {
+      "file": "chapters/Gen.14.json.gz",
+      "bytes": 720245,
+      "sha256": "d3a05a41553fdeb4fb0c47aa822d562aafc29a7061f265acf95b6ec5c2c481d4"
+    },
+    {
+      "file": "chapters/Gen.15.json.gz",
+      "bytes": 518639,
+      "sha256": "8a9a4fc0fd056e9725e075d4afbd9e6dc06ced309c1310cabfbd5a90f7038f8b"
+    },
+    {
+      "file": "chapters/Gen.16.json.gz",
+      "bytes": 452624,
+      "sha256": "8a116198c61b005c8b21266c2639090c3e77064b56f2a295613211cd5042914d"
+    },
+    {
+      "file": "chapters/Gen.17.json.gz",
+      "bytes": 763622,
+      "sha256": "8ce8dd6ec5177581bd81c44ee0d474633d7ad330918f309227f2a11069687f38"
+    },
+    {
+      "file": "chapters/Gen.18.json.gz",
+      "bytes": 909093,
+      "sha256": "52817af3c473c9d6a8549608e6b6cd56c0e7a31132f1fd542fc7adb2b09e60e0"
+    },
+    {
+      "file": "chapters/Gen.19.json.gz",
+      "bytes": 1256773,
+      "sha256": "ddc6a7b68a678528568ecf50a93144ca5e1e664134d3870f215ef19af47eaac0"
+    },
+    {
+      "file": "chapters/Gen.20.json.gz",
+      "bytes": 619663,
+      "sha256": "9e12ff3f4e1964f42bf01fa5cce87a8efb30e37d36741464e1a46500ac181add"
+    },
+    {
+      "file": "chapters/Gen.21.json.gz",
+      "bytes": 900632,
+      "sha256": "7f08862c64e6143e8eab18e69b7795219f377b45044600c51b23b657c1531418"
+    },
+    {
+      "file": "chapters/Gen.22.json.gz",
+      "bytes": 792949,
+      "sha256": "d2c54f8b0279dfa9f554ce4ecaa0ce0ecd6a303e144a52e542855b84962faade"
+    },
+    {
+      "file": "chapters/Gen.23.json.gz",
+      "bytes": 585544,
+      "sha256": "892bf99af7b6fc366f4904400de1380b75ebd75ed6e09f75c14777de9879c3f9"
+    },
+    {
+      "file": "chapters/Gen.24.json.gz",
+      "bytes": 1954566,
+      "sha256": "fe85e81c8742660e0c9616f89aad4fe0c1dcfbc7a023c2e5d810264b48740396"
+    },
+    {
+      "file": "chapters/Gen.25.json.gz",
+      "bytes": 809694,
+      "sha256": "35b3a6d2895c62f7b11c33e6fe739753f97c50cffb8364669f4da2e127085150"
+    },
+    {
+      "file": "chapters/Gen.26.json.gz",
+      "bytes": 1010408,
+      "sha256": "2916ed516639d8d359a82753da9e3fa3c2973f07e521fc97bbf09df563040e18"
+    },
+    {
+      "file": "chapters/Gen.27.json.gz",
+      "bytes": 1327910,
+      "sha256": "e0ed06ba01edd58ceaaad67b0c914f94df0f42bfe62ee34c2743b3e42e574a55"
+    },
+    {
+      "file": "chapters/Gen.28.json.gz",
+      "bytes": 695407,
+      "sha256": "f91b220b94216e5aad018644da7ee49d953037894e7278fd33e9aa3efaf39162"
+    },
+    {
+      "file": "chapters/Gen.29.json.gz",
+      "bytes": 974290,
+      "sha256": "a3b75362787b81e8fad529dc17bb1efb9d3777b1d884ed6b4ce8bb602aae6723"
+    },
+    {
+      "file": "chapters/Gen.30.json.gz",
+      "bytes": 1190502,
+      "sha256": "b721cc03ed8c7c86a2a8faeea312f8cd5a8574335a6cc2acd4d3f0b44c91a750"
+    },
+    {
+      "file": "chapters/Gen.31.json.gz",
+      "bytes": 1610186,
+      "sha256": "2f971b08e6445834d9429d79f51958154419f1b3c478430a704fe66f44a23581"
+    },
+    {
+      "file": "chapters/Gen.32.json.gz",
+      "bytes": 940328,
+      "sha256": "19861d6149370091038d4257fbff283df2eadfbfa0841191117d45c0e80f09a2"
+    },
+    {
+      "file": "chapters/Gen.33.json.gz",
+      "bytes": 561375,
+      "sha256": "55b73bcbd910dcfd845ea4a2bfb595bd8d01bb2bd79b675b3147a721fd04f77d"
+    },
+    {
+      "file": "chapters/Gen.34.json.gz",
+      "bytes": 879905,
+      "sha256": "d88e85df838383955e355ddb14842e5c1c8fada8af2538f8e8abb81e85c8df8f"
+    },
+    {
+      "file": "chapters/Gen.35.json.gz",
+      "bytes": 780293,
+      "sha256": "4acddb7745d9c363133c5968bc25d471662336a3044cc599fbf3bfae9a21d31a"
+    },
+    {
+      "file": "chapters/Gen.36.json.gz",
+      "bytes": 993621,
+      "sha256": "dade51e1c05e53414f9955f4b8f695acb29f29403cd9b3cce3905f77aca6e947"
+    },
+    {
+      "file": "chapters/Gen.37.json.gz",
+      "bytes": 1072668,
+      "sha256": "65804029e1c380094ade4bfe86457f25cb9de6a018f04754d47e7a824fb13c1a"
+    },
+    {
+      "file": "chapters/Gen.38.json.gz",
+      "bytes": 858048,
+      "sha256": "c19ee68eb6fb4acc7e3af70e0ed7b37b6492cea071144d3a02d0a54520d74115"
+    },
+    {
+      "file": "chapters/Gen.39.json.gz",
+      "bytes": 738117,
+      "sha256": "651a112eedd8efa4c01e0b9030c2bcd2159a3fa37af5ab53cbfb87718c5483fd"
+    },
+    {
+      "file": "chapters/Gen.40.json.gz",
+      "bytes": 659907,
+      "sha256": "0ca71a9c603595e9f73e90602529bcee35a67bb514e1745fb520bf7ce4eb40fe"
+    },
+    {
+      "file": "chapters/Gen.41.json.gz",
+      "bytes": 1623600,
+      "sha256": "48b746a6c3e44fa3d33c68f341af1e749a9c86916974a3d3abe3cb28073ff2a0"
+    },
+    {
+      "file": "chapters/Gen.42.json.gz",
+      "bytes": 1129279,
+      "sha256": "9bdb4e0f2ca4304bbe2557363fbbc740fdd36fc52be7d3aaa125dce0b61afa5d"
+    },
+    {
+      "file": "chapters/Gen.43.json.gz",
+      "bytes": 1091237,
+      "sha256": "b0390be7784df580d48484f94d28deb1662173905a8ccf9c02b6d57d01e19d74"
+    },
+    {
+      "file": "chapters/Gen.44.json.gz",
+      "bytes": 951184,
+      "sha256": "3fb5fb8ead22beafa039a3895ff06122f85221cd0d23297e36403a574b292c54"
+    },
+    {
+      "file": "chapters/Gen.45.json.gz",
+      "bytes": 836961,
+      "sha256": "fb626d226792bc17f178160de1f12b27708dbef96b7ad7d6393223afb08f78a9"
+    },
+    {
+      "file": "chapters/Gen.46.json.gz",
+      "bytes": 853624,
+      "sha256": "59bb9d20cdddc9e9bcf16de2b48133d20774d689026f0cca8ac5d98ec64f8366"
+    },
+    {
+      "file": "chapters/Gen.47.json.gz",
+      "bytes": 1209837,
+      "sha256": "fc9be91753c73d2549eee58a0829a71f094dbbaffb58af079c092672ba8cd77e"
+    },
+    {
+      "file": "chapters/Gen.48.json.gz",
+      "bytes": 770499,
+      "sha256": "29efae8476afa8eddab89c009739256ad03c7861b5cfbb7441975caea4a8041a"
+    },
+    {
+      "file": "chapters/Gen.49.json.gz",
+      "bytes": 728215,
+      "sha256": "5c0b53e594271fc503fd266bcfbeb432398bbd3a75773eb0688e25fdde09b1af"
+    },
+    {
+      "file": "chapters/Gen.50.json.gz",
+      "bytes": 813562,
+      "sha256": "fb6a70a139990da7da99566dd5c871739f92baa16a45860d8c8b37cdb61c66ce"
+    },
+    {
+      "file": "chapters/Exod.01.json.gz",
+      "bytes": 491348,
+      "sha256": "73a21407088ed68b6e84a566bbd9c3a1947ae76f91868c97467f35466cd9b89a"
+    },
+    {
+      "file": "chapters/Exod.02.json.gz",
+      "bytes": 712620,
+      "sha256": "d46bcbbe04314d0e63cc3a95c1087e7cbed62aad778d1735bb98b8a74ada3e7e"
+    },
+    {
+      "file": "chapters/Exod.03.json.gz",
+      "bytes": 926555,
+      "sha256": "37343ec0726a0805c02674a01f68251238969d56c3ea84073aa5563578b86592"
+    },
+    {
+      "file": "chapters/Exod.04.json.gz",
+      "bytes": 973167,
+      "sha256": "d9f92cb97f08bb3069e4ffa69ae208b0882a829707ac446d5465f6ec6ffc1194"
+    },
+    {
+      "file": "chapters/Exod.05.json.gz",
+      "bytes": 683885,
+      "sha256": "ae77dbeac38dfdbfea64780cb66ecaf0d54424ed85065d29c612577fe6ccc569"
+    },
+    {
+      "file": "chapters/Exod.06.json.gz",
+      "bytes": 858068,
+      "sha256": "8f817fdca5780dd57cef522d1b2a80d4328e8afad102471c750adf6976494716"
+    },
+    {
+      "file": "chapters/Exod.07.json.gz",
+      "bytes": 925777,
+      "sha256": "b1752bfe4a572607fdb66db8079f4ce471a1931d977972d03588595865bd6971"
+    },
+    {
+      "file": "chapters/Exod.08.json.gz",
+      "bytes": 953445,
+      "sha256": "f1a0f6e97ea6c6e2f28840f609b7cccddfd8a2cb2d35a31abbcb5170bc6df119"
+    },
+    {
+      "file": "chapters/Exod.09.json.gz",
+      "bytes": 1122076,
+      "sha256": "0e9c9c36e113844ef28f649132c1f3504ba4b116bf7c7200cd0ac6ed051eb56e"
+    },
+    {
+      "file": "chapters/Exod.10.json.gz",
+      "bytes": 1146177,
+      "sha256": "a24cbd16a26921d873292d15fd76c9411e66fb0c92521d7a9bcf746cc4709dde"
+    },
+    {
+      "file": "chapters/Exod.11.json.gz",
+      "bytes": 396059,
+      "sha256": "a16637f31a951ed0c84ec554c125776cd967f9f223b6a3e9dc9265840ff3ead9"
+    },
+    {
+      "file": "chapters/Exod.12.json.gz",
+      "bytes": 1661916,
+      "sha256": "665a0dc89eb00fe3aa338c95be452ce972813743947004cfd91be32a3ac0554a"
+    },
+    {
+      "file": "chapters/Exod.13.json.gz",
+      "bytes": 747205,
+      "sha256": "0274067a78ba871eba208ca40ae8880cb7cd429963feba224e072d81a238f8d6"
+    },
+    {
+      "file": "chapters/Exod.14.json.gz",
+      "bytes": 1056016,
+      "sha256": "7c93df3dce02c2e686bea03e8a373c8e007ac595dd6d5ffbf36276ba2887722e"
+    },
+    {
+      "file": "chapters/Exod.15.json.gz",
+      "bytes": 674380,
+      "sha256": "28c573e8a3d5e852ec54bf235f0db992e4e815f062de067bd52b1f8ed1601004"
+    },
+    {
+      "file": "chapters/Exod.16.json.gz",
+      "bytes": 1275393,
+      "sha256": "5676ae788c9a688cd5ba1457cbf21a213d945bd0dfe60fcf0442ce9be60edaa8"
+    },
+    {
+      "file": "chapters/Exod.17.json.gz",
+      "bytes": 553221,
+      "sha256": "f6e6fbc084ed7626a758a8520887e67e9678cf2ec200b6100456959a9abf46f1"
+    },
+    {
+      "file": "chapters/Exod.18.json.gz",
+      "bytes": 911334,
+      "sha256": "6d9f1a5b927a671f6e5f7327e49b27b0f28286ce7b31f22c842aa827d0404799"
+    },
+    {
+      "file": "chapters/Exod.19.json.gz",
+      "bytes": 791574,
+      "sha256": "faa3271c61a3668a306a11e30cb16f8347145e3fcd53991b11f52afeb2f772ab"
+    },
+    {
+      "file": "chapters/Exod.20.json.gz",
+      "bytes": 664724,
+      "sha256": "901dc3fbd4103da8ad5e72fb7cb26ea3264d50822ffdd84db1a27289b9f312d0"
+    },
+    {
+      "file": "chapters/Exod.21.json.gz",
+      "bytes": 881769,
+      "sha256": "7d8c5d4d4a5bcba019ba841025a5f1a4c26828ef21d6188bfaee0bab8307f9b0"
+    },
+    {
+      "file": "chapters/Exod.22.json.gz",
+      "bytes": 733477,
+      "sha256": "64bc6141b5fa44fad535e61bafda8209978562f7edefd326073e9c365003256a"
+    },
+    {
+      "file": "chapters/Exod.23.json.gz",
+      "bytes": 806064,
+      "sha256": "47c5a60f55f7b154353720f6e9676c273c06ff691c5bfba4fe44f15a74cc43b1"
+    },
+    {
+      "file": "chapters/Exod.24.json.gz",
+      "bytes": 533925,
+      "sha256": "ea90c26e5b895c7bd913f44f15b914fd600224c3b65ee791efbae9fc9a245005"
+    },
+    {
+      "file": "chapters/Exod.25.json.gz",
+      "bytes": 870012,
+      "sha256": "7a822ded20e9b3417d4ddea013f1cba03ac99fc5d7a1e0a8a4e00cd7e13a74da"
+    },
+    {
+      "file": "chapters/Exod.26.json.gz",
+      "bytes": 997666,
+      "sha256": "d66541f841eeea09d872118ad5241ef9d9a9719abfeac0b3136420e1dcca8fcb"
+    },
+    {
+      "file": "chapters/Exod.27.json.gz",
+      "bytes": 556255,
+      "sha256": "0a9351cfe4e4e473c4f51a9a29526ecf2676e2a8048ee39396d960d33f1706d5"
+    },
+    {
+      "file": "chapters/Exod.28.json.gz",
+      "bytes": 1314675,
+      "sha256": "2c64881d395d532a83fe84205b3d2ceeaa3061081fd974828ea0dda3ce8c954f"
+    },
+    {
+      "file": "chapters/Exod.29.json.gz",
+      "bytes": 1397993,
+      "sha256": "5595c491ee1f2fc139ad3380bd0b12fbe57931b64f3a46156a1c52a826d9c192"
+    },
+    {
+      "file": "chapters/Exod.30.json.gz",
+      "bytes": 959503,
+      "sha256": "ac582bd0409d2e3e207d5e98776ade07734c94d5ab9ab7dc9b27e794c6d1a0c6"
+    },
+    {
+      "file": "chapters/Exod.31.json.gz",
+      "bytes": 473218,
+      "sha256": "d7f532fef806036f110eaf7ea69e08c8e36b546d0756e0826b764838bfe3dc37"
+    },
+    {
+      "file": "chapters/Exod.32.json.gz",
+      "bytes": 1232653,
+      "sha256": "f1fe6dbdb5eda225c3f6851c445d5dda5d6234e73f53802db6db08cdec73f41f"
+    },
+    {
+      "file": "chapters/Exod.33.json.gz",
+      "bytes": 810288,
+      "sha256": "c1bfcc1ab2a7d80ba3a7df0b384dfc5d67427e4b925e67c94450856a6c0dccec"
+    },
+    {
+      "file": "chapters/Exod.34.json.gz",
+      "bytes": 1195045,
+      "sha256": "0ba52563e461de4359fb39c6d0a25a7fe76e6084db333951f96b8d0a0cfcb070"
+    },
+    {
+      "file": "chapters/Exod.35.json.gz",
+      "bytes": 905657,
+      "sha256": "2c2db30355bdaf625c3295935eb358a0838da16815c49d956668b53729d3da5a"
+    },
+    {
+      "file": "chapters/Exod.36.json.gz",
+      "bytes": 1091845,
+      "sha256": "8f1d9c301605f5c5931af5ef973a83b4bf0a1598fe2a9ed2f53cfd509a3c7492"
+    },
+    {
+      "file": "chapters/Exod.37.json.gz",
+      "bytes": 732958,
+      "sha256": "45bd7325b9be97e75ae680be6976ace14c4f53e5fef3a06fb6bec822bf3623c9"
+    },
+    {
+      "file": "chapters/Exod.38.json.gz",
+      "bytes": 890129,
+      "sha256": "f2cc938170f95c63b3d73711915398d2d190271786f786c5b4df71a2629e0cfe"
+    },
+    {
+      "file": "chapters/Exod.39.json.gz",
+      "bytes": 1191520,
+      "sha256": "645952914d56edd41990c593b6ff366ac1534eedd7e4c60429c1f92a1880f126"
+    },
+    {
+      "file": "chapters/Exod.40.json.gz",
+      "bytes": 854407,
+      "sha256": "e30ffdae159fe01136c528c6d21c0b63cdb391f8a03df636549f5828e88f9792"
+    },
+    {
+      "file": "chapters/Lev.01.json.gz",
+      "bytes": 535404,
+      "sha256": "3e0925dd72752a5b3f3af8f22e70678f2bd08e321084903bfd402a77676f51d1"
+    },
+    {
+      "file": "chapters/Lev.02.json.gz",
+      "bytes": 419583,
+      "sha256": "5e821d1163b079924b897ec3e40079f2c2a02edae5a4f173fb3189a966ebe125"
+    },
+    {
+      "file": "chapters/Lev.03.json.gz",
+      "bytes": 521183,
+      "sha256": "52d823cd575746003fdc49ab75c9c9fb1b6dda1e640e80b8db316161308706a6"
+    },
+    {
+      "file": "chapters/Lev.04.json.gz",
+      "bytes": 1200926,
+      "sha256": "4ada2d4b0e400428b1be192a61942beee72dd890fc666fc3eb0785c7af2a57c4"
+    },
+    {
+      "file": "chapters/Lev.05.json.gz",
+      "bytes": 995483,
+      "sha256": "ce3b2c555346c92c445a157307dd4e88f55be953961af2929944dcb00395b3c0"
+    },
+    {
+      "file": "chapters/Lev.06.json.gz",
+      "bytes": 651107,
+      "sha256": "a5dea5a149154a1bb2dd59afe1f875d259e213ce342ce0a667943f445e6b14b2"
+    },
+    {
+      "file": "chapters/Lev.07.json.gz",
+      "bytes": 993976,
+      "sha256": "6d50535fddc82ffdcb969e07a896a40f96757d039bd5ef91d075ecf708993704"
+    },
+    {
+      "file": "chapters/Lev.08.json.gz",
+      "bytes": 1287323,
+      "sha256": "13261dc90c2420f55d135720c90da330afcecdbec0cf1c55919c94cdcce00305"
+    },
+    {
+      "file": "chapters/Lev.09.json.gz",
+      "bytes": 666143,
+      "sha256": "7ec01bb8ad19e3e4fb3acb6731c1ec7a0e438d68369817e531ceee2f914de95d"
+    },
+    {
+      "file": "chapters/Lev.10.json.gz",
+      "bytes": 787735,
+      "sha256": "50ce73c1eddb6e3b5ce6e40980d28bedc5596d14bbbfb27005467a63fec7f2d4"
+    },
+    {
+      "file": "chapters/Lev.11.json.gz",
+      "bytes": 1205737,
+      "sha256": "32bf23a9df456703e4f4d7c185c4c84f1d433b9dfb48fe844e36627a9be60a0b"
+    },
+    {
+      "file": "chapters/Lev.12.json.gz",
+      "bytes": 262691,
+      "sha256": "881c1c49cb42d49694e576b720c58220644fe330292e85c68fefe507c7703aed"
+    },
+    {
+      "file": "chapters/Lev.13.json.gz",
+      "bytes": 1926857,
+      "sha256": "e22d74ad70862482945392265ea238cdb5e0938b0e397cdc376bef936f43deb0"
+    },
+    {
+      "file": "chapters/Lev.14.json.gz",
+      "bytes": 1769413,
+      "sha256": "8fa1fb9d56507e8674453a583aa6e385adafd56d1136fd1062fef74e82b363da"
+    },
+    {
+      "file": "chapters/Lev.15.json.gz",
+      "bytes": 922762,
+      "sha256": "28507640f2bba6a681041060fb9f92f20354c0a5c875ded2bcd2be586f3fc848"
+    },
+    {
+      "file": "chapters/Lev.16.json.gz",
+      "bytes": 1273381,
+      "sha256": "d82e6d9ae3ae1f6ec6aec6dce6be0869f0476463f2bb547cd8a734b79c377152"
+    },
+    {
+      "file": "chapters/Lev.17.json.gz",
+      "bytes": 618237,
+      "sha256": "802670a8b81cf7cccc21c5ef3acf837a9ec74050ec5db73a2225699b301235ae"
+    },
+    {
+      "file": "chapters/Lev.18.json.gz",
+      "bytes": 657458,
+      "sha256": "7f1540164908bae890518c9a6ee61937e4dff8721196fa1daa5db40371e484dd"
+    },
+    {
+      "file": "chapters/Lev.19.json.gz",
+      "bytes": 879813,
+      "sha256": "71c235b2881c50e05511320cad7d9140f73ce84dd737c2ad4e65d46d89a65b5b"
+    },
+    {
+      "file": "chapters/Lev.20.json.gz",
+      "bytes": 958925,
+      "sha256": "a79c5788926a1ed859f6ef9232f7cabdad67796b9a7f06650e82d87555fadf75"
+    },
+    {
+      "file": "chapters/Lev.21.json.gz",
+      "bytes": 595102,
+      "sha256": "38731321c8f3b970466690e4c5163a16de431699d4510092103e76320ab39837"
+    },
+    {
+      "file": "chapters/Lev.22.json.gz",
+      "bytes": 943649,
+      "sha256": "10e0bc4c45c8b5f54b7cf2f72015961c670973245eab94ec43fb13cef3a263ad"
+    },
+    {
+      "file": "chapters/Lev.23.json.gz",
+      "bytes": 1312295,
+      "sha256": "5b97df8d317bdc893fe63a2674f518cb0629a694c7a63137e2d64eb55f362c6e"
+    },
+    {
+      "file": "chapters/Lev.24.json.gz",
+      "bytes": 561484,
+      "sha256": "a10c815f8646e90fb8e4780ea58912043d0bce4c1d1111b26caf9b7fc2fe6b5a"
+    },
+    {
+      "file": "chapters/Lev.25.json.gz",
+      "bytes": 1459069,
+      "sha256": "9d6814403ad732d580f7c9fefd5ed0b8dda6598233f9604cb755acb5ce1a8f5e"
+    },
+    {
+      "file": "chapters/Lev.26.json.gz",
+      "bytes": 1236978,
+      "sha256": "f7c232f13edc4e9a7002ee318e7226dd86d27d2a08d5c662ac8895591ca7adbe"
+    },
+    {
+      "file": "chapters/Lev.27.json.gz",
+      "bytes": 938667,
+      "sha256": "302f35b1882609f01434d28f74d24f73a6aa128e2469dee371391f5d699e3a41"
+    },
+    {
+      "file": "chapters/Num.01.json.gz",
+      "bytes": 1267495,
+      "sha256": "10337c36d1c46bc97a28b31d3d0396f6703333ebabb402755dd24bb3e80ca0c2"
+    },
+    {
+      "file": "chapters/Num.02.json.gz",
+      "bytes": 687287,
+      "sha256": "b9f97c02b613977de396e8b3d5807439a7f1f14d8c195eb7ff46828eb369080e"
+    },
+    {
+      "file": "chapters/Num.03.json.gz",
+      "bytes": 1241927,
+      "sha256": "485981dbe2c75ae92a654278dc33f08d12e2dd3dca687ca39ac1d1df23c877fc"
+    },
+    {
+      "file": "chapters/Num.04.json.gz",
+      "bytes": 1495400,
+      "sha256": "57ab554389a661d436fe8534bc9783c1ea3d15404b8bfc82243ba9a385454b78"
+    },
+    {
+      "file": "chapters/Num.05.json.gz",
+      "bytes": 1032232,
+      "sha256": "54f261ffbee53a976e823cbacb499d65c27eb3ac5f67b736307f8efeadb6822b"
+    },
+    {
+      "file": "chapters/Num.06.json.gz",
+      "bytes": 772550,
+      "sha256": "8d51af8d9b5c82157e77824f29cef97b2875f3606004e8c4aa01986cbb5d530e"
+    },
+    {
+      "file": "chapters/Num.07.json.gz",
+      "bytes": 2297625,
+      "sha256": "e3944ffd7a1e659e514e1f3f8fa7d81af9de200d952de8d14ab5b3a1377b5271"
+    },
+    {
+      "file": "chapters/Num.08.json.gz",
+      "bytes": 782860,
+      "sha256": "73c53f85524662f6eb7be1c383ee57510a07cb38f672d864d0933843bfc959ed"
+    },
+    {
+      "file": "chapters/Num.09.json.gz",
+      "bytes": 775373,
+      "sha256": "09a824641f6264be5342544e85a70958a26719aa78fe1830f88ec4f4ff4244ff"
+    },
+    {
+      "file": "chapters/Num.10.json.gz",
+      "bytes": 781466,
+      "sha256": "d785a67d30a26d224c890a067d33408c3d3b96066c6e440d469a63fee6cedc9e"
+    },
+    {
+      "file": "chapters/Num.11.json.gz",
+      "bytes": 1233416,
+      "sha256": "366aaf15e2136bfa54dd91b3477862acce3f3235dfecb3f005964cc44d8921b3"
+    },
+    {
+      "file": "chapters/Num.12.json.gz",
+      "bytes": 385751,
+      "sha256": "ee361f0b89818fbbc4ac2e69bd037fd027f5bae02118c60e9381d5931d249612"
+    },
+    {
+      "file": "chapters/Num.13.json.gz",
+      "bytes": 849262,
+      "sha256": "d7fbcda9dda03da06e700ec9c4169d528f9f0b3058c37111780356e6218d51d7"
+    },
+    {
+      "file": "chapters/Num.14.json.gz",
+      "bytes": 1355242,
+      "sha256": "82ca20a12d801c3ba76e6d9f5608028fc8e1ef7a89d30e0f7d26788d9ee9f777"
+    },
+    {
+      "file": "chapters/Num.15.json.gz",
+      "bytes": 1058043,
+      "sha256": "4fc049ca3910164fa8e5066e5e44a4de8554abe91cf7ac5e24ac4278d2c8ca45"
+    },
+    {
+      "file": "chapters/Num.16.json.gz",
+      "bytes": 1061285,
+      "sha256": "0f2e67f304bad9faec0fc9a0ba4c02eb4899e855a8d53fc06e86970608d09fe2"
+    },
+    {
+      "file": "chapters/Num.17.json.gz",
+      "bytes": 898176,
+      "sha256": "388354b67aa9e03180f7a52d6ac1d5332ead1e6b96a97a7a50d9620218ba6bb2"
+    },
+    {
+      "file": "chapters/Num.18.json.gz",
+      "bytes": 1212990,
+      "sha256": "e6f79a31fec57156286129353ae37f07e9c6a9dbb6d3c00f2c7e8981663bc4dc"
+    },
+    {
+      "file": "chapters/Num.19.json.gz",
+      "bytes": 770724,
+      "sha256": "ddaa30364f6dc04ba9cbb2e32632c8ebd416859249c397fab51c2237f2c7597d"
+    },
+    {
+      "file": "chapters/Num.20.json.gz",
+      "bytes": 898035,
+      "sha256": "ad5a03aa9dea2701f81573609f0058f09ffc071a240b91841283b3bd94dd3201"
+    },
+    {
+      "file": "chapters/Num.21.json.gz",
+      "bytes": 1007770,
+      "sha256": "7b8bd739365a8bf0130c56f0cfd0ff845d8f315eaf9c70cbb77f4d9714d9d64e"
+    },
+    {
+      "file": "chapters/Num.22.json.gz",
+      "bytes": 1456655,
+      "sha256": "1d418a99461944bcad3dc473b9e448044d238f5eac0026660d9d7fa11674487a"
+    },
+    {
+      "file": "chapters/Num.23.json.gz",
+      "bytes": 773332,
+      "sha256": "acfa98818f8243c75c4be9d57cc553d0b77ec42e93b208687c7a1094f4e8309a"
+    },
+    {
+      "file": "chapters/Num.24.json.gz",
+      "bytes": 624241,
+      "sha256": "e2c403d874f7ea67354726551a427b0117587ccd4abae7ea08af5e106608b855"
+    },
+    {
+      "file": "chapters/Num.25.json.gz",
+      "bytes": 502156,
+      "sha256": "d53e18ed83119681e950e3c7bcc2651d19980e93a400acc133ff24525bd62591"
+    },
+    {
+      "file": "chapters/Num.26.json.gz",
+      "bytes": 1365460,
+      "sha256": "7d65b7838db7ee62c57cb97ab8da589fb47bcba9f637fff8e6f24eac69fbd68a"
+    },
+    {
+      "file": "chapters/Num.27.json.gz",
+      "bytes": 689970,
+      "sha256": "73e857b2c6a264ae09fb802e87a1b9a1d6705ccac10f36ee1562f5b1a51f7604"
+    },
+    {
+      "file": "chapters/Num.28.json.gz",
+      "bytes": 700215,
+      "sha256": "4661bc85eda959272a4942e4fe06bf35d2cc34d70c259f1557575032aa3834b2"
+    },
+    {
+      "file": "chapters/Num.29.json.gz",
+      "bytes": 861485,
+      "sha256": "d1d9d8d74f6e68cb1538abb03a509acde9ab4ac148bcae0d4c162ab4ce6f29cd"
+    },
+    {
+      "file": "chapters/Num.30.json.gz",
+      "bytes": 555886,
+      "sha256": "fcf3b956439f664a3739a7e1d0838ed4fc234f7b6c39d3d7e9546dcc8c279587"
+    },
+    {
+      "file": "chapters/Num.31.json.gz",
+      "bytes": 1457065,
+      "sha256": "2d3976e47be677d9673255b6f0a88f3c0c24fae5e0906a56535ae58cf01dc7e9"
+    },
+    {
+      "file": "chapters/Num.32.json.gz",
+      "bytes": 1185181,
+      "sha256": "74835aead45ad84f61d964de4a76843be5c34d9f6fe70b224789f759cdb9a208"
+    },
+    {
+      "file": "chapters/Num.33.json.gz",
+      "bytes": 955552,
+      "sha256": "b1d42b70502d2ba9b951652246e17c31c997d210c21a864db01c34705821fa38"
+    },
+    {
+      "file": "chapters/Num.34.json.gz",
+      "bytes": 600251,
+      "sha256": "e69a71caddf90ddbc48969b2286cacf81ac6fc2d2c27a2155d0420fa9ca8f467"
+    },
+    {
+      "file": "chapters/Num.35.json.gz",
+      "bytes": 1039251,
+      "sha256": "77d05272d4a92231afabc4284295fb182c9f06a8298e0dee4382229c9bcb8edd"
+    },
+    {
+      "file": "chapters/Num.36.json.gz",
+      "bytes": 483282,
+      "sha256": "d8c925a41e5b4296a8a860cfc337cc8ce82d5a24d86b802c69613beb8055720c"
+    },
+    {
+      "file": "chapters/Deut.01.json.gz",
+      "bytes": 1449694,
+      "sha256": "36a95fcb3a7bd6f74107cd309ab835422cc57a4cfeb5b680114fd99660b4189e"
+    },
+    {
+      "file": "chapters/Deut.02.json.gz",
+      "bytes": 1180242,
+      "sha256": "864e227df390c0273d76146294aad7c61a663198d979f3dca0462eb8387893ab"
+    },
+    {
+      "file": "chapters/Deut.03.json.gz",
+      "bytes": 1070720,
+      "sha256": "29283993c2033adb65917ebc86a0264e76b6a32e3c624cb933ba2f5d6ac1b75b"
+    },
+    {
+      "file": "chapters/Deut.04.json.gz",
+      "bytes": 1947802,
+      "sha256": "26dd371d104dd7f98fc9b9fd048873bdb49f2120986eb6ab5b39bfd17580efcc"
+    },
+    {
+      "file": "chapters/Deut.05.json.gz",
+      "bytes": 1086263,
+      "sha256": "92d8bfdfefcfae848c6bf2292ed9039a75993836ff0d6e5bac56def62e3d6d34"
+    },
+    {
+      "file": "chapters/Deut.06.json.gz",
+      "bytes": 679154,
+      "sha256": "bc7d13bd32ed3617ffaf930af7d7c06c5a17bdfdaad2614a7c18622a3d28a45b"
+    },
+    {
+      "file": "chapters/Deut.07.json.gz",
+      "bytes": 949856,
+      "sha256": "8095e0d2da78750b24c1794c2eb1e7eecedda36b45191b7d0df0eff5cd6bceef"
+    },
+    {
+      "file": "chapters/Deut.08.json.gz",
+      "bytes": 653549,
+      "sha256": "6d0d02eb8ead8694cd1e36aae0be1968d87d25592d2868687b74dba16615549e"
+    },
+    {
+      "file": "chapters/Deut.09.json.gz",
+      "bytes": 1207323,
+      "sha256": "f01abc0d1d66c1ca248122fc276b4ef2232aa66e69378deaf92801cd7d2627f6"
+    },
+    {
+      "file": "chapters/Deut.10.json.gz",
+      "bytes": 698206,
+      "sha256": "f135e4a16a95282620bad8914f94548bf1009442fef8283e37453bd83c318e60"
+    },
+    {
+      "file": "chapters/Deut.11.json.gz",
+      "bytes": 1170252,
+      "sha256": "9d7f16636f07db83e2384ba31b9f44fec51d295d26b023bd09eadcfb2cffd7fb"
+    },
+    {
+      "file": "chapters/Deut.12.json.gz",
+      "bytes": 1252294,
+      "sha256": "dd53fabc8f2d04fcc3a5aad8ddfe4679e694849f68797d8e2837ecbdac303a19"
+    },
+    {
+      "file": "chapters/Deut.13.json.gz",
+      "bytes": 787553,
+      "sha256": "147f356793e41206bb703db7d2fc8c2a2c21e74f1550c172ca44480c859aecaf"
+    },
+    {
+      "file": "chapters/Deut.14.json.gz",
+      "bytes": 791964,
+      "sha256": "96f7699a2036981e02bbe2c34ae9083be45bbe952a6265e0daf5c7d082f5771c"
+    },
+    {
+      "file": "chapters/Deut.15.json.gz",
+      "bytes": 791761,
+      "sha256": "c66a9bd96bb615b2ab25e5cd127840ca28c72770c653519579a9114ff89dea6b"
+    },
+    {
+      "file": "chapters/Deut.16.json.gz",
+      "bytes": 757085,
+      "sha256": "433b88afe18a136e2f02d576f8c85080fa0b31abd5fccf92d31a35330fd85be4"
+    },
+    {
+      "file": "chapters/Deut.17.json.gz",
+      "bytes": 854331,
+      "sha256": "824992c37d6c9f50c4133e2e07b22257b10f71716b76edc261887ed9573f2f4e"
+    },
+    {
+      "file": "chapters/Deut.18.json.gz",
+      "bytes": 633280,
+      "sha256": "b3404ee9eaa675d0d1f43330d33aa587eaf0e7a074e13dde8e71b1dda78ea604"
+    },
+    {
+      "file": "chapters/Deut.19.json.gz",
+      "bytes": 753249,
+      "sha256": "6037885de0bffdd8b658071af7fd3518d7b8ebfa2af9cc7706d4b8bf25d22d41"
+    },
+    {
+      "file": "chapters/Deut.20.json.gz",
+      "bytes": 722009,
+      "sha256": "b16e1256f1d38c67d21ec9632c2e721fe5d6765761dd490bfe51ec970c1fe87a"
+    },
+    {
+      "file": "chapters/Deut.21.json.gz",
+      "bytes": 763826,
+      "sha256": "fa234b96ae1c346bed0abe56a4274a3c7a77cbe279e2d17106b01207f3a0a636"
+    },
+    {
+      "file": "chapters/Deut.22.json.gz",
+      "bytes": 990148,
+      "sha256": "2ca05d33432fc13ef2f20baaf8357fd977756d7feee51de74a8425ee3a3a7a69"
+    },
+    {
+      "file": "chapters/Deut.23.json.gz",
+      "bytes": 676292,
+      "sha256": "2f3c87748d1d69695c79cbfddd643446a6d60430172b989cb39fedd4bd35d351"
+    },
+    {
+      "file": "chapters/Deut.24.json.gz",
+      "bytes": 744632,
+      "sha256": "44da473391c9a8c20c0aabc566d83c68fae7ae143cbee3607c618c90106bfc3d"
+    },
+    {
+      "file": "chapters/Deut.25.json.gz",
+      "bytes": 567731,
+      "sha256": "4ee5d4a2edf596ead6ae821498853318f14f2e9cd0c2863739ef440a8f2040af"
+    },
+    {
+      "file": "chapters/Deut.26.json.gz",
+      "bytes": 750862,
+      "sha256": "41cdf811e529390db3c695928bbc280fa1fd0648e608cad6afbc6bf060ad6e10"
+    },
+    {
+      "file": "chapters/Deut.27.json.gz",
+      "bytes": 672381,
+      "sha256": "fa0da69c849668695ebdf39df61c88df7cd71eabec9bc9246ef0cd84f96e30eb"
+    },
+    {
+      "file": "chapters/Deut.28.json.gz",
+      "bytes": 2229623,
+      "sha256": "8032342913eac8b58c5652e8fc13b59422d551ef68b582ad036c4f03c70bf861"
+    },
+    {
+      "file": "chapters/Deut.29.json.gz",
+      "bytes": 991370,
+      "sha256": "8725ac70ef48d823471a7ad258ed2998c4f17019caa471600a45582e021907eb"
+    },
+    {
+      "file": "chapters/Deut.30.json.gz",
+      "bytes": 748929,
+      "sha256": "04c6dcec6a182f2f129f7c9485ce774b4f155883c89a4c7f2c20f239143e9fe5"
+    },
+    {
+      "file": "chapters/Deut.31.json.gz",
+      "bytes": 1369148,
+      "sha256": "ed532515cf47693910b79594ba22634d1e6c20937aa8f50e0a6695bc7864f94f"
+    },
+    {
+      "file": "chapters/Deut.32.json.gz",
+      "bytes": 1249699,
+      "sha256": "d2fbda886c98c77d59482bd3382b5880f50339a05baf8bc07cec625aeb348e8c"
+    },
+    {
+      "file": "chapters/Deut.33.json.gz",
+      "bytes": 691271,
+      "sha256": "2782a266187a3f91347be832d39f7a0ffd8f19f41f6e3fc98fc860baf05164ce"
+    },
+    {
+      "file": "chapters/Deut.34.json.gz",
+      "bytes": 373015,
+      "sha256": "73a1f6aa1f90cad5b9c3e96ddee8e66fbc38da9f2c6a3754969e4d184b2fe376"
+    }
+  ]
+}
