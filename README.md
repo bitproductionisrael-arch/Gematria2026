@@ -5,6 +5,7 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [הקריאה הלשונית למשולש הכוכבים: דיג׳יי 37, בלייז 59, אני הוא 73, אחד²](assets/rovgrid-dj-blaze-ani-hu-13-square-2026-11-08.svg)
 - [הסגירה החדשה: 59/61 ו־71/73 זוגות ראשוניים תאומים סביב 12, שתי דרכים אל 13²](research/rovgrid-residue-12-twin-primes-star-square-2026-11-08.md)
   - [תרשים SVG של זוגות התאומים במטריצת 4×6](assets/rovgrid-residue-12-star-twins-2026-11-08.svg)
   - [קוד בדיקה](research/rovgrid-residue-12-star-twins-verify-2026-11-08.py)
