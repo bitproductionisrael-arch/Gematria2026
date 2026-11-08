@@ -1,0 +1,137 @@
+{
+  "title": "RovGrid T31 central voice; squares/cubes 1-16; 13:31; 8x20x26",
+  "date": "2026-11-08",
+  "observation_local_time": "13:31",
+  "status": {
+    "identities": "verified",
+    "triangle_point_partition": "verified",
+    "observation_time": "user-reported",
+    "symbolism": "interpretive"
+  },
+  "triangle": {
+    "n": 16,
+    "outer_side": 31,
+    "outer_count": 496,
+    "center_inverted_side": 16,
+    "center_count": 136,
+    "corner_side": 15,
+    "corner_count_each": 120,
+    "corners": 3,
+    "identity": "T(2n-1)=T(n)+3*T(n-1)"
+  },
+  "power_sums": {
+    "up_to": 16,
+    "sum_integers": 136,
+    "sum_squares": 1496,
+    "sum_cubes": 18496,
+    "square_identity": "1496=11*136",
+    "cube_identity": "18496=136^2",
+    "squares": [
+      1,
+      4,
+      9,
+      16,
+      25,
+      36,
+      49,
+      64,
+      81,
+      100,
+      121,
+      144,
+      169,
+      196,
+      225,
+      256
+    ],
+    "cubes": [
+      1,
+      8,
+      27,
+      64,
+      125,
+      216,
+      343,
+      512,
+      729,
+      1000,
+      1331,
+      1728,
+      2197,
+      2744,
+      3375,
+      4096
+    ]
+  },
+  "suffix": {
+    "value": "496",
+    "numbers": [
+      496,
+      1496,
+      18496
+    ],
+    "differences": [
+      1000,
+      18000,
+      17000
+    ],
+    "triangular_numbers_in_set": [
+      496
+    ]
+  },
+  "times": {
+    "string": "13:31",
+    "digits_concatenated": 1331,
+    "cube_base": 11,
+    "visual_partition": "1|33|1",
+    "hebrew_labels": {
+      "אחד": 13,
+      "אל": 31,
+      "חי": 18,
+      "יהוה": 26
+    }
+  },
+  "gematria": {
+    "קול": 136,
+    "מלכות": 496,
+    "קול מלכות": 632,
+    "ישו": 316,
+    "יהוה": 26,
+    "ח": 8,
+    "יי": 20,
+    "חיי": 28,
+    "יהוה חיי": 54,
+    "רוב": 208,
+    "עמית": 520,
+    "מייק": 160
+  },
+  "cuboid": {
+    "edges": [
+      8,
+      20,
+      26
+    ],
+    "face_areas": [
+      160,
+      208,
+      520
+    ],
+    "face_sum": 888,
+    "edge_sum": 54,
+    "volume": 4160,
+    "polynomial_coefficients": [
+      1,
+      54,
+      888,
+      4160
+    ]
+  },
+  "relations": [
+    "496=136+3*120",
+    "632=2*316",
+    "2520-1024=1496",
+    "2520-888=12*136",
+    "1024-136=888",
+    "1331=11^3"
+  ]
+}
