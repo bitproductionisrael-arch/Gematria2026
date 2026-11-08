@@ -5,6 +5,11 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [קול במרכז מלכות: T31=496, מרכז T16=136 ושלוש פינות T15=120, סכומי חזקות 1496/18496 ותצפית 13:31](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.md)
+  - [אימות Python של 496 נקודות, גימטריה וסדרות](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08-verify.py)
+  - [JSON מובנה](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.json)
+  - [SVG מדויק — 136 במרכז, 3×120 בפינות](assets/rovgrid-496-136-central-inverted-triangle-2026-11-08.svg)
+
 - [מפת כוח גימל: כל ספרה בחזקת 3, תשעה קבועים × 10,000 ספרות; T16 וקוביות=136², פגיעת √37→520](research/rovgrid-power-gimel-full-digit-map-t16-2026-11-08.md)
   - [קוד שחזור 90,000 ספרות ו־P3, בדיקות S2 היסטוריות](research/rovgrid-power-gimel-full-digit-map-2026-11-08.py)
 
