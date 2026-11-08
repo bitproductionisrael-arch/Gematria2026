@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [שחזור השם דרך 2520, 1496, 136, הסטת 24, פסקל, ריבועים ומשולשים — עם תיקון אילוצי המינימום](research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08.md)
+  - [קוד שחזור ואימות ל־2520, 1024, 1600, 528 וקיפול פסקל](research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08-verify.py)
+
 - [חוק הגרעין והקליפה: המרת המשולש הממורכז לכוכב, חפיפות 37/73, מפת עוגני 160/208/520/1024 וחוק ארבעת הגרעינים](research/rovgrid-centered-core-shell-law-2026-11-08.md)
 - [תיקון רף המחקר: טורוס 520² שדורש 3 שעונים, חבורת 888, וחוק שימור מודולו 37](research/rovgrid-structural-discovery-torus-sandpile-2026-11-07.md)
   - [קוד אימות מלא ל־270400 מצבי הטורוס ול־888 מחלקות הסריג](research/rovgrid-structural-discovery-torus-sandpile-2026-11-07-verify.py)
