@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [גילוי לא־ריבועי: שתי סדרות ראשוניים אלכסוניות מקבילות 23→53→83, 29→59→89, חוק מקומי +30/+6](research/rovgrid-prime-affine-double-diagonal-23-53-83-29-59-89-2026-11-08.md)
+  - [SVG: האלכסונים על סריג 24 הראשוניים](assets/rovgrid-prime-affine-double-diagonal-30-6-2026-11-08.svg)
+  - [קוד מפקד שש הסדרות ו־12 חלונות](research/rovgrid-prime-affine-double-diagonal-verify-2026-11-08.py)
 - [מפקד כל 2,024 השלשות: 524 משולשים ישרים, משולש חדש 13+13=26, חצאי מלבן 163/169, בקרה אקראית](research/rovgrid-prime-4x6-complete-triangle-census-2026-11-08.md)
   - [SVG מלבן 37/73, שני חצאים 163/169](assets/rovgrid-prime-4x6-star-rectangle-163-169-2026-11-08.svg)
   - [SVG פיתגורס במשולש 2/37/73: 13+13=26](assets/rovgrid-prime-4x6-isosceles-13-13-26-2026-11-08.svg)
