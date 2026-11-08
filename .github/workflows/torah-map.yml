@@ -1,0 +1,47 @@
+name: RovGrid complete Torah map
+on:
+  push:
+    branches: [research/torah-map-2026-11-08]
+    paths:
+      - '.github/workflows/torah-map.yml'
+      - 'research/torah-map/*.cjs'
+      - 'research/torah-map/*.py'
+      - 'research/torah-map/viewer.html'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: rovgrid-torah-map
+  cancel-in-progress: false
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/torah-map-2026-11-08
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fetch and validate frozen source
+        run: |
+          python research/torah-map/fetch_sources.py
+          python research/torah-map/prepare_source.py
+          node research/torah-map/verify_engine.cjs
+      - name: Map every verse in canonical order
+        run: node research/torah-map/scan.cjs
+      - name: Audit coverage and calculations
+        run: |
+          node research/torah-map/verify_map.cjs
+          python research/torah-map/build_outputs.py
+      - name: Save research results on the dedicated branch
+        run: |
+          git config user.name 'RovGrid Research Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/torah-map
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: preserve complete Torah map, raw calculations and coverage audit'
+            git push origin HEAD:research/torah-map-2026-11-08
+          fi
