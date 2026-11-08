@@ -136,6 +136,19 @@ def prime_index(n):
 for p,idx in [(313,65),(677,123),(997,168)]:
     assert isprime(p) and prime_index(p)==idx
 
+# New cross-cycle identities: mathematical, not attestations of intentional ancient encoding.
+assert 24*37 == 888
+assert lcm(13,24) == 312
+assert 24*13 == 13*24 == 312
+assert 364 == 13*28
+assert 7000 == 250*28
+assert 84 == 3*28
+assert 250 == 19*13+3
+assert 294 == 98*3 == 49*6
+assert 98*37 == 3626
+assert 49*13 == 637
+assert 98*1092 == 637*(24*7) == 294*364 == 107016
+
 print("OK — 22 names, 7000/997/313, Enoch=84, names +364, 4 quarters, gates, 6/294-year cycles, 328->888.")
 for label,value in [
  ("sum regular",sum(map(regular,NAMES))),
