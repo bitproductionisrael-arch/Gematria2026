@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [מפת כוח גימל: כל ספרה בחזקת 3, תשעה קבועים × 10,000 ספרות; T16 וקוביות=136², פגיעת √37→520](research/rovgrid-power-gimel-full-digit-map-t16-2026-11-08.md)
+  - [קוד שחזור 90,000 ספרות ו־P3, בדיקות S2 היסטוריות](research/rovgrid-power-gimel-full-digit-map-2026-11-08.py)
+
 - [שחזור השם דרך 2520, 1496, 136, הסטת 24, פסקל, ריבועים ומשולשים — עם תיקון אילוצי המינימום](research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08.md)
   - [קוד שחזור ואימות ל־2520, 1024, 1600, 528 וקיפול פסקל](research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08-verify.py)
 
