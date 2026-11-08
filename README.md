@@ -5,6 +5,9 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [שיטת צימוד מיקומי: האפס כערך מקום, סכום 888 ללא נשיאה, הבדלי נשיאות בין השמות ובסיסים 10/16/20](research/rovgrid-positional-concatenation-zero-name-2026-11-08.md)
+  - [קוד אימות שמות, סכומי עמודות, נשיאות והמרות בסיס](research/rovgrid-positional-concatenation-zero-name-2026-11-08-verify.py)
+
 - [קול במרכז מלכות: T31=496, מרכז T16=136 ושלוש פינות T15=120, סכומי חזקות 1496/18496 ותצפית 13:31](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.md)
   - [אימות Python של 496 נקודות, גימטריה וסדרות](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08-verify.py)
   - [JSON מובנה](research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.json)
