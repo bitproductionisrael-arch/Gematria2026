@@ -87,6 +87,20 @@ else:
     assert digit_b(mp.pi, 79) == 2520
     print('φ/π Power-of-Bet prefix checks passed.')
 
+# New 1360 / Song of Songs 5:2 word-by-word check.
+assert sum(range(1, 17)) == 136
+assert sum(i*i for i in range(1, 17)) == 1496
+assert 136**2 == 18496  # 1496 is NOT T16 squared
+assert 1496 - 136 == 1360 == 10 * 136 == 2 * comb(17, 3)
+verse_words = ["קול", "דודי", "דופק", "פתחי", "לי"]
+word_values = [sum(hebrew[ch] for ch in word) for word in verse_words]
+assert word_values == [136, 24, 190, 498, 40]
+assert sum(word_values) == 888
+assert sum(word_values[:2]) == 160
+assert sum(word_values[2:]) == 728 == 8 * triangle(13)
+assert sum(len(word) for word in verse_words) == 17
+assert 2520 == 1024 + 1360 + 136
+
 print("GCD of face values: 8")
 print("Least perfect square >888, signed coefficients:", square_min_int)
 print("Least perfect square >888, nonnegative coefficients:", square_min_nonnegative)
