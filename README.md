@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- [לייבניץ והתרשים הסיני המקורי 1701: 64 הקסגרמות, Q6, 18 ראשוניים, מראות C(n)=63−n וביקורת הסרטון](research/rovgrid-yijing-leibniz-original-sources-2026-11-08.md)
+  - [ממחישייזר SVG: כל 64 המצבים, קווים וראשוניים](assets/rovgrid-fuxi-binary-64-primes-2026-11-08.svg)
 - [שיטת צימוד מיקומי: האפס כערך מקום, סכום 888 ללא נשיאה, הבדלי נשיאות בין השמות ובסיסים 10/16/20](research/rovgrid-positional-concatenation-zero-name-2026-11-08.md)
   - [קוד אימות שמות, סכומי עמודות, נשיאות והמרות בסיס](research/rovgrid-positional-concatenation-zero-name-2026-11-08-verify.py)
 
