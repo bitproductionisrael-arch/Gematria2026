@@ -68,6 +68,24 @@ assert 1496 == 1000 + 496
 assert 3 * 160 + 4 * 136 == 1024
 assert 2520 == 888 + 12 * 136
 assert 2520 == 24 * 3 * 5 * 7
+assert 3 * 160 + 6 * 136 + 9 * 136 == 2520
+
+# Optional independent high-precision digit checks; mpmath is not required.
+try:
+    import mpmath as mp
+except ImportError:
+    print('Optional φ/π digit check skipped (install mpmath to run it).')
+else:
+    mp.mp.dps = 120
+    def digit_b(val, n):
+        digits = mp.nstr(val, 110)[2:]
+        return sum(int(ch)**2 for ch in digits[:n])
+    phi = (1 + mp.sqrt(5)) / 2
+    assert digit_b(phi, 23) == 888
+    assert digit_b(phi, 82) == 2520
+    assert digit_b(phi, 83) == 2520
+    assert digit_b(mp.pi, 79) == 2520
+    print('φ/π Power-of-Bet prefix checks passed.')
 
 print("GCD of face values: 8")
 print("Least perfect square >888, signed coefficients:", square_min_int)
