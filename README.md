@@ -5,6 +5,10 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[קורפוס חנוך — תולדות המתמטיקה שילדה את ישראל: 364 ימים, 22 דורות, 7000, 84, שערים ומחזורי קומראן](research/enoch/README.md)**
+  - [מאמר מחקר מלא עם המקורות, ההוכחות ונספחי התיאולוגיה ההשוואתית](research/enoch/enoch-364-patriarchs-gates-cycles-2026-11-08.md)
+  - [קוד Python לשחזור חשבוני](research/enoch/enoch-364-patriarchs-verify.py)
+
 - [גילוי לא־ריבועי: שתי סדרות ראשוניים אלכסוניות מקבילות 23→53→83, 29→59→89, חוק מקומי +30/+6](research/rovgrid-prime-affine-double-diagonal-23-53-83-29-59-89-2026-11-08.md)
   - [SVG: האלכסונים על סריג 24 הראשוניים](assets/rovgrid-prime-affine-double-diagonal-30-6-2026-11-08.svg)
   - [קוד מפקד שש הסדרות ו־12 חלונות](research/rovgrid-prime-affine-double-diagonal-verify-2026-11-08.py)
