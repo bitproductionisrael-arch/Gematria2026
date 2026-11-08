@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[ספר יצירה × Kathara: חוק הסגירה 24→32→36→37→64→73, טבעות כוכב 12/24/36, והמרכז המשותף](research/rovgrid-sefer-yetzirah-kathara-24-32-36-37-64-73-2026-11-09.md)**
+  - [אימות: 64 קודים בינאריים, 12 קשתות קובייה, שתי שכבות ו־37×73=2701](research/rovgrid-sefer-yetzirah-kathara-24-32-36-37-64-73-verify-2026-11-09.py)
 - **[מחקר עומק Kathara: איזון 26–32–37, ארבע שכבות 6+5, שתי גרסאות גרף, 90° ו־12×24=288](research/rovgrid-kathara-deep-structural-proof-audit-2026-11-09.md)**
   - [קוד אימות משחזר לגרפים ולמשוואות](research/rovgrid-kathara-deep-structural-verify-2026-11-09.py)
 - [אטלס חזותי: 49 עמודי Kathara / Merkaba / Ecka–Veca / Lotus, כולל 24+20=44, 12/15 ו־45°](research/kathara-merkaba-49-page-rovgrid-atlas-2026-11-08.md)
