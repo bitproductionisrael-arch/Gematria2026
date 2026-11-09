@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="795" viewBox="0 0 1600 795">
+<rect width="1600" height="795" rx="32" fill="#08111d"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" text-anchor="middle">
+<text x="800" y="76" font-size="54" fill="#f1f6fc" font-weight="700">37 × n!</text>
+<text x="800" y="117" font-size="25" fill="#a9c0d4">Factorial ladder | RovGrid | 09.11.2026</text>
+</g>
+<rect x="44" y="153" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="222" y="203" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 1!</text>
+<text x="222" y="266" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">37</text><rect x="429" y="153" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="607" y="203" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 2!</text>
+<text x="607" y="266" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">74</text><rect x="814" y="153" width="357" height="161" rx="19" fill="#143f31" stroke="#49da97" stroke-width="2"/>
+<text x="992" y="203" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 3!</text>
+<text x="992" y="266" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">222</text><rect x="1199" y="153" width="357" height="161" rx="19" fill="#173752" stroke="#59afff" stroke-width="2"/>
+<text x="1377" y="203" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 4!</text>
+<text x="1377" y="266" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">888</text><rect x="44" y="344" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="222" y="394" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 5!</text>
+<text x="222" y="457" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">4,440</text><rect x="429" y="344" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="607" y="394" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 6!</text>
+<text x="607" y="457" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">26,640</text><rect x="814" y="344" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="992" y="394" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 7!</text>
+<text x="992" y="457" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="50" font-weight="700" fill="#f4f9ff">186,480</text><rect x="1199" y="344" width="357" height="161" rx="19" fill="#1a2838" stroke="#39516b" stroke-width="2"/>
+<text x="1377" y="394" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="29" fill="#aec2d6">37 × 8!</text>
+<text x="1377" y="457" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="39" font-weight="700" fill="#f4f9ff">1,491,840</text>
+<path d="M 44 563 H 1556" stroke="#45617c" stroke-width="2"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" text-anchor="middle">
+<text x="800" y="610" fill="#ecf4fb" font-size="30" font-weight="700">Consecutive differences</text>
+<text x="800" y="658" fill="#4ade9a" font-size="29">888 − 222 = 666 = 3 × 222</text>
+<text x="800" y="705" fill="#78baff" font-size="29">4,440 − 888 = 3,552 = 222 × 4²</text>
+<text x="800" y="752" fill="#78baff" font-size="29">26,640 − 4,440 = 22,200 = 222 × 10²</text>
+</g></svg>
