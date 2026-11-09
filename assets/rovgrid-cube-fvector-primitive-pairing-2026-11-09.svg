@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="RovGrid: cubic f-vector 8,12,6 produces dimensions 4,10,13 and 8,20,26">
+<rect width="1600" height="900" fill="#08101a"/>
+<rect x="24" y="24" width="1552" height="852" rx="32" fill="#0d1724" stroke="#344354" stroke-width="2"/>
+<g font-family="Arial,DejaVu Sans,sans-serif" text-anchor="middle">
+<text x="800" y="83" fill="#f9fbff" font-size="49" font-weight="700">CUBE → ROVGRID</text>
+<text x="800" y="124" fill="#aebed2" font-size="25">V = 8 vertices  ·  E = 12 edges  ·  F = 6 faces</text>
+<rect x="360" y="155" width="880" height="94" rx="19" fill="#233047" stroke="#758aa4"/>
+<text x="800" y="207" fill="#fff" font-size="42" font-weight="700">8  +  12  +  6  =  26</text>
+<text x="800" y="239" fill="#bbd1e8" font-size="18">26 boundary elements + 1 solid = 27 = 3³</text>
+<path d="M 800 249 V 284 M 800 284 H 410 V 312 M 800 284 H 1190 V 312" stroke="#7b95b3" stroke-width="4" fill="none"/>
+<rect x="70" y="315" width="695" height="409" rx="26" fill="#12342c" stroke="#33c891" stroke-width="3"/>
+<rect x="835" y="315" width="695" height="409" rx="26" fill="#142a44" stroke="#5aabef" stroke-width="3"/>
+<text x="420" y="367" fill="#74e9b7" font-size="26" font-weight="700">ANTIPODAL PAIRS</text>
+<text x="1182" y="367" fill="#91ceff" font-size="26" font-weight="700">ALL BOUNDARY ELEMENTS</text>
+<text x="420" y="412" fill="#e4f8ee" font-size="26">8/2 = 4  ·  12/2 = 6  ·  6/2 = 3</text>
+<text x="1182" y="412" fill="#e4f1ff" font-size="26">V = 8  ·  V+E = 20  ·  V+E+F = 26</text>
+<text x="420" y="490" fill="#5be5a8" font-size="63" font-weight="700">4  ·  10  ·  13</text>
+<text x="1182" y="490" fill="#6fc2ff" font-size="63" font-weight="700">8  ·  20  ·  26</text>
+<line x1="140" x2="695" y1="518" y2="518" stroke="#38695c" stroke-width="2"/>
+<line x1="905" x2="1460" y1="518" y2="518" stroke="#416585" stroke-width="2"/>
+<text x="420" y="580" fill="#fff" font-size="36">4×10 + 4×13 + 10×13</text>
+<text x="1182" y="580" fill="#fff" font-size="36">8×20 + 8×26 + 20×26</text>
+<text x="420" y="666" fill="#5be5a8" font-size="87" font-weight="700">222</text>
+<text x="1182" y="666" fill="#6fc2ff" font-size="87" font-weight="700">888</text>
+<rect x="175" y="747" width="1250" height="92" rx="22" fill="#1d2938" stroke="#607588"/>
+<text x="800" y="796" fill="#f6f8fc" font-size="42" font-weight="700">37 = 4³ − 3³   |   222 = 6×37   |   888 = 24×37</text>
+<text x="800" y="824" fill="#aebed2" font-size="17">Faces 6  ·  Edges 12  ·  Vertices 8  ·  Proper cube rotations 24</text>
+</g>
+</svg>
