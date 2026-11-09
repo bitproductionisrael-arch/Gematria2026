@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Triple constructive closure 14, 222, 666 and 888 in RovGrid">
+<rect width="1600" height="900" rx="34" fill="#08111d"/>
+<g font-family="Arial,DejaVu Sans,sans-serif" text-anchor="middle">
+<text x="800" y="75" font-size="49" fill="#f4f8ff" font-weight="bold" direction="rtl">משפט הסגירה המשולשת</text>
+<text x="800" y="133" font-size="44" fill="#55e9a7" font-weight="bold">4 + 10 = 222 − 208 = 7 + 7 = 14</text>
+</g>
+<g font-family="Arial,DejaVu Sans,sans-serif" text-anchor="middle">
+<rect x="35" y="179" width="490" height="264" rx="22" fill="#122c3e" stroke="#4ca6f6" stroke-width="2"/>
+<rect x="555" y="179" width="490" height="264" rx="22" fill="#162b36" stroke="#59c6c5" stroke-width="2"/>
+<rect x="1075" y="179" width="490" height="264" rx="22" fill="#143125" stroke="#52de93" stroke-width="2"/>
+<text x="280" y="226" font-size="26" fill="#bde0ff" direction="rtl">קובייה: צלעות מקור</text>
+<text x="800" y="226" font-size="26" fill="#a4ece7" direction="rtl">פולינום פחות פאה</text>
+<text x="1320" y="226" font-size="26" fill="#aaf2c8" direction="rtl">צמצום השמות</text>
+<text x="280" y="305" font-size="54" fill="#fff" font-weight="bold">4 + 10</text>
+<text x="800" y="305" font-size="54" fill="#fff" font-weight="bold">222 − 208</text>
+<text x="1320" y="305" font-size="54" fill="#fff" font-weight="bold">7 + 7</text>
+<text x="280" y="388" font-size="70" fill="#71bfff" font-weight="bold">14</text>
+<text x="800" y="388" font-size="70" fill="#7edfe0" font-weight="bold">14</text>
+<text x="1320" y="388" font-size="70" fill="#65e4a2" font-weight="bold">14</text>
+<rect x="36" y="465" width="1528" height="118" rx="20" fill="#203048" stroke="#405971"/>
+<text x="800" y="505" font-size="24" fill="#c5d2e1" direction="rtl">השלמת צלע שלישית מתוך תנאי סגירה</text>
+<text x="800" y="553" font-size="40" fill="#fff" font-weight="bold">40 + 14c − 16c = 14  →  c = 13</text>
+<rect x="35" y="608" width="750" height="203" rx="22" fill="#1d2736" stroke="#537ca3"/>
+<rect x="815" y="608" width="750" height="203" rx="22" fill="#203629" stroke="#62c295"/>
+<text x="410" y="655" font-size="26" fill="#bfdbef" direction="rtl">מה שנגרע בצמצום</text>
+<text x="1190" y="655" font-size="26" fill="#c1e9d0" direction="rtl">מה שנשאר ללא שינוי</text>
+<text x="410" y="719" font-size="49" fill="#f6f9fd" font-weight="bold">513 + 153 = 666</text>
+<text x="1190" y="719" font-size="49" fill="#f6f9fd" font-weight="bold">7 + 7 + 208 = 222</text>
+<text x="410" y="774" font-size="26" fill="#bfd7ed">520−7=513 | 160−7=153</text>
+<text x="1190" y="774" font-size="26" fill="#b8e8ce">14 = David | 208 = Rov</text>
+<text x="800" y="863" font-size="47" fill="#65e4a2" font-weight="bold">666 + 222 = 888 = 37 × 4!</text>
+</g>
+</svg>
