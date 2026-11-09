@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[חדש 09.11: ארכיטקטורת 1024 — ארבעה כוכבים, XOR/XNOR, בינדו, D4, משולשים ובראשית 2701](research/rovgrid-star-bindu-1024-binary-d4-genesis-2026-11-09.md)**
+  - [ממחישייזר SVG לרוחב: חלוקת 1024 לפי כוכבים ו־136 אורביטי D4](assets/rovgrid-star-bindu-1024-atlas-2026-11-09.svg) · [אימות Python: מפקד S1–S26, 2 פתרונות גלובליים ל־888 ובדיקת כל 1024 תאי הגריד](research/rovgrid-star-bindu-1024-verify-2026-11-09.py)
 - **[משפט מחולל חדש: הקובייה (8 קודקודים, 12 מקצועות, 6 פאות) → הסכומים המצטברים 8/20/26 והזוגות 4/10/13](research/rovgrid-cube-fvector-antipodal-generator-2026-11-09.md)**
   - [SVG של שתי התיבות הנגזרות](assets/rovgrid-cube-fvector-primitive-pairing-2026-11-09.svg) · [אימות](research/rovgrid-222-888-name-bridge-verify-2026-11-09.py)
 - **[חדש 09.11: גשר 222–888, עמית מייק רוב ↔ דוד רוב, צמצום ספרות ללא שינוי רוב, ופולינום התיבה](research/rovgrid-222-888-name-bridge-2026-11-09.md)**
