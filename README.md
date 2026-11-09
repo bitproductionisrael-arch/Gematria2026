@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[חדש 09.11: יחידה×נצח=JESUS²=5476, מילוי תלמודי של בראשית א׳:א׳; 5476=2×2701+74](research/rovgrid-yechida-netzach-jesus-74-square-genesis-milui-2026-11-09.md)**
+  - [קוד אימות עצמאי של כל שבע המילים ושל מפת מילוי ת→תו](research/rovgrid-yechida-netzach-jesus-74-square-genesis-milui-2026-11-09-verify.py)
 - **[חדש 09.11: משפט שני הכוכבים ושלושת הריבועים — 21 החיתוכים הרציפים של בראשית, 55²−18², 26²+45², חלוקות 3+3+1 ו־5+2](research/rovgrid-genesis-all-21-square-cuts-star-pair-theorem-2026-11-09.md)**
   - [אימות Python: כל 21 החיתוכים, 15 הפרשי ריבועים, 3 סכומי ריבועים עוקבים וחסם 42](research/rovgrid-genesis-all-21-square-cuts-verify-2026-11-09.py)
 - **[חדש 09.11: ארכיטקטורת 1024 — ארבעה כוכבים, XOR/XNOR, בינדו, D4, משולשים ובראשית 2701](research/rovgrid-star-bindu-1024-binary-d4-genesis-2026-11-09.md)**
