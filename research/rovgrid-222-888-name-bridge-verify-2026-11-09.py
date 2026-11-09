@@ -58,3 +58,21 @@ for n in range(1,15):
     assert 37*factorial(n+1)-37*factorial(n)==37*n*factorial(n)
 assert 37*factorial(5)!=222*3**2
 print('PASS: 37*n! ladder, differences, primitive edge 4/10 hits and 13 miss')
+
+
+# Triple David closure and unique c under an explicit selected constraint.
+a,b=4,10
+def quadratic_coeff(c): return a*b+(a+b)*c
+def scaled_rov_face(c): return (2*a)*(2*c)
+solutions=[c for c in range(-1000,1001) if quadratic_coeff(c)-scaled_rov_face(c)==a+b]
+assert solutions == [13]  # uniqueness among integers in range; exact linear equation proves uniqueness in R.
+assert quadratic_coeff(13)==222 and scaled_rov_face(13)==208
+assert a+b == quadratic_coeff(13)-scaled_rov_face(13) == digit_sum(520)+digit_sum(160) == heb('דוד') ==14
+lost1,lost2=520-digit_sum(520),160-digit_sum(160)
+assert (lost1,lost2)==(513,153)
+assert lost1+lost2==666
+assert sorted(str(lost1))==sorted(str(lost2))
+assert all(int(x)+int(y)<10 for x,y in zip(str(lost1),str(lost2)))
+assert (lost1+lost2)+(digit_sum(520)+digit_sum(160)+208)==888
+assert 666==9*74==37*(factorial(4)-factorial(3))==poly_coeff(2)[1]-poly_coeff(1)[1]
+print('PASS: three David pathways, unique third edge, no-carry positional 513/153 bridge')
