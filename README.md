@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[חדש 09.11: גשר 222–888, עמית מייק רוב ↔ דוד רוב, צמצום ספרות ללא שינוי רוב, ופולינום התיבה](research/rovgrid-222-888-name-bridge-2026-11-09.md)**
+  - [ממחישייזר לרוחב, SVG](assets/rovgrid-222-888-name-bridge-landscape-2026-11-09.svg) · [קוד אימות](research/rovgrid-222-888-name-bridge-verify-2026-11-09.py)
 - **[מחקר שמות משפחה: אליהו עינבר → אליהו עינבר רוב → עמית מייק רוב, שלוש פאות תיבת 16×24×37](research/rovgrid-parent-child-three-faces-16-24-37-2026-11-09.md)**
   - [קוד אימות: גימטריות, אותיות משותפות, בדיקת 8 איותים ו־3 ריבועים מושלמים](research/rovgrid-parent-child-three-faces-16-24-37-verify-2026-11-09.py)
 - **[ספר יצירה × Kathara: חוק הסגירה 24→32→36→37→64→73, טבעות כוכב 12/24/36, והמרכז המשותף](research/rovgrid-sefer-yetzirah-kathara-24-32-36-37-64-73-2026-11-09.md)**
