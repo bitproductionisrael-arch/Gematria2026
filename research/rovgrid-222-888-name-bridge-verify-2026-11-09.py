@@ -43,3 +43,18 @@ assert V*3 == E*2 == F*4 == 24
 assert (V-E+F)*shell == V*shell-E*shell+F*shell ==74
 assert (V+F)*shell+2==520
 print('PASS: cube f-vector, antipodal pairs, 1/7/19/37 cube shell, name bridges')
+
+
+# Factorial ladder extension (Nov 09): 37 × n!; consecutive deltas.
+from math import factorial, comb
+expected=[37,74,222,888,4440,26640,186480,1491840,13426560,134265600]
+assert [37*factorial(n) for n in range(1,11)]==expected
+assert 37*(factorial(4)-factorial(3))==666
+assert 37*(factorial(5)-factorial(4))==222*(4**2)
+assert 37*(factorial(6)-factorial(5))==222*(10**2)
+assert 37*(factorial(7)-factorial(6))==222*720!=222*(13**2)
+assert 37*factorial(7)==24*comb(37,3)
+for n in range(1,15):
+    assert 37*factorial(n+1)-37*factorial(n)==37*n*factorial(n)
+assert 37*factorial(5)!=222*3**2
+print('PASS: 37*n! ladder, differences, primitive edge 4/10 hits and 13 miss')
