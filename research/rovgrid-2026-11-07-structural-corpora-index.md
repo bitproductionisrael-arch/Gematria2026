@@ -30,3 +30,8 @@
 - [SVG ממחישייזר 16:9](../assets/rovgrid-222-888-name-bridge-landscape-2026-11-09.svg)
 - [בדיקות Python בלתי תלויות](rovgrid-222-888-name-bridge-verify-2026-11-09.py)
 - בלי שינוי ב־calculator.html, corpus-data.json או קובצי אתר; כל גרסאות העבר נשמרו.
+
+
+## נגזרת פאות הקובייה והשוואת מבנים — 09.11.2026
+- [משפט: C=(8,20,26) מצטבר מן (8,12,6), וזוגות נגדיים נותנים (4,10,13)](rovgrid-cube-fvector-antipodal-generator-2026-11-09.md).
+- [איור SVG וקטורי](../assets/rovgrid-cube-fvector-primitive-pairing-2026-11-09.svg) · [בדיקת חישובים](rovgrid-222-888-name-bridge-verify-2026-11-09.py).
