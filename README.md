@@ -123,3 +123,6 @@ Repository initialized for the Gematria HTML app.
 - [קוד בדיקה לצמצום מילים סופיות, ערכי אותיות ומילות בראשית](research/rovgrid-word-reduced-finals-genesis-32-2026-11-08-verify.py)
 
 מסמכי המחקר נשמרים כנוסחים היסטוריים. תיקונים וגילויים נוספים מתועדים בנספחים חדשים, עם הפניות מהאינדקס, במקום למחוק תוצאות קודמות.
+
+
+- [תוספת לסולם הפקטוריאלים 37×n!: 37, 74, 222, 888, 4440, 26640; הפרשים 666, 3552, 22200](research/rovgrid-222-888-name-bridge-2026-11-09.md) · [SVG לרוחב](assets/rovgrid-37-factorial-ladder-2026-11-09.svg)
