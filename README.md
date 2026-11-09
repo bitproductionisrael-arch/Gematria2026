@@ -5,6 +5,8 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
+- **[משפט מחולל חדש: הקובייה (8 קודקודים, 12 מקצועות, 6 פאות) → הסכומים המצטברים 8/20/26 והזוגות 4/10/13](research/rovgrid-cube-fvector-antipodal-generator-2026-11-09.md)**
+  - [SVG של שתי התיבות הנגזרות](assets/rovgrid-cube-fvector-primitive-pairing-2026-11-09.svg) · [אימות](research/rovgrid-222-888-name-bridge-verify-2026-11-09.py)
 - **[חדש 09.11: גשר 222–888, עמית מייק רוב ↔ דוד רוב, צמצום ספרות ללא שינוי רוב, ופולינום התיבה](research/rovgrid-222-888-name-bridge-2026-11-09.md)**
   - [ממחישייזר לרוחב, SVG](assets/rovgrid-222-888-name-bridge-landscape-2026-11-09.svg) · [קוד אימות](research/rovgrid-222-888-name-bridge-verify-2026-11-09.py)
 - **[מחקר שמות משפחה: אליהו עינבר → אליהו עינבר רוב → עמית מייק רוב, שלוש פאות תיבת 16×24×37](research/rovgrid-parent-child-three-faces-16-24-37-2026-11-09.md)**
