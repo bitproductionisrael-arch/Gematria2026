@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<title>2026 Greek Ordinal · RovGrid Calibration Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0f14;--card:#111923;--card2:#0e151e;--line:#293849;--fg:#edf4fc;--muted:#9aaabc;--blue:#5eb6ff;--teal:#62d6cc;--gold:#eac476;--red:#fda8a8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,Arial,sans-serif;color:var(--fg);line-height:1.5}
+main{max-width:1200px;margin:auto;padding:16px 14px 50px}h1{font-size:clamp(24px,4vw,36px);margin:4px 0}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:0 0 9px}p{margin:6px 0 12px}
+.muted,small{color:var(--muted)}.micro{font-size:12px}.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--teal);font-weight:800;direction:ltr;text-align:right}
+.card{padding:17px;border-radius:17px;background:var(--card);border:1px solid var(--line);min-width:0}.stack{display:grid;gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+button,input,select,textarea{color:var(--fg);font:inherit;border-radius:10px;border:1px solid #35485b;background:var(--card2)}
+button{cursor:pointer;padding:10px 13px;font-weight:650}button:hover{border-color:var(--blue)}button:disabled{opacity:.45;cursor:not-allowed}
+button.primary{background:#03529d;border-color:#2575be}button.active{background:#183e57;border-color:var(--teal)}
+button.smol{padding:5px 9px;font-size:12px}input,select,textarea{padding:9px 10px;min-width:0}
+textarea{width:100%;min-height:105px;resize:vertical;direction:ltr;text-align:left}
+input[type="checkbox"]{accent-color:#5eb6ff;width:18px;height:18px}
+input[type="text"],input[type="number"]{width:100%}label{font-size:13px;font-weight:700}
+.flex{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.space{justify-content:space-between}
+.controls{display:grid;grid-template-columns:1.6fr 1fr auto;gap:8px;align-items:end}
+.big{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.1;direction:ltr}
+.value{font-variant-numeric:tabular-nums;color:var(--blue)}.key{font-size:clamp(22px,4vw,31px);letter-spacing:.08em;direction:ltr;text-align:center;font-weight:900}
+.scoregrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.scorebox{border:1px solid #2c4257;border-radius:13px;background:var(--card2);padding:11px;text-align:center;min-width:0}
+.scorebox b{display:block;font-size:26px;color:var(--blue);font-variant-numeric:tabular-nums}.scorebox span{font-size:11px;color:var(--muted)}
+.ok{color:var(--teal)!important}.bad{color:var(--red)!important}.warn{color:var(--gold)!important}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;white-space:nowrap;text-align:center}
+td,th{padding:9px 7px;border-bottom:1px solid #293849}th{color:var(--muted);font-size:12px;background:#0d1520}tr:last-child td{border-bottom:0}
+th:first-child,td:first-child{text-align:right}.greek{font-size:21px;font-weight:850}td select{padding:5px 8px;width:76px;color:var(--blue);font-weight:850}
+td select:disabled{opacity:.5}.test-row{display:grid;grid-template-columns:minmax(0,1.1fr) 94px repeat(4,minmax(65px,.5fr)) auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #2b3846}
+.test-row:last-child{border-bottom:0}.test-row .num{text-align:center;font-weight:800;font-variant-numeric:tabular-nums}.test-row .name{direction:ltr;text-align:right;word-break:break-word;font-size:18px;font-weight:760}
+.testrowhead{color:var(--muted);font-size:11px;font-weight:750}.test-row .remove{padding:3px 8px;color:var(--red)}
+.status{border:1px solid #395369;border-radius:12px;padding:10px 12px;background:#10212c;font-size:13px;min-height:42px}
+.note{border-right:3px solid var(--teal);padding:9px 13px;background:#0d1c24;border-radius:8px;font-size:13px}
+footer{font-size:12px;color:var(--muted);margin-top:20px}
+@media(max-width:760px){main{padding:12px 9px 35px}.card{padding:13px}.controls{grid-template-columns:1fr 1fr}.controls button{grid-column:1/-1}.test-row{grid-template-columns:minmax(0,1fr) 66px 60px 60px;gap:4px;font-size:12px}.test-row>*:nth-child(5),.test-row>*:nth-child(6){display:none}.test-row .name{font-size:15px}.test-row .remove{grid-column:auto}.scorebox b{font-size:20px}}
+</style>
+</head>
+<body>
+<main class="stack">
+<header>
+<div class="eyebrow">ROVGRID · GEMATRIA2026 · 2026 GREEK ORDINAL</div>
+<h1>מנוע כיול יווני אחד</h1>
+<p class="muted">מיפוי גלובלי אחד לכל המילים. שינוי אות מחליף את ערכה עם אות אחרת, כך שכל 27 הערכים נשארים ייחודיים.</p>
+</header>
+
+<section class="card stack">
+<div class="flex space">
+<h2>נקודת מוצא</h2>
+<div class="flex">
+<button data-preset="ancient">סדרית עתיקה</button>
+<button data-preset="modern">סדרית מודרנית</button>
+<button data-preset="2026" class="primary">2026 Greek Ordinal</button>
+</div>
+</div>
+<div class="key">Α Ε Η Ι Ο Υ Ω</div>
+<div class="scoregrid">
+<div class="scorebox"><span>ΗΙΟΩ</span><b id="score61">61</b><span>יעד: 61 · אני / עמית סדרי</span></div>
+<div class="scorebox"><span>ΑΕΥ</span><b id="score26">26</b><span>יעד: 26 · יהוה</span></div>
+<div class="scorebox"><span>ΑΕΗΙΟΥΩ</span><b id="scoreAll">87</b><span>סכום שבע התנועות</span></div>
+</div>
+<div id="status" class="status" role="status">מיפוי פתיחה: העתיק, עם Υ ↔ Σ ו־Ω ↔ ϡ.</div>
+<div class="flex space">
+<label class="flex"><input id="lock" type="checkbox" checked> נעילת שני עוגני 61 ו־26 בעת כיול</label>
+<span id="diff" class="micro muted"></span>
+</div>
+</section>
+
+<div class="grid">
+<section class="card stack">
+<h2>בדיקת מילים בזמן אמת</h2>
+<div class="controls">
+<div><label for="phrase">מילה או צירוף ביוונית</label><input id="phrase" type="text" value="ΗΙΟΩ" autocomplete="off"></div>
+<div><label for="target">ערך יעד (לא חובה)</label><input id="target" type="number" min="0" step="1" value="61"></div>
+<button id="add" class="primary">הוסף לבדיקה</button>
+</div>
+<div class="note">כל המילים מחושבות מאותו מילון ערכים. אי אפשר להגדיר חריגה מקומית למילה מסוימת.</div>
+<div class="flex">
+<button id="tune" class="primary">כייל לכל היעדים</button>
+<button id="reset">אפס להגדרת 2026</button>
+<button id="undo">בטל שינוי</button>
+</div>
+<div id="tuneStatus" class="micro muted">הכיול מחפש מיפוי משותף לכל המילים עם יעדים. הוא אינו מבטיח שכל יעד ניתן להשגה.</div>
+</section>
+<section class="card stack">
+<h2>שמירה ושחזור</h2>
+<div class="flex">
+<button id="save">שמור במכשיר</button>
+<button id="export">ייצא JSON</button>
+<button id="import">ייבא JSON</button>
+</div>
+<textarea id="json" aria-label="נתוני תצורת המיפוי" placeholder="כאן מופיעים נתוני המיפוי לייצוא או לייבוא"></textarea>
+<p class="micro muted">שמירה במכשיר משתמשת באחסון הדפדפן. יצוא JSON מתעד גם את סדר האותיות ואת רשימת הבדיקות, כך שניתן לשחזר את התוצאה.</p>
+</section>
+</div>
+
+<section class="card stack">
+<div class="flex space">
+<h2>כל 27 האותיות · ערך אחד לכל אות</h2>
+<div class="micro muted">בחירת ערך חדש מחליפה ערכים בין שתי אותיות, ולא יוצרת כפילות.</div>
+</div>
+<div class="tablewrap">
+<table>
+<thead><tr><th>אות</th><th>עתיק 27</th><th>מודרני 24*</th><th>2026 · ניתן לשינוי</th><th>הפרש מהעתיק</th></tr></thead>
+<tbody id="alphabet"></tbody>
+</table>
+</div>
+<p class="micro muted">* לשלושת הסימנים ϝ, ϙ ו־ϡ שאינם באלפבית המודרני הוקצו לצורכי השוואה מקומות 25–27. אין זה מניין מודרני היסטורי.</p>
+</section>
+
+<section class="card stack">
+<div class="flex space"><h2>בדיקת כל המילים מול כל המיפויים</h2><span class="micro muted">יעד ריק = תצפית בלבד</span></div>
+<div class="tablewrap" style="padding:5px 10px">
+<div class="test-row testrowhead"><div>ביטוי</div><div>יעד</div><div>עתיק</div><div>מודרני</div><div>2026</div><div>איזופספיה</div><div></div></div>
+<div id="tests"></div>
+</div>
+<div id="quality" class="status"></div>
+</section>
+<footer>
+2026 Greek Ordinal הוא ניסוי מחקרי בן 27 ערכים: סדרית עתיקה, סדרית מודרנית ומיפוי 2026 מוצגים כמערכות נבדלות. הזזה של אות משנה את כל המילים בעת ובעונה אחת. התאמה מספרית אינה מלמדת לבדה על קשר היסטורי או על הסתברותה.
+</footer>
+</main>
+<script>
+(function(){
+'use strict';
+const letters=Array.from('αβγδεϝζηθικλμνξοπϙρστυφχψωϡ');
+const modern=Array.from('αβγδεζηθικλμνξοπρστυφχψω');
+const ancient=Object.fromEntries(letters.map((x,i)=>[x,i+1]));
+const modernMap=Object.fromEntries(modern.map((x,i)=>[x,i+1]));
+modernMap['ϝ']=25;modernMap['ϙ']=26;modernMap['ϡ']=27;
+const orig2026=Object.assign({},ancient);
+function swap(map,a,b){const v=map[a];map[a]=map[b];map[b]=v;}
+swap(orig2026,'υ','σ');swap(orig2026,'ω','ϡ');
+const isopsephy=Object.fromEntries(letters.map((x,i)=>[x,i<9?i+1:i<18?(i-8)*10:(i-17)*100]));
+const defaults=[
+ {phrase:'ΗΙΟΩ',target:61,anchor:true},
+ {phrase:'ΑΕΥ',target:26,anchor:true},
+ {phrase:'ΑΕΗΙΟΥΩ',target:null},
+ {phrase:'ΑΩ',target:null},
+ {phrase:'ΙΗΣΟΥΣ',target:null}
+];
+let map=Object.assign({},orig2026),tests=JSON.parse(JSON.stringify(defaults)),history=[],busy=false;
+const $=id=>document.getElementById(id);
+function norm(s){return Array.from(String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()).map(x=>x==='ς'?'σ':x==='ϛ'?'ϝ':x==='ϟ'?'ϙ':x).filter(x=>letters.includes(x));}
+function sum(s,m){return norm(s).reduce((a,x)=>a+(m[x]||0),0);}
+function labelError(s,target){return target===null?'':sum(s,map)===target?' ✓':' Δ'+(sum(s,map)-target);}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function validMap(m){return !!m&&letters.every(x=>Number.isInteger(m[x])&&m[x]>=1&&m[x]<=27)&&new Set(letters.map(x=>m[x])).size===27;}
+function locked(m){return sum('ΗΙΟΩ',m)===61&&sum('ΑΕΥ',m)===26;}
+function backup(){history.push(JSON.stringify({map:map,tests:tests}));if(history.length>80)history.shift();}
+function render(){
+ const s61=sum('ΗΙΟΩ',map),s26=sum('ΑΕΥ',map),sall=sum('ΑΕΗΙΟΥΩ',map);
+ $('score61').textContent=s61;$('score26').textContent=s26;$('scoreAll').textContent=sall;
+ $('score61').className=s61===61?'ok':'bad';$('score26').className=s26===26?'ok':'bad';
+ const dif=letters.filter(c=>map[c]!==ancient[c]).length;
+ $('diff').textContent=dif+' אותיות שונות מהסדרית העתיקה';
+ $('status').textContent='ΗΙΟΩ = '+s61+' · ΑΕΥ = '+s26+' · שבע התנועות = '+sall+' · '+(locked(map)?'שני עוגני הפתיחה מתקיימים':'עוגן אחד לפחות השתנה')+'.';
+ const opts=Array.from({length:27},(_,i)=>i+1);
+ $('alphabet').innerHTML=letters.map(l=>{
+ const opt=opts.map(v=>'<option value="'+v+'"'+(map[l]===v?' selected':'')+'>'+v+'</option>').join('');
+ const d=map[l]-ancient[l];
+ return '<tr><td><span class="greek">'+esc(l.toUpperCase())+'</span></td><td>'+ancient[l]+'</td><td>'+(modern.includes(l)?modernMap[l]:'—')+'</td><td><select data-letter="'+l+'" aria-label="ערך עבור '+l.toUpperCase()+'">'+opt+'</select></td><td class="'+(d?'warn':'muted')+'">'+(d>0?'+':'')+d+'</td></tr>';
+ }).join('');
+ $('tests').innerHTML=tests.map((t,i)=>{
+ const values=[sum(t.phrase,ancient),sum(t.phrase,modernMap),sum(t.phrase,map),sum(t.phrase,isopsephy)];
+ const n=norm(t.phrase).length;
+ return '<div class="test-row"><div class="name">'+esc(t.phrase)+'</div><div class="num">'+(t.target===null?'—':t.target)+'</div>'+
+ values.map((v,j)=>'<div class="num '+(j===2&&t.target!==null?(v===t.target?'ok':'bad'):'')+'">'+v+'</div>').join('')+
+ '<button class="remove" data-delete="'+i+'" aria-label="מחק בדיקה">'+(t.anchor?'קבוע':'×')+'</button></div>'+
+ (n===0?'<div class="micro bad">לא זוהו אותיות יווניות בשורה הזאת.</div>':'');
+ }).join('');
+ const wants=tests.filter(t=>t.target!==null);
+ const exact=wants.filter(t=>sum(t.phrase,map)===t.target).length;
+ const err=wants.reduce((a,t)=>a+Math.abs(sum(t.phrase,map)-t.target),0);
+ $('quality').textContent='עמידה ביעדים: '+exact+' מתוך '+wants.length+' · סכום סטיות מוחלטות: '+err+
+ (exact===wants.length?' · כל הבדיקות עם יעדים מתאימות לאותו מיפוי גלובלי.':' · עדיין לא הושגה התאמה לכל היעדים.');
+ $('quality').className='status'+(exact===wants.length?' ok':'');
+}
+function apply(m){if(!validMap(m))throw Error('המיפוי אינו תמורה תקינה של 1–27');map=Object.assign({},m);render();}
+document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>{
+ backup();const p=b.dataset.preset;apply(p==='ancient'?ancient:p==='modern'?modernMap:orig2026);
+ $('tuneStatus').textContent='נטען המיפוי: '+b.textContent;
+});
+$('alphabet').addEventListener('change',e=>{
+ const letter=e.target.dataset.letter;if(!letter)return;
+ const val=Number(e.target.value),other=letters.find(x=>map[x]===val);
+ if(!other||letter===other){render();return;}
+ const temp=Object.assign({},map);swap(temp,letter,other);
+ if($('lock').checked&&!locked(temp)){
+  $('tuneStatus').textContent='השינוי בוטל: נעילת 61/26 פעילה. ניתן לכבות אותה לבדיקת מיפויים אחרים.';
+  render();return;
+ }
+ backup();apply(temp);$('tuneStatus').textContent='הוחלפו הערכים של '+letter.toUpperCase()+' ושל '+other.toUpperCase()+' בכל המילים.';
+});
+$('add').onclick=()=>{
+ const phrase=$('phrase').value.trim();
+ if(!norm(phrase).length){$('tuneStatus').textContent='יש להזין אותיות יווניות.';return;}
+ const target=$('target').value.trim()===''?null:Number($('target').value);
+ if(target!==null&&(!Number.isSafeInteger(target)||target<0)){$('tuneStatus').textContent='היעד חייב להיות מספר שלם ואי שלילי.';return;}
+ backup();tests.push({phrase:phrase,target:target});render();$('tuneStatus').textContent='נוספה בדיקה גלובלית: '+phrase;
+};
+$('tests').addEventListener('click',e=>{
+ const idx=e.target.dataset.delete;if(idx===undefined)return;
+ const i=Number(idx);if(tests[i].anchor){$('tuneStatus').textContent='שני עוגני הבסיס נשארים ברשימת הבדיקות; אפשר לכבות את הנעילה בעת כיול.';return;}
+ backup();tests.splice(i,1);render();
+});
+$('reset').onclick=()=>{backup();apply(orig2026);$('tuneStatus').textContent='הוחזר מיפוי 2026 ההתחלתי.';};
+$('undo').onclick=()=>{if(!history.length)return;const prior=JSON.parse(history.pop());tests=prior.tests;apply(prior.map);$('tuneStatus').textContent='בוטל השינוי האחרון.';};
+function exportData(){return JSON.stringify({version:'2026-Greek-Ordinal-v1',alphabet:letters.join(''),values:letters.map(x=>map[x]),tests:tests,anchorLock:$('lock').checked},null,2);}
+$('save').onclick=()=>{try{localStorage.setItem('rovgrid-greek-ordinal-2026',exportData());$('tuneStatus').textContent='המיפוי והבדיקות נשמרו במכשיר.';}catch(e){$('tuneStatus').textContent='השמירה המקומית לא זמינה: '+e.message;}};
+$('export').onclick=()=>{$('json').value=exportData();$('json').focus();$('json').select();$('tuneStatus').textContent='נתוני השחזור מוכנים להעתקה.';};
+$('import').onclick=()=>{
+ try{
+  const d=JSON.parse($('json').value);
+  if(d.version!=='2026-Greek-Ordinal-v1'||d.alphabet!==letters.join('')||!Array.isArray(d.values)||d.values.length!==27)throw Error('תצורה שאינה תואמת');
+  const candidate=Object.fromEntries(letters.map((x,i)=>[x,d.values[i]]));
+  if(!validMap(candidate)||!Array.isArray(d.tests)||d.tests.length>300||!d.tests.every(x=>typeof x.phrase==='string'&&x.phrase.length<=300&&(x.target===null||(Number.isSafeInteger(x.target)&&x.target>=0))))throw Error('ערכים או בדיקות אינם תקינים');
+  if(!d.tests.some(x=>x.phrase==='ΗΙΟΩ'&&x.target===61)||!d.tests.some(x=>x.phrase==='ΑΕΥ'&&x.target===26))throw Error('חסרים עוגני המחקר');
+  backup();tests=d.tests.map(x=>({phrase:x.phrase,target:x.target,anchor:x.phrase==='ΗΙΟΩ'&&x.target===61||x.phrase==='ΑΕΥ'&&x.target===26}));
+  $('lock').checked=!!d.anchorLock;apply(candidate);$('tuneStatus').textContent='הייבוא הושלם וכל המילים חושבו מחדש.';
+ }catch(e){$('tuneStatus').textContent='ייבוא נכשל: '+e.message;}
+};
+function objective(m){
+ let loss=0;
+ for(const t of tests)if(t.target!==null){
+  const d=Math.abs(sum(t.phrase,m)-t.target);
+  loss+=(t.anchor?15:1)*d;
+ }
+ loss+=0.012*letters.reduce((a,x)=>a+Math.abs(m[x]-ancient[x]),0);
+ return loss;
+}
+$('tune').onclick=async()=>{
+ if(busy)return;busy=true;$('tune').disabled=true;
+ const before=Object.assign({},map),lockedMode=$('lock').checked;
+ let best=Object.assign({},map),bestScore=objective(best);
+ const startScore=bestScore;const tries=18000;
+ $('tuneStatus').textContent='מחפש תמורה גלובלית משותפת לכל היעדים...';
+ await new Promise(r=>setTimeout(r,30));
+ let current=Object.assign({},map),curScore=objective(current);
+ for(let i=0;i<tries;i++){
+  const a=letters[(Math.random()*27)|0],b=letters[(Math.random()*27)|0];if(a===b)continue;
+  swap(current,a,b);
+  if(lockedMode&&!locked(current)){swap(current,a,b);continue;}
+  const next=objective(current);const temp=4*Math.pow(0.015,i/tries);
+  const accept=next<=curScore||Math.random()<Math.exp((curScore-next)/temp);
+  if(accept){curScore=next;if(next<bestScore-1e-9){bestScore=next;best=Object.assign({},current);}}
+  else swap(current,a,b);
+  if(i%3000===0&&i>0){$('tuneStatus').textContent='נבדקו '+i+' מתוך '+tries+' החלפות · ציון סטייה '+bestScore.toFixed(2);await new Promise(r=>setTimeout(r,0));}
+ }
+ if(bestScore<startScore-1e-9){backup();apply(best);}
+ else render();
+ const wants=tests.filter(t=>t.target!==null),hits=wants.filter(t=>sum(t.phrase,map)===t.target).length;
+ $('tuneStatus').textContent=(bestScore<startScore?'המיפוי שופר. ':'לא נמצא שיפור בסריקה הנוכחית. ')+
+ 'התאמות '+hits+'/'+wants.length+' · סטייה משוקללת '+bestScore.toFixed(2)+'. החיפוש היוריסטי אינו הוכחה שאין פתרון אחר.';
+ $('tune').disabled=false;busy=false;
+};
+try{
+ const stored=JSON.parse(localStorage.getItem('rovgrid-greek-ordinal-2026')||'null');
+ if(stored&&stored.version==='2026-Greek-Ordinal-v1'&&stored.alphabet===letters.join('')&&stored.values.length===27){
+ const m=Object.fromEntries(letters.map((x,i)=>[x,stored.values[i]]));
+ if(validMap(m)&&Array.isArray(stored.tests)&&stored.tests.length<301){
+ map=m;tests=stored.tests;$('lock').checked=!!stored.anchorLock;
+ $('tuneStatus').textContent='נטענה גרסה שמורה מהמכשיר.';
+ }
+ }
+}catch(e){}
+render();
+})();
+</script>
+</body>
+</html>
