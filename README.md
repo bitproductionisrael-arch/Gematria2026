@@ -150,3 +150,5 @@ Repository initialized for the Gematria HTML app.
 
 - **[10.11.2026 — מפקד מלא: חילוץ קול=136 מכל 1,533 פסוקי ספר בראשית](research/rovgrid-genesis-all-1533-kol-136-2026-11-10.md)**. 1,367 פתרונות ב־1–4 מילים, 1,451 בכל אורך, 82 פסוקים ללא פתרון; בקרה זהה 135/137; [CSV לכל פסוק](research/data/genesis-kol-136-2026-11-10-all-verses.csv) · [מאמת עצמאי](research/rovgrid-genesis-all-1533-kol-136-2026-11-10-verify.py).
 - **[מעבר לקוראן: קול בעברית = قول בערבית =136, ופסוק קוראן 2:136 פותח ב״قولوا״ ומשקף הכרה בנביאי המסורות](research/rovgrid-hebrew-kol-arabic-qawl-quran-2-136-2026-11-10.md)**. זהו קשר לשוני/ערכי וטקסטואלי; עדיין לא סריקה של כל הקוראן.
+
+- **[10.11.2026 — ״מאה שלשים ושש״: גימטריה 1332 = 36×37 = 2701−1369; Word Position × Small מחזיר 136; ״קדם קול״ 73/37/65](research/rovgrid-136-spelled-1332-kedem-kol-genesis-2026-11-10.md)** · [קוד אימות](research/rovgrid-136-spelled-1332-kedem-kol-genesis-2026-11-10-verify.py).
