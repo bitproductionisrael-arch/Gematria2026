@@ -141,3 +141,5 @@ Repository initialized for the Gematria HTML app.
 
 
 - **[10.11.2026 — עוגן A.M.R. / Amit M. R. / Miik. Rov: 32, 74, 111, 444, 512, 888, 1024, 136; שלושה מסלולי 136, סולם 37, 2520→2555](research/rovgrid-amit-mr-miik-444-512-888-1024-136-2026-11-10.md)** · [קוד אימות](research/rovgrid-amit-mr-miik-444-512-888-1024-136-2026-11-10-verify.py). המפות המקוריות נשמרו; אין שינוי באתר.
+
+- **[10.11.2026 — תיקון והרחבת עוגן הקיצורים: Amit M Rov=111/666 לעומת Amit M R=74/444; שער ״את אלף״ 512, ״את אלף את״ 913, ״את אלהים את״ 888, ״את אלף את אלף״ 1024](research/rovgrid-amit-m-rov-111-amr-74-aleph-elohim-2026-11-10.md)** · [קוד בדיקה](research/rovgrid-amit-m-rov-111-amr-74-aleph-elohim-2026-11-10-verify.py).
