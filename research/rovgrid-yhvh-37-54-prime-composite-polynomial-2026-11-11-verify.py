@@ -5,6 +5,7 @@ from math import isqrt
 import unicodedata
 
 H = dict(zip("אבגדהוזחטיכלמנסעפצקרשת",[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400]))
+H.update({'ך':20, 'ם':40, 'ן':50, 'ף':80, 'ץ':90})  # Hebrew final letters in standard gematria
 def hebrew(s):
     return sum(H[c] for c in s if c in H)
 def prime(n):
