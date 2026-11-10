@@ -96,3 +96,15 @@ assert reduced_finals("את אלף את אלף")==16
 assert letters("בראשית ברא אלהים את השמים ואת הארץ")==28
 
 print("PASS: name distinctions, 512 gate, 888 / 913 / 1024 ladder, all six Hebrew methods, regular milui, expanded-letter counts.")
+
+# Paired-mode invariant: 25 switches sign, total 377/2233 is conserved.
+assert regular("אלף")==111 and milui_value("אלף")==266
+assert regular("אלהים")==86 and milui_value("אלהים")==291
+assert 111-86==25 and 266-291==-25
+assert 111+266==86+291==377==13*29
+assert regular("את")+milui_value("את")==928==32*29
+assert regular("את אלף את")+milui_value("את אלף את")==2233
+assert regular("את אלהים את")+milui_value("את אלהים את")==2233
+assert 913-888==1345-1320==25
+assert 2233==77*29==7*11*29
+print("PASS: regular/milui difference sign reversal (+25 / -25) and 2233 invariant.")
