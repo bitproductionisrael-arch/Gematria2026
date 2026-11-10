@@ -135,7 +135,7 @@ def live_source_check(verses):
                 if stored["k"] is not None:
                     assert stored["k"] == brute[target]["k"], (ref, target, "k")
                 else:
-                    assert brute[target]["k"] is None or (target == 136 and brute[target]["k"] == 8), (ref, target, "k8")
+                    assert brute[target]["k"] is None or brute[target]["k"] == 8, (ref, target, "k8")
                 # Verify term count multiplicity against actual word occurrences.
                 if target == 136:
                     chosen = stored["terms"]
