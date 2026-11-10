@@ -5,7 +5,6 @@
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
-- **[חדש 10.11: 2026 Greek Ordinal — מעבדת כיול גלובלית ל־27 אותיות](greek-ordinal-2026-lab.html)** · [הגדרה מתמטית, חישובים, שתי החלפות וגבולות הכיוונון](research/rovgrid-greek-ordinal-2026-global-calibration-2026-11-10.md) · [אימות Python](research/rovgrid-greek-ordinal-2026-verify.py)
 
 - **[חדש 09.11: מילוי תלמודי שלישי של בראשית א׳:א׳ — 561=T33 אותיות, 29869=561×53+136](research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09.md)** · [קוד שחזור](research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09-verify.py)
 - **[חדש 09.11: חוק החזקות 3/4/10 — פאזות 888±136, מגדל התיבה ומכונת בראשית 55/18](research/rovgrid-higher-powers-phase-cuboid-genesis-2026-11-09.md)**
