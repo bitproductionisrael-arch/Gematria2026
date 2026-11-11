@@ -81,6 +81,43 @@ def main():
     assert 656==16*41 and 368==16*23 and 1024==16*64
     assert (gem(S(14)),888,296)==(8*148,6*148,2*148)
     assert gem(R(5),"ord")==221 and 231-221==10
+
+    # Supplemental proof: letterwise conservation and a 23-unit Atbash length defect.
+    assert gem("אה")==gem("ו")==6
+    assert gem("אה","ord")==gem("ו","ord")==6
+    assert gem("אה","atb")-gem("ו","atb")==23
+    assert (gem("אניהוא"),gem("אניהוא","ord"),gem("אניהוא","atb"))==(73,37,101)
+    assert 73==6*4*3+1 and 37==6*3*2+1
+    assert (gem("אניהואהוא"),gem("אניהואהוא","ord"),gem("אניהואהוא","atb"))==(85,49,158)
+    assert (gem("אניוהואו"),gem("אניוהואו","ord"),gem("אניוהואו","atb"))==(85,49,135)
+    assert (gem("אניוהו"),gem("אניוהו","ord"),gem("אניוהו","atb"))==(78,42,96)
+    assert (gem("אנאיהוה"),gem("אנאיהוה","ord"),gem("אנאיהוה","atb"))==(78,42,119)
+    for n in range(1,73):
+        expanded="אני"+"הואהואאני"*(n-1)
+        compressed=R(n)
+        assert len(expanded)==9*n-6
+        assert (gem(expanded),gem(expanded,"ord"))==(gem(compressed),gem(compressed,"ord"))
+        assert gem(expanded,"atb")==158*n-114
+        assert gem(expanded,"atb")-gem(compressed,"atb")==23*(n-1)
+        assert gem(expanded)-gem(expanded,"ord")==36*n
+    assert (len("אני"+"הואהואאני"*2), gem("אני"+"הואהואאני"*2,"atb"))==(21,360)
+    assert (len("אני"+"הואהואאני"*4), gem("אני"+"הואהואאני"*4,"atb"))==(39,676)
+    assert (len("אני"+"הואהואאני"*7), gem("אני"+"הואהואאני"*7,"atb"))==(66,1150)
+    triads=("והו ילי סיט עלמ מהש ללה אכא כהת הזי אלד לאו ההע "
+            "יזל מבה הרי הקמ לאו כלי לוו פהל נלכ ייי מלה חהו "
+            "נתה האא ירת שאה ריי אומ לכב ושר יחו להח כוק מנד "
+            "אני חעמ רהע ייז ההה מיכ וול ילה סאל ערי עשל מיה "
+            "והו דני החש עממ ננא נית מבה פוי נממ ייל הרח מצר "
+            "ומב יהה ענו מחי דמב מנק איע חבו ראה יבמ היי מומ").split()
+    assert len(triads)==72 and all(len(x)==3 for x in triads)
+    assert [triads[k] for k in range(0,72,12)]==["והו","יזל","נתה","אני","והו","ומב"]
+    from collections import defaultdict
+    loci=defaultdict(list)
+    for index, name in enumerate(triads,1):
+        loci[name].append(index)
+    assert {k:pos for k,pos in loci.items() if len(pos)>1}=={
+        "והו":[1,49], "לאו":[11,17], "מבה":[14,55]}
+    assert sum(range(1,74,12))==259==7*37
     print("PASS: positional 72, letterwise methods, n=1..30, 231 gates, 1024 closure, 14-tail, 128 symmetry")
 if __name__=="__main__":
     main()
