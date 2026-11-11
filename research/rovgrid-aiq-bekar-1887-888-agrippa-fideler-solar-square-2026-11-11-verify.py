@@ -60,9 +60,13 @@ print("PASS: AIQ BKR 888 -> 1887 -> 888; 6x6 positive distinct-cell 888 magic sq
 
 # Proposed symbolic Earth designation of expanded solar square:
 # "הארץ" and "צור" in regular Hebrew gematria, final ץ=90.
-assert val("הארץ") == 296
-assert val("ארץ") == 291
-assert val("צור") == 296
+# The AIQ-BKR substitution above uses extended final values (e.g. ץ=900).
+# Regular Hebrew gematria instead normalizes the final letters (ץ=90).
+FINAL_NORMAL={"ך":"כ","ם":"מ","ן":"נ","ף":"פ","ץ":"צ"}
+regular=lambda s: sum(VAL[FINAL_NORMAL.get(ch,ch)] for ch in s)
+assert regular("הארץ") == 296
+assert regular("ארץ") == 291
+assert regular("צור") == 296
 assert 296 == 8*37 and 148 == 296//2 == 4*37
 assert all(sum(new[i])+sum(new[i+1]) == 296 for i in (0,2,4))
 assert all(sum(new[i][c]+new[i][c+1] for i in range(6)) == 296 for c in (0,2,4))
