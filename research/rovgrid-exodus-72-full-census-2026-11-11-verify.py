@@ -107,5 +107,17 @@ def main():
     assert sum(o==55 and a==83 for _,_,o,a in pairs136)==5
     assert [(i,j) for i,j,o,a in pairs136 if (i,j) in anti]==[(23,37)]
     assert sorted({o for _,_,o,_ in pairs136})==[46,55,64]
+
+    # Four-name additive grid, connecting the prior 2/72 and 23/37 pairs.
+    assert [(i+1,n[i],regs[i],ords[i],atbs[i]) for i in (1,22,36,71)]==[
+        (2,'ילי',50,32,37),(23,'מלה',75,30,39),
+        (37,'אני',61,25,44),(72,'מומ',86,32,37)]
+    assert (regs[22]-regs[1])==(regs[71]-regs[36])==ords[36]==25
+    grid=[[regs[1]+regs[36],regs[1]+regs[71]],
+          [regs[22]+regs[36],regs[22]+regs[71]]]
+    assert grid==[[111,136],[136,161]]
+    assert grid[0][0]+grid[1][1]==272==2*136
+    assert sum(sum(row) for row in grid)==544==4*136
+    assert grid[1][1]-grid[0][0]==50==2*25
     print("PASS: 72 triads reconstructed from 3x72 Exodus letters; complete values, 6x12 sums, duplications, 888/1024 controls")
 if __name__=="__main__": main()
