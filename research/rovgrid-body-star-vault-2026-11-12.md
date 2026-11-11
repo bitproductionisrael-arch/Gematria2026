@@ -81,3 +81,19 @@ Final on-screen scoreboard: **3 skeletal + 2 genetic + 4 cellular + 2 named = 11
 
 Source corpus: IESOUS_The_Body_System_of_Amit_Mike_Rov.pdf (updated 12 NOVEMBER 2026), 30 pp.; research/rovgrid-anatomy-36-1-36-37-73-pell-2026-11-12.md.
 Reproducible JSON entry registry: research/rovgrid-body-star-vault-2026-11-12.json.
+
+
+## Triangle tier unlocked — 12 NOVEMBER 2026
+A **separate geometric family**, not four additional natural anatomical stars: indexed triangles T10=55, T19=190, T37=703, T73=2701. Anatomical indices: 10 metacarpals across both hands; 19 cervical+thoracic vertebrae; 37 thoracic apparatus; 73 selected axial frame. Anatomical 55 is also the count **80 axial minus 25 bones of the thoracic cage**, independently equal to T10.
+
+The ladder obeys n(next)=2n−1 and the nested central-triangle identity T(2n−1)=T(n)+3T(n−1):
+- T19 = T10 +3T9 =55+135 =190.
+- T37 = T19 +3T18 =190+513 =703.
+- T73 = T37 +3T36 =703+1998 =2701.
+
+Biblical gematria (standard): אחד=13, יחידה=37, חכמה=73. Genesis 1:1 full verse =2701=T73; its ending **ואת הארץ =703=T37**, while **בראשית ברא אלהים את השמים =1998=3×666**. Corrective note: the four-word substring **בראשית ברא אלהים את =1603, not 703**.
+
+Scoreboard: 11 previously verified star cards remain unchanged; 4 triangle **figure unlocks** now form a separate tier, giving 15 distinct visual unlock cards, **not** 15 independently found physical star shapes. Full proof and reproducible tests:
+- [Triangular anatomy / Genesis proof](research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12.md)
+- [Verifier](research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12-verify.py)
+
