@@ -2,6 +2,12 @@
 
 **[עוגן הזיכרון המרכזי של RovGrid — להתחיל כאן בכל מחקר והמשך שיחה](ROVGRID_MEMORY_ANCHOR.md)**
 
+## חדש 11.11.2026 — מחקר ברית דוד והרחבת אוצר המילים
+
+- **[ברית דוד: סריקת ששת היעדים (62 פסוקים), 41 זוגות חוצי־ספרים, 84/123/137 ומילת ״מוחלט״](research/rovgrid-david-covenant-crossverse-lexicon-2026-11-11.md)**
+  - [קוד אימות עצמאי](research/rovgrid-david-covenant-crossverse-2026-11-11-verify.py) · [ערך מילוני: מוחלט (9 שיטות)](research/rovgrid-lexicon-muchlat-2026-11-11.md)
+  - ממצאים מובילים: ״אני אהיה לו״ = ״איה חסדיך״ (118/64/28); ״אמן ואמן״ = ״עבדי אמאס״ (188/62/26); ״מי אני יהוה״=137; ״מוחלט״ באתב״ש 220/67 = ״עד עולם״ ברגילה/סדרית.
+
 Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
