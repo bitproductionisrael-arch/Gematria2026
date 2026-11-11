@@ -1,7 +1,7 @@
 {
   "name": "RovGrid Body Star Vault",
   "date": "2026-11-12",
-  "version": 2,
+  "version": 3,
   "scoring_policy": "One award for each distinct predeclared anatomical/genetic star-number set or distinct documented stellate morphology / star-named anatomical class. Nested sets may each unlock a different S-index; overlaps must be disclosed. One physical structure does not gain another star merely by receiving multiple equations, transforms or names. Star-number animation rearranges counted units; does not assert physical star geometry.",
   "formula": "S(n)=6*n*(n-1)+1",
   "centered_hexagon": "H(n)=3*n*(n-1)+1; H(4)=37; variant of B02 not a new trophy",
@@ -268,5 +268,24 @@
     ],
     "document": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12.md",
     "verification_script": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12-verify.py"
+  },
+  "full_achievement_vault": {
+    "total": 113,
+    "strict_or_derived": 82,
+    "expanded_model_conditional": 11,
+    "symbolic": 20,
+    "pending_unscored": 4,
+    "breakdown": {
+      "video": 26,
+      "skeletal": 29,
+      "molecular": 31,
+      "textual": 12,
+      "star": 11,
+      "triangle": 4
+    },
+    "note": "11 original star awards and four triangle variants are already INCLUDED in total 113; do not add them again. Repeated claims across sources are only one card per scoped mechanism. Extended 214 count is conditional on 8 hand/foot sesamoids.",
+    "markdown": "research/rovgrid-body-all-achievements-2026-11-12.md",
+    "data": "research/rovgrid-body-all-achievements-2026-11-12.json",
+    "verifier": "research/rovgrid-body-all-achievements-2026-11-12-verify.py"
   }
 }
