@@ -49,3 +49,6 @@
 [מחקר צדק, ארבעת הרבעים ו־Gray Q10](rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11.md)
 מקורות גאומטריים: https://ifsdb.github.io/ifs/menger-sponge/ ; https://math.ucr.edu/home/baez/visual_insight/20140301%20-%20Menger%20Sponge.html
 אין לשנות calculator.html, corpus-data.json או את האתר. הקשר לשמות ולמספרים מתועד כפרשנות ולא כהוכחת מודל פיזיקלי.
+
+## בקרה אלגוריתמית מחמירה: 4→3 לעומת מנגר 27→20
+[נספח בדיקה וקוד](rovgrid-four-to-three-recursion-menger-comparison-1024-243-tree-2026-11-11.md): חיתוך אוטומטי ל־4 והסרת רבע אחד מכל ריבוע בכל דור על32×32 משאיר 243 תאים לאחר5 רמות, ו־242 חיבורי שכנות מישוריים — עץ מחובר. ספוג מנגר האמיתי הוא קוביית27 המניבה20, ולא אותו כלל. הבנייה המותאמת של 136 חורים אינה כלל מנגר מקורי.
