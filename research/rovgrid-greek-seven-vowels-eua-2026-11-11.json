@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "project": "RovGrid / Gematria2026",
+  "status": "research permutation (not historical reconstruction)",
+  "order_left_to_right": [
+    "Ε",
+    "Υ",
+    "Α",
+    "Ι",
+    "Η",
+    "Ο",
+    "Ω"
+  ],
+  "previous_order": [
+    "Α",
+    "Ε",
+    "Υ",
+    "Ι",
+    "Η",
+    "Ο",
+    "Ω"
+  ],
+  "planet_order_left_to_right": [
+    "Mercury",
+    "Jupiter",
+    "Moon",
+    "Sun",
+    "Venus",
+    "Mars",
+    "Saturn"
+  ],
+  "isopsephy": {
+    "Ε": 5,
+    "Υ": 400,
+    "Α": 1,
+    "Ι": 10,
+    "Η": 8,
+    "Ο": 70,
+    "Ω": 800
+  },
+  "groups": [
+    {
+      "letters": "ΕΥΑ",
+      "value": 406,
+      "meaning": "Eve in Greek, Εὖα / Εὔα"
+    },
+    {
+      "letters": "Ι",
+      "value": 10,
+      "meaning": "center / Sun"
+    },
+    {
+      "letters": "ΗΟΩ",
+      "value": 878,
+      "meaning": "remaining triad"
+    }
+  ],
+  "identities": [
+    "406+10=416=2*208",
+    "878+10=888",
+    "406+10+878=1294",
+    "800/5=160",
+    "ΙΗΣΟΥΣ=888"
+  ],
+  "context": [
+    "Genesis 11:31: Abram and Ur of the Chaldeans",
+    "Sefer Yetzirah chapter 4: seven double Hebrew letters and seven celestial bodies",
+    "Sefer Yetzirah 6:4: Abraham and letter-combination"
+  ],
+  "interpretation": "Modern symbolic research analogy; no direct evidence Abraham used this seven-Greek-vowel mapping.",
+  "main_calculator_changed": false,
+  "corpus_data_json_changed": false
+}
