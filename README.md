@@ -12,6 +12,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- **[11.11.2026 — מנורת שבע התנועות ΕΥΑ | Ι | ΗΟΩ: פילון, NASA, אגריפה 7–5–3, ריבועי כוכבים 2080/136/666](research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11.md)** · [אימות Python](research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11-verify.py). סדר שלושת הכוכבים החופשיים נתמך פיזיקלית ומסורתית; הסדר המלא הוא מודל מחקרי, לא שחזור לוח אברהמי מוכח.
+
 - **[חדש 11.11: יהוה 26/17/54 → עמית/מיכאל/בלייז/רוב, Composite #37=54, 37 נקודות/54 משולשים והפולינום המלא](research/rovgrid-yhvh-37-54-prime-composite-polynomial-2026-11-11.md)**
   - [קוד אימות](research/rovgrid-yhvh-37-54-prime-composite-polynomial-2026-11-11-verify.py) · [ממחישייזר SVG מדויק](assets/rovgrid-37-points-54-triangles-yhvh-2026-11-11.svg)
 - **[חדש 09.11: מילוי תלמודי שלישי של בראשית א׳:א׳ — 561=T33 אותיות, 29869=561×53+136](research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09.md)** · [קוד שחזור](research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09-verify.py)
