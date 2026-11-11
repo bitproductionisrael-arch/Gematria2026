@@ -150,6 +150,33 @@ function audit(){
     standard:conventional[category][key],straight:straight[category][key]};
   }
  }
+ // Pre-defined middle third of 72 names: positions 25..48, 24 triplets =72 letters.
+ // Reversing any 72-letter source row maps [25..48] onto itself as a SET.
+ const center=states.map(s=>s.names.slice(24,48));
+ const centerValues=center.map(names=>Object.fromEntries(
+   LETTER_METHODS.map(m=>[m,sum(names.map(n=>tripletValue(n,m)))])));
+ assert(centerValues.every(a=>a.regular===3969 && a.ordinal===756 &&
+   a.atbash_ordinal===900 && a.albam_ordinal===888),"central 24-block signature");
+ assert(centerValues.every(a=>LETTER_METHODS.every(m=>a[m]===centerValues[0][m])),
+  "middle-block invariant in all 14 letter-value methods and 48 paths");
+ assert(LETTER_METHODS.filter(m=>centerValues[0][m]===888).join(",")==="albam_ordinal",
+  "ALBaM ordinal is the only exact 888 among 14 central additive methods");
+ const centralThirdBlocks=[0,24,48].map(start=>({
+  indices:[start+1,start+24],regular:sum(conventional.names.slice(start,start+24).map(n=>tripletValue(n,"regular"))),
+  albam_ordinal:sum(conventional.names.slice(start,start+24).map(n=>tripletValue(n,"albam_ordinal"))) }));
+ assert(JSON.stringify(centralThirdBlocks.map(x=>x.albam_ordinal))==="[872,888,817]",
+  "three 24-name blocks in standard reading");
+ const windows888={};
+ for(const state of states){
+  const scores=state.names.map(n=>tripletValue(n,"albam_ordinal"));
+  let total=sum(scores.slice(0,24));
+  for(let start=0;start<=48;start++){
+   if(start>0) total+=scores[start+23]-scores[start-1];
+   if(total===888) windows888[start+1]=(windows888[start+1]||0)+1;
+  }
+ }
+ assert(JSON.stringify(windows888)==='{"9":6,"14":6,"25":48,"36":6,"41":6}',
+  "all 48x49 window controls");
  const verseTotals=VERSES.map(x=>tripletValue(x,"regular"));
  const verseOrdinal=VERSES.map(x=>tripletValue(x,"ordinal"));
  const verseAtbash=VERSES.map(x=>tripletValue(x,"atbash_ordinal"));
@@ -171,6 +198,9 @@ function audit(){
   hit_counts_per_path:sampleHits,external_milui_bridge:{
    four_prefix_values:externalMilui,signature:148,six_permutations_total:888,
    interpretation:"external weighting; 888 is NOT forced by source text alone"},
+  central_24_name_blocks:centralThirdBlocks,central_25_48_signature:centerValues[0],
+  sliding_24_name_888_hits_across_48_paths:windows888,
+  center_888_albam_ordinal_invariant:true,
   path_records:states};
  return completed;
 }
