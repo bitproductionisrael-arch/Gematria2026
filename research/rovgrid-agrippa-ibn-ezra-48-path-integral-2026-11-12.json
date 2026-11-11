@@ -4405,5 +4405,68 @@
       "triples888": 7,
       "triples1024": 0
     }
-  ]
+  ],
+  "central_24_name_blocks": [
+    {
+      "indices": [
+        1,
+        24
+      ],
+      "regular": 2249,
+      "albam_ordinal": 872
+    },
+    {
+      "indices": [
+        25,
+        48
+      ],
+      "regular": 3969,
+      "albam_ordinal": 888
+    },
+    {
+      "indices": [
+        49,
+        72
+      ],
+      "regular": 2925,
+      "albam_ordinal": 817
+    }
+  ],
+  "central_25_48_signature": {
+    "regular": 3969,
+    "ordinal": 756,
+    "small": 261,
+    "zero_step": 513,
+    "atbash_regular": 5220,
+    "atbash_ordinal": 900,
+    "albam_regular": 6522,
+    "albam_ordinal": 888,
+    "avgad_regular": 4429,
+    "kidmi": 15601,
+    "perati_regular": 847133,
+    "perati_ordinal": 10394,
+    "pi_alphabet": 396,
+    "ayak_regular": 11718
+  },
+  "sliding_24_name_888_hits_across_48_paths": {
+    "9": 6,
+    "14": 6,
+    "25": 48,
+    "36": 6,
+    "41": 6
+  },
+  "central_888_invariant": {
+    "range": [
+      25,
+      48
+    ],
+    "method": "albam_ordinal",
+    "sum": 888,
+    "all_48_paths": true,
+    "proof": "reverse of any 72-character row preserves middle 24 positions as a multiset; a layer permutation preserves that same multiset",
+    "comparisons": {
+      "14_letter_maps_exact_888_count": 1,
+      "48_paths_x_49_windows": 2352
+    }
+  }
 }
