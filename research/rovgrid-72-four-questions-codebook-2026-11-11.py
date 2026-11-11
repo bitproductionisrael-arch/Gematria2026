@@ -146,6 +146,11 @@ def self_test(codebook):
     assert [sum(q[key] for q in signatures)
             for key in ("letters","regular","ordinal","atbash_ordinal")
             ] == [23,835,205,324]
+    assert 53 - 23 == signatures[2]["ordinal"] == 30
+    assert 53 + 23 == signatures[3]["ordinal"] == 76
+    assert 53**2 - 23**2 == 30 * 76 == 2280
+    assert signatures[0]["ordinal"] + signatures[1]["ordinal"] == 99
+    assert signatures[2]["ordinal"] + signatures[3]["ordinal"] == 106
     assert 23**2 == 205+324 == 529
     assert 18**2 == 324
     assert 53**2 == 2809 and 835+53 == 888
