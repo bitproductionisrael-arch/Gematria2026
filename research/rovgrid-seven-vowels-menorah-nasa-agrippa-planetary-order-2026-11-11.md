@@ -123,3 +123,6 @@ https://www.esotericarchives.com/agrippa/agripp2b.htm
 
 ## נספח סנכרון 11.11 — אי״ק בכ״ר וריבוע שמש 888
 המחזור 888→1887→888 והבנייה החדשה של ריבוע 6×6 שסכומו 888 מתועדים ב[הוכחה המלאה](rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11.md), עם [קוד אימות](rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11-verify.py). הבנייה אינה בכתבי אגריפה; ריבוע השמש המקורי אצלו נשאר בעל סך 666.
+
+## תוספת מקורית לצדק: שני שמות עבריים בשווי 136
+אגריפה עצמו מצרף לכוכב צדק `יהפיאל=136` (תבונה/Intelligence), `הסמאל=136` (רוח/Spirit), ו־`אל אב=34` באותה טבלה. זה מספק מעבר לריבוע 4×4=136 גם **מקור גימטרי עברי מפורש**. `צדק=194` ואינו שווה 136; `יופיאל=137` בכתיב חלופי. ראה [מחקר גיבוי עם ציטוט מקור](rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11.md) ו[אימות](rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11-verify.py).
