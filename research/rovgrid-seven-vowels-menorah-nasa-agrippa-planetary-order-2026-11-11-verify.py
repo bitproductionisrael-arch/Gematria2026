@@ -22,3 +22,21 @@ ascending=[p for p in permutations('ΗΟΩ') if list(map(dist.get,p))==sorted(di
 assert ascending==[('Η','Ο','Ω')]
 assert 2080==4*520==13*160==10*208
 print('PASS: Greek isopsephy, Kamea sums, 3+1+3, unique ascending tail.')
+
+
+# Fixed planetary Kamea orders: Mercury=8, Sun=6, Saturn=3.
+mercury,sun,saturn=8,6,3
+assert 8**2+3**2==73
+assert 8**2-3**2==55
+assert 8**2+3**2-6**2==37
+assert (37+73)//2==55 and 55-37==73-55==18
+assert sun*(sun*sun+1)//2==111==3*37
+assert mercury*111==888==mercury*saturn*(mercury**2+saturn**2-sun**2)
+assert 888-666==222
+from itertools import combinations
+other=[3,4,5,7,8,9]
+pairs=list(combinations(other,2))
+assert len(pairs)==15
+match=[(a,b) for a,b in pairs if a*a+b*b==73 and abs(a*a-b*b)==55 and a*a+b*b-sun*sun==37]
+assert match==[(3,8)]
+print('PASS: 37,55,73,888 solar-Mercury-Saturn identities; unique {3,8} out of 15 pairs.')
