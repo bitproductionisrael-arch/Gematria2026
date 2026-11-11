@@ -97,3 +97,16 @@ Scoreboard: 11 previously verified star cards remain unchanged; 4 triangle **fig
 - [Triangular anatomy / Genesis proof](research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12.md)
 - [Verifier](research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12-verify.py)
 
+
+
+## Complete original-video and corpus tally (12 NOVEMBER 2026)
+**113 registered achievement cards = 26 original-video anatomical/visual examples + 29 IESOUS skeletal mathematics +31 molecular/genetic relations +12 textual/linguistic bridges +11 previously registered star cards +4 triangle animation unlocks.** The previous 11 and 4 are subsets of 113, not additions beyond it.
+
+Evidence tiers: 14 direct/verified facts, 68 mathematically derived or defined structures, 11 conditional extended-count constructions (214-bone Netter model), 20 symbolic/cipher readings. Four unresolved video claims are tracked but not counted. These are **113 documented achievement-card definitions**, not 113 independent biological proofs.
+
+The original video runs to approximately **18:26**; full caption transcript: https://2outube.com/watch?v=St11oto6-Uk. The previous PDF chapter atlas only described the earlier chapters thoroughly. The video's climax at ~13:33–14:37 introduces a **36 upper /37 chest /73 lower /34+34 arms** partition. This sums to **214** under an extended count including eight hand/foot sesamoids, whereas the canonical model is **206**. The lower 73 is physically different from the defined 73-bone axial frame; both are included in the complete ledger with precise labeling.
+
+- [Full achievement register (Markdown)](research/rovgrid-body-all-achievements-2026-11-12.md)
+- [113 machine-readable records (JSON)](research/rovgrid-body-all-achievements-2026-11-12.json)
+- [Verification script](research/rovgrid-body-all-achievements-2026-11-12-verify.py)
+
