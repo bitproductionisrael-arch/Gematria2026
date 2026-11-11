@@ -66,3 +66,25 @@ assert 2*2080==4160==8*20*26==8*520==20*208==26*160==64*65
 assert 55==8**2-3**2 and 65==8**2+1 and 65-55==10
 assert 8*(55+10)==520
 print('PASS: 8x8 Mercury complementary 180-degree symmetry, doubling, 55-to-65 bridge.')
+
+
+# Two 64-paths: Hebrew Adonai and Tzur -> Greek Iesous Christos.
+assert 4*65==260 and 8*65==520 and 16*65==1040
+assert 32*65==2080 and 64*65==4160==8*20*26
+assert 90+6+200==296==8*37
+assert 8*296==64*37==2368
+assert 3*296==888 and 5*296==1480 and 8*296==2368
+assert 888+1480==2368
+assert (888//37,1480//37,2368//37)==(24,40,64)
+assert (888//296,1480//296,2368//296)==(3,5,8)
+assert 296==4*74 and 888==12*74 and 1480==20*74 and 2368==32*74
+assert 8*520==4160 and 8*296==2368
+assert 520-296==224==8*28 and 4160-2368==1792==64*28
+assert 65-37==28
+# Direct Greek isopsephy:
+greek={'Ι':10,'Η':8,'Σ':200,'Ο':70,'Υ':400,'Χ':600,'Ρ':100,'Τ':300,'Ω':800}
+iso=lambda word:sum(greek[c] for c in word)
+assert iso('ΙΗΣΟΥΣ')==888
+assert iso('ΧΡΙΣΤΟΣ')==1480
+assert iso('ΙΗΣΟΥΣ')+iso('ΧΡΙΣΤΟΣ')==2368
+print('PASS: 64×65 vs 64×37; Greek names 888/1480/2368; 296 ratio 3:5:8.')
