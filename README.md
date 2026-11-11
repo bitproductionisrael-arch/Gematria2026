@@ -19,6 +19,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- **[11.11.2026 — תיקון יסודי: חיתוך 2×2, הסרת אחד מארבעה בכל דור על 32²; תוצאה 243=3⁵ ולא 888; 242 קשתות שכנות יוצרות עץ; ספוג מנגר האמיתי הוא 27→20](research/rovgrid-four-to-three-recursion-menger-comparison-1024-243-tree-2026-11-11.md)** · [סקריפט בדיקת רקורסיה, עץ ו־Q10](research/rovgrid-four-to-three-recursion-menger-comparison-1024-243-tree-2026-11-11-verify.py). רצף 1024→768→576→432→324→243; אי אפשר להסיר רק 136 כי בדור הראשון מוסרים256. ניתוח גרף Q10 מדגיש תלות בקוד בינארי לעומת Gray.
+
 - **[11.11.2026 — שטיח סיירפינסקי מותאם ל־32×32: 8²+8×3²=136, נשארים 888, וב־Gray Q10 בדיוק 1024 קשתות נוגעות ב־136 תאים מוסרים](research/rovgrid-sierpinski-menger-32-square-136-gray-q10-links-2026-11-11.md)** · [תסריט בדיקה מלא](research/rovgrid-sierpinski-menger-32-square-136-gray-q10-links-2026-11-11-verify.py) · [ממחישייזר 32×32 + גרף Q10](assets/rovgrid-sierpinski-32-136-888-gray-q10-2026-11-11.svg). שטיח קנוני 9×9 מסיר 17 תאים אחרי שתי רמות, לכן C(17,2)=136; ב־32×32 נדרשת חלוקה מותאמת 12|8|12; חלוקת קשתות Q10 תלויה במיקום החורים.
 
 - **[11.11.2026 — משפט ארבעת הרבעים של צדק: 32×32−4×34=4×222=888, היפר־קובייה Gray Q10, 5×136+208=888, 6×136+208=1024](research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11.md)** · [קוד בדיקה למיפוי מדויק של 136 תאים ו־10 סיביות](research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11-verify.py) · [ממחישייזר SVG עריך של ארבע פינות](assets/rovgrid-jupiter-136-four-corners-gray-q10-2026-11-11.svg). 16 אורכי הפסים נגזרים מכל 16 תאי ריבוע צדק; 222 הוא סכום מכפלות הצלעות של (4,10,13); Q10 מוצג באמצעות תוויות Gray חוקיות.
