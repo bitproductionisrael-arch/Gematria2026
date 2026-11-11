@@ -40,3 +40,17 @@ print('PASS: labelled axial bones 80; principal 73=36|1|36; thorax 37')
 print('PASS: two 37-member sets intersect at sternum; union 73')
 print('PASS: 2701=3*888+37; Pell 73^2-37*12^2=1, minimal y=12')
 print('PASS: subset complement 43/55, overlap 12, independent 7 balances')
+
+# Four consecutive centered-star numbers mapped to disjoint bone-shell counts.
+assert [6*n*(n-1)+1 for n in range(1,5)] == [1,13,37,73]
+assert [1,1+len(thoracic),1+len(thoracic)+len(ribs),len(principal)] == [1,13,37,73]
+assert len(skull|cervical|lumbar|{'sacrum','coccyx'}) == 36
+# Independent mitochondrial inventory reported for the human mtDNA reference genome.
+tRNA_genes, rRNA_genes, protein_genes = 22, 2, 13
+assert tRNA_genes+rRNA_genes==24 and tRNA_genes+rRNA_genes+protein_genes==37
+assert len(ribs)==tRNA_genes+rRNA_genes==24
+assert len(thoracic|sternum)==protein_genes==13
+assert len(ribs|thoracic|sternum)==37
+assert 37*24 == 888
+assert 73*74//2 == 2701
+print('PASS: star shells [1,13,37,73] and independently sourced mtDNA partition 24+13=37')
