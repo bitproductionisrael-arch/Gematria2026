@@ -1,0 +1,88 @@
+{
+  "title": "RovGrid unified 3-6-9 research corpus",
+  "date": "2026-11-12",
+  "lang": "he",
+  "researcher": "עמית מייק רוב",
+  "status_guide": {
+    "A": "unconditional mathematical identity",
+    "B": "uniqueness under stated finite domain",
+    "C": "cipher-dependent gematria",
+    "D": "model-dependent construction",
+    "E": "interpretation or open research"
+  },
+  "branches": [
+    {
+      "id": "RG369",
+      "core": [
+        "T2+T5+T8=54",
+        "T3+T6+T9=72",
+        "54+72=126",
+        "3*6*9=162"
+      ],
+      "status": "A"
+    },
+    {
+      "id": "RG258",
+      "core": [
+        "sigma(258)=528",
+        "258+5*(54+72)=888",
+        "(54+72+54)*2+528=888"
+      ],
+      "status": "A/C"
+    },
+    {
+      "id": "RG1024",
+      "core": [
+        "1024-136=888",
+        "1023-135=888"
+      ],
+      "status": "A/C"
+    },
+    {
+      "id": "RGPOLY",
+      "core": [
+        "(1+8x)(1+20x)(1+26x)=1+54x+888x^2+4160x^3"
+      ],
+      "status": "A/D"
+    },
+    {
+      "id": "RGYHWH",
+      "core": [
+        "milui prefix sum 20+26+48+54=148",
+        "reverse sum 6+28+34+54=122",
+        "148-122=26"
+      ],
+      "status": "A/C"
+    },
+    {
+      "id": "RGGENESIS",
+      "core": [
+        "19*37=703",
+        "37*73=2701",
+        "24*37=888"
+      ],
+      "status": "A/C/D"
+    },
+    {
+      "id": "RGDNA",
+      "core": [
+        "(4^(2k)+4^k)/2 = T(4^k) for even DNA reverse complement",
+        "length4=>136",
+        "length6=>2080"
+      ],
+      "status": "A"
+    }
+  ],
+  "checks": 78,
+  "finite_search": {
+    "arith_progression_digit_candidates": 32,
+    "unique": "258",
+    "sum_squares_unique": "3,6,9"
+  },
+  "docs": [
+    "research/rovgrid-unified-369-258-528-888-1024-lecture-2026-11-12.md",
+    "research/rovgrid-unified-369-258-528-888-1024-audit-2026-11-12.md",
+    "research/rovgrid-unified-369-258-528-888-1024-2026-11-12-verify.py"
+  ],
+  "rule": "no changes to calculator.html, corpus-data.json or live site; numerology is not an independent proof of metaphysical identity"
+}
