@@ -38,7 +38,7 @@ function build(genesis,exodus){
       torah_word_index:entry.torah_word_index,torah_letter_index:entry.torah_letter_start+k
     })));
     selected.push({
-      verse:vi+1,torah_verse_index:vCount,beshalach_verse_index:vi+6,
+      verse:vi+1,torah_verse_index:vCount,beshalach_verse_index:vi+7,
       word_count:arr.length,letter_count:offset,
       torah_word_start:vw+1,torah_word_end:vw+arr.length,
       torah_letter_start:vl+1,torah_letter_end:vl+offset,
@@ -53,6 +53,7 @@ function build(genesis,exodus){
  assert(equal(bookStats.map(x=>[x.words,x.letters]),[[20612,78063],[16713,63527]]),"external book counts");
  assert(equal(selected.map(v=>[v.word_count,v.letter_count]),[[15,72],[20,72],[21,72]]),"local word/letter counts");
  assert(equal(selected.map(v=>v.torah_verse_index),[1909,1910,1911]),"global verse indices");
+ assert(equal(selected.map(v=>v.beshalach_verse_index),[25,26,27]),"Beshalach indexes");
  assert(equal(selected.map(v=>v.torah_word_start),[26136,26151,26171]),"global word indices");
  assert(equal(selected.map(v=>v.torah_letter_start),[99060,99132,99204]),"global letter indices");
  const names=Array.from({length:72},(_,k)=>{
