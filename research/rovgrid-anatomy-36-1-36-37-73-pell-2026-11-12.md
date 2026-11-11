@@ -76,3 +76,28 @@ X היא מכלול החזה האנטומי; Y היא **קבוצה מחקרית 
 - American College of Surgeons, Thoracic anatomy: https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf
 
 שחזור: research/rovgrid-anatomy-36-1-36-37-73-pell-2026-11-12-verify.py
+
+
+## מפת הכוכב האנטומית: ארבע שכבות מדויקות 1 / 12 / 24 / 36
+ספירה זרה של 73 עצמות המסגרת הצירית:
+1 עצם החזה, 12 חוליות בית חזה, 24 צלעות, 36 עצמות = 22 גולגולת+14 שדרה בוגרת לא־חזית.
+סכומי קידומות: 1, 13, 37, 73.
+
+אלה ארבעת מספרי הכוכב הראשונים בנוסחה S(n)=6n(n−1)+1:
+S1=1, S2=13, S3=37, S4=73, עם קליפות עוקבות 12,24,36.
+הספירה האנטומית מדויקת, סדר השכבות המושווה לכוכב הוא מיפוי מחקרי מכוון ואינו תהליך גדילה של השלד.
+
+## סגירת 24|13 בשתי מערכות ביולוגיות עצמאיות
+- מכלול בית החזה: 24 צלעות + (12 חוליות חזה + עצם חזה אחת) =24+13=37.
+- גנום מיטוכונדריאלי אנושי: 22 גני tRNA +2 גני rRNA =24 גנים ל־RNA; ועוד 13 גנים מקודדי חלבון. 24+13=37.
+- שתי המערכות מכילות בדיוק מחלקות בגודל 24 ו־13. במכפלת גדלים חיצונית, 24×37=888. זו אינה כמות ממשקי צלע־גן, וגם אינה ראיה לתכנות שם בתוך DNA.
+- סגירה משולשת: 73=37+36; 37=24+13; 37×73=2701=T73; 73²−37×12²=1.
+
+## שימור מסמך IESOUS באנגלית
+ה־PDF המקורי IESOUS_The_Body_System_of_Amit_Mike_Rov.pdf בספריית המשתמש עודכן לגרסת 30 עמודים, בשפת המקור ובטיפוגרפיה קרובה למקור. נוספו פרקים ממוספרים 44–51 לפני רשימת המקורות, ציון תאריך 12 NOVEMBER 2026 בלבד ללא כותרת "המשך", וכן מקורות 31–33. 27 העמודים המקוריים נשמרו והועתקו ללא שינוי תוכני, מלבד עדכון מספרי שני עמודי המקורות והוספת שלושה מקורות בעמוד המקורות האחרון. ממצאי הקורפוס אינם מבוססים על הסקת יחודיות אישית מהספירה האנטומית.
+
+### מקורות אימות נוספים
+- OpenStax 7.1 (80 עצמות ציריות, 22 גולגולת, 24 חוליות נפרדות + עצה/זנב, 24 צלעות ועצם חזה): https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system
+- Elsevier Complete Anatomy, Vertebral Column (7/12/5/5/4): https://www.elsevier.com/resources/anatomy/skeletal-system/axial-skeleton/vertebral-column/22265
+- Nature Reviews Genetics / PMC, human mtDNA 37 genes =13 proteins +22 tRNA +2 rRNA: https://pmc.ncbi.nlm.nih.gov/articles/PMC3959762/
+- Johns Hopkins Medicine, spinal fusion and bone count: https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/facts-about-the-spine-shoulder-and-pelvis
