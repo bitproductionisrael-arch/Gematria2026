@@ -1,7 +1,7 @@
 {
   "name": "RovGrid Body Star Vault",
   "date": "2026-11-12",
-  "version": 1,
+  "version": 2,
   "scoring_policy": "One award for each distinct predeclared anatomical/genetic star-number set or distinct documented stellate morphology / star-named anatomical class. Nested sets may each unlock a different S-index; overlaps must be disclosed. One physical structure does not gain another star merely by receiving multiple equations, transforms or names. Star-number animation rearranges counted units; does not assert physical star geometry.",
   "formula": "S(n)=6*n*(n-1)+1",
   "centered_hexagon": "H(n)=3*n*(n-1)+1; H(4)=37; variant of B02 not a new trophy",
@@ -13,7 +13,9 @@
     "all": 11,
     "strict_numeric_star": 5,
     "real_cell_morphology": 4,
-    "star_named_structures": 2
+    "star_named_structures": 2,
+    "triangle_figure_variants": 4,
+    "all_visual_unlocks": 15
   },
   "entries": [
     {
@@ -217,5 +219,54 @@
       "Stellate ganglion",
       "https://www.ncbi.nlm.nih.gov/books/NBK539807/"
     ]
-  ]
+  ],
+  "triangular_series": {
+    "policy": "Separate geometric unlock tier. Four triangular arrangements for anatomical indices 10/19/37/73. Does not increase count of 11 distinct star awards; same body structures may have multiple mathematical animations.",
+    "formula": "T(n)=n*(n+1)/2",
+    "recursive_law": "n_next=2*n_previous-1; T(2n-1)=T(n)+3*T(n-1)",
+    "tiers": [
+      {
+        "id": "T01",
+        "index": 10,
+        "value": 55,
+        "source": "5 metacarpals in each hand =10; also 80 axial minus 25 rib-cage bones =55",
+        "triangle": "T10",
+        "nested_from": null
+      },
+      {
+        "id": "T02",
+        "index": 19,
+        "value": 190,
+        "source": "7 cervical+12 thoracic vertebrae",
+        "triangle": "T19",
+        "nested_from": "T10 +3×T9 =55+135"
+      },
+      {
+        "id": "T03",
+        "index": 37,
+        "value": 703,
+        "source": "12 thoracic vertebrae+24 ribs+sternum",
+        "triangle": "T37",
+        "nested_from": "T19 +3×T18 =190+513",
+        "biblical": "ואת הארץ =407+296=703"
+      },
+      {
+        "id": "T04",
+        "index": 73,
+        "value": 2701,
+        "source": "Selected axial frame skull22+spine26+ribs24+sternum1",
+        "triangle": "T73",
+        "nested_from": "T37 +3×T36 =703+1998",
+        "biblical": "בראשית א:א whole seven-word verse =2701"
+      }
+    ],
+    "notes": [
+      "Genesis first four words בראשית ברא אלהים את =1603, not 703.",
+      "Genesis first five words בראשית ברא אלהים את השמים =1998=3×666.",
+      "All four are visual figure variants, not four newly counted independent anatomical structures.",
+      "אחד=13, יחידה=37, חכמה=73 regular gematria."
+    ],
+    "document": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12.md",
+    "verification_script": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12-verify.py"
+  }
 }
