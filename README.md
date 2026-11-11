@@ -17,6 +17,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- **[11.11.2026 — משפט ארבעת הרבעים של צדק: 32×32−4×34=4×222=888, היפר־קובייה Gray Q10, 5×136+208=888, 6×136+208=1024](research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11.md)** · [קוד בדיקה למיפוי מדויק של 136 תאים ו־10 סיביות](research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11-verify.py) · [ממחישייזר SVG עריך של ארבע פינות](assets/rovgrid-jupiter-136-four-corners-gray-q10-2026-11-11.svg). 16 אורכי הפסים נגזרים מכל 16 תאי ריבוע צדק; 222 הוא סכום מכפלות הצלעות של (4,10,13); Q10 מוצג באמצעות תוויות Gray חוקיות.
+
 - **[11.11.2026 — שלושת שמות צדק: 37 בשתי שיטות, 1496=11×136, הסמאל 136/T16 ובאתב״ש 528/T32, מילויים לטיניים 160/111](research/rovgrid-jupiter-three-names-double-37-1496-t16-t32-2026-11-11.md)** · [קוד אימות לכל השיטות כולל תוספת ומגרעת, קדמי, מילוי לטיני](research/rovgrid-jupiter-three-names-double-37-1496-t16-t32-2026-11-11-verify.py). יהפיאל+הסמאל−צדקיאל=37 ברגילה ובסדרית; פרוטוקול גימטרי מתועד ושחזור מלא.
 
 - **[11.11.2026 — ממצא מקור ראשוני: יהפיאל והסמאל = 136, אל אב = 34 בטבלת צדק של אגריפה](research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11.md)** · [קוד אימות הגימטריות וריבוע 4×4](research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11-verify.py). זו משמעות גימטרית היסטורית של שני שמות המשויכים לצדק; „צדק” עצמו = 194, והכתיב יופיאל = 137.
