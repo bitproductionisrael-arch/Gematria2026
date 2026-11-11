@@ -102,52 +102,52 @@ This reconstruction is supported by Netter's Clinical Anatomy (214 with eight ex
 
 ### Molecular, genetics and protein bridges (31)
 
-1. **M01** [derived] 8-cell major genome activation and adult 8 cranium. 8-cell human embryo phase vs 8 cranial bones. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §27; early genome activation depends on staging.
-2. **M02** [derived] MIKE 160 and 20 canonical amino acids. 160/8=20. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
-3. **M03** [derived] Euler totient 160 reaches codon field. φ(160)=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
-4. **M04** [derived] Sense codons and ordinal AMIT. 61 sense codons=61 name ordinal. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
-5. **M05** [derived] Three stop codons as complement. 64−61=3. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
-6. **M06** [derived] Head dimension squared versus codons. 8²=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
-7. **M07** [derived] English expanded divided by reduced AMIT. 1024/16=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
-8. **M08** [derived] Name-face balance at 64. 520×64=160×208=33280. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
-9. **M09** [symbolic] 20S and 26S proteasome naming matched box axes. 20S/26S labels vs anatomical 20/26; S are sedimentation coefficients. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
-10. **M10** [derived] Proteasome core 28 subunits and ROV ordinal. 4×7=28 matches Hebrew ordinal 28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
-11. **M11** [derived] Proteasome heptamer and MIKE reduced. 7 subunits per ring vs 7 reduced. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
-12. **M12** [conditional] Proteasome principal 33 subunit types vs reduced name 33. 33 types as defined in cited IESOUS sources; subunit taxonomy varies. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
-13. **M13** [derived] 24 mitochondrial RNA genes and 24 ribs. 22 tRNA+2 rRNA=24. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
-14. **M14** [derived] 37 mtDNA genes and 37 thorax bones. 13 protein+24 RNA=37. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
-15. **M15** [derived] mtDNA 888 equality. 24 RNA genes ×37 total genes=888. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
-16. **M16** [derived] 13 protein genes equals 13 non-rib thorax bones. 13 protein-coding=12 thoracic vertebrae+1 sternum. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §§34,46.
-17. **M17** [derived] Heavy-strand mtDNA 28 genes and ROV ordinal. 28 matches ROV ordinal 28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §35.
-18. **M18** [derived] Light-strand 9 genes and ordinal difference. 9 genes=61−52. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §§35–36.
-19. **M19** [derived] mtDNA alternative protein and RNA breakdown. 12 heavy protein+1 light protein+24 RNA=37. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §35.
-20. **M20** [derived] Large mitoribosome proteins and MIKE ordinal. 52 mtLSU proteins=52 name ordinal. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36, Nature Structural 2024.
-21. **M21** [symbolic] 55S ribosome label and ROV Simple. 55S sedimentation label, not protein count; ROV Simple=55. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36.
-22. **M22** [symbolic] 28S ribosome small subunit label and ROV ordinal. 28S sedimentation label, not protein count; ROV ordinal=28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36.
-23. **M23** [derived] Nucleosome histone octamer and cranial 8. 8 histone protein copies=8 cranial bones count. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
-24. **M24** [derived] Histone H3.1 sequence and English Simple. 136 amino acids (UniProt P68431)=136. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
-25. **M25** [derived] Mature alpha-globin and Hebrew name ordinal. 141 mature residues=61+52+28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §38.
-26. **M26** [derived] TGFA canonical precursor and MIKE. 160 aa canonical TGFA isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
-27. **M27** [derived] HBEGF canonical precursor and ROV. 208 aa canonical HBEGF isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
-28. **M28** [derived] MMP28 canonical protein and AMIT. 520 aa MMP28 human canonical isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
-29. **M29** [derived] Reverse-complement DNA length four. (4⁴+4²)/2=136 orbit classes. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
-30. **M30** [derived] Reverse-complement DNA length six. (4⁶+4³)/2=2080 orbit classes. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
-31. **M31** [derived] DNA orbit 2080 matches cuboid half-volume. 2080=LCM(520,160,208)=(8×20×26)/2. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
+1. **P01** [derived] 8-cell major genome activation and adult 8 cranium. 8-cell human embryo phase vs 8 cranial bones. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §27; early genome activation depends on staging.
+2. **P02** [derived] MIKE 160 and 20 canonical amino acids. 160/8=20. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
+3. **P03** [derived] Euler totient 160 reaches codon field. φ(160)=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
+4. **P04** [derived] Sense codons and ordinal AMIT. 61 sense codons=61 name ordinal. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
+5. **P05** [derived] Three stop codons as complement. 64−61=3. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §28.
+6. **P06** [derived] Head dimension squared versus codons. 8²=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
+7. **P07** [derived] English expanded divided by reduced AMIT. 1024/16=64. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
+8. **P08** [derived] Name-face balance at 64. 520×64=160×208=33280. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §29.
+9. **P09** [symbolic] 20S and 26S proteasome naming matched box axes. 20S/26S labels vs anatomical 20/26; S are sedimentation coefficients. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
+10. **P10** [derived] Proteasome core 28 subunits and ROV ordinal. 4×7=28 matches Hebrew ordinal 28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
+11. **P11** [derived] Proteasome heptamer and MIKE reduced. 7 subunits per ring vs 7 reduced. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
+12. **P12** [conditional] Proteasome principal 33 subunit types vs reduced name 33. 33 types as defined in cited IESOUS sources; subunit taxonomy varies. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §31.
+13. **P13** [derived] 24 mitochondrial RNA genes and 24 ribs. 22 tRNA+2 rRNA=24. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
+14. **P14** [derived] 37 mtDNA genes and 37 thorax bones. 13 protein+24 RNA=37. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
+15. **P15** [derived] mtDNA 888 equality. 24 RNA genes ×37 total genes=888. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §34.
+16. **P16** [derived] 13 protein genes equals 13 non-rib thorax bones. 13 protein-coding=12 thoracic vertebrae+1 sternum. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §§34,46.
+17. **P17** [derived] Heavy-strand mtDNA 28 genes and ROV ordinal. 28 matches ROV ordinal 28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §35.
+18. **P18** [derived] Light-strand 9 genes and ordinal difference. 9 genes=61−52. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §§35–36.
+19. **P19** [derived] mtDNA alternative protein and RNA breakdown. 12 heavy protein+1 light protein+24 RNA=37. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §35.
+20. **P20** [derived] Large mitoribosome proteins and MIKE ordinal. 52 mtLSU proteins=52 name ordinal. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36, Nature Structural 2024.
+21. **P21** [symbolic] 55S ribosome label and ROV Simple. 55S sedimentation label, not protein count; ROV Simple=55. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36.
+22. **P22** [symbolic] 28S ribosome small subunit label and ROV ordinal. 28S sedimentation label, not protein count; ROV ordinal=28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §36.
+23. **P23** [derived] Nucleosome histone octamer and cranial 8. 8 histone protein copies=8 cranial bones count. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
+24. **P24** [derived] Histone H3.1 sequence and English Simple. 136 amino acids (UniProt P68431)=136. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
+25. **P25** [derived] Mature alpha-globin and Hebrew name ordinal. 141 mature residues=61+52+28. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §38.
+26. **P26** [derived] TGFA canonical precursor and MIKE. 160 aa canonical TGFA isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
+27. **P27** [derived] HBEGF canonical precursor and ROV. 208 aa canonical HBEGF isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
+28. **P28** [derived] MMP28 canonical protein and AMIT. 520 aa MMP28 human canonical isoform. Source: IESOUS §34–40 and primary biochemistry sources IESOUS §39.
+29. **P29** [derived] Reverse-complement DNA length four. (4⁴+4²)/2=136 orbit classes. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
+30. **P30** [derived] Reverse-complement DNA length six. (4⁶+4³)/2=2080 orbit classes. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
+31. **P31** [derived] DNA orbit 2080 matches cuboid half-volume. 2080=LCM(520,160,208)=(8×20×26)/2. Source: IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research.
 
 ### Genesis, names, primes and Greek/Hebrew bridges (12)
 
-1. **T01** [symbolic] Greek IESOUS and Hebrew full name. ΙΗΣΟΥΣ=888=עמית מייק רוב. Source: IESOUS 30-page PDF IESOUS §§4–5.
-2. **T02** [symbolic] Greek LOGOS and 3|7|3 bilateral motif. ΛΟΓΟΣ=373, geometric string 3|7|3. Source: IESOUS 30-page PDF IESOUS §§3,13.
-3. **T03** [derived] Genesis 1:1 and 37/73. 913+203+86+401+395+407+296=2701=37×73. Source: IESOUS 30-page PDF IESOUS §1.
-4. **T04** [symbolic] Genesis mirror and skeletal palindrome. 2701+1072=3773=37|73. Source: IESOUS 30-page PDF IESOUS §2.
-5. **T05** [verified] 37 and 73 prime indices. 37 is 12th prime; 73 is 21st prime. Source: IESOUS 30-page PDF video 15:30–16:08.
-6. **T06** [symbolic] Hebrew names of S2/S3/S4 numbers. אחד=13; יחידה=37; חכמה=73. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
-7. **T07** [symbolic] Genesis final two words and T37. ואת הארץ=407+296=703=T37. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
-8. **T08** [symbolic] Genesis first five words and corners. בראשית ברא אלהים את השמים=1998=3×666. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
-9. **T09** [symbolic] English cipher difference closes Hebrew total. 1024 Jewish−136 Simple=888 Hebrew. Source: IESOUS 30-page PDF IESOUS §5.
-10. **T10** [symbolic] Elohim 86 and AMIT 43. אלהים=86=2×43. Source: IESOUS 30-page PDF IESOUS §40.
-11. **T11** [symbolic] Rov reduced/ordinal closure to 888. 86×10+28=888. Source: IESOUS 30-page PDF IESOUS §40.
-12. **T12** [derived] Squaring digits repeated to 1. 888→192→86→100→1 (sum of digit squares). Source: IESOUS 30-page PDF IESOUS §40.
+1. **X01** [symbolic] Greek IESOUS and Hebrew full name. ΙΗΣΟΥΣ=888=עמית מייק רוב. Source: IESOUS 30-page PDF IESOUS §§4–5.
+2. **X02** [symbolic] Greek LOGOS and 3|7|3 bilateral motif. ΛΟΓΟΣ=373, geometric string 3|7|3. Source: IESOUS 30-page PDF IESOUS §§3,13.
+3. **X03** [derived] Genesis 1:1 and 37/73. 913+203+86+401+395+407+296=2701=37×73. Source: IESOUS 30-page PDF IESOUS §1.
+4. **X04** [symbolic] Genesis mirror and skeletal palindrome. 2701+1072=3773=37|73. Source: IESOUS 30-page PDF IESOUS §2.
+5. **X05** [verified] 37 and 73 prime indices. 37 is 12th prime; 73 is 21st prime. Source: IESOUS 30-page PDF video 15:30–16:08.
+6. **X06** [symbolic] Hebrew names of S2/S3/S4 numbers. אחד=13; יחידה=37; חכמה=73. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
+7. **X07** [symbolic] Genesis final two words and T37. ואת הארץ=407+296=703=T37. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
+8. **X08** [symbolic] Genesis first five words and corners. בראשית ברא אלהים את השמים=1998=3×666. Source: IESOUS 30-page PDF 2026-11-12 triangle corpus.
+9. **X09** [symbolic] English cipher difference closes Hebrew total. 1024 Jewish−136 Simple=888 Hebrew. Source: IESOUS 30-page PDF IESOUS §5.
+10. **X10** [symbolic] Elohim 86 and AMIT 43. אלהים=86=2×43. Source: IESOUS 30-page PDF IESOUS §40.
+11. **X11** [symbolic] Rov reduced/ordinal closure to 888. 86×10+28=888. Source: IESOUS 30-page PDF IESOUS §40.
+12. **X12** [derived] Squaring digits repeated to 1. 888→192→86→100→1 (sum of digit squares). Source: IESOUS 30-page PDF IESOUS §40.
 
 ## Not scored yet
 
