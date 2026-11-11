@@ -25,3 +25,21 @@ assert sum(values.values())==296==8*37
 assert 6*148==888 and 2*148==296 and 3*296==888
 assert 37==6*3*(3-1)+1 and 73==6*4*(4-1)+1
 print("PASS: EIO 815, Delta-letter 4 vs gap 73, earth-cube (8,6,3), 24 triangles, 888.")
+
+
+# Three dimensions / three pairs of opposite cube faces.
+# Plato's elemental cube has six square faces of four right isosceles triangles each.
+dimensions=3
+face_pairs=dimensions
+faces_in_pair=2
+triangles_per_square_face=4
+weight_per_triangle=37
+assert dimensions==axes==3
+assert face_pairs*faces_in_pair==faces==6
+assert faces_in_pair*triangles_per_square_face==8
+earth_for_each_axis=faces_in_pair*triangles_per_square_face*weight_per_triangle
+assert earth_for_each_axis==296
+assert dimensions*earth_for_each_axis==888
+assert dimensions*faces_in_pair*triangles_per_square_face==24
+assert 3*(2*148)==888==3*296
+print('PASS: three coordinate axes, three opposite-face pairs, 3x296=888.')
