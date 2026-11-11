@@ -12,6 +12,9 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- **[11.11.2026 — אי״ק בכ״ר: מחזור 888→1887→888 וריבוע שמש חדש 6×6 שסכומו 888](research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11.md)** · [אימות כל השלבים, 36 תאי הריבוע ו־15 זהויות](research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11-verify.py). התיעוד כולל 8|6=86=אלהים, 8+6=14=דוד, 888:999=8:9 והוכחת אי־קיום ריבוע רגיל שסכומו 888.
+- **[11.11.2026 — קריאת מקור בפידלר: 888, 74, 1040, 1111, 801, 1332, 816 ו־769](research/rovgrid-fideler-888-1111-1040-801-solar-square-source-audit-2026-11-11.md)** · השוואות למוזיקה, לאותיות היווניות, לריבוע השמש ול־RovGrid.
+
 - **[11.11.2026 — מנורת שבע התנועות ΕΥΑ | Ι | ΗΟΩ: פילון, NASA, אגריפה 7–5–3, ריבועי כוכבים 2080/136/666](research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11.md)** · [אימות Python](research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11-verify.py). סדר שלושת הכוכבים החופשיים נתמך פיזיקלית ומסורתית; הסדר המלא הוא מודל מחקרי, לא שחזור לוח אברהמי מוכח.
 
 - **[חדש 11.11: יהוה 26/17/54 → עמית/מיכאל/בלייז/רוב, Composite #37=54, 37 נקודות/54 משולשים והפולינום המלא](research/rovgrid-yhvh-37-54-prime-composite-polynomial-2026-11-11.md)**
