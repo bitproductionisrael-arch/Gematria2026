@@ -40,3 +40,29 @@ assert len(pairs)==15
 match=[(a,b) for a,b in pairs if a*a+b*b==73 and abs(a*a-b*b)==55 and a*a+b*b-sun*sun==37]
 assert match==[(3,8)]
 print('PASS: 37,55,73,888 solar-Mercury-Saturn identities; unique {3,8} out of 15 pairs.')
+
+
+# Agrippa's reproduced 8x8 Mercury magic square, verified centrally complementary.
+mercury_square = [
+ [8,58,59,5,4,62,63,1],
+ [49,15,14,52,53,11,10,56],
+ [41,23,22,44,45,19,18,48],
+ [32,34,35,29,28,38,39,25],
+ [40,26,27,37,36,30,31,33],
+ [17,47,46,20,21,43,42,24],
+ [9,55,54,12,13,51,50,16],
+ [64,2,3,61,60,6,7,57],
+]
+assert sorted(v for row in mercury_square for v in row)==list(range(1,65))
+assert all(sum(row)==260 for row in mercury_square)
+assert all(sum(mercury_square[r][c] for r in range(8))==260 for c in range(8))
+assert sum(mercury_square[i][i] for i in range(8))==260
+assert sum(mercury_square[i][7-i] for i in range(8))==260
+assert all(mercury_square[i][j]+mercury_square[7-i][7-j]==65 for i in range(8) for j in range(8))
+assert all(sum(mercury_square[i])+sum(mercury_square[7-i])==520 for i in range(4))
+assert 4*520==2080==sum(map(sum,mercury_square))
+assert 2*260==520==20*26==8*65
+assert 2*2080==4160==8*20*26==8*520==20*208==26*160==64*65
+assert 55==8**2-3**2 and 65==8**2+1 and 65-55==10
+assert 8*(55+10)==520
+print('PASS: 8x8 Mercury complementary 180-degree symmetry, doubling, 55-to-65 bridge.')
