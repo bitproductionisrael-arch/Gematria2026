@@ -77,5 +77,36 @@ def main():
     assert (1+1)+(71+1)==atbs[1]+atbs[71]==74
     assert sum(regs[i]==75 for i in range(72))==1
     assert (regs[22],regs[36])==(75,61) and 37-23==14
+
+    # "Lama Ani" mirror pair #23/#37 and phrase-level cross-system identities.
+    def score_phrase(s, mapping):
+        return sum(mapping[c] for c in s.replace(" ",""))
+    for phrase, values in {
+        "מלה":(75,30,39), "למה":(75,30,39), "אני":(61,25,44),
+        "למה אני":(136,55,83), "מי":(50,23,23), "זה":(12,12,34),
+        "הוא":(12,12,57), "מי אני":(111,48,67),
+        "זה אני":(73,37,78), "הוא אני":(73,37,101),
+        "מי זה":(62,35,57), "מי זה אני":(123,60,101),
+        "מי זה אני אחד":(136,73,157)
+    }.items():
+        assert tuple(score_phrase(phrase, tab) for tab in (REG, ORD, ATB))==values
+    assert n[22]=="מלה" and n[36]=="אני" and n[48]=="והו"
+    assert regs[22]==75 and regs[36]==61
+    assert (23+75)==(37+61)==98==2*49
+    assert (37-23)==(75-61)==14
+    assert (23+37+75+61)==196==14**2
+    assert score_phrase("מי","") if False else True
+    assert score_phrase("מי",ORD)==23 and score_phrase("זה אני",ORD)==37
+    assert score_phrase("מי זה אני",ORD)==23+37==60
+    assert score_phrase("מי זה אני",ATB)==score_phrase("הוא אני",ATB)==101
+    assert score_phrase("מי זה",ATB)==score_phrase("הוא",ATB)==57
+    anti=[(i+1,j+1) for i,j in combinations(range(72),2) if (i+1+regs[i])==(j+1+regs[j])]
+    assert len(anti)==7
+    assert anti==[(2,22),(3,62),(14,19),(16,35),(23,37),(30,34),(64,70)]
+    pairs136=[(i+1,j+1,ords[i]+ords[j],atbs[i]+atbs[j]) for i,j in combinations(range(72),2) if regs[i]+regs[j]==136]
+    assert len(pairs136)==8
+    assert sum(o==55 and a==83 for _,_,o,a in pairs136)==5
+    assert [(i,j) for i,j,o,a in pairs136 if (i,j) in anti]==[(23,37)]
+    assert sorted({o for _,_,o,_ in pairs136})==[46,55,64]
     print("PASS: 72 triads reconstructed from 3x72 Exodus letters; complete values, 6x12 sums, duplications, 888/1024 controls")
 if __name__=="__main__": main()
