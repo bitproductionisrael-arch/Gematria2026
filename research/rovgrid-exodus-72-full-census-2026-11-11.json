@@ -1,0 +1,1404 @@
+{
+  "name": "Exodus 14:19–21 / 72 Names / RovGrid full census",
+  "date": "2026-11-11",
+  "method": "verse19[i] + verse20[71-i] + verse21[i] in Hebrew reading order, 0-based i",
+  "sourceUrls": [
+    "https://www.mechon-mamre.org/p/pt/pt0214.htm",
+    "https://www.chabad.org/kabbalah/article_cdo/aid/1388270/jewish/72-Names-of-G-d.htm",
+    "https://www.zoharonline.org/zohar/english/volume-1/vayera/daf-102b/"
+  ],
+  "verse_letter_strings": [
+    "ויסעמלאכהאלהימההלכלפנימחנהישראלוילכמאחריהמויסעעמודהעננמפניהמויעמדמאחריהמ",
+    "ויבאבינמחנהמצרימובינמחנהישראלויהיהעננוהחשכויאראתהלילהולאקרבזהאלזהכלהלילה",
+    "ויטמשהאתידועלהימויולכיהוהאתהימברוחקדימעזהכלהלילהוישמאתהימלחרבהויבקעוהמימ"
+  ],
+  "letter_standardization": "Niqqud,punctuation,spaces removed; final letters normalized within computation; final forms restored only at end of displayed triplets.",
+  "reference_variant": {
+    "index": 39,
+    "derived": "רהע",
+    "chabad_article": "רעה",
+    "note": "The variant is an order difference; both use same letters and have equal numerical values."
+  },
+  "totals": {
+    "regular": 9143,
+    "ordinal": 2159,
+    "atbash_ordinal": 2809
+  },
+  "group_stats": [
+    {
+      "group": 1,
+      "start": 1,
+      "end": 12,
+      "regular": 1317,
+      "ordinal": 327,
+      "atbash_ordinal": 501
+    },
+    {
+      "group": 2,
+      "start": 13,
+      "end": 24,
+      "regular": 932,
+      "ordinal": 347,
+      "atbash_ordinal": 481
+    },
+    {
+      "group": 3,
+      "start": 25,
+      "end": 36,
+      "regular": 2490,
+      "ordinal": 375,
+      "atbash_ordinal": 453
+    },
+    {
+      "group": 4,
+      "start": 37,
+      "end": 48,
+      "regular": 1479,
+      "ordinal": 381,
+      "atbash_ordinal": 447
+    },
+    {
+      "group": 5,
+      "start": 49,
+      "end": 60,
+      "regular": 1971,
+      "ordinal": 405,
+      "atbash_ordinal": 423
+    },
+    {
+      "group": 6,
+      "start": 61,
+      "end": 72,
+      "regular": 954,
+      "ordinal": 324,
+      "atbash_ordinal": 504
+    }
+  ],
+  "unique_names": 69,
+  "duplicates": [
+    {
+      "name": "והו",
+      "indices": [
+        1,
+        49
+      ]
+    },
+    {
+      "name": "לאו",
+      "indices": [
+        11,
+        17
+      ]
+    },
+    {
+      "name": "מבה",
+      "indices": [
+        14,
+        55
+      ]
+    }
+  ],
+  "palindromic_indices": [
+    1,
+    2,
+    7,
+    22,
+    41,
+    49,
+    72
+  ],
+  "actual_letter_count": 216,
+  "pair_triple_counts": {
+    "136": {
+      "pair_count": 8,
+      "pairs": [
+        [
+          2,
+          72
+        ],
+        [
+          10,
+          53
+        ],
+        [
+          19,
+          36
+        ],
+        [
+          23,
+          37
+        ],
+        [
+          36,
+          43
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          48,
+          67
+        ],
+        [
+          58,
+          72
+        ]
+      ]
+    },
+    "888": {
+      "pair_count": 0,
+      "pairs": [],
+      "triple_count": 13,
+      "triples": [
+        [
+          5,
+          8,
+          38
+        ],
+        [
+          5,
+          11,
+          32
+        ],
+        [
+          5,
+          17,
+          32
+        ],
+        [
+          5,
+          59,
+          60
+        ],
+        [
+          6,
+          27,
+          59
+        ],
+        [
+          8,
+          51,
+          52
+        ],
+        [
+          15,
+          54,
+          59
+        ],
+        [
+          20,
+          51,
+          54
+        ],
+        [
+          25,
+          29,
+          59
+        ],
+        [
+          27,
+          29,
+          64
+        ],
+        [
+          31,
+          32,
+          60
+        ],
+        [
+          32,
+          60,
+          70
+        ],
+        [
+          39,
+          47,
+          59
+        ]
+      ]
+    },
+    "1024": {
+      "pair_count": 0,
+      "pairs": [],
+      "triple_count": 3,
+      "triples": [
+        [
+          27,
+          51,
+          53
+        ],
+        [
+          32,
+          38,
+          47
+        ],
+        [
+          32,
+          54,
+          64
+        ]
+      ]
+    }
+  },
+  "index_equals_ordinal": [
+    46
+  ],
+  "index_equals_atbash_ordinal": [
+    29
+  ],
+  "names": [
+    {
+      "index": 1,
+      "group": 1,
+      "within_group": 1,
+      "name": "והו",
+      "normalized_name": "והו",
+      "regular": 17,
+      "ordinal": 17,
+      "atbash_ordinal": 52,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 1,
+        "verse20": 72,
+        "verse21": 1
+      }
+    },
+    {
+      "index": 2,
+      "group": 1,
+      "within_group": 2,
+      "name": "ילי",
+      "normalized_name": "ילי",
+      "regular": 50,
+      "ordinal": 32,
+      "atbash_ordinal": 37,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 2,
+        "verse20": 71,
+        "verse21": 2
+      }
+    },
+    {
+      "index": 3,
+      "group": 1,
+      "within_group": 3,
+      "name": "סיט",
+      "normalized_name": "סיט",
+      "regular": 79,
+      "ordinal": 34,
+      "atbash_ordinal": 35,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 3,
+        "verse20": 70,
+        "verse21": 3
+      }
+    },
+    {
+      "index": 4,
+      "group": 1,
+      "within_group": 4,
+      "name": "עלם",
+      "normalized_name": "עלמ",
+      "regular": 140,
+      "ordinal": 41,
+      "atbash_ordinal": 28,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 4,
+        "verse20": 69,
+        "verse21": 4
+      }
+    },
+    {
+      "index": 5,
+      "group": 1,
+      "within_group": 5,
+      "name": "מהש",
+      "normalized_name": "מהש",
+      "regular": 345,
+      "ordinal": 39,
+      "atbash_ordinal": 30,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 5,
+        "verse20": 68,
+        "verse21": 5
+      }
+    },
+    {
+      "index": 6,
+      "group": 1,
+      "within_group": 6,
+      "name": "ללה",
+      "normalized_name": "ללה",
+      "regular": 65,
+      "ordinal": 29,
+      "atbash_ordinal": 40,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 6,
+        "verse20": 67,
+        "verse21": 6
+      }
+    },
+    {
+      "index": 7,
+      "group": 1,
+      "within_group": 7,
+      "name": "אכא",
+      "normalized_name": "אכא",
+      "regular": 22,
+      "ordinal": 13,
+      "atbash_ordinal": 56,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 7,
+        "verse20": 66,
+        "verse21": 7
+      }
+    },
+    {
+      "index": 8,
+      "group": 1,
+      "within_group": 8,
+      "name": "כהת",
+      "normalized_name": "כהת",
+      "regular": 425,
+      "ordinal": 38,
+      "atbash_ordinal": 31,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 8,
+        "verse20": 65,
+        "verse21": 8
+      }
+    },
+    {
+      "index": 9,
+      "group": 1,
+      "within_group": 9,
+      "name": "הזי",
+      "normalized_name": "הזי",
+      "regular": 22,
+      "ordinal": 22,
+      "atbash_ordinal": 47,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 9,
+        "verse20": 64,
+        "verse21": 9
+      }
+    },
+    {
+      "index": 10,
+      "group": 1,
+      "within_group": 10,
+      "name": "אלד",
+      "normalized_name": "אלד",
+      "regular": 35,
+      "ordinal": 17,
+      "atbash_ordinal": 52,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 10,
+        "verse20": 63,
+        "verse21": 10
+      }
+    },
+    {
+      "index": 11,
+      "group": 1,
+      "within_group": 11,
+      "name": "לאו",
+      "normalized_name": "לאו",
+      "regular": 37,
+      "ordinal": 19,
+      "atbash_ordinal": 50,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 11,
+        "verse20": 62,
+        "verse21": 11
+      }
+    },
+    {
+      "index": 12,
+      "group": 1,
+      "within_group": 12,
+      "name": "ההע",
+      "normalized_name": "ההע",
+      "regular": 80,
+      "ordinal": 26,
+      "atbash_ordinal": 43,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 12,
+        "verse20": 61,
+        "verse21": 12
+      }
+    },
+    {
+      "index": 13,
+      "group": 2,
+      "within_group": 1,
+      "name": "יזל",
+      "normalized_name": "יזל",
+      "regular": 47,
+      "ordinal": 29,
+      "atbash_ordinal": 40,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 13,
+        "verse20": 60,
+        "verse21": 13
+      }
+    },
+    {
+      "index": 14,
+      "group": 2,
+      "within_group": 2,
+      "name": "מבה",
+      "normalized_name": "מבה",
+      "regular": 47,
+      "ordinal": 20,
+      "atbash_ordinal": 49,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 14,
+        "verse20": 59,
+        "verse21": 14
+      }
+    },
+    {
+      "index": 15,
+      "group": 2,
+      "within_group": 3,
+      "name": "הרי",
+      "normalized_name": "הרי",
+      "regular": 215,
+      "ordinal": 35,
+      "atbash_ordinal": 34,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 15,
+        "verse20": 58,
+        "verse21": 15
+      }
+    },
+    {
+      "index": 16,
+      "group": 2,
+      "within_group": 4,
+      "name": "הקם",
+      "normalized_name": "הקמ",
+      "regular": 145,
+      "ordinal": 37,
+      "atbash_ordinal": 32,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 16,
+        "verse20": 57,
+        "verse21": 16
+      }
+    },
+    {
+      "index": 17,
+      "group": 2,
+      "within_group": 5,
+      "name": "לאו",
+      "normalized_name": "לאו",
+      "regular": 37,
+      "ordinal": 19,
+      "atbash_ordinal": 50,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 17,
+        "verse20": 56,
+        "verse21": 17
+      }
+    },
+    {
+      "index": 18,
+      "group": 2,
+      "within_group": 6,
+      "name": "כלי",
+      "normalized_name": "כלי",
+      "regular": 60,
+      "ordinal": 33,
+      "atbash_ordinal": 36,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 18,
+        "verse20": 55,
+        "verse21": 18
+      }
+    },
+    {
+      "index": 19,
+      "group": 2,
+      "within_group": 7,
+      "name": "לוו",
+      "normalized_name": "לוו",
+      "regular": 42,
+      "ordinal": 24,
+      "atbash_ordinal": 45,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 19,
+        "verse20": 54,
+        "verse21": 19
+      }
+    },
+    {
+      "index": 20,
+      "group": 2,
+      "within_group": 8,
+      "name": "פהל",
+      "normalized_name": "פהל",
+      "regular": 115,
+      "ordinal": 34,
+      "atbash_ordinal": 35,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 20,
+        "verse20": 53,
+        "verse21": 20
+      }
+    },
+    {
+      "index": 21,
+      "group": 2,
+      "within_group": 9,
+      "name": "נלך",
+      "normalized_name": "נלכ",
+      "regular": 100,
+      "ordinal": 37,
+      "atbash_ordinal": 32,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 21,
+        "verse20": 52,
+        "verse21": 21
+      }
+    },
+    {
+      "index": 22,
+      "group": 2,
+      "within_group": 10,
+      "name": "ייי",
+      "normalized_name": "ייי",
+      "regular": 30,
+      "ordinal": 30,
+      "atbash_ordinal": 39,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 22,
+        "verse20": 51,
+        "verse21": 22
+      }
+    },
+    {
+      "index": 23,
+      "group": 2,
+      "within_group": 11,
+      "name": "מלה",
+      "normalized_name": "מלה",
+      "regular": 75,
+      "ordinal": 30,
+      "atbash_ordinal": 39,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 23,
+        "verse20": 50,
+        "verse21": 23
+      }
+    },
+    {
+      "index": 24,
+      "group": 2,
+      "within_group": 12,
+      "name": "חהו",
+      "normalized_name": "חהו",
+      "regular": 19,
+      "ordinal": 19,
+      "atbash_ordinal": 50,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 24,
+        "verse20": 49,
+        "verse21": 24
+      }
+    },
+    {
+      "index": 25,
+      "group": 3,
+      "within_group": 1,
+      "name": "נתה",
+      "normalized_name": "נתה",
+      "regular": 455,
+      "ordinal": 41,
+      "atbash_ordinal": 28,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 25,
+        "verse20": 48,
+        "verse21": 25
+      }
+    },
+    {
+      "index": 26,
+      "group": 3,
+      "within_group": 2,
+      "name": "האא",
+      "normalized_name": "האא",
+      "regular": 7,
+      "ordinal": 7,
+      "atbash_ordinal": 62,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 26,
+        "verse20": 47,
+        "verse21": 26
+      }
+    },
+    {
+      "index": 27,
+      "group": 3,
+      "within_group": 3,
+      "name": "ירת",
+      "normalized_name": "ירת",
+      "regular": 610,
+      "ordinal": 52,
+      "atbash_ordinal": 17,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 27,
+        "verse20": 46,
+        "verse21": 27
+      }
+    },
+    {
+      "index": 28,
+      "group": 3,
+      "within_group": 4,
+      "name": "שאה",
+      "normalized_name": "שאה",
+      "regular": 306,
+      "ordinal": 27,
+      "atbash_ordinal": 42,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 28,
+        "verse20": 45,
+        "verse21": 28
+      }
+    },
+    {
+      "index": 29,
+      "group": 3,
+      "within_group": 5,
+      "name": "ריי",
+      "normalized_name": "ריי",
+      "regular": 220,
+      "ordinal": 40,
+      "atbash_ordinal": 29,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 29,
+        "verse20": 44,
+        "verse21": 29
+      }
+    },
+    {
+      "index": 30,
+      "group": 3,
+      "within_group": 6,
+      "name": "אום",
+      "normalized_name": "אומ",
+      "regular": 47,
+      "ordinal": 20,
+      "atbash_ordinal": 49,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 30,
+        "verse20": 43,
+        "verse21": 30
+      }
+    },
+    {
+      "index": 31,
+      "group": 3,
+      "within_group": 7,
+      "name": "לכב",
+      "normalized_name": "לכב",
+      "regular": 52,
+      "ordinal": 25,
+      "atbash_ordinal": 44,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 31,
+        "verse20": 42,
+        "verse21": 31
+      }
+    },
+    {
+      "index": 32,
+      "group": 3,
+      "within_group": 8,
+      "name": "ושר",
+      "normalized_name": "ושר",
+      "regular": 506,
+      "ordinal": 47,
+      "atbash_ordinal": 22,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 32,
+        "verse20": 41,
+        "verse21": 32
+      }
+    },
+    {
+      "index": 33,
+      "group": 3,
+      "within_group": 9,
+      "name": "יחו",
+      "normalized_name": "יחו",
+      "regular": 24,
+      "ordinal": 24,
+      "atbash_ordinal": 45,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 33,
+        "verse20": 40,
+        "verse21": 33
+      }
+    },
+    {
+      "index": 34,
+      "group": 3,
+      "within_group": 10,
+      "name": "להח",
+      "normalized_name": "להח",
+      "regular": 43,
+      "ordinal": 25,
+      "atbash_ordinal": 44,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 34,
+        "verse20": 39,
+        "verse21": 34
+      }
+    },
+    {
+      "index": 35,
+      "group": 3,
+      "within_group": 11,
+      "name": "כוק",
+      "normalized_name": "כוק",
+      "regular": 126,
+      "ordinal": 36,
+      "atbash_ordinal": 33,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 35,
+        "verse20": 38,
+        "verse21": 35
+      }
+    },
+    {
+      "index": 36,
+      "group": 3,
+      "within_group": 12,
+      "name": "מנד",
+      "normalized_name": "מנד",
+      "regular": 94,
+      "ordinal": 31,
+      "atbash_ordinal": 38,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 36,
+        "verse20": 37,
+        "verse21": 36
+      }
+    },
+    {
+      "index": 37,
+      "group": 4,
+      "within_group": 1,
+      "name": "אני",
+      "normalized_name": "אני",
+      "regular": 61,
+      "ordinal": 25,
+      "atbash_ordinal": 44,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 37,
+        "verse20": 36,
+        "verse21": 37
+      }
+    },
+    {
+      "index": 38,
+      "group": 4,
+      "within_group": 2,
+      "name": "חעם",
+      "normalized_name": "חעמ",
+      "regular": 118,
+      "ordinal": 37,
+      "atbash_ordinal": 32,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 38,
+        "verse20": 35,
+        "verse21": 38
+      }
+    },
+    {
+      "index": 39,
+      "group": 4,
+      "within_group": 3,
+      "name": "רהע",
+      "normalized_name": "רהע",
+      "regular": 275,
+      "ordinal": 41,
+      "atbash_ordinal": 28,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 39,
+        "verse20": 34,
+        "verse21": 39
+      }
+    },
+    {
+      "index": 40,
+      "group": 4,
+      "within_group": 4,
+      "name": "ייז",
+      "normalized_name": "ייז",
+      "regular": 27,
+      "ordinal": 27,
+      "atbash_ordinal": 42,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 40,
+        "verse20": 33,
+        "verse21": 40
+      }
+    },
+    {
+      "index": 41,
+      "group": 4,
+      "within_group": 5,
+      "name": "ההה",
+      "normalized_name": "ההה",
+      "regular": 15,
+      "ordinal": 15,
+      "atbash_ordinal": 54,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 41,
+        "verse20": 32,
+        "verse21": 41
+      }
+    },
+    {
+      "index": 42,
+      "group": 4,
+      "within_group": 6,
+      "name": "מיך",
+      "normalized_name": "מיכ",
+      "regular": 70,
+      "ordinal": 34,
+      "atbash_ordinal": 35,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 42,
+        "verse20": 31,
+        "verse21": 42
+      }
+    },
+    {
+      "index": 43,
+      "group": 4,
+      "within_group": 7,
+      "name": "וול",
+      "normalized_name": "וול",
+      "regular": 42,
+      "ordinal": 24,
+      "atbash_ordinal": 45,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 43,
+        "verse20": 30,
+        "verse21": 43
+      }
+    },
+    {
+      "index": 44,
+      "group": 4,
+      "within_group": 8,
+      "name": "ילה",
+      "normalized_name": "ילה",
+      "regular": 45,
+      "ordinal": 27,
+      "atbash_ordinal": 42,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 44,
+        "verse20": 29,
+        "verse21": 44
+      }
+    },
+    {
+      "index": 45,
+      "group": 4,
+      "within_group": 9,
+      "name": "סאל",
+      "normalized_name": "סאל",
+      "regular": 91,
+      "ordinal": 28,
+      "atbash_ordinal": 41,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 45,
+        "verse20": 28,
+        "verse21": 45
+      }
+    },
+    {
+      "index": 46,
+      "group": 4,
+      "within_group": 10,
+      "name": "ערי",
+      "normalized_name": "ערי",
+      "regular": 280,
+      "ordinal": 46,
+      "atbash_ordinal": 23,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 46,
+        "verse20": 27,
+        "verse21": 46
+      }
+    },
+    {
+      "index": 47,
+      "group": 4,
+      "within_group": 11,
+      "name": "עשל",
+      "normalized_name": "עשל",
+      "regular": 400,
+      "ordinal": 49,
+      "atbash_ordinal": 20,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 47,
+        "verse20": 26,
+        "verse21": 47
+      }
+    },
+    {
+      "index": 48,
+      "group": 4,
+      "within_group": 12,
+      "name": "מיה",
+      "normalized_name": "מיה",
+      "regular": 55,
+      "ordinal": 28,
+      "atbash_ordinal": 41,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 48,
+        "verse20": 25,
+        "verse21": 48
+      }
+    },
+    {
+      "index": 49,
+      "group": 5,
+      "within_group": 1,
+      "name": "והו",
+      "normalized_name": "והו",
+      "regular": 17,
+      "ordinal": 17,
+      "atbash_ordinal": 52,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 49,
+        "verse20": 24,
+        "verse21": 49
+      }
+    },
+    {
+      "index": 50,
+      "group": 5,
+      "within_group": 2,
+      "name": "דני",
+      "normalized_name": "דני",
+      "regular": 64,
+      "ordinal": 28,
+      "atbash_ordinal": 41,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 50,
+        "verse20": 23,
+        "verse21": 50
+      }
+    },
+    {
+      "index": 51,
+      "group": 5,
+      "within_group": 3,
+      "name": "החש",
+      "normalized_name": "החש",
+      "regular": 313,
+      "ordinal": 34,
+      "atbash_ordinal": 35,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 51,
+        "verse20": 22,
+        "verse21": 51
+      }
+    },
+    {
+      "index": 52,
+      "group": 5,
+      "within_group": 4,
+      "name": "עמם",
+      "normalized_name": "עממ",
+      "regular": 150,
+      "ordinal": 42,
+      "atbash_ordinal": 27,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 52,
+        "verse20": 21,
+        "verse21": 52
+      }
+    },
+    {
+      "index": 53,
+      "group": 5,
+      "within_group": 5,
+      "name": "ננא",
+      "normalized_name": "ננא",
+      "regular": 101,
+      "ordinal": 29,
+      "atbash_ordinal": 40,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 53,
+        "verse20": 20,
+        "verse21": 53
+      }
+    },
+    {
+      "index": 54,
+      "group": 5,
+      "within_group": 6,
+      "name": "נית",
+      "normalized_name": "נית",
+      "regular": 460,
+      "ordinal": 46,
+      "atbash_ordinal": 23,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 54,
+        "verse20": 19,
+        "verse21": 54
+      }
+    },
+    {
+      "index": 55,
+      "group": 5,
+      "within_group": 7,
+      "name": "מבה",
+      "normalized_name": "מבה",
+      "regular": 47,
+      "ordinal": 20,
+      "atbash_ordinal": 49,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 55,
+        "verse20": 18,
+        "verse21": 55
+      }
+    },
+    {
+      "index": 56,
+      "group": 5,
+      "within_group": 8,
+      "name": "פוי",
+      "normalized_name": "פוי",
+      "regular": 96,
+      "ordinal": 33,
+      "atbash_ordinal": 36,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 56,
+        "verse20": 17,
+        "verse21": 56
+      }
+    },
+    {
+      "index": 57,
+      "group": 5,
+      "within_group": 9,
+      "name": "נמם",
+      "normalized_name": "נממ",
+      "regular": 130,
+      "ordinal": 40,
+      "atbash_ordinal": 29,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 57,
+        "verse20": 16,
+        "verse21": 57
+      }
+    },
+    {
+      "index": 58,
+      "group": 5,
+      "within_group": 10,
+      "name": "ייל",
+      "normalized_name": "ייל",
+      "regular": 50,
+      "ordinal": 32,
+      "atbash_ordinal": 37,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 58,
+        "verse20": 15,
+        "verse21": 58
+      }
+    },
+    {
+      "index": 59,
+      "group": 5,
+      "within_group": 11,
+      "name": "הרח",
+      "normalized_name": "הרח",
+      "regular": 213,
+      "ordinal": 33,
+      "atbash_ordinal": 36,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 59,
+        "verse20": 14,
+        "verse21": 59
+      }
+    },
+    {
+      "index": 60,
+      "group": 5,
+      "within_group": 12,
+      "name": "מצר",
+      "normalized_name": "מצר",
+      "regular": 330,
+      "ordinal": 51,
+      "atbash_ordinal": 18,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 60,
+        "verse20": 13,
+        "verse21": 60
+      }
+    },
+    {
+      "index": 61,
+      "group": 6,
+      "within_group": 1,
+      "name": "ומב",
+      "normalized_name": "ומב",
+      "regular": 48,
+      "ordinal": 21,
+      "atbash_ordinal": 48,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 61,
+        "verse20": 12,
+        "verse21": 61
+      }
+    },
+    {
+      "index": 62,
+      "group": 6,
+      "within_group": 2,
+      "name": "יהה",
+      "normalized_name": "יהה",
+      "regular": 20,
+      "ordinal": 20,
+      "atbash_ordinal": 49,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 62,
+        "verse20": 11,
+        "verse21": 62
+      }
+    },
+    {
+      "index": 63,
+      "group": 6,
+      "within_group": 3,
+      "name": "ענו",
+      "normalized_name": "ענו",
+      "regular": 126,
+      "ordinal": 36,
+      "atbash_ordinal": 33,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 63,
+        "verse20": 10,
+        "verse21": 63
+      }
+    },
+    {
+      "index": 64,
+      "group": 6,
+      "within_group": 4,
+      "name": "מחי",
+      "normalized_name": "מחי",
+      "regular": 58,
+      "ordinal": 31,
+      "atbash_ordinal": 38,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 64,
+        "verse20": 9,
+        "verse21": 64
+      }
+    },
+    {
+      "index": 65,
+      "group": 6,
+      "within_group": 5,
+      "name": "דמב",
+      "normalized_name": "דמב",
+      "regular": 46,
+      "ordinal": 19,
+      "atbash_ordinal": 50,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 65,
+        "verse20": 8,
+        "verse21": 65
+      }
+    },
+    {
+      "index": 66,
+      "group": 6,
+      "within_group": 6,
+      "name": "מנק",
+      "normalized_name": "מנק",
+      "regular": 190,
+      "ordinal": 46,
+      "atbash_ordinal": 23,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 66,
+        "verse20": 7,
+        "verse21": 66
+      }
+    },
+    {
+      "index": 67,
+      "group": 6,
+      "within_group": 7,
+      "name": "איע",
+      "normalized_name": "איע",
+      "regular": 81,
+      "ordinal": 27,
+      "atbash_ordinal": 42,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 67,
+        "verse20": 6,
+        "verse21": 67
+      }
+    },
+    {
+      "index": 68,
+      "group": 6,
+      "within_group": 8,
+      "name": "חבו",
+      "normalized_name": "חבו",
+      "regular": 16,
+      "ordinal": 16,
+      "atbash_ordinal": 53,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 68,
+        "verse20": 5,
+        "verse21": 68
+      }
+    },
+    {
+      "index": 69,
+      "group": 6,
+      "within_group": 9,
+      "name": "ראה",
+      "normalized_name": "ראה",
+      "regular": 206,
+      "ordinal": 26,
+      "atbash_ordinal": 43,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 69,
+        "verse20": 4,
+        "verse21": 69
+      }
+    },
+    {
+      "index": 70,
+      "group": 6,
+      "within_group": 10,
+      "name": "יבם",
+      "normalized_name": "יבמ",
+      "regular": 52,
+      "ordinal": 25,
+      "atbash_ordinal": 44,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 70,
+        "verse20": 3,
+        "verse21": 70
+      }
+    },
+    {
+      "index": 71,
+      "group": 6,
+      "within_group": 11,
+      "name": "היי",
+      "normalized_name": "היי",
+      "regular": 25,
+      "ordinal": 25,
+      "atbash_ordinal": 44,
+      "palindrome": false,
+      "source_positions": {
+        "verse19": 71,
+        "verse20": 2,
+        "verse21": 71
+      }
+    },
+    {
+      "index": 72,
+      "group": 6,
+      "within_group": 12,
+      "name": "מום",
+      "normalized_name": "מומ",
+      "regular": 86,
+      "ordinal": 32,
+      "atbash_ordinal": 37,
+      "palindrome": true,
+      "source_positions": {
+        "verse19": 72,
+        "verse20": 1,
+        "verse21": 72
+      }
+    }
+  ]
+}
