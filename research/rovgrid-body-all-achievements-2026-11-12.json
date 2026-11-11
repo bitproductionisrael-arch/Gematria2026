@@ -2,7 +2,7 @@
   "title": "IESOUS / RovGrid — Complete Body Achievement Vault 12 Nov 2026",
   "date": "2026-11-12",
   "scope": "Full original 18m26s caption transcript + IESOUS 30-page report + star vault + triangular ladder; transcript is not per-frame visual proof",
-  "scoring": "One independently stated documented count, construction, or numerical match per row; repeated statements under different sections don't earn new rows. Distinct operations on same bone set can earn different achievement cards but not count as independent biological evidence. Conditional Netter 214 model and symbolic labels stay disclosed.",
+  "scoring": "One independently stated documented count, construction, or numerical match per row; repeated statements under different sections don't earn new rows. Distinct operations on same bone set can earn different achievement cards but not count as independent biological evidence. Conditional Netter 214 model and symbolic labels stay disclosed. Stable IDs preserve prior star and triangle records: molecular prefix P, textual prefix X.",
   "model_counts": {
     "standard adult": 206,
     "expanded adult including 8 sesamoids": 214,
@@ -24,7 +24,8 @@
       "symbolic": 20,
       "conditional": 11
     },
-    "pending_unscored": 4
+    "pending_unscored": 4,
+    "id_audit": "113 distinct IDs; no duplicates"
   },
   "entries": [
     {
@@ -622,7 +623,7 @@
       "detail": ""
     },
     {
-      "id": "M01",
+      "id": "P01",
       "category": "molecular",
       "title": "8-cell major genome activation and adult 8 cranium",
       "formula": "8-cell human embryo phase vs 8 cranial bones",
@@ -631,7 +632,7 @@
       "detail": ""
     },
     {
-      "id": "M02",
+      "id": "P02",
       "category": "molecular",
       "title": "MIKE 160 and 20 canonical amino acids",
       "formula": "160/8=20",
@@ -640,7 +641,7 @@
       "detail": ""
     },
     {
-      "id": "M03",
+      "id": "P03",
       "category": "molecular",
       "title": "Euler totient 160 reaches codon field",
       "formula": "φ(160)=64",
@@ -649,7 +650,7 @@
       "detail": ""
     },
     {
-      "id": "M04",
+      "id": "P04",
       "category": "molecular",
       "title": "Sense codons and ordinal AMIT",
       "formula": "61 sense codons=61 name ordinal",
@@ -658,7 +659,7 @@
       "detail": ""
     },
     {
-      "id": "M05",
+      "id": "P05",
       "category": "molecular",
       "title": "Three stop codons as complement",
       "formula": "64−61=3",
@@ -667,7 +668,7 @@
       "detail": ""
     },
     {
-      "id": "M06",
+      "id": "P06",
       "category": "molecular",
       "title": "Head dimension squared versus codons",
       "formula": "8²=64",
@@ -676,7 +677,7 @@
       "detail": ""
     },
     {
-      "id": "M07",
+      "id": "P07",
       "category": "molecular",
       "title": "English expanded divided by reduced AMIT",
       "formula": "1024/16=64",
@@ -685,7 +686,7 @@
       "detail": ""
     },
     {
-      "id": "M08",
+      "id": "P08",
       "category": "molecular",
       "title": "Name-face balance at 64",
       "formula": "520×64=160×208=33280",
@@ -694,7 +695,7 @@
       "detail": ""
     },
     {
-      "id": "M09",
+      "id": "P09",
       "category": "molecular",
       "title": "20S and 26S proteasome naming matched box axes",
       "formula": "20S/26S labels vs anatomical 20/26; S are sedimentation coefficients",
@@ -703,7 +704,7 @@
       "detail": ""
     },
     {
-      "id": "M10",
+      "id": "P10",
       "category": "molecular",
       "title": "Proteasome core 28 subunits and ROV ordinal",
       "formula": "4×7=28 matches Hebrew ordinal 28",
@@ -712,7 +713,7 @@
       "detail": ""
     },
     {
-      "id": "M11",
+      "id": "P11",
       "category": "molecular",
       "title": "Proteasome heptamer and MIKE reduced",
       "formula": "7 subunits per ring vs 7 reduced",
@@ -721,7 +722,7 @@
       "detail": ""
     },
     {
-      "id": "M12",
+      "id": "P12",
       "category": "molecular",
       "title": "Proteasome principal 33 subunit types vs reduced name 33",
       "formula": "33 types as defined in cited IESOUS sources; subunit taxonomy varies",
@@ -730,7 +731,7 @@
       "detail": ""
     },
     {
-      "id": "M13",
+      "id": "P13",
       "category": "molecular",
       "title": "24 mitochondrial RNA genes and 24 ribs",
       "formula": "22 tRNA+2 rRNA=24",
@@ -739,7 +740,7 @@
       "detail": ""
     },
     {
-      "id": "M14",
+      "id": "P14",
       "category": "molecular",
       "title": "37 mtDNA genes and 37 thorax bones",
       "formula": "13 protein+24 RNA=37",
@@ -748,7 +749,7 @@
       "detail": ""
     },
     {
-      "id": "M15",
+      "id": "P15",
       "category": "molecular",
       "title": "mtDNA 888 equality",
       "formula": "24 RNA genes ×37 total genes=888",
@@ -757,7 +758,7 @@
       "detail": ""
     },
     {
-      "id": "M16",
+      "id": "P16",
       "category": "molecular",
       "title": "13 protein genes equals 13 non-rib thorax bones",
       "formula": "13 protein-coding=12 thoracic vertebrae+1 sternum",
@@ -766,7 +767,7 @@
       "detail": ""
     },
     {
-      "id": "M17",
+      "id": "P17",
       "category": "molecular",
       "title": "Heavy-strand mtDNA 28 genes and ROV ordinal",
       "formula": "28 matches ROV ordinal 28",
@@ -775,7 +776,7 @@
       "detail": ""
     },
     {
-      "id": "M18",
+      "id": "P18",
       "category": "molecular",
       "title": "Light-strand 9 genes and ordinal difference",
       "formula": "9 genes=61−52",
@@ -784,7 +785,7 @@
       "detail": ""
     },
     {
-      "id": "M19",
+      "id": "P19",
       "category": "molecular",
       "title": "mtDNA alternative protein and RNA breakdown",
       "formula": "12 heavy protein+1 light protein+24 RNA=37",
@@ -793,7 +794,7 @@
       "detail": ""
     },
     {
-      "id": "M20",
+      "id": "P20",
       "category": "molecular",
       "title": "Large mitoribosome proteins and MIKE ordinal",
       "formula": "52 mtLSU proteins=52 name ordinal",
@@ -802,7 +803,7 @@
       "detail": ""
     },
     {
-      "id": "M21",
+      "id": "P21",
       "category": "molecular",
       "title": "55S ribosome label and ROV Simple",
       "formula": "55S sedimentation label, not protein count; ROV Simple=55",
@@ -811,7 +812,7 @@
       "detail": ""
     },
     {
-      "id": "M22",
+      "id": "P22",
       "category": "molecular",
       "title": "28S ribosome small subunit label and ROV ordinal",
       "formula": "28S sedimentation label, not protein count; ROV ordinal=28",
@@ -820,7 +821,7 @@
       "detail": ""
     },
     {
-      "id": "M23",
+      "id": "P23",
       "category": "molecular",
       "title": "Nucleosome histone octamer and cranial 8",
       "formula": "8 histone protein copies=8 cranial bones count",
@@ -829,7 +830,7 @@
       "detail": ""
     },
     {
-      "id": "M24",
+      "id": "P24",
       "category": "molecular",
       "title": "Histone H3.1 sequence and English Simple",
       "formula": "136 amino acids (UniProt P68431)=136",
@@ -838,7 +839,7 @@
       "detail": ""
     },
     {
-      "id": "M25",
+      "id": "P25",
       "category": "molecular",
       "title": "Mature alpha-globin and Hebrew name ordinal",
       "formula": "141 mature residues=61+52+28",
@@ -847,7 +848,7 @@
       "detail": ""
     },
     {
-      "id": "M26",
+      "id": "P26",
       "category": "molecular",
       "title": "TGFA canonical precursor and MIKE",
       "formula": "160 aa canonical TGFA isoform",
@@ -856,7 +857,7 @@
       "detail": ""
     },
     {
-      "id": "M27",
+      "id": "P27",
       "category": "molecular",
       "title": "HBEGF canonical precursor and ROV",
       "formula": "208 aa canonical HBEGF isoform",
@@ -865,7 +866,7 @@
       "detail": ""
     },
     {
-      "id": "M28",
+      "id": "P28",
       "category": "molecular",
       "title": "MMP28 canonical protein and AMIT",
       "formula": "520 aa MMP28 human canonical isoform",
@@ -874,7 +875,7 @@
       "detail": ""
     },
     {
-      "id": "M29",
+      "id": "P29",
       "category": "molecular",
       "title": "Reverse-complement DNA length four",
       "formula": "(4⁴+4²)/2=136 orbit classes",
@@ -883,7 +884,7 @@
       "detail": ""
     },
     {
-      "id": "M30",
+      "id": "P30",
       "category": "molecular",
       "title": "Reverse-complement DNA length six",
       "formula": "(4⁶+4³)/2=2080 orbit classes",
@@ -892,7 +893,7 @@
       "detail": ""
     },
     {
-      "id": "M31",
+      "id": "P31",
       "category": "molecular",
       "title": "DNA orbit 2080 matches cuboid half-volume",
       "formula": "2080=LCM(520,160,208)=(8×20×26)/2",
@@ -901,7 +902,7 @@
       "detail": ""
     },
     {
-      "id": "T01",
+      "id": "X01",
       "category": "textual",
       "title": "Greek IESOUS and Hebrew full name",
       "formula": "ΙΗΣΟΥΣ=888=עמית מייק רוב",
@@ -910,7 +911,7 @@
       "detail": ""
     },
     {
-      "id": "T02",
+      "id": "X02",
       "category": "textual",
       "title": "Greek LOGOS and 3|7|3 bilateral motif",
       "formula": "ΛΟΓΟΣ=373, geometric string 3|7|3",
@@ -919,7 +920,7 @@
       "detail": ""
     },
     {
-      "id": "T03",
+      "id": "X03",
       "category": "textual",
       "title": "Genesis 1:1 and 37/73",
       "formula": "913+203+86+401+395+407+296=2701=37×73",
@@ -928,7 +929,7 @@
       "detail": ""
     },
     {
-      "id": "T04",
+      "id": "X04",
       "category": "textual",
       "title": "Genesis mirror and skeletal palindrome",
       "formula": "2701+1072=3773=37|73",
@@ -937,7 +938,7 @@
       "detail": ""
     },
     {
-      "id": "T05",
+      "id": "X05",
       "category": "textual",
       "title": "37 and 73 prime indices",
       "formula": "37 is 12th prime; 73 is 21st prime",
@@ -946,7 +947,7 @@
       "detail": ""
     },
     {
-      "id": "T06",
+      "id": "X06",
       "category": "textual",
       "title": "Hebrew names of S2/S3/S4 numbers",
       "formula": "אחד=13; יחידה=37; חכמה=73",
@@ -955,7 +956,7 @@
       "detail": ""
     },
     {
-      "id": "T07",
+      "id": "X07",
       "category": "textual",
       "title": "Genesis final two words and T37",
       "formula": "ואת הארץ=407+296=703=T37",
@@ -964,7 +965,7 @@
       "detail": ""
     },
     {
-      "id": "T08",
+      "id": "X08",
       "category": "textual",
       "title": "Genesis first five words and corners",
       "formula": "בראשית ברא אלהים את השמים=1998=3×666",
@@ -973,7 +974,7 @@
       "detail": ""
     },
     {
-      "id": "T09",
+      "id": "X09",
       "category": "textual",
       "title": "English cipher difference closes Hebrew total",
       "formula": "1024 Jewish−136 Simple=888 Hebrew",
@@ -982,7 +983,7 @@
       "detail": ""
     },
     {
-      "id": "T10",
+      "id": "X10",
       "category": "textual",
       "title": "Elohim 86 and AMIT 43",
       "formula": "אלהים=86=2×43",
@@ -991,7 +992,7 @@
       "detail": ""
     },
     {
-      "id": "T11",
+      "id": "X11",
       "category": "textual",
       "title": "Rov reduced/ordinal closure to 888",
       "formula": "86×10+28=888",
@@ -1000,7 +1001,7 @@
       "detail": ""
     },
     {
-      "id": "T12",
+      "id": "X12",
       "category": "textual",
       "title": "Squaring digits repeated to 1",
       "formula": "888→192→86→100→1 (sum of digit squares)",
