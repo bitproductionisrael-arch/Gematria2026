@@ -56,5 +56,15 @@ def main():
     for i,w in enumerate(n):
         assert w==VERSE19[i]+VERSE20[71-i]+VERSE21[i]
         assert Counter(''.join(n))==Counter(VERSE19+VERSE20+VERSE21)
+    from itertools import combinations as _choose
+    used=set(''.join(n))
+    assert len(used)==21 and set(ALPHABET)-used=={'ג'}
+    all_pairs=[tuple(sorted((a,b))) for w in n for a,b in _choose(w,2)]
+    distinct_slots=[p for p in all_pairs if p[0]!=p[1]]
+    gates=set(distinct_slots)
+    assert len(all_pairs)==216 and len(distinct_slots)==192
+    assert len(gates)==93
+    assert 22*21//2==231 and 21*20//2==210
+    assert 210-93==117 and 231-93==138
     print("PASS: 72 triads reconstructed from 3x72 Exodus letters; complete values, 6x12 sums, duplications, 888/1024 controls")
 if __name__=="__main__": main()
