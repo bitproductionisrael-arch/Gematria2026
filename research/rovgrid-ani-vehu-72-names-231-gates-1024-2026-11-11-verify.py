@@ -74,6 +74,13 @@ def main():
     assert sum(chain)==259==7*37
     assert [chain[i]+chain[-i-1] for i in range(3)]==[74]*3
     assert (7**2+5**2)*(7+5)==888
+    # New modular observation: n=8 is the least positive index with ord divisible by 23.
+    assert [n for n in range(1,32) if gem(R(n),"ord")%23==0]==[8,31]
+    assert 368==23*16 and 989==23*43 and 59==16+43
+    assert (gem(R(8),"ord")+gem(R(8),"atb"))==59*23
+    assert 656==16*41 and 368==16*23 and 1024==16*64
+    assert (gem(S(14)),888,296)==(8*148,6*148,2*148)
+    assert gem(R(5),"ord")==221 and 231-221==10
     print("PASS: positional 72, letterwise methods, n=1..30, 231 gates, 1024 closure, 14-tail, 128 symmetry")
 if __name__=="__main__":
     main()
