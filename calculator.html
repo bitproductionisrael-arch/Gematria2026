@@ -559,12 +559,12 @@ Object.assign(HE_KATAN_SOFIT,HE_KATAN);FINAL_ORDER.forEach((L,i)=>HE_KATAN_SOFIT
 let _kid=0;HE_ORDER.forEach(L=>{_kid+=HE_VAL[L];HE_KIDMI[L]=_kid});Object.entries(FINAL_TO_BASE).forEach(([f,b])=>HE_KIDMI[f]=HE_KIDMI[b]);
 const HE_ZERO_STEP={};Object.keys(HE_VAL).forEach(k=>{const v=HE_VAL[k];HE_ZERO_STEP[k]=(v>=10&&v%10===0)?v/10:v});
 
-const HE_ATBASH={},HE_ATBASH_ORD={},HE_ATBASH_LETTER={},HE_ALBAM={},HE_ALBAM_LETTER={},HE_AVGAD={},HE_AVGAD_LETTER={};
+const HE_ATBASH={},HE_ATBASH_ORD={},HE_ATBASH_LETTER={},HE_ALBAM={},HE_ALBAM_ORD={},HE_ALBAM_LETTER={},HE_AVGAD={},HE_AVGAD_LETTER={};
 HE_ORDER.forEach((L,i)=>{const mate=HE_ORDER[21-i];HE_ATBASH[L]=HE_VAL[mate];HE_ATBASH_ORD[L]=HE_ORD[mate];HE_ATBASH_LETTER[L]=mate});
-for(let i=0;i<11;i++){const a=HE_ORDER[i],b=HE_ORDER[i+11];HE_ALBAM_LETTER[a]=b;HE_ALBAM_LETTER[b]=a;HE_ALBAM[a]=HE_VAL[b];HE_ALBAM[b]=HE_VAL[a]}
+for(let i=0;i<11;i++){const a=HE_ORDER[i],b=HE_ORDER[i+11];HE_ALBAM_LETTER[a]=b;HE_ALBAM_LETTER[b]=a;HE_ALBAM[a]=HE_VAL[b];HE_ALBAM[b]=HE_VAL[a];HE_ALBAM_ORD[a]=HE_ORD[b];HE_ALBAM_ORD[b]=HE_ORD[a]}
 HE_ORDER.forEach((L,i)=>{const mate=HE_ORDER[(i+1)%22];HE_AVGAD_LETTER[L]=mate;HE_AVGAD[L]=HE_VAL[mate]});
 for(const [f,b] of Object.entries(FINAL_TO_BASE)){
-  HE_ATBASH[f]=HE_ATBASH[b];HE_ATBASH_ORD[f]=HE_ATBASH_ORD[b];HE_ATBASH_LETTER[f]=HE_ATBASH_LETTER[b];HE_ALBAM[f]=HE_ALBAM[b];HE_ALBAM_LETTER[f]=HE_ALBAM_LETTER[b];HE_AVGAD[f]=HE_AVGAD[b];HE_AVGAD_LETTER[f]=HE_AVGAD_LETTER[b];
+  HE_ATBASH[f]=HE_ATBASH[b];HE_ATBASH_ORD[f]=HE_ATBASH_ORD[b];HE_ATBASH_LETTER[f]=HE_ATBASH_LETTER[b];HE_ALBAM[f]=HE_ALBAM[b];HE_ALBAM_ORD[f]=HE_ALBAM_ORD[b];HE_ALBAM_LETTER[f]=HE_ALBAM_LETTER[b];HE_AVGAD[f]=HE_AVGAD[b];HE_AVGAD_LETTER[f]=HE_AVGAD_LETTER[b];
 }
 const AYAK_CHAMBERS=[];for(let d=0;d<9;d++)AYAK_CHAMBERS.push([HE_ORDER[d],HE_ORDER[d+9],d<4?HE_ORDER[d+18]:FINAL_ORDER[d-4]]);
 const HE_AYAK={},HE_AYAK_LETTER={},HE_CHAMBER={},HE_AYAK_TIER={},HE_AYAK_DIGIT={};AYAK_CHAMBERS.forEach((triad,d)=>{const nm=triad[0]+triad[1]+'״'+triad[2];triad.forEach((L,j)=>{const mate=triad[(j+1)%3];HE_AYAK_LETTER[L]=mate;HE_AYAK[L]=HE_SOFIT[mate];HE_CHAMBER[L]=nm;HE_AYAK_TIER[L]=j;HE_AYAK_DIGIT[L]=d+1})});
@@ -729,6 +729,7 @@ const METHODS={
   {key:'atbash',cat:'cipher',name:'אתב״ש / Atbash',map:HE_ATBASH,sub:HE_ATBASH_LETTER},
    {key:'atbashOrdinal',cat:'cipher',name:'אתב״ש סדרי / Atbash Ordinal',map:HE_ATBASH_ORD,sub:HE_ATBASH_LETTER,aliasNote:'אות מראה → ערך סדרי'},
   {key:'albam',cat:'cipher',name:'אלב״ם / ALBaM',map:HE_ALBAM,sub:HE_ALBAM_LETTER},
+  {key:'albamOrdinal',cat:'cipher',name:'אלב״ם סדרי',map:HE_ALBAM_ORD,sub:HE_ALBAM_LETTER,aliasNote:'אות אלב״ם → ערך סדרי'},
   {key:'avgad',cat:'cipher',name:'אבג״ד / AVGaD',map:HE_AVGAD,sub:HE_AVGAD_LETTER},
   {key:'ayak',cat:'cipher',name:'אי״ק בכ״ר / AIQ BKR',map:HE_AYAK,sub:HE_AYAK_LETTER,family:HE_CHAMBER},
   {key:'kidmi',cat:'base',name:'מספר קדמי / Kidmi',map:HE_KIDMI},
@@ -859,7 +860,7 @@ const METHOD_EN_NAMES={
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Small',
  smallFinals:'Small Finals',wordReduced:'Reduced',wordReducedFinals:'Word Reduced (Finals)',digitReduced:'Digit Reduced',pythagorean:'English Small / Pythagorean',agrippaReduced:'Jewish Small',agrippaWordReduced:'Jewish Reduced',agrippaDigitReduced:'Jewish Digit Reduced',ruReduced:'Russian Small',ruWordReduced:'Russian Reduced',ruDigitReduced:'Russian Digit Reduced',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'Zero Reduction #1',
- atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
+ atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',albamOrdinal:'ALBaM Ordinal',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
  equivalence:'Equivalence',ratzo:'Running & Returning',addsub:'Addition & Subtraction',cycleBkr:'Cycle BKR (Σ3)',
  latinMiluiUserSimple:'Latin Milui v0 → English Simple',latinMiluiUserReduced:'Reduced English Filling',latinMiluiUserRegular:'Latin Milui v0 → English Regular',
@@ -1163,7 +1164,8 @@ const METHOD_BOOK_DOCS={
   'en:digitReduced':{plain:'English Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום English Small של הביטוי.',formula:'DR(sum English Small letters).'},
   'en:agrippaDigitReduced':{plain:'Jewish Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Jewish Small של הביטוי.',formula:'DR(sum Jewish Small letters).'},
   'ru:ruDigitReduced':{plain:'Russian Digit Reduced',original:'RovGrid final digit reduction',status:'modern',history:'שורש ספרתי לסכום Russian Small של הביטוי.',formula:'DR(sum Russian Small letters).'},
-  'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. מציג את חילופי האותיות ואת ערכיהן הסידוריים במפורש.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).'},
+  'he:albamOrdinal':{plain:'אלב״ם סדרי',original:'ALBaM → Hebrew Ordinal',status:'derived',history:'מחליפים כל אות בשיטת אלב״ם (א↔ל, ב↔מ וכו׳) ומחברים את ערכי האותיות המוחלפות בגימטריה סדרית 1–22. אותיות סופיות מחושבות לפי אות הבסיס. השיטה נפרדת מאלב״ם הרגילה ואינה מחליפה אותה.',formula:'לכל אות במקום i באלף־בית (1–22): 1+((i−1+11) mod 22); מחברים את ערכי האותיות המוחלפות.'},
+ 'he:atbashOrdinal':{plain:'אתב״ש סדרי',original:'Atbash → Mispar Siduri / Mirror Ordinal',status:'derived',history:'מחליפים כל אות באות המראה באתב״ש ומחברים את הערכים הסידוריים 1–22. אותיות סופיות ממופות לאות הבסיס. מציג את חילופי האותיות ואת ערכיהן הסידוריים במפורש.',formula:'א→ת=22, ב→ש=21, …, ת→א=1; Σ(23−ordinal(letter)).'},
  'he:zeroStep':{plain:'צמצום אפס #1',original:'One-step zero reduction / הסרת אפס חד־שלבית',status:'modern',history:'שם התצוגה הקנוני לפי הגדרת המחקר: צמצום אפס #1. מכל ערך אות מסירים אפס אחד בלבד לפני חיבור האותיות (400→40). זה נפרד מצמצום אפס #2 (קטן: 400→4), ונפרד מצמצום מילים.',formula:'R₁(v)=v/10 if v≥10 and v is divisible by 10; otherwise R₁(v)=v. Then sum R₁(letter value).',aliases:['צמצום №1 / Reduction №1','הסרת אפס חד־שלבית']},
  'he:harmonicHalf':{plain:'חצי הרמוני',original:'Harmonic Half · site-developed',status:'modern',history:'פיתוח מחקרי של האתר (2026). אופרטור נפרד משלוש דרגות הצמצום: מתחיל מסכום D1 ומחלק את התוצאה השלמה בחזקות של 2. תצוגת הריבועים היא מודל גאומטרי של שטח/קנה־מידה.',formula:'H0 = D1 total. Hk = H0 / 2^k. Square model: count=2^k, area each=A0/2^k, side ratio=1/sqrt(2^k).'},
  'he:achorayim':{plain:'בניין קידומות',original:'Mispar Boneh-like prefix building',status:'conflict',history:'קונפליקט שם פתוח: הקוד מבצע סכומי קידומות מצטברים. התווית הישנה “מספר האחור · תוספת” אינה מתארת היטב את האלגוריתם.',formula:'For letters a₁…aₙ: sum (a₁)+(a₁+a₂)+…+(a₁+…+aₙ).',aliases:['מספר האחור · תוספת / Achorayim'],conflict:true},
@@ -2683,7 +2685,12 @@ console.assert(totient(888)===288,'phi 888');console.assert(tau(888)===16,'tau 8
 console.assert(compositeIndex(636)===520,'636 composite #520');console.assert(primeIndex(1877)===288,'1877 prime #288');console.assert(nthPrime(520)===3727,'Prime #520 = 3727');console.assert(prevNextPrime(520).prev===509,'Prime before 520 = 509');
 console.assert(T('מיכאלבלייז','he','achorayim')===1024,'MichaelBlaze Achorayim 1024');
 console.assert(T('מיכאל בלייז','he','regular')===160,'Michael Blaze regular 160');
-console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');console.assert(T('אלהימ','he','positional')===316,'Elohim open positional 316');console.assert(T('אלהימ','he','ratzo')===314,'Elohim open ratzo 314');console.assert(T('יהוה','he','albam')===520,'YHWH ALBaM 520');console.assert(T('יהוה','he','kolel')===27,'YHWH Kolel 27');console.assert(T('יהוה','he','achorayim')===72,'YHWH Achorayim 72');
+console.assert(T('אלהימ','he','ordinal')===41,'Elohim open ordinal 41');console.assert(T('אלהימ','he','positional')===316,'Elohim open positional 316');console.assert(T('אלהימ','he','ratzo')===314,'Elohim open ratzo 314');console.assert(T('יהוה','he','albam')===520,'YHWH ALBaM 520');
+console.assert(T('יהוה','he','albamOrdinal')===70,'YHWH ALBaM Ordinal is 70');
+console.assert(T('יבא בין מחנה','he','albam')===888,'Exodus 14:20 positions 2-11 ALBaM regular 888');
+console.assert(T('ויבא בין מחנה','he','albam')===968,'ALBaM ordinary, leading vav matters');
+console.assert(T('נתה האא ירת שאה ריי אום לכב ושר יחו להח כוק מנד אני חעם רהע ייז ההה מיך וול ילה סאל ערי עשל מיה','he','albamOrdinal')===888,'ALBaM Ordinal names #25–48 = 888');
+console.assert(T('יהוה','he','albam')===520,'ALBaM regular remains 520');console.assert(T('יהוה','he','kolel')===27,'YHWH Kolel 27');console.assert(T('יהוה','he','achorayim')===72,'YHWH Achorayim 72');
 
 
 console.assert(permutationData('אבגדה').total===120n,'Permutation five distinct letters = 120');
