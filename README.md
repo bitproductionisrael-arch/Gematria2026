@@ -1,5 +1,9 @@
 # Gematria2026
 
+
+## חדש 12.11.2026 — גרסת פרסום: שני מסלולים גיאומטריים ל־888
+- **[לקריאת המאמר המלא בעברית](research/rovgrid-publication-two-geometric-routes-888-2026-11-12.md)** · [תיעוד מקור וביקורת](research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11.md) · [סקריפט אימות](research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11-verify.py) · [אינדקס קורפוסים מבניים](research/rovgrid-2026-11-07-structural-corpora-index.md). גרסת הפרסום כוללת 19/37/73, 703/2701, 6/12/24, קובייה 8/20/26, זהות 888, והצומת 54.
+
 ## חדש 11.11.2026 — סולם 19–37–73 והגשר הגיאומטרי ל־888
 - **[ביקורת מקור על עמ׳ 296, 299–301: 1+9k, 19/37/73, קובייה–דודקהדרון–Stella Octangula, שני מסלולי 888](research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11.md)** · [בדיקת Python משחזרת](research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11-verify.py). 6/12/24 פאות ו־3n+1 מפיקים 19/37/73; 24×37=888. בנפרד, קובייה V/E/F=8/12/6 מפיקה סכומי קידומות 8/20/26 ומקדם מכפלות 888. ההעתקות והבחירות מוגדרות במפורש; לא הוכחה הכרחיות גיאומטרית אחת. עמודי מקור חלקיים, האתר לא שונה.
 
