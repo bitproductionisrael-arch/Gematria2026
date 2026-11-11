@@ -1,0 +1,2964 @@
+{
+  "protocol": "one-based indexes; maqaf separates words; omit footnotes, parasha markers and alternate qere renderings",
+  "source": "Sivan22/Sefaria-Export-Hebrew-Texts: json/Tanakh/Torah/Genesis|Exodus/Hebrew/merged.json",
+  "book_stats": [
+    {
+      "book": "Genesis",
+      "verses": 1533,
+      "words": 20612,
+      "letters": 78063
+    },
+    {
+      "book": "Exodus",
+      "verses": 1210,
+      "words": 16713,
+      "letters": 63527
+    }
+  ],
+  "word_total": 56,
+  "letter_total": 216,
+  "within_word_letter_edges": 160,
+  "verse_indices": [
+    1909,
+    1910,
+    1911
+  ],
+  "parsha_verses": [
+    25,
+    26,
+    27
+  ],
+  "first_word_index": 26136,
+  "last_word_index": 26191,
+  "first_letter_index": 99060,
+  "last_letter_index": 99275,
+  "middle_phrase": {
+    "words": "זה אל זה",
+    "positions": [
+      16,
+      17,
+      18
+    ],
+    "regular": 55,
+    "ordinal": 37,
+    "atbash_ordinal": 101
+  },
+  "aligned_bigrams": [
+    {
+      "verses": [
+        19,
+        20
+      ],
+      "position": 6,
+      "words": "מחנה ישראל"
+    }
+  ],
+  "sole_word_with_regular_equals_word_offset": {
+    "verse": 20,
+    "position": 17,
+    "word": "אל",
+    "regular": 31,
+    "ordinal": 13,
+    "atbash_ordinal": 33,
+    "torah_word_index": 26167,
+    "torah_letter_start": 99193,
+    "torah_letter_end": 99194
+  },
+  "name37": {
+    "index": 37,
+    "name": "אני",
+    "source_word_positions": [
+      9,
+      9,
+      12
+    ],
+    "source_words": [
+      "מאחריהם",
+      "הענן",
+      "קדים"
+    ],
+    "torah_word_indices": [
+      26144,
+      26159,
+      26182
+    ],
+    "torah_letter_indices": [
+      99096,
+      99167,
+      99240
+    ],
+    "source_letter_indices": [
+      37,
+      36,
+      37
+    ],
+    "source_word_position_sum": 30
+  },
+  "name72": {
+    "index": 72,
+    "name": "מומ",
+    "source_word_positions": [
+      15,
+      1,
+      21
+    ],
+    "source_words": [
+      "מאחריהם",
+      "ויבא",
+      "המים"
+    ],
+    "torah_word_indices": [
+      26150,
+      26151,
+      26191
+    ],
+    "torah_letter_indices": [
+      99131,
+      99132,
+      99275
+    ],
+    "source_letter_indices": [
+      72,
+      1,
+      72
+    ],
+    "source_word_position_sum": 37
+  },
+  "name72_word_position_sum37_multiplicity": 11,
+  "repeated_phrase_at_hayam": [
+    {
+      "verse": 21,
+      "positions": [
+        9,
+        10
+      ]
+    },
+    {
+      "verse": 21,
+      "positions": [
+        17,
+        18
+      ]
+    }
+  ],
+  "whole_word_888_within_each_verse": [],
+  "verses": [
+    {
+      "verse": 19,
+      "torah_verse_index": 1909,
+      "beshalach_verse_index": 24,
+      "word_count": 15,
+      "letter_count": 72,
+      "torah_word_start": 26136,
+      "torah_word_end": 26150,
+      "torah_letter_start": 99060,
+      "torah_letter_end": 99131,
+      "words": [
+        {
+          "verse": 19,
+          "position": 1,
+          "word": "ויסע",
+          "regular": 146,
+          "ordinal": 47,
+          "atbash_ordinal": 45,
+          "torah_word_index": 26136,
+          "torah_letter_start": 99060,
+          "torah_letter_end": 99063
+        },
+        {
+          "verse": 19,
+          "position": 2,
+          "word": "מלאך",
+          "regular": 91,
+          "ordinal": 37,
+          "atbash_ordinal": 55,
+          "torah_word_index": 26137,
+          "torah_letter_start": 99064,
+          "torah_letter_end": 99067
+        },
+        {
+          "verse": 19,
+          "position": 3,
+          "word": "האלהים",
+          "regular": 91,
+          "ordinal": 46,
+          "atbash_ordinal": 92,
+          "torah_word_index": 26138,
+          "torah_letter_start": 99068,
+          "torah_letter_end": 99073
+        },
+        {
+          "verse": 19,
+          "position": 4,
+          "word": "ההלך",
+          "regular": 60,
+          "ordinal": 33,
+          "atbash_ordinal": 59,
+          "torah_word_index": 26139,
+          "torah_letter_start": 99074,
+          "torah_letter_end": 99077
+        },
+        {
+          "verse": 19,
+          "position": 5,
+          "word": "לפני",
+          "regular": 170,
+          "ordinal": 53,
+          "atbash_ordinal": 39,
+          "torah_word_index": 26140,
+          "torah_letter_start": 99078,
+          "torah_letter_end": 99081
+        },
+        {
+          "verse": 19,
+          "position": 6,
+          "word": "מחנה",
+          "regular": 103,
+          "ordinal": 40,
+          "atbash_ordinal": 52,
+          "torah_word_index": 26141,
+          "torah_letter_start": 99082,
+          "torah_letter_end": 99085
+        },
+        {
+          "verse": 19,
+          "position": 7,
+          "word": "ישראל",
+          "regular": 541,
+          "ordinal": 64,
+          "atbash_ordinal": 51,
+          "torah_word_index": 26142,
+          "torah_letter_start": 99086,
+          "torah_letter_end": 99090
+        },
+        {
+          "verse": 19,
+          "position": 8,
+          "word": "וילך",
+          "regular": 66,
+          "ordinal": 39,
+          "atbash_ordinal": 53,
+          "torah_word_index": 26143,
+          "torah_letter_start": 99091,
+          "torah_letter_end": 99094
+        },
+        {
+          "verse": 19,
+          "position": 9,
+          "word": "מאחריהם",
+          "regular": 304,
+          "ordinal": 70,
+          "atbash_ordinal": 91,
+          "torah_word_index": 26144,
+          "torah_letter_start": 99095,
+          "torah_letter_end": 99101
+        },
+        {
+          "verse": 19,
+          "position": 10,
+          "word": "ויסע",
+          "regular": 146,
+          "ordinal": 47,
+          "atbash_ordinal": 45,
+          "torah_word_index": 26145,
+          "torah_letter_start": 99102,
+          "torah_letter_end": 99105
+        },
+        {
+          "verse": 19,
+          "position": 11,
+          "word": "עמוד",
+          "regular": 120,
+          "ordinal": 39,
+          "atbash_ordinal": 53,
+          "torah_word_index": 26146,
+          "torah_letter_start": 99106,
+          "torah_letter_end": 99109
+        },
+        {
+          "verse": 19,
+          "position": 12,
+          "word": "הענן",
+          "regular": 175,
+          "ordinal": 49,
+          "atbash_ordinal": 43,
+          "torah_word_index": 26147,
+          "torah_letter_start": 99110,
+          "torah_letter_end": 99113
+        },
+        {
+          "verse": 19,
+          "position": 13,
+          "word": "מפניהם",
+          "regular": 225,
+          "ordinal": 72,
+          "atbash_ordinal": 66,
+          "torah_word_index": 26148,
+          "torah_letter_start": 99114,
+          "torah_letter_end": 99119
+        },
+        {
+          "verse": 19,
+          "position": 14,
+          "word": "ויעמד",
+          "regular": 130,
+          "ordinal": 49,
+          "atbash_ordinal": 66,
+          "torah_word_index": 26149,
+          "torah_letter_start": 99120,
+          "torah_letter_end": 99124
+        },
+        {
+          "verse": 19,
+          "position": 15,
+          "word": "מאחריהם",
+          "regular": 304,
+          "ordinal": 70,
+          "atbash_ordinal": 91,
+          "torah_word_index": 26150,
+          "torah_letter_start": 99125,
+          "torah_letter_end": 99131
+        }
+      ]
+    },
+    {
+      "verse": 20,
+      "torah_verse_index": 1910,
+      "beshalach_verse_index": 25,
+      "word_count": 20,
+      "letter_count": 72,
+      "torah_word_start": 26151,
+      "torah_word_end": 26170,
+      "torah_letter_start": 99132,
+      "torah_letter_end": 99203,
+      "words": [
+        {
+          "verse": 20,
+          "position": 1,
+          "word": "ויבא",
+          "regular": 19,
+          "ordinal": 19,
+          "atbash_ordinal": 73,
+          "torah_word_index": 26151,
+          "torah_letter_start": 99132,
+          "torah_letter_end": 99135
+        },
+        {
+          "verse": 20,
+          "position": 2,
+          "word": "בין",
+          "regular": 62,
+          "ordinal": 26,
+          "atbash_ordinal": 43,
+          "torah_word_index": 26152,
+          "torah_letter_start": 99136,
+          "torah_letter_end": 99138
+        },
+        {
+          "verse": 20,
+          "position": 3,
+          "word": "מחנה",
+          "regular": 103,
+          "ordinal": 40,
+          "atbash_ordinal": 52,
+          "torah_word_index": 26153,
+          "torah_letter_start": 99139,
+          "torah_letter_end": 99142
+        },
+        {
+          "verse": 20,
+          "position": 4,
+          "word": "מצרים",
+          "regular": 380,
+          "ordinal": 74,
+          "atbash_ordinal": 41,
+          "torah_word_index": 26154,
+          "torah_letter_start": 99143,
+          "torah_letter_end": 99147
+        },
+        {
+          "verse": 20,
+          "position": 5,
+          "word": "ובין",
+          "regular": 68,
+          "ordinal": 32,
+          "atbash_ordinal": 60,
+          "torah_word_index": 26155,
+          "torah_letter_start": 99148,
+          "torah_letter_end": 99151
+        },
+        {
+          "verse": 20,
+          "position": 6,
+          "word": "מחנה",
+          "regular": 103,
+          "ordinal": 40,
+          "atbash_ordinal": 52,
+          "torah_word_index": 26156,
+          "torah_letter_start": 99152,
+          "torah_letter_end": 99155
+        },
+        {
+          "verse": 20,
+          "position": 7,
+          "word": "ישראל",
+          "regular": 541,
+          "ordinal": 64,
+          "atbash_ordinal": 51,
+          "torah_word_index": 26157,
+          "torah_letter_start": 99156,
+          "torah_letter_end": 99160
+        },
+        {
+          "verse": 20,
+          "position": 8,
+          "word": "ויהי",
+          "regular": 31,
+          "ordinal": 31,
+          "atbash_ordinal": 61,
+          "torah_word_index": 26158,
+          "torah_letter_start": 99161,
+          "torah_letter_end": 99164
+        },
+        {
+          "verse": 20,
+          "position": 9,
+          "word": "הענן",
+          "regular": 175,
+          "ordinal": 49,
+          "atbash_ordinal": 43,
+          "torah_word_index": 26159,
+          "torah_letter_start": 99165,
+          "torah_letter_end": 99168
+        },
+        {
+          "verse": 20,
+          "position": 10,
+          "word": "והחשך",
+          "regular": 339,
+          "ordinal": 51,
+          "atbash_ordinal": 64,
+          "torah_word_index": 26160,
+          "torah_letter_start": 99169,
+          "torah_letter_end": 99173
+        },
+        {
+          "verse": 20,
+          "position": 11,
+          "word": "ויאר",
+          "regular": 217,
+          "ordinal": 37,
+          "atbash_ordinal": 55,
+          "torah_word_index": 26161,
+          "torah_letter_start": 99174,
+          "torah_letter_end": 99177
+        },
+        {
+          "verse": 20,
+          "position": 12,
+          "word": "את",
+          "regular": 401,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26162,
+          "torah_letter_start": 99178,
+          "torah_letter_end": 99179
+        },
+        {
+          "verse": 20,
+          "position": 13,
+          "word": "הלילה",
+          "regular": 80,
+          "ordinal": 44,
+          "atbash_ordinal": 71,
+          "torah_word_index": 26163,
+          "torah_letter_start": 99180,
+          "torah_letter_end": 99184
+        },
+        {
+          "verse": 20,
+          "position": 14,
+          "word": "ולא",
+          "regular": 37,
+          "ordinal": 19,
+          "atbash_ordinal": 50,
+          "torah_word_index": 26164,
+          "torah_letter_start": 99185,
+          "torah_letter_end": 99187
+        },
+        {
+          "verse": 20,
+          "position": 15,
+          "word": "קרב",
+          "regular": 302,
+          "ordinal": 41,
+          "atbash_ordinal": 28,
+          "torah_word_index": 26165,
+          "torah_letter_start": 99188,
+          "torah_letter_end": 99190
+        },
+        {
+          "verse": 20,
+          "position": 16,
+          "word": "זה",
+          "regular": 12,
+          "ordinal": 12,
+          "atbash_ordinal": 34,
+          "torah_word_index": 26166,
+          "torah_letter_start": 99191,
+          "torah_letter_end": 99192
+        },
+        {
+          "verse": 20,
+          "position": 17,
+          "word": "אל",
+          "regular": 31,
+          "ordinal": 13,
+          "atbash_ordinal": 33,
+          "torah_word_index": 26167,
+          "torah_letter_start": 99193,
+          "torah_letter_end": 99194
+        },
+        {
+          "verse": 20,
+          "position": 18,
+          "word": "זה",
+          "regular": 12,
+          "ordinal": 12,
+          "atbash_ordinal": 34,
+          "torah_word_index": 26168,
+          "torah_letter_start": 99195,
+          "torah_letter_end": 99196
+        },
+        {
+          "verse": 20,
+          "position": 19,
+          "word": "כל",
+          "regular": 50,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26169,
+          "torah_letter_start": 99197,
+          "torah_letter_end": 99198
+        },
+        {
+          "verse": 20,
+          "position": 20,
+          "word": "הלילה",
+          "regular": 80,
+          "ordinal": 44,
+          "atbash_ordinal": 71,
+          "torah_word_index": 26170,
+          "torah_letter_start": 99199,
+          "torah_letter_end": 99203
+        }
+      ]
+    },
+    {
+      "verse": 21,
+      "torah_verse_index": 1911,
+      "beshalach_verse_index": 26,
+      "word_count": 21,
+      "letter_count": 72,
+      "torah_word_start": 26171,
+      "torah_word_end": 26191,
+      "torah_letter_start": 99204,
+      "torah_letter_end": 99275,
+      "words": [
+        {
+          "verse": 21,
+          "position": 1,
+          "word": "ויט",
+          "regular": 25,
+          "ordinal": 25,
+          "atbash_ordinal": 44,
+          "torah_word_index": 26171,
+          "torah_letter_start": 99204,
+          "torah_letter_end": 99206
+        },
+        {
+          "verse": 21,
+          "position": 2,
+          "word": "משה",
+          "regular": 345,
+          "ordinal": 39,
+          "atbash_ordinal": 30,
+          "torah_word_index": 26172,
+          "torah_letter_start": 99207,
+          "torah_letter_end": 99209
+        },
+        {
+          "verse": 21,
+          "position": 3,
+          "word": "את",
+          "regular": 401,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26173,
+          "torah_letter_start": 99210,
+          "torah_letter_end": 99211
+        },
+        {
+          "verse": 21,
+          "position": 4,
+          "word": "ידו",
+          "regular": 20,
+          "ordinal": 20,
+          "atbash_ordinal": 49,
+          "torah_word_index": 26174,
+          "torah_letter_start": 99212,
+          "torah_letter_end": 99214
+        },
+        {
+          "verse": 21,
+          "position": 5,
+          "word": "על",
+          "regular": 100,
+          "ordinal": 28,
+          "atbash_ordinal": 18,
+          "torah_word_index": 26175,
+          "torah_letter_start": 99215,
+          "torah_letter_end": 99216
+        },
+        {
+          "verse": 21,
+          "position": 6,
+          "word": "הים",
+          "regular": 55,
+          "ordinal": 28,
+          "atbash_ordinal": 41,
+          "torah_word_index": 26176,
+          "torah_letter_start": 99217,
+          "torah_letter_end": 99219
+        },
+        {
+          "verse": 21,
+          "position": 7,
+          "word": "ויולך",
+          "regular": 72,
+          "ordinal": 45,
+          "atbash_ordinal": 70,
+          "torah_word_index": 26177,
+          "torah_letter_start": 99220,
+          "torah_letter_end": 99224
+        },
+        {
+          "verse": 21,
+          "position": 8,
+          "word": "יהוה",
+          "regular": 26,
+          "ordinal": 26,
+          "atbash_ordinal": 66,
+          "torah_word_index": 26178,
+          "torah_letter_start": 99225,
+          "torah_letter_end": 99228
+        },
+        {
+          "verse": 21,
+          "position": 9,
+          "word": "את",
+          "regular": 401,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26179,
+          "torah_letter_start": 99229,
+          "torah_letter_end": 99230
+        },
+        {
+          "verse": 21,
+          "position": 10,
+          "word": "הים",
+          "regular": 55,
+          "ordinal": 28,
+          "atbash_ordinal": 41,
+          "torah_word_index": 26180,
+          "torah_letter_start": 99231,
+          "torah_letter_end": 99233
+        },
+        {
+          "verse": 21,
+          "position": 11,
+          "word": "ברוח",
+          "regular": 216,
+          "ordinal": 36,
+          "atbash_ordinal": 56,
+          "torah_word_index": 26181,
+          "torah_letter_start": 99234,
+          "torah_letter_end": 99237
+        },
+        {
+          "verse": 21,
+          "position": 12,
+          "word": "קדים",
+          "regular": 154,
+          "ordinal": 46,
+          "atbash_ordinal": 46,
+          "torah_word_index": 26182,
+          "torah_letter_start": 99238,
+          "torah_letter_end": 99241
+        },
+        {
+          "verse": 21,
+          "position": 13,
+          "word": "עזה",
+          "regular": 82,
+          "ordinal": 28,
+          "atbash_ordinal": 41,
+          "torah_word_index": 26183,
+          "torah_letter_start": 99242,
+          "torah_letter_end": 99244
+        },
+        {
+          "verse": 21,
+          "position": 14,
+          "word": "כל",
+          "regular": 50,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26184,
+          "torah_letter_start": 99245,
+          "torah_letter_end": 99246
+        },
+        {
+          "verse": 21,
+          "position": 15,
+          "word": "הלילה",
+          "regular": 80,
+          "ordinal": 44,
+          "atbash_ordinal": 71,
+          "torah_word_index": 26185,
+          "torah_letter_start": 99247,
+          "torah_letter_end": 99251
+        },
+        {
+          "verse": 21,
+          "position": 16,
+          "word": "וישם",
+          "regular": 356,
+          "ordinal": 50,
+          "atbash_ordinal": 42,
+          "torah_word_index": 26186,
+          "torah_letter_start": 99252,
+          "torah_letter_end": 99255
+        },
+        {
+          "verse": 21,
+          "position": 17,
+          "word": "את",
+          "regular": 401,
+          "ordinal": 23,
+          "atbash_ordinal": 23,
+          "torah_word_index": 26187,
+          "torah_letter_start": 99256,
+          "torah_letter_end": 99257
+        },
+        {
+          "verse": 21,
+          "position": 18,
+          "word": "הים",
+          "regular": 55,
+          "ordinal": 28,
+          "atbash_ordinal": 41,
+          "torah_word_index": 26188,
+          "torah_letter_start": 99258,
+          "torah_letter_end": 99260
+        },
+        {
+          "verse": 21,
+          "position": 19,
+          "word": "לחרבה",
+          "regular": 245,
+          "ordinal": 47,
+          "atbash_ordinal": 68,
+          "torah_word_index": 26189,
+          "torah_letter_start": 99261,
+          "torah_letter_end": 99265
+        },
+        {
+          "verse": 21,
+          "position": 20,
+          "word": "ויבקעו",
+          "regular": 194,
+          "ordinal": 59,
+          "atbash_ordinal": 79,
+          "torah_word_index": 26190,
+          "torah_letter_start": 99266,
+          "torah_letter_end": 99271
+        },
+        {
+          "verse": 21,
+          "position": 21,
+          "word": "המים",
+          "regular": 95,
+          "ordinal": 41,
+          "atbash_ordinal": 51,
+          "torah_word_index": 26191,
+          "torah_letter_start": 99272,
+          "torah_letter_end": 99275
+        }
+      ]
+    }
+  ],
+  "names": [
+    {
+      "index": 1,
+      "name": "והו",
+      "source_word_positions": [
+        1,
+        20,
+        1
+      ],
+      "source_words": [
+        "ויסע",
+        "הלילה",
+        "ויט"
+      ],
+      "torah_word_indices": [
+        26136,
+        26170,
+        26171
+      ],
+      "torah_letter_indices": [
+        99060,
+        99203,
+        99204
+      ],
+      "source_letter_indices": [
+        1,
+        72,
+        1
+      ],
+      "source_word_position_sum": 22
+    },
+    {
+      "index": 2,
+      "name": "ילי",
+      "source_word_positions": [
+        1,
+        20,
+        1
+      ],
+      "source_words": [
+        "ויסע",
+        "הלילה",
+        "ויט"
+      ],
+      "torah_word_indices": [
+        26136,
+        26170,
+        26171
+      ],
+      "torah_letter_indices": [
+        99061,
+        99202,
+        99205
+      ],
+      "source_letter_indices": [
+        2,
+        71,
+        2
+      ],
+      "source_word_position_sum": 22
+    },
+    {
+      "index": 3,
+      "name": "סיט",
+      "source_word_positions": [
+        1,
+        20,
+        1
+      ],
+      "source_words": [
+        "ויסע",
+        "הלילה",
+        "ויט"
+      ],
+      "torah_word_indices": [
+        26136,
+        26170,
+        26171
+      ],
+      "torah_letter_indices": [
+        99062,
+        99201,
+        99206
+      ],
+      "source_letter_indices": [
+        3,
+        70,
+        3
+      ],
+      "source_word_position_sum": 22
+    },
+    {
+      "index": 4,
+      "name": "עלמ",
+      "source_word_positions": [
+        1,
+        20,
+        2
+      ],
+      "source_words": [
+        "ויסע",
+        "הלילה",
+        "משה"
+      ],
+      "torah_word_indices": [
+        26136,
+        26170,
+        26172
+      ],
+      "torah_letter_indices": [
+        99063,
+        99200,
+        99207
+      ],
+      "source_letter_indices": [
+        4,
+        69,
+        4
+      ],
+      "source_word_position_sum": 23
+    },
+    {
+      "index": 5,
+      "name": "מהש",
+      "source_word_positions": [
+        2,
+        20,
+        2
+      ],
+      "source_words": [
+        "מלאך",
+        "הלילה",
+        "משה"
+      ],
+      "torah_word_indices": [
+        26137,
+        26170,
+        26172
+      ],
+      "torah_letter_indices": [
+        99064,
+        99199,
+        99208
+      ],
+      "source_letter_indices": [
+        5,
+        68,
+        5
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 6,
+      "name": "ללה",
+      "source_word_positions": [
+        2,
+        19,
+        2
+      ],
+      "source_words": [
+        "מלאך",
+        "כל",
+        "משה"
+      ],
+      "torah_word_indices": [
+        26137,
+        26169,
+        26172
+      ],
+      "torah_letter_indices": [
+        99065,
+        99198,
+        99209
+      ],
+      "source_letter_indices": [
+        6,
+        67,
+        6
+      ],
+      "source_word_position_sum": 23
+    },
+    {
+      "index": 7,
+      "name": "אכא",
+      "source_word_positions": [
+        2,
+        19,
+        3
+      ],
+      "source_words": [
+        "מלאך",
+        "כל",
+        "את"
+      ],
+      "torah_word_indices": [
+        26137,
+        26169,
+        26173
+      ],
+      "torah_letter_indices": [
+        99066,
+        99197,
+        99210
+      ],
+      "source_letter_indices": [
+        7,
+        66,
+        7
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 8,
+      "name": "כהת",
+      "source_word_positions": [
+        2,
+        18,
+        3
+      ],
+      "source_words": [
+        "מלאך",
+        "זה",
+        "את"
+      ],
+      "torah_word_indices": [
+        26137,
+        26168,
+        26173
+      ],
+      "torah_letter_indices": [
+        99067,
+        99196,
+        99211
+      ],
+      "source_letter_indices": [
+        8,
+        65,
+        8
+      ],
+      "source_word_position_sum": 23
+    },
+    {
+      "index": 9,
+      "name": "הזי",
+      "source_word_positions": [
+        3,
+        18,
+        4
+      ],
+      "source_words": [
+        "האלהים",
+        "זה",
+        "ידו"
+      ],
+      "torah_word_indices": [
+        26138,
+        26168,
+        26174
+      ],
+      "torah_letter_indices": [
+        99068,
+        99195,
+        99212
+      ],
+      "source_letter_indices": [
+        9,
+        64,
+        9
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 10,
+      "name": "אלד",
+      "source_word_positions": [
+        3,
+        17,
+        4
+      ],
+      "source_words": [
+        "האלהים",
+        "אל",
+        "ידו"
+      ],
+      "torah_word_indices": [
+        26138,
+        26167,
+        26174
+      ],
+      "torah_letter_indices": [
+        99069,
+        99194,
+        99213
+      ],
+      "source_letter_indices": [
+        10,
+        63,
+        10
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 11,
+      "name": "לאו",
+      "source_word_positions": [
+        3,
+        17,
+        4
+      ],
+      "source_words": [
+        "האלהים",
+        "אל",
+        "ידו"
+      ],
+      "torah_word_indices": [
+        26138,
+        26167,
+        26174
+      ],
+      "torah_letter_indices": [
+        99070,
+        99193,
+        99214
+      ],
+      "source_letter_indices": [
+        11,
+        62,
+        11
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 12,
+      "name": "ההע",
+      "source_word_positions": [
+        3,
+        16,
+        5
+      ],
+      "source_words": [
+        "האלהים",
+        "זה",
+        "על"
+      ],
+      "torah_word_indices": [
+        26138,
+        26166,
+        26175
+      ],
+      "torah_letter_indices": [
+        99071,
+        99192,
+        99215
+      ],
+      "source_letter_indices": [
+        12,
+        61,
+        12
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 13,
+      "name": "יזל",
+      "source_word_positions": [
+        3,
+        16,
+        5
+      ],
+      "source_words": [
+        "האלהים",
+        "זה",
+        "על"
+      ],
+      "torah_word_indices": [
+        26138,
+        26166,
+        26175
+      ],
+      "torah_letter_indices": [
+        99072,
+        99191,
+        99216
+      ],
+      "source_letter_indices": [
+        13,
+        60,
+        13
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 14,
+      "name": "מבה",
+      "source_word_positions": [
+        3,
+        15,
+        6
+      ],
+      "source_words": [
+        "האלהים",
+        "קרב",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26138,
+        26165,
+        26176
+      ],
+      "torah_letter_indices": [
+        99073,
+        99190,
+        99217
+      ],
+      "source_letter_indices": [
+        14,
+        59,
+        14
+      ],
+      "source_word_position_sum": 24
+    },
+    {
+      "index": 15,
+      "name": "הרי",
+      "source_word_positions": [
+        4,
+        15,
+        6
+      ],
+      "source_words": [
+        "ההלך",
+        "קרב",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26139,
+        26165,
+        26176
+      ],
+      "torah_letter_indices": [
+        99074,
+        99189,
+        99218
+      ],
+      "source_letter_indices": [
+        15,
+        58,
+        15
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 16,
+      "name": "הקמ",
+      "source_word_positions": [
+        4,
+        15,
+        6
+      ],
+      "source_words": [
+        "ההלך",
+        "קרב",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26139,
+        26165,
+        26176
+      ],
+      "torah_letter_indices": [
+        99075,
+        99188,
+        99219
+      ],
+      "source_letter_indices": [
+        16,
+        57,
+        16
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 17,
+      "name": "לאו",
+      "source_word_positions": [
+        4,
+        14,
+        7
+      ],
+      "source_words": [
+        "ההלך",
+        "ולא",
+        "ויולך"
+      ],
+      "torah_word_indices": [
+        26139,
+        26164,
+        26177
+      ],
+      "torah_letter_indices": [
+        99076,
+        99187,
+        99220
+      ],
+      "source_letter_indices": [
+        17,
+        56,
+        17
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 18,
+      "name": "כלי",
+      "source_word_positions": [
+        4,
+        14,
+        7
+      ],
+      "source_words": [
+        "ההלך",
+        "ולא",
+        "ויולך"
+      ],
+      "torah_word_indices": [
+        26139,
+        26164,
+        26177
+      ],
+      "torah_letter_indices": [
+        99077,
+        99186,
+        99221
+      ],
+      "source_letter_indices": [
+        18,
+        55,
+        18
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 19,
+      "name": "לוו",
+      "source_word_positions": [
+        5,
+        14,
+        7
+      ],
+      "source_words": [
+        "לפני",
+        "ולא",
+        "ויולך"
+      ],
+      "torah_word_indices": [
+        26140,
+        26164,
+        26177
+      ],
+      "torah_letter_indices": [
+        99078,
+        99185,
+        99222
+      ],
+      "source_letter_indices": [
+        19,
+        54,
+        19
+      ],
+      "source_word_position_sum": 26
+    },
+    {
+      "index": 20,
+      "name": "פהל",
+      "source_word_positions": [
+        5,
+        13,
+        7
+      ],
+      "source_words": [
+        "לפני",
+        "הלילה",
+        "ויולך"
+      ],
+      "torah_word_indices": [
+        26140,
+        26163,
+        26177
+      ],
+      "torah_letter_indices": [
+        99079,
+        99184,
+        99223
+      ],
+      "source_letter_indices": [
+        20,
+        53,
+        20
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 21,
+      "name": "נלכ",
+      "source_word_positions": [
+        5,
+        13,
+        7
+      ],
+      "source_words": [
+        "לפני",
+        "הלילה",
+        "ויולך"
+      ],
+      "torah_word_indices": [
+        26140,
+        26163,
+        26177
+      ],
+      "torah_letter_indices": [
+        99080,
+        99183,
+        99224
+      ],
+      "source_letter_indices": [
+        21,
+        52,
+        21
+      ],
+      "source_word_position_sum": 25
+    },
+    {
+      "index": 22,
+      "name": "ייי",
+      "source_word_positions": [
+        5,
+        13,
+        8
+      ],
+      "source_words": [
+        "לפני",
+        "הלילה",
+        "יהוה"
+      ],
+      "torah_word_indices": [
+        26140,
+        26163,
+        26178
+      ],
+      "torah_letter_indices": [
+        99081,
+        99182,
+        99225
+      ],
+      "source_letter_indices": [
+        22,
+        51,
+        22
+      ],
+      "source_word_position_sum": 26
+    },
+    {
+      "index": 23,
+      "name": "מלה",
+      "source_word_positions": [
+        6,
+        13,
+        8
+      ],
+      "source_words": [
+        "מחנה",
+        "הלילה",
+        "יהוה"
+      ],
+      "torah_word_indices": [
+        26141,
+        26163,
+        26178
+      ],
+      "torah_letter_indices": [
+        99082,
+        99181,
+        99226
+      ],
+      "source_letter_indices": [
+        23,
+        50,
+        23
+      ],
+      "source_word_position_sum": 27
+    },
+    {
+      "index": 24,
+      "name": "חהו",
+      "source_word_positions": [
+        6,
+        13,
+        8
+      ],
+      "source_words": [
+        "מחנה",
+        "הלילה",
+        "יהוה"
+      ],
+      "torah_word_indices": [
+        26141,
+        26163,
+        26178
+      ],
+      "torah_letter_indices": [
+        99083,
+        99180,
+        99227
+      ],
+      "source_letter_indices": [
+        24,
+        49,
+        24
+      ],
+      "source_word_position_sum": 27
+    },
+    {
+      "index": 25,
+      "name": "נתה",
+      "source_word_positions": [
+        6,
+        12,
+        8
+      ],
+      "source_words": [
+        "מחנה",
+        "את",
+        "יהוה"
+      ],
+      "torah_word_indices": [
+        26141,
+        26162,
+        26178
+      ],
+      "torah_letter_indices": [
+        99084,
+        99179,
+        99228
+      ],
+      "source_letter_indices": [
+        25,
+        48,
+        25
+      ],
+      "source_word_position_sum": 26
+    },
+    {
+      "index": 26,
+      "name": "האא",
+      "source_word_positions": [
+        6,
+        12,
+        9
+      ],
+      "source_words": [
+        "מחנה",
+        "את",
+        "את"
+      ],
+      "torah_word_indices": [
+        26141,
+        26162,
+        26179
+      ],
+      "torah_letter_indices": [
+        99085,
+        99178,
+        99229
+      ],
+      "source_letter_indices": [
+        26,
+        47,
+        26
+      ],
+      "source_word_position_sum": 27
+    },
+    {
+      "index": 27,
+      "name": "ירת",
+      "source_word_positions": [
+        7,
+        11,
+        9
+      ],
+      "source_words": [
+        "ישראל",
+        "ויאר",
+        "את"
+      ],
+      "torah_word_indices": [
+        26142,
+        26161,
+        26179
+      ],
+      "torah_letter_indices": [
+        99086,
+        99177,
+        99230
+      ],
+      "source_letter_indices": [
+        27,
+        46,
+        27
+      ],
+      "source_word_position_sum": 27
+    },
+    {
+      "index": 28,
+      "name": "שאה",
+      "source_word_positions": [
+        7,
+        11,
+        10
+      ],
+      "source_words": [
+        "ישראל",
+        "ויאר",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26142,
+        26161,
+        26180
+      ],
+      "torah_letter_indices": [
+        99087,
+        99176,
+        99231
+      ],
+      "source_letter_indices": [
+        28,
+        45,
+        28
+      ],
+      "source_word_position_sum": 28
+    },
+    {
+      "index": 29,
+      "name": "ריי",
+      "source_word_positions": [
+        7,
+        11,
+        10
+      ],
+      "source_words": [
+        "ישראל",
+        "ויאר",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26142,
+        26161,
+        26180
+      ],
+      "torah_letter_indices": [
+        99088,
+        99175,
+        99232
+      ],
+      "source_letter_indices": [
+        29,
+        44,
+        29
+      ],
+      "source_word_position_sum": 28
+    },
+    {
+      "index": 30,
+      "name": "אומ",
+      "source_word_positions": [
+        7,
+        11,
+        10
+      ],
+      "source_words": [
+        "ישראל",
+        "ויאר",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26142,
+        26161,
+        26180
+      ],
+      "torah_letter_indices": [
+        99089,
+        99174,
+        99233
+      ],
+      "source_letter_indices": [
+        30,
+        43,
+        30
+      ],
+      "source_word_position_sum": 28
+    },
+    {
+      "index": 31,
+      "name": "לכב",
+      "source_word_positions": [
+        7,
+        10,
+        11
+      ],
+      "source_words": [
+        "ישראל",
+        "והחשך",
+        "ברוח"
+      ],
+      "torah_word_indices": [
+        26142,
+        26160,
+        26181
+      ],
+      "torah_letter_indices": [
+        99090,
+        99173,
+        99234
+      ],
+      "source_letter_indices": [
+        31,
+        42,
+        31
+      ],
+      "source_word_position_sum": 28
+    },
+    {
+      "index": 32,
+      "name": "ושר",
+      "source_word_positions": [
+        8,
+        10,
+        11
+      ],
+      "source_words": [
+        "וילך",
+        "והחשך",
+        "ברוח"
+      ],
+      "torah_word_indices": [
+        26143,
+        26160,
+        26181
+      ],
+      "torah_letter_indices": [
+        99091,
+        99172,
+        99235
+      ],
+      "source_letter_indices": [
+        32,
+        41,
+        32
+      ],
+      "source_word_position_sum": 29
+    },
+    {
+      "index": 33,
+      "name": "יחו",
+      "source_word_positions": [
+        8,
+        10,
+        11
+      ],
+      "source_words": [
+        "וילך",
+        "והחשך",
+        "ברוח"
+      ],
+      "torah_word_indices": [
+        26143,
+        26160,
+        26181
+      ],
+      "torah_letter_indices": [
+        99092,
+        99171,
+        99236
+      ],
+      "source_letter_indices": [
+        33,
+        40,
+        33
+      ],
+      "source_word_position_sum": 29
+    },
+    {
+      "index": 34,
+      "name": "להח",
+      "source_word_positions": [
+        8,
+        10,
+        11
+      ],
+      "source_words": [
+        "וילך",
+        "והחשך",
+        "ברוח"
+      ],
+      "torah_word_indices": [
+        26143,
+        26160,
+        26181
+      ],
+      "torah_letter_indices": [
+        99093,
+        99170,
+        99237
+      ],
+      "source_letter_indices": [
+        34,
+        39,
+        34
+      ],
+      "source_word_position_sum": 29
+    },
+    {
+      "index": 35,
+      "name": "כוק",
+      "source_word_positions": [
+        8,
+        10,
+        12
+      ],
+      "source_words": [
+        "וילך",
+        "והחשך",
+        "קדים"
+      ],
+      "torah_word_indices": [
+        26143,
+        26160,
+        26182
+      ],
+      "torah_letter_indices": [
+        99094,
+        99169,
+        99238
+      ],
+      "source_letter_indices": [
+        35,
+        38,
+        35
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 36,
+      "name": "מנד",
+      "source_word_positions": [
+        9,
+        9,
+        12
+      ],
+      "source_words": [
+        "מאחריהם",
+        "הענן",
+        "קדים"
+      ],
+      "torah_word_indices": [
+        26144,
+        26159,
+        26182
+      ],
+      "torah_letter_indices": [
+        99095,
+        99168,
+        99239
+      ],
+      "source_letter_indices": [
+        36,
+        37,
+        36
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 37,
+      "name": "אני",
+      "source_word_positions": [
+        9,
+        9,
+        12
+      ],
+      "source_words": [
+        "מאחריהם",
+        "הענן",
+        "קדים"
+      ],
+      "torah_word_indices": [
+        26144,
+        26159,
+        26182
+      ],
+      "torah_letter_indices": [
+        99096,
+        99167,
+        99240
+      ],
+      "source_letter_indices": [
+        37,
+        36,
+        37
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 38,
+      "name": "חעמ",
+      "source_word_positions": [
+        9,
+        9,
+        12
+      ],
+      "source_words": [
+        "מאחריהם",
+        "הענן",
+        "קדים"
+      ],
+      "torah_word_indices": [
+        26144,
+        26159,
+        26182
+      ],
+      "torah_letter_indices": [
+        99097,
+        99166,
+        99241
+      ],
+      "source_letter_indices": [
+        38,
+        35,
+        38
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 39,
+      "name": "רהע",
+      "source_word_positions": [
+        9,
+        9,
+        13
+      ],
+      "source_words": [
+        "מאחריהם",
+        "הענן",
+        "עזה"
+      ],
+      "torah_word_indices": [
+        26144,
+        26159,
+        26183
+      ],
+      "torah_letter_indices": [
+        99098,
+        99165,
+        99242
+      ],
+      "source_letter_indices": [
+        39,
+        34,
+        39
+      ],
+      "source_word_position_sum": 31
+    },
+    {
+      "index": 40,
+      "name": "ייז",
+      "source_word_positions": [
+        9,
+        8,
+        13
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויהי",
+        "עזה"
+      ],
+      "torah_word_indices": [
+        26144,
+        26158,
+        26183
+      ],
+      "torah_letter_indices": [
+        99099,
+        99164,
+        99243
+      ],
+      "source_letter_indices": [
+        40,
+        33,
+        40
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 41,
+      "name": "ההה",
+      "source_word_positions": [
+        9,
+        8,
+        13
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויהי",
+        "עזה"
+      ],
+      "torah_word_indices": [
+        26144,
+        26158,
+        26183
+      ],
+      "torah_letter_indices": [
+        99100,
+        99163,
+        99244
+      ],
+      "source_letter_indices": [
+        41,
+        32,
+        41
+      ],
+      "source_word_position_sum": 30
+    },
+    {
+      "index": 42,
+      "name": "מיכ",
+      "source_word_positions": [
+        9,
+        8,
+        14
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויהי",
+        "כל"
+      ],
+      "torah_word_indices": [
+        26144,
+        26158,
+        26184
+      ],
+      "torah_letter_indices": [
+        99101,
+        99162,
+        99245
+      ],
+      "source_letter_indices": [
+        42,
+        31,
+        42
+      ],
+      "source_word_position_sum": 31
+    },
+    {
+      "index": 43,
+      "name": "וול",
+      "source_word_positions": [
+        10,
+        8,
+        14
+      ],
+      "source_words": [
+        "ויסע",
+        "ויהי",
+        "כל"
+      ],
+      "torah_word_indices": [
+        26145,
+        26158,
+        26184
+      ],
+      "torah_letter_indices": [
+        99102,
+        99161,
+        99246
+      ],
+      "source_letter_indices": [
+        43,
+        30,
+        43
+      ],
+      "source_word_position_sum": 32
+    },
+    {
+      "index": 44,
+      "name": "ילה",
+      "source_word_positions": [
+        10,
+        7,
+        15
+      ],
+      "source_words": [
+        "ויסע",
+        "ישראל",
+        "הלילה"
+      ],
+      "torah_word_indices": [
+        26145,
+        26157,
+        26185
+      ],
+      "torah_letter_indices": [
+        99103,
+        99160,
+        99247
+      ],
+      "source_letter_indices": [
+        44,
+        29,
+        44
+      ],
+      "source_word_position_sum": 32
+    },
+    {
+      "index": 45,
+      "name": "סאל",
+      "source_word_positions": [
+        10,
+        7,
+        15
+      ],
+      "source_words": [
+        "ויסע",
+        "ישראל",
+        "הלילה"
+      ],
+      "torah_word_indices": [
+        26145,
+        26157,
+        26185
+      ],
+      "torah_letter_indices": [
+        99104,
+        99159,
+        99248
+      ],
+      "source_letter_indices": [
+        45,
+        28,
+        45
+      ],
+      "source_word_position_sum": 32
+    },
+    {
+      "index": 46,
+      "name": "ערי",
+      "source_word_positions": [
+        10,
+        7,
+        15
+      ],
+      "source_words": [
+        "ויסע",
+        "ישראל",
+        "הלילה"
+      ],
+      "torah_word_indices": [
+        26145,
+        26157,
+        26185
+      ],
+      "torah_letter_indices": [
+        99105,
+        99158,
+        99249
+      ],
+      "source_letter_indices": [
+        46,
+        27,
+        46
+      ],
+      "source_word_position_sum": 32
+    },
+    {
+      "index": 47,
+      "name": "עשל",
+      "source_word_positions": [
+        11,
+        7,
+        15
+      ],
+      "source_words": [
+        "עמוד",
+        "ישראל",
+        "הלילה"
+      ],
+      "torah_word_indices": [
+        26146,
+        26157,
+        26185
+      ],
+      "torah_letter_indices": [
+        99106,
+        99157,
+        99250
+      ],
+      "source_letter_indices": [
+        47,
+        26,
+        47
+      ],
+      "source_word_position_sum": 33
+    },
+    {
+      "index": 48,
+      "name": "מיה",
+      "source_word_positions": [
+        11,
+        7,
+        15
+      ],
+      "source_words": [
+        "עמוד",
+        "ישראל",
+        "הלילה"
+      ],
+      "torah_word_indices": [
+        26146,
+        26157,
+        26185
+      ],
+      "torah_letter_indices": [
+        99107,
+        99156,
+        99251
+      ],
+      "source_letter_indices": [
+        48,
+        25,
+        48
+      ],
+      "source_word_position_sum": 33
+    },
+    {
+      "index": 49,
+      "name": "והו",
+      "source_word_positions": [
+        11,
+        6,
+        16
+      ],
+      "source_words": [
+        "עמוד",
+        "מחנה",
+        "וישם"
+      ],
+      "torah_word_indices": [
+        26146,
+        26156,
+        26186
+      ],
+      "torah_letter_indices": [
+        99108,
+        99155,
+        99252
+      ],
+      "source_letter_indices": [
+        49,
+        24,
+        49
+      ],
+      "source_word_position_sum": 33
+    },
+    {
+      "index": 50,
+      "name": "דני",
+      "source_word_positions": [
+        11,
+        6,
+        16
+      ],
+      "source_words": [
+        "עמוד",
+        "מחנה",
+        "וישם"
+      ],
+      "torah_word_indices": [
+        26146,
+        26156,
+        26186
+      ],
+      "torah_letter_indices": [
+        99109,
+        99154,
+        99253
+      ],
+      "source_letter_indices": [
+        50,
+        23,
+        50
+      ],
+      "source_word_position_sum": 33
+    },
+    {
+      "index": 51,
+      "name": "החש",
+      "source_word_positions": [
+        12,
+        6,
+        16
+      ],
+      "source_words": [
+        "הענן",
+        "מחנה",
+        "וישם"
+      ],
+      "torah_word_indices": [
+        26147,
+        26156,
+        26186
+      ],
+      "torah_letter_indices": [
+        99110,
+        99153,
+        99254
+      ],
+      "source_letter_indices": [
+        51,
+        22,
+        51
+      ],
+      "source_word_position_sum": 34
+    },
+    {
+      "index": 52,
+      "name": "עממ",
+      "source_word_positions": [
+        12,
+        6,
+        16
+      ],
+      "source_words": [
+        "הענן",
+        "מחנה",
+        "וישם"
+      ],
+      "torah_word_indices": [
+        26147,
+        26156,
+        26186
+      ],
+      "torah_letter_indices": [
+        99111,
+        99152,
+        99255
+      ],
+      "source_letter_indices": [
+        52,
+        21,
+        52
+      ],
+      "source_word_position_sum": 34
+    },
+    {
+      "index": 53,
+      "name": "ננא",
+      "source_word_positions": [
+        12,
+        5,
+        17
+      ],
+      "source_words": [
+        "הענן",
+        "ובין",
+        "את"
+      ],
+      "torah_word_indices": [
+        26147,
+        26155,
+        26187
+      ],
+      "torah_letter_indices": [
+        99112,
+        99151,
+        99256
+      ],
+      "source_letter_indices": [
+        53,
+        20,
+        53
+      ],
+      "source_word_position_sum": 34
+    },
+    {
+      "index": 54,
+      "name": "נית",
+      "source_word_positions": [
+        12,
+        5,
+        17
+      ],
+      "source_words": [
+        "הענן",
+        "ובין",
+        "את"
+      ],
+      "torah_word_indices": [
+        26147,
+        26155,
+        26187
+      ],
+      "torah_letter_indices": [
+        99113,
+        99150,
+        99257
+      ],
+      "source_letter_indices": [
+        54,
+        19,
+        54
+      ],
+      "source_word_position_sum": 34
+    },
+    {
+      "index": 55,
+      "name": "מבה",
+      "source_word_positions": [
+        13,
+        5,
+        18
+      ],
+      "source_words": [
+        "מפניהם",
+        "ובין",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26148,
+        26155,
+        26188
+      ],
+      "torah_letter_indices": [
+        99114,
+        99149,
+        99258
+      ],
+      "source_letter_indices": [
+        55,
+        18,
+        55
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 56,
+      "name": "פוי",
+      "source_word_positions": [
+        13,
+        5,
+        18
+      ],
+      "source_words": [
+        "מפניהם",
+        "ובין",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26148,
+        26155,
+        26188
+      ],
+      "torah_letter_indices": [
+        99115,
+        99148,
+        99259
+      ],
+      "source_letter_indices": [
+        56,
+        17,
+        56
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 57,
+      "name": "נממ",
+      "source_word_positions": [
+        13,
+        4,
+        18
+      ],
+      "source_words": [
+        "מפניהם",
+        "מצרים",
+        "הים"
+      ],
+      "torah_word_indices": [
+        26148,
+        26154,
+        26188
+      ],
+      "torah_letter_indices": [
+        99116,
+        99147,
+        99260
+      ],
+      "source_letter_indices": [
+        57,
+        16,
+        57
+      ],
+      "source_word_position_sum": 35
+    },
+    {
+      "index": 58,
+      "name": "ייל",
+      "source_word_positions": [
+        13,
+        4,
+        19
+      ],
+      "source_words": [
+        "מפניהם",
+        "מצרים",
+        "לחרבה"
+      ],
+      "torah_word_indices": [
+        26148,
+        26154,
+        26189
+      ],
+      "torah_letter_indices": [
+        99117,
+        99146,
+        99261
+      ],
+      "source_letter_indices": [
+        58,
+        15,
+        58
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 59,
+      "name": "הרח",
+      "source_word_positions": [
+        13,
+        4,
+        19
+      ],
+      "source_words": [
+        "מפניהם",
+        "מצרים",
+        "לחרבה"
+      ],
+      "torah_word_indices": [
+        26148,
+        26154,
+        26189
+      ],
+      "torah_letter_indices": [
+        99118,
+        99145,
+        99262
+      ],
+      "source_letter_indices": [
+        59,
+        14,
+        59
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 60,
+      "name": "מצר",
+      "source_word_positions": [
+        13,
+        4,
+        19
+      ],
+      "source_words": [
+        "מפניהם",
+        "מצרים",
+        "לחרבה"
+      ],
+      "torah_word_indices": [
+        26148,
+        26154,
+        26189
+      ],
+      "torah_letter_indices": [
+        99119,
+        99144,
+        99263
+      ],
+      "source_letter_indices": [
+        60,
+        13,
+        60
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 61,
+      "name": "ומב",
+      "source_word_positions": [
+        14,
+        4,
+        19
+      ],
+      "source_words": [
+        "ויעמד",
+        "מצרים",
+        "לחרבה"
+      ],
+      "torah_word_indices": [
+        26149,
+        26154,
+        26189
+      ],
+      "torah_letter_indices": [
+        99120,
+        99143,
+        99264
+      ],
+      "source_letter_indices": [
+        61,
+        12,
+        61
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 62,
+      "name": "יהה",
+      "source_word_positions": [
+        14,
+        3,
+        19
+      ],
+      "source_words": [
+        "ויעמד",
+        "מחנה",
+        "לחרבה"
+      ],
+      "torah_word_indices": [
+        26149,
+        26153,
+        26189
+      ],
+      "torah_letter_indices": [
+        99121,
+        99142,
+        99265
+      ],
+      "source_letter_indices": [
+        62,
+        11,
+        62
+      ],
+      "source_word_position_sum": 36
+    },
+    {
+      "index": 63,
+      "name": "ענו",
+      "source_word_positions": [
+        14,
+        3,
+        20
+      ],
+      "source_words": [
+        "ויעמד",
+        "מחנה",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26149,
+        26153,
+        26190
+      ],
+      "torah_letter_indices": [
+        99122,
+        99141,
+        99266
+      ],
+      "source_letter_indices": [
+        63,
+        10,
+        63
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 64,
+      "name": "מחי",
+      "source_word_positions": [
+        14,
+        3,
+        20
+      ],
+      "source_words": [
+        "ויעמד",
+        "מחנה",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26149,
+        26153,
+        26190
+      ],
+      "torah_letter_indices": [
+        99123,
+        99140,
+        99267
+      ],
+      "source_letter_indices": [
+        64,
+        9,
+        64
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 65,
+      "name": "דמב",
+      "source_word_positions": [
+        14,
+        3,
+        20
+      ],
+      "source_words": [
+        "ויעמד",
+        "מחנה",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26149,
+        26153,
+        26190
+      ],
+      "torah_letter_indices": [
+        99124,
+        99139,
+        99268
+      ],
+      "source_letter_indices": [
+        65,
+        8,
+        65
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 66,
+      "name": "מנק",
+      "source_word_positions": [
+        15,
+        2,
+        20
+      ],
+      "source_words": [
+        "מאחריהם",
+        "בין",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26150,
+        26152,
+        26190
+      ],
+      "torah_letter_indices": [
+        99125,
+        99138,
+        99269
+      ],
+      "source_letter_indices": [
+        66,
+        7,
+        66
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 67,
+      "name": "איע",
+      "source_word_positions": [
+        15,
+        2,
+        20
+      ],
+      "source_words": [
+        "מאחריהם",
+        "בין",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26150,
+        26152,
+        26190
+      ],
+      "torah_letter_indices": [
+        99126,
+        99137,
+        99270
+      ],
+      "source_letter_indices": [
+        67,
+        6,
+        67
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 68,
+      "name": "חבו",
+      "source_word_positions": [
+        15,
+        2,
+        20
+      ],
+      "source_words": [
+        "מאחריהם",
+        "בין",
+        "ויבקעו"
+      ],
+      "torah_word_indices": [
+        26150,
+        26152,
+        26190
+      ],
+      "torah_letter_indices": [
+        99127,
+        99136,
+        99271
+      ],
+      "source_letter_indices": [
+        68,
+        5,
+        68
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 69,
+      "name": "ראה",
+      "source_word_positions": [
+        15,
+        1,
+        21
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויבא",
+        "המים"
+      ],
+      "torah_word_indices": [
+        26150,
+        26151,
+        26191
+      ],
+      "torah_letter_indices": [
+        99128,
+        99135,
+        99272
+      ],
+      "source_letter_indices": [
+        69,
+        4,
+        69
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 70,
+      "name": "יבמ",
+      "source_word_positions": [
+        15,
+        1,
+        21
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויבא",
+        "המים"
+      ],
+      "torah_word_indices": [
+        26150,
+        26151,
+        26191
+      ],
+      "torah_letter_indices": [
+        99129,
+        99134,
+        99273
+      ],
+      "source_letter_indices": [
+        70,
+        3,
+        70
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 71,
+      "name": "היי",
+      "source_word_positions": [
+        15,
+        1,
+        21
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויבא",
+        "המים"
+      ],
+      "torah_word_indices": [
+        26150,
+        26151,
+        26191
+      ],
+      "torah_letter_indices": [
+        99130,
+        99133,
+        99274
+      ],
+      "source_letter_indices": [
+        71,
+        2,
+        71
+      ],
+      "source_word_position_sum": 37
+    },
+    {
+      "index": 72,
+      "name": "מומ",
+      "source_word_positions": [
+        15,
+        1,
+        21
+      ],
+      "source_words": [
+        "מאחריהם",
+        "ויבא",
+        "המים"
+      ],
+      "torah_word_indices": [
+        26150,
+        26151,
+        26191
+      ],
+      "torah_letter_indices": [
+        99131,
+        99132,
+        99275
+      ],
+      "source_letter_indices": [
+        72,
+        1,
+        72
+      ],
+      "source_word_position_sum": 37
+    }
+  ]
+}
