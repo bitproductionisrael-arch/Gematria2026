@@ -1,0 +1,647 @@
+{
+  "title": "RovGrid / 72 Names / Four Questions / 6x4x3",
+  "date": "2026-11-11",
+  "method": "6 consecutive blocks of 12 names; each divided into four ordered triples",
+  "source": "research/rovgrid-exodus-72-full-census-2026-11-11.json",
+  "questions": [
+    {
+      "question": "מי אני",
+      "letters": 5,
+      "regular": 111,
+      "ordinal": 48,
+      "atbash_ordinal": 67
+    },
+    {
+      "question": "מי אתה",
+      "letters": 5,
+      "regular": 456,
+      "ordinal": 51,
+      "atbash_ordinal": 64
+    },
+    {
+      "question": "מה זה",
+      "letters": 4,
+      "regular": 57,
+      "ordinal": 30,
+      "atbash_ordinal": 62
+    },
+    {
+      "question": "איפה אנחנו",
+      "letters": 9,
+      "regular": 211,
+      "ordinal": 76,
+      "atbash_ordinal": 131
+    }
+  ],
+  "packets": [
+    {
+      "round": 1,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        1,
+        2,
+        3
+      ],
+      "names": [
+        "והו",
+        "ילי",
+        "סיט"
+      ],
+      "canonical_payload": "והויליסיט",
+      "letters": 9,
+      "regular": 146,
+      "ordinal": 83,
+      "atbash_ordinal": 124
+    },
+    {
+      "round": 1,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        4,
+        5,
+        6
+      ],
+      "names": [
+        "עלם",
+        "מהש",
+        "ללה"
+      ],
+      "canonical_payload": "עלממהשללה",
+      "letters": 9,
+      "regular": 550,
+      "ordinal": 109,
+      "atbash_ordinal": 98
+    },
+    {
+      "round": 1,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        7,
+        8,
+        9
+      ],
+      "names": [
+        "אכא",
+        "כהת",
+        "הזי"
+      ],
+      "canonical_payload": "אכאכהתהזי",
+      "letters": 9,
+      "regular": 469,
+      "ordinal": 73,
+      "atbash_ordinal": 134
+    },
+    {
+      "round": 1,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        10,
+        11,
+        12
+      ],
+      "names": [
+        "אלד",
+        "לאו",
+        "ההע"
+      ],
+      "canonical_payload": "אלדלאוההע",
+      "letters": 9,
+      "regular": 152,
+      "ordinal": 62,
+      "atbash_ordinal": 145
+    },
+    {
+      "round": 2,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        13,
+        14,
+        15
+      ],
+      "names": [
+        "יזל",
+        "מבה",
+        "הרי"
+      ],
+      "canonical_payload": "יזלמבההרי",
+      "letters": 9,
+      "regular": 309,
+      "ordinal": 84,
+      "atbash_ordinal": 123
+    },
+    {
+      "round": 2,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        16,
+        17,
+        18
+      ],
+      "names": [
+        "הקם",
+        "לאו",
+        "כלי"
+      ],
+      "canonical_payload": "הקמלאוכלי",
+      "letters": 9,
+      "regular": 242,
+      "ordinal": 89,
+      "atbash_ordinal": 118
+    },
+    {
+      "round": 2,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        19,
+        20,
+        21
+      ],
+      "names": [
+        "לוו",
+        "פהל",
+        "נלך"
+      ],
+      "canonical_payload": "לוופהלנלכ",
+      "letters": 9,
+      "regular": 257,
+      "ordinal": 95,
+      "atbash_ordinal": 112
+    },
+    {
+      "round": 2,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        22,
+        23,
+        24
+      ],
+      "names": [
+        "ייי",
+        "מלה",
+        "חהו"
+      ],
+      "canonical_payload": "ייימלהחהו",
+      "letters": 9,
+      "regular": 124,
+      "ordinal": 79,
+      "atbash_ordinal": 128
+    },
+    {
+      "round": 3,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        25,
+        26,
+        27
+      ],
+      "names": [
+        "נתה",
+        "האא",
+        "ירת"
+      ],
+      "canonical_payload": "נתההאאירת",
+      "letters": 9,
+      "regular": 1072,
+      "ordinal": 100,
+      "atbash_ordinal": 107
+    },
+    {
+      "round": 3,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        28,
+        29,
+        30
+      ],
+      "names": [
+        "שאה",
+        "ריי",
+        "אום"
+      ],
+      "canonical_payload": "שאהרייאומ",
+      "letters": 9,
+      "regular": 573,
+      "ordinal": 87,
+      "atbash_ordinal": 120
+    },
+    {
+      "round": 3,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        31,
+        32,
+        33
+      ],
+      "names": [
+        "לכב",
+        "ושר",
+        "יחו"
+      ],
+      "canonical_payload": "לכבושריחו",
+      "letters": 9,
+      "regular": 582,
+      "ordinal": 96,
+      "atbash_ordinal": 111
+    },
+    {
+      "round": 3,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        34,
+        35,
+        36
+      ],
+      "names": [
+        "להח",
+        "כוק",
+        "מנד"
+      ],
+      "canonical_payload": "להחכוקמנד",
+      "letters": 9,
+      "regular": 263,
+      "ordinal": 92,
+      "atbash_ordinal": 115
+    },
+    {
+      "round": 4,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        37,
+        38,
+        39
+      ],
+      "names": [
+        "אני",
+        "חעם",
+        "רהע"
+      ],
+      "canonical_payload": "אניחעמרהע",
+      "letters": 9,
+      "regular": 454,
+      "ordinal": 103,
+      "atbash_ordinal": 104
+    },
+    {
+      "round": 4,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        40,
+        41,
+        42
+      ],
+      "names": [
+        "ייז",
+        "ההה",
+        "מיך"
+      ],
+      "canonical_payload": "ייזהההמיכ",
+      "letters": 9,
+      "regular": 112,
+      "ordinal": 76,
+      "atbash_ordinal": 131
+    },
+    {
+      "round": 4,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        43,
+        44,
+        45
+      ],
+      "names": [
+        "וול",
+        "ילה",
+        "סאל"
+      ],
+      "canonical_payload": "וולילהסאל",
+      "letters": 9,
+      "regular": 178,
+      "ordinal": 79,
+      "atbash_ordinal": 128
+    },
+    {
+      "round": 4,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        46,
+        47,
+        48
+      ],
+      "names": [
+        "ערי",
+        "עשל",
+        "מיה"
+      ],
+      "canonical_payload": "עריעשלמיה",
+      "letters": 9,
+      "regular": 735,
+      "ordinal": 123,
+      "atbash_ordinal": 84
+    },
+    {
+      "round": 5,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        49,
+        50,
+        51
+      ],
+      "names": [
+        "והו",
+        "דני",
+        "החש"
+      ],
+      "canonical_payload": "והודניהחש",
+      "letters": 9,
+      "regular": 394,
+      "ordinal": 79,
+      "atbash_ordinal": 128
+    },
+    {
+      "round": 5,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        52,
+        53,
+        54
+      ],
+      "names": [
+        "עמם",
+        "ננא",
+        "נית"
+      ],
+      "canonical_payload": "עממננאנית",
+      "letters": 9,
+      "regular": 711,
+      "ordinal": 117,
+      "atbash_ordinal": 90
+    },
+    {
+      "round": 5,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        55,
+        56,
+        57
+      ],
+      "names": [
+        "מבה",
+        "פוי",
+        "נמם"
+      ],
+      "canonical_payload": "מבהפוינממ",
+      "letters": 9,
+      "regular": 273,
+      "ordinal": 93,
+      "atbash_ordinal": 114
+    },
+    {
+      "round": 5,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        58,
+        59,
+        60
+      ],
+      "names": [
+        "ייל",
+        "הרח",
+        "מצר"
+      ],
+      "canonical_payload": "יילהרחמצר",
+      "letters": 9,
+      "regular": 593,
+      "ordinal": 116,
+      "atbash_ordinal": 91
+    },
+    {
+      "round": 6,
+      "question_number": 1,
+      "question": "מי אני",
+      "indices": [
+        61,
+        62,
+        63
+      ],
+      "names": [
+        "ומב",
+        "יהה",
+        "ענו"
+      ],
+      "canonical_payload": "ומביההענו",
+      "letters": 9,
+      "regular": 194,
+      "ordinal": 77,
+      "atbash_ordinal": 130
+    },
+    {
+      "round": 6,
+      "question_number": 2,
+      "question": "מי אתה",
+      "indices": [
+        64,
+        65,
+        66
+      ],
+      "names": [
+        "מחי",
+        "דמב",
+        "מנק"
+      ],
+      "canonical_payload": "מחידמבמנק",
+      "letters": 9,
+      "regular": 294,
+      "ordinal": 96,
+      "atbash_ordinal": 111
+    },
+    {
+      "round": 6,
+      "question_number": 3,
+      "question": "מה זה",
+      "indices": [
+        67,
+        68,
+        69
+      ],
+      "names": [
+        "איע",
+        "חבו",
+        "ראה"
+      ],
+      "canonical_payload": "איעחבוראה",
+      "letters": 9,
+      "regular": 303,
+      "ordinal": 69,
+      "atbash_ordinal": 138
+    },
+    {
+      "round": 6,
+      "question_number": 4,
+      "question": "איפה אנחנו",
+      "indices": [
+        70,
+        71,
+        72
+      ],
+      "names": [
+        "יבם",
+        "היי",
+        "מום"
+      ],
+      "canonical_payload": "יבמהיימומ",
+      "letters": 9,
+      "regular": 163,
+      "ordinal": 82,
+      "atbash_ordinal": 125
+    }
+  ],
+  "lane_totals": [
+    {
+      "question": "מי אני",
+      "question_number": 1,
+      "indices": [
+        1,
+        2,
+        3,
+        13,
+        14,
+        15,
+        25,
+        26,
+        27,
+        37,
+        38,
+        39,
+        49,
+        50,
+        51,
+        61,
+        62,
+        63
+      ],
+      "letters": 54,
+      "regular": 2569,
+      "ordinal": 526,
+      "atbash_ordinal": 716
+    },
+    {
+      "question": "מי אתה",
+      "question_number": 2,
+      "indices": [
+        4,
+        5,
+        6,
+        16,
+        17,
+        18,
+        28,
+        29,
+        30,
+        40,
+        41,
+        42,
+        52,
+        53,
+        54,
+        64,
+        65,
+        66
+      ],
+      "letters": 54,
+      "regular": 2482,
+      "ordinal": 574,
+      "atbash_ordinal": 668
+    },
+    {
+      "question": "מה זה",
+      "question_number": 3,
+      "indices": [
+        7,
+        8,
+        9,
+        19,
+        20,
+        21,
+        31,
+        32,
+        33,
+        43,
+        44,
+        45,
+        55,
+        56,
+        57,
+        67,
+        68,
+        69
+      ],
+      "letters": 54,
+      "regular": 2062,
+      "ordinal": 505,
+      "atbash_ordinal": 737
+    },
+    {
+      "question": "איפה אנחנו",
+      "question_number": 4,
+      "indices": [
+        10,
+        11,
+        12,
+        22,
+        23,
+        24,
+        34,
+        35,
+        36,
+        46,
+        47,
+        48,
+        58,
+        59,
+        60,
+        70,
+        71,
+        72
+      ],
+      "letters": 54,
+      "regular": 2030,
+      "ordinal": 554,
+      "atbash_ordinal": 688
+    }
+  ],
+  "full_totals": {
+    "regular": 9143,
+    "ordinal": 2159,
+    "atbash_ordinal": 2809
+  },
+  "interpretation": "Semantics are user-supplied labels; the packet contents are source data, not decrypted natural-language responses.",
+  "invariants": [
+    "6×4×3=72 names",
+    "24×9=216 letters",
+    "4×54=216 letters",
+    "per packet ordinal+atbash_ordinal=207",
+    "per lane ordinal+atbash_ordinal=1242",
+    "all four question texts combined are 23 letters, regular=835, ordinal=205, atbash=324",
+    "all 72 names atbash total=2809=53²; 835+53=888"
+  ]
+}
