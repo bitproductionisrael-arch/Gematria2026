@@ -1400,5 +1400,20 @@
         "verse21": 72
       }
     }
-  ]
+  ],
+  "pair_gate_census": {
+    "alphabet_size": 22,
+    "used_distinct_letters": 21,
+    "missing_letters": [
+      "ג"
+    ],
+    "full_alphabet_distinct_unordered_pairs": 231,
+    "available_used_alphabet_pairs": 210,
+    "position_pair_slots": 216,
+    "identical_letter_pair_slots": 24,
+    "distinct_letter_pair_slots": 192,
+    "realized_unordered_distinct_pairs": 93,
+    "missing_from_available": 117,
+    "missing_from_full": 138
+  }
 }
