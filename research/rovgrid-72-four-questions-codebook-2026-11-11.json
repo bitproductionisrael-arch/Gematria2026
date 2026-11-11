@@ -643,5 +643,13 @@
     "per lane ordinal+atbash_ordinal=1242",
     "all four question texts combined are 23 letters, regular=835, ordinal=205, atbash=324",
     "all 72 names atbash total=2809=53²; 835+53=888"
-  ]
+  ],
+  "square_reflection": {
+    "question_3_ordinal": 30,
+    "question_4_ordinal": 76,
+    "letters_in_four_questions": 23,
+    "sqrt_all_names_atbash": 53,
+    "difference_of_squares": "53^2 - 23^2 = (53-23)*(53+23) = 30*76 = 2280",
+    "status": "verified arithmetic identity under user-chosen question text and 6x4x3 partition"
+  }
 }
