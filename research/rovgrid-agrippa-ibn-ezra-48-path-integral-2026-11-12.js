@@ -133,8 +133,9 @@ function audit(){
  }
  assert(Object.keys(polynomials).length===4,"4 orientation polynomial classes");
  assert(Object.values(polynomials).every(x=>x.count===12),"each class has 12 paths");
- const meanPoly=[0,0,0,0];
- for(const s of states)s.polynomial.forEach((v,i)=>meanPoly[i]+=v/48);
+ const polySums=[0,0,0,0];
+ for(const s of states)s.polynomial.forEach((v,i)=>polySums[i]+=v);
+ const meanPoly=polySums.map(x=>x/48);
  assert(JSON.stringify(meanPoly)==="[72,9143,371563.5,5125273]","finite integral");
  const methodRange={};
  for(const key of Object.keys(conventional.structural)){
