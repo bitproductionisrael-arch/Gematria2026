@@ -56,3 +56,17 @@ assert 9*74==666 and 12*74==888 and 24*74==1776 and 32*74==2368
 assert 1040==16*65 and 1111==10+800+300+1
 assert 769**2==591361 and 666*888==591408 and 591408-591361==47
 print("PASS: AIQ BKR 888 -> 1887 -> 888; 6x6 positive distinct-cell 888 magic square.")
+
+
+# Proposed symbolic Earth designation of expanded solar square:
+# "הארץ" and "צור" in regular Hebrew gematria, final ץ=90.
+assert val("הארץ") == 296
+assert val("ארץ") == 291
+assert val("צור") == 296
+assert 296 == 8*37 and 148 == 296//2 == 4*37
+assert all(sum(new[i])+sum(new[i+1]) == 296 for i in (0,2,4))
+assert all(sum(new[i][c]+new[i][c+1] for i in range(6)) == 296 for c in (0,2,4))
+assert sum(new[i][i] for i in range(6)) + sum(new[i][5-i] for i in range(6)) == 296
+assert sum(map(sum,new)) == 3*296 == 888 == 24*37
+assert 666+6*37 == 888 and 6*37 == 222
+print('PASS: proposed Earth square label: הארץ=צור=296; every row-pair=296; full sum 888.')
