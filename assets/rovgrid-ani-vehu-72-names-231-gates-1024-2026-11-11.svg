@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-label="RovGrid אני והו 37 49 231 1024">
+<rect width="1440" height="810" fill="#0b1426"/>
+<text x="720" y="70" font-family="Arial,sans-serif" font-size="42" fill="#ffffff" text-anchor="middle" direction="rtl">ציר אני–והו | ע״ב שמות ורל״א שערים</text>
+<text x="720" y="110" font-family="Arial,sans-serif" font-size="20" fill="#9fb5d2" text-anchor="middle">RovGrid · 11.11.2026 · arithmetic verified</text>
+<g font-family="Arial,sans-serif" text-anchor="middle">
+<rect x="85" y="156" width="365" height="185" rx="22" fill="#172641" stroke="#3d76a6"/>
+<rect x="537" y="156" width="365" height="185" rx="22" fill="#172641" stroke="#3d76a6"/>
+<rect x="989" y="156" width="365" height="185" rx="22" fill="#172641" stroke="#3d76a6"/>
+<text x="267" y="203" font-size="24" fill="#b4c9e2">ע״ב שם 1</text>
+<text x="267" y="265" font-size="51" fill="white">והו</text>
+<text x="267" y="313" font-size="28" fill="#7ed3f7">17</text>
+<text x="719" y="203" font-size="24" fill="#b4c9e2">ע״ב שם 37</text>
+<text x="719" y="265" font-size="51" fill="white">אני</text>
+<text x="719" y="313" font-size="28" fill="#7ed3f7">61</text>
+<text x="1171" y="203" font-size="24" fill="#b4c9e2">ע״ב שם 49</text>
+<text x="1171" y="265" font-size="51" fill="white">והו</text>
+<text x="1171" y="313" font-size="28" fill="#7ed3f7">17</text>
+<text x="720" y="386" font-size="30" fill="#f6dba4">מרווחי מחזור: 36 + 12 + 24 = 72</text>
+<rect x="94" y="431" width="600" height="265" rx="22" fill="#162b44"/>
+<rect x="747" y="431" width="600" height="265" rx="22" fill="#162b44"/>
+<text x="394" y="482" font-size="31" fill="white">והו + אני + והו</text>
+<text x="394" y="539" font-size="35" fill="#7ed3f7">רגיל 95 | סדרי 59</text>
+<text x="394" y="596" font-size="34" fill="#f6dba4">אתב״ש 148 × 6 = 888</text>
+<text x="1047" y="482" font-size="31" fill="white">אני + והואו + אני + והואו + אני</text>
+<text x="1047" y="539" font-size="35" fill="#7ed3f7">231 | 123 | 314</text>
+<text x="1047" y="596" font-size="34" fill="#f6dba4">231 = 22 × 21 / 2</text>
+<text x="720" y="766" font-size="28" fill="white">8 מופעי אני: 656 + 368 = 1024 = 8 × 128</text>
+</g></svg>
