@@ -66,5 +66,16 @@ def main():
     assert len(gates)==93
     assert 22*21//2==231 and 21*20//2==210
     assert 210-93==117 and 231-93==138
+    from itertools import combinations as _choose2
+    palindrome_indices=[i for i,w in enumerate(n) if w[0]==w[2]]
+    pal_pairs=list(_choose2(palindrome_indices,2))
+    assert [tuple(i+1 for i in p) for p in pal_pairs if sum(regs[j] for j in p)==136]==[(2,72)]
+    assert [tuple(i+1 for i in p) for p in pal_pairs if sum(j+1 for j in p)==sum(atbs[j] for j in p)]==[(2,72)]
+    assert sum((i+1)+(j+1)==atbs[i]+atbs[j] for i,j in _choose2(range(72),2))==37
+    assert (regs[1],regs[71],ords[1],ords[71],atbs[1],atbs[71])==(50,86,32,32,37,37)
+    assert (ords[1]**2)-(regs[1]+regs[71])==1024-136==888
+    assert (1+1)+(71+1)==atbs[1]+atbs[71]==74
+    assert sum(regs[i]==75 for i in range(72))==1
+    assert (regs[22],regs[36])==(75,61) and 37-23==14
     print("PASS: 72 triads reconstructed from 3x72 Exodus letters; complete values, 6x12 sums, duplications, 888/1024 controls")
 if __name__=="__main__": main()
