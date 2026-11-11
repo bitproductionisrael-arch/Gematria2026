@@ -53,6 +53,9 @@ def run():
     assert prefix_values[0]+prefix_values[3]==prefix_values[1]+prefix_values[2]==74
     assert 148==4*37 and 37==26+22//2
     assert 6*148==888==24*37
+    assert 3*148==444 and 444+444==888
+    assert 6*(20+54)==6*(26+48)==444
+    assert 444==4*val("מיאני",REG)==4*111
     snake="".join(prefixes)
     assert (len(snake),val(snake,REG),val(snake,ORD),val(snake,ATB))==(26,148,148,450)
     assert (len(snake*6),val(snake*6,REG),val(snake*6,ATB))==(156,888,2700)
