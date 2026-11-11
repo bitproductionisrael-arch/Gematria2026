@@ -12,6 +12,8 @@ Repository initialized for the Gematria HTML app.
 
 ## RovGrid — קורפוסים ומחקר פעיל
 
+- **[11.11.2026 — ממצא מקור ראשוני: יהפיאל והסמאל = 136, אל אב = 34 בטבלת צדק של אגריפה](research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11.md)** · [קוד אימות הגימטריות וריבוע 4×4](research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11-verify.py). זו משמעות גימטרית היסטורית של שני שמות המשויכים לצדק; „צדק” עצמו = 194, והכתיב יופיאל = 137.
+
 - **[11.11.2026 — „מתכון לארץ” Ε+Ι+Ω+Δ: 815, ההפרש 73, הקובייה של אפלטון 8/6/3, 24 משולשים × 37 = 888](research/rovgrid-eio-delta-earth-plato-cube-24-37-888-2026-11-11.md)** · [אימות עצמאי](research/rovgrid-eio-delta-earth-plato-cube-24-37-888-2026-11-11-verify.py). Δ יוונית=4; Δ כהפרש ל־888=73. אפלטון — קובייה של 24 משולשים ליסוד הארץ; קישור ריבועי אגריפה 8/6/3 לתכונות קובייה הוא פרשנות RovGrid.
 
 - **[11.11.2026 — אי״ק בכ״ר: 888→1887→888, ריבוע שמש מורחב 888 וריבוע הארץ המוצע](research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11.md)** · [אימות כל השלבים, 36 תאי הריבוע ו־15 זהויות](research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11-verify.py). התיעוד כולל 8|6=86=אלהים, 8+6=14=דוד, 888:999=8:9 והוכחת אי־קיום ריבוע רגיל שסכומו 888.
