@@ -118,6 +118,18 @@ def main():
     assert {k:pos for k,pos in loci.items() if len(pos)>1}=={
         "והו":[1,49], "לאו":[11,17], "מבה":[14,55]}
     assert sum(range(1,74,12))==259==7*37
+
+    # Exact string concatenation, not only additive numerical values.
+    for n in range(1,10):
+        for m in range(1,10):
+            assert R(n+m)==R(n)+"והואו"+R(m)
+    assert (gem("והואו"),gem("והואו","ord"),gem("והואו","atb"))==(24,24,91)
+    assert gem("אמן")==91==gem("יהוה")+gem("אדני")
+    assert R(8)==R(3)+"והואו"+R(5)
+    assert gem(R(3))+24+gem(R(5))==656
+    assert gem(R(3),"ord")+24+gem(R(5),"ord")==368
+    assert gem(R(3),"atb")+91+gem(R(5),"atb")==989
+    assert len(R(3))+5+len(R(5))==59
     print("PASS: positional 72, letterwise methods, n=1..30, 231 gates, 1024 closure, 14-tail, 128 symmetry")
 if __name__=="__main__":
     main()
