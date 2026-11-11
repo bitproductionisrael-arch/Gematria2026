@@ -1415,5 +1415,47 @@
     "realized_unordered_distinct_pairs": 93,
     "missing_from_available": 117,
     "missing_from_full": 138
+  },
+  "palindrome_2_72_bridge": {
+    "positions": [
+      2,
+      72
+    ],
+    "names": [
+      "ילי",
+      "מום"
+    ],
+    "regular": [
+      50,
+      86
+    ],
+    "ordinal": [
+      32,
+      32
+    ],
+    "atbash_ordinal": [
+      37,
+      37
+    ],
+    "index_sum": 74,
+    "atbash_sum": 74,
+    "ordinal_sum": 64,
+    "regular_sum": 136,
+    "common_ordinal_squared": 1024,
+    "difference": 888,
+    "palindrome_pairs_with_regular_sum_136": 1,
+    "palindrome_pairs_with_index_sum_equal_atbash_sum": 1,
+    "all_position_pairs_with_index_sum_equal_atbash_sum": 37,
+    "conditional_note": "Squaring the shared ordinal 32 is an explicit chosen operation; uniqueness only under palindrome-pair restriction."
+  },
+  "ani_37_regular_136_complement": {
+    "index": 37,
+    "name": "אני",
+    "regular": 61,
+    "unique_partner_index": 23,
+    "partner_name": "מלה",
+    "partner_regular": 75,
+    "index_gap": 14,
+    "sum": 136
   }
 }
