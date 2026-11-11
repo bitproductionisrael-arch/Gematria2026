@@ -95,7 +95,6 @@ def main():
     assert (23+75)==(37+61)==98==2*49
     assert (37-23)==(75-61)==14
     assert (23+37+75+61)==196==14**2
-    assert score_phrase("מי","") if False else True
     assert score_phrase("מי",ORD)==23 and score_phrase("זה אני",ORD)==37
     assert score_phrase("מי זה אני",ORD)==23+37==60
     assert score_phrase("מי זה אני",ATB)==score_phrase("הוא אני",ATB)==101
