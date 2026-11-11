@@ -1,0 +1,221 @@
+{
+  "name": "RovGrid Body Star Vault",
+  "date": "2026-11-12",
+  "version": 1,
+  "scoring_policy": "One award for each distinct predeclared anatomical/genetic star-number set or distinct documented stellate morphology / star-named anatomical class. Nested sets may each unlock a different S-index; overlaps must be disclosed. One physical structure does not gain another star merely by receiving multiple equations, transforms or names. Star-number animation rearranges counted units; does not assert physical star geometry.",
+  "formula": "S(n)=6*n*(n-1)+1",
+  "centered_hexagon": "H(n)=3*n*(n-1)+1; H(4)=37; variant of B02 not a new trophy",
+  "totals": {
+    "anatomical_star_number": 3,
+    "genetic_star_number": 2,
+    "literal_stellate_morphology": 4,
+    "star_named_anatomical_landmark": 2,
+    "all": 11,
+    "strict_numeric_star": 5,
+    "real_cell_morphology": 4,
+    "star_named_structures": 2
+  },
+  "entries": [
+    {
+      "id": "B01",
+      "group": "anatomical_star_number",
+      "region": "Thoracic apparatus, non-rib subset",
+      "object": "12 thoracic vertebrae + 1 sternum",
+      "count": 13,
+      "star_index": 2,
+      "src": "IESOUS §§8,44",
+      "note": "Defined subset; not separately named anatomical unit."
+    },
+    {
+      "id": "B02",
+      "group": "anatomical_star_number",
+      "region": "Thoracic osseous apparatus",
+      "object": "12 thoracic vertebrae + 24 ribs + 1 sternum",
+      "count": 37,
+      "star_index": 3,
+      "src": "IESOUS §§8,44",
+      "note": "37 osseous apparatus; conventional rib cage alone is 25 bones."
+    },
+    {
+      "id": "B03",
+      "group": "anatomical_star_number",
+      "region": "Selected principal axial frame",
+      "object": "22 skull + 26 adult vertebral bones + 24 ribs + 1 sternum",
+      "count": 73,
+      "star_index": 4,
+      "src": "IESOUS §§9,44",
+      "note": "Selected 73 of 80 axial bones; excludes 6 auditory ossicles and hyoid."
+    },
+    {
+      "id": "G01",
+      "group": "genetic_star_number",
+      "region": "Human mitochondrial genome",
+      "object": "Protein coding genes",
+      "count": 13,
+      "star_index": 2,
+      "src": "IESOUS §34; PMC3959762",
+      "note": "Nested within the same 37-gene mitochondrial genome as G02."
+    },
+    {
+      "id": "G02",
+      "group": "genetic_star_number",
+      "region": "Human mitochondrial genome",
+      "object": "13 protein genes + 22 tRNA genes + 2 rRNA genes",
+      "count": 37,
+      "star_index": 3,
+      "src": "IESOUS §34; PMC3959762",
+      "note": "37-gene count, not geometric position of genes."
+    },
+    {
+      "id": "M01",
+      "group": "literal_stellate_morphology",
+      "region": "Bone",
+      "object": "Osteocytes: branched dendritic, stellate cells",
+      "count": null,
+      "star_index": null,
+      "src": "PMC10724330",
+      "note": "Star-like cellular morphology; not a regular hexagram."
+    },
+    {
+      "id": "M02",
+      "group": "literal_stellate_morphology",
+      "region": "Brain and spinal cord",
+      "object": "Astrocytes: star-like glial cells",
+      "count": null,
+      "star_index": null,
+      "src": "NCBI Bookshelf NBK545142",
+      "note": "Morphology varies by subtype and context."
+    },
+    {
+      "id": "M03",
+      "group": "literal_stellate_morphology",
+      "region": "Liver",
+      "object": "Hepatic stellate cells (Ito cells)",
+      "count": null,
+      "star_index": null,
+      "src": "PMC11019831",
+      "note": "Characteristic projections in quiescent liver cells."
+    },
+    {
+      "id": "M04",
+      "group": "literal_stellate_morphology",
+      "region": "Developing teeth",
+      "object": "Stellate reticulum cells of enamel organ",
+      "count": null,
+      "star_index": null,
+      "src": "NCBI Bookshelf NBK560515; PMC6151498",
+      "note": "Developmental structure, not a persistent adult tooth cell layer."
+    },
+    {
+      "id": "N01",
+      "group": "star_named_anatomical_landmark",
+      "region": "Skull",
+      "object": "Asterion: junction of cranial sutures, meaning starry",
+      "count": null,
+      "star_index": null,
+      "src": "NCBI Bookshelf NBK537214",
+      "note": "Star-derived name; not a literal regular six-pointed star."
+    },
+    {
+      "id": "N02",
+      "group": "star_named_anatomical_landmark",
+      "region": "Cervicothoracic junction at first rib",
+      "object": "Stellate (cervicothoracic) ganglion",
+      "count": null,
+      "star_index": null,
+      "src": "NCBI Bookshelf NBK539807",
+      "note": "Variable shape; fused ganglion not found in every individual."
+    }
+  ],
+  "not_scored": [
+    {
+      "id": "C01",
+      "object": "7 cervical vertebrae + one free lower limb of 30 bones",
+      "value": 37,
+      "reason": "Mixed distant regions, exploratory combination."
+    },
+    {
+      "id": "C02",
+      "object": "22 skull bones +14 nonthoracic spinal bones + sternum",
+      "value": 37,
+      "reason": "Custom complementary set within the 73 frame."
+    },
+    {
+      "id": "C03",
+      "object": "37 is both S3 and centered hexagonal H4",
+      "value": 37,
+      "reason": "Different geometric animation of the same B02 inventory."
+    },
+    {
+      "id": "C04",
+      "object": "S1=1 sternum",
+      "value": 1,
+      "reason": "Trivial starting center; story seed, not badge."
+    },
+    {
+      "id": "C05",
+      "object": "373,3773,888,136,160,208,520 etc",
+      "reason": "Not canonical centered-star numbers; support other tiers."
+    }
+  ],
+  "supporting": [
+    "Anatomical: axial 80 + appendicular 126 = adult skeleton 206.",
+    "Thorax: 12 vertebrae +24 ribs +1 sternum=37; 24 rib bones versus 24 separate presacral vertebrae.",
+    "Selected axial 73=22 skull+26 spinal+25 rib cage=80−7 (ossicles 6+hyoid 1).",
+    "Anatomical nested shells: 1,13,37,73 with new added units 12,24,36; 73=2×37−1.",
+    "Two 37-member sets intersect at 1 sternum: 37+37−1=73; the second set is researcher-defined, not another anatomical region.",
+    "24×37=888 appears twice when 24 represents ribs or presacral vertebrae; same 37 parent, not two independent star values.",
+    "37×73=2701=T73=3×888+37; Pell 73²−37×12²=1.",
+    "Anatomical box 8 cranial, 20 metacarpal/metatarsal rays, 26 adult spinal bones; products 160+208+520=888; volume 4160.",
+    "Both hands 54 bones; both feet 52; appendicular residual 20; 54+52+20=126.",
+    "Reduced name 16+7+10=33 can be instantiated using wrist carpals, one foot tarsals, bilateral metacarpals; 33 spinal segments before fusion.",
+    "English simple name 43+38+55=136 matched by 80−37, 10 metacarpals+28 hand phalanges, and 80−25; 55−43=12 thoracic vertebrae.",
+    "Anatomical 3|7|7|3 motifs of foot cuneiforms/tarsals and rib regions are positional motifs, not new star numbers.",
+    "Genetic 64=61 sense codons +3 stop codons; phi(160)=64 is a separate arithmetic mapping.",
+    "Proteasome: 26S complex, 20S core, 4×7=28 core subunits (S are sedimentation labels, not numerals of copies).",
+    "Molecular matches reported: histone H3.1 136 residues, mature alpha-globin 141 residues, TGFA 160/HBEGF 208/MMP28 520 residues; protein lengths depend on canonical isoform definitions.",
+    "mtDNA 28 heavy-strand genes+9 light-strand genes=37, and 24 RNA+13 protein=37 are distinct partitions of the same 37 genes, not separate stars."
+  ],
+  "refs": [
+    [
+      "Wolfram Star Number",
+      "https://mathworld.wolfram.com/StarNumber.html"
+    ],
+    [
+      "Wolfram Centered Hexagonal",
+      "https://mathworld.wolfram.com/HexNumber.html"
+    ],
+    [
+      "OpenStax Axial Skeleton",
+      "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system"
+    ],
+    [
+      "Human mtDNA inventory",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3959762/"
+    ],
+    [
+      "Osteocyte morphology",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10724330/"
+    ],
+    [
+      "Astrocytes",
+      "https://www.ncbi.nlm.nih.gov/books/NBK545142/"
+    ],
+    [
+      "Hepatic stellate cells",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11019831/"
+    ],
+    [
+      "Stellate reticulum embryology",
+      "https://www.ncbi.nlm.nih.gov/books/NBK560515/"
+    ],
+    [
+      "Asterion",
+      "https://www.ncbi.nlm.nih.gov/books/NBK537214/"
+    ],
+    [
+      "Stellate ganglion",
+      "https://www.ncbi.nlm.nih.gov/books/NBK539807/"
+    ]
+  ]
+}
