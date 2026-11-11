@@ -43,3 +43,19 @@ assert dimensions*earth_for_each_axis==888
 assert dimensions*faces_in_pair*triangles_per_square_face==24
 assert 3*(2*148)==888==3*296
 print('PASS: three coordinate axes, three opposite-face pairs, 3x296=888.')
+
+
+# Ten-dimensional hypercube / 3-faces. Formal n-cube, not a physical spacetime claim.
+from math import comb
+def vertices(n):return 2**n
+def three_faces(n):return comb(n,3)*2**(n-3)
+assert vertices(3)==8 and three_faces(3)==1
+assert vertices(4)==16 and three_faces(4)==8
+assert vertices(10)==1024
+assert comb(10,3)==120 and 2**(10-3)==128
+assert three_faces(10)==120*128==15360
+assert 128*8==1024  # disjoint vertex sets for one fixed free-axis triple
+assert 1024-136==888
+for n in range(3,11):
+    assert three_faces(n)==comb(n,3)*2**(n-3)
+print('PASS: 3D faces inside n-hypercube, 10D=1024 vertices and 15360 3-cubes.')
