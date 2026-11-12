@@ -110,3 +110,8 @@ The original video runs to approximately **18:26**; full caption transcript: htt
 - [113 machine-readable records (JSON)](research/rovgrid-body-all-achievements-2026-11-12.json)
 - [Verification script](research/rovgrid-body-all-achievements-2026-11-12-verify.py)
 
+
+## Two parent vaults (12 NOVEMBER 2026)
+- [Genesis vault — 50 achievements](rovgrid-genesis-vault-37-73-2026-11-12.md): 37, 73, 2701, 703, S2/S3/S4, T10/T19/T37/T73 and anatomical 24×37=888. Contains five of the previous star cards and all four triangle figure variants.
+- [Tevah / Name vault — 63 achievements](rovgrid-tevah-vault-8-20-26-2026-11-12.md): the box 8×20×26, face values 160/208/520, name ciphers and living-system evidence. Contains the other six star cards.
+- [Exclusive 113-ID manifest](rovgrid-dual-vaults-map-2026-11-12.json); cross-links do not award extra trophies. Narrator title "The Owner of Reality / God" is an artistic label, not a biological claim.
