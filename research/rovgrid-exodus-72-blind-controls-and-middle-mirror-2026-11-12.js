@@ -98,6 +98,44 @@ function run(bibles){
    names:[SOURCE[0][i]+SOURCE[1][71-i]+SOURCE[2][i],SOURCE[0][71-i]+SOURCE[1][i]+SOURCE[2][71-i]]});
  }
  check(stable.length===6&&stable.filter(x=>x.locations[0]>=25).length===5,"six stable name pairs, five central");
+ const middle24=Array.from({length:24},(_,j)=>{
+  const i=24+j,name=SOURCE[0][i]+SOURCE[1][71-i]+SOURCE[2][i];
+  return {index:i+1,name,regular:value(name,"regular"),stable:SOURCE[1][i]===SOURCE[1][71-i]};
+ });
+ const centralStable=middle24.filter(x=>x.stable);
+ const centralUnstable=middle24.filter(x=>!x.stable);
+ const sumRegular=arr=>arr.reduce((n,x)=>n+x.regular,0);
+ check(middle24.length===24&&centralStable.length===10&&centralUnstable.length===14,"central partition");
+ check(sumRegular(middle24)===3969&&sumRegular(centralStable)===1849&&sumRegular(centralUnstable)===2120,"63^2 / 43^2 partition");
+ check(3969===63**2&&1849===43**2&&2120===20*106,"square differences");
+ const albamOrdinal=name=>[...name].reduce((n,c)=>n+(ALPHABET.indexOf(c)+11)%22+1,0);
+ check(middle24.reduce((n,x)=>n+albamOrdinal(x.name),0)===888,"central ALBaM ordinal 888");
+ const dp=Array.from({length:11},()=>Array(3970).fill(0));dp[0][0]=1;
+ for(const x of middle24)for(let k=10;k>=1;k--)for(let s=3969;s>=x.regular;s--)
+  dp[k][s]+=dp[k-1][s-x.regular];
+ const totalTenSubsets=dp[10].reduce((n,v)=>n+v,0);
+ const equal43SquareSubsets=dp[10][1849];
+ const perfectSquareSubsets=Array.from({length:63},(_,i)=>(i+1)**2).reduce((n,s)=>n+dp[10][s],0);
+ check(totalTenSubsets===1961256&&equal43SquareSubsets===1512&&perfectSquareSubsets===24972,"complete C(24,10) subset controls");
+ // An illustrative letter-shuffle control preserving the middle verse's frequencies.
+ // This is NOT an estimate of whether a human author intended a cipher.
+ let seed=20261112;
+ const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return (seed>>>0)/4294967296};
+ let randomAtLeast5=0;const trials=100000;
+ for(let t=0;t<trials;t++){
+  const chars=[...SOURCE[1]];
+  for(let k=71;k>0;k--){const pick=Math.floor(random()*(k+1));[chars[k],chars[pick]]=[chars[pick],chars[k]]}
+  let matches=0;for(let k=24;k<36;k++)if(chars[k]===chars[71-k])matches++;
+  if(matches>=5)randomAtLeast5++;
+ }
+ check(randomAtLeast5===116,"reproducible letter shuffle with seeded Fisher-Yates");
+ const centralSquares={all24:{count:24,regular:3969,square:63,albamOrdinal:888},
+  unchangedNames:{count:10,indices:centralStable.map(x=>x.index),names:centralStable.map(x=>x.name),regular:1849,square:43},
+  changedNames:{count:14,regular:2120,differenceOfSquares:"63^2 - 43^2 =20*106=2120"},
+  subsetControl:{allTenNameSubsets:totalTenSubsets,tenNameSubsetsSumming1849:equal43SquareSubsets,tenNameSubsetsWithAnyPerfectSquare:perfectSquareSubsets}};
+ const shuffleControl={trials,seed:20261112,randomShufflesWithAtLeastFiveCentralMirrorPairs:randomAtLeast5,rate:randomAtLeast5/trials,
+  warnings:"Simple random letter rearrangement destroys word order and syntax; does not estimate historical intent."};
+
  const P=[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]];
  let centralAni=0,anyAni=0;
  for(let mask=0;mask<8;mask++){
@@ -122,6 +160,7 @@ function run(bibles){
   mirror_central12_histogram:distribution,
   verses_with_middle12_at_least5:mirror72.filter(x=>x.central12>=5).map(x=>x.ref),
   stable_name_pairs:stable,
+  central_square_partition:centralSquares,letter_shuffle_control:shuffleControl,
   exactly_center_ANI_in_48_paths:centralAni,any_ANI_in_48_paths:anyAni,
   central_words:{secondVerseWord11:one.wordList[10],thirdVerseWord11:two.wordList[10],
    adjacentWord11_217_to216:r217216,alsoOrdinal37_to36:r217216Ord,
