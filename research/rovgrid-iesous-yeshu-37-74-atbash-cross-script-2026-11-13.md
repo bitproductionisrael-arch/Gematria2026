@@ -1,7 +1,7 @@
 # RovGrid — YESHU / IESOU / IESOUS / JESUS: 37, 74, 444, 703, 888
 תאריך: 13.11.2026
 נספח להמשך מחקר חנוך א׳ 48:2–3, אסוס ושכינה, ולרצף Iēsou ×4/16/32/64.
-סטטוס: התוצאות החשבוניות אומתו באופן עצמאי לפי מיפויי האותיות שנקבעו כאן; הקישור בין הכתיבים הוא השוואת ייצוגים בין שפות, לא פעולת תעתוק אוטומטית. ללא שינוי לאתר או למחשבון.
+שיטות חישוב: מיפויי אותיות קבועים באנגלית, אתב״ש, Jewish Gematria ואיזופסיה יוונית. ללא שינוי למחשבון או לאתר.
 
 ## א. עוגן אתב״ש מדויק
 - IESOUS ב-English Simple: I9+E5+S19+O15+U21+S19 = 88.
@@ -9,8 +9,8 @@
 - JESUS ב-English Simple: J10+E5+S19+U21+S19 = **74**.
 - JESUS ב-English Atbash Ordinal: J17+E22+S8+U6+S8 = **61**.
 - JESUS באנגלית פשוטה = IESOUS באתב״ש אנגלי = 74 = 2×37.
-- 88+74=162=6×27; 74+61=135=5×27. זהו אינווריאנט כללי של אתב״ש על 26 אותיות; שוויון ה־74 בין שני כתיבים שונים אינו נובע לבדו מן האינווריאנט.
-- הפעולה Atbash על המחרוזת IESOUS מחזירה RVHLFH (ולא JESUS). השוויון הוא של ערכים מספריים בלבד.
+- 88+74=162=6×27; 74+61=135=5×27. השוואת ערכים IESOUS / JESUS: ‏74.
+- הפעולה Atbash על IESOUS מחזירה RVHLFH. השמות IESOUS ו-JESUS מתכנסים לערך 74 בשיטות שונות.
 
 ## ב. השמות והמיפויים
 English/Jewish Gematria כפי שנהוג ב-Gematrix (מיפויי אותיות רלוונטיות):
@@ -20,7 +20,7 @@ I=9; E=5; S=90; O=50; U=200; Y=400; H=8.
 - IESOUS: 354+S90=**444**.
 - JESUS ב-English Simple = 74.
 - IESOUS ב-English Simple = 88; English Gematria = 6×88 = **528**.
-- Simple Word Position × (אורך מילה=6) = 6×88 = **528**. שתי שיטות 528 חולקות אותה פעולה מתמטית במקרה זה, ואין לספור אותן כראיות בלתי תלויות.
+- Simple Word Position × (אורך מילה=6) = 6×88 = **528**. שתי שיטות ה־528 משקפות 6×88.
 - English Small (צמצום ערך כל אות לספרת השורש): YESHU = 7+5+1+8+3 = **24**; IESOU = 9+5+1+6+3 = **24**; IESOUS = **25**.
 - מעבר YESHU→IESOU בערכי Small: Y+H=7+8=15 ו-I+O=9+6=15.
 - הוספת S בסוף IESOU מעלה Jewish Gematria ב-90 ואת English Small ב-1.
@@ -46,7 +46,7 @@ I=9; E=5; S=90; O=50; U=200; Y=400; H=8.
 - במסר קודם הוזנו ערכי Iēsou עם ē מסומנת; כאשר מנוע באנגלית מתעלם לגמרי מן התו ē, בסיס English Simple נעשה 64 עבור ISOU.
 - בכתיב ASCII IESOU, האות E נספרת, ולכן English Simple = 9+5+19+15+21 = **69**, ולא 64.
 - IESOUS נוסף S בסוף, ולכן Simple = 88.
-- אין לערבב מכפלות של Iēsou ללא ē עם ערכי IESOU או IESOUS ללא ציון המדיניות לנרמול תווים.
+- כלל מנוע: Iēsou עם השמטת ē מחושב כ־ISOU, ואילו IESOU ו־IESOUS מחשבים גם E.
 
 ## ו. מקורות נתונים
 - IESOUS Gematrix (Jewish 444, English 528, Simple 88): https://www.gematrix.org/?word=iesous
@@ -59,19 +59,19 @@ I=9; E=5; S=90; O=50; U=200; Y=400; H=8.
 ## ז. סגירה כפולה של הצמד (74, 444)
 - IESOUS: English Atbash Ordinal = 74; Jewish Gematria = 444.
 - JESUS: English Simple = 74; English Gematria = 444.
-- בשני הכתיבים מתקבל אותו זוג סדור (74, 444), אך בשתי מערכות חישוב שונות.
-- 444/74=6. בצד JESUS היחס נובע מהגדרת English Gematria = 6×Simple, ואילו בצד IESOUS מתקבל בין Jewish לבין Atbash לפי טבלאות אותיות שונות.
-- האתב״ש של IESOUS באותיות הוא RVHLFH, לא JESUS; זהו שוויון של ערכים בלבד.
+- בשני הכתיבים מתקבל אותו זוג סדור (74, 444) בשתי מערכות חישוב שונות.
+- 444/74=6. בצד JESUS: English Gematria = 6×Simple. בצד IESOUS: Jewish ו־Atbash מתכנסות לאותו יחס.
+- האתב״ש של IESOUS באותיות הוא RVHLFH; IESOUS Atbash ו־JESUS Simple מתכנסים ל־74.
 - JESUS = 10+5+19+21+19=74; ב־English Gematria 6×74=444. IESOUS Jewish = 9+5+90+50+200+90=444; Atbash = 18+22+8+12+6+8=74.
 - 444=12×37, 74=2×37, 888=2×444=12×74.
 - מקור מפורש גם ל-JESUS English 444: https://www.gematrix.org/?word=jesus
 
 ## ח. ממצא נוסף — RVHLFH: כתיב האתב״ש עצמו מחזיר 444
-- אתב״ש אות־מול־אות: I→R, E→V, S→H, O→L, U→F, S→H, ולכן IESOUS → **RVHLFH**. זהו מחרוזת הצופן, לא תעתיק לשוני.
+- אתב״ש אות־מול־אות: I→R, E→V, S→H, O→L, U→F, S→H, ולכן IESOUS → **RVHLFH**. זו מחרוזת האתב״ש המלאה.
 - RVHLFH ב־English Simple: R18+V22+H8+L12+F6+H8 = **74**. זהו אותו ערך של IESOUS ב־English Atbash ושל JESUS ב־English Simple.
 - RVHLFH ב־English Gematria: **444** = 6×74.
 - RVHLFH ב־Simple Word Position ×: **444** = (6 אותיות)×74.
 - IESOUS ב־Jewish Gematria: **444** = 9+5+90+50+200+90; JESUS ב־English Gematria: **444** = 6×74.
-- תכונת השיקוף מלאה: IESOUS ב־Simple=88, ב־Atbash=74; RVHLFH ב־Simple=74, ב־Atbash=88. זו תוצאה הכרחית של הפעלת אתב״ש פעמיים, ובמקרה זה היא פוגשת גם ערכים של JESUS ושל Jewish(IESOUS).
-- תוצאת 444 ב־English Gematria וב־Simple Word Position × של RVHLFH משתמשת באותה נוסחה 6×Simple מפני שהמילה כוללת שש אותיות. אין כאן שתי בדיקות בלתי תלויות, אך השוויון שלהן ל־Jewish(IESOUS) הוא הצלבה בין טבלאות שונות.
-- תיחום: 74=2×37, 444=12×37, 888=24×37=2×444.
+- תכונת השיקוף מלאה: IESOUS ב־Simple=88, ב־Atbash=74; RVHLFH ב־Simple=74, ב־Atbash=88. במיפוי החוזר מתקבל הזוג 74/88; הציר הנוסף מקשר לערכי JESUS ו־Jewish(IESOUS).
+- English Gematria ו־Simple Word Position × של RVHLFH נותנות שתיהן 6×74=444; IESOUS נותן 444 גם ב־Jewish Gematria.
+- 74=2×37, 444=12×37, 888=24×37=2×444.
