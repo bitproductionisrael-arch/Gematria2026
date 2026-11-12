@@ -1,7 +1,7 @@
 {
   "name": "RovGrid | Tevah Vault Rigorous Completion Audit",
   "date": "2026-11-12",
-  "version": 2,
+  "version": 3,
   "source": "research/rovgrid-body-all-achievements-2026-11-12.json",
   "denominator": 63,
   "levels": {
@@ -1642,5 +1642,43 @@
       "27+27-13=41"
     ],
     "note": "41-bone thoracic and girdle structure is a distinct anatomical construct, not the 41 support-card count. 14 true ribs form part of those 41 bones; 14+41 is a vault-card sum, not their anatomical union."
+  },
+  "new_nested_bone_proof": {
+    "date": "2026-11-12",
+    "name": "Three consecutive centered-square counts inside a five-step nested bone union, ending in 55",
+    "document": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12.md",
+    "verifier": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12-verify.py",
+    "nested_counts": [
+      13,
+      25,
+      37,
+      41,
+      55
+    ],
+    "centered_square_counts": [
+      13,
+      25,
+      41
+    ],
+    "nested_bone_sets": {
+      "n13": "12 thoracic vertebrae +sternum",
+      "n25": "n13 +12 LEFT ribs; not the canonical rib cage inventory",
+      "n37": "n25 +12 RIGHT ribs",
+      "n41": "n37 +4 shoulder-girdle bones",
+      "n55": "n41 +14 adult non-thoracic spinal bones"
+    },
+    "independent_55s": {
+      "connected": "26 full adult spine +24 ribs +1 sternum +4 shoulder-girdle bones =55",
+      "axial_complement": "22 skull +6 auditory ossicles +1 hyoid +26 full adult spine=55",
+      "shared": "26 full spine",
+      "union": "55+55−26=84=80 axial+4 girdle"
+    },
+    "mathematical_properties": [
+      "13=3²+2²",
+      "25=4²+3²",
+      "41=5²+4²",
+      "55=T10=F10"
+    ],
+    "visual_scoring": "subfindings attached to previously registered anatomical structures, zero added prize cards; preserve 1 complete +14 partial +41 support and source active 112 / historical 113"
   }
 }
