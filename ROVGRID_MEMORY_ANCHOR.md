@@ -1,3 +1,6 @@
+## 13.11.2026 — אטלס מלא Iēsou / IESOUS / JESUS: כל 60 תוצאות ההכפלה וההתכנסויות
+- **[כל נתוני המחקר והסגירות במסמך אחד](research/rovgrid-iesou-iesous-all-results-master-2026-11-13.md)** · **[אימות חשבוני](research/rovgrid-iesou-iesous-all-results-master-2026-11-13-verify.js)**. נשמרו כל המדרגות ×4, ×16, ×32, ×64 לפי כל השיטות שנמסרו, כולל אלפבית כוח בית, וכן 64/144/256 כריבועים ביחס שורשים 2:3:4, סגירת 1216+1152=2368=64×37, השוואת YESHU/IESOU/IESOUS/JESUS/RVHLFH, התכנסות 74↔444, שרשרת 703/444/888 וצורות IESOUS CHRISTOS / IESUS CHRISTUS / IESOUS CHRISTUS. ההבחנה התפעולית: Iēsou בתוצאות ההכפלה מחושב עם השמטת ē. כל הממצאים והחיבורים שמורים ברצף.
+
 ## 13.11.2026 — IESOUS / YESHU / JESUS: אתב״ש 74, ציר 37 ו־888
 - **[מחקר מתועד](research/rovgrid-iesous-yeshu-37-74-atbash-cross-script-2026-11-13.md)** · **[בדיקת חשבון עצמאית](research/rovgrid-iesous-yeshu-37-74-atbash-cross-script-2026-11-13-verify.js)**. IESOUS באתב״ש אנגלי=74=JESUS ב־English Simple=2×37; JESUS באתב״ש=61=עמית ושכינה בסדרי. YESHU ב־Jewish Gematria=703=19×37=T37; IESOUS ב־Jewish=444=12×37; Ἰησοῦς ביוונית=888=24×37. 888=2×444=12×74; IESOU ב־Jewish=354=6×59; YESHU ו־IESOU בקטן אנגלי=24 ו־IESOUS=25. צוין שסכום אות+אתב״ש=27 הוא אינווריאנט כללי, וש־Iēsou עם ē שנשמטה אינו IESOU בכתיב ASCII. לא שונו האתר או המחשבון.
 
