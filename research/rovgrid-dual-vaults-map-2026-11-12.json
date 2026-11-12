@@ -276,5 +276,26 @@
     "tevah_auxiliary_badge_count": 55,
     "tevah_visual_award_total": 56,
     "note": "Underlying historical partition 50+63=113; P22 retained in Tevah archival register, not scored. Anatomical 41 counted in linked-region report, not used to award a new Tevah item."
+  },
+  "bonus_geometry": {
+    "document": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12.md",
+    "verifier": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12-verify.py",
+    "counts": [
+      13,
+      25,
+      37,
+      41,
+      55
+    ],
+    "centered_squares": [
+      13,
+      25,
+      41
+    ],
+    "triangular_and_fibonacci": 55,
+    "two_distinct_55_bone_sets_shared": 26,
+    "union": 84,
+    "new_cards": 0,
+    "note": "Same counted anatomical parent groups; intended as animation states without affecting exclusive scores."
   }
 }
