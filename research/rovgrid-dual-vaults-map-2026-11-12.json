@@ -1,7 +1,7 @@
 {
   "name": "RovGrid | Two Vaults of the 113 Body Achievements",
   "date": "2026-11-12",
-  "version": 2,
+  "version": 3,
   "ledger_source": "research/rovgrid-body-all-achievements-2026-11-12.json",
   "score_policy": "One primary vault per unique achievement ID; symbolic cross-vault references are not counted again.",
   "labels": {
@@ -249,7 +249,7 @@
     "complete_box_awards": 1,
     "full_core_cards": 7,
     "partial_cards": 14,
-    "support_cards": 42,
+    "support_cards": 41,
     "total_tevah_cards": 63,
     "strict_definition": "complete arithmetic construction in the selected adult bone-count model: 8|20|26, faces 160|208|520, sum 888, volume 4160, invariant 3 face projections",
     "links": {
@@ -258,6 +258,23 @@
       "shotlist": "research/rovgrid-tevah-animation-shotlist-2026-11-12.md",
       "verifier": "research/rovgrid-tevah-completion-audit-2026-11-12-verify.py"
     },
-    "note": "Seven stage cards correspond to one constructed arithmetic box. No anatomical organ with these edge lengths and no independent second complete box is established."
+    "note": "Seven stage cards correspond to one constructed arithmetic box. No anatomical organ with these edge lengths and no independent second complete box is established.",
+    "archived_cards": 1,
+    "active_source_cards": 62,
+    "original_source_cards": 63,
+    "active_awards": 56,
+    "anatomical_functional_links": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md"
+  },
+  "active_counts": {
+    "genesis": 50,
+    "tevah": 62,
+    "total": 112,
+    "archived": 1,
+    "tevah_full_award_count": 1,
+    "tevah_partial_awards": 14,
+    "tevah_support_awards": 41,
+    "tevah_auxiliary_badge_count": 55,
+    "tevah_visual_award_total": 56,
+    "note": "Underlying historical partition 50+63=113; P22 retained in Tevah archival register, not scored. Anatomical 41 counted in linked-region report, not used to award a new Tevah item."
   }
 }
