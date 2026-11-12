@@ -1,7 +1,7 @@
 {
   "name": "RovGrid | Two Vaults of the 113 Body Achievements",
   "date": "2026-11-12",
-  "version": 1,
+  "version": 2,
   "ledger_source": "research/rovgrid-body-all-achievements-2026-11-12.json",
   "score_policy": "One primary vault per unique achievement ID; symbolic cross-vault references are not counted again.",
   "labels": {
@@ -244,5 +244,20 @@
     "map": "research/rovgrid-dual-vaults-map-2026-11-12.json",
     "index": "research/rovgrid-dual-vaults-index-2026-11-12.md",
     "verifier": "research/rovgrid-dual-vaults-2026-11-12-verify.py"
+  },
+  "tevah_tiers": {
+    "complete_box_awards": 1,
+    "full_core_cards": 7,
+    "partial_cards": 14,
+    "support_cards": 42,
+    "total_tevah_cards": 63,
+    "strict_definition": "complete arithmetic construction in the selected adult bone-count model: 8|20|26, faces 160|208|520, sum 888, volume 4160, invariant 3 face projections",
+    "links": {
+      "audit": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "report": "research/rovgrid-tevah-completion-audit-2026-11-12.md",
+      "shotlist": "research/rovgrid-tevah-animation-shotlist-2026-11-12.md",
+      "verifier": "research/rovgrid-tevah-completion-audit-2026-11-12-verify.py"
+    },
+    "note": "Seven stage cards correspond to one constructed arithmetic box. No anatomical organ with these edge lengths and no independent second complete box is established."
   }
 }
