@@ -6,6 +6,14 @@
 const BOOKS=["Genesis","Exodus","Leviticus","Numbers","Deuteronomy"];
 const SOURCE=["ויסעמלאכהאלהימההלכלפנימחנהישראלוילכמאחריהמויסעעמודהעננמפניהמויעמדמאחריהמ","ויבאבינמחנהמצרימובינמחנהישראלויהיהעננוהחשכויאראתהלילהולאקרבזהאלזהכלהלילה","ויטמשהאתידועלהימויולכיהוהאתהימברוחקדימעזהכלהלילהוישמאתהימלחרבהויבקעוהמימ"];
 const ALPHABET="אבגדהוזחטיכלמנסעפצקרשת";
+const WLC_VERSES=["ויסע מלאך האלהים ההלך לפני מחנה ישראל וילך מאחריהם ויסע עמוד הענן מפניהם ויעמד מאחריהם","ויבא בין ׀ מחנה מצרים ובין מחנה ישראל ויהי הענן והחשך ויאר את־הלילה ולא־קרב זה אל־זה כל־הלילה","ויט משה את־ידו על־הים ויולך יהוה ׀ את־הים ברוח קדים עזה כל־הלילה וישם את־הים לחרבה ויבקעו המים"];
+const WLC_TEXT_REFERENCES=[
+ "https://openbible.com/text/exodus/14-19.htm",
+ "https://openbible.com/text/exodus/14-20.htm",
+ "https://openbible.com/text/exodus/14-21.htm"
+];
+const WLC_CANON=s=>(s.match(/[אבגדהוזחטיכלמנסעפצקרשתךםןףץ]/g)||[]).join("").replace(/[ךםןףץ]/g,c=>({"ך":"כ","ם":"מ","ן":"נ","ף":"פ","ץ":"צ"})[c]);
+
 const REG=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400];
 const FINAL={"ך":"כ","ם":"מ","ן":"נ","ף":"פ","ץ":"צ"};
 function check(ok,msg){if(!ok)throw new Error("FAILED "+msg)}
@@ -42,6 +50,9 @@ function run(bibles){
   stats.push({book:BOOKS[b],verses:verses.length-bv,words:totalWords-bw,letters:totalLetters-bl});
  }
  check(totalWords===79977&&totalLetters===304801,"Torah canonical words and letters");
+ check(WLC_VERSES.every((text,i)=>WLC_CANON(text)===SOURCE[i]&&WLC_CANON(text).length===72),
+  "independent Westminster Leningrad Codex consonantal verses match MAM 3x72");
+
  check(verses.length===5846,"MAM exported verse boundary count");
  check(stats[0].words===20612&&stats[1].words===16713,"Genesis+Exodus word counts");
  const target=verses.find(v=>v.ref==="Exodus 14:19");
@@ -152,6 +163,7 @@ function run(bibles){
   counting:"Ketiv text; 1-based word and letter indexes; maqaf split; remove footnotes, parashah indicators and alternate qere",
   caveat:"Source has 5846 verse records vs canonical 5844 verse boundaries, because some verse splits differ; word/letter totals match TorahCalc",
   book_stats:stats,torah:{verses:verses.length,words:totalWords,letters:totalLetters},
+  independent_WLC_three_verses:{all_three_consonant_texts_match_MAM:true,lengths:[72,72,72],refs:WLC_TEXT_REFERENCES,note:"Does not independently validate Torah-global word offsets; only exact local consonantal verses"},
   count72verse:all72.length,contiguous_3x72:triples72,
   total_216_letter_three_verse_controls:triples216.length,controls216:triples216,
   target_start_word:target.wordStart,target_start_letter:target.letterStart,
