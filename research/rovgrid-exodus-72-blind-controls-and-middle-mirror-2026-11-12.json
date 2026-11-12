@@ -2020,5 +2020,19 @@
     "randomShufflesWithAtLeastFiveCentralMirrorPairs": 116,
     "rate": 0.00116,
     "warnings": "Random letter shuffle preserves letter counts, not Hebrew word order/syntax; no claim of historical intentionality."
+  },
+  "independent_WLC_three_verses": {
+    "all_three_consonant_texts_match_MAM": true,
+    "lengths": [
+      72,
+      72,
+      72
+    ],
+    "refs": [
+      "https://openbible.com/text/exodus/14-19.htm",
+      "https://openbible.com/text/exodus/14-20.htm",
+      "https://openbible.com/text/exodus/14-21.htm"
+    ],
+    "note": "Matches the local text exactly; Torah-global WLC word and letter offsets not cross-checked"
   }
 }
