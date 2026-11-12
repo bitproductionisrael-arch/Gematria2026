@@ -29,67 +29,25 @@
   },
   "entries": [
     {
-      "id": "N02",
-      "category": "star",
-      "title": "Stellate (cervicothoracic) ganglion",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "NCBI Bookshelf NBK539807",
-      "detail": "Variable shape; fused ganglion not found in every individual."
-    },
-    {
-      "id": "N01",
-      "category": "star",
-      "title": "Asterion: junction of cranial sutures, meaning starry",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "NCBI Bookshelf NBK537214",
-      "detail": "Star-derived name; not a literal regular six-pointed star."
-    },
-    {
-      "id": "M04",
-      "category": "star",
-      "title": "Stellate reticulum cells of enamel organ",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "NCBI Bookshelf NBK560515; PMC6151498",
-      "detail": "Developmental structure, not a persistent adult tooth cell layer."
-    },
-    {
-      "id": "M03",
-      "category": "star",
-      "title": "Hepatic stellate cells (Ito cells)",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "PMC11019831",
-      "detail": "Characteristic projections in quiescent liver cells."
-    },
-    {
-      "id": "M02",
-      "category": "star",
-      "title": "Astrocytes: star-like glial cells",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "NCBI Bookshelf NBK545142",
-      "detail": "Morphology varies by subtype and context."
-    },
-    {
-      "id": "M01",
-      "category": "star",
-      "title": "Osteocytes: branched dendritic, stellate cells",
-      "formula": "Stellate morphology or name",
-      "status": "verified",
-      "source": "PMC10724330",
-      "detail": "Star-like cellular morphology; not a regular hexagram."
-    },
-    {
       "id": "G02",
       "category": "star",
       "title": "13 protein genes + 22 tRNA genes + 2 rRNA genes",
       "formula": "S3=37",
       "status": "derived",
       "source": "IESOUS §34; PMC3959762",
-      "detail": "37-gene count, not geometric position of genes."
+      "detail": "37-gene count, not geometric position of genes.",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "G01",
@@ -98,7 +56,19 @@
       "formula": "S2=13",
       "status": "derived",
       "source": "IESOUS §34; PMC3959762",
-      "detail": "Nested within the same 37-gene mitochondrial genome as G02."
+      "detail": "Nested within the same 37-gene mitochondrial genome as G02.",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "B03",
@@ -107,7 +77,14 @@
       "formula": "S4=73",
       "status": "derived",
       "source": "IESOUS §§9,44",
-      "detail": "Selected 73 of 80 axial bones; excludes 6 auditory ossicles and hyoid."
+      "detail": "Selected 73 of 80 axial bones; excludes 6 auditory ossicles and hyoid.",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
     },
     {
       "id": "B02",
@@ -116,7 +93,14 @@
       "formula": "S3=37",
       "status": "derived",
       "source": "IESOUS §§8,44",
-      "detail": "37 osseous apparatus; conventional rib cage alone is 25 bones."
+      "detail": "37 osseous apparatus; conventional rib cage alone is 25 bones.",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
     },
     {
       "id": "B01",
@@ -125,7 +109,8 @@
       "formula": "S2=13",
       "status": "derived",
       "source": "IESOUS §§8,44",
-      "detail": "Defined subset; not separately named anatomical unit."
+      "detail": "Defined subset; not separately named anatomical unit.",
+      "vault_id": "genesis"
     },
     {
       "id": "V01",
@@ -134,7 +119,8 @@
       "formula": "12×2=24",
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V02",
@@ -143,7 +129,8 @@
       "formula": "7 true+3 vertebrochondral+2 floating=12",
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 02:31",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V03",
@@ -152,7 +139,8 @@
       "formula": "manubrium/body/xiphoid=3 named parts, adult bone=1",
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10–01:53",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V04",
@@ -161,7 +149,8 @@
       "formula": "24=8+8+8, chosen grouping",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V05",
@@ -170,7 +159,8 @@
       "formula": "7 true left |3 sternal regions|7 true right",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:53–02:31",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V06",
@@ -179,16 +169,8 @@
       "formula": "3 vertebrochondral left|7 true left|7 true right|3 vertebrochondral right",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 02:31–03:32",
-      "detail": ""
-    },
-    {
-      "id": "V07",
-      "category": "video",
-      "title": "Cervical vertebrae and hyoid",
-      "formula": "7+1=8 neck bones, excluding other head components",
-      "status": "derived",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 11:52–12:47",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V08",
@@ -197,7 +179,8 @@
       "formula": "22 skull+6 ear ossicles+1 hyoid+7 cervical=36",
       "status": "derived",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V09",
@@ -206,70 +189,8 @@
       "formula": "2×(4 lower-limb long/patella+28 foot)+2 hip+5 lumbar+1 sacrum+1 coccyx=73",
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
-      "detail": ""
-    },
-    {
-      "id": "V10",
-      "category": "video",
-      "title": "One upper extremity in 214 model",
-      "formula": "3 long bones+29 hand+2 shoulder girdle=34",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
-      "detail": ""
-    },
-    {
-      "id": "V11",
-      "category": "video",
-      "title": "Foot expanded",
-      "formula": "26 standard+2 hallux sesamoids=28",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:15",
-      "detail": ""
-    },
-    {
-      "id": "V12",
-      "category": "video",
-      "title": "Palm excluding carpals, expanded",
-      "formula": "5 metacarpals+14 phalanges+2 thumb sesamoids=21",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 06:19",
-      "detail": ""
-    },
-    {
-      "id": "V13",
-      "category": "video",
-      "title": "Forefoot excluding tarsals, expanded",
-      "formula": "5 metatarsals+14 phalanges+2 hallux sesamoids=21",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 10:00–10:23",
-      "detail": ""
-    },
-    {
-      "id": "V14",
-      "category": "video",
-      "title": "Matched palmar and forefoot inventories",
-      "formula": "21=21 (in the same expanded count convention)",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 06:19, 10:23",
-      "detail": ""
-    },
-    {
-      "id": "V15",
-      "category": "video",
-      "title": "Two upper extremities expanded",
-      "formula": "2×34=68",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
-      "detail": ""
-    },
-    {
-      "id": "V16",
-      "category": "video",
-      "title": "Expanded adult model total",
-      "formula": "206+8 additional hand/foot sesamoids=214",
-      "status": "conditional",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37; Netter 4th",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V17",
@@ -278,7 +199,8 @@
       "formula": "36 upper+37 thoracic+73 lower+34+34=214",
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V18",
@@ -287,7 +209,8 @@
       "formula": "36+37=73, disjoint anatomical groups",
       "status": "derived",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V19",
@@ -296,7 +219,8 @@
       "formula": "73 upper-plus-thorax; 73 lower",
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V20",
@@ -305,7 +229,8 @@
       "formula": "3|7|7|3 bilateral symbolic reading",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:16–09:46; IESOUS §15",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V21",
@@ -314,7 +239,8 @@
       "formula": "3|7|7|3 level motif",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:46–10:23; IESOUS §15",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V22",
@@ -323,7 +249,8 @@
       "formula": "3|7|3 = 373 in sagittal visualization",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 05:30, IESOUS §13",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "V23",
@@ -332,43 +259,8 @@
       "formula": "7+30=37, deliberately mixed regions",
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk IESOUS §13",
-      "detail": ""
-    },
-    {
-      "id": "V24",
-      "category": "video",
-      "title": "Vertebral segmentation changes with fusion",
-      "formula": "7+12+5+5+4=33 vs 26 named adult bones",
-      "status": "verified",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 08:14–08:54, IESOUS §16",
-      "detail": ""
-    },
-    {
-      "id": "V25",
-      "category": "video",
-      "title": "Three constituents of one pelvic hip bone",
-      "formula": "ilium+ischium+pubis →1 adult coxal bone",
-      "status": "verified",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 08:14–08:54, IESOUS §16",
-      "detail": ""
-    },
-    {
-      "id": "V26",
-      "category": "video",
-      "title": "Bilateral free limb parallelism",
-      "formula": "30 bones in one standard free upper limb and 30 in one standard free lower limb",
-      "status": "verified",
-      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 05:30–09:15, IESOUS §§14–15",
-      "detail": ""
-    },
-    {
-      "id": "S01",
-      "category": "skeletal",
-      "title": "Adult standard skeleton inventory",
-      "formula": "80 axial+126 appendicular=206",
-      "status": "verified",
-      "source": "IESOUS 30-page PDF IESOUS §§7,23",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S02",
@@ -377,7 +269,8 @@
       "formula": "80−(6 ossicles+1 hyoid)=73",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §9",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S03",
@@ -386,7 +279,8 @@
       "formula": "37|73 →3773, digits concatenated",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §10",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S04",
@@ -395,7 +289,14 @@
       "formula": "36+1 sternum+36=73",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §44",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
     },
     {
       "id": "S05",
@@ -404,7 +305,14 @@
       "formula": "37+37−1 common sternum=73",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §45",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
     },
     {
       "id": "S06",
@@ -413,7 +321,8 @@
       "formula": "7 cervical+12 thoracic+5 lumbar=24 ribs count",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §11",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S07",
@@ -422,7 +331,14 @@
       "formula": "24 ribs ×37 thoracic count=888",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §11",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S13",
+        "S10",
+        "S11",
+        "S12"
+      ]
     },
     {
       "id": "S08",
@@ -431,97 +347,14 @@
       "formula": "24 independent presacral vertebrae ×37 thoracic count=888",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §11",
-      "detail": ""
-    },
-    {
-      "id": "S09",
-      "category": "skeletal",
-      "title": "Three anatomical box indices",
-      "formula": "8 cranial;20 metacarpal+metatarsal rays;26 adult spine",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §18",
-      "detail": ""
-    },
-    {
-      "id": "S10",
-      "category": "skeletal",
-      "title": "MIKE pair-product face",
-      "formula": "8×20=160",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §19",
-      "detail": ""
-    },
-    {
-      "id": "S11",
-      "category": "skeletal",
-      "title": "ROV pair-product face",
-      "formula": "8×26=208",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §19",
-      "detail": ""
-    },
-    {
-      "id": "S12",
-      "category": "skeletal",
-      "title": "AMIT pair-product face",
-      "formula": "20×26=520",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §19",
-      "detail": ""
-    },
-    {
-      "id": "S13",
-      "category": "skeletal",
-      "title": "Full pair-product coefficient",
-      "formula": "160+208+520=888",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §19",
-      "detail": ""
-    },
-    {
-      "id": "S14",
-      "category": "skeletal",
-      "title": "Common box volume",
-      "formula": "8×20×26=4160",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §20",
-      "detail": ""
-    },
-    {
-      "id": "S15",
-      "category": "skeletal",
-      "title": "Three equivalent projections of box volume",
-      "formula": "160×26=208×20=520×8=4160",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §20",
-      "detail": ""
-    },
-    {
-      "id": "S16",
-      "category": "skeletal",
-      "title": "Hands 54 and box edge sum 54",
-      "formula": "2×(8 carpals+5 metacarpals+14 phalanges)=54=8+20+26",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §23",
-      "detail": ""
-    },
-    {
-      "id": "S17",
-      "category": "skeletal",
-      "title": "Appendicular inventory reconstruction",
-      "formula": "54 hand+52 feet+20 remaining appendicular=126",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §23",
-      "detail": ""
-    },
-    {
-      "id": "S18",
-      "category": "skeletal",
-      "title": "Reduced name versus presacral segment count",
-      "formula": "16 wrist carpals+7 tarsals one foot+10 metacarpals both hands=33; reduced name=33",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §24",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S13",
+        "S10",
+        "S11",
+        "S12"
+      ]
     },
     {
       "id": "S19",
@@ -530,34 +363,12 @@
       "formula": "80−37=43",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §25",
-      "detail": ""
-    },
-    {
-      "id": "S20",
-      "category": "skeletal",
-      "title": "ROV Simple versus cage complement",
-      "formula": "80−25=55",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §25",
-      "detail": ""
-    },
-    {
-      "id": "S21",
-      "category": "skeletal",
-      "title": "MIKE Simple from hands",
-      "formula": "10 metacarpals+28 finger phalanges=38",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §25",
-      "detail": ""
-    },
-    {
-      "id": "S22",
-      "category": "skeletal",
-      "title": "English Simple name reconstructed",
-      "formula": "43+38+55=136",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §25",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S22",
+        "X09"
+      ]
     },
     {
       "id": "S23",
@@ -566,7 +377,12 @@
       "formula": "(80−25)−(80−37)=55−43=12",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §48",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S22",
+        "X09"
+      ]
     },
     {
       "id": "S24",
@@ -575,7 +391,8 @@
       "formula": "37 apparatus+55 not-rib-cage−12 overlap=80",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §48",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S25",
@@ -584,7 +401,8 @@
       "formula": "73=3×24+1",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §47",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S26",
@@ -593,7 +411,14 @@
       "formula": "37×73=3×888+37=2701",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §47",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S13",
+        "S10",
+        "S11",
+        "S12"
+      ]
     },
     {
       "id": "S27",
@@ -602,7 +427,8 @@
       "formula": "73²−37×12²=1",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §47",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "S28",
@@ -611,124 +437,8 @@
       "formula": "80−73=7 and 33−26=7",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §49",
-      "detail": ""
-    },
-    {
-      "id": "S29",
-      "category": "skeletal",
-      "title": "Hands and feet difference",
-      "formula": "2×27 hands−2×26 feet=54−52=2",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §§14–15",
-      "detail": ""
-    },
-    {
-      "id": "P01",
-      "category": "molecular",
-      "title": "8-cell major genome activation and adult 8 cranium",
-      "formula": "8-cell human embryo phase vs 8 cranial bones",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §27; early genome activation depends on staging",
-      "detail": ""
-    },
-    {
-      "id": "P02",
-      "category": "molecular",
-      "title": "MIKE 160 and 20 canonical amino acids",
-      "formula": "160/8=20",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
-      "detail": ""
-    },
-    {
-      "id": "P03",
-      "category": "molecular",
-      "title": "Euler totient 160 reaches codon field",
-      "formula": "φ(160)=64",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
-      "detail": ""
-    },
-    {
-      "id": "P04",
-      "category": "molecular",
-      "title": "Sense codons and ordinal AMIT",
-      "formula": "61 sense codons=61 name ordinal",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
-      "detail": ""
-    },
-    {
-      "id": "P05",
-      "category": "molecular",
-      "title": "Three stop codons as complement",
-      "formula": "64−61=3",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
-      "detail": ""
-    },
-    {
-      "id": "P06",
-      "category": "molecular",
-      "title": "Head dimension squared versus codons",
-      "formula": "8²=64",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
-      "detail": ""
-    },
-    {
-      "id": "P07",
-      "category": "molecular",
-      "title": "English expanded divided by reduced AMIT",
-      "formula": "1024/16=64",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
-      "detail": ""
-    },
-    {
-      "id": "P08",
-      "category": "molecular",
-      "title": "Name-face balance at 64",
-      "formula": "520×64=160×208=33280",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
-      "detail": ""
-    },
-    {
-      "id": "P09",
-      "category": "molecular",
-      "title": "20S and 26S proteasome naming matched box axes",
-      "formula": "20S/26S labels vs anatomical 20/26; S are sedimentation coefficients",
-      "status": "symbolic",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
-      "detail": ""
-    },
-    {
-      "id": "P10",
-      "category": "molecular",
-      "title": "Proteasome core 28 subunits and ROV ordinal",
-      "formula": "4×7=28 matches Hebrew ordinal 28",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
-      "detail": ""
-    },
-    {
-      "id": "P11",
-      "category": "molecular",
-      "title": "Proteasome heptamer and MIKE reduced",
-      "formula": "7 subunits per ring vs 7 reduced",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
-      "detail": ""
-    },
-    {
-      "id": "P12",
-      "category": "molecular",
-      "title": "Proteasome principal 33 subunit types vs reduced name 33",
-      "formula": "33 types as defined in cited IESOUS sources; subunit taxonomy varies",
-      "status": "conditional",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "P13",
@@ -737,7 +447,19 @@
       "formula": "22 tRNA+2 rRNA=24",
       "status": "derived",
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §34",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "P14",
@@ -746,7 +468,19 @@
       "formula": "13 protein+24 RNA=37",
       "status": "derived",
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §34",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "P15",
@@ -755,7 +489,14 @@
       "formula": "24 RNA genes ×37 total genes=888",
       "status": "derived",
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §34",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S13",
+        "S10",
+        "S11",
+        "S12"
+      ]
     },
     {
       "id": "P16",
@@ -764,25 +505,19 @@
       "formula": "13 protein-coding=12 thoracic vertebrae+1 sternum",
       "status": "derived",
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §§34,46",
-      "detail": ""
-    },
-    {
-      "id": "P17",
-      "category": "molecular",
-      "title": "Heavy-strand mtDNA 28 genes and ROV ordinal",
-      "formula": "28 matches ROV ordinal 28",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §35",
-      "detail": ""
-    },
-    {
-      "id": "P18",
-      "category": "molecular",
-      "title": "Light-strand 9 genes and ordinal difference",
-      "formula": "9 genes=61−52",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §§35–36",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "P19",
@@ -791,124 +526,19 @@
       "formula": "12 heavy protein+1 light protein+24 RNA=37",
       "status": "derived",
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §35",
-      "detail": ""
-    },
-    {
-      "id": "P20",
-      "category": "molecular",
-      "title": "Large mitoribosome proteins and MIKE ordinal",
-      "formula": "52 mtLSU proteins=52 name ordinal",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36, Nature Structural 2024",
-      "detail": ""
-    },
-    {
-      "id": "P21",
-      "category": "molecular",
-      "title": "55S ribosome label and ROV Simple",
-      "formula": "55S sedimentation label, not protein count; ROV Simple=55",
-      "status": "symbolic",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36",
-      "detail": ""
-    },
-    {
-      "id": "P22",
-      "category": "molecular",
-      "title": "28S ribosome small subunit label and ROV ordinal",
-      "formula": "28S sedimentation label, not protein count; ROV ordinal=28",
-      "status": "symbolic",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36",
-      "detail": ""
-    },
-    {
-      "id": "P23",
-      "category": "molecular",
-      "title": "Nucleosome histone octamer and cranial 8",
-      "formula": "8 histone protein copies=8 cranial bones count",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §37",
-      "detail": ""
-    },
-    {
-      "id": "P24",
-      "category": "molecular",
-      "title": "Histone H3.1 sequence and English Simple",
-      "formula": "136 amino acids (UniProt P68431)=136",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §37",
-      "detail": ""
-    },
-    {
-      "id": "P25",
-      "category": "molecular",
-      "title": "Mature alpha-globin and Hebrew name ordinal",
-      "formula": "141 mature residues=61+52+28",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §38",
-      "detail": ""
-    },
-    {
-      "id": "P26",
-      "category": "molecular",
-      "title": "TGFA canonical precursor and MIKE",
-      "formula": "160 aa canonical TGFA isoform",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
-      "detail": ""
-    },
-    {
-      "id": "P27",
-      "category": "molecular",
-      "title": "HBEGF canonical precursor and ROV",
-      "formula": "208 aa canonical HBEGF isoform",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
-      "detail": ""
-    },
-    {
-      "id": "P28",
-      "category": "molecular",
-      "title": "MMP28 canonical protein and AMIT",
-      "formula": "520 aa MMP28 human canonical isoform",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
-      "detail": ""
-    },
-    {
-      "id": "P29",
-      "category": "molecular",
-      "title": "Reverse-complement DNA length four",
-      "formula": "(4⁴+4²)/2=136 orbit classes",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
-      "detail": ""
-    },
-    {
-      "id": "P30",
-      "category": "molecular",
-      "title": "Reverse-complement DNA length six",
-      "formula": "(4⁶+4³)/2=2080 orbit classes",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
-      "detail": ""
-    },
-    {
-      "id": "P31",
-      "category": "molecular",
-      "title": "DNA orbit 2080 matches cuboid half-volume",
-      "formula": "2080=LCM(520,160,208)=(8×20×26)/2",
-      "status": "derived",
-      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
-      "detail": ""
-    },
-    {
-      "id": "X01",
-      "category": "textual",
-      "title": "Greek IESOUS and Hebrew full name",
-      "formula": "ΙΗΣΟΥΣ=888=עמית מייק רוב",
-      "status": "symbolic",
-      "source": "IESOUS 30-page PDF IESOUS §§4–5",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ]
     },
     {
       "id": "X02",
@@ -917,7 +547,8 @@
       "formula": "ΛΟΓΟΣ=373, geometric string 3|7|3",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §§3,13",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X03",
@@ -926,7 +557,8 @@
       "formula": "913+203+86+401+395+407+296=2701=37×73",
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §1",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X04",
@@ -935,7 +567,8 @@
       "formula": "2701+1072=3773=37|73",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §2",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X05",
@@ -944,7 +577,8 @@
       "formula": "37 is 12th prime; 73 is 21st prime",
       "status": "verified",
       "source": "IESOUS 30-page PDF video 15:30–16:08",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X06",
@@ -953,7 +587,8 @@
       "formula": "אחד=13; יחידה=37; חכמה=73",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X07",
@@ -962,7 +597,8 @@
       "formula": "ואת הארץ=407+296=703=T37",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "X08",
@@ -971,43 +607,8 @@
       "formula": "בראשית ברא אלהים את השמים=1998=3×666",
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
-      "detail": ""
-    },
-    {
-      "id": "X09",
-      "category": "textual",
-      "title": "English cipher difference closes Hebrew total",
-      "formula": "1024 Jewish−136 Simple=888 Hebrew",
-      "status": "symbolic",
-      "source": "IESOUS 30-page PDF IESOUS §5",
-      "detail": ""
-    },
-    {
-      "id": "X10",
-      "category": "textual",
-      "title": "Elohim 86 and AMIT 43",
-      "formula": "אלהים=86=2×43",
-      "status": "symbolic",
-      "source": "IESOUS 30-page PDF IESOUS §40",
-      "detail": ""
-    },
-    {
-      "id": "X11",
-      "category": "textual",
-      "title": "Rov reduced/ordinal closure to 888",
-      "formula": "86×10+28=888",
-      "status": "symbolic",
-      "source": "IESOUS 30-page PDF IESOUS §40",
-      "detail": ""
-    },
-    {
-      "id": "X12",
-      "category": "textual",
-      "title": "Squaring digits repeated to 1",
-      "formula": "888→192→86→100→1 (sum of digit squares)",
-      "status": "derived",
-      "source": "IESOUS 30-page PDF IESOUS §40",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "T01",
@@ -1016,7 +617,8 @@
       "formula": "T10=55",
       "status": "derived",
       "source": "RovGrid triangle ladder",
-      "detail": ""
+      "detail": "",
+      "vault_id": "genesis"
     },
     {
       "id": "T02",
@@ -1025,7 +627,8 @@
       "formula": "T19=190",
       "status": "derived",
       "source": "RovGrid triangle ladder",
-      "detail": "T10 +3×T9 =55+135"
+      "detail": "T10 +3×T9 =55+135",
+      "vault_id": "genesis"
     },
     {
       "id": "T03",
@@ -1034,7 +637,14 @@
       "formula": "T37=703",
       "status": "derived",
       "source": "RovGrid triangle ladder",
-      "detail": "T19 +3×T18 =190+513"
+      "detail": "T19 +3×T18 =190+513",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
     },
     {
       "id": "T04",
@@ -1043,7 +653,780 @@
       "formula": "T73=2701",
       "status": "derived",
       "source": "RovGrid triangle ladder",
-      "detail": "T37 +3×T36 =703+1998"
+      "detail": "T37 +3×T36 =703+1998",
+      "vault_id": "genesis",
+      "cross_vault_refs": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ]
+    },
+    {
+      "id": "N02",
+      "category": "star",
+      "title": "Stellate (cervicothoracic) ganglion",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "NCBI Bookshelf NBK539807",
+      "detail": "Variable shape; fused ganglion not found in every individual.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "N01",
+      "category": "star",
+      "title": "Asterion: junction of cranial sutures, meaning starry",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "NCBI Bookshelf NBK537214",
+      "detail": "Star-derived name; not a literal regular six-pointed star.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "M04",
+      "category": "star",
+      "title": "Stellate reticulum cells of enamel organ",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "NCBI Bookshelf NBK560515; PMC6151498",
+      "detail": "Developmental structure, not a persistent adult tooth cell layer.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "M03",
+      "category": "star",
+      "title": "Hepatic stellate cells (Ito cells)",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "PMC11019831",
+      "detail": "Characteristic projections in quiescent liver cells.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "M02",
+      "category": "star",
+      "title": "Astrocytes: star-like glial cells",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "NCBI Bookshelf NBK545142",
+      "detail": "Morphology varies by subtype and context.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "M01",
+      "category": "star",
+      "title": "Osteocytes: branched dendritic, stellate cells",
+      "formula": "Stellate morphology or name",
+      "status": "verified",
+      "source": "PMC10724330",
+      "detail": "Star-like cellular morphology; not a regular hexagram.",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V07",
+      "category": "video",
+      "title": "Cervical vertebrae and hyoid",
+      "formula": "7+1=8 neck bones, excluding other head components",
+      "status": "derived",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 11:52–12:47",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V10",
+      "category": "video",
+      "title": "One upper extremity in 214 model",
+      "formula": "3 long bones+29 hand+2 shoulder girdle=34",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V11",
+      "category": "video",
+      "title": "Foot expanded",
+      "formula": "26 standard+2 hallux sesamoids=28",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:15",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V12",
+      "category": "video",
+      "title": "Palm excluding carpals, expanded",
+      "formula": "5 metacarpals+14 phalanges+2 thumb sesamoids=21",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 06:19",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V13",
+      "category": "video",
+      "title": "Forefoot excluding tarsals, expanded",
+      "formula": "5 metatarsals+14 phalanges+2 hallux sesamoids=21",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 10:00–10:23",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V14",
+      "category": "video",
+      "title": "Matched palmar and forefoot inventories",
+      "formula": "21=21 (in the same expanded count convention)",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 06:19, 10:23",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V15",
+      "category": "video",
+      "title": "Two upper extremities expanded",
+      "formula": "2×34=68",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V16",
+      "category": "video",
+      "title": "Expanded adult model total",
+      "formula": "206+8 additional hand/foot sesamoids=214",
+      "status": "conditional",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37; Netter 4th",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V24",
+      "category": "video",
+      "title": "Vertebral segmentation changes with fusion",
+      "formula": "7+12+5+5+4=33 vs 26 named adult bones",
+      "status": "verified",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 08:14–08:54, IESOUS §16",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V25",
+      "category": "video",
+      "title": "Three constituents of one pelvic hip bone",
+      "formula": "ilium+ischium+pubis →1 adult coxal bone",
+      "status": "verified",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 08:14–08:54, IESOUS §16",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "V26",
+      "category": "video",
+      "title": "Bilateral free limb parallelism",
+      "formula": "30 bones in one standard free upper limb and 30 in one standard free lower limb",
+      "status": "verified",
+      "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 05:30–09:15, IESOUS §§14–15",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S01",
+      "category": "skeletal",
+      "title": "Adult standard skeleton inventory",
+      "formula": "80 axial+126 appendicular=206",
+      "status": "verified",
+      "source": "IESOUS 30-page PDF IESOUS §§7,23",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S09",
+      "category": "skeletal",
+      "title": "Three anatomical box indices",
+      "formula": "8 cranial;20 metacarpal+metatarsal rays;26 adult spine",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §18",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "B02",
+        "B03",
+        "S04",
+        "S05",
+        "T03",
+        "T04"
+      ]
+    },
+    {
+      "id": "S10",
+      "category": "skeletal",
+      "title": "MIKE pair-product face",
+      "formula": "8×20=160",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §19",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S07",
+        "S08",
+        "S26",
+        "P15"
+      ]
+    },
+    {
+      "id": "S11",
+      "category": "skeletal",
+      "title": "ROV pair-product face",
+      "formula": "8×26=208",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §19",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S07",
+        "S08",
+        "S26",
+        "P15"
+      ]
+    },
+    {
+      "id": "S12",
+      "category": "skeletal",
+      "title": "AMIT pair-product face",
+      "formula": "20×26=520",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §19",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S07",
+        "S08",
+        "S26",
+        "P15"
+      ]
+    },
+    {
+      "id": "S13",
+      "category": "skeletal",
+      "title": "Full pair-product coefficient",
+      "formula": "160+208+520=888",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §19",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S07",
+        "S08",
+        "S26",
+        "P15"
+      ]
+    },
+    {
+      "id": "S14",
+      "category": "skeletal",
+      "title": "Common box volume",
+      "formula": "8×20×26=4160",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §20",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "B02",
+        "B03",
+        "S04",
+        "S05",
+        "T03",
+        "T04"
+      ]
+    },
+    {
+      "id": "S15",
+      "category": "skeletal",
+      "title": "Three equivalent projections of box volume",
+      "formula": "160×26=208×20=520×8=4160",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §20",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "B02",
+        "B03",
+        "S04",
+        "S05",
+        "T03",
+        "T04"
+      ]
+    },
+    {
+      "id": "S16",
+      "category": "skeletal",
+      "title": "Hands 54 and box edge sum 54",
+      "formula": "2×(8 carpals+5 metacarpals+14 phalanges)=54=8+20+26",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §23",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S17",
+      "category": "skeletal",
+      "title": "Appendicular inventory reconstruction",
+      "formula": "54 hand+52 feet+20 remaining appendicular=126",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §23",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S18",
+      "category": "skeletal",
+      "title": "Reduced name versus presacral segment count",
+      "formula": "16 wrist carpals+7 tarsals one foot+10 metacarpals both hands=33; reduced name=33",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §24",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S20",
+      "category": "skeletal",
+      "title": "ROV Simple versus cage complement",
+      "formula": "80−25=55",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §25",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S21",
+      "category": "skeletal",
+      "title": "MIKE Simple from hands",
+      "formula": "10 metacarpals+28 finger phalanges=38",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §25",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "S22",
+      "category": "skeletal",
+      "title": "English Simple name reconstructed",
+      "formula": "43+38+55=136",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §25",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S19",
+        "S23"
+      ]
+    },
+    {
+      "id": "S29",
+      "category": "skeletal",
+      "title": "Hands and feet difference",
+      "formula": "2×27 hands−2×26 feet=54−52=2",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §§14–15",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P01",
+      "category": "molecular",
+      "title": "8-cell major genome activation and adult 8 cranium",
+      "formula": "8-cell human embryo phase vs 8 cranial bones",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §27; early genome activation depends on staging",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P02",
+      "category": "molecular",
+      "title": "MIKE 160 and 20 canonical amino acids",
+      "formula": "160/8=20",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P03",
+      "category": "molecular",
+      "title": "Euler totient 160 reaches codon field",
+      "formula": "φ(160)=64",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P04",
+      "category": "molecular",
+      "title": "Sense codons and ordinal AMIT",
+      "formula": "61 sense codons=61 name ordinal",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P05",
+      "category": "molecular",
+      "title": "Three stop codons as complement",
+      "formula": "64−61=3",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §28",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P06",
+      "category": "molecular",
+      "title": "Head dimension squared versus codons",
+      "formula": "8²=64",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P07",
+      "category": "molecular",
+      "title": "English expanded divided by reduced AMIT",
+      "formula": "1024/16=64",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P08",
+      "category": "molecular",
+      "title": "Name-face balance at 64",
+      "formula": "520×64=160×208=33280",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §29",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P09",
+      "category": "molecular",
+      "title": "20S and 26S proteasome naming matched box axes",
+      "formula": "20S/26S labels vs anatomical 20/26; S are sedimentation coefficients",
+      "status": "symbolic",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P10",
+      "category": "molecular",
+      "title": "Proteasome core 28 subunits and ROV ordinal",
+      "formula": "4×7=28 matches Hebrew ordinal 28",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P11",
+      "category": "molecular",
+      "title": "Proteasome heptamer and MIKE reduced",
+      "formula": "7 subunits per ring vs 7 reduced",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P12",
+      "category": "molecular",
+      "title": "Proteasome principal 33 subunit types vs reduced name 33",
+      "formula": "33 types as defined in cited IESOUS sources; subunit taxonomy varies",
+      "status": "conditional",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §31",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P17",
+      "category": "molecular",
+      "title": "Heavy-strand mtDNA 28 genes and ROV ordinal",
+      "formula": "28 matches ROV ordinal 28",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §35",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P18",
+      "category": "molecular",
+      "title": "Light-strand 9 genes and ordinal difference",
+      "formula": "9 genes=61−52",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §§35–36",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P20",
+      "category": "molecular",
+      "title": "Large mitoribosome proteins and MIKE ordinal",
+      "formula": "52 mtLSU proteins=52 name ordinal",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36, Nature Structural 2024",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P21",
+      "category": "molecular",
+      "title": "55S ribosome label and ROV Simple",
+      "formula": "55S sedimentation label, not protein count; ROV Simple=55",
+      "status": "symbolic",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P22",
+      "category": "molecular",
+      "title": "28S ribosome small subunit label and ROV ordinal",
+      "formula": "28S sedimentation label, not protein count; ROV ordinal=28",
+      "status": "symbolic",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ]
+    },
+    {
+      "id": "P23",
+      "category": "molecular",
+      "title": "Nucleosome histone octamer and cranial 8",
+      "formula": "8 histone protein copies=8 cranial bones count",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §37",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P24",
+      "category": "molecular",
+      "title": "Histone H3.1 sequence and English Simple",
+      "formula": "136 amino acids (UniProt P68431)=136",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §37",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P25",
+      "category": "molecular",
+      "title": "Mature alpha-globin and Hebrew name ordinal",
+      "formula": "141 mature residues=61+52+28",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §38",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P26",
+      "category": "molecular",
+      "title": "TGFA canonical precursor and MIKE",
+      "formula": "160 aa canonical TGFA isoform",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P27",
+      "category": "molecular",
+      "title": "HBEGF canonical precursor and ROV",
+      "formula": "208 aa canonical HBEGF isoform",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P28",
+      "category": "molecular",
+      "title": "MMP28 canonical protein and AMIT",
+      "formula": "520 aa MMP28 human canonical isoform",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §39",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P29",
+      "category": "molecular",
+      "title": "Reverse-complement DNA length four",
+      "formula": "(4⁴+4²)/2=136 orbit classes",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P30",
+      "category": "molecular",
+      "title": "Reverse-complement DNA length six",
+      "formula": "(4⁶+4³)/2=2080 orbit classes",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "P31",
+      "category": "molecular",
+      "title": "DNA orbit 2080 matches cuboid half-volume",
+      "formula": "2080=LCM(520,160,208)=(8×20×26)/2",
+      "status": "derived",
+      "source": "IESOUS §34–40 and primary biochemistry sources 2026-11-12 DNA research",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "B02",
+        "B03",
+        "S04",
+        "S05",
+        "T03",
+        "T04"
+      ]
+    },
+    {
+      "id": "X01",
+      "category": "textual",
+      "title": "Greek IESOUS and Hebrew full name",
+      "formula": "ΙΗΣΟΥΣ=888=עמית מייק רוב",
+      "status": "symbolic",
+      "source": "IESOUS 30-page PDF IESOUS §§4–5",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "X09",
+      "category": "textual",
+      "title": "English cipher difference closes Hebrew total",
+      "formula": "1024 Jewish−136 Simple=888 Hebrew",
+      "status": "symbolic",
+      "source": "IESOUS 30-page PDF IESOUS §5",
+      "detail": "",
+      "vault_id": "tevah",
+      "cross_vault_refs": [
+        "S19",
+        "S23"
+      ]
+    },
+    {
+      "id": "X10",
+      "category": "textual",
+      "title": "Elohim 86 and AMIT 43",
+      "formula": "אלהים=86=2×43",
+      "status": "symbolic",
+      "source": "IESOUS 30-page PDF IESOUS §40",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "X11",
+      "category": "textual",
+      "title": "Rov reduced/ordinal closure to 888",
+      "formula": "86×10+28=888",
+      "status": "symbolic",
+      "source": "IESOUS 30-page PDF IESOUS §40",
+      "detail": "",
+      "vault_id": "tevah"
+    },
+    {
+      "id": "X12",
+      "category": "textual",
+      "title": "Squaring digits repeated to 1",
+      "formula": "888→192→86→100→1 (sum of digit squares)",
+      "status": "derived",
+      "source": "IESOUS 30-page PDF IESOUS §40",
+      "detail": "",
+      "vault_id": "tevah"
     }
   ],
   "pending": [
@@ -1096,5 +1479,48 @@
     "foot": "https://www.arthritis.org/health-wellness/about-arthritis/where-it-hurts/anatomy-of-the-foot",
     "mito": "https://www.nature.com/articles/s41594-024-01356-w",
     "histone": "https://www.uniprot.org/uniprotkb/P68431"
+  },
+  "version": 2,
+  "primary_vault_partition": {
+    "map": "research/rovgrid-dual-vaults-map-2026-11-12.json",
+    "index": "research/rovgrid-dual-vaults-index-2026-11-12.md",
+    "genesis": "research/rovgrid-genesis-vault-37-73-2026-11-12.md",
+    "tevah": "research/rovgrid-tevah-vault-8-20-26-2026-11-12.md",
+    "counts": {
+      "genesis": {
+        "total": 50,
+        "byCategory": {
+          "star": 5,
+          "video": 15,
+          "skeletal": 14,
+          "molecular": 5,
+          "textual": 7,
+          "triangle": 4
+        },
+        "byEvidence": {
+          "derived": 30,
+          "verified": 4,
+          "symbolic": 13,
+          "conditional": 3
+        }
+      },
+      "tevah": {
+        "total": 63,
+        "byCategory": {
+          "star": 6,
+          "video": 11,
+          "skeletal": 15,
+          "molecular": 26,
+          "textual": 5
+        },
+        "byEvidence": {
+          "verified": 10,
+          "derived": 38,
+          "conditional": 8,
+          "symbolic": 7
+        }
+      }
+    },
+    "unscored": 4
   }
 }
