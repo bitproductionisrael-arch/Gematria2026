@@ -47,7 +47,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "G01",
@@ -68,7 +69,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "B03",
@@ -84,7 +86,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "B02",
@@ -100,7 +103,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "B01",
@@ -110,7 +114,8 @@
       "status": "derived",
       "source": "IESOUS §§8,44",
       "detail": "Defined subset; not separately named anatomical unit.",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V01",
@@ -120,7 +125,8 @@
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V02",
@@ -130,7 +136,8 @@
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 02:31",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V03",
@@ -140,7 +147,8 @@
       "status": "verified",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10–01:53",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V04",
@@ -150,7 +158,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:10",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V05",
@@ -160,7 +169,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 01:53–02:31",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V06",
@@ -170,7 +180,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 02:31–03:32",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V08",
@@ -180,7 +191,8 @@
       "status": "derived",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V09",
@@ -190,7 +202,8 @@
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V17",
@@ -200,7 +213,8 @@
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33–14:37",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V18",
@@ -210,7 +224,8 @@
       "status": "derived",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V19",
@@ -220,7 +235,8 @@
       "status": "conditional",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 13:33",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V20",
@@ -230,7 +246,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:16–09:46; IESOUS §15",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V21",
@@ -240,7 +257,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 09:46–10:23; IESOUS §15",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V22",
@@ -250,7 +268,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk 05:30, IESOUS §13",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "V23",
@@ -260,7 +279,8 @@
       "status": "symbolic",
       "source": "Original video, https://2outube.com/watch?v=St11oto6-Uk IESOUS §13",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S02",
@@ -270,7 +290,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §9",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S03",
@@ -280,7 +301,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §10",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S04",
@@ -296,7 +318,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S05",
@@ -312,7 +335,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S06",
@@ -322,7 +346,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §11",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S07",
@@ -338,7 +363,8 @@
         "S10",
         "S11",
         "S12"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S08",
@@ -354,7 +380,8 @@
         "S10",
         "S11",
         "S12"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S19",
@@ -368,7 +395,8 @@
       "cross_vault_refs": [
         "S22",
         "X09"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S23",
@@ -382,7 +410,8 @@
       "cross_vault_refs": [
         "S22",
         "X09"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S24",
@@ -392,7 +421,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §48",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S25",
@@ -402,7 +432,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §47",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S26",
@@ -418,7 +449,8 @@
         "S10",
         "S11",
         "S12"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "S27",
@@ -428,7 +460,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §47",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "S28",
@@ -438,7 +471,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §49",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "P13",
@@ -459,7 +493,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "P14",
@@ -480,7 +515,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "P15",
@@ -496,7 +532,8 @@
         "S10",
         "S11",
         "S12"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "P16",
@@ -517,7 +554,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "P19",
@@ -538,7 +576,8 @@
         "P20",
         "P21",
         "P22"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "X02",
@@ -548,7 +587,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §§3,13",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X03",
@@ -558,7 +598,8 @@
       "status": "derived",
       "source": "IESOUS 30-page PDF IESOUS §1",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X04",
@@ -568,7 +609,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF IESOUS §2",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X05",
@@ -578,7 +620,8 @@
       "status": "verified",
       "source": "IESOUS 30-page PDF video 15:30–16:08",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X06",
@@ -588,7 +631,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X07",
@@ -598,7 +642,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "X08",
@@ -608,7 +653,8 @@
       "status": "symbolic",
       "source": "IESOUS 30-page PDF 2026-11-12 triangle corpus",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "T01",
@@ -618,7 +664,8 @@
       "status": "derived",
       "source": "RovGrid triangle ladder",
       "detail": "",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "T02",
@@ -628,7 +675,8 @@
       "status": "derived",
       "source": "RovGrid triangle ladder",
       "detail": "T10 +3×T9 =55+135",
-      "vault_id": "genesis"
+      "vault_id": "genesis",
+      "active_award": true
     },
     {
       "id": "T03",
@@ -644,7 +692,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "T04",
@@ -660,7 +709,8 @@
         "S14",
         "S15",
         "P31"
-      ]
+      ],
+      "active_award": true
     },
     {
       "id": "N02",
@@ -675,7 +725,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "N01",
@@ -690,7 +741,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "M04",
@@ -705,7 +757,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "M03",
@@ -720,7 +773,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "M02",
@@ -735,7 +789,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "M01",
@@ -750,7 +805,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V07",
@@ -765,7 +821,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V10",
@@ -780,7 +837,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V11",
@@ -795,7 +853,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V12",
@@ -810,7 +869,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V13",
@@ -825,7 +885,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V14",
@@ -840,7 +901,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V15",
@@ -855,7 +917,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V16",
@@ -870,7 +933,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V24",
@@ -885,7 +949,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V25",
@@ -900,7 +965,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "V26",
@@ -915,7 +981,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S01",
@@ -930,7 +997,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S09",
@@ -953,7 +1021,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S10",
@@ -974,7 +1043,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S11",
@@ -995,7 +1065,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S12",
@@ -1016,7 +1087,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S13",
@@ -1037,7 +1109,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S14",
@@ -1060,7 +1133,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S15",
@@ -1083,7 +1157,8 @@
       "tevah_tier_he": "רכיב השלמה",
       "tevah_completion_group": "TEVAH-COMPLETE-01",
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S16",
@@ -1098,7 +1173,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S17",
@@ -1113,7 +1189,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S18",
@@ -1128,7 +1205,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S20",
@@ -1143,7 +1221,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S21",
@@ -1158,7 +1237,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S22",
@@ -1177,7 +1257,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "S29",
@@ -1192,7 +1273,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P01",
@@ -1207,7 +1289,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P02",
@@ -1230,7 +1313,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P03",
@@ -1253,7 +1337,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P04",
@@ -1268,7 +1353,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P05",
@@ -1283,7 +1369,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P06",
@@ -1298,7 +1385,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P07",
@@ -1313,7 +1401,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P08",
@@ -1328,7 +1417,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P09",
@@ -1351,7 +1441,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P10",
@@ -1374,7 +1465,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P11",
@@ -1389,7 +1481,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P12",
@@ -1404,7 +1497,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "conditional_anatomy",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P17",
@@ -1427,7 +1521,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P18",
@@ -1450,7 +1545,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P20",
@@ -1473,7 +1569,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P21",
@@ -1496,7 +1593,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P22",
@@ -1515,11 +1613,14 @@
         "P16",
         "P19"
       ],
-      "tevah_tier": "support",
-      "tevah_tier_he": "תומך או בונוס",
+      "tevah_tier": "archived",
+      "tevah_tier_he": "בארכיון · לא מזכה",
       "tevah_completion_group": null,
-      "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_status": "archived_not_awarded",
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": false,
+      "archived_unscored_reason": "הקבלה בין 28S, שהוא מקדם שקיעה סוודברג של תת־יחידה ריבוזומלית ולא ספירת 28 חלקים, לבין ערך גימטרי 28 היא התאמת שם/סימון בלבד; אין בה ספירת גוף, צלע, פאה או מנגנון מצביע על התיבה. נבחרה כהתאמה החלשה ביותר בקבוצת תומכי הביולוגיה והגימטריה.",
+      "archived_date": "2026-11-12"
     },
     {
       "id": "P23",
@@ -1534,7 +1635,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P24",
@@ -1549,7 +1651,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P25",
@@ -1564,7 +1667,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P26",
@@ -1579,7 +1683,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P27",
@@ -1594,7 +1699,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P28",
@@ -1609,7 +1715,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P29",
@@ -1624,7 +1731,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P30",
@@ -1639,7 +1747,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "P31",
@@ -1662,7 +1771,8 @@
       "tevah_tier_he": "חלקי",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "X01",
@@ -1677,7 +1787,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "X09",
@@ -1696,7 +1807,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "X10",
@@ -1711,7 +1823,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "X11",
@@ -1726,7 +1839,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "symbolic_overlay",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     },
     {
       "id": "X12",
@@ -1741,7 +1855,8 @@
       "tevah_tier_he": "תומך או בונוס",
       "tevah_completion_group": null,
       "tevah_filming_status": "ready_with_citation",
-      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json"
+      "tevah_filming_reference": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "active_award": true
     }
   ],
   "pending": [
@@ -1795,7 +1910,7 @@
     "mito": "https://www.nature.com/articles/s41594-024-01356-w",
     "histone": "https://www.uniprot.org/uniprotkb/P68431"
   },
-  "version": 3,
+  "version": 4,
   "primary_vault_partition": {
     "map": "research/rovgrid-dual-vaults-map-2026-11-12.json",
     "index": "research/rovgrid-dual-vaults-index-2026-11-12.md",
@@ -1849,5 +1964,20 @@
     "report": "research/rovgrid-tevah-completion-audit-2026-11-12.md",
     "shotlist": "research/rovgrid-tevah-animation-shotlist-2026-11-12.md",
     "verifier": "research/rovgrid-tevah-completion-audit-2026-11-12-verify.py"
-  }
+  },
+  "active_awards": {
+    "genesis": 50,
+    "tevah_source_cards": 62,
+    "all_source_cards": 112,
+    "archived_unscored": 1,
+    "tevah_badge_awards": {
+      "complete": 1,
+      "partial": 14,
+      "support": 41,
+      "other_total": 55,
+      "awards_total": 56
+    },
+    "note": "Historical original ledger preserves 113 card IDs: 50 Genesis +63 Tevah historical, including 1 now archived. Active source card count=112. Counting the seven completion stages as one award yields Tevah 56 visual badges. Newly documented 37→41 anatomical derived views are non-scoring and not part of original 113 IDs."
+  },
+  "connected_anatomy_reference": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md"
 }
