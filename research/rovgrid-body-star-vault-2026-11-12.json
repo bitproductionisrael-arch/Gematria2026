@@ -1,7 +1,7 @@
 {
   "name": "RovGrid Body Star Vault",
   "date": "2026-11-12",
-  "version": 3,
+  "version": 4,
   "scoring_policy": "One award for each distinct predeclared anatomical/genetic star-number set or distinct documented stellate morphology / star-named anatomical class. Nested sets may each unlock a different S-index; overlaps must be disclosed. One physical structure does not gain another star merely by receiving multiple equations, transforms or names. Star-number animation rearranges counted units; does not assert physical star geometry.",
   "formula": "S(n)=6*n*(n-1)+1",
   "centered_hexagon": "H(n)=3*n*(n-1)+1; H(4)=37; variant of B02 not a new trophy",
@@ -287,5 +287,22 @@
     "markdown": "research/rovgrid-body-all-achievements-2026-11-12.md",
     "data": "research/rovgrid-body-all-achievements-2026-11-12.json",
     "verifier": "research/rovgrid-body-all-achievements-2026-11-12-verify.py"
+  },
+  "parent_vaults": {
+    "genesis": {
+      "count": 50,
+      "original_star_awards": 5,
+      "triangle_variants": 4,
+      "file": "research/rovgrid-genesis-vault-37-73-2026-11-12.md"
+    },
+    "tevah": {
+      "count": 63,
+      "original_star_awards": 6,
+      "triangle_variants": 0,
+      "file": "research/rovgrid-tevah-vault-8-20-26-2026-11-12.md"
+    },
+    "total_achievement_cards": 113,
+    "note": "All 11 legacy star cards (5+6) and four triangular cards (4+0) remain inside the 113, never added again.",
+    "manifest": "research/rovgrid-dual-vaults-map-2026-11-12.json"
   }
 }
