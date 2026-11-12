@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-12",
+  "source": "Sefaria/MAM via Sivan22/Sefaria-Export-Hebrew-Texts, 5 book merged.json",
+  "corpus": {
+    "verses": 5846,
+    "words": 79977,
+    "letters": 304801,
+    "bookCounts": [
+      {
+        "book": "Genesis",
+        "verses": 1533,
+        "words": 20612,
+        "letters": 78063
+      },
+      {
+        "book": "Exodus",
+        "verses": 1210,
+        "words": 16713,
+        "letters": 63527
+      },
+      {
+        "book": "Leviticus",
+        "verses": 859,
+        "words": 11950,
+        "letters": 44790
+      },
+      {
+        "book": "Numbers",
+        "verses": 1288,
+        "words": 16408,
+        "letters": 63529
+      },
+      {
+        "book": "Deuteronomy",
+        "verses": 956,
+        "words": 14294,
+        "letters": 54892
+      }
+    ],
+    "versesOfLength72": 73,
+    "threeConsecutiveOfLength72": 1
+  },
+  "externalPublishedCounts": {
+    "torahCalc": 5844,
+    "bekiyusMasorah": 5845,
+    "sodtoraMethod": 5846,
+    "taameiHamikraFisher": 5846,
+    "torahByWord": 5846
+  },
+  "variantAudit": {
+    "chapterCounts": {
+      "exodus20": 23,
+      "deuteronomy5": 30
+    },
+    "alternateChapterCounts": {
+      "exodus20": 22,
+      "deuteronomy5": 29
+    },
+    "mergeOneBoundary": {
+      "verseCount": 5845,
+      "scenarios": 51,
+      "allPreserve73andOneTriple": true
+    },
+    "mergeTwoBoundaries": {
+      "verseCount": 5844,
+      "scenarios": 638,
+      "allPreserve73andOneTriple": true
+    },
+    "candidatePairs": {
+      "exodus20": 22,
+      "deuteronomy5": 29
+    },
+    "any72VersesInBothChapters": false,
+    "anyAdjacentPairsSumming72": false,
+    "resultScope": "All single adjacent mergers in these two chapters; not all historic verse-division traditions"
+  },
+  "genesis3522": {
+    "optionalSplit": [
+      60,
+      19
+    ],
+    "alreadyOneVerse": true,
+    "eachPartNot72": true
+  },
+  "math158": {
+    "equality": "5846=37*158",
+    "factorization": "158=2*79, 79 is 22nd prime; 37 is 12th prime; 73 is 21st prime",
+    "symbolic": "158=72+86 (72 names + Elohim gematria) — post-hoc interpretive link",
+    "secondBridge": "158=37+121=37+11^2; 121-72=86-37=49=7^2",
+    "linkToPosition": "the opening 72-name passage begins at Torah word 26136=216*121 in this textual word-count edition",
+    "limitation": "37 divides one published verse-boundary count exactly; other legitimate counts are not divisible by 37"
+  }
+}
