@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+'use strict';
+// RovGrid / 2026-11-13 — independent exact Hebrew arithmetic checks.
+// Source text and Ge'ez Halehame totals require external textual/mapping checks.
+const assert = require('assert').strict;
+const alphabet = Array.from('אבגדהוזחטיכלמנסעפצקרשת');
+const finals = Array.from('ךםןףץ');
+const baseFinal = Array.from('כמנפצ');
+const v = [1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400];
+const regular = Object.fromEntries(alphabet.map((c,i)=>[c,v[i]]));
+const ordinal = Object.fromEntries(alphabet.map((c,i)=>[c,i+1]));
+const small = Object.fromEntries(alphabet.map((c,i)=>[c,(i%9)+1]));
+finals.forEach((f,i)=>{regular[f]=regular[baseFinal[i]];ordinal[f]=ordinal[baseFinal[i]];small[f]=small[baseFinal[i]]});
+const sof = {...regular}; finals.forEach((f,i)=>sof[f]=500+i*100);
+const sum = (word,map)=>Array.from(word.replace(/\s+/g,'')).reduce((s,c)=>s+map[c],0);
+const dr = n=>n===0?0:1+(n-1)%9;
+const firstZero = Object.fromEntries(Object.entries(regular).map(([c,n])=>[c,n>=10&&n%10===0?n/10:n]));
+const albamOrdinal = Object.fromEntries(alphabet.map((c,i)=>[c,((i+11)%22)+1]));
+const avgad = Object.fromEntries(alphabet.map((c,i)=>[c,regular[alphabet[(i+1)%22]]]));
+finals.forEach((f,i)=>{albamOrdinal[f]=albamOrdinal[baseFinal[i]];avgad[f]=avgad[baseFinal[i]]});
+const kidmi = {}; let acc=0; alphabet.forEach(c=>{acc+=regular[c];kidmi[c]=acc});finals.forEach((f,i)=>kidmi[f]=kidmi[baseFinal[i]]);
+const ayak={};for(let d=0;d<9;d++){const chamber=[alphabet[d],alphabet[d+9],d<4?alphabet[d+18]:finals[d-4]];chamber.forEach((c,i)=>ayak[c]=sof[chamber[(i+1)%3]])}
+const atbashOrdinal=Object.fromEntries(alphabet.map((c,i)=>[c,22-i]));
+finals.forEach((f,i)=>atbashOrdinal[f]=atbashOrdinal[baseFinal[i]]);
+const prefix = s=>Array.from(s).map((_,i)=>sum(Array.from(s).slice(0,i+1).join(''),regular));
+const ratzo=s=>{const p=prefix(s);return p.at(-1)+2*p.slice(0,-1).reduce((a,b)=>a+b,0)};
+const milui = {א:'אלף',ס:'סמך',ו:'ויו',ש:'שין',כ:'כף',י:'יוד',נ:'נון',ה:'הא'};
+const fill=s=>Array.from(s).reduce((n,c)=>n+sum(milui[c],regular),0);
+function eq(label,a,b){assert.equal(a,b,label);console.log('PASS '+label+' = '+b)}
+const t='אדון הרוחות', asus='אסוס', shk='שכינה';
+eq('אדון הרוחות רגילה',sum(t,regular),686);
+eq('אדון הרוחות סופית',sum(t,sof),1336);
+eq('אדון הרוחות אלבם סדרי',sum(t,albamOrdinal),136);
+eq('אדון הרוחות אי״ק בכ״ר',sum(t,ayak),373);
+eq('אדון הרוחות צמצום אפס #1',sum(t,firstZero),101);
+eq('אדון הרוחות אבג״ד',sum(t,avgad),404);
+eq('אדון הרוחות קדמי',sum(t,kidmi),2610);
+eq('צמצום מילים',dr(sum('אדון',regular))+dr(sum('הרוחות',regular)),11);
+eq('צמצום מילים סופיות',dr(sum('אדון',sof))+dr(sum('הרוחות',sof)),13);
+eq('אסוס רגילה',sum(asus,regular),127);
+eq('אסוס סדרית',sum(asus,ordinal),37);
+eq('אסוס מיקום × אורך בסדרי',4*sum(asus,ordinal),148);
+eq('אסוס מילוי',fill(asus),373);
+eq('אסוס אחור',prefix(asus).reduce((a,b)=>a+b,0),256);
+eq('אסוס רצוא ושוב',ratzo(asus),385);
+eq('אסוס מכפלת קטן',Array.from(asus).reduce((a,c)=>a*small[c],1),216);
+eq('שכינה רגילה',sum(shk,regular),385);
+eq('שכינה קטן',sum(shk,small),16);
+eq('שכינה סדרי',sum(shk,ordinal),61);
+eq('שכינה צמצום אפס #1',sum(shk,firstZero),43);
+eq('שכינה מילוי',fill(shk),592);
+eq('שכינה אתבש סדרי',sum(shk,atbashOrdinal),54);
+eq('עמית סדרי',sum('עמית',ordinal),61);
+eq('עמית קטן',sum('עמית',small),16);
+eq('מיכאל רגילה',sum('מיכאל',regular),101);
+eq('יחידה רגילה',sum('יחידה',regular),37);
+eq('נצח רגילה',sum('נצח',regular),148);
+eq('קדם רגילה',sum('קדם',regular),144);
+eq('אל רגילה',sum('אל',regular),31);
+eq('יהוה במילוי יוד הא ויו הא',sum('יודהאויוהא',regular),54);
+eq('לוגוס יווני איזופספיה',30+70+3+70+200,373);
+eq('37×16',37*16,592);
+eq('4×54',4*54,216);
+eq('1024/4',1024/4,256);
+eq('11×101',11*101,1111);
+eq('Ayasus English Simple',Array.from('AYASUS').reduce((n,c)=>n+c.charCodeAt(0)-64,0),86);
+console.log('All independently specified arithmetic checks passed. Ge’ez Halehame 1111/144 and Jewish Small 26 are reported, not checked without their tables.');
