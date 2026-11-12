@@ -1966,5 +1966,59 @@
         "text": "מחנה ישראל"
       }
     ]
+  },
+  "central_square_partition": {
+    "all24": {
+      "count": 24,
+      "regular": 3969,
+      "square": 63,
+      "albamOrdinal": 888
+    },
+    "unchangedNames": {
+      "count": 10,
+      "indices": [
+        27,
+        28,
+        30,
+        34,
+        36,
+        37,
+        39,
+        43,
+        45,
+        46
+      ],
+      "names": [
+        "ירת",
+        "שאה",
+        "אומ",
+        "להח",
+        "מנד",
+        "אני",
+        "רהע",
+        "וול",
+        "סאל",
+        "ערי"
+      ],
+      "regular": 1849,
+      "square": 43
+    },
+    "changedNames": {
+      "count": 14,
+      "regular": 2120,
+      "differenceOfSquares": "63^2 - 43^2 =20*106=2120"
+    },
+    "subsetControl": {
+      "allTenNameSubsets": 1961256,
+      "tenNameSubsetsSumming1849": 1512,
+      "tenNameSubsetsWithAnyPerfectSquare": 24972
+    }
+  },
+  "letter_shuffle_control": {
+    "trials": 100000,
+    "seed": 20261112,
+    "randomShufflesWithAtLeastFiveCentralMirrorPairs": 116,
+    "rate": 0.00116,
+    "warnings": "Random letter shuffle preserves letter counts, not Hebrew word order/syntax; no claim of historical intentionality."
   }
 }
