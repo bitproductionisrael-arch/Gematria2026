@@ -1,5 +1,14 @@
 # כספת התיבה — TEVAH / NAME VAULT
 
+## עדכון ניקוד סופי — 12.11.2026
+
+**1 תיבה שלמה במודל האריתמטי (7 שלבי תיעוד), 14 התאמות חלקיות ו־41 הישגים תומכים.** 14+41=55 כרטיסי זכייה נוספים, ו־1+14+41=56 סמלי פרס סופיים. **62 כרטיסי מקור פעילים מתוך 63 היסטוריים**; P22 עבר לארכיון לא־מנוקד ונשאר ברשימה לצורך ביקורת. שאר 113 הכרטיסים ההיסטוריים של הקורפוס שמורים, ומהם 112 כרגע פעילים בכל שתי הכספות.
+
+[רשימת צילומים מותאמת ל־62 הכרטיסים הפעילים](rovgrid-tevah-animation-shotlist-2026-11-12.md) · [רישום סיווגים ואסמכתאות](rovgrid-tevah-completion-audit-2026-11-12.md) · [ספירת חיבורי איברים, גוף וכתפיים](rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md).
+
+**תוצאת הספירה המקושרת:** בית חזה 37 עצמות ועוד 4 עצמות חגורת הכתפיים =41 עצמות, או 27 צד שמאל+27 צד ימין−13 מרכז משותף=41. 41 העצמות אינן 41 כרטיסי התמיכה. גם 14 צלעות אמיתיות כבר כלולות באותן 41, ולכן 14+41=55 תקף כסכום מחלקות כרטיסים נפרדות, לא כאיחוד העצמות האנטומיות הללו.
+
+
 ## מדרג שלמות התיבה — נבדק עבור כל 63 הכרטיסים (12.11.2026)
 
 **תיבה שלמה אחת במודל החשבוני**, המתועדת בשבעה שלבי בנייה: S09–S15. **14 התאמות חלקיות**, ו־**42 ממצאי תמיכה**. מספר כרטיסי המקור נשאר 63; המדרג אינו יוצר כרטיסי הישג חדשים. 100% מוגדר כסגירת הממדים 8|20|26, שלוש הפאות 160|208|520, הסכום 888, הנפח 4160 ושלוש בדיקות הפאה כפול הממד הנותר. שלושת ממדי התיבה הם ספירות של קבוצות עצמות שונות, לא אורכים של גוף פיזי אחד.
@@ -82,7 +91,7 @@
 - **P18** [תומך] (derived) — Light-strand 9 genes and ordinal difference. **9 genes=61−52**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §§35–36. גשר לכספת השנייה: G01, G02, P13, P14, P16, P19.
 - **P20** [תומך] (derived) — Large mitoribosome proteins and MIKE ordinal. **52 mtLSU proteins=52 name ordinal**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §36, Nature Structural 2024. גשר לכספת השנייה: G01, G02, P13, P14, P16, P19.
 - **P21** [תומך] (symbolic) — 55S ribosome label and ROV Simple. **55S sedimentation label, not protein count; ROV Simple=55**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §36. גשר לכספת השנייה: G01, G02, P13, P14, P16, P19.
-- **P22** [תומך] (symbolic) — 28S ribosome small subunit label and ROV ordinal. **28S sedimentation label, not protein count; ROV ordinal=28**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §36. גשר לכספת השנייה: G01, G02, P13, P14, P16, P19.
+- **P22** [ארכיון · לא מזכה] (symbolic) — 28S ribosome small subunit label and ROV ordinal. **28S sedimentation label, not protein count; ROV ordinal=28**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §36. גשר לכספת השנייה: G01, G02, P13, P14, P16, P19.
 - **P23** [חלקי] (derived) — Nucleosome histone octamer and cranial 8. **8 histone protein copies=8 cranial bones count**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
 - **P24** [תומך] (derived) — Histone H3.1 sequence and English Simple. **136 amino acids (UniProt P68431)=136**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §37.
 - **P25** [תומך] (derived) — Mature alpha-globin and Hebrew name ordinal. **141 mature residues=61+52+28**. מקור: IESOUS §34–40 and primary biochemistry sources IESOUS §38.
