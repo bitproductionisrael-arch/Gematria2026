@@ -1,7 +1,7 @@
 {
   "name": "RovGrid | Tevah Vault Rigorous Completion Audit",
   "date": "2026-11-12",
-  "version": 1,
+  "version": 2,
   "source": "research/rovgrid-body-all-achievements-2026-11-12.json",
   "denominator": 63,
   "levels": {
@@ -14,8 +14,12 @@
       "definition": "התאמה מוגדרת לממד, לפאה או לנגזרת של התיבה, בלי סגירת שלושת הממדים ופאותיהם באותו אובייקט"
     },
     "support": {
-      "count": 42,
+      "count": 41,
       "definition": "הישג אנטומי, ביולוגי או סמלי שנשמר בכספת, אך אינו חלק מהוכחת תיבה שלמה ואינו פאה חדשה"
+    },
+    "archived": {
+      "count": 1,
+      "definition": "One weak symbolic label correspondence retained for provenance but excluded from active awards."
     }
   },
   "complete_box_awards": 1,
@@ -1265,20 +1269,24 @@
       "title": "28S ribosome small subunit label and ROV ordinal",
       "formula": "28S sedimentation label, not protein count; ROV ordinal=28",
       "primary_vault": "tevah",
-      "tier": "support",
-      "tier_he": "תומך או בונוס",
+      "tier": "archived",
+      "tier_he": "בארכיון · לא מזכה",
       "closure_group": null,
       "component_role": null,
       "direct_box_values": [],
-      "production_status": "symbolic_overlay",
+      "production_status": "archived_not_awarded",
       "filming": {
-        "shot": "הצג 28S כיחידת שקיעה של תת־היחידה הקטנה, לא מניין חלבונים.",
-        "voice": "בממצא 28S ribosome small subunit label and ROV ordinal מתקבלת התאמה 28S sedimentation label, not protein count; ROV ordinal=28.",
-        "on_screen": "28S sedimentation label, not protein count; ROV ordinal=28",
-        "guard": "קריאה סמלית או סימון, לא מניין אנטומי של התיבה."
+        "shot": "לא לצלם ככרטיס זכייה. אפשר להציג כחלק מפרק הבקרה או להסתיר לחלוטין.",
+        "voice": "ההשוואה ל־28S נשמרת בארכיון משום ש־S מודד שקיעה, ולא מספר חלקים במבנה.",
+        "on_screen": "P22 · ארכיון — ללא ניקוד",
+        "guard": "אסור לשייך את 28S ל־28 חלבונים או לראות בו פאה חדשה של תיבת הגוף."
       },
       "source": "IESOUS §34–40 and primary biochemistry sources IESOUS §36",
-      "note": "הישג אנטומי, ביולוגי או סמלי שנשמר בכספת, אך אינו חלק מהוכחת תיבה שלמה ואינו פאה חדשה"
+      "note": "הישג אנטומי, ביולוגי או סמלי שנשמר בכספת, אך אינו חלק מהוכחת תיבה שלמה ואינו פאה חדשה",
+      "archive_reason_he": "הקבלה בין 28S, שהוא מקדם שקיעה סוודברג של תת־יחידה ריבוזומלית ולא ספירת 28 חלקים, לבין ערך גימטרי 28 היא התאמת שם/סימון בלבד; אין בה ספירת גוף, צלע, פאה או מנגנון מצביע על התיבה. נבחרה כהתאמה החלשה ביותר בקבוצת תומכי הביולוגיה והגימטריה.",
+      "archive_date": "2026-11-12",
+      "archived_from": "support",
+      "archive_policy": "kept as citable historical record, excluded from all active achievement counters and animation"
     },
     {
       "id": "P23",
@@ -1601,5 +1609,38 @@
       "source": "IESOUS 30-page PDF IESOUS §40",
       "note": "הישג אנטומי, ביולוגי או סמלי שנשמר בכספת, אך אינו חלק מהוכחת תיבה שלמה ואינו פאה חדשה"
     }
-  ]
+  ],
+  "original_records": 63,
+  "active_source_cards": 62,
+  "archived_unscored_ids": [
+    "P22"
+  ],
+  "active_award_scoreboard": {
+    "complete": 1,
+    "partial": 14,
+    "support": 41,
+    "other_awards": 55,
+    "total_awards": 56,
+    "proof_stage_cards_in_complete": 7,
+    "note": "1+14+41=56 earned award icons. 7 original historical stage records for the complete box represent ONE award. 14+41=55 is the count of two disjoint award types; T10=55 is a separate triangular-number representation."
+  },
+  "anatomical_functional_connections": {
+    "research": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md",
+    "verification": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12-verify.py",
+    "distinct_bones_sequence": [
+      15,
+      21,
+      25,
+      37,
+      41
+    ],
+    "two_sided_central_overlap": 13,
+    "half_thorax": 25,
+    "half_with_girdle": 27,
+    "unions": [
+      "25+25-13=37",
+      "27+27-13=41"
+    ],
+    "note": "41-bone thoracic and girdle structure is a distinct anatomical construct, not the 41 support-card count. 14 true ribs form part of those 41 bones; 14+41 is a vault-card sum, not their anatomical union."
+  }
 }
