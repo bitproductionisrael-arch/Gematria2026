@@ -1,0 +1,248 @@
+{
+  "name": "RovGrid | Two Vaults of the 113 Body Achievements",
+  "date": "2026-11-12",
+  "version": 1,
+  "ledger_source": "research/rovgrid-body-all-achievements-2026-11-12.json",
+  "score_policy": "One primary vault per unique achievement ID; symbolic cross-vault references are not counted again.",
+  "labels": {
+    "genesis": {
+      "he": "כספת בראשית",
+      "en": "GENESIS VAULT",
+      "theme": "37/73: Genesis, stars, triangular numbers, anatomy"
+    },
+    "tevah": {
+      "he": "כספת התיבה — עמית מייק רוב",
+      "en": "TEVAH / NAME VAULT",
+      "narrative_label": "The Owner of Reality / God — user's creative story label, not an empirically validated identity",
+      "theme": "8/20/26: body, name, box, DNA and structure"
+    }
+  },
+  "counts": {
+    "genesis": {
+      "total": 50,
+      "byCategory": {
+        "star": 5,
+        "video": 15,
+        "skeletal": 14,
+        "molecular": 5,
+        "textual": 7,
+        "triangle": 4
+      },
+      "byEvidence": {
+        "derived": 30,
+        "verified": 4,
+        "symbolic": 13,
+        "conditional": 3
+      }
+    },
+    "tevah": {
+      "total": 63,
+      "byCategory": {
+        "star": 6,
+        "video": 11,
+        "skeletal": 15,
+        "molecular": 26,
+        "textual": 5
+      },
+      "byEvidence": {
+        "verified": 10,
+        "derived": 38,
+        "conditional": 8,
+        "symbolic": 7
+      }
+    }
+  },
+  "all": 113,
+  "pending_unscored": 4,
+  "genesis_ids": [
+    "G02",
+    "G01",
+    "B03",
+    "B02",
+    "B01",
+    "V01",
+    "V02",
+    "V03",
+    "V04",
+    "V05",
+    "V06",
+    "V08",
+    "V09",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S19",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P19",
+    "X02",
+    "X03",
+    "X04",
+    "X05",
+    "X06",
+    "X07",
+    "X08",
+    "T01",
+    "T02",
+    "T03",
+    "T04"
+  ],
+  "tevah_ids": [
+    "N02",
+    "N01",
+    "M04",
+    "M03",
+    "M02",
+    "M01",
+    "V07",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V24",
+    "V25",
+    "V26",
+    "S01",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S20",
+    "S21",
+    "S22",
+    "S29",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P17",
+    "P18",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "X01",
+    "X09",
+    "X10",
+    "X11",
+    "X12"
+  ],
+  "cross_vault_bridges": [
+    {
+      "genesis": [
+        "S07",
+        "S08",
+        "S26",
+        "P15"
+      ],
+      "tevah": [
+        "S13",
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "bridge": "המספר 888 בשני מסלולים עצמאיים בהגדרה: 24×37 מול 8×20+8×26+20×26."
+    },
+    {
+      "genesis": [
+        "S19",
+        "S23"
+      ],
+      "tevah": [
+        "S22",
+        "X09"
+      ],
+      "bridge": "AMIT Simple 43 וחתימת 136 באנגלית נשענים גם על החסרת מכלול החזה 37 מתוך 80 העצמות הציריות."
+    },
+    {
+      "genesis": [
+        "G01",
+        "G02",
+        "P13",
+        "P14",
+        "P16",
+        "P19"
+      ],
+      "tevah": [
+        "P02",
+        "P03",
+        "P09",
+        "P10",
+        "P17",
+        "P18",
+        "P20",
+        "P21",
+        "P22"
+      ],
+      "bridge": "החלוקה 24 RNA ו־13 חלבונים ב־mtDNA לעומת מנגנוני תרגום, ריבוזומים, פרוטאזום ושם."
+    },
+    {
+      "genesis": [
+        "B02",
+        "B03",
+        "S04",
+        "S05",
+        "T03",
+        "T04"
+      ],
+      "tevah": [
+        "S09",
+        "S14",
+        "S15",
+        "P31"
+      ],
+      "bridge": "מניין 37/73 וכוכבי הגוף לעומת תיבה 8–20–26 ונפח 4160 / מחצית 2080."
+    }
+  ],
+  "documents": {
+    "genesis": "research/rovgrid-genesis-vault-37-73-2026-11-12.md",
+    "tevah": "research/rovgrid-tevah-vault-8-20-26-2026-11-12.md",
+    "map": "research/rovgrid-dual-vaults-map-2026-11-12.json",
+    "index": "research/rovgrid-dual-vaults-index-2026-11-12.md",
+    "verifier": "research/rovgrid-dual-vaults-2026-11-12-verify.py"
+  }
+}
