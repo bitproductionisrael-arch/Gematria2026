@@ -55,3 +55,13 @@ I=9; E=5; S=90; O=50; U=200; Y=400; H=8.
 - תקדים היסטורי לשם Ἰησοῦς ו־888 באיזופסיה נוצרית: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/0BCF68076A22C4DCD5AE71C9277D9D7E/S001781602510076Xa.pdf/div-class-title-counting-on-god-s-name-the-numerology-of-span-class-italic-nomina-sacra-span-div.pdf
 - מקור המחקר הקודם: rovgrid-enoch48-geez-asus-shekhinah-2026-11-13.md
 - הבדיקה הנלווית: rovgrid-iesous-yeshu-37-74-atbash-cross-script-2026-11-13-verify.js
+
+## ז. סגירה כפולה של הצמד (74, 444)
+- IESOUS: English Atbash Ordinal = 74; Jewish Gematria = 444.
+- JESUS: English Simple = 74; English Gematria = 444.
+- בשני הכתיבים מתקבל אותו זוג סדור (74, 444), אך בשתי מערכות חישוב שונות.
+- 444/74=6. בצד JESUS היחס נובע מהגדרת English Gematria = 6×Simple, ואילו בצד IESOUS מתקבל בין Jewish לבין Atbash לפי טבלאות אותיות שונות.
+- האתב״ש של IESOUS באותיות הוא RVHLFH, לא JESUS; זהו שוויון של ערכים בלבד.
+- JESUS = 10+5+19+21+19=74; ב־English Gematria 6×74=444. IESOUS Jewish = 9+5+90+50+200+90=444; Atbash = 18+22+8+12+6+8=74.
+- 444=12×37, 74=2×37, 888=2×444=12×74.
+- מקור מפורש גם ל-JESUS English 444: https://www.gematrix.org/?word=jesus
