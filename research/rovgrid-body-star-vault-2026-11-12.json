@@ -1,7 +1,7 @@
 {
   "name": "RovGrid Body Star Vault",
   "date": "2026-11-12",
-  "version": 4,
+  "version": 5,
   "scoring_policy": "One award for each distinct predeclared anatomical/genetic star-number set or distinct documented stellate morphology / star-named anatomical class. Nested sets may each unlock a different S-index; overlaps must be disclosed. One physical structure does not gain another star merely by receiving multiple equations, transforms or names. Star-number animation rearranges counted units; does not assert physical star geometry.",
   "formula": "S(n)=6*n*(n-1)+1",
   "centered_hexagon": "H(n)=3*n*(n-1)+1; H(4)=37; variant of B02 not a new trophy",
@@ -304,5 +304,27 @@
     "total_achievement_cards": 113,
     "note": "All 11 legacy star cards (5+6) and four triangular cards (4+0) remain inside the 113, never added again.",
     "manifest": "research/rovgrid-dual-vaults-map-2026-11-12.json"
+  },
+  "archive_and_active_scoreboard": {
+    "date": "2026-11-12",
+    "archived_id": "P22",
+    "archived_reason": "28S is a Svedberg sedimentation coefficient not an anatomical or biochemical count of 28 molecular subunits; weak gematria-label correspondence.",
+    "historical_total": 113,
+    "active_source_cards": 112,
+    "primary_vaults_active": {
+      "genesis": 50,
+      "tevah": 62
+    },
+    "tevah_original_source_records": 63,
+    "tevah_active_source_records": 62,
+    "tevah_complete_box_awards": 1,
+    "tevah_proof_stage_records": 7,
+    "tevah_partial_awards": 14,
+    "tevah_support_awards": 41,
+    "tevah_other_awards": 55,
+    "tevah_total_awards": 56,
+    "anatomical_connections": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md",
+    "production_shotlist": "research/rovgrid-tevah-animation-shotlist-2026-11-12.md",
+    "note": "14+41=55 is a sum of disjoint achievement-card categories. It is neither the union of 14 true ribs with the 41-bone thorax+pectoral girdle (those overlap) nor proof that the body physically contains a divine box."
   }
 }
