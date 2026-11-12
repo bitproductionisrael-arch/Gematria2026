@@ -72,6 +72,6 @@ I=9; E=5; S=90; O=50; U=200; Y=400; H=8.
 - RVHLFH ב־English Gematria: **444** = 6×74.
 - RVHLFH ב־Simple Word Position ×: **444** = (6 אותיות)×74.
 - IESOUS ב־Jewish Gematria: **444** = 9+5+90+50+200+90; JESUS ב־English Gematria: **444** = 6×74.
-- תכונת השיקוף מלאה: IESOUS ב־Simple=88, ב־Atbash=74; RVHLFH ב־Simple=74, ב־Atbash=88. זו תוצאה הכרחית של הפעלת אתב״ש פעמיים, ובמקרה זה היא פוגשת גם ערכים של JESUS ושל Jewish(IÉS OUS).
+- תכונת השיקוף מלאה: IESOUS ב־Simple=88, ב־Atbash=74; RVHLFH ב־Simple=74, ב־Atbash=88. זו תוצאה הכרחית של הפעלת אתב״ש פעמיים, ובמקרה זה היא פוגשת גם ערכים של JESUS ושל Jewish(IESOUS).
 - תוצאת 444 ב־English Gematria וב־Simple Word Position × של RVHLFH משתמשת באותה נוסחה 6×Simple מפני שהמילה כוללת שש אותיות. אין כאן שתי בדיקות בלתי תלויות, אך השוויון שלהן ל־Jewish(IESOUS) הוא הצלבה בין טבלאות שונות.
 - תיחום: 74=2×37, 444=12×37, 888=24×37=2×444.
