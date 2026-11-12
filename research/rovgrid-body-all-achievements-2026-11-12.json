@@ -1979,5 +1979,18 @@
     },
     "note": "Historical original ledger preserves 113 card IDs: 50 Genesis +63 Tevah historical, including 1 now archived. Active source card count=112. Counting the seven completion stages as one award yields Tevah 56 visual badges. Newly documented 37→41 anatomical derived views are non-scoring and not part of original 113 IDs."
   },
-  "connected_anatomy_reference": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md"
+  "connected_anatomy_reference": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md",
+  "anatomical_nested_square_55": {
+    "document": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12.md",
+    "nested_counts": [
+      13,
+      25,
+      37,
+      41,
+      55
+    ],
+    "dual_55_union": 84,
+    "scoreboard_changes": 0,
+    "source_ids": "Existing historical anatomical record, no new ID minted"
+  }
 }
