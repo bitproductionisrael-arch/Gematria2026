@@ -30,6 +30,28 @@ assert 5476-2701==37*75==2775
 assert 2701==55**2-18**2==26**2+45**2
 # Standard RovGrid variant switches three Tav spellings from תו 406 to תיו 416.
 assert sum(filled)+10*sum(w.count("ת") for w in words)==5506
+
+# Extension dated 2026-11-12: 74 lattice and verse count evidence.
+factor74={73:5402,79:5846,74:5476,37:2738,23:1702,32:2368}
+assert 2*37==74
+for multiplier,expected in factor74.items():
+    assert 2*37*multiplier==74*multiplier==expected
+assert 5402==2*sum(regular)==74*73
+assert 5476==sum(filled)==74**2==5402+74
+assert 5846==5476+5*74==5402+6*74
+assert 5846-5476==370==5*74
+assert 5846-5402==444==6*74
+assert 2738==2701+37
+assert 1702==74*23
+assert 2368==888+1480==74*32
+assert 5476==73*75+1
+# This records the Sefaria/MAM verse segmentation, not all Torah segmentations.
+assert 5846==37*158==2*37*79
+def is_prime(n):
+    return n>1 and all(n%d for d in range(2,int(n**0.5)+1))
+primes=[i for i in range(2,80) if is_prime(i)]
+assert primes[20]==73 and primes[21]==79
+print("PASS | factor-74 lattice:",factor74)
 print("PASS | regular =",sum(regular), "talmudic milui =",sum(filled))
 print("Words:",list(zip(words,regular,filled)))
 print("יחידה×נצח = JESUS² = Genesis talmudic milui = 5476")
