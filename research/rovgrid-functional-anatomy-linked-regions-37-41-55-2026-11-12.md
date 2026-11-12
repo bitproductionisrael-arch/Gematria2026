@@ -85,3 +85,19 @@ Original 113 records = Genesis50 + Tevah63. Current awards = Genesis50 + Tevah62
 - NCBI Thoracic muscles: https://www.ncbi.nlm.nih.gov/books/NBK538321/
 - NCBI Vertebral column: https://www.ncbi.nlm.nih.gov/books/NBK279468/
 - Source video: https://2outube.com/watch?v=St11oto6-Uk
+
+
+## 12 NOVEMBER 2026 — New verified 13→25→41 centered squares and two independent 55-bone sets
+A *precisely nested* bone selection (fixed distinct adult bones) is:
+- A3 = T1..T12 thoracic vertebrae +sternum = **13=3²+2²**, centered square #3.
+- A4 = A3 +12 **left** ribs = **25=4²+3²**, centered square #4. This selected A4 is not the canonical 25-bone rib cage: it includes 12 vertebrae, 12 left ribs and 1 sternum, not both sets of ribs.
+- A5 = A4 +12 right ribs +4 pectoral girdle bones (two clavicles, two scapulae) = **41=5²+4²**, centered square #5.
+- X = A5 +14 non-thoracic spine bones (7 cervical+5 lumbar+sacrum+coccyx) =**55**. Equivalent: 26 whole spine+24 ribs+sternum1+pectorals4.
+- The previously known second 55 inventory Y=80 axial minus 25 rib cage=22 skull+6 ossicles+hyoid1+whole spine26=55.
+- X∩Y = 26 whole spine bones, so |X∪Y|=55+55−26=**84=80 axial+4 shoulder girdle**. Unlike X, Y is not a wholly bone-connected unit (the hyoid and auditory ossicles have different anatomy).
+- **55=T10=F10**: tenth triangular and tenth Fibonacci numbers. Same 55 value arises independently from the creative scoreboard **14 partial+41 support cards**, where cards rather than bones are counted.
+- Also 41 is the 13th prime (existing research: 37 is 12th). Labels are arithmetic properties, not new physical bone structures.
+
+No new badge counts authorized: the same connected anatomical parent sets have already been represented in the registered Genesis/Tevah corpus. This is a higher-quality *subproof*, not an extra trophy. Two competing definitions of 25 must be labeled in the animation: A4 left-rib/central selection versus full 25 rib cage.
+
+Read: [full mathematical/anatomical proof](rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12.md) · [verification script](rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12-verify.py). References: https://mathworld.wolfram.com/CenteredSquareNumber.html , https://openstax.org/books/anatomy-and-physiology/pages/7-3-the-vertebral-column .
