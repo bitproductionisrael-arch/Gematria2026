@@ -1,0 +1,1970 @@
+{
+  "date": "2026-11-12",
+  "source": "Sivan22/Sefaria-Export-Hebrew-Texts (Sefaria Hebrew MAM merged)",
+  "counting": "Ketiv text; 1-based word and letter indexes; maqaf split; remove footnotes, parashah indicators and alternate qere",
+  "caveat": "Source has 5846 verse records vs canonical 5844 verse boundaries, because some verse splits differ; word/letter totals match TorahCalc",
+  "book_stats": [
+    {
+      "book": "Genesis",
+      "verses": 1533,
+      "words": 20612,
+      "letters": 78063
+    },
+    {
+      "book": "Exodus",
+      "verses": 1210,
+      "words": 16713,
+      "letters": 63527
+    },
+    {
+      "book": "Leviticus",
+      "verses": 859,
+      "words": 11950,
+      "letters": 44790
+    },
+    {
+      "book": "Numbers",
+      "verses": 1288,
+      "words": 16408,
+      "letters": 63529
+    },
+    {
+      "book": "Deuteronomy",
+      "verses": 956,
+      "words": 14294,
+      "letters": 54892
+    }
+  ],
+  "torah": {
+    "verses": 5846,
+    "words": 79977,
+    "letters": 304801
+  },
+  "count72verse": 73,
+  "contiguous_3x72": [
+    {
+      "index": 1909,
+      "refs": [
+        "Exodus 14:19",
+        "Exodus 14:20",
+        "Exodus 14:21"
+      ],
+      "wordStart": 26136
+    }
+  ],
+  "total_216_letter_three_verse_controls": 19,
+  "controls216": [
+    {
+      "ref": "Genesis 3:15",
+      "lengths": [
+        61,
+        63,
+        92
+      ],
+      "wordCount": 54,
+      "wordStart": 961,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Genesis 31:42",
+      "lengths": [
+        80,
+        97,
+        39
+      ],
+      "wordCount": 58,
+      "wordStart": 12200,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Genesis 36:5",
+      "lengths": [
+        57,
+        105,
+        54
+      ],
+      "wordCount": 60,
+      "wordStart": 13946,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Genesis 42:33",
+      "lengths": [
+        75,
+        72,
+        69
+      ],
+      "wordCount": 55,
+      "wordStart": 17144,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Genesis 47:22",
+      "lengths": [
+        74,
+        64,
+        78
+      ],
+      "wordCount": 56,
+      "wordStart": 19360,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Exodus 10:1",
+      "lengths": [
+        67,
+        72,
+        77
+      ],
+      "wordCount": 59,
+      "wordStart": 24124,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Exodus 10:4",
+      "lengths": [
+        39,
+        83,
+        94
+      ],
+      "wordCount": 62,
+      "wordStart": 24183,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Exodus 14:19",
+      "lengths": [
+        72,
+        72,
+        72
+      ],
+      "wordCount": 56,
+      "wordStart": 26136,
+      "startDiv216": true,
+      "localOffsetFixedPoints": 1,
+      "word11_217_216": true
+    },
+    {
+      "ref": "Exodus 16:31",
+      "lengths": [
+        49,
+        100,
+        67
+      ],
+      "wordCount": 55,
+      "wordStart": 27124,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Leviticus 3:8",
+      "lengths": [
+        65,
+        88,
+        63
+      ],
+      "wordCount": 58,
+      "wordStart": 37885,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 1,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Leviticus 4:7",
+      "lengths": [
+        93,
+        58,
+        65
+      ],
+      "wordCount": 62,
+      "wordStart": 38113,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Leviticus 14:6",
+      "lengths": [
+        86,
+        54,
+        76
+      ],
+      "wordCount": 59,
+      "wordStart": 42652,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Numbers 7:83",
+      "lengths": [
+        67,
+        81,
+        68
+      ],
+      "wordCount": 54,
+      "wordStart": 53229,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 1,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Numbers 20:10",
+      "lengths": [
+        69,
+        57,
+        90
+      ],
+      "wordCount": 59,
+      "wordStart": 58620,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Numbers 36:3",
+      "lengths": [
+        93,
+        77,
+        46
+      ],
+      "wordCount": 53,
+      "wordStart": 65515,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Deuteronomy 4:5",
+      "lengths": [
+        72,
+        91,
+        53
+      ],
+      "wordCount": 54,
+      "wordStart": 67402,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 1,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Deuteronomy 7:12",
+      "lengths": [
+        83,
+        94,
+        39
+      ],
+      "wordCount": 52,
+      "wordStart": 69110,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Deuteronomy 9:18",
+      "lengths": [
+        103,
+        66,
+        47
+      ],
+      "wordCount": 52,
+      "wordStart": 69943,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    },
+    {
+      "ref": "Deuteronomy 19:3",
+      "lengths": [
+        59,
+        61,
+        96
+      ],
+      "wordCount": 62,
+      "wordStart": 73558,
+      "startDiv216": false,
+      "localOffsetFixedPoints": 0,
+      "word11_217_216": false
+    }
+  ],
+  "target_start_word": 26136,
+  "target_start_letter": 99060,
+  "middle_verse_mirror_profile": {
+    "ref": "Exodus 14:20",
+    "total": 6,
+    "central12": 5,
+    "central13": 6,
+    "pairs": [
+      {
+        "left": 24,
+        "right": 49,
+        "letter": "ה"
+      },
+      {
+        "left": 27,
+        "right": 46,
+        "letter": "ר"
+      },
+      {
+        "left": 28,
+        "right": 45,
+        "letter": "א"
+      },
+      {
+        "left": 30,
+        "right": 43,
+        "letter": "ו"
+      },
+      {
+        "left": 34,
+        "right": 39,
+        "letter": "ה"
+      },
+      {
+        "left": 36,
+        "right": 37,
+        "letter": "נ"
+      }
+    ]
+  },
+  "all72_mirror_profiles": [
+    {
+      "ref": "Genesis 12:8",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "ל"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 23:13",
+      "total": 2,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 10,
+          "right": 63,
+          "letter": "ר"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "נ"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 24:3",
+      "total": 3,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "י"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 24:22",
+      "total": 3,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "י"
+        },
+        {
+          "left": 33,
+          "right": 40,
+          "letter": "מ"
+        },
+        {
+          "left": 36,
+          "right": 37,
+          "letter": "ב"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 30:15",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 30:20",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "י"
+        },
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 31:13",
+      "total": 4,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 11,
+          "right": 62,
+          "letter": "א"
+        },
+        {
+          "left": 14,
+          "right": 59,
+          "letter": "ש"
+        },
+        {
+          "left": 26,
+          "right": 47,
+          "letter": "א"
+        },
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "ת"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 41:3",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 42:16",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 22,
+          "right": 51,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 42:34",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "מ"
+        },
+        {
+          "left": 18,
+          "right": 55,
+          "letter": "א"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "מ"
+        }
+      ]
+    },
+    {
+      "ref": "Genesis 46:29",
+      "total": 5,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 12,
+          "right": 61,
+          "letter": "כ"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ב"
+        },
+        {
+          "left": 15,
+          "right": 58,
+          "letter": "ו"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "ו"
+        },
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 2:3",
+      "total": 3,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "ו"
+        },
+        {
+          "left": 29,
+          "right": 44,
+          "letter": "ו"
+        },
+        {
+          "left": 30,
+          "right": 43,
+          "letter": "ת"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 10:2",
+      "total": 2,
+      "central12": 0,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 14,
+          "right": 59,
+          "letter": "י"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 11:3",
+      "total": 7,
+      "central12": 1,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "ב"
+        },
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "ע"
+        },
+        {
+          "left": 18,
+          "right": 55,
+          "letter": "י"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "נ"
+        },
+        {
+          "left": 20,
+          "right": 53,
+          "letter": "י"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "י"
+        },
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "מ"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 11:10",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 8,
+          "right": 65,
+          "letter": "ר"
+        },
+        {
+          "left": 14,
+          "right": 59,
+          "letter": "ת"
+        },
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ל"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 14:19",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 33,
+          "right": 40,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 14:20",
+      "total": 6,
+      "central12": 5,
+      "central13": 6,
+      "pairs": [
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "ה"
+        },
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ר"
+        },
+        {
+          "left": 28,
+          "right": 45,
+          "letter": "א"
+        },
+        {
+          "left": 30,
+          "right": 43,
+          "letter": "ו"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "ה"
+        },
+        {
+          "left": 36,
+          "right": 37,
+          "letter": "נ"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 14:21",
+      "total": 5,
+      "central12": 1,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "י"
+        },
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "י"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "מ"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "ו"
+        },
+        {
+          "left": 25,
+          "right": 48,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 17:9",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 24:12",
+      "total": 2,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ש"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 25:12",
+      "total": 7,
+      "central12": 3,
+      "central13": 3,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "י"
+        },
+        {
+          "left": 11,
+          "right": 62,
+          "letter": "ע"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "ו"
+        },
+        {
+          "left": 23,
+          "right": 50,
+          "letter": "ה"
+        },
+        {
+          "left": 29,
+          "right": 44,
+          "letter": "ע"
+        },
+        {
+          "left": 31,
+          "right": 42,
+          "letter": "ע"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 26:4",
+      "total": 2,
+      "central12": 0,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "ה"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 29:5",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ת"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 29:9",
+      "total": 2,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 29:27",
+      "total": 3,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 18,
+          "right": 55,
+          "letter": "א"
+        },
+        {
+          "left": 31,
+          "right": 42,
+          "letter": "ר"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 30:12",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "ל"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "פ"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 30:23",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 70,
+          "letter": "ת"
+        },
+        {
+          "left": 30,
+          "right": 43,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Exodus 33:13",
+      "total": 4,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "מ"
+        },
+        {
+          "left": 18,
+          "right": 55,
+          "letter": "י"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "נ"
+        },
+        {
+          "left": 20,
+          "right": 53,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 4:12",
+      "total": 4,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "כ"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "צ"
+        },
+        {
+          "left": 25,
+          "right": 48,
+          "letter": "א"
+        },
+        {
+          "left": 29,
+          "right": 44,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 11:26",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 6,
+          "right": 67,
+          "letter": "ה"
+        },
+        {
+          "left": 30,
+          "right": 43,
+          "letter": "נ"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 12:6",
+      "total": 2,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "נ"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 13:5",
+      "total": 3,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 14,
+          "right": 59,
+          "letter": "ה"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "י"
+        },
+        {
+          "left": 28,
+          "right": 45,
+          "letter": "ע"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 13:26",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 70,
+          "letter": "מ"
+        },
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "י"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ו"
+        },
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ר"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 13:32",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 16:24",
+      "total": 5,
+      "central12": 2,
+      "central13": 3,
+      "pairs": [
+        {
+          "left": 11,
+          "right": 62,
+          "letter": "ב"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "מ"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "ו"
+        },
+        {
+          "left": 29,
+          "right": 44,
+          "letter": "ת"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 20:6",
+      "total": 5,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "ת"
+        },
+        {
+          "left": 15,
+          "right": 58,
+          "letter": "ה"
+        },
+        {
+          "left": 26,
+          "right": 47,
+          "letter": "נ"
+        },
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "ת"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 24:10",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 8,
+          "right": 65,
+          "letter": "ש"
+        },
+        {
+          "left": 14,
+          "right": 59,
+          "letter": "ל"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "ב"
+        },
+        {
+          "left": 36,
+          "right": 37,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 25:33",
+      "total": 5,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "א"
+        },
+        {
+          "left": 5,
+          "right": 68,
+          "letter": "י"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "מ"
+        },
+        {
+          "left": 28,
+          "right": 45,
+          "letter": "ע"
+        },
+        {
+          "left": 29,
+          "right": 44,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Leviticus 25:45",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    },
+    {
+      "ref": "Numbers 1:53",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    },
+    {
+      "ref": "Numbers 3:41",
+      "total": 3,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 22,
+          "right": 51,
+          "letter": "ת"
+        },
+        {
+          "left": 26,
+          "right": 47,
+          "letter": "ל"
+        },
+        {
+          "left": 31,
+          "right": 42,
+          "letter": "ב"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 4:27",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    },
+    {
+      "ref": "Numbers 9:17",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "ב"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 9:22",
+      "total": 2,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 20,
+          "right": 53,
+          "letter": "א"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "ר"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 16:7",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 19:12",
+      "total": 5,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "י"
+        },
+        {
+          "left": 18,
+          "right": 55,
+          "letter": "י"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "ש"
+        },
+        {
+          "left": 20,
+          "right": 53,
+          "letter": "י"
+        },
+        {
+          "left": 32,
+          "right": 41,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 22:32",
+      "total": 1,
+      "central12": 0,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 22:34",
+      "total": 2,
+      "central12": 2,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 26,
+          "right": 47,
+          "letter": "י"
+        },
+        {
+          "left": 28,
+          "right": 45,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 24:1",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "י"
+        },
+        {
+          "left": 8,
+          "right": 65,
+          "letter": "מ"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "ל"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 24:17",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "נ"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "ק"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 26:59",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "א"
+        },
+        {
+          "left": 8,
+          "right": 65,
+          "letter": "מ"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "א"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Numbers 28:26",
+      "total": 3,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "ו"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "כ"
+        },
+        {
+          "left": 26,
+          "right": 47,
+          "letter": "ד"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 2:19",
+      "total": 3,
+      "central12": 1,
+      "central13": 2,
+      "pairs": [
+        {
+          "left": 3,
+          "right": 70,
+          "letter": "ר"
+        },
+        {
+          "left": 24,
+          "right": 49,
+          "letter": "ל"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 3:4",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 31,
+          "right": 42,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 3:12",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 10,
+          "right": 63,
+          "letter": "א"
+        },
+        {
+          "left": 34,
+          "right": 39,
+          "letter": "נ"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 4:5",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 7:16",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 12,
+          "right": 61,
+          "letter": "מ"
+        },
+        {
+          "left": 30,
+          "right": 43,
+          "letter": "ל"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 7:25",
+      "total": 3,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 5,
+          "right": 68,
+          "letter": "י"
+        },
+        {
+          "left": 7,
+          "right": 66,
+          "letter": "ל"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 8:18",
+      "total": 3,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "ז"
+        },
+        {
+          "left": 12,
+          "right": 61,
+          "letter": "א"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ל"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 9:26",
+      "total": 2,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 9,
+          "right": 64,
+          "letter": "י"
+        },
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ת"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 11:25",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 13:14",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 12,
+          "right": 61,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 15:6",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 27,
+          "right": 46,
+          "letter": "ע"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 15:19",
+      "total": 4,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 1,
+          "right": 72,
+          "letter": "כ"
+        },
+        {
+          "left": 6,
+          "right": 67,
+          "letter": "ו"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ל"
+        },
+        {
+          "left": 21,
+          "right": 52,
+          "letter": "ב"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 16:6",
+      "total": 1,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 2,
+          "right": 71,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 21:5",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    },
+    {
+      "ref": "Deuteronomy 22:3",
+      "total": 2,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "ת"
+        },
+        {
+          "left": 22,
+          "right": 51,
+          "letter": "מ"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 22:14",
+      "total": 5,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 10,
+          "right": 63,
+          "letter": "ת"
+        },
+        {
+          "left": 16,
+          "right": 57,
+          "letter": "ו"
+        },
+        {
+          "left": 17,
+          "right": 56,
+          "letter": "ה"
+        },
+        {
+          "left": 20,
+          "right": 53,
+          "letter": "א"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "ה"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 27:4",
+      "total": 1,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "א"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 28:11",
+      "total": 5,
+      "central12": 0,
+      "central13": 0,
+      "pairs": [
+        {
+          "left": 4,
+          "right": 69,
+          "letter": "ת"
+        },
+        {
+          "left": 6,
+          "right": 67,
+          "letter": "כ"
+        },
+        {
+          "left": 7,
+          "right": 66,
+          "letter": "י"
+        },
+        {
+          "left": 11,
+          "right": 62,
+          "letter": "ל"
+        },
+        {
+          "left": 13,
+          "right": 60,
+          "letter": "ו"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 31:9",
+      "total": 4,
+      "central12": 1,
+      "central13": 1,
+      "pairs": [
+        {
+          "left": 15,
+          "right": 58,
+          "letter": "ה"
+        },
+        {
+          "left": 19,
+          "right": 54,
+          "letter": "ת"
+        },
+        {
+          "left": 23,
+          "right": 50,
+          "letter": "נ"
+        },
+        {
+          "left": 35,
+          "right": 38,
+          "letter": "י"
+        }
+      ]
+    },
+    {
+      "ref": "Deuteronomy 33:17",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    },
+    {
+      "ref": "Deuteronomy 34:1",
+      "total": 0,
+      "central12": 0,
+      "central13": 0,
+      "pairs": []
+    }
+  ],
+  "mirror_central12_histogram": {
+    "0": 28,
+    "1": 33,
+    "2": 10,
+    "3": 1,
+    "5": 1
+  },
+  "verses_with_middle12_at_least5": [
+    "Exodus 14:20"
+  ],
+  "stable_name_pairs": [
+    {
+      "locations": [
+        24,
+        49
+      ],
+      "middleLetter": "ה",
+      "names": [
+        "חהו",
+        "והו"
+      ]
+    },
+    {
+      "locations": [
+        27,
+        46
+      ],
+      "middleLetter": "ר",
+      "names": [
+        "ירת",
+        "ערי"
+      ]
+    },
+    {
+      "locations": [
+        28,
+        45
+      ],
+      "middleLetter": "א",
+      "names": [
+        "שאה",
+        "סאל"
+      ]
+    },
+    {
+      "locations": [
+        30,
+        43
+      ],
+      "middleLetter": "ו",
+      "names": [
+        "אומ",
+        "וול"
+      ]
+    },
+    {
+      "locations": [
+        34,
+        39
+      ],
+      "middleLetter": "ה",
+      "names": [
+        "להח",
+        "רהע"
+      ]
+    },
+    {
+      "locations": [
+        36,
+        37
+      ],
+      "middleLetter": "נ",
+      "names": [
+        "מנד",
+        "אני"
+      ]
+    }
+  ],
+  "exactly_center_ANI_in_48_paths": 2,
+  "any_ANI_in_48_paths": 4,
+  "central_words": {
+    "secondVerseWord11": {
+      "text": "ויאר",
+      "regular": 217,
+      "ordinal": 37
+    },
+    "thirdVerseWord11": {
+      "text": "ברוח",
+      "regular": 216,
+      "ordinal": 36
+    },
+    "adjacentWord11_217_to216": 1,
+    "alsoOrdinal37_to36": 1,
+    "all_21word_verses": 146,
+    "center_word_regular216": [
+      {
+        "ref": "Genesis 31:18",
+        "word": "קנינו"
+      },
+      {
+        "ref": "Exodus 14:21",
+        "word": "ברוח"
+      }
+    ]
+  },
+  "aligned_bigrams": {
+    "checked_pairs": 57527,
+    "total_matches": 420,
+    "local_exodus_match": [
+      {
+        "position": 6,
+        "text": "מחנה ישראל"
+      }
+    ]
+  }
+}
