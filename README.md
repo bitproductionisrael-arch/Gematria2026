@@ -1,3 +1,6 @@
+## Gematrix 1024 / 11-letter binary symmetry — 15.11.2026
+- [Research report](research/gematrix-1024-audit-2026-11-15.md) | [235 candidate entries](research/gematrix-1024-2026-11-15-candidates.json) | [verification](research/gematrix-1024-2026-11-15-verify.js). 47 indexed pages, 2,219 results, 223 topic flags; method-specific Hebrew/English/Greek bridges and D4 1024→136→888; source records are not scripture citations. Calculator and main corpus unchanged.
+
 ## 14.11.2026 — למה 520 חזר? נעילה משולשת של 20, 520 ו־888 ב־V=8
 - **[הוכחת שלושה שוויונות מאותו שורש](research/rovgrid-why-520-returns-vertex8-triple-lock-2026-11-14.md)** · **[קוד שחזור](research/rovgrid-why-520-returns-vertex8-triple-lock-2026-11-14-verify.js)**. לרב־פאון כדורי מרובע: E=2V−4,F=V−2, קידומות A=V,B=3V−4,C=4V−6. בהצמדת שני שלדים לאורך פאה ושמירת קווי תפר: E_join−B=V−8. בהשוואת BC למעטפת תיבה V×V×2V: BC−T=2(V−1)(V−8). בהשוואת AB+AC+BC לשלוש מעטפות קובייה: P−H=V(V−8). שלוש הנעילות מתקיימות ב־V=8 ומפיקות B=20,C=26, T=BC=520, P=H=888 ונפח כפול 1024 עם הפרש136. זהו משפט במסגרת הכללים; ההזנה "אורך צלע=מספר קודקודים" היא הגדרה מכוננת, לא חוק פיזיקלי. אין שינוי למחשבון או לאתר.
 
