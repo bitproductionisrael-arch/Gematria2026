@@ -1,0 +1,289 @@
+{
+  "schema": "rovgrid-master-anchor-index-v2",
+  "as_of": "2026-11-15",
+  "master": "ROVGRID_MASTER_CORPUS_2026-11-15.md",
+  "operational_corpus": "corpus-data.json (not modified)",
+  "provenance": "Source notes and proofs in master sections 17–18; source files retained",
+  "anchor_policy": "Single parent per value; separate mathematical, encoding, historical and symbolic paths",
+  "anchors": [
+    {
+      "id": "U",
+      "layer": "FOUNDATION",
+      "value": null,
+      "status": "OPEN",
+      "label": "אי־הבחנה כמצב קדם־מספרי",
+      "formula": "U → אפשרות להבחין",
+      "master_section": 2
+    },
+    {
+      "id": "Q3",
+      "layer": "DERIVED",
+      "value": 8,
+      "status": "MATH-EXACT",
+      "label": "8 קודקודי Q3",
+      "formula": "2^3",
+      "master_section": null
+    },
+    {
+      "id": "VECT-Q3",
+      "layer": "DERIVED",
+      "value": 26,
+      "status": "MATH-EXACT",
+      "label": "קידומת אחרונה של 8,12,6",
+      "formula": "8+12+6",
+      "master_section": null
+    },
+    {
+      "id": "160",
+      "layer": "DERIVED",
+      "value": 160,
+      "status": "MATH-EXACT",
+      "label": "AB מן (8,20,26)",
+      "formula": "8×20",
+      "master_section": null
+    },
+    {
+      "id": "208",
+      "layer": "DERIVED",
+      "value": 208,
+      "status": "MATH-EXACT",
+      "label": "AC מן (8,20,26)",
+      "formula": "8×26",
+      "master_section": null
+    },
+    {
+      "id": "520",
+      "layer": "DERIVED",
+      "value": 520,
+      "status": "MATH-EXACT",
+      "label": "BC מן (8,20,26)",
+      "formula": "20×26",
+      "master_section": null
+    },
+    {
+      "id": "888",
+      "layer": "DERIVED",
+      "value": 888,
+      "status": "MATH-EXACT",
+      "label": "סכום המכפלות הזוגיות; עוגן אב",
+      "formula": "160+208+520",
+      "master_section": null
+    },
+    {
+      "id": "4160",
+      "layer": "DERIVED",
+      "value": 4160,
+      "status": "MATH-EXACT",
+      "label": "מכפלת ממדי התיבה",
+      "formula": "8×20×26",
+      "master_section": null
+    },
+    {
+      "id": "2080",
+      "layer": "DERIVED",
+      "value": 2080,
+      "status": "MATH-EXACT",
+      "label": "LCM של 160,208,520",
+      "formula": "lcm(160,208,520)",
+      "master_section": null
+    },
+    {
+      "id": "296",
+      "layer": "DERIVED",
+      "value": 296,
+      "status": "MATH-EXACT",
+      "label": "קליפת 8³ מול 6³",
+      "formula": "8³−6³",
+      "master_section": null
+    },
+    {
+      "id": "1024",
+      "layer": "DERIVED",
+      "value": 1024,
+      "status": "MATH-EXACT",
+      "label": "שני נפחי 8³ או לוח 32²",
+      "formula": "2×8³",
+      "master_section": null
+    },
+    {
+      "id": "136",
+      "layer": "DERIVED",
+      "value": 136,
+      "status": "MATH-EXACT",
+      "label": "T16 ו־D4(32×32) מסלולים",
+      "formula": "16×17/2",
+      "master_section": null
+    },
+    {
+      "id": "37",
+      "layer": "DERIVED",
+      "value": 37,
+      "status": "MATH-EXACT",
+      "label": "H4 או S3",
+      "formula": "3×4×3+1",
+      "master_section": null
+    },
+    {
+      "id": "73",
+      "layer": "DERIVED",
+      "value": 73,
+      "status": "MATH-EXACT",
+      "label": "S4; דרגת מחזורים ב־24-cell",
+      "formula": "6×4×3+1",
+      "master_section": null
+    },
+    {
+      "id": "2701",
+      "layer": "DERIVED",
+      "value": 2701,
+      "status": "MATH-EXACT",
+      "label": "T73; סכום בראשית א׳:א׳ לפי רגילה",
+      "formula": "37×73",
+      "master_section": null
+    },
+    {
+      "id": "55",
+      "layer": "DERIVED",
+      "value": 55,
+      "status": "MATH-EXACT",
+      "label": "T10; 55 זוגיים בפסקל 16",
+      "formula": "10×11/2",
+      "master_section": null
+    },
+    {
+      "id": "81",
+      "layer": "DERIVED",
+      "value": 81,
+      "status": "MATH-EXACT",
+      "label": "81 אי־זוגיים בפסקל 16",
+      "formula": "3^4",
+      "master_section": null
+    },
+    {
+      "id": "528",
+      "layer": "DERIVED",
+      "value": 528,
+      "status": "MATH-EXACT",
+      "label": "T32; 7 מסלולי זוגות קשתות Q4",
+      "formula": "32×33/2",
+      "master_section": null
+    },
+    {
+      "id": "17",
+      "layer": "DERIVED",
+      "value": 17,
+      "status": "MATH-EXACT",
+      "label": "דרגת מחזורים ב־Q4",
+      "formula": "32−16+1",
+      "master_section": null
+    },
+    {
+      "id": "137",
+      "layer": "BRIDGE",
+      "value": 137,
+      "status": "CONDITIONAL",
+      "label": "120 זוגות שונים +17 מחזורים, או ספקטרום כוכב",
+      "formula": "120+17",
+      "master_section": null
+    },
+    {
+      "id": "32",
+      "layer": "BRIDGE",
+      "value": 32,
+      "status": "ENCODING-EXACT",
+      "label": "לב רגילה; ספר יצירה מזכיר 32 נתיבות",
+      "formula": "ל30+ב2",
+      "master_section": null
+    },
+    {
+      "id": "14",
+      "layer": "BRIDGE",
+      "value": 14,
+      "status": "ENCODING-EXACT",
+      "label": "לב סדרית; שני חצאי פסוק בני 14 אותיות",
+      "formula": "ל12+ב2",
+      "master_section": null
+    },
+    {
+      "id": "28",
+      "layer": "BRIDGE",
+      "value": 28,
+      "status": "ENCODING-EXACT",
+      "label": "רוב סדרית; פסוק בראשית 28 אותיות",
+      "formula": "ר20+ו6+ב2",
+      "master_section": null
+    },
+    {
+      "id": "82",
+      "layer": "BRIDGE",
+      "value": 82,
+      "status": "ENCODING-EXACT",
+      "label": "סכום קטנה אות־אות בראשית א׳:א׳",
+      "formula": "sum small letters",
+      "master_section": null
+    },
+    {
+      "id": "141",
+      "layer": "BRIDGE",
+      "value": 141,
+      "status": "ENCODING-EXACT",
+      "label": "עמית מייק רוב בסדרית עברית",
+      "formula": "61+52+28",
+      "master_section": null
+    },
+    {
+      "id": "33",
+      "layer": "BRIDGE",
+      "value": 33,
+      "status": "ENCODING-EXACT",
+      "label": "עמית מייק רוב בקטנה עברית",
+      "formula": "digit-reduced letters",
+      "master_section": null
+    },
+    {
+      "id": "830",
+      "layer": "BRIDGE",
+      "value": 830,
+      "status": "ENCODING-EXACT",
+      "label": "ROV במיפוי Jewish/Agrippa",
+      "formula": "80+50+700",
+      "master_section": null
+    },
+    {
+      "id": "180",
+      "layer": "BRIDGE",
+      "value": 180,
+      "status": "ENCODING-EXACT",
+      "label": "HOLY FOUR WORD או BOOM×4 ב־Simple",
+      "formula": "3×60 = 4×45",
+      "master_section": null
+    },
+    {
+      "id": "1538",
+      "layer": "BRIDGE",
+      "value": 1538,
+      "status": "ENCODING-EXACT",
+      "label": "מחרוזות נבדקות ב־Gematrix Jewish",
+      "formula": "text-specific",
+      "master_section": null
+    },
+    {
+      "id": "ALPHA",
+      "layer": "INTERPRETATION",
+      "value": null,
+      "status": "CONDITIONAL",
+      "label": "F מודל צימוד גאוסי, לא ניבוי מוכח ב־QED",
+      "formula": "137+36/1000−1/(37²×888)",
+      "master_section": 14
+    },
+    {
+      "id": "REC-14",
+      "layer": "DERIVED",
+      "value": null,
+      "status": "MATH-EXACT",
+      "label": "a0=1,a1=13,a[n+2]=14a[n+1]−a[n]",
+      "formula": "1,13,181,2521,35113",
+      "master_section": 15
+    }
+  ]
+}
