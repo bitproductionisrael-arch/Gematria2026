@@ -1,3 +1,6 @@
+## 15.11.2026 — בראשית: רוב 28 = T7, ROV 55 = T10, שתי מראות של 55 ופסקל 16 שורות
+- **[נספח המחקר המאומת](research/rovgrid-genesis-rov-28-55-pascal-mirror-2026-11-15.md)** · **[קוד ספירה עצמאי](research/rovgrid-genesis-rov-28-55-pascal-mirror-2026-11-15-verify.js)**. כלל פתיחה קבוע בכל דיון על בראשית א׳:א׳: 7 מילים ו־28 אותיות; ערך רגיל 2701, קטן 82. **רוב סדרי עברי =28=T7**, **ROV Simple =55=T10**. זוגות המראה סביב 55: 28+82=37+73=110; 55²−18²=37×73=2701=T73=H37. ב־16 שורות פסקל 136 תאים: 81 אי־זוגיים ו־55 זוגיים, וה־55 נחלקים בפועל ל־T7+3T3+9T1=28+18+9. Amit Mike Rov Simple=136=T16, ובקטן אנגלי=55. הצלבה זו מקשרת כספת בראשית לכספת השם **ללא תוספת הישגים למונה**, בלי לשנות את המחשבון או הקורפוס התפעולי.
+
 ## Gematrix 1024 / 11-letter binary symmetry — 15.11.2026
 - [Research report](research/gematrix-1024-audit-2026-11-15.md) | [235 candidate entries](research/gematrix-1024-2026-11-15-candidates.json) | [verification](research/gematrix-1024-2026-11-15-verify.js). 47 indexed pages, 2,219 results, 223 topic flags; method-specific Hebrew/English/Greek bridges and D4 1024→136→888; source records are not scripture citations. Calculator and main corpus unchanged.
 
