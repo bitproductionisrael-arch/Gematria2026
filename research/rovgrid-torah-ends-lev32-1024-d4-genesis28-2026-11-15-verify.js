@@ -47,4 +47,25 @@ a.equal(1024-orbits,888);
 a.equal((1024+32+32)/8,136);
 a.equal(120*8+16*4,1024);
 a.equal(120+16,136);
+
+// 2026-11-15: user follow-up, additional independent pathways to 55/1024.
+a.equal(h("בראשית"),913);
+a.equal(h("אלף"),111);
+a.equal(h("בראשית")+h("אלף"),1024);
+a.equal(h("ישראל","ordinal"),64);
+a.equal(h("לב")+h("לב"),64);
+a.equal(h("לב","ordinal")+h("לב","ordinal"),28);
+a.equal(h("אחד"),13);
+a.equal(3**2+2**2,13); // square each small-letter value separately
+a.equal((3+2)**2,25); // control: not the same operation
+a.equal(32+23,55);
+a.equal(14+41,55);
+for(const [x,y] of [[37,73],[28,82],[19,91],[46,64]])a.equal((x+y)/2,55);
+for(let x=0;x<=9;x++)for(let y=0;y<=9;y++){
+ a.equal((10*x+y)+(10*y+x),11*(x+y));
+}
+a.equal(55**2-18**2,2701);
+a.equal(h("רוב","ordinal"),28);
+a.equal(h("רוב"),208);
+
 console.log("PASS: Hebrew lev=32 regular/14 ordinal; Genesis 14+14=28; 32x32 D4 has 120 eight-cell + 16 four-cell orbits =136; 1024-136=888.");
