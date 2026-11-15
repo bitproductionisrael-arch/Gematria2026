@@ -88,4 +88,19 @@ assert.equal(ordinalHebrew("רוב"),28);
 assert.equal([...("AMITMIKEROV")].length,11);
 assert.equal(2**(11-1),1024);
 
+
+// Geometric inside/outside law: S(n) = 2*H(n) - 1.
+for (let n=2;n<=100;n++) {
+ const outside=S(n)-H(n);
+ assert.equal(outside,H(n)-1);
+ assert.equal(S(n),2*H(n)-1);
+}
+assert.equal(H(4),37);
+assert.equal(S(4),73);
+assert.equal(37*73,2701); // OEIS A338795: centered hexagonal * star at n=4.
+assert.equal(9*T(5)+1,136);
+assert.equal(9*T(21)+1,2080);
+assert.equal(20*(136-1)+1,2701);
+assert.equal(60+6+30+40,136); // "סולם" standard Hebrew gematria.
+
 console.log(JSON.stringify({status:"PASS",cases,overlapCrossovers,factorCrossovers},null,2));
