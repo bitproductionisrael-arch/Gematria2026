@@ -1,0 +1,3312 @@
+{
+  "date": "2026-11-15",
+  "source": "https://www.gematrix.org/?word=1024",
+  "database": "Gematrix",
+  "category": "Jewish Gematria = 1024",
+  "methods": {
+    "Jewish": "Gematrix tiered Latin letter mapping/Agrippa-like",
+    "English": "6 × English Simple",
+    "Simple": "A1Z26"
+  },
+  "page_count": 47,
+  "raw_rows": 2219,
+  "unique_by_normalized_phrase": 2219,
+  "topic_candidates": 223,
+  "curated_count": 25,
+  "eleven_letter_jewish1024": 95,
+  "eleven_letter_jewish1024_simple136": 8,
+  "selection": "keyword topic match OR manually curated OR 11-letter+136 signature",
+  "status": "external database submissions, not scriptural evidence; contextual relevance is candidate status only",
+  "entries": [
+    {
+      "phrase": "amazing grace bible church",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "as yeshua heir i declare",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "be the light of yeshua",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "build the house of the lord",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1512,
+      "simple": 252,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "devekut",
+      "page": 1,
+      "jewish": 1024,
+      "english": 528,
+      "simple": 88,
+      "letters": 7,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god yeshua chose a heir",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "grace of yeshua find it",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "hes seeing god yeshua",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "hexagram symbol",
+      "page": 1,
+      "jewish": 1024,
+      "english": 978,
+      "simple": 163,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "pistus sophia is hot",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the purifying fire",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "the yeshua of the bible",
+      "page": 1,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "because god hes mighty",
+      "page": 2,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=2&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "da vincis code cracked",
+      "page": 2,
+      "jewish": 1024,
+      "english": 918,
+      "simple": 153,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=2&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "today is our life",
+      "page": 2,
+      "jewish": 1024,
+      "english": 1074,
+      "simple": 179,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=2&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "holy bride magdalene code cracked checkmate",
+      "page": 3,
+      "jewish": 1024,
+      "english": 1806,
+      "simple": 301,
+      "letters": 38,
+      "source_url": "https://www.gematrix.org/?page=3&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "is the image of yeshua",
+      "page": 3,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=3&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "zero chance to cheat code",
+      "page": 3,
+      "jewish": 1024,
+      "english": 1182,
+      "simple": 197,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=3&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god yeshua hearing it",
+      "page": 4,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "grandson of jacob",
+      "page": 4,
+      "jewish": 1024,
+      "english": 864,
+      "simple": 144,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "i am that i am alive",
+      "page": 4,
+      "jewish": 1024,
+      "english": 864,
+      "simple": 144,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "she seeing god yeshua",
+      "page": 4,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the divine feminine",
+      "page": 4,
+      "jewish": 1024,
+      "english": 1026,
+      "simple": 171,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the love realm",
+      "page": 4,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 12,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "the truth about q",
+      "page": 4,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "told lies i am making god angry",
+      "page": 4,
+      "jewish": 1024,
+      "english": 1590,
+      "simple": 265,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=4&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "a light in our eyes",
+      "page": 5,
+      "jewish": 1024,
+      "english": 1128,
+      "simple": 188,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "break out of matrix",
+      "page": 5,
+      "jewish": 1024,
+      "english": 1194,
+      "simple": 199,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "im jesus",
+      "page": 5,
+      "jewish": 1024,
+      "english": 576,
+      "simple": 96,
+      "letters": 7,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "infinity is one logos",
+      "page": 5,
+      "jewish": 1024,
+      "english": 1416,
+      "simple": 236,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "reveal the bible code",
+      "page": 5,
+      "jewish": 1024,
+      "english": 918,
+      "simple": 153,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the level field of god",
+      "page": 5,
+      "jewish": 1024,
+      "english": 1032,
+      "simple": 172,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=5&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i yeshua genetic match",
+      "page": 6,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=6&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "insectoid archonic matrix",
+      "page": 6,
+      "jewish": 1024,
+      "english": 1524,
+      "simple": 254,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=6&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "into the city of light",
+      "page": 6,
+      "jewish": 1024,
+      "english": 1350,
+      "simple": 225,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=6&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "king david binds damkina",
+      "page": 6,
+      "jewish": 1024,
+      "english": 1092,
+      "simple": 182,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=6&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mauri yeshua",
+      "page": 6,
+      "jewish": 1024,
+      "english": 846,
+      "simple": 141,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=6&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "amit mike rov",
+      "page": 7,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=7&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "ancient holy spirit",
+      "page": 7,
+      "jewish": 1024,
+      "english": 1302,
+      "simple": 217,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=7&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "raymond number code",
+      "page": 7,
+      "jewish": 1024,
+      "english": 1140,
+      "simple": 190,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=7&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "rays god no he is not",
+      "page": 7,
+      "jewish": 1024,
+      "english": 1248,
+      "simple": 208,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=7&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "sacred astronomy",
+      "page": 7,
+      "jewish": 1024,
+      "english": 1140,
+      "simple": 190,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=7&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ranked voice of god",
+      "page": 8,
+      "jewish": 1024,
+      "english": 924,
+      "simple": 154,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=8&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the lord the righteous one",
+      "page": 8,
+      "jewish": 1024,
+      "english": 1626,
+      "simple": 271,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=8&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "eight three zero code",
+      "page": 9,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=9&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "palestina aleph yud",
+      "page": 9,
+      "jewish": 1024,
+      "english": 1134,
+      "simple": 189,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=9&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "should marry god",
+      "page": 9,
+      "jewish": 1024,
+      "english": 1080,
+      "simple": 180,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=9&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "soleilmavis",
+      "page": 9,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=9&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "archangel of the apocalypse",
+      "page": 10,
+      "jewish": 1024,
+      "english": 1416,
+      "simple": 236,
+      "letters": 24,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ live",
+      "page": 10,
+      "jewish": 1024,
+      "english": 750,
+      "simple": 125,
+      "letters": 10,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "earths angel of the last chance from god",
+      "page": 10,
+      "jewish": 1024,
+      "english": 1968,
+      "simple": 328,
+      "letters": 33,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "hazeus king lord",
+      "page": 10,
+      "jewish": 1024,
+      "english": 1020,
+      "simple": 170,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the divine light",
+      "page": 10,
+      "jewish": 1024,
+      "english": 912,
+      "simple": 152,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the secret code of the freemasons",
+      "page": 10,
+      "jewish": 1024,
+      "english": 1794,
+      "simple": 299,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=10&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "offended god fu ck ur racist god",
+      "page": 11,
+      "jewish": 1024,
+      "english": 1566,
+      "simple": 261,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=11&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "sophia is female totalitarianism",
+      "page": 11,
+      "jewish": 1024,
+      "english": 1914,
+      "simple": 319,
+      "letters": 29,
+      "source_url": "https://www.gematrix.org/?page=11&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "truth in christ is here",
+      "page": 11,
+      "jewish": 1024,
+      "english": 1506,
+      "simple": 251,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=11&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ai program eva",
+      "page": 12,
+      "jewish": 1024,
+      "english": 756,
+      "simple": 126,
+      "letters": 12,
+      "source_url": "https://www.gematrix.org/?page=12&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "secular liberal truth",
+      "page": 12,
+      "jewish": 1024,
+      "english": 1350,
+      "simple": 225,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=12&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "bianca shiva is god",
+      "page": 13,
+      "jewish": 1024,
+      "english": 858,
+      "simple": 143,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=13&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mary magdalene sophia dragon",
+      "page": 13,
+      "jewish": 1024,
+      "english": 1476,
+      "simple": 246,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=13&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "q holy seeing queen",
+      "page": 13,
+      "jewish": 1024,
+      "english": 1188,
+      "simple": 198,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=13&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "yeshua immortal",
+      "page": 13,
+      "jewish": 1024,
+      "english": 1080,
+      "simple": 180,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=13&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "esoteric isaiah son of man the light",
+      "page": 14,
+      "jewish": 1024,
+      "english": 1962,
+      "simple": 327,
+      "letters": 30,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "gods are not the same as the lord",
+      "page": 14,
+      "jewish": 1024,
+      "english": 1746,
+      "simple": 291,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "it is all love",
+      "page": 14,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "q auto mind matrix",
+      "page": 14,
+      "jewish": 1024,
+      "english": 1194,
+      "simple": 199,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the holy spirit adr",
+      "page": 14,
+      "jewish": 1024,
+      "english": 1242,
+      "simple": 207,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the light divine",
+      "page": 14,
+      "jewish": 1024,
+      "english": 912,
+      "simple": 152,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=14&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "aliyah code finder montecarlo",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1530,
+      "simple": 255,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god is junkie",
+      "page": 15,
+      "jewish": 1024,
+      "english": 744,
+      "simple": 124,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "holy bloodline of christ",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1476,
+      "simple": 246,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "rothschild is the anti christ",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1788,
+      "simple": 298,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "spirit of understanding",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1572,
+      "simple": 262,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the letter number of iris",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1572,
+      "simple": 262,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the thirteen sacred geometries",
+      "page": 15,
+      "jewish": 1024,
+      "english": 1788,
+      "simple": 298,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=15&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "grindcore suits math clone",
+      "page": 16,
+      "jewish": 1024,
+      "english": 1632,
+      "simple": 272,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i trust in god and christ",
+      "page": 16,
+      "jewish": 1024,
+      "english": 1512,
+      "simple": 252,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "islam is love",
+      "page": 16,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "night life elves",
+      "page": 16,
+      "jewish": 1024,
+      "english": 918,
+      "simple": 153,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "no planets in the book of creation",
+      "page": 16,
+      "jewish": 1024,
+      "english": 1926,
+      "simple": 321,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the cliff is nail of iblis the children of the god",
+      "page": 16,
+      "jewish": 1024,
+      "english": 2346,
+      "simple": 391,
+      "letters": 40,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the guardian of the throne of god",
+      "page": 16,
+      "jewish": 1024,
+      "english": 1734,
+      "simple": 289,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "vote a code cracked",
+      "page": 16,
+      "jewish": 1024,
+      "english": 810,
+      "simple": 135,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=16&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "beyonce spirit is a man",
+      "page": 17,
+      "jewish": 1024,
+      "english": 1302,
+      "simple": 217,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "bold killbox truth end",
+      "page": 17,
+      "jewish": 1024,
+      "english": 1368,
+      "simple": 228,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "israel freemason experience",
+      "page": 17,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "light of the truth bringer",
+      "page": 17,
+      "jewish": 1024,
+      "english": 1620,
+      "simple": 270,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "love in a kiss",
+      "page": 17,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "of a divine bloodline",
+      "page": 17,
+      "jewish": 1024,
+      "english": 1038,
+      "simple": 173,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=17&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "michael is god humanity",
+      "page": 18,
+      "jewish": 1024,
+      "english": 1296,
+      "simple": 216,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=18&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "netanyahu has no life",
+      "page": 18,
+      "jewish": 1024,
+      "english": 1188,
+      "simple": 198,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=18&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "plain light vehicle",
+      "page": 18,
+      "jewish": 1024,
+      "english": 1032,
+      "simple": 172,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=18&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the moon god jr",
+      "page": 18,
+      "jewish": 1024,
+      "english": 864,
+      "simple": 144,
+      "letters": 12,
+      "source_url": "https://www.gematrix.org/?page=18&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the rapture a high god chosen one",
+      "page": 18,
+      "jewish": 1024,
+      "english": 1734,
+      "simple": 289,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=18&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "baal divine gematria",
+      "page": 19,
+      "jewish": 1024,
+      "english": 918,
+      "simple": 153,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=19&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god jason god mark",
+      "page": 19,
+      "jewish": 1024,
+      "english": 924,
+      "simple": 154,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=19&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "six light ray",
+      "page": 19,
+      "jewish": 1024,
+      "english": 912,
+      "simple": 152,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=19&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ christ iesous",
+      "page": 20,
+      "jewish": 1024,
+      "english": 1452,
+      "simple": 242,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=20&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god is standing at the beginning of time",
+      "page": 20,
+      "jewish": 1024,
+      "english": 2070,
+      "simple": 345,
+      "letters": 33,
+      "source_url": "https://www.gematrix.org/?page=20&word=1024",
+      "flags": {
+        "manual_curated": true,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "its christ conscious",
+      "page": 20,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=20&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "praise the lord praise the lord",
+      "page": 20,
+      "jewish": 1024,
+      "english": 1800,
+      "simple": 300,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=20&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "angels of god hear you",
+      "page": 21,
+      "jewish": 1024,
+      "english": 1188,
+      "simple": 198,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "genetic match i yeshua",
+      "page": 21,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god exposes his mark a ks lie",
+      "page": 21,
+      "jewish": 1024,
+      "english": 1590,
+      "simple": 265,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "out of the mouth of god",
+      "page": 21,
+      "jewish": 1024,
+      "english": 1404,
+      "simple": 234,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "rothschild code name exposed",
+      "page": 21,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "see the divine child",
+      "page": 21,
+      "jewish": 1024,
+      "english": 966,
+      "simple": 161,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the lord reincarnation is in the bible",
+      "page": 21,
+      "jewish": 1024,
+      "english": 2022,
+      "simple": 337,
+      "letters": 32,
+      "source_url": "https://www.gematrix.org/?page=21&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i am the spirit of mother earth",
+      "page": 22,
+      "jewish": 1024,
+      "english": 1794,
+      "simple": 299,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=22&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "jesus alicea",
+      "page": 22,
+      "jewish": 1024,
+      "english": 630,
+      "simple": 105,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=22&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "light killer conspiracy",
+      "page": 22,
+      "jewish": 1024,
+      "english": 1476,
+      "simple": 246,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=22&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "fisa indictments truth",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1512,
+      "simple": 252,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "key to life is in morals",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1422,
+      "simple": 237,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mark a king computer program",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1704,
+      "simple": 284,
+      "letters": 24,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "satans spirit is no more",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1638,
+      "simple": 273,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the man in the arena may find god",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1524,
+      "simple": 254,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the truth angers liars",
+      "page": 23,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=23&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "decode homo sapiens matrix",
+      "page": 24,
+      "jewish": 1024,
+      "english": 1530,
+      "simple": 255,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=24&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god hasnt called on me lately",
+      "page": 24,
+      "jewish": 1024,
+      "english": 1482,
+      "simple": 247,
+      "letters": 24,
+      "source_url": "https://www.gematrix.org/?page=24&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "king yeshua hamashiach neo",
+      "page": 24,
+      "jewish": 1024,
+      "english": 1350,
+      "simple": 225,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=24&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mr chickens is not a code he is a character",
+      "page": 24,
+      "jewish": 1024,
+      "english": 1962,
+      "simple": 327,
+      "letters": 34,
+      "source_url": "https://www.gematrix.org/?page=24&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "photonic yeshua",
+      "page": 24,
+      "jewish": 1024,
+      "english": 1074,
+      "simple": 179,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=24&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god bless you melania",
+      "page": 25,
+      "jewish": 1024,
+      "english": 1194,
+      "simple": 199,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=25&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i raise the spirit of the people",
+      "page": 25,
+      "jewish": 1024,
+      "english": 1848,
+      "simple": 308,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=25&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "interprets message from god",
+      "page": 25,
+      "jewish": 1024,
+      "english": 1746,
+      "simple": 291,
+      "letters": 24,
+      "source_url": "https://www.gematrix.org/?page=25&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "xrp estes gematria god",
+      "page": 25,
+      "jewish": 1024,
+      "english": 1356,
+      "simple": 226,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=25&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "you dont harm god",
+      "page": 25,
+      "jewish": 1024,
+      "english": 1080,
+      "simple": 180,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=25&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ august rancic",
+      "page": 26,
+      "jewish": 1024,
+      "english": 1284,
+      "simple": 214,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=26&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "dietrich bonhoeffer as if there is no god",
+      "page": 26,
+      "jewish": 1024,
+      "english": 2064,
+      "simple": 344,
+      "letters": 34,
+      "source_url": "https://www.gematrix.org/?page=26&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "eight one one a yeshua",
+      "page": 27,
+      "jewish": 1024,
+      "english": 1182,
+      "simple": 197,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=27&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i guess daniel gets a second chance in life",
+      "page": 27,
+      "jewish": 1024,
+      "english": 1956,
+      "simple": 326,
+      "letters": 35,
+      "source_url": "https://www.gematrix.org/?page=27&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "is holy spirit is",
+      "page": 27,
+      "jewish": 1024,
+      "english": 1242,
+      "simple": 207,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=27&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "life path iam love",
+      "page": 27,
+      "jewish": 1024,
+      "english": 924,
+      "simple": 154,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=27&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "meat is the he spirit is the she",
+      "page": 27,
+      "jewish": 1024,
+      "english": 1782,
+      "simple": 297,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=27&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "april light three holliday",
+      "page": 28,
+      "jewish": 1024,
+      "english": 1524,
+      "simple": 254,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=28&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "call on christ j",
+      "page": 28,
+      "jewish": 1024,
+      "english": 864,
+      "simple": 144,
+      "letters": 13,
+      "source_url": "https://www.gematrix.org/?page=28&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i have light inside",
+      "page": 28,
+      "jewish": 1024,
+      "english": 966,
+      "simple": 161,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=28&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "kek hats breaking the code q caro patches",
+      "page": 28,
+      "jewish": 1024,
+      "english": 1968,
+      "simple": 328,
+      "letters": 34,
+      "source_url": "https://www.gematrix.org/?page=28&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the holy ghost in flesh",
+      "page": 28,
+      "jewish": 1024,
+      "english": 1410,
+      "simple": 235,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=28&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "genetic matched yeshua",
+      "page": 29,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=29&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "go beyond a god as the father",
+      "page": 29,
+      "jewish": 1024,
+      "english": 1350,
+      "simple": 225,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=29&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "kevin martin",
+      "page": 29,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=29&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "lord ray born brandon",
+      "page": 29,
+      "jewish": 1024,
+      "english": 1260,
+      "simple": 210,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=29&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "sophia makes us all cunning",
+      "page": 29,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=29&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "life started on mother tiamat",
+      "page": 30,
+      "jewish": 1024,
+      "english": 1746,
+      "simple": 291,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=30&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "pistos king to yah",
+      "page": 30,
+      "jewish": 1024,
+      "english": 1248,
+      "simple": 208,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=30&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "spirit of the sphinx",
+      "page": 30,
+      "jewish": 1024,
+      "english": 1410,
+      "simple": 235,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=30&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the rapture is gnosis",
+      "page": 30,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=30&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the spider came into the light to die",
+      "page": 30,
+      "jewish": 1024,
+      "english": 1956,
+      "simple": 326,
+      "letters": 30,
+      "source_url": "https://www.gematrix.org/?page=30&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "balance is the seat of truth",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1512,
+      "simple": 252,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "baphomet father of the children of the god",
+      "page": 31,
+      "jewish": 1024,
+      "english": 2070,
+      "simple": 345,
+      "letters": 35,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "brien arin is chosen by god",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1410,
+      "simple": 235,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "bring me to life mash up numb",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1578,
+      "simple": 263,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ is real true light",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1566,
+      "simple": 261,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "destroys israel",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1134,
+      "simple": 189,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "im over it all",
+      "page": 31,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "liar mark making his god angry",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1590,
+      "simple": 265,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mark is a subhuman animal god q",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "thank you lord god",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1140,
+      "simple": 190,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the messiah zack carr",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1128,
+      "simple": 188,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "you a r e creation",
+      "page": 31,
+      "jewish": 1024,
+      "english": 1020,
+      "simple": 170,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=31&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "equals binary data",
+      "page": 32,
+      "jewish": 1024,
+      "english": 1020,
+      "simple": 170,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ha ma ch aelray hades hells lord god",
+      "page": 32,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 29,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "iam the life of love",
+      "page": 32,
+      "jewish": 1024,
+      "english": 978,
+      "simple": 163,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "satan is god mary is fake",
+      "page": 32,
+      "jewish": 1024,
+      "english": 1302,
+      "simple": 217,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "this is not a contest life is",
+      "page": 32,
+      "jewish": 1024,
+      "english": 1740,
+      "simple": 290,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "unmasking enemy of god",
+      "page": 32,
+      "jewish": 1024,
+      "english": 1308,
+      "simple": 218,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=32&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "admins misinterpret their life",
+      "page": 33,
+      "jewish": 1024,
+      "english": 1908,
+      "simple": 318,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=33&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "voice of god ken dra",
+      "page": 33,
+      "jewish": 1024,
+      "english": 924,
+      "simple": 154,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=33&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ cathedral narcissist",
+      "page": 34,
+      "jewish": 1024,
+      "english": 1680,
+      "simple": 280,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "crazy life",
+      "page": 34,
+      "jewish": 1024,
+      "english": 630,
+      "simple": 105,
+      "letters": 9,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "order of merlin order of christ",
+      "page": 34,
+      "jewish": 1024,
+      "english": 1860,
+      "simple": 310,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the god event",
+      "page": 34,
+      "jewish": 1024,
+      "english": 750,
+      "simple": 125,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the sacred is made of human things",
+      "page": 34,
+      "jewish": 1024,
+      "english": 1734,
+      "simple": 289,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ur protecting christ",
+      "page": 34,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=34&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "command dog duolc not cloud god",
+      "page": 35,
+      "jewish": 1024,
+      "english": 1644,
+      "simple": 274,
+      "letters": 26,
+      "source_url": "https://www.gematrix.org/?page=35&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "decode i am god dec seven",
+      "page": 35,
+      "jewish": 1024,
+      "english": 972,
+      "simple": 162,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=35&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i mark am asleep in the matrix",
+      "page": 35,
+      "jewish": 1024,
+      "english": 1590,
+      "simple": 265,
+      "letters": 24,
+      "source_url": "https://www.gematrix.org/?page=35&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "surrender to christ",
+      "page": 35,
+      "jewish": 1024,
+      "english": 1404,
+      "simple": 234,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=35&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "thank you friend god k",
+      "page": 35,
+      "jewish": 1024,
+      "english": 1248,
+      "simple": 208,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=35&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "im the gematria code i take this back thank q",
+      "page": 36,
+      "jewish": 1024,
+      "english": 2076,
+      "simple": 346,
+      "letters": 36,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "josh god oath of",
+      "page": 36,
+      "jewish": 1024,
+      "english": 858,
+      "simple": 143,
+      "letters": 13,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "mccurter messiah christ",
+      "page": 36,
+      "jewish": 1024,
+      "english": 1512,
+      "simple": 252,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "put the fear of god into them",
+      "page": 36,
+      "jewish": 1024,
+      "english": 1626,
+      "simple": 271,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "thats right cia code hummingbird hahaha",
+      "page": 36,
+      "jewish": 1024,
+      "english": 1890,
+      "simple": 315,
+      "letters": 34,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "tibet is not all holy",
+      "page": 36,
+      "jewish": 1024,
+      "english": 1308,
+      "simple": 218,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "when i code",
+      "page": 36,
+      "jewish": 1024,
+      "english": 516,
+      "simple": 86,
+      "letters": 9,
+      "source_url": "https://www.gematrix.org/?page=36&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ageless are those of kind spirit",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1854,
+      "simple": 309,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i mr chuck a trust in god",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1404,
+      "simple": 234,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "oh my god it makes sense",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1362,
+      "simple": 227,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "pure in heart and belonging to god",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1800,
+      "simple": 300,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ray far from christ",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1188,
+      "simple": 198,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the return of christ p",
+      "page": 37,
+      "jewish": 1024,
+      "english": 1458,
+      "simple": 243,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "tip of the iceberg brings shining light",
+      "page": 37,
+      "jewish": 1024,
+      "english": 2118,
+      "simple": 353,
+      "letters": 33,
+      "source_url": "https://www.gematrix.org/?page=37&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god asherah is ready come home",
+      "page": 38,
+      "jewish": 1024,
+      "english": 1464,
+      "simple": 244,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god invented mm",
+      "page": 38,
+      "jewish": 1024,
+      "english": 870,
+      "simple": 145,
+      "letters": 13,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i am samael the lightbringer and archangel samael",
+      "page": 38,
+      "jewish": 1024,
+      "english": 2250,
+      "simple": 375,
+      "letters": 42,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i miss the energy r a pe",
+      "page": 38,
+      "jewish": 1024,
+      "english": 1296,
+      "simple": 216,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "iesous christus",
+      "page": 38,
+      "jewish": 1024,
+      "english": 1230,
+      "simple": 205,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "liar is condemned by god for a lie",
+      "page": 38,
+      "jewish": 1024,
+      "english": 1584,
+      "simple": 264,
+      "letters": 27,
+      "source_url": "https://www.gematrix.org/?page=38&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ cathedral restarting",
+      "page": 39,
+      "jewish": 1024,
+      "english": 1680,
+      "simple": 280,
+      "letters": 25,
+      "source_url": "https://www.gematrix.org/?page=39&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god is a monothieistic god not pagan",
+      "page": 39,
+      "jewish": 1024,
+      "english": 1968,
+      "simple": 328,
+      "letters": 30,
+      "source_url": "https://www.gematrix.org/?page=39&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "goods life mustful shelack",
+      "page": 39,
+      "jewish": 1024,
+      "english": 1578,
+      "simple": 263,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=39&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i am in an arranged marriage by god",
+      "page": 39,
+      "jewish": 1024,
+      "english": 1524,
+      "simple": 254,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=39&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "gematria database is truth",
+      "page": 40,
+      "jewish": 1024,
+      "english": 1452,
+      "simple": 242,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=40&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i am mark alan king the return of god",
+      "page": 40,
+      "jewish": 1024,
+      "english": 1866,
+      "simple": 311,
+      "letters": 29,
+      "source_url": "https://www.gematrix.org/?page=40&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "messiah hajapheth",
+      "page": 40,
+      "jewish": 1024,
+      "english": 906,
+      "simple": 151,
+      "letters": 16,
+      "source_url": "https://www.gematrix.org/?page=40&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the holy lineage of christ",
+      "page": 40,
+      "jewish": 1024,
+      "english": 1464,
+      "simple": 244,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=40&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "infinity needs less ego",
+      "page": 41,
+      "jewish": 1024,
+      "english": 1410,
+      "simple": 235,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=41&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "knights of yeshua",
+      "page": 41,
+      "jewish": 1024,
+      "english": 1128,
+      "simple": 188,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=41&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the light the blood the key",
+      "page": 41,
+      "jewish": 1024,
+      "english": 1464,
+      "simple": 244,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=41&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "truth rises as lies fall",
+      "page": 41,
+      "jewish": 1024,
+      "english": 1518,
+      "simple": 253,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=41&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "christ cathedral city",
+      "page": 42,
+      "jewish": 1024,
+      "english": 1236,
+      "simple": 206,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=42&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "dilf jesus",
+      "page": 42,
+      "jewish": 1024,
+      "english": 630,
+      "simple": 105,
+      "letters": 9,
+      "source_url": "https://www.gematrix.org/?page=42&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "limitless and clean energy",
+      "page": 42,
+      "jewish": 1024,
+      "english": 1476,
+      "simple": 246,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=42&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the females have life",
+      "page": 42,
+      "jewish": 1024,
+      "english": 972,
+      "simple": 162,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=42&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "a real god does not need a humans help",
+      "page": 43,
+      "jewish": 1024,
+      "english": 1806,
+      "simple": 301,
+      "letters": 30,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "a real leader is real light hidden in plain site",
+      "page": 43,
+      "jewish": 1024,
+      "english": 2244,
+      "simple": 374,
+      "letters": 39,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "kobe bryant the slain god",
+      "page": 43,
+      "jewish": 1024,
+      "english": 1362,
+      "simple": 227,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "legion vs npc",
+      "page": 43,
+      "jewish": 1024,
+      "english": 816,
+      "simple": 136,
+      "letters": 11,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": true,
+        "keyword_candidate": false
+      }
+    },
+    {
+      "phrase": "ok god its you and i",
+      "page": 43,
+      "jewish": 1024,
+      "english": 1134,
+      "simple": 189,
+      "letters": 15,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "vale god shri nai",
+      "page": 43,
+      "jewish": 1024,
+      "english": 864,
+      "simple": 144,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=43&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "andrea bocelli king david",
+      "page": 44,
+      "jewish": 1024,
+      "english": 1092,
+      "simple": 182,
+      "letters": 22,
+      "source_url": "https://www.gematrix.org/?page=44&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i choose real i choose truth",
+      "page": 44,
+      "jewish": 1024,
+      "english": 1626,
+      "simple": 271,
+      "letters": 23,
+      "source_url": "https://www.gematrix.org/?page=44&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ie god guaranteed protection c d b",
+      "page": 44,
+      "jewish": 1024,
+      "english": 1680,
+      "simple": 280,
+      "letters": 28,
+      "source_url": "https://www.gematrix.org/?page=44&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "im brought back from dead proof of life",
+      "page": 44,
+      "jewish": 1024,
+      "english": 1914,
+      "simple": 319,
+      "letters": 32,
+      "source_url": "https://www.gematrix.org/?page=44&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "i made codes about my life",
+      "page": 45,
+      "jewish": 1024,
+      "english": 1242,
+      "simple": 207,
+      "letters": 21,
+      "source_url": "https://www.gematrix.org/?page=45&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "is most radical energy",
+      "page": 45,
+      "jewish": 1024,
+      "english": 1302,
+      "simple": 217,
+      "letters": 19,
+      "source_url": "https://www.gematrix.org/?page=45&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "no reason to hide my code",
+      "page": 45,
+      "jewish": 1024,
+      "english": 1362,
+      "simple": 227,
+      "letters": 20,
+      "source_url": "https://www.gematrix.org/?page=45&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "god simps stacy s",
+      "page": 46,
+      "jewish": 1024,
+      "english": 1134,
+      "simple": 189,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=46&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "ieosus  christus",
+      "page": 46,
+      "jewish": 1024,
+      "english": 1230,
+      "simple": 205,
+      "letters": 14,
+      "source_url": "https://www.gematrix.org/?page=46&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "in heritage of yeshua",
+      "page": 46,
+      "jewish": 1024,
+      "english": 1176,
+      "simple": 196,
+      "letters": 18,
+      "source_url": "https://www.gematrix.org/?page=46&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "raymond  number code",
+      "page": 47,
+      "jewish": 1024,
+      "english": 1140,
+      "simple": 190,
+      "letters": 17,
+      "source_url": "https://www.gematrix.org/?page=47&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    },
+    {
+      "phrase": "the pindar is eddie heinrich  a solar fool god",
+      "page": 47,
+      "jewish": 1024,
+      "english": 2184,
+      "simple": 364,
+      "letters": 37,
+      "source_url": "https://www.gematrix.org/?page=47&word=1024",
+      "flags": {
+        "manual_curated": false,
+        "eleven_letter_joint_signature": false,
+        "keyword_candidate": true
+      }
+    }
+  ]
+}
