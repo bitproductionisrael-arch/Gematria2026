@@ -87,11 +87,11 @@ check("Hebrew and English ciphers",()=>{
  assert.equal(heb("ישראל","ordinal"),64);
  assert.equal(heb("בראשית")+heb("אלף"),1024);
  const words=["בראשית","ברא","אלהים","את","השמים","ואת","הארץ"];
- assert.deepEqual(words.map(heb),[913,203,86,401,395,407,296]);
+ assert.deepEqual(words.map(w=>heb(w)),[913,203,86,401,395,407,296]);
  assert.equal(words.join("").length,28);
  assert.equal(words.slice(0,3).join("").length,14);
  assert.equal(words.slice(3).join("").length,14);
- assert.equal(words.map(heb).reduce((a,b)=>a+b,0),2701);
+ assert.equal(words.map(w=>heb(w)).reduce((a,b)=>a+b,0),2701);
  assert.equal(heb(words.join(""),"small"),82);
  assert.deepEqual(["AMIT","MIKE","ROV"].map(simple),[43,38,55]);
  assert.deepEqual(["AMIT","MIKE","ROV"].map(jewish),[140,54,830]);
