@@ -7,7 +7,7 @@ const jvals=[1,2,3,4,5,6,7,8,9,600,10,20,30,40,50,60,70,80,90,100,200,700,900,30
 const jew=Object.fromEntries([...letters].map((c,i)=>[c,jvals[i]]));
 const simple=s=>[...s.toUpperCase().replace(/[^A-Z]/g,"")].reduce((v,c)=>v+letters.indexOf(c)+1,0);
 const jewish=s=>[...s.toUpperCase().replace(/[^A-Z]/g,"")].reduce((v,c)=>v+jew[c],0);
-const rows=[["ROV",830,55],["ONE FOUR SIX",830,146],["DIRECTIONALITY",830,164],["BELIEVE IN ME",830,101],["MTV",830,55],["AMIT",140,43],["MIKE",54,38],["AMIT MIKE ROV",1024,136],["SATAN",232,55],["HEAVEN",735,55],["HELL",53,37]];
+const rows=[["ROV",830,55],["ONE FOUR SIX",830,146],["DIRECTIONALITY",830,164],["BELIEVE IN ME",830,101],["MTV",830,55],["AMIT",140,43],["MIKE",54,38],["AMIT MIKE ROV",1024,136],["SATAN",232,55],["HEAVEN",759,55],["HELL",53,37]];
 for(const [name,j,s] of rows){assert.equal(jewish(name),j,name+" Jewish");assert.equal(simple(name),s,name+" Simple");}
 assert.equal(830-146,18*38);
 assert.equal(830-164,18*37);
