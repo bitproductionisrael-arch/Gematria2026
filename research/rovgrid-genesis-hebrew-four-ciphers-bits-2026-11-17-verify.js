@@ -46,4 +46,12 @@ const utf8bytes=[...verse].flatMap(c=>{let n=c.codePointAt(0);return n===32?[32]
 eq(utf8bytes.length,62,"62 UTF8 bytes");
 eq(utf8bytes.length*8,496,"496 UTF8 bits");
 eq([0xD7,0x91].map(n=>n.toString(2).padStart(8,"0")).join(" "),"11010111 10010001","bet bytes");
+eq(913^682,315,"913^682 XOR = Shaddai +1");
+eq(913&682,640,"913&682 AND = Shemesh");
+eq(913|682,955,"913|682 OR");
+eq(sum("שמש",reg),640,"Shemesh gematria");
+eq(913+682,(913^682)+2*(913&682),"binary-add identity");
+eq((913^682)+(913&682),(913|682),"OR identity");
+eq((82^86),4,"small and smallFinal 1 bit difference");
+eq((82&86),82,"small subset of smallFinal");
 console.log("PASS",checks,"checks: literal letter values, binary streams, totals, Unicode UTF8 and conditional links");
