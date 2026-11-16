@@ -107,6 +107,42 @@ for name,x in const.items():
     for key in bp:
         bcounts[key]+=find_count(binstr,key)
 eq(bcounts,{"1010101010":873,"0101010101":885,"1110010001":884},"900k binary bits overlapping")
+# 13 HomePower alphabets: concatenation and digit-sum are distinct operations.
+extra = {
+    "1/2701": "000370233246945575712699000370233246945575712699",
+    "1/37": "027027027027027027027027027027027027027027027027",
+    "1/73": "013698630136986301369863013698630136986301369863",
+    "golden9": "437694101250946366158718490709256940517217381748",
+}
+prefixes={**{name:d[:22] for name,d in dec.items()},**{name:d[:22] for name,d in extra.items()}}
+expected_halves={
+    "π":("461","256",24),
+    "e":("167","042",20),
+    "φ":("106","475",23),
+    "√2":("104","136",15),
+    "√3":("327","754",28),
+    "√5":("302","941",19),
+    "√37":("890","926",34),
+    "√73":("475","136",26),
+    "√888":("967","356",36),
+    "1/2701":("010","226",11),
+    "1/37":("220","700",11),
+    "1/73":("160","918",25),
+    "golden9":("354","827",29),
+}
+for name,expected_value in expected_halves.items():
+    d=prefixes[name]
+    left=addr(d,"ברא",ordinal)
+    right=addr(d,"שית",ordinal)
+    total=sum(map(int,left+right))
+    eq((left,right,total),expected_value,name+" Bereshit mapped halves")
+eq(addr(prefixes["√2"],"בראשית",ordinal),"104136","√2 exact 104|136")
+eq(addr(prefixes["π"],"בראשית",ordinal),"461256","π exact 461|256")
+eq(136-104,32,"32 bridge")
+eq(32**2-136,888,"888 bridge")
+eq(sum(map(int,"461256")),24,"π Bereshit digit sum")
+eq(24*37,888,"π Bereshit times 37")
+
 print("PASS. Pi digit addresses, gematria mappings, 900k decimal digits, 900k binary bits")
 print("Pi d1,d10,d17,d300,d400:",*[p[i-1] for i in [1,10,17,300,400]])
 print("Decimal totals:",counts)
