@@ -51,6 +51,34 @@ for a,b,label in [
  (int(mp.sqrt(2)*1000),1414,'sqrt2 first four digits'),
  (int(mp.sqrt(3)*1000),1732,'sqrt3 first four digits'),
 ]:eq(a,b,label)
+# Video-derived numeral addresses: same backward / center / forward protocol.
+video_windows={
+ 5:('9','159','592','926'),
+ 22:('6','626','264','643'),
+ 26:('8','338','383','832'),
+ 100:('9','679','798','982'),
+ 207:('0','810','109','097'),
+  208:('9','109','097','975'),
+ 314:('1','631','315','155'),
+ 535:('2','952','522','224'),
+ 618:('0','560','608','082'),
+ 1118:('9','069','695','959'),
+ 1618:('1','491','919','192'),
+ 2236:('4','594','943','431'),
+ 3146:('3','073','732','325'),
+ 5382:('6','926','263','636')
+}
+for n,(digit,left,center,right) in video_windows.items():
+ eq((d(n),window(n-2,n),window(n-1,n+1),window(n,n+2)),(digit,left,center,right),'video-address n='+str(n))
+eq(G('רוב'),208,'Rov original address')
+# Atbash 22-character flip: ר→ג3, ו→פ80, ב→ש300.
+eq(3+80+300,383,'Rov Atbash centered on address 26')
+eq(window(25,27),'383','d25..27')
+eq(window(313,315),'315','Shaddai address 314, center')
+eq(913 ^ 682,315,'913 XOR 682')
+eq(window(2236,2238),'431','sqrt5 address 2236, forward')
+eq(G('שדי פאי יהוה'),431,'Shaddai Pi YHWH')
+
 print('PASS',checks,'checks for',N,'digits of Pi')
 for n in POS:
  print(n,d(n),window(n-2,n),window(n-1,n+1),window(n,n+2))
