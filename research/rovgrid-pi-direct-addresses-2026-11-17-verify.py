@@ -143,6 +143,18 @@ eq(32**2-136,888,"888 bridge")
 eq(sum(map(int,"461256")),24,"π Bereshit digit sum")
 eq(24*37,888,"π Bereshit times 37")
 
+# Supplement: the two squared sums use actual Pi digits.
+eq(tuple(int(p[i-1]) for i in (300,1,400)),(3,1,4),"Pi literal positions 300/1/400")
+eq(sum(int(p[i-1])**2 for i in (300,1,400)),26,"26 squared-digit sum")
+eq(tuple(int(p[i-1]) for i in (21,4,10)),(2,5,5),"Pi ordinal Shaddai locations")
+eq(sum(int(p[i-1])**2 for i in (21,4,10)),54,"54 squared-digit sum")
+eq(gem("יהוה",regular),26,"YHWH regular")
+eq(gem("יוד הא ויו הא",regular),54,"Yod He Viyo He regular 54")
+eq(gem("יוד הא ואו הא",regular),45,"Vav written Vav-Alef-Vav = 45 spelling")
+eq(gem("יסוד",regular),80,"Yesod regular 80")
+eq(54-26,28,"Gen 1:1 letter count")
+eq(54+26,80,"Yesod combined arithmetic")
+
 print("PASS. Pi digit addresses, gematria mappings, 900k decimal digits, 900k binary bits")
 print("Pi d1,d10,d17,d300,d400:",*[p[i-1] for i in [1,10,17,300,400]])
 print("Decimal totals:",counts)
