@@ -66,6 +66,18 @@ for t in range(0,64):
 semantic={"false":0b10,"true":0b11,"neutral":0b00}
 assert len(set(semantic.values()))==3
 assert 0 not in (semantic["false"],semantic["true"])
+
+# Four-step additive complement and eight-step identity across all nine states.
+def iterate(s,k):
+    for _ in range(k):
+        s=step(s)
+    return s
+for s in states:
+    inverse_pair=(abc(-s[0]),abc(-s[1]))
+    assert iterate(s,4)==inverse_pair,(s,iterate(s,4),inverse_pair)
+    assert iterate(s,8)==s
+assert iterate((3,6),4)==(6,3)
+
 print("PASS 9 ordered state pairs; 8-cycle + 1 neutral fixed point; 3 diagonal and 6 off-diagonal")
 print("PASS invertibility, Fibonacci period 8 on multiples of 3 mod 9, unidirectional clock phase+lap")
 for i,p in enumerate(orbit): print(f"t={i}: {p} -> {step(p)}")
