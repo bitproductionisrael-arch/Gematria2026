@@ -114,3 +114,29 @@ assert 8+120==128  # unrelated control identity, no inferential role
 print("PASS: 1024 states enumerated, 136 accepted/888 rejected; 16 gates, 128 reversible tests")
 print("PASS: two's-complement 136/888 and Pi addresses through 144101")
 print("accepted",len(accepted),"rejected",len(rejected),"reasons",dict(causes))
+
+
+# Independent three-state distinction model: A=3 unchanged, B=6 changed, C=9 total.
+import itertools
+S=(0,1,2)  # 2 is a symbolic neutral/unknown state, not a binary wire level
+transitions=list(itertools.product(S,S))
+unchanged=[(a,b) for a,b in transitions if a==b]
+changed=[(a,b) for a,b in transitions if a!=b]
+assert len(unchanged)==3
+assert len(changed)==6
+assert len(transitions)==9
+assert len(unchanged)+len(changed)==len(S)**2==9
+for k in range(1,8):
+    pairs=list(itertools.product(range(k),repeat=2))
+    assert sum(a==b for a,b in pairs)==k
+    assert sum(a!=b for a,b in pairs)==k*(k-1)
+    assert len(pairs)==k*k
+assert 3**(3**2)==19683  # all functions of 2 ternary inputs, ternary output
+assert 2**(2**2)==16      # all functions of 2 binary inputs, binary output
+# Canonical two-bit encoding of a three-valued semantic variable:
+enc={"neutral":0b00,"false":0b10,"true":0b11}
+assert len(set(enc.values()))==3
+assert set(range(4))-set(enc.values())=={1}
+for steps in range(1,6):
+    assert len(list(itertools.product(S, repeat=steps+1)))==3**(steps+1)
+
