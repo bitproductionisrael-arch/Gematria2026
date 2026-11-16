@@ -55,4 +55,9 @@ check(8*8*8,512,'digit product distinct');
 check(21*8,7*24,'168 equals 7x24');
 check(9*8+21*8+13*8,344,'letters add to AMIT');
 check(2**3,8,'binary cube');
+// Odd-even index decomposition uses original, unchanged MATRIX letter order.
+const mchars=[...'MATRIX'];
+check(es(mchars.filter((_,i)=>i%2===0).join('')),42,'MATRIX odd positions = MTI');
+check(es(mchars.filter((_,i)=>i%2===1).join('')),43,'MATRIX even positions = ARX');
+check(es('MTI')+es('ARX'),es('MATRIX'),'42+43 = MATRIX');
 process.stdout.write('PASS '+tests+' independent assertions — ktiva / AMSh / 231 / RX AMIT / 8\n');
