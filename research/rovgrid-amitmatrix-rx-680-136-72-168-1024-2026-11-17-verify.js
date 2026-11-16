@@ -1,0 +1,87 @@
+#!/usr/bin/env node
+'use strict';
+// RovGrid / 17.11.2026. Independent checks for standard Simple,
+// Small, Atbash Ordinal, Building, word lengths, and selected Hebrew values.
+const assert=require('node:assert/strict');
+const letters=s=>s.toUpperCase().replace(/[^A-Z]/g,'').split('');
+const code=c=>c.charCodeAt(0)-64;
+const simple=s=>letters(s).reduce((a,c)=>a+code(c),0);
+const engSmall=s=>letters(s).reduce((a,c)=>a+((code(c)-1)%9+1),0);
+const engAtbash=s=>letters(s).reduce((a,c)=>a+(27-code(c)),0);
+const building=s=>{let total=0,prefix=0;for(const c of letters(s)){prefix+=code(c);total+=prefix;}return total;};
+const hebrew='אבגדהוזחטיכלמנסעפצקרשת';
+const hebValues=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400];
+const reg=Object.fromEntries([...hebrew].map((c,i)=>[c,hebValues[i]]));
+Object.assign(reg,{'ך':20,'ם':40,'ן':50,'ף':80,'ץ':90});
+const finalHigh={'ך':500,'ם':600,'ן':700,'ף':800,'ץ':900};
+const hletters=s=>[...s].filter(c=>reg[c]!==undefined);
+const hsum=(s,high=false)=>hletters(s).reduce((a,c)=>a+(high?(finalHigh[c]??reg[c]):reg[c]),0);
+const hsmall=(s,high=false)=>hletters(s).reduce((a,c)=>{
+ const n=high?(finalHigh[c]??reg[c]):reg[c]; return a+Number(String(n)[0]);},0);
+const hord=s=>hletters(s).reduce((a,c)=>a+hebrew.indexOf(({'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'}[c]??c))+1,0);
+const hatbash=(s,ordinal=false)=>hletters(s).reduce((a,c)=>{
+ const n=hebrew.indexOf(({'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'}[c]??c));
+ const opposite=21-n; return a+(ordinal?opposite+1:hebValues[opposite]);},0);
+let tests=0;
+const eq=(actual,expected,label)=>{assert.equal(actual,expected,label);tests++;};
+const variants=[['AMITRX',85,680],['AMITRIX',94,752],['AMITATRIX',115,920],['AMITMATRIX',128,1024]];
+for(const [s,base,times8] of variants){eq(simple(s),base,s+' Simple');eq(simple(s)*8,times8,s+' x8');}
+eq(simple('RX'),42,'RX=42');
+eq(simple('AMIT'),43,'AMIT=43');
+eq(simple('MATRIX'),85,'MATRIX=85');
+eq(simple('RX AMIT'),85,'RX AMIT=85');
+eq(simple('AMIT MIKE ROV'),136,'English Simple name');
+eq(680,5*136,'680 =5x136');
+eq(680+208,888,'680+208=888');
+eq(888+136,1024,'888+136=1024');
+eq(128*8,1024,'128x8');
+eq(1024-680,43*8,'difference 344');
+eq(752-680,72,'I');
+eq(920-752,168,'AT');
+eq(1024-920,104,'M');
+eq(168,7*24,'seven by twenty-four');
+eq(72+168+104,344,'ladder sum');
+eq(engAtbash('AMITATRIX')*8,1024,'Atbash Amitatrix');
+eq(engAtbash('AMITMATRIX')*8,1136,'Atbash Amitmatrix');
+eq(engAtbash('MATRIX')*8,616,'Atbash Matrix');
+eq(engSmall('AMITMATRIX')*8,376,'Small Amitmatrix');
+eq(engSmall('AMITATRIX')*8,344,'Small Amitatrix');
+eq(engSmall('MATRIX')*8,248,'Small Matrix');
+eq(building('AMITRX')*8,1816,'Building AMITRX');
+eq(building('MATRIX')*8,2072,'Building MATRIX');
+eq((building('MATRIX')-building('AMITRX'))*8,256,'Building difference');
+eq(simple('AMITMATRIX')*10*8,10240,'single word position x');
+eq((simple('MATRIX')*6+simple('AMIT')*4)*8,5456,'split word position x');
+eq(hsum('אתה אל מראה'),683,'mirror phrase');
+eq(hsmall('אתה אל מראה'),26,'mirror phrase small');
+eq(hatbash('אתה אל מראה'),1414,'mirror phrase Atbash');
+eq(hsum('גן נעול אחתי כלה'),683,'garden');
+eq(hsum('גן נעול אחתי כלה',true),1333,'garden final high');
+eq(hsmall('גן נעול אחתי כלה'),53,'garden small nonfinal');
+eq(hsmall('גן נעול אחתי כלה',true),55,'garden final small');
+eq(hsum('אני אל מראות'),739,'mirrors');
+eq(hsum('עמית מייק בלייז'),739,'Amit Mike Blaze');
+eq(hsmall('עמית מייק בלייז'),37,'Blaze small');
+eq(hsum('אני אל מראות נצח א'),888,'mirror infinity');
+eq(hord('אני אל מראות נצח א'),141,'mirror infinity ordinal');
+eq(hsum('אפס'),141,'zero');
+eq(hatbash('אפס'),414,'zero atbash');
+eq(1**2+80**2+60**2,10001,'square letters');
+eq(73*137,10001,'prime product');
+eq(hsum('זמן הגאלה'),141,'redemption time');
+eq(hatbash('זמן הגאלה'),889,'redemption time atbash');
+eq(hsum('הגאלה'),44,'hagaala');
+eq(hsum('גאולה'),45,'geula');
+eq(hsum('אותיות אדני'),888,'letters Adonai');
+eq(hsmall('אותיות אדני'),33,'letters Adonai small');
+eq(hatbash('כתיבה',true),65,'writing atbash ordinal');
+eq(hsum('אדני'),65,'Adonai');
+eq(hsum('הסמאל'),136,'Hismael');
+eq(hsum('רוב'),208,'Rov regular');
+// Milui form depends on selected letter names. Exact spellings used in the reported figure:
+eq(hsum('עין מם יוד תיו'),646,'AMIT milui');
+eq(hsum('מם יוד יוד קוף'),306,'MIKE milui');
+eq(hsum('בית למד יוד יוד זיין'),603,'BLAZE milui');
+eq(646+306+603,1555,'whole milui');
+eq(1555-739,816,'difference to 816');
+console.log('PASS '+tests+' independent assertions. Source-only ciphers are NOT independently verified.');
