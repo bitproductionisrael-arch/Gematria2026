@@ -61,7 +61,7 @@ V+E+F+Cell=27.
 
 X,Y,Z הם שלוש קואורדינטות של **מקום** במרחב, כשכל ציר מכווץ לשתי קטגוריות עבור הדגם הקטן. "מתי, איפה, מה" הם שלושת **שדות התיעוד של אירוע**: מועד, מקור/מיקום וישות/פעולה. "איפה" יכול לכלול X,Y,Z במלואם. כך נבדלות צורת המרחב וכתובת האירוע ואין צורך לדחוף את הזמן פנימה כציר מרחבי פיזי.
 
-מקור מתמטי למבנה הסריג B3: https://math.mit.edu/~rstan/transparencies/posets.pdf ; https://mathworld.wolfram.com/BooleanLattice.html .
+מקור מתמטי למבנה הסריג B3: https://math.mit.edu/~rstan/transparencies/posets.pdf ; https://www.math.uni-frankfurt.de/~sanyal/teaching/SS22/VL-AGK/AlgGeoComb-Notes.pdf .
 
 ---
 
@@ -159,7 +159,7 @@ C(8,2)=28.
 
 **E8:** זהו סריג שורשים *אחר*, מסוים, במרחב אוקלידי בן שמונה ממדים, ובו **240 וקטורי שורש קצרים**. הוא אינו B8, אינו קובייה בת8 קודקודים, ואינו נובע אוטומטית ממכונת פיבונאצ׳י בת8 תחנות. זהו מחקר המשך מעניין אך יש צורך להגדיר מפה גאומטרית בעלת תכונות משמרות ולא להסתפק בכך שבשני השמות מופיעה הספרה8.
 
-הסימון **E3** במסורת הרחבה של דיאגרמות Dynkin יכול לציין A2×A1, ואינו שם אחר אוטומטי של קוביית Q3. יש להבחין בין מרחב אוקלידי תלת־ממדי, סריג הקובייה הבוליאני, וסריג השורשים E3. מקור: Cambridge, Roots and Weights, Appendix A https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/1C8595E6D083E48990F529BF0CABF674/9780521114639apx1_295-304.pdf/roots_and_weights.pdf . המונח E3 מצוין גם במקורות שורשים אקדמיים; אין צורך להשתמש בו במודל הבסיס אם הכוונה רק לשלוש הבחנות.
+הסימון **E3** במסורת הרחבה של דיאגרמות Dynkin יכול לציין A2×A1, ואינו שם אחר אוטומטי של קוביית Q3. יש להבחין בין מרחב אוקלידי תלת־ממדי, סריג הקובייה הבוליאני, וסריג השורשים E3. מקור: Cambridge, Roots and Weights, Appendix A https://resolve.cambridge.org/core/services/aop-cambridge-core/content/view/1D9BE5248D20CFF47E217ACA55EBC0F8/9780521114639apx1_295-304.pdf/roots_and_weights.pdf . המונח E3 מצוין גם במקורות שורשים אקדמיים; אין צורך להשתמש בו במודל הבסיס אם הכוונה רק לשלוש הבחנות.
 
 מקורות על E8: American Mathematical Society https://mathvoices.ams.org/featurecolumn/2022/09/01/eight-dimensional-spheres-and-the-exceptional-e_8/ ; Maryna Viazovska, Annals of Mathematics, https://annals.math.princeton.edu/2017/185-3/p07 .
 
