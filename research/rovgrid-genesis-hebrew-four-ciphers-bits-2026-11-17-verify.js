@@ -54,4 +54,7 @@ eq(913+682,(913^682)+2*(913&682),"binary-add identity");
 eq((913^682)+(913&682),(913|682),"OR identity");
 eq((82^86),4,"small and smallFinal 1 bit difference");
 eq((82&86),82,"small subset of smallFinal");
+eq(9+4+4+5,22,"four-method vector width per letter");
+eq(28*(9+4+4+5),616,"28 letter four-method bit fields");
+eq(62+36+38+56,192,"popcount of all four per-letter streams");
 console.log("PASS",checks,"checks: literal letter values, binary streams, totals, Unicode UTF8 and conditional links");
