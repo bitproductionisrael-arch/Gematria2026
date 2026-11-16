@@ -54,7 +54,17 @@ assert.equal(375+160,535);
 assert.equal(370+165,535);
 assert.equal(535-106,13*33);
 assert.equal(370,37*10);
-assert.equal(106,2*53); // 53 is a separate calculator.html π alphabet output, not computed in this script.
+assert.equal(106,2*53);
+assert.equal(535,5*(106+1));
+assert.equal(520,10*52);
+assert.equal(calc.ordinal("מייק"),52);
+// Prime numbers at 1-based indices 16 and 28 are 53 and 107.
+const primes=[];
+for(let n=2;primes.length<28;n++){
+  if(primes.every(p=>p*p>n || n%p!==0))primes.push(n);
+}
+assert.equal(primes[15],53);
+assert.equal(primes[27],107); // 53 is a separate calculator.html π alphabet output, not computed in this script.
 assert.equal(58+94+383,535);
 assert.equal(535-58,477);
 console.log(JSON.stringify({status:"PASS",checks:"Standard regular, ordinal, Atbash and small Hebrew maps + selected identities",miluiRegular:520,miluiOrdinal:106,koheletRegular:535,koheletOrdinal:58,koheletSmall:13},null,2));
