@@ -4,7 +4,7 @@ const ABC=[..."אבגדהוזחטיכלמנסעפצקרשת"];
 const V=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400];
 const H=Object.fromEntries(ABC.map((c,i)=>[c,V[i]]));
 const F={"ך":"כ","ם":"מ","ן":"נ","ף":"פ","ץ":"צ"};
-const chars=s=>[...s.replace(/\\s/g,"")].map(c=>F[c]||c).filter(c=>ABC.includes(c));
+const chars=s=>[...s.replace(/\s/g,"")].map(c=>F[c]||c).filter(c=>ABC.includes(c));
 const calc={
   regular:s=>chars(s).reduce((sum,c)=>sum+H[c],0),
   ordinal:s=>chars(s).reduce((sum,c)=>sum+ABC.indexOf(c)+1,0),
