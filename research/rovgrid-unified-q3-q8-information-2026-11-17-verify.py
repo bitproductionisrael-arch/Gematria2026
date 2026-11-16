@@ -131,6 +131,41 @@ assert 2*18+1==37 and 72//3==24
 assert 37*24==888
 assert 37*73==2701
 
+
+# --- The native ABC 8-cycle is primitive multiplication in finite field GF(9).
+# F9 = F3[a]/(a^2-a-1), so a^2=a+1. Element coordinates c+d*a.
+def f9multiply(x,y):
+    a,b=x
+    c,d=y
+    return ((a*c+b*d)%3,(a*d+b*c+b*d)%3)
+alpha=(0,1)
+one=(1,0)
+zero=(0,0)
+assert all((v*v-v-1)%3!=0 for v in range(3)) # irreducible degree-2 polynomial
+assert f9multiply(alpha,alpha)==(1,1) # a^2=a+1
+assert f9multiply(alpha,(1,2))==(2,0) # example step of ABC
+assert all(f9multiply(alpha,(a,b))==(b,(a+b)%3)
+           for a,b in product(range(3),repeat=2))
+powers=[one]
+for i in range(8):
+    powers.append(f9multiply(powers[-1],alpha))
+assert powers[0]==one
+assert powers[4]==(2,0) # alpha^4=-1
+assert powers[8]==one
+assert len(set(powers[:8]))==8
+assert set(powers[:8])==set(product(range(3),repeat=2))-{zero}
+assert f9multiply(alpha,zero)==zero
+# The source numerals 3,6,9 encode 1,2,0 in F3 respectively.
+encode={3:1,6:2,9:0}
+decode={1:3,2:6,0:9}
+for original in abc_pairs:
+    field=(encode[original[0]],encode[original[1]])
+    updated=f9multiply(alpha,field)
+    assert (decode[updated[0]],decode[updated[1]])==step(original)
+# By contrast, in three XOR bits every nonzero vector is self-inverse:
+assert all((v^v)==0 for v in range(8))
+assert not all(f9multiply(v,v)==zero for v in powers[:8])
+
 print('PASS: Q3 8 vertices,12 edges,6 facets,28 pair classes=12+12+4')
 print('PASS: two complementary tetrahedra (parity) on cube vertices')
 print('PASS: 64 status triples=27 consistent+37 impossible, 24 directed flips, 37*24=888')
