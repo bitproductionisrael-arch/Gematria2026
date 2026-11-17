@@ -61,3 +61,18 @@ assert total == {"314": 888, "341": 913, "520": 883}
 ```
 
 This is a follow-up count, not proof of a nonrandom property.
+## Exact equal-prefix window for 888 occurrences of 520
+
+Extend the same nine constants by the same number of decimal places per constant. At **N=100,000**, the aggregate count of the literal `520` is **883**. The next five new matches, ordered by the decimal position where the third digit is first included, are:
+
+| Constant | Start of `520` (1-based) | End / prefix length |
+|---|---:|---:|
+| √2 | 100,125 | 100,127 |
+| √2 | 100,185 | 100,187 |
+| √2 | 100,233 | 100,235 |
+| e | 100,316 | 100,318 |
+| √888 | 100,362 | **100,364** |
+
+Thus the **smallest common equal-length prefix** beyond the original 100,000-digit window that yields exactly **888** occurrences is **100,364 digits after the decimal point per constant**, or **903,276 digits total** across all nine constants. The count stays at **888** for any integer prefix length **100,364 through 100,420 inclusive**; at **100,421**, the next `520` occurrence finishes (in e, starting at 100,419) and the aggregate becomes **889**.
+
+The threshold requires complete 3-digit matches, not just the starting positions. The window was selected by scanning to the desired count; this is not an a-priori anomaly test. To independently reproduce, set `N=102000` in the Python code above, collect `pos+2` for every matching start position `pos` after the original window, and sort those endpoints across constants.
