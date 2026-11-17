@@ -1,5 +1,7 @@
 ## 17.11.2026 — מסמך יסוד מאוחד: תורת הבחנה מחוללת ABC, סריגים Q3/Q8, GF(9), זיכרון וצורה
 
+- [φ ↔ √5: חוק נשיאה מדויק לכל כתובת, 99,998 חלונות, 048/548→097 ומעבר לכל 100,000 הספרות](research/rovgrid-phi-sqrt5-all-position-carry-2026-11-17.md) · [קוד אימות](research/rovgrid-phi-sqrt5-all-position-carry-2026-11-17-verify.py)
+
 - [ROVGRID v3: ביקורת מערכת 5280/163/אוילר והגזירה המדויקת של π מתוך קאסיני ופיבונאצ׳י](research/rovgrid_engine_v3_structural_audit_2026-11-17.md) · [מנוע Python](research/rovgrid_engine_v3_structural.py) · [7 בדיקות](research/test_rovgrid_engine_v3_structural.py)
 
 - [Pi-Meter ROVGRID v2.0→v2.1: ביקורת ביצועים, דירוג שברי carrier, אימות בורוויין–רמנוג'אן, BBP ו־FDI](research/rovgrid-pimeter-v2-1-software-audit-2026-11-17.md)
