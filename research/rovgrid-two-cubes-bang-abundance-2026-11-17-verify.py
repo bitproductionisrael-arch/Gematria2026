@@ -27,6 +27,45 @@ def final_gem(s):
     t = {"ך":500,"ם":600,"ן":700,"ף":800,"ץ":900}
     return sum(t[c] if c in t else VALUES[c] for c in s if c in VALUES or c in t)
 
+# Mirror the active gematria calculator's Hebrew filling tables (01.11.2026).
+MILUI_STANDARD = {
+    "א":"אלף","ב":"בית","ג":"גימל","ד":"דלת","ה":"הא","ו":"ויו",
+    "ז":"זין","ח":"חית","ט":"טית","י":"יוד","כ":"כף","ל":"למד",
+    "מ":"מם","נ":"נון","ס":"סמך","ע":"עין","פ":"פא","צ":"צדי",
+    "ק":"קוף","ר":"ריש","ש":"שין","ת":"תיו"
+}
+MILUI_MAYIM = dict(MILUI_STANDARD, **{"מ":"מים","ם":"מם"})
+FINAL_VALUES = {"ך":500,"ם":600,"ן":700,"ף":800,"ץ":900}
+FINAL_BASE = dict(zip("ךםןףץ", "כמנפצ"))
+HE_PI_DIGITS = "1415926535897932384626"
+
+def milui_total(s, profile="standard", depth=1):
+    spellings = MILUI_MAYIM if profile == "mayim" else MILUI_STANDARD
+    chars = [c for c in s if c in VALUES or c in FINAL_BASE]
+    for _ in range(depth):
+        chars = [letter for c in chars
+                 for letter in spellings.get(c, spellings.get(FINAL_BASE.get(c, ""), ""))]
+    return gem("".join(chars))
+
+def avgad_total(s):
+    transformed = "".join(ALPHABET[(ALPHABET.index(c)+1)%22] for c in norm(s))
+    return gem(transformed)
+
+def ayak_total(s):
+    chambers = [(ALPHABET[d], ALPHABET[d+9],
+                 ALPHABET[d+18] if d<4 else "ךםןףץ"[d-4]) for d in range(9)]
+    result = 0
+    for c in s:
+        if not (c in VALUES or c in FINAL_BASE):
+            continue
+        chamber = next(ch for ch in chambers if c in ch)
+        mate = chamber[(chamber.index(c)+1)%3]
+        result += FINAL_VALUES.get(mate, VALUES.get(mate, 0))
+    return result
+
+def pi_alphabet_total(s):
+    return sum(int(HE_PI_DIGITS[ALPHABET.index(c)]) for c in norm(s))
+
 def nth_prime(n):
     found = 0
     i = 1
@@ -96,13 +135,20 @@ def verify():
     assert [gem(phrase,"regular",ATBASH),gem(phrase,"ordinal",ATBASH)]==[421,88]
     assert [gem(phrase,"regular",ALBAM),gem(phrase,"ordinal",ALBAM)]==[206,62]
     assert final_gem(phrase)==1063 and final_gem("אבא מפץ")==1024
+    assert milui_total(phrase, "mayim")==888
+    assert [milui_total(c, "mayim") for c in "מפץגדול"]==[90,81,104,83,434,22,74]
+    assert milui_total(phrase)==878
+    assert avgad_total(phrase)==296 and ayak_total(phrase)==1639
+    assert [milui_total(s) for s in ("עמר עליון","עמר תחתון")]==[1072,2098]
+    assert milui_total("עמר",depth=2)==1306
+    assert pi_alphabet_total("מפת שפע")==23 and pi_alphabet_total("מפת שפע יודהאויוהא")==64
     assert nth_prime(82)==421
     assert len(norm(VERSE))==28 and gem(VERSE)==2701 and gem(VERSE,"small")==82
     assert star(3)==37 and star(4)==73
     assert star(3)==1+3*3*2+6*triangular(2)==37
     assert star(4)==1+3*4*3+6*triangular(3)==73
     assert triangular(7)==28 and 37*73==2701
-    print("PASS | geometric tiling, 128 colored units, both shells, ciphers, 37/73/28/82/421/1024")
-    print("NOT TESTED: 'מילוי מים'=888; source method not specified")
+    print("PASS | geometric tiling, 128 units, ciphers, 37/73/28/82/421/1024")
+    print("PASS | source-defined Milui Mayim=888, AVGaD=296, AYAK=1639, OMR fillings 1072/2098/1306, pi alphabet=23/64")
 if __name__=="__main__":
     verify()
