@@ -17,6 +17,24 @@ const john="Ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν �
 const johnWordValues=[55,719,58,70,373,31,70,373,58,450,420,134,31,284,58,70,373];
 assert.deepEqual(john.split(/\s+/).map(greek),johnWordValues);
 assert.equal(greek(john),3627);
+const johnWords=john.split(/\\s+/);
+const first=johnWords.slice(0,5),middle=johnWords.slice(5,12),last=johnWords.slice(12,17);
+assert.deepEqual([first.length,middle.length,last.length],[5,7,5]);
+assert.deepEqual([first,middle,last].map(part=>part.reduce((s,w)=>s+greek(w),0)),[1275,1536,816]);
+assert.equal(1536,3*8**3);
+assert.equal(816,6*136);
+assert.equal(816,3*272);
+assert.equal(1275,3*425);
+assert.equal(1275+1536+816,3627);
+assert.equal(425+512+272,1209);
+assert.equal(913+296,1209);
+assert.equal(3*(913+296),3627);
+assert.equal(greek("Ο ΛΟΓΟΣ"),443);
+assert.equal(443,70+373);
+assert.equal(888+443,11**3);
+assert.equal(1331,888+443);
+assert.equal(443,Number(443));
+
 assert.equal(greek("ΙΗΣΟΥΣ"),888);
 assert.equal(greek("ΛΟΓΟΣ"),373);
 assert.equal(greek("ΙΗΣΟΥΣ Ο ΝΑΖΩΡΑΙΟΣ"),2197);
