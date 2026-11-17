@@ -55,7 +55,7 @@ function profile(n){
  assert.equal(e2,24*(3*n**3-8*n*n+12*n-8));
  return {n,volume:n**3,core,face,edge,corner,thresholds,exposed,e2};
 }
-const profiles=[2,3,4,5,6,7,8].map(profile);
+const profiles=Array.from({length:9},(_,i)=>profile(i+2));
 assert.deepEqual(profiles.find(p=>p.n===3).thresholds,[8,20,26]);
 assert.equal(profiles.find(p=>p.n===3).e2,888);
 assert.deepEqual(profiles.find(p=>p.n===4).thresholds,[8,32,56]);
@@ -67,6 +67,22 @@ assert.equal(4**3-3**3,37);
 assert.equal(61+37,98);
 assert.equal(1+26+37+61,125);
 assert.equal(profiles.filter(p=>p.e2===888).length,1);
+const expectedRows=[
+ [2,8,8,8,192],[3,8,20,26,888],[4,8,32,56,2496],
+ [5,8,44,98,5448],[6,8,56,152,10176],[7,8,68,218,17112],
+ [8,8,80,296,26688],[9,8,92,386,39336],[10,8,104,488,55488],
+];
+assert.deepEqual(profiles.map(p=>[p.n,...p.thresholds,p.e2]),expectedRows);
+assert.equal(profiles.find(p=>p.n===6).volume,216);
+assert.equal(profiles.find(p=>p.n===6).exposed,216);
+assert.equal(profiles.filter(p=>p.exposed===p.volume).map(p=>p.n).join(","),"6");
+assert.equal(profiles.find(p=>p.n===8).thresholds[2],296);
+assert.equal(profiles.find(p=>p.n===8).core,216);
+assert.equal(profiles.find(p=>p.n===10).core,512);
+assert.equal(profiles.find(p=>p.n===10).thresholds[2],488);
+assert.equal(10**3,8**3+488);
+assert.equal(2*8**3-10**3,24);
+
 // General exact correspondence: filled six-pointed star S(n)=2*increment of cubes-1.
 const tri=k=>k*(k+1)/2;
 const delta=n=>n**3-(n-1)**3;
@@ -85,4 +101,4 @@ assert.equal(star(5)-star(4),48);
 assert.equal(delta(5)-delta(4),24);
 assert.equal(delta(4)*star(4),2701);
 assert.equal([1,2,3,4,5,6,7,8,9,10].filter(n=>star(n)===delta(n+1)).join(","),"3");
-console.log("PASS | Milui Mayim 888, AVGaD 296, AYAK 1639, OMR fillings 1072/2098/1306, π alphabet 23/64, all n=2..8 cube exposure, 5^3 125/98/61/37; S(n)=2 delta(n)-1; 37*73=2701; 24->48.");
+console.log("PASS | Milui Mayim 888, AVGaD 296, AYAK 1639, OMR fillings 1072/2098/1306, π alphabet 23/64, all n=2..10 cube exposure, 5^3 125/98/61/37; S(n)=2 delta(n)-1; 37*73=2701; 24->48.");
