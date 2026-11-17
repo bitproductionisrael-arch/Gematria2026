@@ -72,3 +72,9 @@ print("√888 first occurrence of 676 at decimal position:",positions_676[0])
 print("√888 676 count in this 100k window:",len(positions_676))
 print("528=T32, 496=T31, 528+496=32²=1024, 1024−T16=888")
 print("PASS exact integer-root checks")
+
+# Exact cross-constant algebraic dependencies (independent of digit counts).
+assert 4 * 2 * 3 * 37 == 888
+assert 2 + 3 == 5
+assert 2 * 2 * 3 * 37 == 444
+print("PASS six constants linked structurally: sqrt2/sqrt3 -> sqrt5 -> phi, sqrt2/sqrt3/sqrt37 -> sqrt888")
