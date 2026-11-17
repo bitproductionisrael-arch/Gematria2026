@@ -28,7 +28,7 @@ function realize(n,positions,distribution){
   const d=boundaryDistance(p,n);
   const kind=positions[d]||"unused";
   layerCounts[kind]=(layerCounts[kind]||0)+1;
-  if(kind==="unused")continue;
+  if(kind==="unused"||!Object.hasOwn(distribution,kind))continue;
   const o=octant(p,n),key=kind+":"+o;
   buckets[key]??=[];buckets[key].push(p.join(","));
  }
