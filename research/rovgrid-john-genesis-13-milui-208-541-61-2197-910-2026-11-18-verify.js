@@ -17,7 +17,7 @@ const john="Ἐν ἀρχῇ ἦν ὁ λόγος καὶ ὁ λόγος ἦν �
 const johnWordValues=[55,719,58,70,373,31,70,373,58,450,420,134,31,284,58,70,373];
 assert.deepEqual(john.split(/\s+/).map(greek),johnWordValues);
 assert.equal(greek(john),3627);
-const johnWords=john.split(/\\s+/);
+const johnWords=john.split(/\s+/);
 const first=johnWords.slice(0,5),middle=johnWords.slice(5,12),last=johnWords.slice(12,17);
 assert.deepEqual([first.length,middle.length,last.length],[5,7,5]);
 assert.deepEqual([first,middle,last].map(part=>part.reduce((s,w)=>s+greek(w),0)),[1275,1536,816]);
