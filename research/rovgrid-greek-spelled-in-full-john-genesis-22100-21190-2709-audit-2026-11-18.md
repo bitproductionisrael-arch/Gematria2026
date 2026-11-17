@@ -1,5 +1,8 @@
 # RovGrid — Greek Spelled-In-Full = מילוי שמות אותיות יווניות, מילוי סדרי, יוחנן22100 ובראשית21190
 
+**18.11.2026 — מימוש מילוי יווני באתר (Spelled-In-Full) ובקרת מקורות:** [מעבדת Greek Milui](../greek-milui.html) · [מנוע Greek letter names 24](../greek-letter-milui.js) · [דוח שיטה, רגרסיה והשוואת 37×73](rovgrid-greek-milui-site-implementation-2026-11-18.md) · [בדיקת JS שהורצה בהצלחה](rovgrid-greek-milui-site-implementation-2026-11-18-verify.js). שוחזרו יוחנן3627, מילוי22100=7033+15067, בראשית היוונית מילוי21190, הפרש910; בראשית עברית מילוי תלמודי רגיל5476/סדרי814; שבע ועידות 26123/2457 בטקסט יווני רגיל (לא במילוי). **מקור טוען John Full Ordinal2704 אך פרופיל 24 שמות יווניים שקוף נותן2709 (פער5)**. הוספו ארבע שיטות מילוי יווניות ואחת עברית סדרית ל־calculator.html; קובצי האתר שונו ב־GitHub, פריסה ציבורית טרם אומתה.
+
+
 **תאריך:** 18.11.2026 · **סטטוס:** שיטת מילוי יוונית שוחזרה מאותיות הפסוקים וממפת שמות מפורשת; נותר פער מדויק של חמש יחידות בגרסת המילוי הסדרי שצוטטה.  
 **קוד משחזר (הורץ והחזיר PASS):** [בודק נוסח יוחנן והשבעים, כל שמות 24 האותיות וניקוד רגיל/סדרי](rovgrid-greek-spelled-in-full-john-genesis-22100-21190-2709-audit-2026-11-18-verify.js).  
 **מקורות לטקסט:** [יוחנן א׳:א׳ לפי המאמר של Leo Tavares](https://sites.google.com/site/mathematicalmonotheism/triple-ciphers-of-john-11-part-1) · [בראשית א׳:א׳ בשבעים, נוסח SBL/Deutsche Bibelgesellschaft](https://www.die-bibel.de/en/bible/LXX/GEN.1).  
