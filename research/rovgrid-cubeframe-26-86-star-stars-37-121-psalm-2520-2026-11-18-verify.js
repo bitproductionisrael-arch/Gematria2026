@@ -10,6 +10,7 @@ const frame=n=>12*n-16;
 const octaFrame=n=>12*n-18;
 const shell=n=>n**3-(n-2)**3;
 const star=n=>6*n*(n-1)+1;
+const centeredHex=n=>3*n*(n-1)+1;
 const triangular=n=>n*(n+1)/2;
 const polyFrame=(V,E,n)=>V+E*(n-2);
 const polys=[
@@ -69,7 +70,7 @@ for(let k=1;k<=15;k++){
  const shellSide=2*k;
  const frameSide=2*k*(k-1)+2;
  assert.equal(frame(frameSide),shell(shellSide));
- assert.equal(frame(frameSide)/8,star(k));
+ assert.equal(frame(frameSide)/8,centeredHex(k));
 }
 assert.deepEqual([1,2,3,4,5,6,7].map(k=>2*k*(k-1)+2),[2,6,14,26,42,62,86]);
 assert.equal(frame(62),728);
