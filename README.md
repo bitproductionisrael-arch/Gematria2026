@@ -1,5 +1,7 @@
 ## 17.11.2026 — מסמך יסוד מאוחד: תורת הבחנה מחוללת ABC, סריגים Q3/Q8, GF(9), זיכרון וצורה
 
+- [ROVGRID v3: ביקורת מערכת 5280/163/אוילר והגזירה המדויקת של π מתוך קאסיני ופיבונאצ׳י](research/rovgrid_engine_v3_structural_audit_2026-11-17.md) · [מנוע Python](research/rovgrid_engine_v3_structural.py) · [7 בדיקות](research/test_rovgrid_engine_v3_structural.py)
+
 - [Pi-Meter ROVGRID v2.0→v2.1: ביקורת ביצועים, דירוג שברי carrier, אימות בורוויין–רמנוג'אן, BBP ו־FDI](research/rovgrid-pimeter-v2-1-software-audit-2026-11-17.md)
 
 - [17.11.2026 | גשר 882/888/5280 דרך 21², נוסחת π המאומתת של Heegner 67, מפרט פאי־מטר מתוקן ו־π בבסיס 528](research/rovgrid-882-888-5280-67-2026-11-17.md) · [סקריפט אימות](research/rovgrid-882-888-5280-67-2026-11-17-verify.py)
