@@ -87,3 +87,7 @@ assert sum(int(digits["sqrt2"][i - 1])**2 for i in (80, 1, 10)) == 34
 assert 3**3+0 == 27  # ordinary exponent consistency check
 assert 7**3 == 343
 print("PASS all source-digit counts, synchronized indexes, adjoining hits, and sqrt2 343")
+
+assert digits["sqrt2"][52833:52836] == "520"
+assert digits["sqrt3"][52833:52836] == "528"
+print("Verified shared address 52834: sqrt2=520, sqrt3=528")
