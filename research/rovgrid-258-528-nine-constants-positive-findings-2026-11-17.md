@@ -69,3 +69,13 @@ Uniform regular Hebrew letter addresses `פאי`: פ=80, א=1, י=10. In √2 de
 Execute [rovgrid-258-528-nine-constants-2026-11-17-verify.py](rovgrid-258-528-nine-constants-2026-11-17-verify.py). The Python script independently reconstructs every digit prefix using **mpmath**, asserts the totals, exact same-position pairs, four cross-pattern matches, six adjacent-string locations, and the √2 address extraction.
 
 **Scope:** all observations above are exact finite-prefix properties, but exploratory pattern matching across many candidates does not by itself establish a physical, theological, or statistically anomalous causal mechanism.
+
+## 6. Further name/key alignment at decimal address 52,834
+
+Among the nine same-position alignments of literal `528` against literal `520` (one in each of two constants), the most structurally notable address is **52,834**. At exactly the same 1-based position:
+- **√2** begins `520` — Hebrew regular `עמית`.
+- **√3** begins `528` — Hebrew regular `מפתח`.
+- The address itself, written in decimal, is `52834` = concatenation `528|34`; `34` is the sum of squares obtained independently from the √2 sampled digits `343`, and reverses AMIT Simple `43`.
+- The numerical gap between both extracted strings is `528−520=8`.
+
+The substrings at that index have been directly checked independently with >52,850-digit precision. This is an **exploratory position coincidence**, with the address's decimal appearance observed after searching, rather than a prespecified prediction.
