@@ -1,5 +1,7 @@
 ## 17.11.2026 — מסמך יסוד מאוחד: תורת הבחנה מחוללת ABC, סריגים Q3/Q8, GF(9), זיכרון וצורה
 
+- [רמנוג'אן 37/58/888: 128−24=104, תיקון מכונת בורוויין, מספרי המחלקות 2/2/4/24](research/rovgrid-104-128-24-ramanujan-cm-2026-11-17.md) · [בדיקת Python](research/rovgrid-104-128-24-ramanujan-cm-2026-11-17-verify.py)
+
 - [רמנוג'אן 396/58 ו־882/37: מנוע פולינומי משותף, משוואת פל 37→73 וכתיבת π בבסיס 396](research/rovgrid-ramanujan-396-37-73-structural-2026-11-17.md) · [סקריפט אימות](research/rovgrid-ramanujan-396-37-73-structural-2026-11-17-verify.py)
 
 - [מחקר 097: כתובת 888 בין √3/e, כתובת 900 בין e/√888, שלישיית √2 במרחק 26, וכל שש הופעות √5 ↔ φ=548](research/rovgrid-097-crossconstants-2026-11-17.md) · [אימות מדויק ללא ספריות חיצוניות](research/rovgrid-097-crossconstants-2026-11-17-verify.py)
