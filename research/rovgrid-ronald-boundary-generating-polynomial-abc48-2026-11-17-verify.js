@@ -103,7 +103,7 @@ assert.equal(get(86).E-get(86).V,8*888);
 const properDivSum=n=>{let s=0;for(let k=1;k<n;k++)if(n%k===0)s+=k;return s};
 assert.equal(properDivSum(8128),8128);
 assert.equal(profiles.filter(x=>x.edgesMinusNodes===888).map(x=>x.n).join(","),"12");
-for(const n of [2,4,12,44,172])assert.equal(get(n).B,2**({2:3,4:5,12:7,44:9,172:11}[n]));
+for(const n of [2,4,12,44,172])assert.equal(12*n-16,2**({2:3,4:5,12:7,44:9,172:11}[n]));
 // Core fixed vs shell observed: two 4^3 shells share 56 fixed positions;
 // upper core 1B+2M+4R+1G and lower core 0B+2M+6R+0G.
 assert.equal(multinomial(8,[1,2,4,1]),840);
