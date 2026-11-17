@@ -1,5 +1,7 @@
 ## 17.11.2026 — מסמך יסוד מאוחד: תורת הבחנה מחוללת ABC, סריגים Q3/Q8, GF(9), זיכרון וצורה
 
+- [מחקר מבני: φ ↔ √5, הטרנספורמציות המדויקות של 258528, מפתח 528=T32, ו־√888/676 במיקום 52](research/rovgrid-golden-sqrt5-258528-structural-audit-2026-11-17.md) · [קוד אימות בשורשים שלמים](research/rovgrid-golden-sqrt5-258528-exact-2026-11-17.py)
+
 - [17.11.2026: תצפיות 676=יהוה², חמש הופעות 258528, ושני סדרי עמית/מייק/רוב ב־π](research/rovgrid-676-258528-three-names-pi-2026-11-17.md) · [אימות Python](research/rovgrid-676-258528-three-names-pi-2026-11-17-verify.py)
 
 - [תיעוד 258 ו־528 בתשעת הקבועים: ספירות, חפיפות וסמיכות, יחד עם 343 ב־√2](research/rovgrid-258-528-nine-constants-positive-findings-2026-11-17.md) · [קוד אימות](research/rovgrid-258-528-nine-constants-2026-11-17-verify.py)
