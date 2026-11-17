@@ -97,3 +97,36 @@ All nine constants were recomputed at **exactly 100,364 decimal places each** (9
 Compared with the original 100,000-digit-per-constant sample, the added counts are **314:+2** (both in e), **341:+5** (π:+2, φ:+1, √5:+1, √37:+1) and **520:+5** (e:+1, √2:+3, √888:+1).
 
 **314 count vs 520 count in this window: 890−888=2.** The window was expressly selected because the 520 count reached 888; other pattern counts are outcomes under that post-selected window, not independent predetermined predictions.
+
+## Precise minimal common prefix where each target occurs exactly 888 times
+
+A new exact cumulative count was run across **all nine constants**, always using the **same** first N decimal digits after the point from **each** constant. For each literal 3-digit substring, a match starting at 1-based position s becomes counted only after digit **s+2** is included. Across all nine lists, sort the match **ending positions** in ascending order. The 888th endpoint is the shortest uniform-prefix length that includes 888 occurrences; the 889th endpoint sets the exclusive upper bound. This is a strict minimum under the **equal-prefix-from-decimal-point** rule, not among arbitrary windows or differently sized prefixes.
+
+| Literal pattern | Minimum N per constant | Total sample digits at N | 888th match / ending position | 889th match / ending position | Inclusive plateau of N with exactly 888 matches |
+|---|---:|---:|---|---|---|
+| **314** | **99,916** | **899,244** | π: start 99,914; end 99,916 | e: start 100,173; end 100,175 | **99,916–100,174** |
+| **341** | **98,200** | **883,800** | √3: start 98,198; end 98,200 | √5: start 98,295; end 98,297 | **98,200–98,296** |
+| **520** | **100,364** | **903,276** | √888: start 100,362; end 100,364 | e: start 100,419; end 100,421 | **100,364–100,420** |
+
+For reference, at a common N=100,000, totals are `314=888`, `341=913`, `520=883`. The 314 count of 888 already holds at N=99,916, 84 digits before the original 100,000-digit cutoff. The minimum prefixes of these three patterns differ; **there is no single common N yielding exactly 888 occurrences for all three**, because the plateau ranges do not intersect.
+
+### Minimal-window counts by constant
+
+| Constant | 314 at N=99,916 | 341 at N=98,200 | 520 at N=100,364 |
+|---|---:|---:|---:|
+| π | 94 | 101 | 97 |
+| e | 108 | 102 | 103 |
+| φ | 87 | 97 | 98 |
+| √2 | 119 | 109 | 100 |
+| √3 | 81 | 98 | 98 |
+| √5 | 96 | 118 | 100 |
+| √37 | 109 | 88 | 94 |
+| √73 | 108 | 84 | 108 |
+| √888 | 86 | 91 | 90 |
+| **Total** | **888** | **888** | **888** |
+
+### Reproduction of the minimum and plateau
+
+Run the scan above with `N = 101500`, collecting all full three-digit matches. For a `find` index `pos` (zero-based), the 1-based **start** is `pos+1` and the 1-based **end** is `pos+3`. Sort all endpoints across the nine constants for each pattern. Set `minimum_N = endpoints[887]`; the last N that preserves 888 is `endpoints[888]-1`. Both are exact integers given the source digits and the search convention.
+
+**Methodological note:** Choosing a cutoff to *achieve* a target count is an endogenous stopping rule, and the exact equality alone does not establish an anomalous mathematical relationship. Expected sample lengths for 888 hits of a specified 3-digit pattern in nine iid uniform-digit streams are near 98,700–99,000 digits per stream; the observed thresholds are consistent with ordinary count variation.
