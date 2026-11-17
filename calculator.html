@@ -741,6 +741,7 @@ const METHODS={
   {key:'musafi',cat:'base',name:'מספר מוספי / Musafi (+letters)',map:HE_VAL,post:(t,v,s)=>v+letterCount(t,s,HE_VAL)},
   {key:'milui',cat:'ops',name:'מילוי רגיל',custom:'milui'},
   {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי',custom:'miluiTalmudic'},
+  {key:'miluiTalmudicOrdinal',cat:'ops',name:'מילוי תלמודי סדרי / Hebrew Spelled-In-Full-Ordinal',custom:'miluiTalmudicOrdinal'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים',custom:'miluiMayim',research:true},
   {key:'miluiLegacy',cat:'ops',name:'מילוי אלפין (ואו)',custom:'miluiLegacy'},
   {key:'miluiPelia',cat:'ops',name:'מילוי פליאה',custom:'miluiPelia'},
@@ -862,6 +863,7 @@ function methodVisualFamily(method){
 }
 const CAT_LABELS={base:'בסיס',cipher:'תמורות אותיות',ops:'אופרטורים',power:'כוח בית'};
 const METHOD_EN_NAMES={
+ miluiTalmudicOrdinal:'Hebrew Spelled-In-Full · Ordinal (Talmudic Tav=תו)',
  greekMiluiStandard:'Greek Spelled-In-Full · Standard',greekMiluiOrdinal:'Greek Spelled-In-Full · Ordinal',greekMilui2Standard:'Greek Double Letter-Name Expansion · Standard',greekMilui2Ordinal:'Greek Double Letter-Name Expansion · Ordinal',
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
@@ -938,14 +940,14 @@ function methodUiName(m){
 function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()==='en'?({base:'Base',cipher:small?'Ciphers':'Letter Ciphers',ops:'Operators',power:'HomePower'}[c]||c):(c==='cipher'&&small?'תמורות':CAT_LABELS[c]||c)}
 
 
-function calculateMilui(text,profile='standard',depth=1,methodKey='milui'){
+function calculateMilui(text,profile='standard',depth=1,methodKey='milui',scoreMap=HE_VAL){
  const names=profile==='genesis74'?MILUI_NAMES_GENESIS74:profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='vavTu'?MILUI_NAMES_VAV_TU:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
   for(const ch0 of Array.from(raw)){
    const name=expandMiluiName(ch0,names,depth);if(!name)continue;
-   const v=sum(tokensForWord(name,'he',HE_VAL).map(x=>x.value));parts.push({letter:ch0,name,value:v});subtotal+=v;
+   const v=sum(tokensForWord(name,'he',scoreMap).map(x=>x.value));parts.push({letter:ch0,name,value:v});subtotal+=v;
   }
   if(parts.length){words.push({raw,parts,subtotal});total+=subtotal}
  }
@@ -1114,6 +1116,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserSimple')return calculateLatinMiluiUser(text,'simple','latinMiluiUserSimple');
  if(m.custom==='latinMiluiUserReduced')return calculateLatinMiluiUser(text,'reduced','latinMiluiUserReduced');
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
+ if(m.custom==='miluiTalmudicOrdinal')return calculateMilui(text,'talmudic',1,'miluiTalmudicOrdinal',HE_ORD);
  if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='miluiLegacy')return calculateMilui(text,'alfin',1,'miluiLegacy');if(m.custom==='miluiPelia')return calculateMilui(text,'pelia',1,'miluiPelia');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
@@ -1153,6 +1156,7 @@ function queueDeferredOperator(key){
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+ 'he:miluiTalmudicOrdinal':{plain:'מילוי תלמודי סדרי · Spelled-In-Full-Ordinal',original:'Tav=תו · alphabetic expansion ordinal',status:'modern',history:'שיטת מילוי האותיות המוצגת במחקר 37×73: ו→ויו, ת→תו, וסכימת אותיות השמות במיקום 1–22. בראשית א:א=814=22×37, לעומת 5476 במילוי הרגיל המקביל. שיטה נפרדת מהגימטריה הסדרית ללא מילוי.',formula:'הרחב כל אות לשמה התלמודי (ת→תו), ואז חשב לפי א1…ת22. בראשית א:א=814.'},
  'el:greekMiluiStandard':{plain:'מילוי יווני רגיל · Spelled-In-Full',original:'24 Greek letter names + standard isopsephy',status:'modern',history:'כל אות יוונית מוחלפת בשם היווני המלא. מודל 24 אותיות עם יוטה תחתית נספרת כתוספת Ι. נבדק מול John 1:1=22100, Genesis LXX 1:1=21190, וחלקי יוחנן 7033+15067. טבלת שמות האותיות מוצגת ב־greek-milui.html.',formula:'Α→ΑΛΦΑ=532; Ι→ΙΩΤΑ=1111; Σ ערכי האותיות הממולאות לפי איזופספיה.'},
  'el:greekMiluiOrdinal':{plain:'מילוי יווני סדרי · Spelled-In-Full-Ordinal',original:'24 Greek letter names + modern 1…24 ordinal',status:'modern',history:'אותם שמות יווניים אבל ניקוד לפי מיקום באלפבית 1–24. עבור יוחנן א:א מתקבל 2709. נתון המקור 2704 אינו משוחזר במיפוי הזה; ההפרש 5 מוצג בגלוי. אין להתאים מיפוי ללא מקור.',formula:'Α→ΑΛΦΑ=34; Ι→ΙΩΤΑ=53; יוחנן א:א=2709 לפי רשימת השמות המחייבת.'},
  'el:greekMilui2Standard':{plain:'מילוי דמילוי יווני רגיל',original:'Recursive 2-step Greek letter names + isopsephy',status:'modern',history:'מיישמים את אותה החלפה יוונית פעמיים על כל אות בטקסט ואז מסכמים בערכי איזופספיה רגילה. הרחבה מחקרית מפורשת, בנפרד ממילוי חד־שלבי של המחבר.',formula:'Α → ΑΛΦΑ → שמות כל אחת מאותיות ΑΛΦΑ → סכום רגיל.'},
