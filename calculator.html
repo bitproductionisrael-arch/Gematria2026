@@ -361,6 +361,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
       <button id="copyAllMath" class="iconbtn math-magnet" title="העתק את כל השיטות + פירוקים ותכונות מתמטיות">🧲∑</button>
       <button id="saveView" class="iconbtn" title="צלם בחירה פעילה / טאב">📸</button>
       <button id="openMethodBook" class="iconbtn" title="ספר השיטות · שמות, מקור ואלגוריתם">📖</button>
+      <a class="iconbtn" href="./greek-milui.html" title="מילוי יווני — השוואת יוחנן ובראשית, 24 שמות אותיות" aria-label="מילוי יווני">Ελ</a>
     </div>
   </header>
 
@@ -525,6 +526,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 
   <div id="toast" class="toast" aria-live="polite"></div>
 </div>
+<script src="./greek-letter-milui.js?v=20261118a"></script>
 <script>
 'use strict';
 
@@ -763,6 +765,10 @@ const METHODS={
  ],
  el:[
   {key:'isopsephy',cat:'base',name:'Greek Isopsephy',map:GR_VAL},
+  {key:'greekMiluiStandard',cat:'ops',name:'Greek Spelled-In-Full / מילוי יווני רגיל',custom:'greekMiluiStandard'},
+  {key:'greekMiluiOrdinal',cat:'ops',name:'Greek Spelled-In-Full-Ordinal / מילוי יווני סדרי',custom:'greekMiluiOrdinal'},
+  {key:'greekMilui2Standard',cat:'ops',name:'Greek Double Full / מילוי דמילוי יווני רגיל',custom:'greekMilui2Standard',research:true},
+  {key:'greekMilui2Ordinal',cat:'ops',name:'Greek Double Full Ordinal / מילוי דמילוי יווני סדרי',custom:'greekMilui2Ordinal',research:true},
   {key:'reduced',cat:'base',name:'Greek Small',map:GR_VAL_RED},
   {key:'wordReduced',cat:'base',name:'Greek Reduced',map:GR_VAL,fold:'word',research:true},
    {key:'digitReduced',cat:'base',name:'Greek Digit Reduced',map:GR_VAL_RED,fold:'total',research:true},
@@ -856,6 +862,7 @@ function methodVisualFamily(method){
 }
 const CAT_LABELS={base:'בסיס',cipher:'תמורות אותיות',ops:'אופרטורים',power:'כוח בית'};
 const METHOD_EN_NAMES={
+ greekMiluiStandard:'Greek Spelled-In-Full · Standard',greekMiluiOrdinal:'Greek Spelled-In-Full · Ordinal',greekMilui2Standard:'Greek Double Letter-Name Expansion · Standard',greekMilui2Ordinal:'Greek Double Letter-Name Expansion · Ordinal',
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
  regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Small',
@@ -1092,6 +1099,13 @@ function bigIntGcd(a,b){
  return a||1n;
 }
 function calculate(text,script,m){
+ if(['greekMiluiStandard','greekMiluiOrdinal','greekMilui2Standard','greekMilui2Ordinal'].includes(m.custom)){
+  if(!window.RovGreekMilui)throw new Error('Greek letter-name engine not loaded');
+  const ordinal=m.custom.endsWith('Ordinal'),depth=m.custom.startsWith('greekMilui2')?2:1;
+  const mode=ordinal?'fullOrdinal':'fullStandard';
+  const expanded=window.RovGreekMilui.calculate(text,mode,depth);
+  return {...expanded,method:m,milui:true,greekMilui:true,miluiDepth:depth,miluiProfile:expanded.profile};
+ }
  if(m.letterProduct)return calculateLetterProduct(text,script,m);
  if(m.letterDivision)return calculateLetterDivision(text,script,m);
  if(m.custom==='harmonicHalf')return calculateReductionResearch(text,m);
@@ -1139,6 +1153,10 @@ function queueDeferredOperator(key){
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+ 'el:greekMiluiStandard':{plain:'מילוי יווני רגיל · Spelled-In-Full',original:'24 Greek letter names + standard isopsephy',status:'modern',history:'כל אות יוונית מוחלפת בשם היווני המלא. מודל 24 אותיות עם יוטה תחתית נספרת כתוספת Ι. נבדק מול John 1:1=22100, Genesis LXX 1:1=21190, וחלקי יוחנן 7033+15067. טבלת שמות האותיות מוצגת ב־greek-milui.html.',formula:'Α→ΑΛΦΑ=532; Ι→ΙΩΤΑ=1111; Σ ערכי האותיות הממולאות לפי איזופספיה.'},
+ 'el:greekMiluiOrdinal':{plain:'מילוי יווני סדרי · Spelled-In-Full-Ordinal',original:'24 Greek letter names + modern 1…24 ordinal',status:'modern',history:'אותם שמות יווניים אבל ניקוד לפי מיקום באלפבית 1–24. עבור יוחנן א:א מתקבל 2709. נתון המקור 2704 אינו משוחזר במיפוי הזה; ההפרש 5 מוצג בגלוי. אין להתאים מיפוי ללא מקור.',formula:'Α→ΑΛΦΑ=34; Ι→ΙΩΤΑ=53; יוחנן א:א=2709 לפי רשימת השמות המחייבת.'},
+ 'el:greekMilui2Standard':{plain:'מילוי דמילוי יווני רגיל',original:'Recursive 2-step Greek letter names + isopsephy',status:'modern',history:'מיישמים את אותה החלפה יוונית פעמיים על כל אות בטקסט ואז מסכמים בערכי איזופספיה רגילה. הרחבה מחקרית מפורשת, בנפרד ממילוי חד־שלבי של המחבר.',formula:'Α → ΑΛΦΑ → שמות כל אחת מאותיות ΑΛΦΑ → סכום רגיל.'},
+ 'el:greekMilui2Ordinal':{plain:'מילוי דמילוי יווני סדרי',original:'Recursive 2-step Greek letter names + Greek ordinal 24',status:'modern',history:'מיישמים מילוי יווני פעמיים ומחשבים את האותיות שהתקבלו בסדרי 1–24. אין לבלבל עם 2704 המצוטט כמילוי חד־שלבי.',formula:'אות → שמה → שמות כל אותיות השם → סכום מיקומים 1–24.'},
   'he:miluiPelia':{plain:'מילוי פליאה',original:'ספר הפליאה · פרק ט׳ · 27 כתיבי אותיות',status:'traditional',history:'מילוי שמות האותיות לפי הרשימה המפורשת של 27 השמות בספר הפליאה, פרק ט׳: 22 אותיות יסוד וחמש סופיות. ג→גמל, ח→חת, ט→טת, פ→פה, ו→ואו, ת→תיו. הסופיות ך/ם/ן/ף/ץ נכתבות כמו אות הבסיס כ/מ/נ/פ/צ. שיטה עצמאית שאינה מחליפה את שאר המילויים.',formula:'מקור: ספר הפליאה/ט בוויקיטקסט. רשימת 27 השמות: אלף בית גמל דלת הא ואו זין חת טת יוד כף כף למד מם מם נון נון סמך עין פה פה צדי צדי קוף ריש שין תיו. ערך כל אות הוא סכום הגימטריה הרגילה של כתיב שמה.'},
   'he:miluiLegacy':{plain:'מילוי אלפין (ואו)',original:'Milui Alfin (Vav spelled ואו)',status:'mixed',history:'במחשבון: כמו המילוי הרגיל בכל האותיות, מלבד ו→ואו במקום ו→ויו. ת נשארת תיו, ה נשארת הא. בקבלה ו=ואו משתתפת בשמות ס״ג (עם ה=הי) ומ״ה (עם ה=הא); שם מ״ה במילוי אלפין הוא יוד הא ואו הא = 45. מילוי יודין מלא של יהוה הוא יוד הי ויו הי = 72, ולכן המילוי הרגיל באתר, יוד הא ויו הא = 54, אינו שם ע״ב. מקורות: מפתחי חכמת אמת כג, כללי התחלת החכמה ג:י.',formula:'אלפין(טקסט) = מילוי רגיל(טקסט) − 9 × מספר הופעות ו; יהוה=45; עמית מייק רוב=1887; בראשית א:א=5497.'},
   'he:milui':{plain:'מילוי רגיל',original:'RovGrid standard letter-name Milui · Tav=תיו',status:'modern',history:'ברירת המחדל המחקרית באתר: ו→ויו, ה→הא, ת→תיו, מ/ם→מם. בראשית א:א = 5506. זו אינה צורת יודין ע״ב (72) של יהוה, כי ה נכתבת הא ולא הי: יהוה כאן = 54. מילוי אלפין (ואו) משנה רק ו לואו, ולכן יהוה = 45.',formula:'בראשית א:א: 5506. תיו=416 לעומת תו=406, ובפסוק שלוש ת.'},
