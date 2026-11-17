@@ -1,5 +1,8 @@
 # RovGrid — Amit 520 literal scan in the same 900,000-decimal-digit window
 
+> **תיקון מחקרי, 17.11.2026:** הרצף `341` הוכנס לבדיקה מיוזמת העוזר, ללא בקשת המשתמש. הופעתו 913 פעמים היא ספירה טכנית במדגם, **לא** החיבור שהתבקש ל־913=בראשית, ואין להציג את `341→913` כממצא מרכזי או כהתאמה שהמשתמש הציע. עוגני הבדיקה הרלוונטיים בחלון הם `314` ו־`520`; `888` הוא ערך יעד לספירה, ו־`913` הוא ערך המילה בראשית. טבלאות היסטוריות עם 341 נשמרות כנתונים ארכיוניים בלבד.
+
+
 **Date:** 2026-11-17  
 **Scope:** Exactly the same nine constants and 100,000 digits after the decimal point per constant as in [the Shaddai 314 / 341 audit](rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md). First digit after the decimal point is position 1. Counts include overlapping occurrences.
 
