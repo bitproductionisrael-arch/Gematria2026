@@ -76,3 +76,24 @@ Extend the same nine constants by the same number of decimal places per constant
 Thus the **smallest common equal-length prefix** beyond the original 100,000-digit window that yields exactly **888** occurrences is **100,364 digits after the decimal point per constant**, or **903,276 digits total** across all nine constants. The count stays at **888** for any integer prefix length **100,364 through 100,420 inclusive**; at **100,421**, the next `520` occurrence finishes (in e, starting at 100,419) and the aggregate becomes **889**.
 
 The threshold requires complete 3-digit matches, not just the starting positions. The window was selected by scanning to the desired count; this is not an a-priori anomaly test. To independently reproduce, set `N=102000` in the Python code above, collect `pos+2` for every matching start position `pos` after the original window, and sort those endpoints across constants.
+
+## Companion totals in the selected 100,364-digit window
+
+All nine constants were recomputed at **exactly 100,364 decimal places each** (903,276 total decimal digits), retaining overlapping matches and excluding digits before the decimal point.
+
+| Constant | 314 | 341 | 520 |
+|---|---:|---:|---:|
+| π | 94 | 106 | 97 |
+| e | 110 | 105 | 103 |
+| φ | 87 | 101 | 98 |
+| √2 | 119 | 110 | 100 |
+| √3 | 81 | 100 | 98 |
+| √5 | 96 | 122 | 100 |
+| √37 | 109 | 94 | 94 |
+| √73 | 108 | 88 | 108 |
+| √888 | 86 | 92 | 90 |
+| **Total** | **890** | **918** | **888** |
+
+Compared with the original 100,000-digit-per-constant sample, the added counts are **314:+2** (both in e), **341:+5** (π:+2, φ:+1, √5:+1, √37:+1) and **520:+5** (e:+1, √2:+3, √888:+1).
+
+**314 count vs 520 count in this window: 890−888=2.** The window was expressly selected because the 520 count reached 888; other pattern counts are outcomes under that post-selected window, not independent predetermined predictions.
