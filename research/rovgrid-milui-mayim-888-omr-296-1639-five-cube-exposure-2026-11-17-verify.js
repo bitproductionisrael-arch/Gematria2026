@@ -67,4 +67,22 @@ assert.equal(4**3-3**3,37);
 assert.equal(61+37,98);
 assert.equal(1+26+37+61,125);
 assert.equal(profiles.filter(p=>p.e2===888).length,1);
-console.log("PASS | Milui Mayim 888, AVGaD 296, AYAK 1639, OMR fillings 1072/2098/1306, π alphabet 23/64, all n=2..8 cube exposure, 5^3 125/98/61/37.");
+// General exact correspondence: filled six-pointed star S(n)=2*increment of cubes-1.
+const tri=k=>k*(k+1)/2;
+const delta=n=>n**3-(n-1)**3;
+const star=n=>6*n*(n-1)+1;
+for(let n=1;n<=100;n++){
+ assert.equal(delta(n),1+6*tri(n-1));
+ assert.equal(star(n),1+12*tri(n-1));
+ assert.equal(star(n),2*delta(n)-1);
+ if(n<100){assert.equal(delta(n+1)-delta(n),6*n);assert.equal(star(n+1)-star(n),12*n)}
+}
+assert.deepEqual([1,2,3,4,5].map(delta),[1,7,19,37,61]);
+assert.equal(delta(4),star(3)); // unique positive coincidence for S(n)=delta(n+1)
+assert.equal(star(4),73);
+assert.equal(star(5),121);
+assert.equal(star(5)-star(4),48);
+assert.equal(delta(5)-delta(4),24);
+assert.equal(delta(4)*star(4),2701);
+assert.equal([1,2,3,4,5,6,7,8,9,10].filter(n=>star(n)===delta(n+1)).join(","),"3");
+console.log("PASS | Milui Mayim 888, AVGaD 296, AYAK 1639, OMR fillings 1072/2098/1306, π alphabet 23/64, all n=2..8 cube exposure, 5^3 125/98/61/37; S(n)=2 delta(n)-1; 37*73=2701; 24->48.");
