@@ -37,4 +37,20 @@ assert.equal(888+136,1024);
 assert.equal(52**2,2704);
 assert.equal(52**2-3,37*73);
 assert.equal(24*37,888);
+
+const q26=[1,12,13],q65=Array.from({length:10},(_,i)=>i+2),q260=Array.from({length:13},(_,i)=>i+14);
+assert.deepEqual([sum(q26),sum(q65),sum(q260)],[26,65,260]);
+assert.deepEqual([...q26,...q65,...q260].sort((a,b)=>a-b),codes);
+assert.equal(sum([26,65,260,260,65,26]),702);
+assert.equal((26+65+260)/27,13);
+assert.equal((2*(26+65+260))/54,13);
+assert.deepEqual([26+26,65+65,260+260],[52,130,520]);
+assert.equal(26+65,91);
+assert.equal(2*91,182);
+assert.equal(2*10*26,520);
+for(let n=1;n<100;n++){
+ const sumOfMirrored=n*(n+1);
+ assert.equal(sumOfMirrored/(2*n+2),n/2);
+}
+
 console.log('PASS: all mirrored-alphabet, gematria, cuboid, and closure assertions');
