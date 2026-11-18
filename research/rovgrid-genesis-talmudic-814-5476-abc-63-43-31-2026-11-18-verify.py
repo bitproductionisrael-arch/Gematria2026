@@ -89,6 +89,16 @@ assert (pr,ps)==(72000,72)
 assert pr//ps==1000
 assert sum((len(w)+1)*gem(w,R) for w in W)//2==7200
 
+assert gem(''.join(W[:3]),R)==1202
+assert gem(''.join(W[3:]),R)==1499
+assert sum(sf(w,M,R) for w in ['הכל','אלהים'])==471
+assert sum(sf(w,M,O) for w in ['הכל','אלהים'])==174
+assert 1499-1202==471-174==297
+assert 1202+471==1499+174==1673
+assert gem('הכל אלהים',R)==141
+assert sum(redlatin(L[n(c)]) for c in 'הכלאלהים')==111
+assert sum(O[A[(A.index(n(c))+11)%22]] for c in 'הכלאלהים')==91
+
 # Post-hoc permutation diagnostic; no claim of a calibrated statistical p-value.
 random=Random(888)
 chars=list(''.join(W))
