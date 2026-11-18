@@ -95,4 +95,12 @@ assert.equal(D_build('ALM')+D_build('MLA'),4*26);
 assert.equal(D_build('BCDEFGHIJK')+D_build('KJIHGFEDCB'),11*65);
 assert.equal(D_build('NOPQRSTUVWXYZ')+D_build('ZYXWVUTSRQPON'),14*260);
 
+
+assert.equal(D_seq.reduce((a,s)=>a+D_sum(s,D_funcs.simple),0),702);
+assert.equal(D_seq.reduce((a,s)=>a+D_sum(s,D_funcs.pi),0),252);
+assert.equal(702-252,450);
+assert.equal(520+(702-252)+54,1024);
+assert.equal(1024-136,888);
+assert.equal(520,10*52);
+
 console.log('PASS: all mirrored-alphabet, gematria, cuboid, and closure assertions');
