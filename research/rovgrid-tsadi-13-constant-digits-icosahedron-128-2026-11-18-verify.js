@@ -38,6 +38,8 @@ check(3*296===888 && 296===8*37,"296");
 function gcd(a,b){while(b) [a,b]=[b,a%b];return a;}
 function phi(n){let count=0;for(let i=1;i<=n;i++) if(gcd(i,n)===1) count++;return count;}
 check(phi(296)===144 && 8*18===144 && 16*9===144,"totient 296");
+check(phi(888)===288 && phi(2701)===2592,"totients 888 and 2701");
+check(phi(2701)===18*phi(296) && phi(2701)===9*phi(888),"Tsadi ordinal 18 and reduced 9 bridge");
 const f=(1+Math.sqrt(5))/2;
 const points=[];
 for (const s of [-1,1]) for (const t of [-1,1]) points.push([0,s,t*f]);
