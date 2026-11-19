@@ -749,6 +749,7 @@ const METHODS={
   {key:'miluiMayim',cat:'ops',name:'מילוי מים',custom:'miluiMayim',research:true},
   {key:'miluiHaiViu',cat:'cipher',name:'מילוי האי ויו · יהוה 74 (מחקרי)',custom:'miluiHaiViu',research:true},
   {key:'miluiHaiVaiu',cat:'cipher',name:'מילוי האי ואיו · יהוה 75 (מחקרי)',custom:'miluiHaiVaiu',research:true},
+  {key:'miluiHaiViu2',cat:'cipher',name:'מילוי דמילוי ע״ד · 74 (מחקרי)',custom:'miluiHaiViu2',research:true},
   {key:'miluiLegacy',cat:'ops',name:'מילוי אלפין (ואו)',custom:'miluiLegacy'},
   {key:'miluiPelia',cat:'ops',name:'מילוי פליאה',custom:'miluiPelia'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
@@ -1124,7 +1125,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
  if(m.custom==='miluiOrdinal')return calculateMilui(text,'standard',1,'miluiOrdinal',HE_ORD);
  if(m.custom==='miluiTalmudicOrdinal')return calculateMilui(text,'talmudic',1,'miluiTalmudicOrdinal',HE_ORD);
- if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='miluiLegacy')return calculateMilui(text,'alfin',1,'miluiLegacy');if(m.custom==='miluiPelia')return calculateMilui(text,'pelia',1,'miluiPelia');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');if(m.custom==='miluiHaiViu')return calculateMilui(text,'haiViu',1,'miluiHaiViu');if(m.custom==='miluiHaiVaiu')return calculateMilui(text,'haiVaiu',1,'miluiHaiVaiu');
+ if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='miluiLegacy')return calculateMilui(text,'alfin',1,'miluiLegacy');if(m.custom==='miluiPelia')return calculateMilui(text,'pelia',1,'miluiPelia');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');if(m.custom==='miluiHaiViu')return calculateMilui(text,'haiViu',1,'miluiHaiViu');if(m.custom==='miluiHaiVaiu')return calculateMilui(text,'haiVaiu',1,'miluiHaiVaiu');if(m.custom==='miluiHaiViu2')return calculateMilui(text,'haiViu',2,'miluiHaiViu2');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
   const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
