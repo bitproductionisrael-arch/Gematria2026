@@ -78,6 +78,38 @@ See existing face polynomial (1+8x)(1+20x)(1+26x)=1+54x+888x²+4160x³ for indep
 
 Verification status: letter arithmetic checked, exact equalities checked, symbolic mappings are method-specific; 'Composite #...' and figurate labels from calculator not promoted without separate validation.
 
+## 3B. New phrase — אלהים אלהים עמית עמית ישו (19.11.2026)
+Fixed spelling: 5+5+4+4+3=**21 letters**. Do not confuse with 11-letter full personal name.
+
+### P / Direct arithmetic, all letter values supplied
+Regular: 2×86+2×520+316=**1528** =1212+316; ישו=י10+ש300+ו6=316. Factor 1528=8×191; φ(1528)=760.
+Word-length weighted regular: 2×(5×86)+2×(4×520)+3×316=860+4160+948=**5968** =5020+948. Factor 5968=16×373.
+Word-length weighted small: אלהים=14 small, עמית=16 small, ישו=10 small; 2×5×14+2×4×16+3×10=140+128+30=**298**.
+Atbash regular: אלהים→תכצמי=560 (400+20+90+40+10); עמית→זימא=58 (7+10+40+1); ישו→מבפ=122 (40+2+80). 2×560+2×58+122=**1358**. 1358=2×7×97.
+
+### P / User-provided positional constant-digit alphabet, verify by component totals
+π: אלהים 1+9+9+5+7=31; עמית 2+7+5+6=20; ישו 5+2+2=9. 2×31+2×20+9=**111**.
+φ: אלהים 6+9+3+7+8=33; עמית 8+8+7+5=28; ישו 7+4+3=14. 2×33+2×28+14=**136**.
+Golden angle mod9: אלהים 4+0+9+2+9=24; עמית 3+9+2+7=21; ישו 2+8+4=14; 2×24+2×21+14=**104**.
+e: אלהים 7+9+8+4+0=28; עמית 2+0+4+2=8; ישו 4+0+1=5; 2×28+2×8+5=**77**.
+√73: אלהים 5+7+0+3+5=20; עמית 1+5+3+6=15; ישו 3+1+3=7; 2×20+2×15+7=**77**.
+Digit sequence labeled '1' (as provided, precise underlying constant ID pending): אלהים 0+6+9+1+9=25; עמית 3+9+1+8=21; ישו 1+9+8=18; 2×25+2×21+18=**110**.
+
+### R / Independent corroborating numerical anchors (not independent probabilities)
+111=אלף (Hebrew regular) = Amit M Rov (English Simple)=3×37; phrase π method yields 111.
+136=Amit Mike Rov (English Simple)=קול (Hebrew regular)=T16; phrase φ method yields136. Component structure **2×33+2×28+14=136** (33=small full name; 28=Rov ordinal; 14=דוד regular) is a secondary interpretive bridge, not the way the φ weights were chosen.
+104=4×26=2×52 (יהוה regular=26, בן regular=52). Phrase golden-angle method yields104.
+110=2×55, 55=ROV English Simple; also ישו ordinal37+הנוצרי ordinal73=110 (check different terms and explicit methods). Constant-digit '1' requires its exact identification before claiming more.
+77=e and √73 are numerically coincident on this phrase but derive from different digit mappings; show both tables and note method dependence.
+298=2×149; φ(298)=148=4×37, an exact totient fact and secondary bridge.
+5968 = 860 + 4160 + 948; 860=יהוה אלהים (Atbash regular) independently, 4160=8×20×26 (defined cuboid product); 948=3×316=word-length weight of ישו. No new geometry needed.
+Do **not** promote calculator corpus labels "8×בראשית" for 5968 or 104 as stand-alone claims: 5968/8=746 and 104/8=13, while בראשית regular=913. These require precise definitions before inclusion.
+
+### S / General operator formula and scope
+For an additive letter-valued v, word-length weighted sum of phrase with words אלהים, אלהים, עמית, עמית, ישו is W=2×5×v(אלהים)+2×4×v(עמית)+3×v(ישו).
+When v=regular, W=10×86+8×520+3×316=5968. The first two weighted parts coincide respectively with יהוה אלהים Atbash regular (860) and the specific cuboid volume (4160). The final 948 is independently the weighted ישו.
+For any repeated 2A 2B C with word lengths a,b,c: W=2a v(A)+2b v(B)+c v(C). This is general algebra; equalities with 860,4160 depend on A/B spelling, their values, and predefined model. Not a demonstration of scriptural intention.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
