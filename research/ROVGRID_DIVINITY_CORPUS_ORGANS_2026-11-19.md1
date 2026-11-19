@@ -343,6 +343,16 @@ Separate three operations: (a) standard millui letter expansion, (b) a chosen ad
 Strong reproducible rule: for every fixed expanded letter sequence, ordinal vs small differ by letterwise mapping and the totals 512 vs 152 are independently verified. Digit reversal is contingent on this particular phrase, not a property of arbitrary expanded strings.
 The number 46 is expanded letters, not original letter count; 11 is expanded letters of הארץ, not original 4-letter length.
 
+## 3I. 2026-11-19 — אלהים standard filling ordinal = 111, 13 letters
+Exact string: אלף למד הא יוד מם.
+Expanded letter count: 3+3+2+3+2=**13**. This is not the 5-letter original, and the 13 is a *count*, compared symbolically to אחד regular 13.
+Ordinal by token: אלף=(1+12+17)=30; למד=(12+13+4)=29; הא=(5+1)=6; יוד=(10+6+4)=20; מם=(13+13)=26. **30+29+6+20+26=111**.
+Regular values of tokens 111+74+6+20+80=291 (note 111 regular of token אלף, distinct from whole phrase's ordinal 111).
+P: 111=אלף regular, under distinct methods; 111=3×37, יחידה=37 regular and Genesis 2701=37×73.
+R: 888=8×111 and 999=9×111; previously verified as expansions of names and בראשית אלהים regular respectively. Use explicit method labels.
+S: the 111 is the *same-method ordinal-milui component* in four-word בראשית ברא אלהים את, whose total ordinal filling is 512. Other three words collectively contribute **401=512−111**. Structural decomposition of additive valuation; unlike cross-method equality it does not switch operators.
+Source-based caveat: מילוי standard uses הא rather than הה, מם rather than מימ, etc. Any spelling change requires recomputation.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
