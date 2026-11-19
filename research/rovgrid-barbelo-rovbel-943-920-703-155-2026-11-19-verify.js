@@ -28,4 +28,10 @@ assert(greek-240===703&&heb("ואת הארץ",regular)===703,"Genesis suffix tri
 assert(943===41*23&&920===40*23,"consecutive multiples 23");
 assert(703===37*38/2&&943===703+240,"triangular T37");
 assert(55-23===32&&heb("בל",regular)===32,"new suffix בל");
+assert(heb("חיה",regular)===23,"חיה=23");
+assert(heb("אם",regular)===41&&heb("מ",regular)===40,"אם=41, מ=40");
+assert(heb("לב",regular)===32&&heb("בל",regular)===32,"לב/בל=32");
+assert(920===23*40&&943===23*41&&943-920===23,"adjacent 23-multiples");
+assert(888+32+23===943&&55===32+23,"55=32+23");
+assert(Number(String(32).split("").reverse().join(""))===23,"decimal digit reversal 32↔23");
 console.log(JSON.stringify({PASS:true,barbeloGreek:greek,barbeloHebrew:a,rovbelHebrew:b,originalHebrew:888,newHebrew:920,newHebrewOrdinal:155,newEnglishSimple:155,newEnglishSmall:65,greekMinusHebrewName:23,greekMinusHebrewBarbelo:703,genesisTail:703},null,2));
