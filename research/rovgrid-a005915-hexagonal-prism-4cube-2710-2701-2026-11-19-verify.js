@@ -40,6 +40,10 @@ for(const [n,v] of Object.entries(anchors))assert(glued(+n)===v,"g(n) anchors "+
 assert(glued(9)-glued(8)===27*28,"27x28 growth at genesis step");
 const b005917=n=>n**4-(n-1)**4;
 assert(b005917(5)===369,"rhombic dodecahedral 369");
+for(let n=0;n<100;n++)assert(b005917(n+1)-A005915(n)===n**3,"cube bridge A005917(n+1)-A005915(n)=n^3 for n="+n);
+assert(b005917(5)===A005915(4)+4**3,"369=305+64");
+assert(b005917(10)===A005915(9)+9**3,"3439=2710+729");
+
 assert((10**3-9**3)*b005917(5)===10**5-1,"3D 4D shell product 99999");
 const hex=k=>k*(2*k-1);
 assert(hex(37)===glued(9)&&hex(49)===glued(11),"g(n) hexagonal intersections");
