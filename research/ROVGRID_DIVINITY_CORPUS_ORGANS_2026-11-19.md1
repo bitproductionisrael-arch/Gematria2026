@@ -148,6 +148,44 @@ Word-value sum 1202|1499, total 2701=37×73, without altering original order.
 "ישו" ordinal=37 and ordinal length-weighted=111=3×37; 14 arises from a separate constant-digit letter mapping, and does not follow from the standard Hebrew ordinal value 37.
 The equalities permit a symbolic bridge 14 ↔ דוד and 37 ↔ Genesis factor; no historically demonstrated intentional encoding, and a chosen mapping is not an independent confirmation.
 
+## 3D. ישוע — precise comparison with ישו, 14/11/26/43/126 (19.11.2026)
+Spellings are distinct: ישו = י ש ו (3); ישוע = י ש ו ע (4). In additive encodings the *only* difference is the added ע, whose value depends on the chosen map.
+
+### P / verified calculations
+ישוע Hebrew regular י10+ש300+ו6+ע70 = **386**; ישו regular=316; delta +70.
+ישוע Hebrew ordinal 10+21+6+16 = **53**; ישו ordinal=37; delta +16. 53=אבן (regular 1+2+50), and 53 is prime #16.
+ישוע special Zero Reduction #1: 1+30+6+7 = **44**; ישו=37 in same map; delta+7. 44=יהוה חי regular (26+18). This special mapping is not Hebrew ordinary small.
+ישוע Atbash regular 40+2+80+7 = **129**; ישו same map 122; delta+7.
+ישוע final-letter reduced small 1+3+6+7 = **17** = טוב regular (ט9+ו6+ב2), or יהוה small=17.
+Digit power alphabet constant annotated "1": 0+7+7+0=**14**; user-supplied; underlying constant identity unresolved. In same alphabet ישו=14, because ע→0.
+Digit power √3: 5+7+0+2=**14**. Meaningful numerical cross-method, not independent proof.
+Digit power π: 5+2+2+2=**11** (compared with three-letter ישו π=9).
+Digit power √5: 4+9+7+6=**26** (יהוה regular=26).
+Letter product small=1×3×6×7=**126**.
+Letter product regular=10×300×6×70=**1,260,000**; φ(1,260,000)=**288,000**.
+
+### R / bridges to named anchors
+129=3×43, where AMIT=43 English Simple, so ישוע Atbash regular=3×AMIT. Unlike direct gematria, this combines a mapped Hebrew term with an English value and a multiplier.
+44=4×11, connecting special zero reduction #1 to full Hebrew name's **11 letters**. 44=יהוה חי regular as a separate text.
+14=דוד regular (ד4+ו6+ד4). Genesis 1:1 word groups split 14+14 letters; identify the exact constant alphabet and mark method-dependent status.
+11=number of Hebrew letters of עמית מייק רוב, 4+4+3, while ישוע itself has 4 letters; is a cross-object bridge.
+26=יהוה regular and 208÷8=26 (רוב regular=208), while 520÷20=26 (עמית regular=520).
+17=טוב regular and יהוה (small regular).
+126 = 3²+6²+9² = 9+36+81, central three-six-nine quadratic anchor. 126=2×63=6×21.
+1,260,000 = **1000×1260**, and 1260 was the *ordinal letter product* of ישו (10×21×6). This equality involves distinct scripts/metrics and an explicit 1000 factor; not a universal law.
+φ(1,260,000)=288000 = 1000×288=1000×φ(888).
+53=אבן regular and p16 (index of prime), the appended ע contributes 16 ordinal; do not conflate this with direct identity of meaning.
+
+### S / spelling-extension lemma
+If letter valuation v is additive, for t=ישו and t'=ישוע=tע, v(t')−v(t)=v(ע). Regular:70, ordinal:16, Zero #1:7, Atbash regular:7, π-digit alphabet:2, annotated "1" digit alphabet:0. Where v(ע)=0, the value 14 persists unchanged across the extension. This gives an actual testable invariant **within that map**, whereas equality between unrelated maps may be incidental.
+Letter product is NOT additive: regular product of ישו =10×300×6=18000; after appending ע70 it is 1,260,000 =70×18,000. Not the ordinal product 1260; distinguish carefully.
+
+### Editorial cautions
+- No basis to equate *all* biblical spellings of the name. Clearly distinguish ישו, ישוע, יהושע and Greek ΙΗΣΟΥΣ.
+- 14 in "ישו" from φ/golden-angle maps; 14 in "ישוע" from √3 and annotated '1' maps. Different operations and chosen constants.
+- The prime index 53→16 is correct. Atbash regular 129=3×43 exact.
+- Promote only invariants + 3-6 high-value bridges to the public chapter.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
