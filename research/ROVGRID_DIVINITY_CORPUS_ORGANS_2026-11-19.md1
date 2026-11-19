@@ -353,6 +353,21 @@ R: 888=8×111 and 999=9×111; previously verified as expansions of names and ב�
 S: the 111 is the *same-method ordinal-milui component* in four-word בראשית ברא אלהים את, whose total ordinal filling is 512. Other three words collectively contribute **401=512−111**. Structural decomposition of additive valuation; unlike cross-method equality it does not switch operators.
 Source-based caveat: מילוי standard uses הא rather than הה, מם rather than מימ, etc. Any spelling change requires recomputation.
 
+## 3J. 19.11.2026 — 10 visual sources + אחור / מילוי / ישראל
+Visual source catalogue: [ten original diagrams and file paths](ROVGRID_DIVINITY_VISUAL_SOURCE_REGISTER_2026-11-19.md). Original PNG files held in persistent Library path `/RovGrid/DivinityCorpus/VisualSources/2026-11-19/`; **not yet binary files in this GitHub repository**.
+Images 328982, 328983: Ratzo VaShov בראשית אלהים=148 (61 repeated letter appearances), ברא את השמים=110 (38 repeated letter appearances); totals 258 and 99. General theorem n² appearances and n×value.
+Image 328984: מילוי רגיל בקטן of בראשית=56 and אלהים=48; combined=104=4×26. Images 328992/328994/328996:
+אלהים ordinal=41, ordinal filling=111 (41+70); אחור סדרי=1+13+18+28+41=**101**=מיכאל regular; אחור קטן=1+4+9+10+14=**38**=MIKE (English Simple).
+Image 328998: עמית regular=520 and standard Hebrew filling עין מם יוד תיו has 11 expanded letters and small **43** (13+8+11+11)=AMIT English Simple. This is not ordinal value or ordinary small of original עמית.
+Image 329000: English Amit run-return small **64**=4×16 (base A1+M4+I9+T2=16).
+Images 329002 and 329005: ישראל single word regular=541 (100th prime; 10th centered star S10=541), ordinal=64. A full prefix+proper-suffix Ratzo gives 5×541=2705 and 5×64=320; repeating twice yields **5410 regular** and **640 ordinal**. Each original 5-letter word has 25 written letter appearances in run-return, both copies=50.
+New supplied claim: ישראל standard filling **1075**=5²×43; validate with explicit יוד20 + שין360 + ריש510 + אלף111 + למד74 =1075. The number 43 is AMIT English Simple (prime #14). Statement "all kinds of filling" is only supported for filling-variant lists where each of these five letter spellings is unchanged; avoid universal claim without enumeration of schemes.
+Additional direct connections:
+- ישראל ordinal64 = Amit run-return English small64; numerical cross-operator identity.
+- 101 (Elohim achorayim ordinal) +38 (Elohim achorayim small) +43 (Amit milui small)=**182**, equal to יעקב Hebrew regular 182=7×26. This is an explicitly constructed multi-operator remapping and not an independent canonical invariant.
+- 101 is 26th prime, 43 is 14th prime, 541 is 100th prime. These order statistics are true but their choice should not be represented as an inference of historical design.
+For visual fidelity do not redraw or change original PNG sources during archiving; source images remain accessible as original uploads in Library.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
