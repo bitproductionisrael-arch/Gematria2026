@@ -130,6 +130,11 @@ assert((heb("חיה")+heb("חוה"))/2===heb("אהיה"),"Haya Eve midpoint 21")
 for(const [s,v] of Object.entries({"AMEN":33,"BALBEL":34,"BARBELO":55,"MICHAEL":51,"MIKE":38,"ADAM":19,"EVE":32}))assert(simple(s)===v,"English Simple "+s);
 assert(simple("BARBELO")-simple("BALBEL")===heb("אהיה"),"Barbelo-Balbel 21");
 assert(simple("MICHAEL")-simple("MIKE")===heb("אחד"),"Michael-Mike 13");
+const BARBELO_GREEK=2+1+100+2+8+30+800; // ΒΑΡΒΗΛΩ
+const SOPHIA_GREEK=200+70+500+10+1; // ΣΟΦΙΑ
+assert(BARBELO_GREEK===943&&SOPHIA_GREEK===781,"same Greek isopsephy");
+assert(BARBELO_GREEK-SOPHIA_GREEK===3*6*9,"Barbelo-Sophia=162");
+assert(3*6*9===heb("קול")+heb("יהוה"),"162=136+26");
 assert(72*5===360 && 360+5===365 && 365===5*73,"72 pentads, 360+5 calendar, 5*73");
 assert(36+1===37 && 72+1===73 && 37*73===2701,"decans, half decans, added centers 2701");
 assert(2701-365===32*73,"Genesis difference from 365 = 32*73");
