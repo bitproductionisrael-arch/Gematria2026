@@ -46,6 +46,38 @@ S / basis from earlier exact corpus: Hebrew name 888 and English name 1024 / 136
 - אלהים אחד regular=99, ordinal=54; Hebrew ordinal square=520. Important: two-word phrase has 5+3=8 letters.
 - אלהים עמית regular=606, final=1166, zero #1=66, ALBaM=730, ALBaM ordinal=91, Reduced English Filling=121; 9 letters.
 
+## 3A. New source phrase: אלהים אלהים עמית עמית
+Date of intake: 2026-11-19. Fixed spelling = אלהים (5) + אלהים (5) + עמית (4) + עמית (4) = **18 letters**. Duplicate words are explicit, not a new 11-letter phrase.
+
+P / Hebrew Regular (גימטריה הכרחית):
+אלהים=1+30+5+10+40=86, עמית=70+40+10+400=520.
+2×86 + 2×520 = 2×606 = **1212**.
+Factorization 1212=2²×3×101=12×101; φ(1212)=400. 101=מיכאל (regular, 40+10+20+1+30) if used as a secondary cross-phrase identity.
+
+P / Special Hebrew Finals:
+final ם=600, hence אלהים=646, עמית=520. 2×646+2×520=2×1166=**2332**.
+2332−1212=1120=2×(600−40)=2×560. This difference is solely the two final ם conversions.
+2332=2²×11×53; φ(2332)=1040.
+
+P / Word-length weighted Hebrew Regular:
+Each אלהים word: length5 × value86 =430.
+Each עמית word: length4 × value520 =2080.
+2×430+2×2080=**5020**.
+5020=2²×5×251; φ(5020)=2000.
+
+R / Weighted identities with operator labels:
+5020 = 2×(5×86+4×520) = 10×86 + 8×520 = 860 + 4160.
+860 = 10×אלהים (regular), and separately יהוה אלהים (Atbash regular). These are two different mappings with the same numeric result.
+4160 = 8×עמית (regular) = 8×520; independently 8×20×26=4160 (cuboid volume).
+5020 = 860+4160 is mathematically exact and connects divinity Atbash identity to named-box product, but it is NOT a universal formula or proof of historical design.
+R / Each length-weighted עמית=2080 also equals LCM(160,208,520)=2080 of three name constituents (מייק160, רוב208, עמית520). Verify: lcm(160,208)=2080; 520 divides2080.
+R / φ(1212)=400 and φ(2332)=1040=2×520. φ(5020)=2000. Totients are independently computable consequences of factorization, not independent evidence.
+R / 1212=12×101: Hebrew מיכאל regular=101 (secondary); 12 is the ordinal of הוא=12 regular (ה5+ו6+א1) or simply factor 12, method must be explicit.
+S / Formal n-fold duplication lemma for any additive mapping v: v(WW)=2v(W). Here word-length-weighted W=אלהים עמית gives 430+2080=2510 and duplication gives 5020. The bridge to 860+4160 is specific to the fixed word lengths 5 and 4 and chosen name baselines (86,520). To classify as S, exhibit the transformation as a *derivation* with hypotheses; the basic duplication is P/R, not inherently S.
+See existing face polynomial (1+8x)(1+20x)(1+26x)=1+54x+888x²+4160x³ for independently defined geometric coefficient 4160.
+
+Verification status: letter arithmetic checked, exact equalities checked, symbolic mappings are method-specific; 'Composite #...' and figurate labels from calculator not promoted without separate validation.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
