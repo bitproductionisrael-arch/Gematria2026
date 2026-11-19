@@ -186,6 +186,57 @@ Letter product is NOT additive: regular product of ישו =10×300×6=18000; aft
 - The prime index 53→16 is correct. Atbash regular 129=3×43 exact.
 - Promote only invariants + 3-6 high-value bridges to the public chapter.
 
+## 3E. 2026-11-19 — ישועמית → ישועמיתאליהו → ישועמיתאליהואלף ↔ בראשית אלהים
+### Method and exact text integrity
+Use exact contiguous Hebrew strings, no silent insertion of א or boundaries.
+**ישועמית** letters: י ש ו ע מ י ת = 7 letters; regular=10+300+6+70+40+10+400=**836**. This is **ישוע + מית**, NOT ישוע + עמית: ישוע=386; מית=450; sum836. Full עמית=520; ישוע+עמית would be906. Also suffix **עמית** is NOT present as contiguous substring in ישועמית because there is no א before מ.
+**אליהו** regular=א1+ל30+י10+ה5+ו6=**52**; ordinal 1+12+10+5+6=**34**; 5 letters.
+**אלף** regular=א1+ל30+ף80=**111**, ordinal=1+12+17=**30**; 3 letters.
+Hence concat **ישועמיתאליהו** 7+5=12 letters: 836+52=**888** regular; ordinal 98+34=**132**; 132=4×33=2×66=11×12.
+Hence concat **ישועמיתאליהואלף** 7+5+3=15 letters: 888+111=**999** regular; ordinal 132+30=**162**.
+**בראשית אלהים** regular = בראשית 913 + אלהים 86 = **999**; ordinal=בראשית76+אלהים41=**117**; 6+5=11 letters. Explicit comparison of two separately encoded phrases with regular equality, not same spelling.
+888=24×37=8×111; 999=9×111=27×37; 999−888=111 and 999−(913+86)=0.
+"ישועמיתאליהו"=888 is numerical only, not evidence of religious identity of a person.
+
+### P / additional checked operator results
+- ישועמית ordinal=10+21+6+16+13+10+22=**98**.
+- ישועמית Atbash regular=40+2+80+7+10+40+1=**180**.
+- ישועמית small=1+3+6+7+4+1+4=**26** (יהוה regular=26).
+- ישועמית zero reduction #1=1+30+6+7+4+1+40=**89**, Fibonacci F11 (89).
+- ישועמית product small=1×3×6×7×4×1×4=**2016**; regular product=10×300×6×70×40×10×400=**201600000000**.
+- ישועמית building (sum of prefixes): 10+310+316+386+426+436+836=**2720**.
+- ישועמית position×regular sum: 10+600+18+280+200+60+2800=**3968**.
+- "תוספת ומגרעת": sum of all prefixes and all suffixes (full word counted twice) = **6688**.
+- "שווי" (fixed uniform factor 4 for all 7 letters in supplied engine) = **3344**.
+- ישועמיתאליהו Atbash ordinal=**144** (submitted letter mapping).
+- ישועמיתאליהואלף Atbash ordinal=**183**.
+- בראשית אלהים (Atbash ordinal)=**136** (verified by sums 62+74, where the second half's transformed sum is 74). Indeed ב21+ר3+א22+ש2+י13+ת1 =62; אלהים =ת22+כ11+צ18+מ13+י10 =74.
+- בראשית אלהים digit-power π=**55** (בראשית 24 + אלהים31); 11 Hebrew letters.
+- ישועמיתאליהו digit-power π=**55**; √5=**66**; Golden 9=**54**; √888=**61** (as supplied, sum matches).
+- ישועמיתאליהואלף digit-power √5=**86** (אלהים regular), √888=**73** (חכמה regular), Golden 9=**64**; underlying digit-series definitions should be preserved when independently audited.
+- בראשית אלהים reduced English filling=**144** (בראשית73+אלהים71).
+- בראשית אלהים small (zero #2)=**27**, ordinal=**117**, atbash ordinal=**136**; same method labels mandatory.
+
+### R / stronger cross-corpus bridges
+- 836=11×76, and 7-letter string counts and its factors must not be conflated with 11 letters of full name or "בראשית אלהים".
+- 2720=20×136, where 136 is English Simple "Amit Mike Rov", and also =10×272 (יהוה אלהים building earlier); this is a derived cross-expression bridge.
+- 3968=31×128, where 31=אל regular and 128=אני+בינה regular (61+67).
+- 2016=28×72=7×288, while 28 is Genesis 1:1 letter count, 72 is "יהוה" building, and 288=φ(888). These are exact arithmetic links with expressly chosen factors.
+- 6688=8×836, 3344=4×836, both follow directly from same underlying 7-letter input (not independent confirmations).
+- 3388 (kidmi of ישועמיתאליהו as reported) = 28×121; 121=11². Confirm exact independent letter-by-letter kidmi values before deeper symbolic use.
+- "בראשית אלהים" 999 regular equals extended 15-letter phrase 999 regular; 999=9×111, 888=8×111, yielding an adjacent-step scaled sequence.
+- "בראשית אלהים" Atbash ordinal136 and English full personal name Simple136 are cross-method numeric equalities; π-digit power=55 and English Small full name=55 (method-dependent).
+- 11 letters "בראשית אלהים" and 11 letters full name are a direct character count equality; both π=55 for Genesis phrase and user name English Small=55 are distinct method results.
+
+### S / proven structural identities (no historical inference)
+For a length-n sequence of letter weights a1,...,an with total S:
+Sum of *all nonempty prefixes* plus sum of *all nonempty suffixes* = (n+1)S.
+Reason: each a_i appears (n−i+1) times among prefixes and i times among suffixes; total n+1.
+For n=7 and S=836: 6688=(7+1)×836. This explains the calculated "תוספת ומגרעת" fully.
+"Balanced" uniform factor (n+1)/2 for odd n gives 4S=3344 for n=7. NOT a second independent law, but half of the prefix+suffix aggregate.
+Concatenation lemma for additive letter valuation v: v(ABC)=v(A)+v(B)+v(C). For A=ישועמית, B=אליהו, C=אלף: 836+52+111=999. Compare independently to v(בראשית אלהים)=913+86=999.
+Difference 999−888=111 is fixed by C=אלף. E.g. scaled forms 8×111→9×111; this is an exact chosen construction, not proof of authorial intent.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
