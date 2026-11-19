@@ -582,7 +582,10 @@ const MILUI_NAMES={...MILUI_NAMES_TALMUDIC,'ת':'תיו'};
 // Alfin is the standard 22-letter spelling with ONE substitution: ו→ואו instead of ו→ויו.
 // Independent written-form calculation: ו=ואו, ת=תו; current Milui Alfin uses ו=ואו, ת=תיו.
 const MILUI_NAMES_ALFIN={...MILUI_NAMES,'ו':'ואו'};
-const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ם':'מם'}; // Separate research profile preserved.
+const MILUI_NAMES_MAYIM={...MILUI_NAMES,'מ':'מים','ם':'מם'};
+// RovGrid-defined alphabet extensions of YHWH spellings, not historical full-alphabet ciphers.
+const MILUI_NAMES_HAI_VIU=Object.freeze({...MILUI_NAMES,'ה':'האי','ו':'ויו'}); // יהוה=74
+const MILUI_NAMES_HAI_VAIU=Object.freeze({...MILUI_NAMES,'ה':'האי','ו':'ואיו'}); // יהוה=75 // Separate research profile preserved.
 // Genesis 74² research comparison: preserve all standard fillings except ריש→רש (core/short Resh).
 // 3 Resh letters in Genesis 1:1 remove 3×10 from 5506 without changing ו=ויו or ת=תיו.
 const MILUI_NAMES_GENESIS74=Object.freeze({...MILUI_NAMES,'ר':'רש'});
@@ -744,6 +747,8 @@ const METHODS={
   {key:'miluiTalmudic',cat:'ops',name:'מילוי תלמודי',custom:'miluiTalmudic'},
   {key:'miluiTalmudicOrdinal',cat:'ops',name:'מילוי תלמודי סדרי / Hebrew Spelled-In-Full-Ordinal',custom:'miluiTalmudicOrdinal'},
   {key:'miluiMayim',cat:'ops',name:'מילוי מים',custom:'miluiMayim',research:true},
+  {key:'miluiHaiViu',cat:'ops',name:'מילוי האי ויו · יהוה 74 (מחקרי)',custom:'miluiHaiViu',research:true},
+  {key:'miluiHaiVaiu',cat:'ops',name:'מילוי האי ואיו · יהוה 75 (מחקרי)',custom:'miluiHaiVaiu',research:true},
   {key:'miluiLegacy',cat:'ops',name:'מילוי אלפין (ואו)',custom:'miluiLegacy'},
   {key:'miluiPelia',cat:'ops',name:'מילוי פליאה',custom:'miluiPelia'},
   {key:'milui2',cat:'ops',name:'מילוי דמילוי / Milui of Milui',custom:'milui2'},
@@ -942,7 +947,7 @@ function categoryUiName(c){const small=window.innerWidth<=480;return calcLang()=
 
 
 function calculateMilui(text,profile='standard',depth=1,methodKey='milui',scoreMap=HE_VAL){
- const names=profile==='genesis74'?MILUI_NAMES_GENESIS74:profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='vavTu'?MILUI_NAMES_VAV_TU:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:MILUI_NAMES;
+ const names=profile==='genesis74'?MILUI_NAMES_GENESIS74:profile==='pelia'?MILUI_NAMES_PELIA:profile==='alfin'?MILUI_NAMES_ALFIN:profile==='vavTu'?MILUI_NAMES_VAV_TU:profile==='talmudic'?MILUI_NAMES_TALMUDIC:profile==='mayim'?MILUI_NAMES_MAYIM:profile==='haiViu'?MILUI_NAMES_HAI_VIU:profile==='haiVaiu'?MILUI_NAMES_HAI_VAIU:MILUI_NAMES;
  const words=[];let total=0;
  for(const raw of wordsOf(text)){
   const parts=[];let subtotal=0;
@@ -1119,7 +1124,7 @@ function calculate(text,script,m){
  if(m.custom==='latinMiluiUserRegular')return calculateLatinMiluiUser(text,'regular','latinMiluiUserRegular');
  if(m.custom==='miluiOrdinal')return calculateMilui(text,'standard',1,'miluiOrdinal',HE_ORD);
  if(m.custom==='miluiTalmudicOrdinal')return calculateMilui(text,'talmudic',1,'miluiTalmudicOrdinal',HE_ORD);
- if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='miluiLegacy')return calculateMilui(text,'alfin',1,'miluiLegacy');if(m.custom==='miluiPelia')return calculateMilui(text,'pelia',1,'miluiPelia');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');
+ if(m.custom==='milui')return calculateMilui(text,'standard',1,'milui');if(m.custom==='miluiTalmudic')return calculateMilui(text,'talmudic',1,'miluiTalmudic');if(m.custom==='miluiLegacy')return calculateMilui(text,'alfin',1,'miluiLegacy');if(m.custom==='miluiPelia')return calculateMilui(text,'pelia',1,'miluiPelia');if(m.custom==='milui2')return calculateMilui(text,'standard',2,'milui2');if(m.custom==='miluiMayim')return calculateMilui(text,'mayim',1,'miluiMayim');if(m.custom==='miluiHaiViu')return calculateMilui(text,'haiViu',1,'miluiHaiViu');if(m.custom==='miluiHaiVaiu')return calculateMilui(text,'haiVaiu',1,'miluiHaiVaiu');
  const wordRows=[];let total=0;
  for(const raw of wordsOf(text)){
   const toks=tokensForWord(raw,script,m.map);if(!toks.length)continue;
