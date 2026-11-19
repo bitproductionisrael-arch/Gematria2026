@@ -7,6 +7,8 @@ const YHVH_MILUI_PELIA_SOURCE='https://he.wikisource.org/wiki/ספר_הפליא�
 const YHVH_MILUI_RESEARCH_SOURCE='https://github.com/bitproductionisrael-arch/Gematria2026/blob/main/research/yhvh-milui-gallery-2026-11-04.md';
 const YHVH_MILUI_GALLERY=[
  {id:'rov54',name:'מילוי רגיל · נ״ד',parts:['יוד','הא','ויו','הא'],source:'RovGrid · מילוי רגיל',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'בסיס רוב מחקרינו. לתפיסתנו, זהו המילוי המודרני שהאל מבקש להפיץ בעולם; הוא נפוץ בכלי גימטריה.'},
+ {id:'hai74',name:'מילוי האי ויו · 74',parts:['יוד','האי','ויו','האי'],source:'RovGrid · מחקר 19.11.2026',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'הרחבת 22 אותיות לפי המילוי הרגיל עם ה→האי; יהוה=74; עמית מייק רוב=1896.'},
+ {id:'hai75',name:'מילוי האי ואיו · 75',parts:['יוד','האי','ואיו','האי'],source:'RovGrid · מחקר 19.11.2026',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'הרחבת 22 אותיות לפי המילוי הרגיל עם ה→האי ו־ו→ואיו; יהוה=75; עמית מייק רוב=1897.'},
  {id:'rov54t',name:'מילוי תלמודי',parts:['יוד','הא','ויו','הא'],source:'RovGrid · נוסח תו',url:YHVH_MILUI_RESEARCH_SOURCE,kind:'site',note:'בראשית א׳:א = 5476 = (37+37)² = 74²; עד = 74 (נצח). באנגלית פשוטה: Gematria, Jewish, English, Simple, Messiah, Jesus, Netzah = 74.'},
  {id:'ab72',name:'ע״ב · מילוי יודין',parts:['יוד','הי','ויו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
  {id:'sag63',name:'ס״ג · מילוי מעורב',parts:['יוד','הי','ואו','הי'],source:'היכל הברכה, דברים',url:YHVH_MILUI_BOOK_SOURCE,kind:'traditional'},
@@ -33,7 +35,7 @@ function yhvhMiluiValues(def){
  return def.parts.map(yhvhMiluiLetterValue);
 }
 
-const YHVH_COMPARE_PROFILES={rov54:'standard',rov54t:'talmudic',rov54m:'mayim',rov45:'alfin',peliah45:'pelia'};
+const YHVH_COMPARE_PROFILES={hai74:'haiViu',hai75:'haiVaiu',rov54:'standard',rov54t:'talmudic',rov54m:'mayim',rov45:'alfin',peliah45:'pelia'};
 const YHVH_COMPARE_PRESETS=['יהוה','בראשית','בראשית ברא אלהים את השמים ואת הארץ','משיח','עמית מייק רוב','שמות'];
 let yhvhCompareText='יהוה';
 function yhvhCleanPhrase(value){
@@ -131,10 +133,10 @@ function renderYhvhMiluiTab(inputText=yhvhCompareText){
  if(count)count.textContent=YHVH_MILUI_GALLERY.length+' מילויים';
  const summary=document.getElementById('yhvhCompareSummary');
  if(summary){
-  if(phrase==='יהוה')summary.textContent='יהוה · 15 כרטיסים · ארבעת מילויי השם הקבליים ושיטות האתר';
+  if(phrase==='יהוה')summary.textContent='יהוה · 17 כרטיסים · ארבעת מילויי השם הקבליים ושיטות האתר';
   else{
    const vals=['standard','talmudic','mayim','alfin','pelia'].map(profile=>calculateMilui(phrase,profile).total);
-   summary.textContent=phrase+' · 5 שיטות מלאות · '+new Set(vals).size+' תוצאות מספריות שונות · 4 נוסחי יהוה בהרחבה מחקרית · 6 צירופים המוגדרים ליהוה בלבד';
+   summary.textContent=phrase+' · 7 שיטות מלאות כולל האי 74/75 · '+new Set([...vals,calculateMilui(phrase,'haiViu').total,calculateMilui(phrase,'haiVaiu').total]).size+' תוצאות מספריות שונות · 4 נוסחי יהוה בהרחבה מחקרית · 6 צירופים המוגדרים ליהוה בלבד';
   }
  }
 }
@@ -158,13 +160,13 @@ function bindYhvhMiluiComparison(){
  });
 }
 (function verifyYhvhMiluiGallery(){
- const expected=[54,54,72,63,45,52,45,54,45,63,63,54,54,53,53];
+ const expected=[54,74,75,54,72,63,45,52,45,54,45,63,63,54,54,53,53];
  const found=YHVH_MILUI_GALLERY.map(x=>sum(yhvhMiluiValues(x)));
- if(expected.join(',')!==found.join(',')||new Set(YHVH_MILUI_GALLERY.map(x=>x.id)).size!==15)throw new Error('YHWH gallery values/count mismatch: '+found);
+ if(expected.join(',')!==found.join(',')||new Set(YHVH_MILUI_GALLERY.map(x=>x.id)).size!==17)throw new Error('YHWH gallery values/count mismatch: '+found);
  if(YHVH_MILUI_GALLERY.some(x=>!x.url||!x.source||x.parts.length!==4))throw new Error('YHWH gallery source/four-letter invariant');
- if(YHVH_MILUI_GALLERY[0].id!=='rov54'||YHVH_MILUI_GALLERY[1].id!=='rov54t'||!YHVH_MILUI_GALLERY[0].note||!YHVH_MILUI_GALLERY[1].note)throw new Error('YHWH gallery study notes/order');
+ if(YHVH_MILUI_GALLERY[0].id!=='rov54'||YHVH_MILUI_GALLERY[3].id!=='rov54t'||!YHVH_MILUI_GALLERY[0].note||!YHVH_MILUI_GALLERY[3].note)throw new Error('YHWH gallery study notes/order');
  const byId=id=>sum(yhvhMiluiValues(YHVH_MILUI_GALLERY.find(x=>x.id===id)));
- for(const [id,profile] of [['rov54','standard'],['rov45','alfin'],['rov54t','talmudic'],['rov54m','mayim'],['peliah45','pelia']]){
+ for(const [id,profile] of [['hai74','haiViu'],['hai75','haiVaiu'],['rov54','standard'],['rov45','alfin'],['rov54t','talmudic'],['rov54m','mayim'],['peliah45','pelia']]){
   if(byId(id)!==calculateMilui('יהוה',profile).total)throw new Error('Calculator/profile mismatch: '+id);
  }
 })();
