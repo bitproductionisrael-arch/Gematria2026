@@ -110,6 +110,44 @@ For an additive letter-valued v, word-length weighted sum of phrase with words �
 When v=regular, W=10×86+8×520+3×316=5968. The first two weighted parts coincide respectively with יהוה אלהים Atbash regular (860) and the specific cuboid volume (4160). The final 948 is independently the weighted ישו.
 For any repeated 2A 2B C with word lengths a,b,c: W=2a v(A)+2b v(B)+c v(C). This is general algebra; equalities with 860,4160 depend on A/B spelling, their values, and predefined model. Not a demonstration of scriptural intention.
 
+## 3C. ישו — the 14+14 David/Genesis teaching bridge (19.11.2026)
+Fixed Hebrew spelling ישו (3 letters). This is the supplied spelling, not יהושע, ישוע, or Greek ΙΗΣΟΥΣ; keep their different mapping traditions distinct.
+
+### P / complete checked local arithmetic
+- Hebrew regular: י10+ש300+ו6 = **316**.
+- Ordinal: י10+ש21+ו6 = **37** (same as חכמה ordinal and יחידה regular; 37 prime #12).
+- Special Zero Reduction #1: י1+ש30+ו6 = **37**. This uses special ש=30, not normal small ש=3.
+- Word-length × ordinal: 3×37 = **111** = אלף regular (1+30+80).
+- Ordinal letter product: 10×21×6 = **1260**.
+- Atbash ordinal: י→מ13, ש→ב2, ו→פ17 -> **32**.
+- Atbash regular: 40+2+80 = **122** =2×61.
+- ALBaM ordinal: י→ש21, ש→י10, ו→פ17 -> **48**.
+- ALBaM regular: 300+10+80 = **390** =6×65.
+- Constant digit alphabet φ: י7+ש4+ו3 = **14**.
+- Constant digit alphabet Golden 9: י2+ש8+ו4 = **14**.
+- Constant digit alphabet annotated '1': י0+ש7+ו7 = **14**. Exact constant identifier still required; do not present as independent confirmed source.
+- φ(1260)=**288** = φ(888). Both verified by their prime factorizations 1260=2²×3²×5×7 and 888=2³×3×37.
+- 1260=**28×45** where 45=אדם (Hebrew regular: א1+ד4+ם40), and the full first Genesis verse has 28 letters; this is a derived bridge with independent operands.
+- 1260=**35×36**; 36=φ(37), a secondary exact relation (φ(37)=36), not evidence of design.
+
+### R / David, two halves of Genesis, and bridges
+Genesis 1:1 is exactly two 14-letter halves:
+"בראשית ברא אלהים" = 6+3+5 = **14 letters**; Hebrew regular=913+203+86=1202.
+"את השמים ואת הארץ" = 2+5+3+4 = **14 letters**; Hebrew regular=1499.
+Total 28 letters, regular 1202+1499=2701=37×73.
+"דוד" regular=4+6+4=**14**. Note "דויד" regular=24; this spelling distinction matters.
+"ישו" equals 14 *in the supplied φ / Golden 9 / annotated '1' digit alphabets only*; its regular value remains 316. The three representations may be correlated by method choice. Link as a pedagogic parallel rather than a proof that Jesus historically authored/encoded Genesis.
+Atbash ordinal 32, link to classical Sefer Yetzirah motif 32 paths of wisdom by number, but not claim canonical attribution from equality alone.
+ALBaM regular 390=6×65=6×אדני regular. Atbash regular 122=2×אני regular (61).
+Previous phrase "אלהים אלהים עמית עמית ישו": regular 1528=1212+316; weighted regular 5968=5020+(3×316)=5020+948, and weighted small 298=268+30. This preserves independent derivation of the new contribution.
+
+### S / exact 14+14 split and 37×73 with explicit limits
+Genesis word and letter segmentation is fixed by Masoretic spelling of Genesis 1:1:
+בראשית ברא אלהים | את השמים ואת הארץ = 14 | 14 letters.
+Word-value sum 1202|1499, total 2701=37×73, without altering original order.
+"ישו" ordinal=37 and ordinal length-weighted=111=3×37; 14 arises from a separate constant-digit letter mapping, and does not follow from the standard Hebrew ordinal value 37.
+The equalities permit a symbolic bridge 14 ↔ דוד and 37 ↔ Genesis factor; no historically demonstrated intentional encoding, and a chosen mapping is not an independent confirmation.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
