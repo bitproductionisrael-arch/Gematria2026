@@ -279,6 +279,40 @@ Hence 148=6×13+5×14 and 110=3×5+2×5+5×17.
 NOTICE earlier intuition of 37 first-group displayed letters is wrong: בראשית has 36; record correction and do not conflate 37 segment count overall with displayed letter count of one word.
 Therefore 258=6×13+5×14+3×5+2×5+5×17, while 99=6²+5²+3²+2²+5². This is a strong structural two-invariant theorem, not a numerical coincidence of individually guessed substrings.
 
+## 3G. 2701 spelled-out Ratzo VaShov × בראשית אלהים standard filling → 358/424/208/216 (2026-11-19)
+
+### Input and direct checks
+Written number: **אלפיים שבע מאות ואחד**, conventional Hebrew words 6+3+4+4=17 source letters. The user supplied Ratzo VaShov segment lists with four groups, including the whole form repeated in two groups; preserve exact segments rather than regenerating inferred spelling.
+1. אלפיים group: "א אל אלפ אלפי אלפיי אלפיים אלפיים לפיים פיים יים ים ם": **12 segments, 42 displayed letters, small finals=140**, ordinary digit small=126.
+2. שבע group: "ש שב שבע שבע בע ע": **6 segments, 12 displayed letters, small finals=48**.
+3. מאות group: "מ מא מאו מאות מאות אות ות ת": **8 segments, 20 displayed letters, small finals=75**.
+4. ואחד group: "ו וא ואח ואחד ואחד אחד חד ד": **8 segments, 20 displayed letters, small finals=95**.
+Totals **34 segments, 94 displayed letters, small finals=358**; under ordinary small (with ם=4 rather than special ם=6), total **344**. The 14 difference arises from 7 occurrences of final ם in the segment lists (check source: 7), and the specified final convention. Therefore 358 **depends on קטנה סופית and these precise segment lists**.
+משיח Hebrew regular=מ40+ש300+י10+ח8=**358**.
+בן דוד regular=בן52 + דוד14 = **66**.
+משיח בן דוד regular=358+66=**424**.
+
+Standard Hebrew filling of "בראשית אלהים" per source convention:
+בית(412) ריש(510) אלף(111) שין(360) יוד(20) תיו(416) אלף(111) למד(74) הא(6) יוד(20) מם(80).
+11 filled units, 31 expanded Hebrew letters, standard-filled regular=**2120**, standard-filled small=**104**, standard-filled small finals=**108** (the singular מם final ם and שין final ן shift totals by +2 each). Repeated twice:
+22 filled units, **62 expanded Hebrew letters**, regular=**4240**, ordinary small=**208**, small finals=**216**.
+Check exact arithmetic **2120=5×424**, **4240=10×424**.
+**104=4×26 =4×יהוה regular**.
+**208=2×104 = רוב regular** (ר200+ו6+ב2).
+**108=4×27**, **216=8×27 =6³**. 216 is cube 6³ and known alternative structures; no claim of universal coding.
+From the small/finals difference **216−208=8**, which is twice the single-expression difference 108−104=4.
+**424=2×208+8** is true, but reconstructed from two mappings, so mark as optional secondary bridge.
+**94** is count of repeated segment letters, not the source phrase's 17 letters.
+**31** is expanded standard filling letter count, not ordinal gematria, and also equals אל regular (א1+ל30=31) as a secondary bridge.
+**208 = רוב** and **424 = משיח בן דוד** are cross-method exact number matches. **אליהו** Hebrew regular52 and בן52, if using earlier anchor, but spelling meaning stays distinct.
+**358 vs 424**: 358+66=424; multiply by 5 gives 1790+330=2120. The 330 = English Gematria ROV (55×6) is a valid numerical cross-method relation: 5×66=330. However this is derived from multiplying 66 by5, not independent.
+
+### Layered teaching
+P: source values Ratzo=358 with small finals, standard filling 2120, doubled filling 4240, small doubled=208, small-final doubled=216.
+R: 358=משיח; 358+בן דוד66=424; 2120=5×424, 4240=10×424; 208=רוב; 104=4×יהוה; 31 source expansion letters=אל (regular).
+S: all fillings are additive under duplication: for any value map v, v(W W)=2v(W); relation 2120/104/108 and 4240/208/216 is the same doubling operation across three valuation maps, **not three independent pieces of evidence**. The small-to-small-finals shift is 4 for a single filled phrase and 8 for two copies. This supports reproducible multi-map validation.
+Editorial risk: "standard milui" spelling תיו/תו, הא/הה is convention-dependent; lock the exact transliteration tokens above. 358 under Ratzo comes from unusual original list, NOT from the earlier general all-prefix/all-suffix theorem; here "אלפיים" and "שבע"/"מאות"/"ואחד" contain duplicated whole words. Source output must be kept exact.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
