@@ -12,6 +12,23 @@ Hebrew ordinal positions א=1 ... ת=22, finals normalized to base letters.
 Cross-method identity: **אלהים אחד (Ordinal Square) = עמית (Regular) = 520**.
 This is an exact numeric equality under defined mappings, not evidence of personal divinity or intentional scriptural encoding.
 
+## מדורג לפי פשט · רמז · סוד
+[מסמך שיטת הסיווג הלימודית](ROVGRID_THREE_LAYER_PEDAGOGY_PSHAT_REMEZ_SOD_2026-11-19.md).
+
+### פשט — P
+אלהים אחד (פרטי סדרי): אלהים = 1²+12²+5²+10²+13²=439; אחד = 1²+8²+4²=81; יחד 520.
+עמית (רגילה): ע70+מ40+י10+ת400 =520.
+זוהי השוואת מספרים ישירה; יש להגדיר את שיטת הפרטי הסדרי לפני קריאה.
+
+### רמז — R
+520 = 8×65 = 20×26.
+אדני (רגילה)=65, יהוה (רגילה)=26. שתי פעולות כפל מגשרות בין 520 לבין שתי מילים שונות.
+
+### סוד — S
+מודל תיבה עם ממדים 8×20×26: שטחי שלוש פאות שונות =160,208,520; סכומן 888.
+(1+8x)(1+20x)(1+26x)=1+54x+888x²+4160x³.
+ממצא מבני בתוך מודל מוגדר. הקשר ההיסטורי או המטאפיזי אינו נובע מהפולינום.
+
 ## Central bridges
 אלהים אחד (Regular) = 86+13 = 99 = 9×11.
 אלהים אחד (Ordinal) = 41+13 = 54 = 2×27.
@@ -26,5 +43,5 @@ Additional reported numeric output: Small Finals=29; Power Bet √73=29; Kidmi=3
 ## Critical research handling
 Priority label HIGH for the *direct 520 equality*, not for metaphysical claims.
 Preserve explicit operator labels and distinct final-letter conventions.
-Retain source-reported 9%, 39, 142 separately from audited proofs.
+Experimental algorithm scores and pair-count metrics are excluded.
 Use this anchor when researching אלהים / אחד / עמית / 520 and extend instead of overwriting prior findings.
