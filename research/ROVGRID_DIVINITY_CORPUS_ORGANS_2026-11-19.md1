@@ -407,6 +407,42 @@ ALBaM ordinal **77** as supplied, consult full map before declaring independentl
 חבר small product32 corresponds to 32 paths motif as numerical comparison.
 Signature not to be overburdened: final publish use a short passage, 33 and 1221 as optional small line, source hyperlink directly.
 
+## 3L. חתימה מורחבת — חבר משה / פלא חבר משה (19.11.2026)
+
+### Source spellings and verified standard maps
+חבר = ח8+ב2+ר200=210 regular, ordinal 8+2+20=30, normal small 8+2+2=12.
+משה = מ40+ש300+ה5=345 regular, ordinal 13+21+5=39, normal small 4+3+5=12.
+חבר משה: **555 regular**, **69 ordinal**, **24 small**; 6 letters in two 3-letter words.
+פלא = פ80+ל30+א1=**111 regular**, ordinal 17+12+1=30, normal small 8+3+1=12.
+פלא חבר משה: **666 regular**, **99 ordinal**, **36 small**; 9 distinct letters in three 3-letter words.
+"אלף"=א1+ל30+ף80=111 regular; after treating ף as פ, אלף is exact reversal of פלא in letter order. Explicit standard final-position normalization.
+Difference (adding פלא): regular +111, ordinal +30, small +12.
+Sequence **555=5×111; 666=6×111; 777=7×111** (אלהים השמים הארץ regular); **888=8×111** (עמית מייק רוב regular); **999=9×111** (בראשית אלהים regular).
+**555+666=1221** equals the earlier **final gematria** of "אני חבר שלכם"; this is a cross-method numeric bridge, not a same-method identity.
+
+### Additional method outputs as user supplied (do not claim independent verification without mapping definitions)
+For חבר משה: Milui regular ordinal 202; standard Milui regular 1786; Milui Pelia 1776; balanced 1110; additive run-and-return ("תוספת ומגרעת") 2220; word-length×small 72; word-length×ordinal 207; word-length×regular 1665; Atbash ordinal69; ALBaM ordinal69; ABGD768; constant-digit π=33, φ=24, series labeled "1"=37; permutation count 720.
+For פלא חבר משה: Milui regular2052; balanced1332; additive prefix-suffix 2664; word-length×small108; word-length×ordinal297; word-length×regular1998; Atbash ordinal108; ALBaM ordinal88; ABGD900; constant-digit φ=43, √888=43 and series labeled "1"=43; Kidmi2600; Zero Reduction #1=81; Reduced English Filling128; permutation count362880.
+
+### Independently derived identities
+Because each word has length exactly 3:
+word-length×regular: 3×555=1665; 3×666=1998.
+word-length×ordinal: 3×69=207; 3×99=297.
+word-length×small: 3×24=72; 3×36=108.
+For a word w of length n=3, summing all nonempty prefixes and all nonempty suffixes (full word counted in each group) equals (n+1)×v(w)=4v(w). Hence for two/three words, prefix-suffix totals 2220=4×555 and 2664=4×666 in any additive valuation v; these match the supplied values of "תוספת ומגרעת" as whole-word-independent runs. They are NOT n+1 of concatenated 6/9-letter phrases. Balanced 2× yields 1110 and1332, half of those totals.
+All six Hebrew letters in חבר משה are distinct, hence 6!=720 unique permutations; all nine letters in פלא חבר משה are distinct, hence 9!=362880 unique permutations. Factorial here counts rearrangements (not ordinary gematria).
+Atbash ordinal general property on an alphabet of 22 letters: for any n-character word, transformed ordinal total =23n−original ordinal. n=6 => 138−69=69; n=9 =>207−99=108. Thus both Atbash ordinal outputs independently verifiable.
+Other bridges:
+- 202 (Milui ordinal of חבר משה) is a supplied calculator result, not automatically a primitive arithmetic identity.
+- 43 (פלא חבר משה under φ, √888, "1" digit sequences) equals AMIT English Simple=43 but these distinct methods may not be independent.
+- 33 (חבר משה digit π) equals Hebrew full personal name small=33, while 37 (under "1") equals יחידה regular=37; labels depend on site mapping and require exact constant identity.
+- 666=6×111 and 222+666=888 where דוד רוב regular=14+208=222; this is arithmetic using unrelated expressions. Keep secondary.
+- 1786−1776=10 between two filling methods; method-specific spellings need table-level audit.
+
+### Textual framing / citations
+Link to rabbinic discussion of משה and name חבר: [ויקרא רבה א, ג](https://he.wikisource.org/wiki/ויקרא_רבה_א_ג). This midrash does NOT present the phrase "פלא חבר משה", so the new compound phrase is an author's numeric construction. Do not attribute it to the midrash.
+The previous public signature "אני חבר שלכם" must stay at the very end. New appendix/bridge can be positioned immediately before it, retaining one final signature.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
