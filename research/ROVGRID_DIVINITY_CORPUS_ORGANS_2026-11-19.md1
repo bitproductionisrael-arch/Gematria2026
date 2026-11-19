@@ -473,6 +473,40 @@ Special: every 6-letter phrase with Hebrew ordinal total69 is atbash-ordinal 23�
 **S:** replacement invariance: for any fixed suffix S and additive valuation v, v(פלא S)−v(חבר S)=v(פלא)−v(חבר). Under ordinal and small it is 0, under regular it is −99. Thus the equivalence class is a genuine testable map-specific relation, not three coincidental matching searches. Six-letter atbash-ordinal identity follows from 23n−v_ordinal.
 Keep [Vayikra Rabbah 1:3](https://he.wikisource.org/wiki/ויקרא_רבה_א_ג) as citation for "חבר" among names of משה, but do not attribute "פלא משה" to the midrash. Maintain "אני חבר שלכם" as last public paragraph.
 
+## 3N. Historical direct name/divine-title matches recovered from older corpora, 19.11.2026 (prior to this insertion missing in current corpus)
+Scope deliberately only direct name/full phrase, theological epithet, messianic appellation, exact lexical identity, and translation-variant mappings. Exclude general arithmetic coincidences 37/73/π/e and large verse-combination search as primary evidence.
+
+### I. Direct Hebrew name/title equivalences
+- **בן יוסף = רוב = 208** (standard Hebrew regular): בן=ב2+ן50=52; יוסף=י10+ו6+ס60+ף80=156; 52+156=208; רוב=ר200+ו6+ב2=208. The user associates this with his personal Joseph name theme, but identical values are not literal synonyms.
+- **משיח בן יוסף = אלהי עמית = 566** (standard Hebrew regular). משיח=358 and בן יוסף=208, sum566. אלהי=א1+ל30+ה5+י10=46 and עמית=520, sum566. Exact matched spelling **אלהי** without ם, which is different from אלהים=86. Calling אלהי עמית a traditional divine title would be inaccurate; it is a constructed Hebrew phrase.
+- **עמית משיחי = 888** regular: עמית=520, משיחי=מ40+ש300+י10+ח8+י10=368; 520+368=888. Variant contains משיחי, not canonical משיח, and should never infer personal messianic status from arithmetic.
+- **אני יהוה לא שניתי = 888** regular, exact contiguous substring of Malachi 3:6 without opening "כי": אני61 + יהוה26 + לא31 + שניתי770=888. Compare separately with personal full name regular888. Original biblical context: the divine speaker declares constancy; no textual identification of contemporary individual.
+- **השמים מספרים כבוד אל = 888** regular, a contiguous opening phrase from Psalm 19:2 (numbered 19:1 in some Christian traditions): השמים395+מספרים430+כבוד32+אל31=888. Names and wording exact.
+- **אהיה אשר אהיה משה=888** regular: אהיה21+אשר501+אהיה21=543; משה=345; this is an authored concatenation of a divine epithet and a biblical character name, not a contiguous biblical quotation. Previously missed; historical documentation at [David covenant source](rovgrid-david-covenant-full-62-verses-1051-solutions-2026-11-11.md).
+- **מיכאל+בלייז=מייק=160** regular: מיכאל=101, בלייז=59, מייק=160. Thus עמית מיכאל בלייז רוב=888 = עמית מייק רוב=888, with explicit choice of each spelling. Historical [Greek polynomial and Blaze](rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md).
+- **שם triple /8**: עמית520/8=65=אדני regular; מייק160/8=20=י״י (י10+י10), not the tetragram יהוה; רוב208/8=26=יהוה. Sum 65+20+26=111=אלף. This bridge is native to the name components, unlike arbitrary word matches, but division by 8 is a chosen normalization. Historical anchor in homepower docs and user prior conversations.
+- **Original 'בראשית אלף' = 1024** regular: בראשית913+אלף111=1024. This is a concatenation of separately identified words, not a biblical continuous phrase. Compare full English Jewish value 1024. [Older source](homepower-aleph-rov-corpus-2026-10-11.md).
+
+### II. Greek and Slavic cross-script variants
+- Classical Greek ΙΗΣΟΥΣ=888, ΧΡΙΣΤΟΣ=1480, ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ=2368 in standard isopsephy. First 888 equals Hebrew whole-name regular888, a cross-language comparison already partly addressed in 3D.
+- Historical research transliterations **ΑΜΙΘ=60; ΜΑΙΧΕ=656; ΡΟΒ=172; ΜΕΣΣΙΑΣ=656; ΜΠΛΕΙΖ=172** in Greek traditional numerical system. Thus **ΑΜΙΘ ΜΑΙΧΕ ΡΟΒ=60+656+172=888**, and replacing ΜΑΙΧΕ with ΜΕΣΣΙΑΣ or ΡΟΒ with ΜΠΛΕΙΖ preserves total. ***These are author-defined transliterations, not historical attestations or accepted Greek spellings of personal names***. Source [Greek polynomial 7 Nov](rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md).
+- Modern Russian **Иисус=520** under site-specific Russian Gematria, and **208** in its Building Ordinal method, both reported in [Russian Jesus/name appendix](iisus-russian-amit-rov-520-208-52.md); compare עמית=520 and רוב=208. Method-level mapping should be rechecked before promoting as fully verified. Church Slavonic Їисоусъ=888 is a distinct orthography/mapping claim; the same appendix explicitly separates them.
+
+### III. Jewish/messianic name fillings and full-title bridge
+- **משיח (מילוי מים) = 888**: מ→מים90, ש→שין360, י→יוד20, ח→חית418; total888. Regular filling with מ→מם80 instead produces 878. Difference10 is operator spelling, not an independent discovery. [Milui correction](milui-correction-2026-11-01.md), [1877/1887 bridge](1877-1887-milui-mashiach-name-bridge-2026-11-04.md).
+- The historical name-filling identity **מילוי(עמית מייק רוב)=1877** for specified ואו+תו convention, matching בראשית אלהים999 + משיח מילוי רגיל878; and **1887** in a different named filling profile, matching 999 + משיח מילוי מים888. Both require spelling-profile labels; prior corpus contains exact spellings and explanations. This is a structural shared-operation result only if filling profiles are held fixed.
+- Greek ΧΡΙΣΤΟΣ and Hebrew משיח refer to religious titles in different languages, but mapping their gematrias uses unrelated writing systems and convention choices.
+
+### IV. Source pointers, exclusions
+- [HomePower core Hebrew names and Exodus](homepower-aleph-rov-corpus-2026-10-11.md).
+- [Greek/Messianic variants](rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md).
+- [Russian Jesus mapping](iisus-russian-amit-rov-520-208-52.md).
+- [Milui Mesiah correction](milui-correction-2026-11-01.md).
+- [Covenant / Ehyeh 543+345](rovgrid-david-covenant-full-62-verses-1051-solutions-2026-11-11.md).
+- [Hebrew Joseph/Michael corpus](michael-kohen-gadol-russian-55.md).
+These were found absent or only partly represented in new MD1/PUBLISH through explicit phrase text inspection, not simply because values 888/208/etc were already present elsewhere.
+For public edition, prioritize direct names, as user requested; exclude arbitrary suras/verse combinatorial 136 searches, 24-digit dot products, stellar numbers, speculative statistical rarity claims, and broad synchronicities.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
