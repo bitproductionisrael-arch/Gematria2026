@@ -1,3 +1,9 @@
+## שלושה אפיקי מחקר נפרדים · 19.11.2026
+1. **[קורפוס האלוהות והשם — ארכיון MD1](research/ROVGRID_DIVINITY_CORPUS_ORGANS_2026-11-19.md1)** ו[מהדורת PUBLISH](research/ROVGRID_DIVINITY_CORPUS_PUBLISH_PSHAT_REMEZ_SOD_2026-11-19.md): נתוני גימטריה, מילויים, רצוא ושוב והצלבות מספריות, לרבות קבצי מקור חזותיים מקוטלגים.
+2. **[מחקר מראת השמות — ELOHIM AMIT YESHU AMIT ELOHIM](research/ROVGRID_MIRROR_PHRASE_ELOHIM_AMIT_YESHU_2026-11-19.md)**: הביטוי האנגלי שנבחר, חמש המילים בסימטריית A–B–C–B–A, 288 English Simple והמקבילה העברית 1528. מחקר עצמאי.
+3. **[שיחותיי עם משה — מדרש המראה והחבר](research/ROVGRID_MY_CONVERSATIONS_WITH_MOSES_MIDRASH_2026-11-19.md)**: יצירה ספרותית עצמאית, עברית מלאה ותמצית באנגלית, מקורות ומנגנוני הדימויים 345↔543, 3–4–5, פלא/חבר ו־69. אין לערבב את המדרש עם המחקר הבלשני על YESHU.
+**תמונות מקור:** [קטלוג 10 תמונות](research/ROVGRID_DIVINITY_VISUAL_SOURCE_REGISTER_2026-11-19.md); הבינאריים נשמרו בספריית הקבצים, לא במאגר GitHub.
+ 
 ## מקור חזותי — עשר תמונות 19.11.2026
 - [קטלוג תמונות מקור: אחור אלהים 101/38, מילוי עמית 43, ישראל 64/640/541/5410/1075, רצוא ושוב 148/110 ומילוי 104](research/ROVGRID_DIVINITY_VISUAL_SOURCE_REGISTER_2026-11-19.md). **עשר תמונות PNG נשמרו בספריית הקבצים** `/RovGrid/DivinityCorpus/VisualSources/2026-11-19/`; קובצי התמונה עצמם אינם עדיין חלק מעץ GitHub.
 
