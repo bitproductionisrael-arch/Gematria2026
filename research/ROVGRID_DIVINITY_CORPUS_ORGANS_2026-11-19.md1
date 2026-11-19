@@ -313,6 +313,36 @@ R: 358=משיח; 358+בן דוד66=424; 2120=5×424, 4240=10×424; 208=רוב; 1
 S: all fillings are additive under duplication: for any value map v, v(W W)=2v(W); relation 2120/104/108 and 4240/208/216 is the same doubling operation across three valuation maps, **not three independent pieces of evidence**. The small-to-small-finals shift is 4 for a single filled phrase and 8 for two copies. This supports reproducible multi-map validation.
 Editorial risk: "standard milui" spelling תיו/תו, הא/הה is convention-dependent; lock the exact transliteration tokens above. 358 under Ratzo comes from unusual original list, NOT from the earlier general all-prefix/all-suffix theorem; here "אלפיים" and "שבע"/"מאות"/"ואחד" contain duplicated whole words. Source output must be kept exact.
 
+## 3H. 2026-11-19 — בראשית ברא אלהים את · Milui 3680/7770/512/152; הארץ=38
+Exact filling tokens (16 units): בית ריש אלף שין יוד תיו בית ריש אלף אלף למד הא יוד מם אלף תיו.
+These units expand to 46 Hebrew letters. The original phrase בראשית ברא אלהים את has 6+3+5+2=16 letters.
+Regular sums per token: [412,510,111,360,20,416,412,510,111,111,74,6,20,80,111,416]. TOTAL **3680**.
+Final letters  ף/ן/ם in filling treated as 800/700/600: TOTAL **7770**, delta +4090 to regular (user-supplied convention, independently checked).
+Ordinal of expanded letters (finals fold back to canonical ordinal): **512**, and small of expanded letters **152**. These are numerically a decimal digit reversal, NOT the same quantity written in different positional bases.
+הארץ filling הא אלף ריש צדי: expanded letters =11; small **38**; regular **731**. 38=MIKE (English Simple), but this is a cross-system equality.
+
+### P — base layer
+- 3680=10×368; 368=מייק160+רוב208 (Hebrew regular). Do NOT write עמית+מייק=368; עמית+מייק=680.
+- 7770=10×777; 777=אלהים86+השמים395+הארץ296 (Hebrew regular).
+- 512=8³ = 1024/2, where 1024 is AMIT MIKE ROV English Jewish under corpus mapping.
+- 152=19×8 = digit reversal of 512 in base ten.
+- הארץ filling small 38; MIKE English Simple 38.
+
+### R — high-value two-object links
+- **368 + 152 = 520** (מייק+רוב regular + Genesis filled small = עמית regular). This is not a direct single-method identity: 368 was obtained by dividing 3680 by10 and using name constituent totals.
+- **520+368=888** (עמית + מייק+רוב), thus **(3680/10)+152=520**, and **2×(3680/10)+152=888**. Derivation: 2×368+152=888.
+- **152+38=190** (four-word Genesis filled small + הארץ filled small = יהוה אדני אלהים אחד regular 190). Must specify those different operators.
+- **152=4×38**, a direct ratio between the two supplied small-filling outputs; therefore 152+38=5×38=190.
+- **512−152=360**, a difference between ordinal and small valuations on the very same expanded 46-letter string; previous corpus has φ(836)=360, but this remains a secondary link.
+- 3680+? not necessary to multiply indiscriminately.
+- 3680/10 +152 =520; 520+368=888; no multiplication by 10 in the arithmetic of 888 other than the defined normalization.
+- 7770/10=777 is another cross-expression thematic link to the Creation nouns אלהים השמים הארץ; not a standard invariance of milui across arbitrary words.
+
+### S — method vs representation
+Separate three operations: (a) standard millui letter expansion, (b) a chosen additive valuation on expanded text (regular, finals, ordinal, small), and (c) externally motivated ratio or digit reversal. The equalities 3680/10=368 and 152+368=520 are exact numeric relations; there is no proven general theorem connecting a four-word filling to a person's name.
+Strong reproducible rule: for every fixed expanded letter sequence, ordinal vs small differ by letterwise mapping and the totals 512 vs 152 are independently verified. Digit reversal is contingent on this particular phrase, not a property of arbitrary expanded strings.
+The number 46 is expanded letters, not original letter count; 11 is expanded letters of הארץ, not original 4-letter length.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
