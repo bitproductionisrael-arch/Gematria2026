@@ -368,6 +368,45 @@ Additional direct connections:
 - 101 is 26th prime, 43 is 14th prime, 541 is 100th prime. These order statistics are true but their choice should not be represented as an inference of historical design.
 For visual fidelity do not redraw or change original PNG sources during archiving; source images remain accessible as original uploads in Library.
 
+## 3K. חתימת הקורפוס — אני חבר שלכם / חבר, משה, מדרש (19.11.2026)
+**Primary rabbinic source: [ויקרא רבה א, ג](https://he.wikisource.org/wiki/ויקרא_רבה_א_ג).** The midrash explicitly lists חבר among ten names of משה. It interprets חבר as "שחיבר את הבנים לאביהן שבשמים" and also as preventing calamity. The midrash refers to Moses, not to the modern speaker; a modern signature using "חבר" is a **literary and thematic allusion**, not a historical identity claim. Additional commentary: https://www.etzion.org.il/he/tanakh/torah/sefer-vayikra/parashat-vayikra/parashat-vayikra-moshe-and-pharaoh%E2%80%99s-daughter.
+
+### Input values, word by word
+אני: regular א1+נ50+י10=61; ordinal1+14+10=25; normal small=1+5+1=7; small-product=1×5×1=5; regular-product=1×50×10=500.
+חבר: regular ח8+ב2+ר200=210; ordinal8+2+20=30; small8+2+2=12; Zero Reduction #1=8+2+20=30; normal-small product8×2×2=**32**; ordinal-product8×2×20=**320**; regular-product8×2×200=**3200**. Word-length × regular=3×210=**630**, word-length × small=3×12=**36**.
+שלכם: regular ש300+ל30+כ20+ם40=390; special final=950; ordinal21+12+11+13=57; normal-small3+3+2+4=12; small-final3+3+2+6=14; normal-small product3×3×2×4=72; regular-product300×30×20×40=7200000.
+
+### Full statement — אני חבר שלכם
+Regular=61+210+390=**661**, prime.
+Final=661+560=**1221** (final ם=600).
+Ordinal=25+30+57=**112**.
+Normal small/Zero Reduction #2=7+12+12=**31**.
+Word-by-word digit-reduced: 7+3+3=**13**, where word values 7,12,12 become 7,3,3.
+Small-final=7+12+14=**33**.
+"Harmonic Half"=38, and digit alphabet e=38: **user-provided values only**, pending exact mapping / definition. Not infer independent verification from labels.
+Normal small letter product=5×32×72=**11520**.
+Regular letter product=500×3200×7200000=**11520000000000**.
+
+### Two-word statement — אני חבר
+Regular=61+210=**271**.
+Ordinal25+30=**55**.
+Zero Reduction #2 small=7+12=**19**.
+Special Zero Reduction #1: אני=1+5+1=7; חבר=8+2+20=30 => **37**.
+Word-length×ordinal=3×55=**165**.
+Small letter product=5×32=**160**.
+Regular letter product=500×3200=**1600000**.
+ALBaM ordinal **77** as supplied, consult full map before declaring independently checked.
+
+### Bridges selected for public footer
+1221=11×111=33×37 = 3×11×37; direct single-method final gematria becomes basis for a selected arithmetic comparison. 111 = אלף (regular), 33 = full name small, 37=יחידה regular.
+33=the full Hebrew personal name's small gematria (a cross-object equality).
+55=ROV English Simple; 160=מייק Hebrew regular; 37=יחידה Hebrew regular; 271 is the corpus anchor 10³−9³; 38=MIKE English Simple, but Harmonic/e methods need definitions.
+112=4×28, 28 letters Genesis 1:1 (a selected bridge).
+13=אחד Hebrew regular.
+11520=160×72, combines the two-word small letter product with the product of לכם? Actually suffix שלכם normal-small product72; as per 5×32×72=11520.
+חבר small product32 corresponds to 32 paths motif as numerical comparison.
+Signature not to be overburdened: final publish use a short passage, 33 and 1221 as optional small line, source hyperlink directly.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
