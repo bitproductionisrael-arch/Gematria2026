@@ -237,6 +237,48 @@ For n=7 and S=836: 6688=(7+1)×836. This explains the calculated "תוספת ו�
 Concatenation lemma for additive letter valuation v: v(ABC)=v(A)+v(B)+v(C). For A=ישועמית, B=אליהו, C=אלף: 836+52+111=999. Compare independently to v(בראשית אלהים)=913+86=999.
 Difference 999−888=111 is fixed by C=אלף. E.g. scaled forms 8×111→9×111; this is an exact chosen construction, not proof of authorial intent.
 
+## 3F. Ratzo VaShov (רצוא ושוב) — overlapping Genesis selections, two cumulative paths (2026-11-19)
+Source text and exact segmentation:
+(A) בראשית אלהים:
+- ב בר ברא בראש בראשי בראשית ראשית אשית שית ית ת · א אל אלה אלהי אלהים להים הים ים ם.
+- 11+9=20 displayed segments; 37+24 =61 *displayed letters* (not length of original 11-letter phrase). Exact reduced-letter sum first group 78, second group 70 => **148**. The two subparts count 37 and 24 letters respectively.
+- Segment-by-segment reduced values: [2,4,5,8,9,13,11,9,8,5,4] and [1,4,9,10,14,13,10,5,4].
+(B) ברא את השמים:
+- ב בר ברא רא א · א את ת · ה הש השמ השמי השמים שמים מים ים ם.
+- 5+3+9=17 displayed segments; 9+4+25=38 displayed letters; reduced-letter sums 15+10+85 = **110**.
+- Segment values: [2,4,5,3,1] and [1,5,4] and [5,8,12,13,17,12,9,5,4].
+All computations independently rechecked from spelled-out segments and standard Hebrew digit reduction including finals ם=4.
+
+### P
+A: 20 segments, 61 letters, small-weight total 148.
+B: 17 segments, 38 letters, small-weight total 110.
+Together: **37 segments**, **99 displayed letters**, **258 small-weight total**.
+This counts letters *with multiplicity* across overlapping substrings; not letters in Genesis 1:1.
+
+### R
+- 148=4×37 = נצח (regular: נ50+צ90+ח8).
+- 110=2×55; English Simple ROV=55; לב regular=32, and "פי" regular=90, so refrain from unsupported 110 textual claims without exact spelling.
+- 61=אני (regular); 38=MIKE (English Simple); added displayed-letter count **99 = אלהים אחד** (regular 86+13). **61+38=99**.
+- Total 258=6×43; AMIT (English Simple)=43, English/Ordinal×6 form of AMIT=258. 258 is NOT AMIT in English Simple.
+- 20+17=37 segments; first result 148=4×37; 37=יחידה regular and prime #12.
+- First group 37 displayed letters, second group 24; 37×24=888 as independent corpus identity, but do NOT present as a direct operation of the two total Ratzo sums.
+- Last point: 258 is the exact reduced-letter total of these particular segment lists, not the small-weight sum of the original phrase alone.
+
+### S
+General formal definition: for word W with letters w1...wn, segment list L(W) is all nonempty prefixes of lengths 1..n and all nonempty suffixes of lengths n−1..1 (full word once). Number of segments = 2n−1, and displayed letter-count = n² (sum 1..n + sum 1..n−1).
+For בראשית (n=6): 11 segments and 36 displayed letters, not 37. **The supplied list contains "ב" as prefix and "ת" as suffix, total 36**; sum of lengths 1+2+3+4+5+6+5+4+3+2+1=36. For אלהים (n=5): 9 segments, 25 letters; 36+25=**61**.
+For ברא (n=3): 5 segments, 9 letters; את (n=2): 3 segments, 4 letters; השמים (n=5): 9 segments, 25 letters; 9+4+25=**38**.
+Thus the general formula predicts both 61=6²+5² and 38=3²+2²+5² before any Hebrew letter weights are inserted. **Combined 99 = 6²+5²+3²+2²+5².**
+For an additive letter map v with values a1..an, all prefixes + proper suffixes weight each letter exactly **n** times, since letter i appears n−i+1 times in prefixes and i−1 times in proper suffixes. Thus for a word: sum mapped values of L(W) = n×v(W), *provided the list is all prefixes and suffixes in their native spelling*. This is a general rule to verify source sums:
+בראשית small digit value=13, n6 => **78**;
+אלהים small digit value=14, n5 => **70**;
+ברא small value=5, n3 => **15**;
+את small value=5, n2 => **10**;
+השמים small value=17, n5 => **85**.
+Hence 148=6×13+5×14 and 110=3×5+2×5+5×17.
+NOTICE earlier intuition of 37 first-group displayed letters is wrong: בראשית has 36; record correction and do not conflate 37 segment count overall with displayed letter count of one word.
+Therefore 258=6×13+5×14+3×5+2×5+5×17, while 99=6²+5²+3²+2²+5². This is a strong structural two-invariant theorem, not a numerical coincidence of individually guessed substrings.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
