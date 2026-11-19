@@ -1,0 +1,67 @@
+# ROVGRID · CORPUS DIVINITY · ORGANS / SOURCE REGISTER (.md1)
+Date 2026-11-19 | Version 1 | Status: living source registry, exact computations separated from symbolic comparisons.
+Purpose: research ledger for curating the exclusively divinity-themed public corpus. Do not copy all calculator outputs into the public text. Three-layer teaching standard: [פשט/רמז/סוד](ROVGRID_THREE_LAYER_PEDAGOGY_PSHAT_REMEZ_SOD_2026-11-19.md).
+Editorial policy: mathematical equality ≠ independent evidence of historical planning or religious identity. Every method requires explicit label; optional user-defined methods require their mapping tables and normalizations.
+
+## 0. Gold-standard base values, Hebrew regular
+יהוה=26 (10+5+6+5); אדני=65 (1+4+50+10); אלהים=86 (1+30+5+10+40); אל=31 (1+30); אחד=13 (1+8+4); אמן=91 (1+40+50); בן=52 (2+50); דוד=14 (4+6+4); בן דוד=66 (52+14); עמית=520 (70+40+10+400); מייק=160 (40+10+10+100); רוב=208 (200+6+2); עמית מייק רוב=888; משה=345; השם=345; אני=61; חכמה=73; יחידה=37; אלף=111. Name small (Hebrew)=33. English Simple AMIT=43, MIKE=38, ROV=55, AMIT MIKE ROV=136; English Small AMIT MIKE ROV=55, ROV=19; English Jewish AMIT MIKE ROV=1024. 1024−136=888. Full Hebrew name has 11 letters (עמית4 + מייק4 + רוב3).
+
+## 1. SOURCE — אלהים עמית (new findings; letters=5+4=9)
+### Regular / finals
+אלהים=86; עמית=520 -> **606** regular.
+Final-form ם=600 (special final-values table): אלהים=646; עמית=520 -> **1166**. Difference 1166−606=560 from changing ם 40→600.
+### Zero Reduction #1 (nonstandard rule; do not confuse with ordinary small)
+אלהים: א1+ל3+ה5+י1+ם4=14.
+עמית: ע7+מ4+י1+ת40=52.
+**14+52=66**, depends on special ת→40, not ordinary small (ordinary small ת→4 would yield 30).
+### ALBaM
+אלהים maps א→ל30 ל→א1 ה→ע70 י→ש300 ם→ב2 =403.
+עמית maps ע→ה5 מ→ב2 י→ש300 ת→כ20=327.
+Total **730**; ALBaM ordinal 12+1+16+21+2=52; 5+2+21+11=39; sum **91**.
+### Reduced English Filling
+אלהים: Alf10 + Lmd11 + Hey20 + Yod17 + Mem13 =71.
+עמית: Ayn13 + Mem13 + Yod17 + Tav7 =50.
+Total **121=11²** (transliteration-sensitive definition, check list above).
+
+## 2. Direct bridges, levels
+P / direct: 606=אלהים86+עמית520; 1166 finals; ALBaM=730 and ordinal ALBaM=91; Reduced English Filling=121; Zero Reduction #1=66 with written mapping.
+P / equalities across texts: אלהים אחד (ordinal square)=520; עמית regular=520 (see [520 anchor](ROVGRID_PRIORITY_520_ELOHIM_ECHAD_2026-11-19.md)).
+R / 66=בן דוד regular=52+14; 66=2×33=6×11; small full name=33, full name letters=11. This relationship **does not mean** "אלהים עמית" has 11 letters (it has 9).
+R / 91=אמן regular=יהוה26+אדני65; from אלב״ם סדרי of אלהים עמית.
+R / 121=11×11; English full Hebrew name comprises 11 letters, so 121=letterCount(full name)². This is a comparative construction, not a feature imposed by the phrase.
+R / 730=10×73, where חכמה regular=73; 730−? no inference beyond multiplication.
+R / 1166−606=560 and 606−520=86 verify separate sources of differences.
+R / English AMIT43 and אלהים86 -> 2×43=86; this is a cross-language baseline shared with the previously archived Elohim/Amit study.
+S / 8×20×26 box, distinct face products 160,208,520; sum=888; e1=54, e2=888, e3=4160. (1+8x)(1+20x)(1+26x)=1+54x+888x²+4160x³. The 520 numeric anchor is one face product (20×26) and equals עמית, and also the ordinal-square of אלהים אחד. This models the linkage, but the model is independently chosen and not proof of origin of scripture.
+S / basis from earlier exact corpus: Hebrew name 888 and English name 1024 / 136 with 1024−136=888, independent language mappings. Scope and method switches must remain visible.
+
+## 3. Divinity phrase ladder, registry for future development
+- יהוה אלהים regular=112, ordinal=67, Atbash regular=860, spelled-out regular=345 (per submitted convention), Hebrew ordinal square not yet audited. 860=10×86=20×43.
+- אל אחד regular=44, ordinal=26, letter×word length ordinal=65, achorayim/building=55, English filling=136.
+- יהוה אל אחד regular=26+44=70, ordinal=52, milui regular=1202 (as submitted). Genesis three first words regular=1202, cross-method.
+- יהוה הוא אל אחד regular=26+12+44=82, ordinal=64, previous claims of number-prati=1230 need explicit mapping check. Genesis 1:1 *small* 82 under corpus convention.
+- יהוה אדני אל אחד regular=135, with kolel=136; ordinal=81, kidmi=520; 135=3×45, אדם regular=45. Number-prati kidmi not same.
+- יהוה אדני אלהים אל אחד regular=221 (135+86), with kolel=222; ordinal=122; small finals=61, small with zero #2=59.
+- יהוה אדני אלהים אחד regular=190 (221−31); ordinal=109; zero reduction #2=55; reduced English filling=220.
+- אלהים אחד regular=99, ordinal=54; Hebrew ordinal square=520. Important: two-word phrase has 5+3=8 letters.
+- אלהים עמית regular=606, final=1166, zero #1=66, ALBaM=730, ALBaM ordinal=91, Reduced English Filling=121; 9 letters.
+
+## 4. Checks, danger of overclaiming
+- 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
+- 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
+- 91 is ALBaM ordinal of אלהים עמית, while 91 is *regular* of יהוה אדני or אמן. Label both.
+- 121 English reduction uses exact Romanizations Alf/Lmd/Hey/Yod/Mem/Ayn/Tav. Changing spelling may change output.
+- 11 full Hebrew name letters; 9 letters in אלהים עמית; 8 letters in אלהים אחד.
+- NEVER call the experimental 9%/39/142 ranking or harmony counts a ranking of corpus discoveries. Educational P/R/S is about reading difficulty only.
+- Avoid unsupported identifications such as treating selected numerical matches as historical proof.
+
+## 5. Links / dependencies
+- [Priority 520 direct invariant](ROVGRID_PRIORITY_520_ELOHIM_ECHAD_2026-11-19.md)
+- [Teaching standard](ROVGRID_THREE_LAYER_PEDAGOGY_PSHAT_REMEZ_SOD_2026-11-19.md)
+- [Elohim and Amit numerical bridges](rovgrid-elohim-amit-euler-greek-3-5-8-network-2026-11-13.md)
+- [11 cube / T11=66 prior proof](rovgrid-11-cube-104-331-443-307-602-3149-name-2026-11-17.md)
+- [222–888 David bridge](rovgrid-222-888-name-bridge-2026-11-09.md)
+- [Publish companion](ROVGRID_DIVINITY_CORPUS_PUBLISH_PSHAT_REMEZ_SOD_2026-11-19.md)
+
+## 6. Ingestion plan
+For each newly submitted phrase: 1) preserve original spelling and method; 2) reproduce letter-by-letter; 3) test direct links against base anchors; 4) derive 2-object links; 5) only then promote structured identities to S with their proof; 6) add the strongest 3–7 statements to publish in coherent reading order.
