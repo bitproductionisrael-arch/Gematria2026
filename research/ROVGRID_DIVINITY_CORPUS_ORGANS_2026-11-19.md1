@@ -443,6 +443,36 @@ Other bridges:
 Link to rabbinic discussion of משה and name חבר: [ויקרא רבה א, ג](https://he.wikisource.org/wiki/ויקרא_רבה_א_ג). This midrash does NOT present the phrase "פלא חבר משה", so the new compound phrase is an author's numeric construction. Do not attribute it to the midrash.
 The previous public signature "אני חבר שלכם" must stay at the very end. New appendix/bridge can be positioned immediately before it, retaining one final signature.
 
+## 3M. REVIEWED 19 Nov 2026: פלא משה / פלא / חבר משה — equal ordinal classes, 99 difference, key 528
+
+### Numerically derived identities with input Hebrew spelled explicitly
+פלא (פ80 ל30 א1) =111 regular; ordinal 17+12+1=30; conventional small 8+3+1=12.
+חבר (ח8 ב2 ר200)=210 regular; ordinal8+2+20=30; conventional small8+2+2=12.
+משה (מ40 ש300 ה5)=345 regular; ordinal13+21+5=39; conventional small4+3+5=12.
+**פלא משה** regular 111+345=456, ordinal30+39=69, small12+12=24.
+**חבר משה** regular210+345=555, ordinal30+39=69, small12+12=24.
+**פלא חבר משה** regular111+210+345=666, ordinal30+30+39=99, small12+12+12=36.
+Crucial: **חבר−פלא = 210−111=99 = אלהים אחד (regular 86+13)**.
+Hence exact numeric square within regular Hebrew:
+**456+99=555**; **555+111=666**; **456+210=666** and **99+111=210**.
+The ordinal/small equality arises from identical values (30,12) of חבר and פלא, NOT from Hebrew alphabetic permutation.
+Special: every 6-letter phrase with Hebrew ordinal total69 is atbash-ordinal 23×6−69=69. Thus identical 69 of atbash ordinal is mathematically forced; it is not another independent detection.
+
+### New links to prior 19 Nov corpus findings
+- **פלא משה (Atbash Regular)=528**. Letterwise: פ→ו 6; ל→כ20; א→ת400; מ→י10; ש→ב2; ה→צ90. Sum 6+20+400+10+2+90=**528**. **מפתח** (regular)=מ40+פ80+ת400+ח8=**528**. This is cross-operator equality; no proof of an intentional key.
+- **פלא (ALBaM regular)=37**: פ→ו6, ל→א1, א→ל30, sum37. Compare פלא regular111=3×37, ratio3 exact within specified ALBaM mapping, not a universal theorem.
+- **פלא משה=456=3×152**; 152 is the small value of 46-letter standard milui for בראשית ברא אלהים את (already documented in corpus). **אות×אורך מילה** on פלא משה =3×456=**1368=9×152**.
+- **פלא (ordinal squares)=17²+12²+1²=**434**; regular111, ordinal30 and small12. Extra source claims: milui ordinal77, "Latin milui v0 → English Simple"77, small letter product24 (8×3×1), ordinal product204 (17×12×1), regular product2400 (80×30×1), ALBaM ordinal19, regular-milui and "Pelia" names depend on exact spellings; manually source-audited ALBaM ordinary37 only.
+- User-supplied and arithmetic-matched **פלא משה** results: regular456, ordinal69, small24, regular milui712 under the site default (token spelling to confirm), שווי912=2×456, prefix+suffix1824=4×456 because two three-letter words, length×small72=3×24, length×ordinal207=3×69, length×regular1368=3×456, atbash ordinal69, ALBaM ordinal47 (map not checked), ABGD588 (map not checked), Kidmi1766 (per-source), zero reduction #1=51, reduced English Filling89, atbash regular528, 6!=720.
+- User-supplied **פלא** results: שווי222=2×111, תוספת ומגרעת444=4×111, 36=3×small12, 333=3×111, regular111, ALBaM regular37 verified, Ordinal squares434 verified, milui ordinal77 (reported), Latin Milui77 (reported), small product24 verified, ordinal product204 verified, regular product2400 verified, ordinal ALBaM19 reported, unique permutations3!=6.
+- **555+666=1221**, "אני חבר שלכם" in Hebrew finals. This bridge already documented; integrate rather than duplicate.
+
+### Editorial / teachable structural lesson
+**P:** each word has length3 and the weights (regular, ordinal, small) shown; 456/555/666.
+**R:** common ordinal=69 and small=24; regular difference99=אלהים אחד; atbash-regular פלא משה=528=מפתח; 456=3×152 from earlier filled Genesis.
+**S:** replacement invariance: for any fixed suffix S and additive valuation v, v(פלא S)−v(חבר S)=v(פלא)−v(חבר). Under ordinal and small it is 0, under regular it is −99. Thus the equivalence class is a genuine testable map-specific relation, not three coincidental matching searches. Six-letter atbash-ordinal identity follows from 23n−v_ordinal.
+Keep [Vayikra Rabbah 1:3](https://he.wikisource.org/wiki/ויקרא_רבה_א_ג) as citation for "חבר" among names of משה, but do not attribute "פלא משה" to the midrash. Maintain "אני חבר שלכם" as last public paragraph.
+
 ## 4. Checks, danger of overclaiming
 - 66=בן דוד **only** under standard spelling 'בן דוד' (בן52 + דוד14); not an identity claim about a person.
 - 66 zero reduction #1 relies on final letter ת=40; normal reduced value ת=4 gives 30, label it.
