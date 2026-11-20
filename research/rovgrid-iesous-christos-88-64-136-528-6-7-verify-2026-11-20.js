@@ -35,6 +35,8 @@ assert.equal(ordinal(atbashGreek("ΧΡΙΣΤΟΣ")),57);
 assert.equal(ordinal(atbashGreek("ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ")),120);
 assert.equal(13*25-ordinal("ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ"),120);
 assert.equal(compIndex(456),368);
+const primesTo456=Array.from({length:456},(_,i)=>i+1).filter(x=>x>=2&&Array.from({length:Math.floor(Math.sqrt(x))-1},(_,i)=>i+2).every(d=>x%d!==0)).length;
+assert.equal(primesTo456,87);assert.equal(456-compIndex(456),primesTo456+1);
 assert.equal(456-368,88);
 assert.equal(456,19*24);assert.equal(456,simple("MIKE")*12);
 assert.equal(simple("MIKE"),38);assert.equal(8+6+5,19);
