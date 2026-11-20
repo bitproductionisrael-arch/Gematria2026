@@ -22,4 +22,27 @@ assert.equal(3*296,888);assert.equal(5*296,1480);assert.equal(8*296,2368);assert
 assert.equal(6**3,216);assert.equal(7**3,343);assert.equal(216-4**3,152);assert.equal(216-64+1,153);assert.equal(T(17),153);assert.equal(T(16)+17,153);
 assert.equal(2**6,64);assert.equal(2**7,128);
 assert.equal(T(6),21);assert.equal(T(7),28);assert.equal(7**2-6**2,13);
+
+const atbashGreek=s=>[...s.replaceAll(" ","")].map(ch=>greekAlphabet[24-ord(ch)]).join("");
+const compIndex=n=>{let count=0;for(let x=4;x<=n;x++){let prime=true;for(let j=2;j*j<=x;j++)if(x%j===0){prime=false;break;}if(!prime)count++;}return count;};
+assert.equal(atbashGreek("ΙΗΣΟΥΣ"),"ΠΣΗΚΕΗ");
+assert.equal(atbashGreek("ΧΡΙΣΤΟΣ"),"ΓΘΠΗΖΚΗ");
+assert.equal(greekValue(atbashGreek("ΙΗΣΟΥΣ")),321);
+assert.equal(greekValue(atbashGreek("ΧΡΙΣΤΟΣ")),135);
+assert.equal(greekValue(atbashGreek("ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ")),456);
+assert.equal(ordinal(atbashGreek("ΙΗΣΟΥΣ")),63);
+assert.equal(ordinal(atbashGreek("ΧΡΙΣΤΟΣ")),57);
+assert.equal(ordinal(atbashGreek("ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ")),120);
+assert.equal(13*25-ordinal("ΙΗΣΟΥΣ ΧΡΙΣΤΟΣ"),120);
+assert.equal(compIndex(456),368);
+assert.equal(456-368,88);
+assert.equal(456,19*24);assert.equal(456,simple("MIKE")*12);
+assert.equal(simple("MIKE"),38);assert.equal(8+6+5,19);
+assert.equal(120,5*24);assert.equal(120,10*12);
+assert.equal(120+88,208);assert.equal(368,160+208);
+assert.equal(456-120,12*28);assert.equal(456,24*19);assert.equal(888-456,24*18);
+assert.equal(456-208,248);assert.equal(368-120,248);
+assert.equal(T(15),120);assert.equal(T(16),120+16);
+assert.equal(120*8+16*4,1024);assert.equal(120+16,136);
+
 console.log("PASS: Greek reduced ordinal 42+46=88, Greek full 2368, English IESOUS=88, 64+24=88, 0x88=136, 88×6=528, Fibonacci 3:5:8, 6/7 poster numerical identities.");
