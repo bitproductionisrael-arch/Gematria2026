@@ -47,4 +47,15 @@ assert.equal(456-208,248);assert.equal(368-120,248);
 assert.equal(T(15),120);assert.equal(T(16),120+16);
 assert.equal(120*8+16*4,1024);assert.equal(120+16,136);
 
+
+// Structural E8 anchors: dimension, roots, opposite pairs, and Greek/Hebrew crossings.
+assert.equal(240+8,248);
+assert.equal(240/2,120);
+assert.equal(248+120,368);
+assert.equal(248+208,456);
+assert.equal(456-368,208-120);
+assert.equal(208-120,88);
+assert.equal(2**8,256);                 // Q8/B8 vertices, NOT E8 roots
+assert.equal(8*2**7,1024);             // Q8 edges, NOT E8 lattice cardinality
+
 console.log("PASS: Greek reduced ordinal 42+46=88, Greek full 2368, English IESOUS=88, 64+24=88, 0x88=136, 88×6=528, Fibonacci 3:5:8, 6/7 poster numerical identities.");
