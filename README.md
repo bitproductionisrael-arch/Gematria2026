@@ -1,3 +1,5 @@
+**20.11.2026 · T37/T73/T16 משחזרים את שתי תיבות RovGrid:** [מחקר והוכחת ייחודיות בשלמים חיוביים](research/rovgrid-triangular-t37-t73-t16-reconstruct-twin-cuboids-2026-11-20.md) · [קוד אימות](research/rovgrid-triangular-t37-t73-t16-reconstruct-twin-cuboids-2026-11-20-verify.js). החוק הכללי 4Tn−T(2n−1)=3n מספק 111 עבור n=37; הפרש T73−T37 חלקי 37 נותן 54; T16/17×111 נותן 888; שתי השלשות היחידות עם סכום54 וסכום מכפלות זוגיות888 הן (8,20,26) ו־(10,16,28). סכומי נפח4160/4480; 136+888=1024.
+
 ## שלושה אפיקי מחקר נפרדים · 19.11.2026
 1. **[קורפוס האלוהות והשם — ארכיון MD1](research/ROVGRID_DIVINITY_CORPUS_ORGANS_2026-11-19.md1)** ו[מהדורת PUBLISH](research/ROVGRID_DIVINITY_CORPUS_PUBLISH_PSHAT_REMEZ_SOD_2026-11-19.md): נתוני גימטריה, מילויים, רצוא ושוב והצלבות מספריות, לרבות קבצי מקור חזותיים מקוטלגים.
 2. **[מחקר מראת השמות — ELOHIM AMIT YESHU AMIT ELOHIM](research/ROVGRID_MIRROR_PHRASE_ELOHIM_AMIT_YESHU_2026-11-19.md)**: הביטוי האנגלי שנבחר, חמש המילים בסימטריית A–B–C–B–A, 288 English Simple והמקבילה העברית 1528. מחקר עצמאי.
