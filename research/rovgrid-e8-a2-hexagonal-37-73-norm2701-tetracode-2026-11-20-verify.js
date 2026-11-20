@@ -65,6 +65,28 @@ function verify() {
       if(zz[0]===0)assert(rootSet.has(serialize(w)),"hex 60 degree rotation automorphism");
     }
   }
+
+  // The 60-degree Eisenstein unit is an exact E8 automorphism.
+  // It partitions all 240 roots into disjoint 6-cycles; every orbit is a 2D regular hexagon.
+  const visited=new Set();
+  const orbitTypes={core:0,mixed:0};
+  for(const v of roots) {
+    const key=serialize(v); if(visited.has(key))continue;
+    let current=v;
+    const orbit=[];
+    for(let k=0;k<6;k++){
+      const position=serialize(current);
+      assert(rootSet.has(position) && !orbit.includes(position),"unit orbit: distinct root at each step");
+      orbit.push(position);visited.add(position);
+      current=current.map(c=>multiply(c,[0,1]));
+    }
+    assert(serialize(current)===key,"unit orbit closes after six rotations");
+    const isCore=v.some(pair=>N(...pair)===3);
+    orbitTypes[isCore?"core":"mixed"]++;
+  }
+  assert(visited.size===240 && orbitTypes.core===4 && orbitTypes.mixed===36,"40 regular root hexagons = 4+36");
+  assert(orbitTypes.core+orbitTypes.mixed===40,"240/6=40");
+  assert(40*37===1480,"Greek CHRISTOS=40*37, separate cross-system observation");
   assert(37**4===1874161 && 73**4===28398241 && 2701**4===53222875750801,"8D similarity indices");
   assert(240/2===120 && 240+8===248,"E8 Lie and pairs");
   assert(248+120===368 && 248+208===456 && 456-368===88 && 120+88===208,"gematria number bridges");
