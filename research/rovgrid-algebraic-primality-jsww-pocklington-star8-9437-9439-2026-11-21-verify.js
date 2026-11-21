@@ -41,4 +41,27 @@ assert.equal(powmod(2n,(Q-1n)/11n,Q),6468n);
 assert.equal(powmod(2n,(Q-1n)/13n,Q),4139n);
 assert(provePocklington(Q,F,[11n,13n],2n));
 assert.equal((28n*star(8)+1n)+2n,Q);
+
+// Full multiplicative-order certificates: proving a generator of order N-1
+// forces N to be prime, because units modulo a composite N are fewer than N-1.
+function proveFullOrder(n,g,primeFactors){
+ assert.equal(powmod(g,n-1n,n),1n,'order must divide n-1');
+ for(const q of primeFactors){
+  assert(primeTrial(q),'prime factors must be certified');
+  assert.notEqual(powmod(g,(n-1n)/q,n),1n,'order is not N-1');
+ }
+ return true;
+}
+assert.equal(P-1n,2n*2n*7n*337n);
+assert.equal(powmod(2n,(P-1n)/2n,P),9436n);
+assert.equal(powmod(2n,(P-1n)/7n,P),7681n);
+assert.equal(powmod(2n,(P-1n)/337n,P),9428n);
+assert(proveFullOrder(P,2n,[2n,7n,337n]));
+assert.equal(Q-1n,2n*3n*11n*11n*13n);
+assert.equal(powmod(22n,(Q-1n)/2n,Q),9438n);
+assert.equal(powmod(22n,(Q-1n)/3n,Q),733n);
+assert.equal(powmod(22n,(Q-1n)/11n,Q),6468n);
+assert.equal(powmod(22n,(Q-1n)/13n,Q),4139n);
+assert(proveFullOrder(Q,22n,[2n,3n,11n,13n]));
+
 console.log('PASS: S8=337 prime by trial; Pocklington certifies 9437,9439; gap 2 and ending 37');
