@@ -55,4 +55,11 @@ assert.equal(powmod(3n,(R-1n)/2n,R),R-1n);
 assert.equal(R%100n,37n);
 assert.equal(R.toString().length,1238);
 assert.equal(R.toString().slice(-40),'2286602759377666359449127498947269492737');
+assert.equal((2n**4096n)%100n,36n);
+assert.equal(K%25n,1n);
+assert.equal(K%50n,1n);
+// Mersenne numbers cannot end in 37: 2^n-1 is 3 mod 4 for n>=2,
+// whereas every decimal integer ending in 37 is 1 mod 4.
+assert.equal(((2n**37n-1n)%4n),3n);
+assert.equal(R%4n,1n);
 console.log('PASS: 24 deterministic suffixes; Lucas 26-digit prime; Proth 1238-digit prime; 136/888/1024');
