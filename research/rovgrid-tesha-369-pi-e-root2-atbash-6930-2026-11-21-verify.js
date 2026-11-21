@@ -33,4 +33,4 @@ assert.equal(12+30,2*21);
 assert.equal((6-1)+(2-2)+(2-7),0);
 assert.equal(threeWords/(12+21+30),37+73);
 assert.equal(threeWords/30,21*22/2);
-console.log('All 21 validations passed: תשע ×3, e=12, √2=21, π/Atbash=30, 6930−369=6561.');
+console.log('All validations passed: תשע ×3, e=12, √2=21, π/Atbash=30, 6930−369=6561.');
