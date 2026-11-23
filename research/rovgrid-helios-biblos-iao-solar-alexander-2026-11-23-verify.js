@@ -119,4 +119,8 @@ const miluiSimple=s=>hLetters(s).reduce((acc,c)=>acc+e(miluiV0[c]),0);
  ["modulo 99 residue",1063%99,73]
 ].forEach(([label,actual,expected])=>check(label,actual,expected));
 
+
+check("Elijah to Markov Fibonacci 233",miluiSimple("אליהו התשבי")-(10*23-hOrdinal("אליהו התשבי")),233);
+check("Markov Vieta 233",3*1*89-34,233);
+check("Markov 1 89 233",1**2+89**2+233**2,3*1*89*233);
 console.log("OK: "+tests+" deterministic checks passed");
