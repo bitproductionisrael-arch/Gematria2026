@@ -127,7 +127,8 @@ check("Markov 1 89 233",1**2+89**2+233**2,3*1*89*233);
 const standardFill={א:"אלף",ל:"למד",י:"יוד",ה:"הא",ו:"ויו",נ:"נון",ב:"בית"};
 const prophetFill=(s,ordinal=false)=>hLetters(s).reduce((a,c)=>a+(ordinal?hOrdinal(standardFill[c]):h(standardFill[c])),0);
 const englishReduced=s=>[...s.toUpperCase()].reduce((a,c)=>a+((c.charCodeAt(0)-65)%9+1),0);
-const prophetReduced=s=>hLetters(s).reduce((a,c)=>a+englishReduced(miluiV0[c]),0);
+const prophetLatin={...miluiV0,נ:"Nun"};
+const prophetReduced=s=>hLetters(s).reduce((a,c)=>a+englishReduced(prophetLatin[c]),0);
 function wordsPartsSum(s,fn) {return s.trim().split(/\s+/).reduce((a,w)=>a+fn(w),0)}
 [
  ["Prophet ordinary",h("אליהו הנביא"),120],
