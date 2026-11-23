@@ -123,4 +123,34 @@ const miluiSimple=s=>hLetters(s).reduce((acc,c)=>acc+e(miluiV0[c]),0);
 check("Elijah to Markov Fibonacci 233",miluiSimple("אליהו התשבי")-(10*23-hOrdinal("אליהו התשבי")),233);
 check("Markov Vieta 233",3*1*89-34,233);
 check("Markov 1 89 233",1**2+89**2+233**2,3*1*89*233);
+
+const standardFill={א:"אלף",ל:"למד",י:"יוד",ה:"הא",ו:"ויו",נ:"נון",ב:"בית"};
+const prophetFill=(s,ordinal=false)=>hLetters(s).reduce((a,c)=>a+(ordinal?hOrdinal(standardFill[c]):h(standardFill[c])),0);
+const englishReduced=s=>[...s.toUpperCase()].reduce((a,c)=>a+((c.charCodeAt(0)-65)%9+1),0);
+const prophetReduced=s=>hLetters(s).reduce((a,c)=>a+englishReduced(miluiV0[c]),0);
+function wordsPartsSum(s,fn) {return s.trim().split(/\s+/).reduce((a,w)=>a+fn(w),0)}
+[
+ ["Prophet ordinary",h("אליהו הנביא"),120],
+ ["Prophet ordinal",hOrdinal("אליהו הנביא"),66],
+ ["Prophet fill Elijah",prophetFill("אליהו"),233],
+ ["Prophet fill Hanavi",prophetFill("הנביא"),655],
+ ["Prophet fill 888",prophetFill("אליהו הנביא"),888],
+ ["Prophet fill ordinal Elijah",prophetFill("אליהו",true),107],
+ ["Prophet fill ordinal Hanavi",prophetFill("הנביא",true),124],
+ ["Prophet fill ordinal 231",prophetFill("אליהו הנביא",true),231],
+ ["Prophet reduced Elijah 67",prophetReduced("אליהו"),67],
+ ["Prophet reduced Hanavi 69",prophetReduced("הנביא"),69],
+ ["Prophet reduced 136",prophetReduced("אליהו הנביא"),136],
+ ["Prophet 888+136",prophetFill("אליהו הנביא")+prophetReduced("אליהו הנביא"),1024],
+ ["Prophet 330 word weighting",wordsPartsSum("אליהו הנביא",w=>w.length*hOrdinal(w)),330],
+ ["Prophet 360 balance",wordsPartsSum("אליהו הנביא",w=>(w.length+1)/2*h(w)),360],
+ ["Prophet 720 addition subtraction",wordsPartsSum("אליהו הנביא",w=>(w.length+1)*h(w)),720],
+ ["Prophet Malachi literal fill",prophetFill("אליה הנביא"),866],
+ ["Prophet Malachi literal reduced",prophetReduced("אליה הנביא"),127],
+ ["Prophet 68 midpoint",prophetReduced("אליהו")+prophetReduced("הנביא"),2*68],
+ ["Prophet 233 recurrence",prophetFill("אליהו"),3*89-34],
+ ["Prophet 5 factorial",h("אליהו הנביא"),120],
+ ["Prophet 6 factorial",6*h("אליהו הנביא"),720]
+].forEach(([label,actual,expected])=>check(label,actual,expected));
+
 console.log("OK: "+tests+" deterministic checks passed");
