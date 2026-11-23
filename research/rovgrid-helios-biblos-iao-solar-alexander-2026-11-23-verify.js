@@ -154,4 +154,52 @@ function wordsPartsSum(s,fn) {return s.trim().split(/\s+/).reduce((a,w)=>a+fn(w)
  ["Prophet 6 factorial",6*h("אליהו הנביא"),720]
 ].forEach(([label,actual,expected])=>check(label,actual,expected));
 
+
+function hAlbam(s){return hLetters(s).reduce((z,c)=>z+hval[(alphabet.indexOf(c)+11)%22],0);}
+function hAlbamOrdinal(s){return hLetters(s).reduce((z,c)=>z+(alphabet.indexOf(c)+11)%22+1,0);}
+function hAtbashOrdinal(s){return hLetters(s).reduce((z,c)=>z+22-alphabet.indexOf(c),0);}
+function hSmall(s){return hLetters(s).reduce((z,c)=>z+Number(String(hval[alphabet.indexOf(c)])[0]),0);}
+function smallWordWeighted(s){return s.split(/\s+/).reduce((z,w)=>z+w.length*hSmall(w),0);}
+const still="דממה דקה",fullVoice="קול דממה דקה";
+[
+ ["Still regular",h(still),198],
+ ["Still ordinal",hOrdinal(still),63],
+ ["Still atbash",hAtbash(still),404],
+ ["Still atbash ordinal",hAtbashOrdinal(still),98],
+ ["Still small times word length",smallWordWeighted(still),98],
+ ["Still albam",hAlbam(still),272],
+ ["Still albam ordinal",hAlbamOrdinal(still),74],
+ ["Still perati ordinal",peratiOrdinal(still),781],
+ ["Still 26 squared",hAtbash(still)+hAlbam(still),26**2],
+ ["Still 888",(hAtbashOrdinal(still)-hAlbamOrdinal(still))*(hAlbamOrdinal(still)/2),888],
+ ["Still 136",hAlbam(still)/2,136],
+ ["Still 1024",(hAtbashOrdinal(still)-hAlbamOrdinal(still))*(hAlbamOrdinal(still)/2)+hAlbam(still)/2,1024],
+ ["Still base6 404=>148",parseInt("404",6),148],
+ ["Still base6 4040=>888",parseInt("4040",6),888],
+ ["Still ladder P4",4*4**3+4*4,272],
+ ["Still ladder P5",4*5**3+4*5,520],
+ ["Still ladder P6",4*6**3+4*6,888],
+ ["Daka atbash is צדק",hAtbash("דקה"),h("צדק")],
+ ["Voice kol ordinal",hOrdinal("קול"),37],
+ ["Voice kol regular",h("קול"),136],
+ ["Voice kol perati",peratiOrdinal("קול"),541],
+ ["Voice kol albam",hAlbam("קול"),89],
+ ["Voice kol albam ordinal",hAlbamOrdinal("קול"),26],
+ ["Voice silence regular",h("דממה"),89],
+ ["Full voice letter count",hLetters(fullVoice).length,10],
+ ["Full voice regular",h(fullVoice),334],
+ ["Full voice ordinal",hOrdinal(fullVoice),100],
+ ["Full voice atbash",hAtbash(fullVoice),508],
+ ["Full voice atbash ordinal",hAtbashOrdinal(fullVoice),130],
+ ["Full voice albam",hAlbam(fullVoice),361],
+ ["Full voice albam ordinal",hAlbamOrdinal(fullVoice),100],
+ ["Full voice ordinal perati",peratiOrdinal(fullVoice),1322],
+ ["Full voice albam square",hAlbam(fullVoice),19**2],
+ ["Full voice ordinal square",hOrdinal(fullVoice),10**2],
+ ["Full voice albam ordinal square",hAlbamOrdinal(fullVoice),10**2],
+ ["Still 98-74",hAtbashOrdinal(still)-hAlbamOrdinal(still),24],
+ ["Still 74/2",hAlbamOrdinal(still)/2,37],
+ ["Still 404 as palindrome",Number(String(hAtbash(still)).split("").reverse().join("")),404]
+].forEach(([label,actual,expected])=>check(label,actual,expected));
+
 console.log("OK: "+tests+" deterministic checks passed");
