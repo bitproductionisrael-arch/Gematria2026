@@ -84,4 +84,39 @@ function hAtbashWord(s) {
   ["Reversal שמש", [..."שמש"].reverse().join(""), "שמש"],
 ].forEach(([label,actual,expected])=>check(label,actual,expected));
 
+
+function reducedDigit(n) {return n>0 ? 1+(n-1)%9 : 0;}
+function peratiOrdinal(s) {return hLetters(s).reduce((acc,c)=>acc+(alphabet.indexOf(c)+1)**2,0);}
+function ordinalSmall(s) {return hLetters(s).reduce((acc,c)=>acc+Number(String(hval[alphabet.indexOf(c)])[0]),0);}
+const miluiV0={א:"Alf",ל:"Lmd",י:"Yod",ה:"Hey",ו:"Vav",ת:"Tav",ש:"Sin",ב:"Bet"};
+const miluiSimple=s=>hLetters(s).reduce((acc,c)=>acc+e(miluiV0[c]),0);
+[
+ ["Elijah ordinal",hOrdinal("אליהו"),34],
+ ["Tishbite ordinal",hOrdinal("התשבי"),60],
+ ["Elijah atbash ordinal",5*23-hOrdinal("אליהו"),81],
+ ["Tishbite atbash ordinal",5*23-hOrdinal("התשבי"),55],
+ ["Elijah Tishbite atbash ordinal",10*23-hOrdinal("אליהו התשבי"),136],
+ ["Elijah ordinal squares",peratiOrdinal("אליהו"),306],
+ ["Tishbite ordinal squares",peratiOrdinal("התשבי"),1054],
+ ["Elijah Tishbite ordinal squares",peratiOrdinal("אליהו התשבי"),1360],
+ ["square vs atbash",peratiOrdinal("אליהו התשבי"),10*(230-94)],
+ ["Elijah regular",h("אליהו"),52],
+ ["Tishbite regular",h("התשבי"),717],
+ ["Elijah Tishbite regular",h("אליהו התשבי"),769],
+ ["Elijah small",ordinalSmall("אליהו"),16],
+ ["Tishbite small",ordinalSmall("התשבי"),15],
+ ["Elijah Tishbite small",ordinalSmall("אליהו התשבי"),31],
+ ["Elijah Tishbite word reductions",reducedDigit(h("אליהו"))+reducedDigit(h("התשבי")),13],
+ ["Elijah regular atbash",hAtbash("אליהו"),630],
+ ["Tishbite regular atbash",hAtbash("התשבי"),433],
+ ["Elijah Tishbite regular atbash",hAtbash("אליהו התשבי"),1063],
+ ["Latin milui Elijah",miluiSimple("אליהו"),175],
+ ["Latin milui Tishbite",miluiSimple("התשבי"),194],
+ ["Latin milui full",miluiSimple("אליהו התשבי"),369],
+ ["Hebrew צדק",h("צדק"),194],
+ ["Atbash and latin 888",hAtbash("אליהו התשבי")-miluiSimple("אליהו"),888],
+ ["atbash vs squares modulo 99",(1360-1063)/99,3],
+ ["modulo 99 residue",1063%99,73]
+].forEach(([label,actual,expected])=>check(label,actual,expected));
+
 console.log("OK: "+tests+" deterministic checks passed");
