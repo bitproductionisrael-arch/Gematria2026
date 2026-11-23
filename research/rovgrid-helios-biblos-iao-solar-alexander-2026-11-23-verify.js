@@ -57,4 +57,31 @@ check("Markov 1 5 13",1**2+5**2+13**2,3*1*5*13);
 check("Vieta partner",3*1*13-5,34);
 check("cuboid face products",8*20+8*26+20*26,888);
 check("reverse 841",Number(String(29**2).split("").reverse().join("")),148);
+
+function hAtbashWord(s) {
+  return hLetters(s).map(c=>alphabet[21-alphabet.indexOf(c)]).join("");
+}
+[
+  ["Atbash הנני", hAtbash("הנני"), 148],
+  ["Atbash שלח", hAtbash("שלח"), 82],
+  ["Atbash מלאכי", hAtbash("מלאכי"), 500],
+  ["Atbash מלאכי 3:1 opening", hAtbash("הנני שלח מלאכי"), 730],
+  ["Hebrew יראי 3:20", h("יראי"), 221],
+  ["Atbash יראי שמי 3:20", hAtbash("יראי שמי"), 535],
+  ["Ordinal ושבתם 3:18", hOrdinal("ושבתם"), 64],
+  ["Ordinal וראיתם 3:18", hOrdinal("וראיתם"), 72],
+  ["Ordinal ושבתם וראיתם", hOrdinal("ושבתם וראיתם"), 136],
+  ["Ordinal שמש", hOrdinal("שמש"), 55],
+  ["Atbash ספר", hAtbash("ספר"), 17],
+  ["Atbash שמש", hAtbash("שמש"), 14],
+  ["Atbash צדקה", hAtbash("צדקה"), 199],
+  ["Hebrew צדקה", h("צדקה"), 199],
+  ["Hebrew לב אבות", h("לב אבות"), 441],
+  ["Hebrew אמת", h("אמת"), 441],
+  ["Atbash ספר gives חוג", hAtbashWord("ספר"), "חוג"],
+  ["Atbash שמש gives ביב", hAtbashWord("שמש"), "ביב"],
+  ["Atbash צדקה reverses it", hAtbashWord("צדקה"), [..."צדקה"].reverse().join("")],
+  ["Reversal שמש", [..."שמש"].reverse().join(""), "שמש"],
+].forEach(([label,actual,expected])=>check(label,actual,expected));
+
 console.log("OK: "+tests+" deterministic checks passed");
