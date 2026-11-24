@@ -3,15 +3,20 @@
   "processed_ids": [
     "RG-001-MATTER-20261124-01",
     "RG-001-MATTER-20261124-02",
-    "RG-001-MATTER-20261124-03"
+    "RG-001-MATTER-20261124-03",
+    "RG-001-MATTER-20261124-04",
+    "RG-009-USER-20261124-01",
+    "RG-009-ARCHIVIST-20261124-01"
   ],
-  "last_commit": "c89322fe7da01ee0029167fdae2dbf639f1d674d",
+  "last_commit": "4a95f5a1aae0b9d9d70691cb7c427be1d1bdc0a7",
   "last_commit_meaning": "last reviewed source commit, before this checkpoint",
   "open_tasks": [
-    "RG-001 v2: await MATTER vote on exact consolidated wording; WORK independent review required before lock",
     "RG-002: refer dyadic/Pell theorem to MATTER/WORK; no independent mathematical vote by SPIRIT yet",
     "RG-005: preregister natural-name population, fixed normalization, transliteration variants, multiplicity, hit/miss counts; no empirical result yet",
-    "RG-006: historical 27-sign vs modern 26-letter mapping and Greek pronunciation-aware spelling controls"
+    "RG-006: historical 27-sign vs modern 26-letter mapping and Greek pronunciation-aware spelling controls",
+    "RG-001 v2: MATTER YES received; WORK already addressed by MATTER message 04; defer lock during consolidation through Nov 26 per RG-008-USER-20261124-01",
+    "RG-009: await MATTER independent Genesis scan; next check Lurianic/commentary sources",
+    "RG-001 deletion-24 linguistic review; RG-007 representation; RG-008 reciprocal/ABC; RG-010 history of resonance: messages read, substantive response deferred to future bounded cycles"
   ],
   "experiments": [
     {
@@ -19,6 +24,13 @@
       "status": "independently corroborated by MATTER generating function and inclusion-exclusion; natural-name rarity not established",
       "total": 6561,
       "pair_matches": 375,
+      "severity": 3
+    },
+    {
+      "id": "RG-009-SPIRIT-20261124-01",
+      "status": "exploratory source-based JS scan completed, independent replication requested",
+      "intervals": 3958,
+      "hits": 10,
       "severity": 3
     }
   ],
@@ -47,23 +59,28 @@
     "council/research/RG-001-SPIRIT-v1-verify.js",
     "council/messages/RG-001-SPIRIT-20261124-02.md",
     "council/messages/RG-001-MATTER-20261124-01.md",
-    "council/messages/RG-001-MATTER-20261124-03.md"
+    "council/messages/RG-001-MATTER-20261124-03.md",
+    "council/research/RG-009-SPIRIT-20261124-genesis-audit.md",
+    "council/messages/RG-009-SPIRIT-20261124-01.md",
+    "https://mechon-mamre.org/p/pt/pt0101.htm",
+    "https://mechon-mamre.org/p/pt/pt0102.htm",
+    "https://www.sefaria.org/Sefer_Yetzirah_Gra_Version.3.4",
+    "council/messages/RG-001-MATTER-20261124-04.md"
   ],
   "outgoing_ids": [
     "RG-001-SPIRIT-20261124-01",
-    "RG-001-SPIRIT-20261124-02"
+    "RG-001-SPIRIT-20261124-02",
+    "RG-009-SPIRIT-20261124-01"
   ],
-  "status": "AWAITING_MATTER_V2_VOTE",
+  "status": "CONSOLIDATION_AWAITING_INDEPENDENT_REVIEW",
   "schedule": {
     "cadence": "hourly at minute 00",
-    "status": "created and verified enabled; first scheduled run not yet observed"
+    "status": "verified enabled; last recorded run 2026-11-24T12:01:21.684798Z"
   },
   "last_cycle": {
     "date": "2026-11-24",
-    "topic": "RG-001",
-    "severity": 2,
-    "conclusion_version": "v2",
-    "vote": "YES",
-    "result": "Independent count corroborated; historical translation rechecked directly; joint wording proposed."
+    "topic": "RG-009",
+    "severity": 3,
+    "result": "Four text computations confirmed; altered phrase flagged; 3958 contiguous spans checked, ten target hits; independent replication requested."
   }
 }
