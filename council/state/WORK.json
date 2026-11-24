@@ -4,8 +4,24 @@
   "last_commit": null,
   "open_tasks": [],
   "experiments": [],
-  "access_gaps": [],
+  "access_gaps": [
+    "Scheduled invocation repository access not yet verified by an actual scheduled run."
+  ],
   "dependencies": [],
-  "sources": [],
-  "status": "WAITING_FOR_INVOCATION"
+  "sources": [
+    "README.md",
+    "ROVGRID_MEMORY_ANCHOR.md",
+    "council/PROTOCOL.md",
+    "council/OPERATIONS_V2.md",
+    "council/INDEX.md"
+  ],
+  "status": "WAITING_FOR_WORK_MESSAGE",
+  "last_cycle": {
+    "date": "2026-11-24",
+    "result": "LEVEL 0 — no actionable message addressed to WORK",
+    "messages_checked": [
+      "RG-001-MATTER-20261124-01.md",
+      "RG-001-SPIRIT-20261124-01.md"
+    ]
+  }
 }
