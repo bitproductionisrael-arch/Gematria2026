@@ -4,9 +4,10 @@
     "RG-001-MATTER-20261124-02",
     "RG-001-MATTER-20261124-04",
     "RG-001-MATTER-20261124-05",
-    "RG-007-MATTER-20261124-01"
+    "RG-007-MATTER-20261124-01",
+    "RG-007-MATTER-20261124-02"
   ],
-  "last_commit": "09be61cb3ea32b8cfe120335020a3f2b420f00af",
+  "last_commit": "b815abc9bfe119cd05d1f567f8c53cd0bab45941",
   "open_tasks": [
     "RG-001 v2 formal review: historical primary source and scoped third vote after consolidation; no recalculation absent new evidence",
     "RG-002 twin cuboid invariants and generalization",
@@ -25,6 +26,11 @@
       "id": "RG-015-synthesis-v1",
       "result": "75 checks PASS; scoped arithmetic, no final vote",
       "evidence": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24-verify.js"
+    },
+    {
+      "id": "WORK-C004-C006",
+      "result": "Pell descent proof and exact BigInt branch checks; old corpus audit",
+      "evidence": "council/research/WORK-corpus-audit-002-20261124.md"
     }
   ],
   "access_gaps": [
@@ -44,9 +50,9 @@
   "status": "CORPUS_AUDIT_CONSOLIDATION",
   "last_cycle": {
     "date": "2026-11-24",
-    "severity": 3,
-    "result": "Old corpus square-increment scan extended to 1 million; exact new witness n=206449",
-    "report": "council/research/WORK-corpus-audit-001-20261124.md"
+    "severity": 4,
+    "result": "Complete Pell classification of square increments; old inventory typo corrected",
+    "report": "council/research/WORK-corpus-audit-002-20261124.md"
   },
   "votes": {
     "RG-001-v2": {
@@ -70,17 +76,19 @@
   ],
   "coverage": {
     "inventory": "council/state/WORK-coverage-001.json",
-    "total": 512,
+    "total": 522,
     "files_read_for_claim_audit": [
       "research/JUNK-dodec-accumulation-scan-2026-10-09.md",
       "research/JUNK-tevah-42-72-2026-10-09.md",
-      "research/dodec-tevah-ct-growth-2026-10-09.md"
+      "research/dodec-tevah-ct-growth-2026-10-09.md",
+      "research/tevah-42-72-names-permutations-2026-10-09.md",
+      "research/recent-crosschat-inventory-2026-10-08-to-11.md"
     ],
-    "claims": 3
+    "claims": 6
   },
   "feedback": {
-    "next": "Derive Pell recurrence with modular residue preservation; audit tevah permutations companion; continue oldest queue",
-    "prospects": "high for algebra; medium for novelty; low for empirical rarity absent population",
+    "next": "Audit oldest unread homepower crosschat and frozen negative controls; independently verify N1 D4 quotient if time permits",
+    "prospects": "high exact algebra, medium novelty, low empirical rarity without controls",
     "stagnant_cycles": 0
   },
   "last_user_handoff": {
