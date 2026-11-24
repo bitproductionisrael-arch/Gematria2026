@@ -41,6 +41,11 @@
       "id": "RG-015-adversarial-v1",
       "result": "Exact 5040 word orders; 120 full matches; nonunique word order",
       "evidence": "council/research/RG-015-adversarial-v1.js"
+    },
+    {
+      "id": "WORK-homepower-batch-20261125",
+      "result": "Actual output saved; partial file audit",
+      "evidence": "council/research/WORK-homepower-batch-20261125.json"
     }
   ],
   "access_gaps": [
@@ -59,10 +64,10 @@
   ],
   "status": "CORPUS_AUDIT_CONSOLIDATION",
   "last_cycle": {
-    "date": "2026-11-24",
-    "severity": 4,
-    "result": "Complete Pell classification of square increments; old inventory typo corrected",
-    "report": "council/research/WORK-corpus-audit-002-20261124.md"
+    "date": "2026-11-25",
+    "severity": 3,
+    "result": "Eight files retrieved; eight claim groups executed; exact product collisions enumerated",
+    "report": "council/research/WORK-homepower-batch-20261125.json"
   },
   "votes": {
     "RG-001-v2": {
@@ -94,13 +99,21 @@
       "research/JUNK-tevah-42-72-2026-10-09.md",
       "research/dodec-tevah-ct-growth-2026-10-09.md",
       "research/tevah-42-72-names-permutations-2026-10-09.md",
-      "research/recent-crosschat-inventory-2026-10-08-to-11.md"
+      "research/recent-crosschat-inventory-2026-10-08-to-11.md",
+      "research/JUNK-homepower-crosschat-2026-10-11.md",
+      "research/homepower-aleph-rov-corpus-2026-10-11.md",
+      "research/homepower-original-post-EN-2026-10-11.txt",
+      "research/homepower-original-post-HE-2026-10-11.txt",
+      "research/rovgrid-exodus-16-16-homepower-inv73-ketiv-plene-2026-11-12.md",
+      "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "research/rovgrid-shaddai-314-homepower-2026-11-17-verify.js",
+      "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md"
     ],
-    "claims": 6
+    "claims": 14
   },
   "feedback": {
-    "next": "Audit oldest unread homepower crosschat and frozen negative controls; independently verify N1 D4 quotient if time permits",
-    "prospects": "high exact algebra, medium novelty, low empirical rarity without controls",
+    "next": "Audit lexical controls and N1 D4 quotient; do not repeat HomePower arithmetic",
+    "prospects": "high exact algebra; medium lexical controls; low origin inference",
     "stagnant_cycles": 0
   },
   "last_user_handoff": {
