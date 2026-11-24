@@ -1,0 +1,11 @@
+{
+  "role": "WORK",
+  "processed_ids": [],
+  "last_commit": null,
+  "open_tasks": [],
+  "experiments": [],
+  "access_gaps": [],
+  "dependencies": [],
+  "sources": [],
+  "status": "WAITING_FOR_INVOCATION"
+}
