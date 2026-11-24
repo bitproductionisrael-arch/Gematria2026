@@ -1,0 +1,171 @@
+{
+  "sources": [
+    {
+      "path": "research/JUNK-homepower-crosschat-2026-10-11.md",
+      "sha": "5a2088fe87ea4e747df125ce998a625125e7fec4",
+      "length": 6499
+    },
+    {
+      "path": "research/homepower-aleph-rov-corpus-2026-10-11.md",
+      "sha": "d7054e291c85c44a00998b676ddc32da24349ad8",
+      "length": 8963
+    },
+    {
+      "path": "research/homepower-original-post-EN-2026-10-11.txt",
+      "sha": "9010f710b554d586c0e24d714ec1c6e152aae48c",
+      "length": 11042
+    },
+    {
+      "path": "research/homepower-original-post-HE-2026-10-11.txt",
+      "sha": "df5f4e841d85d21278ffd4b4708bf998d4d2dab3",
+      "length": 8205
+    },
+    {
+      "path": "research/rovgrid-exodus-16-16-homepower-inv73-ketiv-plene-2026-11-12.md",
+      "sha": "49dcb71837b2cfa2c7dbd13c74865384a278e9e2",
+      "length": 3365
+    },
+    {
+      "path": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "sha": "35fecd59a7e97392d0c571f62d2245958b89ba96",
+      "length": 12450
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-homepower-2026-11-17-verify.js",
+      "sha": "dbc82d3e2e176edaff713a0cab22c8820c887003",
+      "length": 5363
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md",
+      "sha": "fcaf4bfffb2138150f41e9e6d6f10ddea8429f22",
+      "length": 8022
+    }
+  ],
+  "calculator": "a36b65dcb6f228756a6744d5507ab135065a8021",
+  "master": "654bd0f3db4494addb983756d22d27e0f3261547",
+  "result": {
+    "checks": [
+      {
+        "id": "C007",
+        "actual": [
+          2400,
+          2400,
+          2400
+        ],
+        "expected": [
+          2400,
+          2400,
+          2400
+        ],
+        "pass": true
+      },
+      {
+        "id": "C008",
+        "actual": [
+          24,
+          24
+        ],
+        "expected": [
+          24,
+          24
+        ],
+        "pass": true
+      },
+      {
+        "id": "C009",
+        "actual": 88800,
+        "expected": 88800,
+        "pass": true
+      },
+      {
+        "id": "C010",
+        "actual": [
+          882,
+          888,
+          761,
+          771
+        ],
+        "expected": [
+          882,
+          888,
+          761,
+          771
+        ],
+        "pass": true
+      },
+      {
+        "id": "C011",
+        "actual": [
+          109,
+          141
+        ],
+        "expected": [
+          109,
+          141
+        ],
+        "pass": true
+      },
+      {
+        "id": "C012",
+        "actual": 486,
+        "expected": 486,
+        "pass": true
+      },
+      {
+        "id": "C013",
+        "actual": [
+          314,
+          35,
+          12
+        ],
+        "expected": [
+          314,
+          35,
+          12
+        ],
+        "pass": true
+      },
+      {
+        "id": "C014",
+        "actual": [
+          770,
+          5103
+        ],
+        "expected": [
+          770,
+          5103
+        ],
+        "pass": true
+      }
+    ],
+    "hits": [
+      "אות",
+      "אחש",
+      "אלפ",
+      "אמס",
+      "בגת",
+      "בדש",
+      "בור",
+      "בכס",
+      "בלמ",
+      "גדר",
+      "גחק",
+      "גיפ",
+      "גכמ",
+      "דוק",
+      "דיס",
+      "דכל",
+      "וימ",
+      "וככ",
+      "חיל"
+    ],
+    "unorderedTriples": 2024,
+    "scope": "all multisets of three base Hebrew letters, not lexical words; exact collision count"
+  },
+  "feedback": {
+    "expertise": "high exact arithmetic, limited historical and lexical validation",
+    "prospects": "high algebra, medium lexical controls, low origin inference",
+    "next": "check lexical frequencies and frozen negative controls; then N1 D4 quotient",
+    "limitations": "eight files retrieved, selected claims only; 900k digit scan and textual sources not independently rerun; prior archive already notes collisions, exact multiset count novelty not exhaustively established"
+  }
+}
