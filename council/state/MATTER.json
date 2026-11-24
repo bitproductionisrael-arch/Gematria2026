@@ -1,11 +1,16 @@
 {
   "role": "MATTER",
   "processed_ids": [
-    "RG-001-SPIRIT-20261124-01"
+    "RG-001-SPIRIT-20261124-01",
+    "RG-001-SPIRIT-20261124-02",
+    "RG-001-USER-20261124-02",
+    "RG-001-USER-20261124-03"
   ],
-  "last_commit": "111306d4726d80c0f2255cea1636d366db5cd853",
+  "last_commit": "315590499974bc5e9b1201cf5baaac8450eb81ed",
   "open_tasks": [
-    "RG-001 align exact shared conclusion v2; await SPIRIT and WORK independent verification",
+    "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
+    "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
+    "RG-007 and RG-008: newly indexed messages deferred to subsequent bounded cycles",
     "RG-002 cross-link dyadic/Pell appendix and inspect cuboid uniqueness",
     "RG-005 preregister real-name/transliteration population and multiplicity controls",
     "RG-003",
@@ -31,13 +36,28 @@
       "method": "independent polynomial coefficient DP",
       "count": 375,
       "total": 6561
+    },
+    {
+      "id": "RG-001-MATTER-20261124-05",
+      "result": "PASS",
+      "code": "council/evidence/RG-001-MATTER-20261124-deletion24-verify.py",
+      "subsets": 2048,
+      "hits": 3,
+      "findings": [
+        "two deletion multisets, three positional subsets",
+        "only AIIE preserves delta 888",
+        "Greek ancient ordinal 96, not 97",
+        "Hebrew אחרית הימים 724, not 884"
+      ],
+      "negative": "conditional classification is not empirical name rarity"
     }
   ],
   "access_gaps": [
     "README and memory anchor relevant sections reviewed, not entire corpus",
     "accessible prior context searched, not exhaustive",
-    "historical primary-source collation not done by MATTER",
-    "scheduled-run repository access not yet verified in actual invocation"
+    "scheduled-run repository access not yet verified in actual invocation",
+    "Agrippa II.XX English translation checked directly; original Latin page image not collated",
+    "RG-007/008 content deferred; no decisions directory accessible (404)"
   ],
   "dependencies": [
     "fixed maps + spelling -> English/Hebrew totals -> arithmetic equality",
@@ -45,7 +65,9 @@
     "primitive cuboids -> half-surface 222s²",
     "complement + half-surface -> Pell equation",
     "dyadic restriction -> unique (16,2)",
-    "fixed pattern + A-I substitutions -> 6561 delta / 375 pair collisions"
+    "fixed pattern + A-I substitutions -> 6561 delta / 375 pair collisions",
+    "fixed maps + subset deletion -> exact coefficient 3; equal J exchange -> delta shift via S",
+    "Greek 24-letter and 27-sign orders -> different ordinal values"
   ],
   "sources": [
     "README.md",
@@ -57,7 +79,12 @@
     "research/rovgrid-triangular-t37-t73-t16-reconstruct-twin-cuboids-2026-11-20.md",
     "research/rovgrid-language-radix-equivalence-mod24-4040-2026-11-19.md",
     "research/ROVGRID_HIGH_ANCHOR_TWO_CUBES_OMR_ABUNDANCE_BIG_BANG_GENESIS_2026-11-17.md",
-    "council/research/RG-001-SPIRIT-v1-2026-11-24.md"
+    "council/research/RG-001-SPIRIT-v1-2026-11-24.md",
+    "council/messages/RG-001-SPIRIT-20261124-02.md",
+    "council/messages/RG-001-USER-20261124-02.md",
+    "council/messages/RG-001-USER-20261124-03.md",
+    "research/rovgrid-amit-mr-miik-444-512-888-1024-136-2026-11-10.md",
+    "https://www.esotericarchives.com/agrippa/agripp2b.htm"
   ],
   "status": "DEBATE",
   "topic": "RG-001",
@@ -65,7 +92,9 @@
   "own_messages": [
     "RG-001-MATTER-20261124-01",
     "RG-001-MATTER-20261124-02",
-    "RG-001-MATTER-20261124-03"
+    "RG-001-MATTER-20261124-03",
+    "RG-001-MATTER-20261124-04",
+    "RG-001-MATTER-20261124-05"
   ],
   "last_cycle": "2026-11-24",
   "schedule_status": "Created enabled hourly at minute 20; first scheduled run not yet verified"
