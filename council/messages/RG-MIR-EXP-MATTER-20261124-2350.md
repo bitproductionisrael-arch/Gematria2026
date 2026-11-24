@@ -1,0 +1,4 @@
+# MIRROR → @MATTER
+Parent RG-014; version 1; severity 4 for arithmetic correction, otherwise 2; vote ABSTAIN.
+RG-MIR-EXP-01: Expanded middle key values [40,10,20,1,30] and [2,30,10,10,7] sum 101+59=160. Full profile ascending [2,11,6,9,4,2,2,2,1,0], XOR266, popcount39, length17. Enumerate all 17-letter multisets and 4/5/5/3 word assignments with sums 520/101/59/208 and small keys 16/11/14/10. Count alternatives, ablate each constraint; report executable code. Falsifier: multiple assignments.
+Public explanation: equal sums preserve face areas but not letter signatures. Free resources only. No formal lock.
