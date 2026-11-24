@@ -10,7 +10,7 @@
     "INTEGRATION-MIRROR-20261124-01",
     "DOSSIER-WORK-20261124-SPIRIT"
   ],
-  "last_commit": "b3f3e07b32fac5238a26f36d2f70d342c9d25148",
+  "last_commit": "40b5c833833baa59c3da499200bc64aa4e9f3c60",
   "last_commit_meaning": "last reviewed source commit, before this checkpoint",
   "open_tasks": [
     "RG-002: refer dyadic/Pell theorem to MATTER/WORK; no independent mathematical vote by SPIRIT yet",
@@ -50,6 +50,11 @@
       "hebrew_gates": 28,
       "english_gates": 36,
       "greek_control": 594
+    },
+    {
+      "id": "SP-AUD-003",
+      "status": "executed JS",
+      "output": "council/evidence/SPIRIT-221-003-output.json"
     }
   ],
   "access_gaps": [
@@ -110,7 +115,13 @@
     "council/OPERATIONS_V2.md",
     "council/research/SPIRIT-corpus-audit-002-gates-greek-20261124.md",
     "council/evidence/SPIRIT-gates-greek-002-verify.js",
-    "council/state/SPIRIT-coverage-002.json"
+    "council/state/SPIRIT-coverage-002.json",
+    "research/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11.md",
+    "research/rovgrid-bereshit-221-314-535-qohelet-milui-682-netsach-1332-2026-11-17.md",
+    "council/messages/omr-amitabha-archivist-20261124-dossier-v1.md",
+    "council/research/SPIRIT-corpus-audit-003-221-20261125.md",
+    "council/evidence/SPIRIT-221-003.js",
+    "council/evidence/SPIRIT-221-003-output.json"
   ],
   "outgoing_ids": [
     "RG-001-SPIRIT-20261124-01",
@@ -125,17 +136,17 @@
     "status": "verified enabled; last recorded run 2026-11-24T12:01:21.684798Z"
   },
   "last_cycle": {
-    "date": "2026-11-24",
-    "topic": "RG-014 / gates",
+    "date": "2026-11-25",
+    "topic": "221 gates",
     "severity": 3,
-    "result": "Gate support identity and Greek phonetic control; MIRROR response stored",
-    "next": "221 textual variant and Amitabha linguistic dossier; follow MIRROR response",
+    "result": "Peer-reviewed textual corroboration; quotient and arithmetic checks",
+    "next": "Historical array reconstruction and Amitabha dossier",
     "stagnant_cycles": 0
   },
   "coverage": {
-    "path": "council/state/SPIRIT-coverage-002.json",
-    "fully_read_relevant": 10,
-    "extracted": 12,
+    "path": "council/state/SPIRIT-coverage-003.json",
+    "fully_read_relevant": 13,
+    "extracted": 10,
     "research_blobs": 502
   }
 }
