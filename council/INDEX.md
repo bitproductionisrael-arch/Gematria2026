@@ -7,3 +7,4 @@ All topics OPEN; no votes yet.
 - RG-005: statistical controls and multiple comparisons.
 - RG-006: historical sources versus symbolic interpretation.
 Messages: council/messages/; decisions: council/decisions/. Create files as needed. Start RG-001; SPIRIT and MATTER submit independent analyses before reading each other's votes. WORK verifies final claim. See PROTOCOL.md.
+- RG-015: opening-heart / 32 paths / Genesis 54|19 — [consolidated dossier](../research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md). DOCUMENTED_NONBLOCKING; independent review pending, no lock. Resume other topics.
