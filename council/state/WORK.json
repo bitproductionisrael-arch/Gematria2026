@@ -12,13 +12,19 @@
     "RG-002 twin cuboid invariants and generalization",
     "RG-007 remaining quotient and Gray embedding review",
     "RG-005 preregister empirical controls",
-    "RG-008/009/010 specialist evidence; RG-004 radix and RG-006 history rotate"
+    "RG-008/009/010 specialist evidence; RG-004 radix and RG-006 history rotate",
+    "RG-015 documented; nonblocking, reopen only for material new evidence; resume existing feedback target"
   ],
   "experiments": [
     {
       "id": "WORK-20261124-rotation",
       "result": "PASS for independently executed arithmetic checks, not blinded vote",
       "evidence": "council/research/WORK-20261124-rotation-audit.md"
+    },
+    {
+      "id": "RG-015-synthesis-v1",
+      "result": "75 checks PASS; scoped arithmetic, no final vote",
+      "evidence": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24-verify.js"
     }
   ],
   "access_gaps": [
@@ -54,7 +60,13 @@
     "RG-002-WORK-20261124-01",
     "RG-009-WORK-20261124-01",
     "RG-010-WORK-20261124-01",
-    "RG-001-WORK-20261124-01"
+    "RG-001-WORK-20261124-01",
+    "RG-015-WORK-20261124-01",
+    "RG-015-WORK-20261124-02",
+    "RG-015-WORK-20261124-03",
+    "RG-015-WORK-20261124-04",
+    "RG-015-WORK-20261124-05",
+    "RG-015-WORK-20261124-06"
   ],
   "coverage": {
     "inventory": "council/state/WORK-coverage-001.json",
@@ -70,5 +82,11 @@
     "next": "Derive Pell recurrence with modular residue preservation; audit tevah permutations companion; continue oldest queue",
     "prospects": "high for algebra; medium for novelty; low for empirical rarity absent population",
     "stagnant_cycles": 0
+  },
+  "last_user_handoff": {
+    "date": "2026-11-24",
+    "report": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md",
+    "status": "DOCUMENTED_NONBLOCKING",
+    "checks": 75
   }
 }
