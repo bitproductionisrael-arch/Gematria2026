@@ -1,20 +1,20 @@
 {
   "scope": "research/, projects/, council/research/, root README and ROVGRID files",
-  "tree_sha": "1dfba4051ec3d5e14578e6eb7d90a33ba7073ff0",
+  "tree_sha": "a0f846828f88a285f1f7309c877d6f3da2d3ecbe",
   "files": [
     {
       "path": "README.md",
-      "sha": "ea7c30e9dd04c12c198e4faabcc652d74dd495f8",
+      "sha": "cdeaac20375d24de9e076ca2eb926811ad3c9648",
       "status": "UNREAD"
     },
     {
       "path": "ROVGRID_MASTER_CORPUS_2026-11-15.md",
-      "sha": "24c1615f39ad754f3ed1daadedfc5e3bb72ac7e2",
+      "sha": "654bd0f3db4494addb983756d22d27e0f3261547",
       "status": "UNREAD"
     },
     {
       "path": "ROVGRID_MEMORY_ANCHOR.md",
-      "sha": "68f31d04d1c80da52bd986739fdf7621c8fabdaa",
+      "sha": "4bb20f3e8f14cf8ddefb890954dff72fad93aa5d",
       "status": "UNREAD"
     },
     {
@@ -25,6 +25,16 @@
     {
       "path": "council/research/ARCHIVIST-20261124-SOURCE-AUDIT.md",
       "sha": "63d79b56d3edcbf971c3613f6b6658b7c90b209c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/EDITOR-coverage-001-20261124.md",
+      "sha": "965b14b2d533dd5d525f7dd3105acd8f50189491",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/MATTER-inventory-20261124-2120.json",
+      "sha": "f84cdaeaba6e1e8e37feec772d9f16658856fd41",
       "status": "UNREAD"
     },
     {
@@ -43,8 +53,28 @@
       "status": "UNREAD"
     },
     {
+      "path": "council/research/SPIRIT-corpus-audit-001-shadow-20261124.md",
+      "sha": "13c2097b971ac3d645bb04a47952f1ae5d2e2383",
+      "status": "UNREAD"
+    },
+    {
       "path": "council/research/WORK-20261124-rotation-audit.md",
       "sha": "9d27e392da5bc877143ecdd0727a0ac39ef46748",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-001-20261124.md",
+      "sha": "b3bc910c06e2fc7e79df5a922a8141b89d7d79f4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-002-20261124-verify.js",
+      "sha": "9f7a76912d2c98b62096df21426e301d7026ba0b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-002-20261124.md",
+      "sha": "37ffb0bc494cfb6260272b23205b1c87a1381617",
       "status": "UNREAD"
     },
     {
@@ -123,6 +153,11 @@
       "status": "UNREAD"
     },
     {
+      "path": "research/ROVGRID_FOUNDATIONAL_LIBRARY.md",
+      "sha": "6c99f35308a9e6215c2b353f42daa77dc2c4eb45",
+      "status": "UNREAD"
+    },
+    {
       "path": "research/ROVGRID_FULL_CONVERSATION_GENERATOR_THREE_LADDERS_Q8_1024_GENESIS_HEXAGON_2026-11-18.md",
       "sha": "474520d4c7d4c5685b62286d87a9c048ffc49177",
       "status": "UNREAD"
@@ -130,6 +165,11 @@
     {
       "path": "research/ROVGRID_HIGH_ANCHOR_TWO_CUBES_OMR_ABUNDANCE_BIG_BANG_GENESIS_2026-11-17.md",
       "sha": "159a7772456ad15543e535e06d243b37810a5a44",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_LIGHT_CROSS_CULTURAL_2026-11-24.md",
+      "sha": "4866f2a51a8eca4f68cabfab340b82c142f6d116",
       "status": "UNREAD"
     },
     {
@@ -435,7 +475,7 @@
     {
       "path": "research/recent-crosschat-inventory-2026-10-08-to-11.md",
       "sha": "ac24d2efd9e42b56311962fb77652e8f4c4e4ed1",
-      "status": "UNREAD"
+      "status": "IN_REVIEW"
     },
     {
       "path": "research/rovgrid-097-crossconstants-2026-11-17-verify.py",
@@ -789,7 +829,7 @@
     },
     {
       "path": "research/rovgrid-alphabet-love-tree-of-life-golden-ratio-2026-11-24.md",
-      "sha": "5504aac718b57b5109089c7f349bd3992dbffa7b",
+      "sha": "cd85ba58ba21e7faf8ba738ae85406e78bbece27",
       "status": "UNREAD"
     },
     {
@@ -1325,6 +1365,16 @@
     {
       "path": "research/rovgrid-genesis-359-tanakh-opposites-david-music-2026-11-08.md",
       "sha": "24d65dfc14fe069bc8f64648da4284f0cd5f0944",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24-verify.js",
+      "sha": "feead7a705e928c81b1f6d862984f6ee107d4949",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md",
+      "sha": "957437cdecb8aeaa9b4d62fc2d4250dbcfe92f06",
       "status": "UNREAD"
     },
     {
@@ -2545,7 +2595,7 @@
     {
       "path": "research/tevah-42-72-names-permutations-2026-10-09.md",
       "sha": "0e1dc514125ef0a33f406e62a5f75e47e2ee11d1",
-      "status": "UNREAD"
+      "status": "IN_REVIEW"
     },
     {
       "path": "research/thai-genesis-1-1-canonical-637-151-43.md",
@@ -2563,9 +2613,5 @@
       "status": "UNREAD"
     }
   ],
-  "reviewed_claims": [
-    "WORK-C001",
-    "WORK-C002",
-    "WORK-C003"
-  ]
+  "reviewed_claims": 6
 }
