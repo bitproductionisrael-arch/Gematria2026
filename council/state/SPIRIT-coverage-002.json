@@ -1,0 +1,3343 @@
+{
+  "role": "SPIRIT",
+  "snapshot": "b3f3e07b32fac5238a26f36d2f70d342c9d25148",
+  "source_review_snapshot": "b3f3e07b32fac5238a26f36d2f70d342c9d25148",
+  "tree_entries": 680,
+  "blobs": 661,
+  "research_blobs": 502,
+  "files": [
+    {
+      "path": ".github/workflows/prime-clock-check.yml",
+      "sha": "35a71795efe3c98ae8311f177eb56f29fd8192b4",
+      "status": "UNREAD"
+    },
+    {
+      "path": ".nojekyll",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "status": "UNREAD"
+    },
+    {
+      "path": "README.md",
+      "sha": "cdeaac20375d24de9e076ca2eb926811ad3c9648",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "ROVGRID_MASTER_CORPUS_2026-11-15.md",
+      "sha": "654bd0f3db4494addb983756d22d27e0f3261547",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "ROVGRID_MEMORY_ANCHOR.md",
+      "sha": "4bb20f3e8f14cf8ddefb890954dff72fad93aa5d",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "active-research.html",
+      "sha": "4385af22e3b94935f504acb9e5d170ef10394b45",
+      "status": "UNREAD"
+    },
+    {
+      "path": "arabic-gematria.js",
+      "sha": "a49effb83b96aa0069dcc5d55a777576aa8d2de0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-14-222-666-888-triple-closure-2026-11-09.svg",
+      "sha": "d26dbe87fa630f8e31902c4d5b7c91ea41f33c62",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-222-888-name-bridge-landscape-2026-11-09.svg",
+      "sha": "9f1dda8f0be7b8e00743672d1962b415ca87945b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-37-factorial-ladder-2026-11-09.svg",
+      "sha": "3cfb852885826cbd0b269c8328587609c1cf60ca",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-37-points-54-triangles-yhvh-2026-11-11.svg",
+      "sha": "733c54626fb7ecdbce1e1308acf8dbc4d1fa66ee",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-496-136-central-inverted-triangle-2026-11-08.svg",
+      "sha": "3479aa40aa01c28348bd076bbd5b7afbef27394a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11.svg",
+      "sha": "e88fd8ae7b668fa74dd7bc6eb4de8830282e068a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-cube-fvector-primitive-pairing-2026-11-09.svg",
+      "sha": "75a6c17bbd0d7201266e1c187584c94eb53c0317",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-dj-blaze-ani-hu-13-square-2026-11-08.svg",
+      "sha": "9be4a4256774c10b605a86301063533243f2a130",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-eight-dimension-sequencer.svg",
+      "sha": "695bd1f495913320064e4240d93407bd7d894da9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-fuxi-binary-64-primes-2026-11-08.svg",
+      "sha": "6c0d765e1560bde8c894260d6895054273deb103",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-higher-powers-phase-cuboid-matrix-2026-11-09.svg",
+      "sha": "0595d1b62aea91786da83d3c541797eff9c5a4aa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-jupiter-136-four-corners-gray-q10-2026-11-11.svg",
+      "sha": "e26e3237b093622a76fda8a46f954b9a532fc829",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-polynomial-cuboids.svg",
+      "sha": "e88c17332e1534f464e9a787d0d9da1cee94ab43",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-prime-4x6-isosceles-13-13-26-2026-11-08.svg",
+      "sha": "168df18a0ccc10600332b030ccb37c82c31dbda8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-prime-4x6-star-rectangle-163-169-2026-11-08.svg",
+      "sha": "20e4f6ed465261567985de4f25f61875f99722dc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-prime-affine-double-diagonal-30-6-2026-11-08.svg",
+      "sha": "bb1793abcf8d44b70bf6e613bbbe7cbda95864cd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-residue-12-star-twins-2026-11-08.svg",
+      "sha": "463db4ed967e511935e6d2fe2cbafbabe514a154",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-shema-david-tesha-torah-738-999-2026-11-22.svg",
+      "sha": "229030fe331b4a87d0c3240c5322194ca8ba2261",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-sierpinski-32-136-888-gray-q10-2026-11-11.svg",
+      "sha": "08137fe0791ddd5c179f2db407d2798d6c8a99fa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-square-ring-54-27.svg",
+      "sha": "3e35e5b5debf056f1eb2dad65a69c82cd117e847",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-square-rings-888.svg",
+      "sha": "33d3a9fbf52946237dc1a7ab0cebed4c865f4614",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-star-bindu-1024-atlas-2026-11-09.svg",
+      "sha": "cf057a98c7afd0fddf801ad8e3227d8cd6823efc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-star-primes-37-59-73-pick-2026-11-08.svg",
+      "sha": "8bcd238b33143882c64e3e1232b982fa381f0b81",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/rovgrid-three-faces-fourth-axis-2026-11-07.svg",
+      "sha": "b70ed174e824ebc37a53e161c32e6310a39cdc4b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "assets/tesseract-convergence.svg",
+      "sha": "fcce6cd477a44eb7bcc2d7cf8fd717dd2bc3951f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "base-transform-520.html",
+      "sha": "d799eb5ca17b343e0821a0cde1df76dca367dad6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "blog.html",
+      "sha": "bd3173b882bb00d75b6c3ad04e9e850a41f86512",
+      "status": "UNREAD"
+    },
+    {
+      "path": "calculator.html",
+      "sha": "a36b65dcb6f228756a6744d5507ab135065a8021",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "corpus-data.json",
+      "sha": "59f0582df734b773fac5f3d2f2c1411f64b7a3ef",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/DASHBOARD.md",
+      "sha": "a03290b8e803a0abe947efb046e1b97f067770e9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/FEEDBACK_LOOP.md",
+      "sha": "e17802c233de283082244a7f5f90362dc0c7e9d6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/FULL_CORPUS_AUDIT.md",
+      "sha": "b454d08d1a122f8c3687aca74ad8264b78dfe7dd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/INDEX.md",
+      "sha": "87a33cffe153165ac92640f5721a4f6901310545",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/MIRROR.md",
+      "sha": "e89d1d54fd127a9c20d26e8de015afe3df9fc9a6",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "council/OPERATIONS_V2.md",
+      "sha": "c4d1b1a2c58404229dd4949d46808ff68547f227",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "council/PROTOCOL.md",
+      "sha": "b9fc4921530ba87ac141aaf831663834b507e196",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/dashboard.html",
+      "sha": "9a65d625509f7084cf6b83241df78cf139adfca9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/evidence/MATTER-frontier-20261124-verify.py",
+      "sha": "aa531efb4bde5c388ad5caa15ab4d29cdddb0eab",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/evidence/MATTER-name-letter-geometry-20261124-verify.py",
+      "sha": "c00044dd218ec1d308d55f2a4f8563fb140f1525",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/evidence/RG-001-MATTER-20261124-deletion24-verify.py",
+      "sha": "3aac734b4a2544407cee8c7ca6900309339c93b8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/evidence/RG-001-MATTER-20261124-verify.py",
+      "sha": "a4194d4d5b9e79138bc33a0d35588b878e150676",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/evidence/SPIRIT-shadow-001-verify.js",
+      "sha": "db0578c9e3ee8e4c895cee7d15f7fef670054284",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/ANCHOR-WORK-20261124-01.md",
+      "sha": "76b30e56500be171db33f92f228eec333129092c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/DOSSIER-WORK-20261124-ARCHIVIST.md",
+      "sha": "43d80e9c98ee32914087ed2d9109249b6de5a13c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/DOSSIER-WORK-20261124-EDITOR.md",
+      "sha": "ea0f4e44d80fdf4dc80a07df713f6b65b43cc98d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/DOSSIER-WORK-20261124-MATTER.md",
+      "sha": "a2d2244b4b2df19138769a9a45735b00f46be0cc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/DOSSIER-WORK-20261124-SPIRIT.md",
+      "sha": "1b319c010e7b77559b4f43777674d2ec385fc461",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "council/messages/EXTERNAL-MATHEMATICS-GURU-INVITATION.md",
+      "sha": "a234673ecc052395a57b815adc3f20e32f93a6ad",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/FULL-AUDIT-USER-20261124-SPRINT.md",
+      "sha": "e4ca5d865e6e8034a39690b95b7af14edcf5babe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/INTEGRATION-MIRROR-20261124-01.md",
+      "sha": "5357409cbfdbd7b2e9e74d2a6f7ca4851e22a5b4",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "council/messages/RG-001-MATTER-20261124-01.md",
+      "sha": "ce1bff9e34973624ce1df2325f3b8a5475a95930",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-MATTER-20261124-02.md",
+      "sha": "b041e477edd2a342a289480c842f06cbb4dd5cf5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-MATTER-20261124-03.md",
+      "sha": "1d08db0468c88703efcfe058aca3d49569f42ccd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-MATTER-20261124-04.md",
+      "sha": "56b9fc8cc6c5349b02067068e3ab1fcf892e5671",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-MATTER-20261124-05.md",
+      "sha": "80378bb1d0be9aec004980017f84db78fd428f7b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-SPIRIT-20261124-01.md",
+      "sha": "dfeb9b07302f7eaf5abede2105e542767eec4c95",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-SPIRIT-20261124-02.md",
+      "sha": "522e5b4a160533dc75b14f6f1f802294b234b7a2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-USER-20261124-02.md",
+      "sha": "a0a5162371e25416c3c6cc54d87cfc2a6c0ba654",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-USER-20261124-03.md",
+      "sha": "5cbd3cc653c04d2dc00c1aa7785f5a588bf6677a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-001-WORK-20261124-01.md",
+      "sha": "9500b8e09b0fdc7300264fd7f93b37482d6212c2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-002-WORK-20261124-01.md",
+      "sha": "8276183fd8ebdd96cd33d264e578c3dba66d128d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-006-SPIRIT-20261124-shadow-01.md",
+      "sha": "f3cea04d3cb02f51a54bb20f4aae80f810652d71",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-007-MATTER-20261124-01.md",
+      "sha": "f7824935f34fd3f454432bb1f3d4e7637f627cfa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-007-MATTER-20261124-02.md",
+      "sha": "c2269a8b7f63cdcd428d084c85cb466295330efb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-007-USER-20261124-01.md",
+      "sha": "5218a8e0c4aa0f708d8592e8ea58b14968fcd1d1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-007-USER-20261124-02.md",
+      "sha": "425326236608b0020ba8a29b1aaa255282b7af20",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-007-USER-20261124-03.md",
+      "sha": "9fc5d0073d7b18afc6fac4118b12400aa441d7e0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-SPIRIT-20261124-01.md",
+      "sha": "cb3082dbe6efa90dc9381a3ca015013319beb386",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-USER-20261124-01.md",
+      "sha": "ff9ad6909169a2cb7bf9580e8294393e0f1e87a7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-USER-20261124-02.md",
+      "sha": "64265b7b953aafe44ce75429b85d62a7ea06c49f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-USER-20261124-03.md",
+      "sha": "ca38ee00e230d5b4d5b1f7d3580bfb6a3c18cf8d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-USER-20261124-04.md",
+      "sha": "1162930baad7cb4a2fd7bee500691868bd59991a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-008-USER-20261124-05.md",
+      "sha": "e630bc6f9d943370fa64da856bcbbc76dd9491e8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-009-ARCHIVIST-20261124-01.md",
+      "sha": "df0103fa9b09d007bb3bd3c6c691c71aadd9764a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-009-ARCHIVIST-20261124-02.md",
+      "sha": "22b6baac26e4574809c31622ecd0e4d65cc7a598",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-009-SPIRIT-20261124-01.md",
+      "sha": "e737e4d7aaf14317e4ed3acf65a777966c6d3d1e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-009-USER-20261124-01.md",
+      "sha": "0a60e27305455cc1abba7566462f95a449f9f1cf",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-009-WORK-20261124-01.md",
+      "sha": "3aaa31b3cff7144c5780bcf6d0415063fb94e918",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-010-ARCHIVIST-CHARTER-20261124.md",
+      "sha": "391d7e71a841fb09434ac70e62717f6f256bcaff",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-010-USER-20261124-01.md",
+      "sha": "55f4b6e1d175943265ef58b10443f1d9a4c94d4f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-010-WORK-20261124-01.md",
+      "sha": "6bbc4715bd2b6ff8b2090cebc67992665dc306f9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-011-USER-20261124-01.md",
+      "sha": "cdc16a4b6817dff5d6aeb4c9c85e56683bb614bb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-012-USER-20261124-01.md",
+      "sha": "229df4898bab72f439d2bcc67726d993e277b6fd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-012-USER-20261124-02.md",
+      "sha": "49e269dc786e83b95f82d7c9e5eef3dbf7a7c1ff",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-013-USER-20261124-01.md",
+      "sha": "b7847bf7792567238553738a2607502c0432a18b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-014-USER-20261124-01.md",
+      "sha": "3a23fe31b80cea6c5e93ad908e8aff2b528ff775",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-01.md",
+      "sha": "138066d1e5752b192c8aa12bb84e975682eb1ae2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-02.md",
+      "sha": "ec747c011ba0c8a5cdea0454e28caa741aa0a3d8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-03.md",
+      "sha": "d7eaa115b8b0d245aa9fdf0336c6764556b0bd5e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-04.md",
+      "sha": "ccf450255de65990e287ba04fb1e8ede9709b92c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-05.md",
+      "sha": "c14240281cf84a60e7df36d2bdea9755338abade",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/RG-015-WORK-20261124-06.md",
+      "sha": "a0c73eea15c27932fb6f1ada13abf5be8c265da7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/amitabha-names-spirit-request-20261124.md",
+      "sha": "7b19e4e7502d374bbdcb10df2f42dcc7cbefce48",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "council/messages/ancient-geometry-archivist-20261125-plan.md",
+      "sha": "8729203a2f25d4f4227665e69b8f8fe1f1e0a98d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/kabbalah-light-archivist-20261124.md",
+      "sha": "5c2ca66f5ba4e19f48341101614c447d57715b36",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/omr-amitabha-archivist-20261124-dossier-v1.md",
+      "sha": "a3ecfbba77e1e5b107bfd9b967dd9ae7d05eb494",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/messages/solar-origin-archivist-20261124.md",
+      "sha": "618c60e661f62214afb93d62ea5e83e8b83072f5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/ARCHIVIST-20261124-FIRST.md",
+      "sha": "4b0f450d41197babd1bcc3ca05de1e4ab39dda78",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/ARCHIVIST-20261124-SOURCE-AUDIT.md",
+      "sha": "63d79b56d3edcbf971c3613f6b6658b7c90b209c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/EDITOR-coverage-001-20261124.md",
+      "sha": "965b14b2d533dd5d525f7dd3105acd8f50189491",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/MATTER-inventory-20261124-2120.json",
+      "sha": "f84cdaeaba6e1e8e37feec772d9f16658856fd41",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/RG-001-SPIRIT-v1-2026-11-24.md",
+      "sha": "fc0365bd765de9ee3c128e33af4f0ab30a998581",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/RG-001-SPIRIT-v1-verify.js",
+      "sha": "30bbda1174e04a12b7ddcefab4255a8a3accc3a8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/RG-009-SPIRIT-20261124-genesis-audit.md",
+      "sha": "8182831eaa94dfc803a171258ecb31c7f9760b9d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/SPIRIT-corpus-audit-001-shadow-20261124.md",
+      "sha": "13c2097b971ac3d645bb04a47952f1ae5d2e2383",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-20261124-rotation-audit.md",
+      "sha": "9d27e392da5bc877143ecdd0727a0ac39ef46748",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-001-20261124.md",
+      "sha": "b3bc910c06e2fc7e79df5a922a8141b89d7d79f4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-002-20261124-verify.js",
+      "sha": "9f7a76912d2c98b62096df21426e301d7026ba0b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/research/WORK-corpus-audit-002-20261124.md",
+      "sha": "37ffb0bc494cfb6260272b23205b1c87a1381617",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/ARCHIVIST.json",
+      "sha": "d864e420acee3cd0e8e1a683517c40928ba8ef1b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/EDITOR.json",
+      "sha": "8913c895cacf059f2e6855de5559bc2eb579b33f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/MATTER.json",
+      "sha": "8f945748f9987b732c66589c0e54dabc170f432f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/SPIRIT-coverage-001.json",
+      "sha": "0a1967368fbf36fa2a83aa65bc9e97b5b7419768",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/SPIRIT.json",
+      "sha": "c5b770cc060c7d99b584dfd24d1400f515bd79df",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/WORK-coverage-001.json",
+      "sha": "39ab395e7959e4e882b3b74416d7b5144b573472",
+      "status": "UNREAD"
+    },
+    {
+      "path": "council/state/WORK.json",
+      "sha": "5bb5e3f42a4c29e72053dfd00f6522ee46a592c6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "cymatics-lab.html",
+      "sha": "dc3eb2f5118c21e64fcdc203b3b675fb121fad82",
+      "status": "UNREAD"
+    },
+    {
+      "path": "frequency-piano.html",
+      "sha": "6951170b8a8e9fabfc918afebd2df1157767f3e0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "geometry-ai-chat.css",
+      "sha": "c384c575468ecaa29e3c0c800a1f12cba0e7daf3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "geometry-ai-chat.js",
+      "sha": "3b1d67cd35f3891a6fbbf44bae52fb78095b1f59",
+      "status": "UNREAD"
+    },
+    {
+      "path": "geometry-ai-config.js",
+      "sha": "0d1bd597539fad0e05ef6a9d93807ad44ccb27b0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "geometry-lab.html",
+      "sha": "449ee30e579f8be6ac01bd0c79f8104c534739e2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "greek-letter-milui.js",
+      "sha": "cf37273507296b5c963f22831d608da735d833c1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "greek-milui.html",
+      "sha": "8aaa16f738ed155a4a6bca4af5a3cf2b7fb05849",
+      "status": "UNREAD"
+    },
+    {
+      "path": "index.html",
+      "sha": "b8fb23ea3e98afd273ac06eed304c7cfed55f3c4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "michael-kohen-gadol-55.html",
+      "sha": "bf842126a11022c8cb24dbb2caab35f7acd66de4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-backend/README_HE.md",
+      "sha": "ae4679c1e9f0334ae0c403b5d939d3c246d32705",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-backend/worker.mjs",
+      "sha": "93bdb630a75eea9878a99f1bdac4793419a0f8cb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-backend/wrangler.toml",
+      "sha": "4f3262c0486cb7854b309f7c4b94e31e8653adc2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-config.js",
+      "sha": "bae8d71750bdec39220e497bc413f9ea0adc9fca",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-research.html",
+      "sha": "faa30c1c67689a90e0ce00a5429e1e8a0f6048c9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "prime-worker.js",
+      "sha": "24e5b74b469d33383590375ddac42032c32778d0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "projects/rov-verify-lite/PRODUCT_STATUS.md",
+      "sha": "66d5181a422c35a326e9e991c6d360ff944086cc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "projects/rov-verify-lite/README.md",
+      "sha": "df2f9b045aa5d9bb4ac67f9170f651634261599b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "projects/rov-verify-lite/access-c1c1df9c1217fc7a73a62a168978cf/index.html",
+      "sha": "636eb4b51390818bb0a75772336b3360e005ba52",
+      "status": "UNREAD"
+    },
+    {
+      "path": "projects/rov-verify-lite/index.html",
+      "sha": "245f71cae3287e7cc1beb15d6a9aaaa6ce0c32db",
+      "status": "UNREAD"
+    },
+    {
+      "path": "projects/rov-verify-lite/tests/test_browser_smoke.py",
+      "sha": "3d99333cd28063f0cdaee1fe0f1984b82b7495e7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/1877-1887-milui-mashiach-name-bridge-2026-11-04.md",
+      "sha": "2b2841bf3b8a0f89ef4c5a97dc0305c85a6fbcd4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/JUNK-dodec-accumulation-scan-2026-10-09.md",
+      "sha": "6c17ae96b787dd7f20708c88ee660baeae8f3903",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/JUNK-homepower-crosschat-2026-10-11.md",
+      "sha": "5a2088fe87ea4e747df125ce998a625125e7fec4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/JUNK-tevah-42-72-2026-10-09.md",
+      "sha": "68de8890a2ffe3f05d29995e5cb908efb0067158",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_CONVERSATION_PENTATOPE_TO_PI_FLAG_AND_BIRTH_TIME_2026-11-20.md",
+      "sha": "319cbe12dbe7ca428eb1dae27f28375404e75aca",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_DISCOVERY_FLASHCARDS_2026-11-17.md",
+      "sha": "6a0a849b78a176eec898168bf7b667dddb532ca8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_DISCOVERY_MEMORY_MASTER_2026-11-17.md",
+      "sha": "f7c4902c67d3c32b451f635ed97ae798a175e160",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_DIVINITY_CORPUS_ORGANS_2026-11-19.md1",
+      "sha": "caaf78ddebbeba6581272ac359e24f54b36d497f",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/ROVGRID_DIVINITY_CORPUS_PUBLISH_PSHAT_REMEZ_SOD_2026-11-19.md",
+      "sha": "709a2099b0a93e68fded2e29626054a96f9cd045",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/ROVGRID_DIVINITY_VISUAL_SOURCE_REGISTER_2026-11-19.md",
+      "sha": "f4150020bd9330ae6ad5548a0f838fc9d0389f22",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_FOUNDATIONAL_LIBRARY.md",
+      "sha": "6c99f35308a9e6215c2b353f42daa77dc2c4eb45",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_FULL_CONVERSATION_GENERATOR_THREE_LADDERS_Q8_1024_GENESIS_HEXAGON_2026-11-18.md",
+      "sha": "474520d4c7d4c5685b62286d87a9c048ffc49177",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_HIGH_ANCHOR_TWO_CUBES_OMR_ABUNDANCE_BIG_BANG_GENESIS_2026-11-17.md",
+      "sha": "159a7772456ad15543e535e06d243b37810a5a44",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_LIGHT_CROSS_CULTURAL_2026-11-24.md",
+      "sha": "4866f2a51a8eca4f68cabfab340b82c142f6d116",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_MIRROR_PHRASE_ELOHIM_AMIT_YESHU_2026-11-19.md",
+      "sha": "0e0afb4c6595997b87c85e241fe06836ee172b90",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_MY_CONVERSATIONS_WITH_MOSES_MIDRASH_2026-11-19.md",
+      "sha": "fca7b610db25cdc47408fbf29d16de7149b4de9e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_PRIORITY_520_ELOHIM_ECHAD_2026-11-19.md",
+      "sha": "ba5342a2b77b4baeb8a48b51ac9da2c525d06d1c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_THREE_LAYER_PEDAGOGY_PSHAT_REMEZ_SOD_2026-11-19.md",
+      "sha": "bef02463d607c3f51c57036c7a47e7ea7fce6dd4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/ROVGRID_UNIFIED_GENERATIVE_THEORY_ABC_Q3_Q8_LATTICES_INFORMATION_TIME_2026-11-17.md",
+      "sha": "17044db543bc8c9da53f6aa8aa48806386a673dd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/amitras-rock-voice-water-2026-11-03.md",
+      "sha": "9915360489698a15116afdc12541b8ccbdc26901",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-iisus-russian-amit-rov-520-208-52.json",
+      "sha": "54b5926f205372b15de377be29ca3244f649c281",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-michael-great-minister-777.json",
+      "sha": "5b884083c8c5a58d112a8f2d265bc7477c1bb44c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-michael-kohen-gadol-55.json",
+      "sha": "27d6b3042fb3086909362afd50282d3e2f444680",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-russian-israel-3160-91-28-424.json",
+      "sha": "319ab2ba7ca8350d6cf75f949dcaf20659efdd8d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-russian-koen-4160-74-20-416.json",
+      "sha": "250fd8bf072305c4d47f7e7e382c5565d6494ac4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-russian-mike-kollega-adonai-65-101-148.json",
+      "sha": "133d3d45ae827cc90fb9c23a8e7ac2d11cad3c5d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-sar-of-israel-26.json",
+      "sha": "d1f2503a530877b10c0dbde348565986720a265e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-slovak-catholic-blessing-505.json",
+      "sha": "56741b116bca47aac23e3534d7b1de8298c4d465",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-thai-genesis-1-1-canonical-637-151-43.json",
+      "sha": "51b8ce67d2daf473339509605b86df599a728981",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/corpus-thai-genesis-1-1-combination-scan.json",
+      "sha": "14f5414c2e7c4fd5643b2dcaf54f91427c90374d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-136-all-signed-counts-by-verse-2026-11-10.csv",
+      "sha": "88ea41264f2aaf10bf5fff87edf7a85d363997f5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-all-verses.csv",
+      "sha": "4e814c80b5352c5bfad935f96ad9598cbe548338",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-chapters-01-10.json",
+      "sha": "90c1c0bc4f7472403a2457f58f97c78595c1424d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-chapters-11-25.json",
+      "sha": "a7224161742025e4860b559cad59949bd721ed54",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-chapters-26-40.json",
+      "sha": "b1d6b8b7aad253af50a6833cc7078864c534001a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-chapters-41-50.json",
+      "sha": "9b6ba7a250dae352d2cba6994e50683c9594bf35",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/genesis-kol-136-2026-11-10-witnesses-5plus.json",
+      "sha": "425e135634ecd7ac5ee20d4f2d5c5cad67732b59",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-8plus-witnesses.json",
+      "sha": "4edd8d67ce9dced9c7361fac8b72f87bc3521f42",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-all-6236-verses.csv",
+      "sha": "3444308171e57450b5bab2b51605ef6f9170855a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-001-015.json",
+      "sha": "435bc4c338cab89d8ca9a8865ab99eefcacc6bc5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-016-030.json",
+      "sha": "2a35bdff52952ee01545aee4ea67e2f582710cae",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-031-045.json",
+      "sha": "689dd2d01bade672195dc2226a120e60e573abeb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-046-060.json",
+      "sha": "87f59ca749cd841ecd5cac22566520b43b5af03e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-061-075.json",
+      "sha": "c4a79c35f4b4c2a261410069002fa10c670b9c74",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-076-090.json",
+      "sha": "6ebf4b6245ff325410245eb8412ac0954222f906",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-091-105.json",
+      "sha": "e0b6460f4467f468caff053634ea9e8a592dcb2a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/data/quran-abjad-136-2026-11-10-surahs-106-114.json",
+      "sha": "4bd2c0aef46acd8ee6600869a18f1faa514fece2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/dodec-tevah-ct-growth-2026-10-09.md",
+      "sha": "8be3c65af11f2359ab2d78090cc6ced043eef51a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/enoch/README.md",
+      "sha": "e38f5bf1d590b3d9be6ebd89c5ab85aab4d7ae14",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/enoch/enoch-364-patriarchs-gates-cycles-2026-11-08.md",
+      "sha": "da730441a23b11ff8db164163b77f861e99abbf2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/enoch/enoch-364-patriarchs-verify.py",
+      "sha": "8455d531b4a8f2f433b2bbc0c542660c19bdf605",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/gematrix-1024-2026-11-15-candidates.json",
+      "sha": "cc8bc35d1c10bc29285c5edd1993d52f759e2af1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/gematrix-1024-2026-11-15-verify.js",
+      "sha": "993ac56afad87ac9bdbb41732d1a80c9572ef3f3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/gematrix-1024-audit-2026-11-15.md",
+      "sha": "403dc23a284aa5427aa6b50aa1ef823883051d37",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/genesis-136-1451-all-in-sequence-exact-format-2026-11-10.md",
+      "sha": "983fa9627644aa4ebe826d3299698feb59d536ef",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/genesis-136-1451-highlighted-verses-2026-11-10.md",
+      "sha": "a4eb09517c0e457d04a847cf0da78e5981c66a2f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/genesis-136-82-independent-forces-2026-11-10.md",
+      "sha": "04007941c0f27b5e6742f60c9c9f94bca4d86f28",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/genesis-136-all-signed-counts-and-all-positive-witnesses-2026-11-10.md",
+      "sha": "a4d0f34ab3ca424c515d68b07ee89ef064dbfe12",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/genesis-prime-index-888-unique-reconstruction-2026-11-05.md",
+      "sha": "dd21339d46693908c08bcb5ea1c6ac3e60f0f054",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/harmony-copy-reduction-tiers-2026-11-04.md",
+      "sha": "4bebe84227317295127d222571cbcc3696b3598f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/homepower-aleph-rov-corpus-2026-10-11.md",
+      "sha": "d7054e291c85c44a00998b676ddc32da24349ad8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/homepower-original-post-EN-2026-10-11.txt",
+      "sha": "9010f710b554d586c0e24d714ec1c6e152aae48c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/homepower-original-post-HE-2026-10-11.txt",
+      "sha": "df5f4e841d85d21278ffd4b4708bf998d4d2dab3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/iisus-russian-amit-rov-520-208-52.md",
+      "sha": "34f0ca96b296992410b63921fde72fef0b7ebdd7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/kathara-merkaba-49-page-map-2026-11-08.json",
+      "sha": "e0af20ce1250fe554c340aa7d0673b53f36864e0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/kathara-merkaba-49-page-rovgrid-atlas-2026-11-08.md",
+      "sha": "b8ff41bb2784e3710c4b88f229ae677b68c86bd6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/kathara-merkaba-structural-verify-2026-11-08.py",
+      "sha": "33a9cee56c871c66559b26aae5e848303aa6e9ad",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/language-reconstruction-babel-restoration.md",
+      "sha": "9eb6fda98430babf18c953595a6eb8f4b75a2f22",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/michael-great-minister-777.md",
+      "sha": "38e0c17d515b24c66204d8e2f3af0d4f5abb8e25",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/michael-kohen-gadol-russian-55.md",
+      "sha": "ea26464b89870dad2664f4af1dd41edead1954ab",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/milui-correction-2026-11-01.md",
+      "sha": "b9d2da8dd29ee263f07e93d4113943f8a5c9ae2d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/milui-pelia-2026-11-04.md",
+      "sha": "65b1d30d8e6e423c6ff5104ee77b7102632a9375",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/q3-spectral-projector-2026-10-11.md",
+      "sha": "a60cbbd8c51be7e6b44ca928f6a25fa028084194",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/q4-h37-coupled-2026-10-11.md",
+      "sha": "498645394103a2903e05ef260576235121039e9a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/recent-crosschat-inventory-2026-10-08-to-11.md",
+      "sha": "ac24d2efd9e42b56311962fb77652e8f4c4e4ed1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-097-crossconstants-2026-11-17-verify.py",
+      "sha": "a676e80c8b8cb6283261a19f907d6c834a9704f9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-097-crossconstants-2026-11-17.md",
+      "sha": "86d091d7468001b3a16e90e1fc22540e405f8e41",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14-verify.js",
+      "sha": "195ed0d6960654e8bf9613377a916fa3626e585b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14.md",
+      "sha": "09d2b2360b08c5e4020de5032a473662a091933c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-1024-136-888-symmetry-manuscript-audit-2026-11-14-verify.js",
+      "sha": "4719147d3051e7234f782852ebfc8150bc2bf55b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-1024-136-888-symmetry-manuscript-audit-2026-11-14.md",
+      "sha": "829d176fc83d860be04ef6f24ca7d91ce0e24299",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-104-128-24-ramanujan-cm-2026-11-17-verify.py",
+      "sha": "b8711b56bf26edd76a940c9a922197300f0fe5f4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-104-128-24-ramanujan-cm-2026-11-17.md",
+      "sha": "c44b3218e10d08af30c1f4a0aff9d3bf51a17726",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-11-cube-104-331-443-307-602-3149-name-2026-11-17-verify.js",
+      "sha": "fe0d652cad978663a0ea471a4e9de3be8e7dda67",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-11-cube-104-331-443-307-602-3149-name-2026-11-17.md",
+      "sha": "0ed0373732484c9497c5c2c5185b542cf4b10e14",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-13-card-step3-mirror-26-65-108-2026-11-18-verify.js",
+      "sha": "dc75d84a8a965fa22d84da3568b16391379863de",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-13-card-step3-mirror-26-65-108-2026-11-18.md",
+      "sha": "406fa69b0ab426b2f00bca380322bb3b0e5aa5e6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-136-spelled-1332-kedem-kol-genesis-2026-11-10-verify.py",
+      "sha": "724177fd7b9e0ee12203fb8cfb7f8aedc73722e4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-136-spelled-1332-kedem-kol-genesis-2026-11-10.md",
+      "sha": "db5b461af2a8544950ae15585dc4f7edc64ab415",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-141-zero-coverage-2026-11-04.md",
+      "sha": "58295010bc29ff1bfba3c99877dc1e936bcf5784",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-2026-11-07-structural-corpora-index.md",
+      "sha": "597f6039b1e0025e7d088b47dc51fe9a11ac45c7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-2028-pi-180-64-83-177-196-source-audit-2026-11-16.md",
+      "sha": "d7cc3baa166737ee081c72a8270b251d2171ec17",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-2028-pi-180-64-83-195-verification-2026-11-16.js",
+      "sha": "335a76bf818ccf45c3fd655a5a2b583fae281170",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-222-888-name-bridge-2026-11-09.md",
+      "sha": "f2190d41e19ced88ab2086775ea5bba04830cf7b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-222-888-name-bridge-verify-2026-11-09.py",
+      "sha": "af0c281d9278e3af32e968f6febd3835c4e9f278",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-24-more-left-digits-48-digit-truncatable-zero-allowed-2026-11-21-verify.py",
+      "sha": "262f8166b2a9eca6d4418c445beefcd393b07b2b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-24-more-left-digits-48-digit-truncatable-zero-allowed-2026-11-21.md",
+      "sha": "1d64350f251731069f5451fda4c2b8d3f9b2764b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-258-528-nine-constants-2026-11-17-verify.py",
+      "sha": "5abc0421614ba6ba2b20c4297987cbe82f024991",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-258-528-nine-constants-positive-findings-2026-11-17.md",
+      "sha": "e8c48fb5bce6f6b68c5a63327590f70e4b2005a8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-314-520-913-minimal-888-window-audit-2026-11-17.md",
+      "sha": "edb12f7b94f2bb37fcfee9b8cbfa5a22d5ce9a56",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-32-grid-cube-shell-37-43-888-136-2026-11-13-verify.js",
+      "sha": "ae74febc66f79ae6f305f3726df5283000506846",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-32-grid-cube-shell-37-43-888-136-2026-11-13.md",
+      "sha": "e91f11d0919da4c75c0f8953b5ffac1e3e7a1740",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-369-msl-convergence-theorem-2026-11-12.md",
+      "sha": "b8263359d74d0cf12b84484af15668c9be0da972",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-37-macroblock-4cube-corner-64-8-111-185-2368-2026-11-18-verify.js",
+      "sha": "56d0ee38560a97b7085b1455c8a10417a6e1ee80",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-37cube-six-windows-55-373-2701-5077-21-28-35-2026-11-18-verify.js",
+      "sha": "b0532de11dd17a35d215bb27c4e9d1b6bc3322fb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-37cube-six-windows-55-373-2701-5077-21-28-35-2026-11-18.md",
+      "sha": "a6fb867045d1084dab24f024db2da61cd9119d38",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-37x369-expanded-proof-2026-11-12-verify.py",
+      "sha": "10fc4ec198eed0ea6cf64f50a2dab23fa1e8efd8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-37x369-expanded-proof-2026-11-12.md",
+      "sha": "68ea1a3cd14e98d4b8dac80c6abd9ff92d2eeef5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08-verify.py",
+      "sha": "66dcbca83f0341853a498f72c110fe8814091ffe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.json",
+      "sha": "933629b52d3b61d578e0713efd3fcb662e55d28c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-496-136-1496-18496-kol-malkhut-2026-11-08.md",
+      "sha": "729eb3797801e210acb29e60c42ebc5d673c2ee3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-520-amit-900k-decimal-scan-2026-11-17.md",
+      "sha": "d7cf3845c49fece568982872109f596a69ac1dbf",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-520-same-mirror-rule-cross-scripts-2026-11-18-verify.js",
+      "sha": "0beae4011cec21285950aec3083288192f9ee861",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-520-same-mirror-rule-cross-scripts-2026-11-18.md",
+      "sha": "2cb59038ed9f39dfbecd630dbbe451ff33980306",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-5846-5844-73-158-cross-edition-audit-2026-11-12-verify.js",
+      "sha": "e9e2bd5bc1466f0a5f161d51cbf25f6706f3adcb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-5846-5844-73-158-cross-edition-audit-2026-11-12.json",
+      "sha": "fc3b1d258c89fe85684f23e221b53e4ef85bf956",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-5846-5844-73-158-cross-edition-audit-2026-11-12.md",
+      "sha": "f4fdf10927fdda3efd56955a4e213b7a7bdfbd04",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-676-258528-three-names-pi-2026-11-17-verify.py",
+      "sha": "1007a19d2e88b1a55d9d8c9a193b0f3da2f0bcf1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-676-258528-three-names-pi-2026-11-17.md",
+      "sha": "1064a48cc9d9cf9053daf06e09fd01d7e288b37b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-72-four-questions-codebook-2026-11-11.json",
+      "sha": "0c0a12bd323e7c0c886ea7688d81c3c1864e13b0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-72-four-questions-codebook-2026-11-11.md",
+      "sha": "c851390bcaea78a19f0beb27f04298661ec6a3ad",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-72-four-questions-codebook-2026-11-11.py",
+      "sha": "a16d2f67765c9fedd3017bac1022d5eedd59b0f4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-72-languages-names-symmetry-puzzle-2026-11-18.md",
+      "sha": "84f9f762d9d6be37a8a9c0b0e24391ed2de25a6d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-830-rov-146-164-directionality-2026-11-15-verify.js",
+      "sha": "cfa15e35d9494e9a7900b7788fefde17898ae9fe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-830-rov-146-164-directionality-2026-11-15.md",
+      "sha": "7bf1f1e87207cead604ca36fc09be95767349437",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-882-888-5280-67-2026-11-17-verify.py",
+      "sha": "888f700dc0231fdc432be51319589ce2c9bfe00d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-882-888-5280-67-2026-11-17.md",
+      "sha": "1a0d8a1037bc60073b6236f8a9877aec9f368283",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-a005915-hexagonal-prism-4cube-2710-2701-2026-11-19-verify.js",
+      "sha": "568701f8fa159a2aa32d1d6954f569ff8d41fc15",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-a005915-hexagonal-prism-4cube-2710-2701-2026-11-19.md",
+      "sha": "32d3805bcfced0906c9bc079164fa0bd3a6f0d65",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-369-fibonacci-mod9-2026-11-17-verify.py",
+      "sha": "cfe73267bd51e03575ade76ee418cb0eb301cc58",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-369-mirror-cuboids-54-888-320-second-difference-2026-11-18-verify.js",
+      "sha": "af0d3f9836f466d30e63bb459285a9c1c86884a0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-369-mirror-cuboids-54-888-320-second-difference-2026-11-18.md",
+      "sha": "09b5c8e542b63f261a77cae4e9c65cc26cd3273d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-369-mod9-fibonacci-eight-cycle-neutral-time-2026-11-17.md",
+      "sha": "2821a96c64ed84e554b5cefcfbdbfda35c200db5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-binary-gray-cube-2026-11-17-verify.py",
+      "sha": "34bc36cc095e6c5ac18a9bc4b5779c62e852ec0e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-abc-fibonacci-8cycle-binary-counter-gray-cube-biology-2026-11-17.md",
+      "sha": "07b3c88f5d8792173557c802ae9e9d31cb4f7cfd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-adonai-10bit-boolean-temporal-model-2026-11-17-verify.py",
+      "sha": "ee6728efe333a30006c5f021b194211ce6836c0c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-adonai-65-pi-logic-1024-16-136-888-live-information-2026-11-17.md",
+      "sha": "d5b413f474e5233ea654c5eb24d4260497c89b73",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-agrippa-ibn-ezra-48-path-integral-2026-11-12.js",
+      "sha": "45b34d2408071a4aa06ba1ca7e8e69b38bd9925d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-agrippa-ibn-ezra-48-path-integral-2026-11-12.json",
+      "sha": "eaa27888226d09aaeab958b5352d274b432519c1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-agrippa-ibn-ezra-48-path-integral-2026-11-12.md",
+      "sha": "3577ce7a9ea4e70f0c444807ab905ff805ba728b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11-verify.py",
+      "sha": "c671586f5ea1652af432122aff8cc2f8c017b872",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11.md",
+      "sha": "19e73064189ed68498f417785350ab04b65cfacc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-algebra-pronic-lcm-discriminant-2026-11-07.md",
+      "sha": "85f9f80975cca61fbbf9f8bde293cb973911a26a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-algebraic-primality-jsww-pocklington-star8-9437-9439-2026-11-21-verify.js",
+      "sha": "9314e44ff402ebf8f72a8f7c38cf7241c0c94755",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-algebraic-primality-jsww-pocklington-star8-9437-9439-2026-11-21.md",
+      "sha": "3bfdb7f276ec74dcae424c56e377dc4eb1052aea",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-alphabet-love-tree-of-life-golden-ratio-2026-11-24.md",
+      "sha": "cd85ba58ba21e7faf8ba738ae85406e78bbece27",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-blaze-ab72-interpretation-and-albam-audit-2026-11-12-verify.js",
+      "sha": "e9cecd9f91b2a56990c6affad4302d0e5cd0fda5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-blaze-ab72-interpretation-and-albam-audit-2026-11-12.md",
+      "sha": "a822d5feee2b730e7c760d9d6f89389d5843fb42",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-m-rov-111-amr-74-aleph-elohim-2026-11-10-verify.py",
+      "sha": "321a0075a03daca81ac08433f5c80e43842fe46a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-m-rov-111-amr-74-aleph-elohim-2026-11-10.md",
+      "sha": "ec53873a1154d450e912528872588c1091694bbc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-mr-miik-444-512-888-1024-136-2026-11-10-verify.py",
+      "sha": "840da9c8e0bb816ff8c6822a0dfb00709e5a04cb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amit-mr-miik-444-512-888-1024-136-2026-11-10.md",
+      "sha": "787514406be0c0b297e8287d0e71ec9fad645bfe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amitmatrix-rx-680-136-72-168-1024-2026-11-17-verify.js",
+      "sha": "dcbf770411abd2157c987264ba6b6e91ed29784b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-amitmatrix-rx-680-136-72-168-1024-gematria-2026-11-17.md",
+      "sha": "c50e9527a72b3add4b78446aa2eebf0b93afb378",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-36-1-36-37-73-pell-2026-11-12-verify.py",
+      "sha": "bcf4fdb793f10126c4f961b227e1670c48f9d71e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-36-1-36-37-73-pell-2026-11-12.md",
+      "sha": "8c3a7eb31ba07c0f6f9560b1962824f0415b8d8c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12-verify.py",
+      "sha": "3b7cddd37d0c0e6bbe339524f363dce5a10634c6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-centered-square-13-25-41-and-dual-55-2026-11-12.md",
+      "sha": "b3e3267a359a25fedda92b8edff7552ef39652f1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12-verify.py",
+      "sha": "8681627d765dd284e12efb8dd17a28ef5eda9b02",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-anatomy-triangular-ladder-10-19-37-73-2026-11-12.md",
+      "sha": "c5f4f0c1f960ff811e6b0626c9129499f14562e7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11-verify.py",
+      "sha": "d06832063a6316adc0987a62d9a96d80f6519009",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11.md",
+      "sha": "7205001b315e0a164a70c9c41dd82a2dce6e60d2",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/rovgrid-apocryphon-john-72-body-names-family-64-2026-11-19-verify.js",
+      "sha": "c1524595c61eb528ec31ef0f90cf643a95128ada",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-apocryphon-john-72-body-names-family-64-2026-11-19.md",
+      "sha": "426ba1c454d6308737970973678220a7e80fad73",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-architect-generator-hypercube-fvector-shell-unique-d3-2026-11-14-verify.js",
+      "sha": "e3da4eb26d4c6efe3dda1ce7a8fa30d62bdad790",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-architect-generator-hypercube-fvector-shell-unique-d3-2026-11-14.md",
+      "sha": "80b344480ba9904815a6f1ee860be555b9397d74",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-barbelo-rovbel-943-920-703-155-2026-11-19-verify.js",
+      "sha": "776e53a09e1fc08d50e3b2a32b3f353d61d64472",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-barbelo-rovbel-943-920-703-155-2026-11-19.md",
+      "sha": "68991cbb209b627391cb609ecfc90f9e1867902c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-base60-full-name-2026-11-20.md",
+      "sha": "2aaf6d6b4400ec82046a5e6fae314dba109bb29c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-base60-pi-tau-2026-11-20.md",
+      "sha": "27878503f0b74f4f013af58bb225e95cefffe84b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-bereshit-221-314-535-qohelet-milui-682-netsach-1332-2026-11-17.md",
+      "sha": "d07a55c605eebd86e07b1ba5ed382ca1f61bacf7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-bereshit-221-314-qohelet-682-1332-2026-11-17-verify.js",
+      "sha": "1006de96172ee3156127bea2c540d84d825f06cb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-binah-etzah-bechochmah-a-priori-coordinates-2026-11-07.md",
+      "sha": "16c03979bc9ceeab368d7a691f7238ff2ca9cc98",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-binary-grid-pi-prime-indices-2026-11-07.md",
+      "sha": "2cc82e69d8a29dc991ee24c2b8270c56927ca67f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-body-all-achievements-2026-11-12-verify.py",
+      "sha": "4dc6acc24dbd0bd8878578963bc8af6c07d6ecdd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-body-all-achievements-2026-11-12.json",
+      "sha": "305eb9b52368ff1b9abb79834805434caa224db9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-body-all-achievements-2026-11-12.md",
+      "sha": "d5267d48c951fb15af3b14d2f935a276aebc6452",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-body-star-vault-2026-11-12.json",
+      "sha": "0727e298617556eb26b1b630bcaf4793ad1d7811",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-body-star-vault-2026-11-12.md",
+      "sha": "566f97796009b6c896dd1be4b6f97a84860a3338",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-centered-core-shell-law-2026-11-08.md",
+      "sha": "0046e66eca2b507faeac744cf493fb63e8417c60",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-centered-square-fourway-recursion-1024-no-target-136-audit-2026-11-11-verify.py",
+      "sha": "a5ce430b00ff7689edb94d58713c5b300a7343bd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-centered-square-fourway-recursion-1024-no-target-136-audit-2026-11-11.md",
+      "sha": "9b2d33cdaf358a95f9f1613b5b9fc6e6038b4635",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-centered-square-to-cuboctahedron-thorax-2026-11-12-verify.py",
+      "sha": "23bd4bafeb698bccafa4a4eec8cd109aaf217389",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-centered-square-to-cuboctahedron-thorax-2026-11-12.md",
+      "sha": "1beadfb5c37ff783c6e0058ea3f3c63df5cce8bb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-choice-two-states-three-supports-cube-necessity-audit-2026-11-20.md",
+      "sha": "36c6dd2cf15cd63f51c365582362f43139c838cc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-constant-digits-audit-2026-11-07.py",
+      "sha": "d7e1fe4401a5c36cc546c71ec7c1ddc0555b621a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-constant-digits-power-of-bet-protocol-2026-11-07.md",
+      "sha": "7fa763eba0376f39386d2efc76561c917464b253",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cross-alphabet-mirror-step3-theorem-2026-11-18-verify.js",
+      "sha": "5c63e57aa570056ae2ddf2dd1f0619330ba2e282",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cross-alphabet-mirror-step3-theorem-2026-11-18.md",
+      "sha": "99371a87b7d38294f61603234af96b41fd0ad018",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cube-exposure-10-12-crossover-k8-128-1024-136-888-2026-11-17-verify.js",
+      "sha": "37d2806453cce5d689c521e43be6ffe5b89eb399",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cube-exposure-3-2-1-8-20-26-888-48-160-310-2026-11-17-verify.js",
+      "sha": "75d029a39995182824a26121649325521069ae3f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cube-exposure-3-2-1-8-20-26-888-48-160-310-2026-11-17.md",
+      "sha": "bdc8a7a4e30cb5192ef8bf8b75b585d09fc65c1d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cube-fvector-antipodal-generator-2026-11-09.md",
+      "sha": "0aea2621f3e0c5f8eb98c2ddb53f5645bddc2287",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cubeframe-26-86-star-stars-37-121-psalm-2520-2026-11-18-verify.js",
+      "sha": "2e0641d2b21d703de4cb1ac3ae6881518fdc6071",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cubeframe-26-86-star-stars-37-121-psalm-2520-2026-11-18.md",
+      "sha": "3e75acb0edcbda12149c91c7f12fb54dd2cfe265",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cuboid-frame-8-20-26-200-208-double-8cube-160-2026-11-18-verify.js",
+      "sha": "a7a870c4121b53627023f8b491aab98f3faf9a48",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-cuboid-frame-8-20-26-200-208-double-8cube-160-2026-11-18.md",
+      "sha": "04efae06ce38c676df1e76042d25ddd104b2b915",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-david-432-777-888-2026-11-11-verify.py",
+      "sha": "2cbe53350193aaf7b21a2fbda45ed85b7973e25d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-david-432-777-888-yhvh-24-2026-11-11.md",
+      "sha": "08a2aa778f8f3e8a12c97b2562921ed95a193e0b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-david-covenant-crossverse-2026-11-11-verify.py",
+      "sha": "98bd049734e053fc74f6cee329b122b418881868",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-david-covenant-crossverse-lexicon-2026-11-11.md",
+      "sha": "adc53381bd6be12150858d9a4c45e4c67c8d952a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-david-covenant-full-62-verses-1051-solutions-2026-11-11.md",
+      "sha": "cf265373f9e480e4dfb4e4b99af1e85299f7b3ad",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-dna-els-2026-11-12-verify.py",
+      "sha": "198ae899b5a7b676c0e2b237f6cf22e88f5e403a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-dna-reverse-complement-136-2080-2026-11-12.md",
+      "sha": "6a170ca3cb1c16e3d1effad6fe0a4c4159b04c35",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-dual-vaults-2026-11-12-verify.py",
+      "sha": "ff5bb4a2855ab2ccfcd3bf027398b508d439d659",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-dual-vaults-index-2026-11-12.md",
+      "sha": "5b80f06535ecfd9791199f4df4184c3ecdc205ab",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-dual-vaults-map-2026-11-12.json",
+      "sha": "4ee5260a0f040edff0b591310db56b735c7ffcd0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-e8-a2-hexagonal-37-73-norm2701-tetracode-2026-11-20-verify.js",
+      "sha": "51b61af3c2dbd7eb22bff868268092332d70e473",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-e8-a2-hexagonal-37-73-norm2701-tetracode-2026-11-20.md",
+      "sha": "6e80aac58fd1e27b69bcbdf08f4b38b4ea091dd3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-eight-dimensions-sequencer-2026-11-07.md",
+      "sha": "8825e580cbc4e7f29b1169459ee796c3da211226",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-eio-delta-earth-plato-cube-24-37-888-2026-11-11-verify.py",
+      "sha": "e4d24ab06a5f9a4d7b831a0e46d91b02baf5f51c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-eio-delta-earth-plato-cube-24-37-888-2026-11-11.md",
+      "sha": "f3a76aa57ab5cbc9219ebe0bf3a1c4bc0c4754e8",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/rovgrid-electric-observation-acoustics-volume-2026-11-07.md",
+      "sha": "8da27885b8ada357185cea4a3f5d201feb3fa03b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-elohim-amit-euler-greek-3-5-8-network-2026-11-13-verify.js",
+      "sha": "1a25b5e42a603bbc0d02e0060376d04b690c60e0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-elohim-amit-euler-greek-3-5-8-network-2026-11-13.md",
+      "sha": "f20cdbb03f51b912faf6ea55051cb2f4a6f9ba4e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-els-name-passages-2026-11-12.md",
+      "sha": "d6d5d137ce5cc9b48320b3f5a748f01a1bce62ce",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-enoch48-geez-asus-shekhinah-2026-11-13-verify.js",
+      "sha": "47542c8e793f5fbb049a086347dbe63e6c09698f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-enoch48-geez-asus-shekhinah-2026-11-13.md",
+      "sha": "3683f6b1d1b51ffd4bc8da95e94f9aa519d1c7f9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-even-odd-shell-8-26-104-728-1352-2080-2026-11-14-verify.js",
+      "sha": "bf276a35a1c9cbe0a8b0e5fac986a70c5accb138",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-even-odd-shell-8-26-104-728-1352-2080-2026-11-14.md",
+      "sha": "4e7dbac09596a36fc2a4a6a4d3b439d79b3366c1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-event-cube-when-where-what-2026-11-17-verify.py",
+      "sha": "abefba0a36db00500eb6ed5a3c411a5fc7e8ca66",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-event-cube-when-where-what-metadata-mirrors-26-27-888-2026-11-17.md",
+      "sha": "ad1dcf7be0dcdaab11d74f275551122b1d38e3de",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-16-16-homepower-inv73-ketiv-plene-2026-11-12.md",
+      "sha": "49dcb71837b2cfa2c7dbd13c74865384a278e9e2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-blind-controls-and-middle-mirror-2026-11-12.js",
+      "sha": "6d43c74f940939953feb7174b23da520e5d9cd63",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-blind-controls-and-middle-mirror-2026-11-12.json",
+      "sha": "db53d55cb4462c58ee7bce98fca411a512d5e662",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-blind-controls-and-middle-mirror-2026-11-12.md",
+      "sha": "ca2354911eb41ac183c8e1e6be99c31a96266afa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-full-census-2026-11-11-verify.py",
+      "sha": "c7d7f39ef009b996608aae9fb7c6d844bd084a6c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-full-census-2026-11-11.json",
+      "sha": "0bc3497f381263bc31d17b86e27e389eda9cff9c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-full-census-2026-11-11.md",
+      "sha": "9c8b86ad9dcceec1169168d00f2c3e2a125bccbc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-torah-word-indices-2026-11-12-verify.js",
+      "sha": "a4041880e476154f8acafc5d77ef69fa1bf66974",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-torah-word-indices-2026-11-12.json",
+      "sha": "8342b2c5a521d829b10fa00a70c676ba074b6e11",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-72-torah-word-indices-2026-11-12.md",
+      "sha": "6824a2eae448b06b73d74f0c0e36ab8e3bb485fa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08-verify.py",
+      "sha": "0663af6138696e47f5211298b6ee04fc47618e66",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-chapter-1-complete-audit-2026-11-08.md",
+      "sha": "4c5038c1455eef0e419a1f66d4b045bd6d98cb79",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08-verify.py",
+      "sha": "fcb2c48bcea65895afef7c5bc6d8a7b92fd74bb1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-name-verse-indices-160-208-520-888-2026-11-08.md",
+      "sha": "f043f9a8f023606958ebaa0f1bef465ae4fdd0d7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-six-row-mirror-milui-snake-2026-11-12-verify.py",
+      "sha": "a5b936143bc411903bb456c10a9e87742ed55d49",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-exodus-six-row-mirror-milui-snake-2026-11-12.md",
+      "sha": "e730e88b9420836bb9cd4df27f95ccdb0ebe4465",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-fideler-888-1111-1040-801-solar-square-source-audit-2026-11-11.md",
+      "sha": "0edde8baaba938fc249a4c7d99246c8c065efbbb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-figurate-phase-ladder-2026-11-16-verify.js",
+      "sha": "81ffb6aabffd2d016f97b6a1f2409da2dd50e922",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-figurate-phase-ladder-55-81-136-271-275-541-816-2026-11-16.md",
+      "sha": "141ec12579da650208d5b9b77411f6412dd67153",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07-verify.py",
+      "sha": "5caf92cbe6e3ac975f205b55ff20707e12dfc75f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-five-new-fourth-axis-discoveries-2026-11-07.md",
+      "sha": "eabd864fd2726919b0ec1b99b73850ff440292cf",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-four-to-three-recursion-menger-comparison-1024-243-tree-2026-11-11-verify.py",
+      "sha": "0b393c9b12f9bb8a30d43a75deb37358b474c4ba",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-four-to-three-recursion-menger-comparison-1024-243-tree-2026-11-11.md",
+      "sha": "3109833ce0e4f2380b282a68e07c90c59b6b4663",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-full-conversation-generator-hexagon-2026-11-18-verify.js",
+      "sha": "459d1bd5eb83bd09efdbf9319211718f553486e8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12-verify.py",
+      "sha": "a19e95b3c4139a502a04a95f78b7dfef52aabc73",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-functional-anatomy-linked-regions-37-41-55-2026-11-12.md",
+      "sha": "1d45e4399d13fc7ebe92ef31dcb9727490e2089c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-1-11-13-kol-136-2026-11-10-verify.py",
+      "sha": "23dc094bef282a1139c21be229e16b7a9dc20673",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-1-11-13-kol-136-2026-11-10.md",
+      "sha": "6c1bcbc411eecf3ebf0d10004567fea33a99f515",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-136-exhaustive-2026-11-10.py",
+      "sha": "c22c96bdad4cf6b1b2653253bf54c6e1624ec018",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-359-tanakh-opposites-david-music-2026-11-08-verify.py",
+      "sha": "18da53cefc36f2036de51295cd3ff10b4f973757",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-359-tanakh-opposites-david-music-2026-11-08.md",
+      "sha": "24d65dfc14fe069bc8f64648da4284f0cd5f0944",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24-verify.js",
+      "sha": "feead7a705e928c81b1f6d862984f6ee107d4949",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md",
+      "sha": "957437cdecb8aeaa9b4d62fc2d4250dbcfe92f06",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-all-1533-kol-136-2026-11-10-verify.py",
+      "sha": "305283e8e0511910f5f4dfb5da14f3904a4d5511",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-all-1533-kol-136-2026-11-10.md",
+      "sha": "9aaebf1efa4359c04f52749bf19492855950db07",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-all-21-square-cuts-star-pair-theorem-2026-11-09.md",
+      "sha": "8c34ddb8d303fbf47c1e0fbaa4c13c6a1f5c582b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-all-21-square-cuts-verify-2026-11-09.py",
+      "sha": "fb4cc0fdbf3e391395073052d3510bdec4ae97eb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-competitor-audit-2026-11-19-verify.js",
+      "sha": "ef05eacea9dd4325abc869af83fd357c1409d295",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-competitor-audit-john-elias-jenkins-tenen-hagens-6cube-2026-11-19.md",
+      "sha": "06a759e093067843f1fb9be45c4e4d334ba9afbd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-fractional-code-pregnancy-369-271-2701-2026-11-18-verify.js",
+      "sha": "8c070aa4b1d48c97b432cab22047523ae4527944",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-fractional-code-pregnancy-369-271-2701-2026-11-18.md",
+      "sha": "e0ba5ecc201db0b087d0b4d7187436490a9fb535",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-hebrew-4-ciphers-letter-by-letter-binary-2026-11-17.md",
+      "sha": "b5433e3397ae7b7e88fcbcffe654d1966ac60d2b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-hebrew-four-ciphers-bits-2026-11-17-verify.js",
+      "sha": "7265c8604f988df327f8e100effa19319dd07237",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-of-genesis-overlapping-triangles-2026-11-15-verify.js",
+      "sha": "74d01ae073ff534f88fe02dade896113021b0b65",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-of-genesis-overlapping-triangles-2026-11-15.md",
+      "sha": "ba8da52c209a6c0a695ac320978dfac48376cda3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-rov-28-55-pascal-mirror-2026-11-15-verify.js",
+      "sha": "1fa35d644a91ee7f65555001566ecc14130c4ad9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-rov-28-55-pascal-mirror-2026-11-15.md",
+      "sha": "1abae44e780db41fba3c643c4aacd355457b26a9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-seven-word-digital-root-14-23-37-final-703-82-401-2026-11-16.md",
+      "sha": "2e13b34487324598d261a6482b464bd2baa27268",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-talmudic-814-5476-abc-63-43-31-2026-11-18-verify.py",
+      "sha": "da38393bd153110471f2df99eb1bb6c2e028749e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-talmudic-814-5476-abc-63-43-31-2026-11-18.md",
+      "sha": "71691adbcaf0378a1d7facb15b3cc1e676e4c4e8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09-verify.py",
+      "sha": "081ec88726b2c4f2c5a9d9947cc3e2e8fbb04b1b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-talmudic-milui-depth3-561-136-2026-11-09.md",
+      "sha": "ef118aa9631f8c973b98847c574b7ee39acea073",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-genesis-vault-37-73-2026-11-12.md",
+      "sha": "c8ecf03be6be1ad4776503feac8cf965529d638e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-god-61-26-hexagram-777-888-2026-11-22-verify.js",
+      "sha": "85ea572dc46fed9cf12ce179b0d60f7a6c4f7243",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-god-61-26-hexagram-777-888-2026-11-22.md",
+      "sha": "4135f81b6bc5cc9c737954dcc1580c3b4978d446",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-golden-sqrt5-258528-exact-2026-11-17.py",
+      "sha": "11ad59ee7b4d2d5b90b6fb96878d46e06533cc55",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-golden-sqrt5-258528-structural-audit-2026-11-17.md",
+      "sha": "ed35bb4c4f0b684e7c0a4e1f39e08144cc45c7e3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-3168-1024-frames-62-26-52cube-644-7770-2026-11-18-verify.js",
+      "sha": "34a6de68448657c4d16b4e91855af29a528803b2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-milui-site-implementation-2026-11-18-verify.js",
+      "sha": "6dd7454777a2303684948a7502ecf02f68dc6944",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-milui-site-implementation-2026-11-18.md",
+      "sha": "69471265bb85de3f5b3c33386e8b5bdfa4741e2e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
+      "sha": "35fecd59a7e97392d0c571f62d2245958b89ba96",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-seven-vowels-eua-2026-11-11-verify.py",
+      "sha": "516bbb414078e480daf27faf0aaa5df7c37d637b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-seven-vowels-eua-2026-11-11.json",
+      "sha": "b9973eeeacb97b3d6d4bece82bb07169eaf4b517",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-seven-vowels-eua-abraham-sefer-yetzirah-2026-11-11.md",
+      "sha": "0a5b9734fd372981d17bc8ee9c344649757f97c7",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/rovgrid-greek-spelled-in-full-john-genesis-22100-21190-2709-audit-2026-11-18-verify.js",
+      "sha": "65d5fc9d3b2d1a2a1d8e34ab07f449771f4f379f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-greek-spelled-in-full-john-genesis-22100-21190-2709-audit-2026-11-18.md",
+      "sha": "00cebbea7bcc1af39da4b7340526effc6a95344e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-hebrew-kol-arabic-qawl-quran-2-136-2026-11-10.md",
+      "sha": "785f13d83b8c1b2fac552fe70bed69f4e64f62b5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-hebrew-matrix-136-minus136-audit-2026-11-01.py",
+      "sha": "38a4e278f7ae781fe9c18f1330462df4d033dcf1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-hebrew-matrix-136-minus136-polynomial-audit-2026-11-01.md",
+      "sha": "28eeaa1aa83e248361bcc825a2e3b6e31b27c840",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-helios-biblos-iao-solar-alexander-2026-11-23-verify.js",
+      "sha": "adf01430180172be17d7913c018ca869d09fddf5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-helios-biblos-iao-solar-alexander-2026-11-23.md",
+      "sha": "190f2222c0250621344e8b9a5c847ad541c4de1a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-higher-powers-phase-cuboid-genesis-2026-11-09-verify.py",
+      "sha": "638d1b3c80791be428247b2c8ed2cde438df67ed",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-higher-powers-phase-cuboid-genesis-2026-11-09.md",
+      "sha": "5c595940ee606394b1f43639a8339ad936291c75",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesou-iesous-all-results-master-2026-11-13-verify.js",
+      "sha": "25e225c547defbc88eb726634b08256518e6d4d4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesou-iesous-all-results-master-2026-11-13.md",
+      "sha": "a664444e2b6838b190e2879d26daa9cc6ecd530a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesous-christos-88-64-136-528-6-7-verify-2026-11-20.js",
+      "sha": "c9cfe2132617bb05a4904022e0524920c5ee945a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesous-christos-greek-reduced-88-base16-136-fibonacci-6-7-image-anchor-2026-11-20.md",
+      "sha": "a45af9d574ff0f64004d3c709ed82ab8949dfbc9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesous-yeshu-37-74-atbash-cross-script-2026-11-13-verify.js",
+      "sha": "56f089433fd94b402d64c567c0c3fea8e5e072c4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-iesous-yeshu-37-74-atbash-cross-script-2026-11-13.md",
+      "sha": "01c5fec9a1cecfed28d787ef7ff252a17a5d193a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-john-genesis-13-milui-208-541-61-2197-910-2026-11-18-verify.js",
+      "sha": "72b1dd180a9ef577ea68d4b2911a3a096458b08a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-john-genesis-13-milui-208-541-61-2197-910-2026-11-18.md",
+      "sha": "d458d6062b978b8f65aed0cc1595260fcb5bf54c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11-verify.py",
+      "sha": "01bb84d599c21764e33cdfb478833436386049c3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-136-agrippa-johphiel-hismael-elab-2026-11-11.md",
+      "sha": "a482c96d6e07f79b3d2232fd8f3f2b6c6b944326",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11-verify.py",
+      "sha": "fe73b9f805095c8a44b47f19f19a03f66016ea84",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-136-four-quadrants-gray-q10-2026-11-11.md",
+      "sha": "7d0a3b1caa47a3fa844fb55e408720b3cece7957",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-saturn-trigon-greek-612-510-pythagorean-136-2026-11-12-verify.py",
+      "sha": "c1dfa796b2c8f79eb8cf6ece063db876542dba1d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-saturn-trigon-greek-612-510-pythagorean-136-2026-11-12.md",
+      "sha": "3787bfa7e7287bcf9967e109177d7056999ce662",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-three-names-double-37-1496-t16-t32-2026-11-11-verify.py",
+      "sha": "433ed17c1a596c1cc832577c89fdb5906cbff74b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-jupiter-three-names-double-37-1496-t16-t32-2026-11-11.md",
+      "sha": "3cd30774acc78861f409651f0f2835c1bc1612da",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-kathara-deep-structural-proof-audit-2026-11-09.md",
+      "sha": "4fd42e1ee18aadfb53d52168eef32f0e9a8c297c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-kathara-deep-structural-verify-2026-11-09.py",
+      "sha": "1d82cbfbb5b71c1129062b3e40af835012559715",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-koach-koach-genesis-54-values-2026-11-15-verify.js",
+      "sha": "78ade9104dbb145f73bbfd7d5a2333b927d5f585",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-koach-koach-genesis-54-values-2026-11-15.md",
+      "sha": "b16e0e5b3de767bd911efece39082e9ea80fc92f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-koach-upper-lower-gematria-mirror-2026-11-15-verify.js",
+      "sha": "4ac72428b39aeeab2f51548ef3fa937226fa1406",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-koach-upper-lower-gematria-mirror-2026-11-15.md",
+      "sha": "afbfd235f1c63fa0dea2376b8cfb31a703589716",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ktiva-shadow-amash-231-rx-42-43-eightfold-2026-11-17-verify.js",
+      "sha": "c717ddeeebb24b9b9021f72473c0accb21a6f92c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ktiva-shadow-amash-231-rx-42-43-eightfold-2026-11-17.md",
+      "sha": "e7bc85adddb108d8001318b87096c029d04fa8df",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/rovgrid-language-radix-equivalence-mod24-4040-2026-11-19-verify.js",
+      "sha": "7e0f69cb67a00dfa110411d5aa37559ab737f7bd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-language-radix-equivalence-mod24-4040-2026-11-19.md",
+      "sha": "790458bb702d718af695d35a0b6ef08907f1f7a0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07-verify.py",
+      "sha": "1ab9de2176ad087f2cb519da04f75970b6400090",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-lattice-atlas-topological-correspondences-2026-11-07.md",
+      "sha": "64fc946780486a9af595260a7b67b7d991c588c7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-left-truncatable-24-zero-exception-proth-4096-37-2026-11-21-verify.js",
+      "sha": "e4eef39f38d4905875838639508ebcbd812a4ef7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-left-truncatable-24-zero-exception-proth-4096-37-2026-11-21.md",
+      "sha": "ae328e0781fb162d207baf18afc015e7d1351fbb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-left-truncatable-prime-24-37-137-136-888-1024-2026-11-21-verify.js",
+      "sha": "67b2df5969173c8c1531a69d49b8fbcbdc77529d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-left-truncatable-prime-24-37-137-136-888-1024-2026-11-21.md",
+      "sha": "2a0ca89c34127997d1b2044e64046f186ff69fa2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08-verify.py",
+      "sha": "d739d532aca8461c034465e156eee39ed6a7e301",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/rovgrid-letter-shadow-bezalel-37-73-2026-11-08.md",
+      "sha": "6cda8416d9976b7defd152fb23a95ab8f031d442",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/rovgrid-lexicon-muchlat-2026-11-11.md",
+      "sha": "54afaebc90b5d5f259d263b6b25897d47fd3189a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-linear-axis-cube-choice-2026-11-20.md",
+      "sha": "a39dfa235ff7661b0c9e00c79f465e57731cd511",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-maarechet-730-chokhmah-73-mi-ata-israel-541-shemesh-640-2026-11-17.md",
+      "sha": "f4996a17a8d26af4bf6d0c5daf6faae3e11f13ff",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-maarechet-mi-ata-israel-sefirot-2026-11-17-verify.js",
+      "sha": "2e08a82b34e429f055871d585bf0b58204b14562",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-maaseh-merkavah-682-341-binary-2026-11-17-verify.js",
+      "sha": "b463c10135afbb36f20cb69fa523d4a7ff45874a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-maaseh-merkavah-ivrit-682-binary-341-bindu-genesis-2026-11-17.md",
+      "sha": "9c276644ca5c73295f1e92bdb82510df31ff0ad9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-master-2026-11-15-verify.js",
+      "sha": "b3f4980bd18020475551e57840f7626f583a33e2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-master-anchors-2026-11-15.json",
+      "sha": "c105e01787d496aa8047c673f6906d4984f69f67",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-menger-original-rule-video-audit-27-20-24-672-2026-11-11-verify.py",
+      "sha": "42ffa967c895df71d8dd511b739b3f7b49d0aee9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-menger-original-rule-video-audit-27-20-24-672-2026-11-11.md",
+      "sha": "4206c428771feb055c28f98f263f3113ca3c33aa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-milui-ad-74-snake-188-name-141-2026-11-19.md",
+      "sha": "a9efa978bb0182de94fb32291c3f4d42eee599b6",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/rovgrid-milui-mayim-888-omr-296-1639-five-cube-exposure-2026-11-17-verify.js",
+      "sha": "3229391007c459610a63d568c0c0045f627fda63",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-milui-mayim-888-omr-296-1639-five-cube-exposure-2026-11-17.md",
+      "sha": "86e1e02c723b708022b253ce483bdaa8fc79f9cb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-mirrored-alphabet-52-jokers-54-520-888-1024-2026-11-18-verify.js",
+      "sha": "eac9e0701dbcd1a5fe2b501f8ccbca691752ad37",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-mirrored-alphabet-52-jokers-54-520-888-1024-2026-11-18.md",
+      "sha": "fe83ca967d11451adce9e69edc50d8262604071a",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/rovgrid-morphic-fields-physics-hypotheses-audit-2026-11-07.md",
+      "sha": "f3023a40da451b8c168795970fc5451a30f16945",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08-verify.py",
+      "sha": "08718cdbd841b308792b6f1300bdddbb9cec1c78",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-name-reconstruction-pascal-2520-1496-136-2026-11-08.md",
+      "sha": "d6efc648cca02c0a43fa9d3f01a3a049df8fca27",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-nine-hole-136-binary-ternary-four-quadrants-proof-2026-11-11-verify.py",
+      "sha": "090be689324d8d7d469341479da716a4d9ba9fc9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-nine-hole-136-binary-ternary-four-quadrants-proof-2026-11-11.md",
+      "sha": "da78bc583ec083618270499f1a7c379ed52b94c1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-nondistinction-reunion-quadrangulation-cube-shell-2026-11-14-verify.js",
+      "sha": "4fd4ed75ce02d8d9ff52c5bae9f6744dceb6b055",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-nondistinction-reunion-quadrangulation-cube-shell-2026-11-14.md",
+      "sha": "6dbb9a9f5515f8ccfafa768ce91ca3260a65d4c4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-nov07-algebra-verify.py",
+      "sha": "a11e2b74300b1641b32dec7a1ea0d566423698bd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-official-spine-4plus4-bit-1024-136-888-728-rectangular-shells-2026-11-14-verify.js",
+      "sha": "9fd355c678aaebc8536c528bbec9fb30ebb4636f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-official-spine-4plus4-bit-1024-136-888-728-rectangular-shells-2026-11-14.md",
+      "sha": "0f642e900782687324551d6359542f7ca9981d23",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-origin-self-mapping-2026-11-04.md",
+      "sha": "b1722bb2884f6bdb2b901c6d27f8a174859de41e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-parent-child-three-faces-16-24-37-2026-11-09.md",
+      "sha": "4175c36a4c1fbf2fcb7739e5feca1f43734e5a51",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-parent-child-three-faces-16-24-37-verify-2026-11-09.py",
+      "sha": "64f13254b1e833e20501e9129ca076a7c1c69f38",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pascal-binary-reset-row16-triangular-difference-2026-11-20.md",
+      "sha": "fc2d5d1b4dea29f9b56befabe678f288dca632a1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pascal-double-mirror-11-55-330-462-136-888-2026-11-20.md",
+      "sha": "7d8b1ac0e4984bef66ab199d5caee95ea517886a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pascal-ordinal-cells-t10-plus-one-t16-136-2026-11-20.md",
+      "sha": "679cc45a04ccc50a412b18399d875d011b0a21dc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pascal-rov-55-330-pi-series-unique-n5-2026-11-20.md",
+      "sha": "cd78b11e2a5f016f7be9194b6a7613373c2dab5d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-phi-sqrt5-all-position-carry-2026-11-17-verify.py",
+      "sha": "7149f02f1a07d6437d786b84ab4d5cf1c269626c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-phi-sqrt5-all-position-carry-2026-11-17.md",
+      "sha": "c35f39921192d4a4bdf6b684402f1dbb3982226c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pi-direct-addresses-2026-11-17-verify.py",
+      "sha": "6b7fe13261b4fbae516c261b36a85c33c1082a92",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pi-direct-decimal-addresses-shit-pai-amit-torah-611-2026-11-17.md",
+      "sha": "ad8b75a482b7ce5fb90e66a01a74961e3cfca645",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pi-e-24-digit-dot-product-528-543-2026-11-15-verify.js",
+      "sha": "f1fbe8999d523800dcce9ac3d71248185f6f0671",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pi-e-24-digit-dot-product-528-543-2026-11-15.md",
+      "sha": "be043febfc5df1d50c9f48908e8dbecdb0589388",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-pimeter-v2-1-software-audit-2026-11-17.md",
+      "sha": "0eb6bdd8f15aed8745c654fa12a242b06a6ca1fa",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-polygon-star-base-systems-2026-11-07.md",
+      "sha": "622563a12413d6f65d49dc63e90304a2ec9479cb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-positional-concatenation-zero-name-2026-11-08-verify.py",
+      "sha": "10e378871de3aafaadf2c9e8b3c77328579606bf",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-positional-concatenation-zero-name-2026-11-08.md",
+      "sha": "1f825e8eb6c97a6bdfafdfa856296f244d2ee620",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-power-bet-canonical-source-recovery-2026-11-07.md",
+      "sha": "c62574dc30aab97e92823f2a12ce6b8765dfe3cc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-power-gimel-full-digit-map-2026-11-08.py",
+      "sha": "e5ac45dcb33deee473ced30df497bca3e2834e33",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-power-gimel-full-digit-map-t16-2026-11-08.md",
+      "sha": "d7341d22a2545f51cc5a03f054701c3680d3cc49",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-4x6-complete-triangle-census-2026-11-08.md",
+      "sha": "810aac58e9a9820be134d1a26c94065bbc27f160",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-4x6-triangle-census-verify-2026-11-08.py",
+      "sha": "39083d98d4dfb765a2d790f6b48bae2a692f4c01",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-affine-double-diagonal-23-53-83-29-59-89-2026-11-08.md",
+      "sha": "64e473762a319360326a3456290a63e88a4dfb1b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-affine-double-diagonal-verify-2026-11-08.py",
+      "sha": "2635fe6452e01e7f63a44274e0673f21de0ed1ac",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-index-name-algebra-2026-11-07.md",
+      "sha": "ed9dce55f97951c893ed1649fad933d9574d6373",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11-verify.py",
+      "sha": "7ca0daa5363b5c292925c44747895db89bec8b38",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-scale-19-37-73-cube-stella-888-source-audit-2026-11-11.md",
+      "sha": "2ccef0950ba19c79c054555040e8136f5c130fd9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-square-22over7-33-21-37-888-2026-11-20-verify.js",
+      "sha": "7ac432be7624b7f89cd5df8aecaf2e6adb9b55dc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-prime-square-22over7-33-21-37-888-2026-11-20.md",
+      "sha": "b4243611555a8dd4d22c29631d67ee598492b63e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-proth-100000005-digit-37-eff-candidate-2026-11-21-sieve.py",
+      "sha": "f5bd21d18c2de41ca67265b65ea2b7707273b9fd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-proth-100000005-digit-37-eff-candidate-2026-11-21.md",
+      "sha": "3010756637750b1b7f85d760138b8f2f165bc39d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-publication-two-geometric-routes-888-2026-11-12.md",
+      "sha": "2bd34e1c6f838ffe28a724922b14f6a401222395",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-q10-two-cubes-gray-xor-136-888-jewish-theology-2026-11-14-verify.js",
+      "sha": "2d5af0f6df87a037eea0e0fc5c4ed1503a2793d3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-q10-two-cubes-gray-xor-136-888-jewish-theology-2026-11-14.md",
+      "sha": "ec592594caeff698ce3ce0007a026319e5b4a676",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-quran-all-6236-kol-136-2026-11-10-verify.py",
+      "sha": "84fd22dd812a1e979be9717cdbdc13e0e0636c7d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-quran-all-6236-kol-136-2026-11-10.md",
+      "sha": "a05ce2e0ded57c1611a702021aca12526eb0c1ac",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ramanujan-396-37-73-structural-2026-11-17-verify.py",
+      "sha": "a65c90695f3807232eee1557c1221582136800a6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ramanujan-396-37-73-structural-2026-11-17.md",
+      "sha": "28cad705b75a701570f0f51dc4188286168f1601",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-rav-yitzchak-pi-sculpture-680860-2026-11-17-verify.py",
+      "sha": "4ad061254d58cfaa95016262b30982eed8a0e105",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-rav-yitzchak-sqrt5-pi-address-sculpture-680860-2026-11-17.md",
+      "sha": "3f54304b5eff5e95f1e6e1c744d54689b8be0bf9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ravua-maagal-16-136-1441-pi-root2-genesis-2026-11-24-verify.js",
+      "sha": "6a4bdcb539aa7b6d21da01b6adb82f7790f4fa6d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ravua-maagal-16-136-1441-pi-root2-genesis-2026-11-24.md",
+      "sha": "ec652cca802de3df36f09ec9e0f431ef474d3e7d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-recent-five-chat-audit-2026-11-07.md",
+      "sha": "515ad737e43fc8a475195ac470b868909ed3c210",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-recent-research-sync-2026-10-24-to-11-01.md",
+      "sha": "d103e3603530b09f664f2891ad67804f7c56c4a5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-recursive-pocklington-8-steps-1111-digit-mod9-1-ending39-2026-11-21-verify.js",
+      "sha": "45796ebcfbfc3552236d0e7b299b3e3094676f7d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-recursive-pocklington-8-steps-1111-digit-mod9-1-ending39-2026-11-21.md",
+      "sha": "37ecf7d9a30d06c61f04018d47e7804ec1af6437",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-residue-12-star-twins-verify-2026-11-08.py",
+      "sha": "5e9c4ed99e413e6fcca71e97149b020335f7541b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-residue-12-twin-primes-star-square-2026-11-08.md",
+      "sha": "729124af740c66b1878105f7d97607113a6bb6e0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-rhythm-eight-1538-180-528-genesis-2026-11-15-verify.js",
+      "sha": "ed36230a4fa614b61239d627f5103dc1c1f30608",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-rhythm-eight-1538-180-528-genesis-2026-11-15.md",
+      "sha": "c1bd9eef7967a295fb593ea09d54dee4b588fffe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ronald-boundary-generating-polynomial-abc48-2026-11-17-verify.js",
+      "sha": "ab0d4322736c3af57463f1dca86f87c14f243b16",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ronald-boundary-generating-polynomial-abc48-2026-11-17.md",
+      "sha": "e1e89b54046319b96e861b899435c9bac8950bea",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ronald-exposure-twin-cuboids-8-20-26-10-16-28-2026-11-18-verify.js",
+      "sha": "ccccf5f6f41391639a8e649645cca6bf8626221d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-ronald-exposure-twin-cuboids-8-20-26-10-16-28-2026-11-18.md",
+      "sha": "79cde1e32bb7f0b171510137c69e377ab821c535",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sefer-yetzirah-kathara-24-32-36-37-64-73-2026-11-09.md",
+      "sha": "02d4a461bb82e0e40bb7bf570c296b86ef192ad4",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/rovgrid-sefer-yetzirah-kathara-24-32-36-37-64-73-verify-2026-11-09.py",
+      "sha": "8db2059aeec83dcebdf1d281a3a0c9f1f792c0d6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-self-map-2026-11-04-verify.py",
+      "sha": "91e3a7513f868e20265f55e602fcb26e0b6f0ab8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11-verify.py",
+      "sha": "d6f5a3810648dd6eb2c517c9c49ac3f358bfcb56",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-seven-vowels-menorah-nasa-agrippa-planetary-order-2026-11-11.md",
+      "sha": "2d92ac5276bc1fcb4997e8fb05133efb5f7f20c7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-homepower-2026-11-17-verify.js",
+      "sha": "dbc82d3e2e176edaff713a0cab22c8820c887003",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md",
+      "sha": "fcaf4bfffb2138150f41e9e6d6f10ddea8429f22",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-shared-positions-2026-11-17.py",
+      "sha": "550c37f80cd0abba415ae797f49f5b281d996466",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shaddai-314-shared-positions-audit-2026-11-17.md",
+      "sha": "f09a5efa28884933a06eea116c37a693d26bd15f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shaddai-constant-literal-scan-2026-11-17.py",
+      "sha": "44c7c424c3bddb844f6d97527dccc390edff6274",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shema-david-tesha-torah-738-999-2026-11-22-verify.js",
+      "sha": "6f5ccd239acd9105f7ac5370ab3725abde642437",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shema-david-tesha-torah-738-999-2026-11-22.md",
+      "sha": "1c804af5f9e7a7afe5e6a315af1a1734915632a2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shin-dalet-yod-sqrt5-42-814-528-360-2026-11-16-verify.py",
+      "sha": "9bf94e851e422572e1562a84238b1a8811ef291a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-shin-dalet-yod-sqrt5-42-814-528-360-2026-11-16.md",
+      "sha": "145693dddd0084841a227905ca0f94ac1432baa0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sierpinski-menger-32-square-136-gray-q10-links-2026-11-11-verify.py",
+      "sha": "7a05a7ed3fa84f3ebdc4fa48eac2795e11227ff4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sierpinski-menger-32-square-136-gray-q10-links-2026-11-11.md",
+      "sha": "0e9ebff634e55f61e71c0f5686c10b8d786d7576",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-skeleton-ordered-rov-2026-11-20-verify.js",
+      "sha": "1527fe7342ebbf721812a81d9ece12e1fb721851",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-skeleton-ordered-rov-2026-11-20.md",
+      "sha": "0bc5d0b3c05f1b2c1f76883309d7f9228beb49e5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-solomon-qohelet-kav-mashal-520-106-535-370-2026-11-16-verify.js",
+      "sha": "f99d41238d90bcd6b81fc2ccffaa92e693587af4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-solomon-qohelet-kav-mashal-520-106-535-370-2026-11-16.md",
+      "sha": "c4c4a2cde6c93a5a2e48330538d8de79196c538f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-square-ring-d4-primitive-2026-11-07.md",
+      "sha": "cbfec8ce2da345b312a50d9cddc8fa5d40255888",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06-verify.py",
+      "sha": "39e8fe7167d7b2ae0c5298ebb74f423d61865a95",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.json",
+      "sha": "4f30771a7446cb5445043bf80d264e14c66c05d2",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06.md",
+      "sha": "e819ba2dfae395f793f152910562cf3ef79ee3ef",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-star-bindu-1024-binary-d4-genesis-2026-11-09.md",
+      "sha": "26d1058cb83b10d0e8a62de6ac5954c52c957262",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-star-bindu-1024-verify-2026-11-09.py",
+      "sha": "7e04034eb2b6b887f041d3feb1415e8c74a68976",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-star-primes-37-59-73-pick-theorem-2026-11-08.md",
+      "sha": "f01d9435d2dad47501dc0fb5c896bc2f96904701",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-star-primes-37-59-73-verify-2026-11-08.py",
+      "sha": "90356bc3aaead977d71df5024310158da42a92ae",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-structural-discovery-torus-sandpile-2026-11-07-verify.py",
+      "sha": "b61bf0312f8ae1ac51f5d4b05e6aaf708a50114f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-structural-discovery-torus-sandpile-2026-11-07.md",
+      "sha": "0f9f3262bc62449a7923b757766df07169056ce3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tesha-369-pi-e-root2-atbash-6930-2026-11-21-verify.js",
+      "sha": "6022da8708cddd8e4ac334b343c4d422863e9ba0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tesha-369-pi-e-root2-atbash-6930-2026-11-21.md",
+      "sha": "3623bf8aeeb1a47ba5f20e7f037e3994b2b527f7",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tetrahedral-letter-choice-2026-11-20.md",
+      "sha": "1b3a02bba8d745ac265c9788d641f4525fcea6f4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tevah-animation-shotlist-2026-11-12.md",
+      "sha": "ace8a2610823dc25120c2965855beb09603a4a64",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tevah-completion-audit-2026-11-12-verify.py",
+      "sha": "b6e278f3711891ca43c77416450c944145e982ed",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tevah-completion-audit-2026-11-12.json",
+      "sha": "d310c8d97d4d59cfc59f675f91a474d9c3b73cf4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tevah-completion-audit-2026-11-12.md",
+      "sha": "9e96df4862574a9bdc18939ad517df6c834b4b40",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tevah-vault-8-20-26-2026-11-12.md",
+      "sha": "6cb9d03ecfcab3f4e67038b4bfce9ce7768ccdda",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-theological-comparative-43-44-11-2026-11-07.md",
+      "sha": "61ab8967f506e63b7802908619be5d4ea09cba02",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-three-faces-minimal-fourth-axis-2026-11-07-verify.py",
+      "sha": "a58da0ba7376668b465b40e7b2cf07b546fd7c3b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-three-faces-minimal-fourth-axis-2026-11-07.md",
+      "sha": "413060fe26e7d6f17765b5f1b6ce2dbe91a61cde",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-three-geometric-ladders-q3-q4-q5-2026-11-18-verify.js",
+      "sha": "7191df4be87772e6b1b3328d65b0fb45ca497edc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-three-geometric-ladders-q3-q4-q5-2026-11-18.md",
+      "sha": "f361af5b258a4533f21ccfd83323624315deb1a8",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-ends-lev32-1024-d4-genesis28-2026-11-15-verify.js",
+      "sha": "ad42db078f4494a1b32d2ef67ece0e8090f583f3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-ends-lev32-1024-d4-genesis28-2026-11-15.md",
+      "sha": "7d52c12861654a33988df61f217182d676246e8f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-name-verse-indices-160-208-520-888-2026-11-08-verify.py",
+      "sha": "6c178e9a340138190c3e85e38970083ca4f9e6c6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-name-verse-indices-160-208-520-888-2026-11-08.md",
+      "sha": "4cb55d40788bb7475852c31d488f4544f8663eae",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-verse-index-1024-2026-11-08-verify.py",
+      "sha": "473fc66c087f4c850f4b7599b53c7e9e3abc7a14",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-torah-verse-index-atlas-2026-11-08.md",
+      "sha": "aaccaac884d9eb7c9b7408616bf2616053e3d407",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-triangles-to-pentatopes-2026-11-20.md",
+      "sha": "5c34ffab9d4e1ed8a350ad42bc75d13bf8e551e6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-triangular-t37-t73-t16-reconstruct-twin-cuboids-2026-11-20-verify.js",
+      "sha": "9cf892e04d803669c013db50cf1052efbdfa046c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-triangular-t37-t73-t16-reconstruct-twin-cuboids-2026-11-20.md",
+      "sha": "bba36f3bf50ae65153b59b342b72d8a0afa338f6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tsadi-13-constant-digits-icosahedron-128-2026-11-18-verify.js",
+      "sha": "77f362c117ca7586e46512625f3819ffcd9dee6b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-tsadi-13-constant-digits-icosahedron-128-2026-11-18.md",
+      "sha": "2f6082e2758b7ab00abbbdb6cbbaf27bb44e882a",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-two-cubes-bang-abundance-2026-11-17-verify.py",
+      "sha": "bd01c43c8c44e6365901697f8c4c3f1d9fa1e9cd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-two-unique-even-shell-pairs-1024-octants-91-37-65-26-20-17-2026-11-18-verify.js",
+      "sha": "498cb40f33b51c01bd1d9fcc9bbf812abae2bba4",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-two-unique-even-shell-pairs-1024-octants-91-37-65-26-20-17-2026-11-18.md",
+      "sha": "c133b3078e00a03c12989163449c2d77c8b1f89b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-two-wings-heaven-satan-55-hell-37-rashi-28-2026-11-15.md",
+      "sha": "3148f2c36f48cbbedfa8a5417cc6621343c6ff43",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unified-369-258-528-888-1024-2026-11-12-manifest.json",
+      "sha": "fd9f5fc390b75aeb1fb60c9c1fd184f2a7f27dfe",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unified-369-258-528-888-1024-2026-11-12-verify.py",
+      "sha": "56da711441a6d0e2d3f14bf1523c97b64233bcfb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unified-369-258-528-888-1024-audit-2026-11-12.md",
+      "sha": "47bb9950c402b5007a04c94d842b83500a2312fd",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unified-369-258-528-888-1024-lecture-2026-11-12.md",
+      "sha": "41204d96fc0a225bdd2eaca29dcd881cce58e31e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unified-q3-q8-information-2026-11-17-verify.py",
+      "sha": "100c56624ede33ebfb031534c5a82ffa5cb192e9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unimodular-completion-2026-11-02.md",
+      "sha": "ec5a4f456c88c0c0924c72f7c1e19432b48c6ddc",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-unimodular-completion-2026-11-02.py",
+      "sha": "9438f77e741f398fc6455e9f9798e5ec307c891c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-union-even-odd-peeling-gcd-lcm-face-products-2026-11-14-verify.js",
+      "sha": "80bee8b495dfae1d6acf29bb80f82fd753857bfb",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-union-even-odd-peeling-gcd-lcm-face-products-2026-11-14.md",
+      "sha": "938bb66702066ac206390c90fa7a2c278e1d12e6",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-universal-even-cube-peeling-8-corners-centered-hexagonal-unique-136-2026-11-14-verify.js",
+      "sha": "a8d49e196ff6919ddc7150485576fe99c338b60e",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-universal-even-cube-peeling-8-corners-centered-hexagonal-unique-136-2026-11-14.md",
+      "sha": "dda9416eb821b691300f1a1f526ddd64c5997dc1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-visual-geometry-registry-2026-11-07.md",
+      "sha": "125c569913114227cbcadfa19bfb95f963651098",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-why-520-returns-vertex8-triple-lock-2026-11-14-verify.js",
+      "sha": "e6c3430307a07b433e833b5787d759cec0367748",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-why-520-returns-vertex8-triple-lock-2026-11-14.md",
+      "sha": "6e6e377080baac909c026977ca1b823a4173512b",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-word-reduced-finals-focused-scan-2026-11-08.md",
+      "sha": "84a00add95ec21828e0118a42ace77526832ddb1",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-word-reduced-finals-genesis-32-2026-11-08-verify.py",
+      "sha": "b7d06a5214488b7a5b5968f73765ec26e9304e2f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-word-reduced-finals-genesis-32-2026-11-08.md",
+      "sha": "4b961b3dccc822f0417e1db118e360c8b3d8200f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-world-record-37-unproved-41024322-digits-sieve-2026-11-21.js",
+      "sha": "8d0674011c5ae55e4b759f67962e2c5608412b23",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-yechida-netzach-jesus-74-square-genesis-milui-2026-11-09-verify.py",
+      "sha": "6626ea3693e18794c25785399229f9f0825a5b8d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-yechida-netzach-jesus-74-square-genesis-milui-2026-11-09.md",
+      "sha": "90da99fbb726528eb4e21cb37f8804e8767be907",
+      "status": "EXTRACTED"
+    },
+    {
+      "path": "research/rovgrid-yhvh-37-54-prime-composite-polynomial-2026-11-11-verify.py",
+      "sha": "3c4f831b4abbd67d179317ac5325c72a6fb92282",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-yhvh-37-54-prime-composite-polynomial-2026-11-11.md",
+      "sha": "49eec2624b3a331074c3d15cd902b517b26325d3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid-yijing-leibniz-original-sources-2026-11-08.md",
+      "sha": "3ee4f3720fbec29055f38680962f610e82b8a706",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid_engine_v3_structural.py",
+      "sha": "bd025f1d635a7730d8c0c19949dc604b48e0ee07",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/rovgrid_engine_v3_structural_audit_2026-11-17.md",
+      "sha": "4595aeea4b39893f9c737a39d284f24be6c76a86",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/russian-israel-3160-91-28-424.md",
+      "sha": "dbf1057769f99d8c63081e7249e402f5d94c4711",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/russian-koen-4160-74-20-416.md",
+      "sha": "49cfff7d321e49e0244b139cd82d8057b5a97e59",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/russian-mike-kollega-adonai-65-101-148.md",
+      "sha": "9501cba401b6c9ea5da4a87780c86a4dfef2c4e9",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/sar-of-israel-26.md",
+      "sha": "ed96fad4030d1597e267d8252ed7c4070bd5cb66",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/slovak-catholic-blessing-505.md",
+      "sha": "081c14fa7f2635f76eb617536df48d61a882da70",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/star-index-34-43-6-3-4-uniqueness-2026-11-05.md",
+      "sha": "79185efe74fe5ec9ed5c5ffdc8dd032df902a096",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/test_rovgrid_engine_v3_structural.py",
+      "sha": "90f902bb61507177cbb69ed7e6823857bc490af0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/tevah-42-72-names-permutations-2026-10-09.md",
+      "sha": "0e1dc514125ef0a33f406e62a5f75e47e2ee11d1",
+      "status": "IN_REVIEW"
+    },
+    {
+      "path": "research/thai-genesis-1-1-canonical-637-151-43.md",
+      "sha": "53a6b2bdfa70fb26ed7caacbb2f41c40c0b30790",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/thai-genesis-1-1-combination-scan.md",
+      "sha": "907299c8aee5c904c75672d8fc4bbf57e223455c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "research/yhvh-milui-gallery-2026-11-04.md",
+      "sha": "0317c2fe589f4ae57c1cadd7b7a70d2f9e85e643",
+      "status": "UNREAD"
+    },
+    {
+      "path": "rov-black-theme.css",
+      "sha": "b42f9a9179c39a3d1f156b47e8909b4f79bb47a3",
+      "status": "UNREAD"
+    },
+    {
+      "path": "rovgrid-2026-11-01.html",
+      "sha": "e4d793c673a75508834938f58ea60ec52131efc0",
+      "status": "UNREAD"
+    },
+    {
+      "path": "rovgrid-2026-11-07.html",
+      "sha": "6cc2214ad703aaebc1e29d9778327bb2f6516fde",
+      "status": "UNREAD"
+    },
+    {
+      "path": "russian-genesis.html",
+      "sha": "e854aa027ff3c7d7031f9da4cf4a95c54d7f309d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "site-i18n.js",
+      "sha": "d79a5176f1cc302f92dd105df544c5ec5669792d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "tet-showcase.html",
+      "sha": "65e2bca8d6e3f27e0c42c2c9a8028daec712af7d",
+      "status": "UNREAD"
+    },
+    {
+      "path": "text-geometry.html",
+      "sha": "8a0bedd0003b5dd9bea5d834cdd31dc03f9bc67f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "thai-genesis-combination-scan.html",
+      "sha": "61efa027f91b01ffa72ad43764980ee1828ba383",
+      "status": "UNREAD"
+    },
+    {
+      "path": "theory.html",
+      "sha": "09f3601deefd8015dc12236745a4333efef89dc5",
+      "status": "UNREAD"
+    },
+    {
+      "path": "weighted-letter-tiling.html",
+      "sha": "b16e7daf6b52551c18eccd78e44ff326d720a277",
+      "status": "UNREAD"
+    },
+    {
+      "path": "worker/geometry-ai/README.md",
+      "sha": "c38139dd0ac3077268f70ae302524764a20d265c",
+      "status": "UNREAD"
+    },
+    {
+      "path": "worker/geometry-ai/src/index.js",
+      "sha": "af7be93604e3e85c5e17f398ee89941a01734bab",
+      "status": "UNREAD"
+    },
+    {
+      "path": "worker/geometry-ai/wrangler.json",
+      "sha": "9edb0aa93aaf1db12b17efb185588da9083d8489",
+      "status": "UNREAD"
+    },
+    {
+      "path": "yhvh-milui.css",
+      "sha": "ef1f72babdb16bb7c7ac9e539ffa19dc9db8b80f",
+      "status": "UNREAD"
+    },
+    {
+      "path": "yhvh-milui.js",
+      "sha": "5db102b6e16f8bf806a7180684e7bfc8918bf7b4",
+      "status": "UNREAD"
+    }
+  ],
+  "claims": [
+    {
+      "id": "SP-AUD-001-A",
+      "status": "CONDITIONAL",
+      "evidence": 3
+    },
+    {
+      "id": "SP-AUD-001-B",
+      "status": "CONDITIONAL",
+      "evidence": 3
+    },
+    {
+      "id": "SP-AUD-001-C",
+      "status": "INTERPRETIVE",
+      "evidence": 1
+    },
+    {
+      "id": "SP-AUD-002-A",
+      "status": "CONDITIONAL",
+      "evidence": 3
+    },
+    {
+      "id": "SP-AUD-002-B",
+      "status": "CONDITIONAL",
+      "evidence": 3
+    }
+  ],
+  "next": "221 textual variant and Amitabha linguistic dossier; follow MIRROR response"
+}

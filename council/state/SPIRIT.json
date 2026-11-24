@@ -6,9 +6,11 @@
     "RG-001-MATTER-20261124-03",
     "RG-001-MATTER-20261124-04",
     "RG-009-USER-20261124-01",
-    "RG-009-ARCHIVIST-20261124-01"
+    "RG-009-ARCHIVIST-20261124-01",
+    "INTEGRATION-MIRROR-20261124-01",
+    "DOSSIER-WORK-20261124-SPIRIT"
   ],
-  "last_commit": "76adb313eb88084131099e9666dc913ce9dccc9a",
+  "last_commit": "b3f3e07b32fac5238a26f36d2f70d342c9d25148",
   "last_commit_meaning": "last reviewed source commit, before this checkpoint",
   "open_tasks": [
     "RG-002: refer dyadic/Pell theorem to MATTER/WORK; no independent mathematical vote by SPIRIT yet",
@@ -17,7 +19,8 @@
     "RG-001 v2: MATTER YES received; WORK already addressed by MATTER message 04; defer lock during consolidation through Nov 26 per RG-008-USER-20261124-01",
     "RG-009: await MATTER independent Genesis scan; next check Lurianic/commentary sources",
     "RG-001 deletion-24 linguistic review; RG-007 representation; RG-008 reciprocal/ABC; RG-010 history of resonance: messages read, substantive response deferred to future bounded cycles",
-    "SP-AUD-001: MATTER independent replication; next old Sefer Yetzirah gates/order and Greek transliteration audit"
+    "SP-AUD-001: MATTER independent replication; next old Sefer Yetzirah gates/order and Greek transliteration audit",
+    "MIRROR question: independent Greek transcription and nontrivial graph mapping; 221 textual variant; Amitabha names dossier queued"
   ],
   "experiments": [
     {
@@ -40,6 +43,13 @@
       "preimages": 36,
       "regular_hits": 2,
       "bezalel_pair": 85545
+    },
+    {
+      "id": "SP-AUD-002",
+      "status": "inline JS checked; independent test requested",
+      "hebrew_gates": 28,
+      "english_gates": 36,
+      "greek_control": 594
     }
   ],
   "access_gaps": [
@@ -89,13 +99,25 @@
     "research/rovgrid-yechida-netzach-jesus-74-square-genesis-milui-2026-11-09.md",
     "council/research/SPIRIT-corpus-audit-001-shadow-20261124.md",
     "council/evidence/SPIRIT-shadow-001-verify.js",
-    "council/state/SPIRIT-coverage-001.json"
+    "council/state/SPIRIT-coverage-001.json",
+    "research/tevah-42-72-names-permutations-2026-10-09.md",
+    "council/MIRROR.md",
+    "council/messages/INTEGRATION-MIRROR-20261124-01.md",
+    "council/messages/DOSSIER-WORK-20261124-SPIRIT.md",
+    "council/messages/amitabha-names-spirit-request-20261124.md",
+    "research/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11.md",
+    "research/rovgrid-mirrored-alphabet-52-jokers-54-520-888-1024-2026-11-18.md",
+    "council/OPERATIONS_V2.md",
+    "council/research/SPIRIT-corpus-audit-002-gates-greek-20261124.md",
+    "council/evidence/SPIRIT-gates-greek-002-verify.js",
+    "council/state/SPIRIT-coverage-002.json"
   ],
   "outgoing_ids": [
     "RG-001-SPIRIT-20261124-01",
     "RG-001-SPIRIT-20261124-02",
     "RG-009-SPIRIT-20261124-01",
-    "RG-006-SPIRIT-20261124-shadow-01"
+    "RG-006-SPIRIT-20261124-shadow-01",
+    "RG-014-SPIRIT-20261124-mirror-01"
   ],
   "status": "CONSOLIDATION_CORPUS_AUDIT",
   "schedule": {
@@ -104,16 +126,16 @@
   },
   "last_cycle": {
     "date": "2026-11-24",
-    "topic": "RG-006 / old corpus",
+    "topic": "RG-014 / gates",
     "severity": 3,
-    "result": "shadow synthesis, profile sensitivity, finite inverse controls",
-    "next": "Sefer Yetzirah 231 gates, order and edition comparison",
+    "result": "Gate support identity and Greek phonetic control; MIRROR response stored",
+    "next": "221 textual variant and Amitabha linguistic dossier; follow MIRROR response",
     "stagnant_cycles": 0
   },
   "coverage": {
-    "path": "council/state/SPIRIT-coverage-001.json",
-    "fully_read_relevant": 4,
-    "extracted": 10,
-    "research_blobs": 498
+    "path": "council/state/SPIRIT-coverage-002.json",
+    "fully_read_relevant": 10,
+    "extracted": 12,
+    "research_blobs": 502
   }
 }

@@ -1,0 +1,6 @@
+'use strict'; const assert=require('node:assert/strict');
+const H='אבגדהוזחטיכלמנסעפצקרשת',E='ABCDEFGHIJKLMNOPQRSTUVWXYZ',G='ΑΒΓΔΕϜΖΗΘΙΚΛΜΝΞΟΠϘΡΣΤΥΦΧΨΩϠ',V=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,500,600,700,800,900];
+function gates(s,a){let u=[...new Set(s)],rev=u.map(c=>a[a.length-1-a.indexOf(c)]),pairs=[];for(let i=0;i<s.length;i++)for(let j=i+1;j<s.length;j++)if(s[i]!==s[j])pairs.push([s[i],s[j]].sort().join(''));return [u.length,new Set(pairs).size,pairs.length,55-pairs.length,u.filter(c=>rev.includes(c)).length/2];}
+assert.deepEqual(gates('עמיתמייקרוב',H),[8,28,51,4,1]);assert.deepEqual(gates('AMITMIKEROV',E),[9,36,53,2,2]);assert.equal(gates('AMITMIIKROV',E)[1],28);assert.equal(28+36,64);
+function greek(s){return s.normalize('NFD').replace(/\p{M}/gu,'').split(' ').map(w=>[...w].reduce((a,c)=>a+V[G.indexOf(c)],0));}
+assert.deepEqual(greek('ΑΜΙΘ ΜΑΙΧΕ ΡΟΒ'),[60,656,172]);assert.deepEqual(greek('ΑΜΙΤ ΜΑΪΚ ΡΟΒ'),[351,71,172]);assert.deepEqual(greek('ΑΜΙΤ ΜΑΙΚ ΡΟΜΠ'),[351,71,290]);assert.deepEqual(greek('ΑΜΙΤ ΜΙΚΕ ΡΟΒ'),[351,75,172]);console.log('gate and Greek controls passed');
