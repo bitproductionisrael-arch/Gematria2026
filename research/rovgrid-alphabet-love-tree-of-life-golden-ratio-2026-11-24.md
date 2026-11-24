@@ -177,3 +177,65 @@ flowchart TD
 - גימטריה עברית רגילה: אותיות סופיות מקבלות את ערך האות הרגילה; רווחים וניקוד אינם נספרים. English Simple הוא A=1 עד Z=26; English Small הוא מחזור 1–9; Jewish היא המפה הקבועה של RovGrid.
 - זהויות חשבוניות וגאומטריות הן ניתנות לאימות; התאמות בין ביטויים הן תצפיות התלויות בשיטה ובבחירת הטקסט. אין כאן מבחן הסתברותי, הוכחת ייחודיות או הוכחה לנבואה אישית.
 - תרשימי Mermaid משובצים בקובץ עצמו; ב־GitHub הם מוצגים גרפית. בעורך Markdown שאינו תומך Mermaid יופיע קוד התרשים.
+
+## נספח חזותי — שרטוטים מלאים בקובץ עצמו
+
+### רשת 32×32: מלכות ומפתח
+
+כל תו הוא תא אחד. A = 528 (כולל האלכסון); B = 496.
+
+```text
+ABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+AABBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+AAABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+AAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB
+AAAAABBBBBBBBBBBBBBBBBBBBBBBBBBB
+AAAAAABBBBBBBBBBBBBBBBBBBBBBBBBB
+AAAAAAABBBBBBBBBBBBBBBBBBBBBBBBB
+AAAAAAAABBBBBBBBBBBBBBBBBBBBBBBB
+AAAAAAAAABBBBBBBBBBBBBBBBBBBBBBB
+AAAAAAAAAABBBBBBBBBBBBBBBBBBBBBB
+AAAAAAAAAAABBBBBBBBBBBBBBBBBBBBB
+AAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB
+AAAAAAAAAAAAABBBBBBBBBBBBBBBBBBB
+AAAAAAAAAAAAAABBBBBBBBBBBBBBBBBB
+AAAAAAAAAAAAAAABBBBBBBBBBBBBBBBB
+AAAAAAAAAAAAAAAABBBBBBBBBBBBBBBB
+AAAAAAAAAAAAAAAAABBBBBBBBBBBBBBB
+AAAAAAAAAAAAAAAAAABBBBBBBBBBBBBB
+AAAAAAAAAAAAAAAAAAABBBBBBBBBBBBB
+AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBB
+AAAAAAAAAAAAAAAAAAAAABBBBBBBBBBB
+AAAAAAAAAAAAAAAAAAAAAABBBBBBBBBB
+AAAAAAAAAAAAAAAAAAAAAAABBBBBBBBB
+AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBB
+AAAAAAAAAAAAAAAAAAAAAAAAABBBBBBB
+AAAAAAAAAAAAAAAAAAAAAAAAAABBBBBB
+AAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAABBBB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+```
+
+### סידור זרעים בזווית הזהב
+
+שרטוט תווים מחושב: 550 נקודות; לכל נקודה זווית i × 137.507764° ורדיוס יחסי לשורש i. הרסטר עשוי למזג נקודות סמוכות.
+
+```text
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠠⢀⠐⡠⢀⠠⢀⠄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠄⡐⢘⢐⢑⢁⠅⠔⡐⠅⡪⢐⠨⡂⠅⢕⢀⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡀⡅⡃⠢⠡⠨⠰⢐⠨⠔⡊⡐⢌⠠⡡⡐⠌⡂⠆⠡⠡⠡⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⢃⠡⡐⡈⠌⢌⠌⠌⠔⡡⡂⢔⠌⡄⡂⠆⡂⢑⠰⢨⢨⢨⠨⠨⢀⠀⠀⠀
+⠀⠀⢈⢄⠡⡁⢔⠨⢨⢐⢘⢨⠰⠠⢂⠂⢌⢄⠢⠡⠡⢂⠊⠔⠔⢐⢘⠨⠰⢀⠀⠀
+⠀⠀⠠⡡⢁⠊⠔⡨⠐⡐⢌⠠⡂⠅⢅⠊⠔⠔⡘⡠⠡⢑⠨⢊⠐⡡⢂⠊⢌⠂⠀⠀
+⠀⠀⢑⠠⢑⢨⠈⠔⠕⠨⢐⠌⠔⠨⠢⠨⢑⠨⠨⡐⠅⠢⠢⢑⠡⠂⠅⠪⢂⢌⠀⠀
+⠀⠀⠀⡃⠅⡂⡊⡊⡐⠱⢠⠨⠨⢘⢈⠊⠔⡑⡡⢐⢨⠨⢨⢐⢈⠨⡂⠕⠄⠂⠀⠀
+⠀⠀⠀⠀⠅⠅⠆⠆⠅⡅⠆⢘⢘⢐⠰⠑⡈⠔⡠⠡⢂⢊⢂⢂⠢⠡⡐⠜⠈⠀⠀⠀
+⠀⠀⠀⠀⠁⠡⠡⠡⡑⡐⠌⢊⢄⠡⡡⢁⠢⢁⠪⠨⢐⢐⠐⠄⠅⡃⠆⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠑⠐⡐⠌⡂⡡⢈⠄⡑⡡⢂⠊⡌⡨⡨⢠⠁⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠊⠐⠨⠐⠐⠁⠐⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+```
+
+זהו מודל מתמטי של פילוטקסיס, לא תמונה של צמח מסוים.
