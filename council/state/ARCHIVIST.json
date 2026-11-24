@@ -12,16 +12,16 @@
     "Egyptian and Babylonian sources",
     "manuscript collation"
   ],
-  "report": "council/research/ARCHIVIST-20261125-BOOK-BATCH-01.md",
+  "report": "council/research/ARCHIVIST-20261125-BOOK-BATCH-02.md",
   "latest_dossier": "council/messages/omr-amitabha-archivist-20261124-dossier-v1.md",
   "last_commit": "df6a8e8a7cd6d4670cbb6a52cc724383fe3c780e",
-  "next_task": "Continue four book reading cursors; locate Origins of Alphabet; read 37 books; compare Daniel 9 textual witnesses; resume historical audit.",
-  "coverage_note": "4 books, 29 returned pages; 4 claim IDs; full corpus coverage and allocation not established",
+  "next_task": "Recover Descent missing pages 8–9 and earlier gaps; continue cursors, locate alphabet and 37 titles; route ST-05 to MATTER for coordinate verification.",
+  "coverage_note": "Batch 02: four books, 18 returned pages, five claim IDs, conditional arithmetic only; full corpus and 80/20 unmeasured",
   "latest_research_index": "research/ROVGRID_LIGHT_CROSS_CULTURAL_2026-11-24.md",
   "reading_cursors": {
-    "Seventy Sevens": 9,
-    "Stellation F": 9,
-    "Godspell": 9,
-    "Descent": 8
+    "Seventy Sevens": 14,
+    "Stellation F": 13,
+    "Godspell": 14,
+    "Descent": 14
   }
 }
