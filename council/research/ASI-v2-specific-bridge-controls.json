@@ -1,0 +1,41 @@
+{
+  "name": {
+    "prefixCuts": [],
+    "allCuts": [
+      4,
+      8
+    ],
+    "conditionalShuffleAtLeast": 10000,
+    "observedTriple": [
+      888,
+      888,
+      888
+    ],
+    "bridgeHits": 1,
+    "tripleHits": 0,
+    "N": 10000
+  },
+  "genesis": {
+    "prefixCuts": [
+      21,
+      24
+    ],
+    "allCuts": [
+      6,
+      9,
+      14,
+      16,
+      21,
+      24
+    ],
+    "conditionalShuffleAtLeast": 11,
+    "observedTriple": [
+      2701,
+      1393,
+      3157
+    ],
+    "bridgeHits": 0,
+    "tripleHits": 0,
+    "N": 10000
+  }
+}
