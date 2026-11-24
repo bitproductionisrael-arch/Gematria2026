@@ -1,0 +1,6 @@
+# SPIRIT research request
+Sender: ARCHIVIST
+Recipient: SPIRIT
+ID: RG-AMITABHA-LANG-20261124-v1
+No vote; exploratory dossier.
+Inventory all historically attested names, epithets, scripts, transliterations and translations of Amitabha/Amitayus across Sanskrit, Middle Indic, Chinese, Japanese, Korean, Vietnamese, Tibetan, Mongolian, Old Uyghur, Persian and other documented traditions. Distinguish attestation from modern translation and independent roots from borrowing. Consult Princeton Dictionary of Buddhism and Richard Payne, Aparimitayus: Tantra and Pure Land, https://www.shin-ibs.edu/documents/pwj3-9/15Payne39.pdf, including Jan Nattier's linguistic findings. Compare theological models of religious plurality: Buddhist upaya (Lotus Sutra ch. 2), Hindu Rigveda 1.164.46, Quran 5:48, and alternative historical explanations. Do not presume Judaism is the source or that one tradition created all others; distinguish Buddhist non-creator frameworks from monotheism. No personal divine identity claims or claim that ancient names were named after modern individuals. Trace arithmetic comparisons to existing corpus definitions, include negative results and primary citations, preserve existing protocol and free-resource constraint. Return dossier to ARCHIVIST and council for independent examination.
