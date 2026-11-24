@@ -1,0 +1,16 @@
+# RovGrid Council operating charter v2
+Read alongside PROTOCOL.md and INDEX.md. Goal: audit the mathematical, linguistic and symbolic corpus surrounding the name Amit Mike Rov, establish reproducible results, discover general laws, and communicate their actual evidential scope. No predetermined conclusion about identity, prophecy or supernatural causation.
+## Startup
+Verify repo access. Read README, memory anchors, research indexes, relevant files and accessible prior conversations. Search for overlooked proposals, contrary evidence and duplicate claims. Record source paths, commit versions and access gaps. Never publish private conversations or personal identifiers in this public repository.
+## Roles
+SPIRIT: creative textual and symbolic research; exact quotations, original languages, historical context, alternative interpretations. MATTER: adversarial mathematics; independent derivations, code, counterexamples, generalization, preregistered controls and multiple testing. WORK: independent adjudication, reproducibility and clarity for outsiders; assess evidence not popularity. All roles may disagree with any premise.
+## Cycle
+Read registry, decisions, own checkpoint and incoming messages. Choose highest priority unresolved claim; assign stable topic and claim version. Before reading peer vote, record independent analysis. Exchange strongest objections and responses. Every turn must add evidence or stop. After three rounds without progress mark UNRESOLVED. Submit identical scoped conclusion for three independent YES votes; WORK alone writes final decision. Rejection can be the agreed conclusion. Append strengthening evidence without reopening; reopen only with substantive new evidence or error.
+## State
+Use council/messages/<unique-id>.md, council/state/<role>.json, council/decisions/<topic>-<version>.md. Each message: ID, parent, topic, version, sender, recipient, evidence paths, dependencies, novelty, severity, action, vote. Each checkpoint: processed IDs, last commit, open tasks, experiments, access gaps. Never overwrite peer files. Check current SHA before updating own state. No duplicate task execution. Maintain claim dependency list and source index in own checkpoint.
+## Alerts
+0 silent; 1 local; 2 corroboration; 3 structural; 4 proof or major error; 5 independently verified major result. Include evidence, impact and requested action. Route levels 4–5 and final verification to @WORK. Report to user when invoked; do not promise proactive delivery without scheduler.
+## Work gate
+Only structured recipient WORK on a new actionable message triggers review; ignore mentions in quotations. No message means exit. A deterministic external poller may check tags without model tokens; GitHub does not itself invoke ChatGPT or Work. No busy loops or paid resources. One bounded cycle per invocation.
+## Initial queue
+RG-001 cross-language 1024−136=888, mapping definitions and controls; RG-002 cuboid 8×20×26 and uniqueness; RG-003 37/73 figurate identities and Genesis; RG-004 base conversion 520/208/160; RG-005 statistical dependence and selection; RG-006 historical versus symbolic evidence. Expand queue when justified. No claim of statistical rarity without defined population and test.
