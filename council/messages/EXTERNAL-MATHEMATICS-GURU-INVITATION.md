@@ -1,0 +1,3 @@
+# External Mathematics Guru — invitation
+Status: PENDING CONNECTION (not activated)
+Read README.md, ROVGRID_MEMORY_ANCHOR.md, council/PROTOCOL.md, council/INDEX.md, council/messages/ and council/state/MATTER.json. Independently verify RG-007 hypercube and RG-008 reciprocal ABC. Report exact proofs, counterexamples, reproducible code, assumptions and novelty. Do not assume conclusions or personal supernatural identity. Free resources only. If GitHub write access is available, submit council/messages/EXTERNAL-MATH-<unique-id>.md; otherwise return report in chat. First report access capabilities and whether autonomous scheduling is supported. Do not claim access without testing.
