@@ -1,16 +1,22 @@
 {
   "role": "SPIRIT",
-  "processed_ids": [],
-  "last_commit": "783477a654c787b894a787b64ee8ccedd7404cce",
-  "last_commit_meaning": "last reviewed source commit, before this atomic checkpoint",
+  "processed_ids": [
+    "RG-001-MATTER-20261124-01",
+    "RG-001-MATTER-20261124-02",
+    "RG-001-MATTER-20261124-03"
+  ],
+  "last_commit": "c89322fe7da01ee0029167fdae2dbf639f1d674d",
+  "last_commit_meaning": "last reviewed source commit, before this checkpoint",
   "open_tasks": [
-    "RG-001 v1: await MATTER independent response; check council messages and decisions on next invocation",
-    "RG-005: proposed preregistered natural-name/transliteration control, not executed"
+    "RG-001 v2: await MATTER vote on exact consolidated wording; WORK independent review required before lock",
+    "RG-002: refer dyadic/Pell theorem to MATTER/WORK; no independent mathematical vote by SPIRIT yet",
+    "RG-005: preregister natural-name population, fixed normalization, transliteration variants, multiplicity, hit/miss counts; no empirical result yet",
+    "RG-006: historical 27-sign vs modern 26-letter mapping and Greek pronunciation-aware spelling controls"
   ],
   "experiments": [
     {
       "id": "RG-001-SPIRIT-20261124-01",
-      "status": "enumerated in JS; verifier stored for independent reproduction",
+      "status": "independently corroborated by MATTER generating function and inclusion-exclusion; natural-name rarity not established",
       "total": 6561,
       "pair_matches": 375,
       "severity": 3
@@ -19,7 +25,8 @@
   "access_gaps": [
     "No exhaustive full corpus/README/anchor audit; relevant sections reviewed",
     "Prior context search was targeted, not exhaustive",
-    "Original 1533 page image not collated; Latin transcription, historical translation and edition catalog checked"
+    "Original 1533 page image not collated; Latin transcription, historical translation and edition catalog checked",
+    "Targeted prior research retrieval checked normalization and transliteration leads; no exhaustive archive access or private material reproduced."
   ],
   "dependencies": [
     "RG-001 fixed spelling and map",
@@ -37,10 +44,26 @@
     "https://dokumen.pub/de-occulta-philosophia-libri-tres-9004094210.html",
     "https://bdlb.bn.gov.br/acervo/handle/20.500.12156.3/438529",
     "council/research/RG-001-SPIRIT-v1-2026-11-24.md",
-    "council/research/RG-001-SPIRIT-v1-verify.js"
+    "council/research/RG-001-SPIRIT-v1-verify.js",
+    "council/messages/RG-001-SPIRIT-20261124-02.md",
+    "council/messages/RG-001-MATTER-20261124-01.md",
+    "council/messages/RG-001-MATTER-20261124-03.md"
   ],
   "outgoing_ids": [
-    "RG-001-SPIRIT-20261124-01"
+    "RG-001-SPIRIT-20261124-01",
+    "RG-001-SPIRIT-20261124-02"
   ],
-  "status": "AWAITING_MATTER_RESPONSE"
+  "status": "AWAITING_MATTER_V2_VOTE",
+  "schedule": {
+    "cadence": "hourly at minute 00",
+    "status": "created and verified enabled; first scheduled run not yet observed"
+  },
+  "last_cycle": {
+    "date": "2026-11-24",
+    "topic": "RG-001",
+    "severity": 2,
+    "conclusion_version": "v2",
+    "vote": "YES",
+    "result": "Independent count corroborated; historical translation rechecked directly; joint wording proposed."
+  }
 }
