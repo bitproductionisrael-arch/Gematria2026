@@ -115,7 +115,8 @@
     {
       "path": "research/JUNK-homepower-crosschat-2026-10-11.md",
       "sha": "5a2088fe87ea4e747df125ce998a625125e7fec4",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/JUNK-tevah-42-72-2026-10-09.md",
@@ -405,17 +406,20 @@
     {
       "path": "research/homepower-aleph-rov-corpus-2026-10-11.md",
       "sha": "d7054e291c85c44a00998b676ddc32da24349ad8",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/homepower-original-post-EN-2026-10-11.txt",
       "sha": "9010f710b554d586c0e24d714ec1c6e152aae48c",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/homepower-original-post-HE-2026-10-11.txt",
       "sha": "df5f4e841d85d21278ffd4b4708bf998d4d2dab3",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/iisus-russian-amit-rov-520-208-52.md",
@@ -1215,7 +1219,8 @@
     {
       "path": "research/rovgrid-exodus-16-16-homepower-inv73-ketiv-plene-2026-11-12.md",
       "sha": "49dcb71837b2cfa2c7dbd13c74865384a278e9e2",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/rovgrid-exodus-72-blind-controls-and-middle-mirror-2026-11-12.js",
@@ -1515,7 +1520,8 @@
     {
       "path": "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
       "sha": "35fecd59a7e97392d0c571f62d2245958b89ba96",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/rovgrid-greek-seven-vowels-eua-2026-11-11-verify.py",
@@ -2170,12 +2176,14 @@
     {
       "path": "research/rovgrid-shaddai-314-homepower-2026-11-17-verify.js",
       "sha": "dbc82d3e2e176edaff713a0cab22c8820c887003",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md",
       "sha": "fcaf4bfffb2138150f41e9e6d6f10ddea8429f22",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-homepower-batch-20261125.json"
     },
     {
       "path": "research/rovgrid-shaddai-314-shared-positions-2026-11-17.py",
