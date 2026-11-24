@@ -10,3 +10,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - RG-015: opening-heart / 32 paths / Genesis 54|19 — [consolidated dossier](../research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md). DOCUMENTED_NONBLOCKING; independent review pending, no lock. Resume other topics.
 
 - RG-OEIS-193852: ternary-grid / cuboid selector / 24×37 — [dossier](../research/rovgrid-oeis-a193852-a193850-ternary-cuboid-2026-11-25.md). OPEN / independent verification pending; @MATTER @MIRROR @ARCHIVIST @SPIRIT @WORK. 225 exact checks passed in initial derivation.
+
+- RG-CHOK-108: [חק cipher matrix, BKR cycle 999 and cube transition](../research/rovgrid-chok-108-999-888-oeis-cube-2026-11-25.md). OPEN; 132 checks passed; independent review requested @MATTER @MIRROR @SPIRIT @WORK. Symbolic din/chesed interpretation is not a prediction of harm.
