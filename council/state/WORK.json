@@ -36,6 +36,11 @@
       "id": "ASI-v2-comparative",
       "result": "Three-language internal and totals-level synthetic control runs completed; no calibrated score",
       "evidence": "council/research/ASI-v2-three-language-audit.md"
+    },
+    {
+      "id": "RG-015-adversarial-v1",
+      "result": "Exact 5040 word orders; 120 full matches; nonunique word order",
+      "evidence": "council/research/RG-015-adversarial-v1.js"
     }
   ],
   "access_gaps": [
@@ -77,7 +82,9 @@
     "RG-015-WORK-20261124-03",
     "RG-015-WORK-20261124-04",
     "RG-015-WORK-20261124-05",
-    "RG-015-WORK-20261124-06"
+    "RG-015-WORK-20261124-06",
+    "RG-015-WORK-20261124-07",
+    "RG-015-WORK-20261124-08"
   ],
   "coverage": {
     "inventory": "council/state/WORK-coverage-001.json",
@@ -108,6 +115,16 @@
     "protocol": "council/research/ASI-PROTOCOL-v1.md",
     "pilot": "council/research/ASI-v1-pilot-results.json",
     "next": "Preregister matched real-name and text controls and word/block geometry graph; do not treat synthetic relabels as population rarity; continue normal audit rotation",
-    "comparativeReport": "council/research/ASI-v2-three-language-audit.md"
+    "comparativeReport": "council/research/ASI-v2-three-language-audit.md",
+    "challenge": {
+      "version": "ASI-challenge-v1",
+      "status": "PENDING_INDEPENDENT_CONTROL_DATA",
+      "protocol": "council/research/RG-015-ASI-challenge-v1.md",
+      "exactWordOrder": {
+        "n": 5040,
+        "hits": 120
+      },
+      "route": "RG-015-WORK-20261124-08"
+    }
   }
 }
