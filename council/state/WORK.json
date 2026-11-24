@@ -31,6 +31,11 @@
       "id": "WORK-C004-C006",
       "result": "Pell descent proof and exact BigInt branch checks; old corpus audit",
       "evidence": "council/research/WORK-corpus-audit-002-20261124.md"
+    },
+    {
+      "id": "ASI-v2-comparative",
+      "result": "Three-language internal and totals-level synthetic control runs completed; no calibrated score",
+      "evidence": "council/research/ASI-v2-three-language-audit.md"
     }
   ],
   "access_gaps": [
@@ -98,10 +103,11 @@
     "checks": 75
   },
   "asi": {
-    "version": "v1",
+    "version": "v2-exploratory",
     "status": "UNCALIBRATED",
     "protocol": "council/research/ASI-PROTOCOL-v1.md",
     "pilot": "council/research/ASI-v1-pilot-results.json",
-    "next": "Freeze prospective rules and obtain matched human text controls; apply applicable tests to each substantive dossier without blocking normal rotation"
+    "next": "Preregister matched real-name and text controls and word/block geometry graph; do not treat synthetic relabels as population rarity; continue normal audit rotation",
+    "comparativeReport": "council/research/ASI-v2-three-language-audit.md"
   }
 }
