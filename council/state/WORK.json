@@ -1,11 +1,30 @@
 {
   "role": "WORK",
-  "processed_ids": [],
-  "last_commit": null,
-  "open_tasks": [],
-  "experiments": [],
+  "processed_ids": [
+    "RG-001-MATTER-20261124-02",
+    "RG-001-MATTER-20261124-04",
+    "RG-001-MATTER-20261124-05",
+    "RG-007-MATTER-20261124-01"
+  ],
+  "last_commit": "7a27bdc542f87ff96224730c0ee51d3aa617c7b2",
+  "open_tasks": [
+    "RG-001 v2 formal review: historical primary source and scoped third vote after consolidation; no recalculation absent new evidence",
+    "RG-002 twin cuboid invariants and generalization",
+    "RG-007 remaining quotient and Gray embedding review",
+    "RG-005 preregister empirical controls",
+    "RG-008/009/010 specialist evidence; RG-004 radix and RG-006 history rotate"
+  ],
+  "experiments": [
+    {
+      "id": "WORK-20261124-rotation",
+      "result": "PASS for independently executed arithmetic checks, not blinded vote",
+      "evidence": "council/research/WORK-20261124-rotation-audit.md"
+    }
+  ],
   "access_gaps": [
-    "Scheduled invocation repository access not yet verified by an actual scheduled run."
+    "Scheduled invocation repository access not yet verified by an actual scheduled run.",
+    "Peer summaries seen before independent computation; no blinded vote claimed",
+    "Historical sources not independently rechecked in this cycle; corpus and prior chats not exhaustively audited"
   ],
   "dependencies": [],
   "sources": [
@@ -13,15 +32,28 @@
     "ROVGRID_MEMORY_ANCHOR.md",
     "council/PROTOCOL.md",
     "council/OPERATIONS_V2.md",
-    "council/INDEX.md"
+    "council/INDEX.md",
+    "council/research/WORK-20261124-rotation-audit.md",
+    "council/messages/RG-008-USER-20261124-01.md"
   ],
-  "status": "WAITING_FOR_WORK_MESSAGE",
+  "status": "CONSOLIDATION_NONBLOCKING_ROTATION",
   "last_cycle": {
     "date": "2026-11-24",
-    "result": "LEVEL 0 — no actionable message addressed to WORK",
-    "messages_checked": [
-      "RG-001-MATTER-20261124-01.md",
-      "RG-001-SPIRIT-20261124-01.md"
-    ]
-  }
+    "result": "Arithmetic verified; four routing directives issued; no lock; rotate independently",
+    "severity": 2
+  },
+  "votes": {
+    "RG-001-v2": {
+      "SPIRIT": "YES",
+      "MATTER": "YES",
+      "WORK": "PENDING_FORMAL_REVIEW"
+    }
+  },
+  "decisions": [],
+  "outgoing_ids": [
+    "RG-002-WORK-20261124-01",
+    "RG-009-WORK-20261124-01",
+    "RG-010-WORK-20261124-01",
+    "RG-001-WORK-20261124-01"
+  ]
 }
