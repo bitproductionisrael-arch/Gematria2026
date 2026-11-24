@@ -96,5 +96,12 @@
     "report": "research/rovgrid-genesis-54-37-19-73-opening-32-2026-11-24.md",
     "status": "DOCUMENTED_NONBLOCKING",
     "checks": 75
+  },
+  "asi": {
+    "version": "v1",
+    "status": "UNCALIBRATED",
+    "protocol": "council/research/ASI-PROTOCOL-v1.md",
+    "pilot": "council/research/ASI-v1-pilot-results.json",
+    "next": "Freeze prospective rules and obtain matched human text controls; apply applicable tests to each substantive dossier without blocking normal rotation"
   }
 }
