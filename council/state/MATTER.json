@@ -12,7 +12,7 @@
     "RG-008-USER-20261124-02",
     "RG-008-USER-20261124-03"
   ],
-  "last_commit": "3b6aef329627af0639764f733d436e4d66bc491f",
+  "last_commit": "4efc57d6f17ad2344189d264ec782eda062fe0d4",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -24,7 +24,8 @@
     "RG-007 frontier-v1: independent WORK review of Gray embedding, rooted obstruction, induced cut and folded-Q5 quotient; no lock during consolidation",
     "RG-008: read peer analysis after own recorded proof; clarify vesica and string model",
     "RG-005: preregister digit-prefix and cross-name controls",
-    "Prime candidate registry: mark known composite and reconcile stale corpus pointers before further resource use"
+    "Prime candidate registry: mark known composite and reconcile stale corpus pointers before further resource use",
+    "Name geometry N1–N5: independent review, compare public 4+4+3 controls and historical glyph sources; no lock during consolidation"
   ],
   "experiments": [
     {
@@ -74,6 +75,20 @@
         "prior composite factor confirmed"
       ],
       "negative": "no full symmetry canonical proper subset; no inferred empirical rarity or causation"
+    },
+    {
+      "id": "RG-007-MATTER-20261124-02",
+      "result": "PASS",
+      "code": "council/evidence/MATTER-name-letter-geometry-20261124-verify.py",
+      "findings": [
+        "11 letter positions, shared central I/י, explicit centered gap quotient",
+        "word internal gaps 3+3+2, interword gaps 2; Q3 x Q3 x Q2 x Q2",
+        "gcd-based unique face reconstruction",
+        "normalized single-bit carry",
+        "four-font outline angle counts with noninvariance counterexamples",
+        "12 prior packages linked or explicitly marked unsupported"
+      ],
+      "negative": "shape angle counts font-dependent; no name-derived mechanism for golden-ratio indices or prime candidate"
     }
   ],
   "access_gaps": [
@@ -81,7 +96,8 @@
     "accessible prior context searched, not exhaustive",
     "scheduled-run repository access not yet verified in actual invocation",
     "Agrippa II.XX English translation checked directly; original Latin page image not collated",
-    "RG-008 SPIRIT response deliberately unread until independent record saved; decisions directory 404; full literature/corpus novelty not established"
+    "RG-008 SPIRIT response deliberately unread until independent record saved; decisions directory 404; full literature/corpus novelty not established",
+    "Current cycle targeted name re-audit, not full file inventory; historical glyph shapes not established"
   ],
   "dependencies": [
     "fixed maps + spelling -> English/Hebrew totals -> arithmetic equality",
@@ -94,7 +110,10 @@
     "Greek 24-letter and 27-sign orders -> different ordinal values",
     "Gray coordinate encoding -> voxel adjacency embedding; chosen Q3/Q7 split+root -> axes plus antipode -> partition and cut",
     "Q5 folding + block swap -> D4 quotient -> 136 vertices and 640 edges",
-    "e2 alone -> 16 cuboids; e1 additional -> 2"
+    "e2 alone -> 16 cuboids; e1 additional -> 2",
+    "fixed spellings -> 4+4+3 word profile and central letter -> gap coordinates -> Q10 and chosen D4 quotient",
+    "three Hebrew face values -> gcd criterion -> unique cuboid -> geometric angles and string ratio",
+    "font+outline definition -> measured angles, not invariant glyph encoding"
   ],
   "sources": [
     "README.md",
@@ -117,7 +136,12 @@
     "council/messages/RG-007-USER-20261124-03.md",
     "council/messages/RG-008-USER-20261124-01.md",
     "council/messages/RG-008-USER-20261124-02.md",
-    "council/messages/RG-008-USER-20261124-03.md"
+    "council/messages/RG-008-USER-20261124-03.md",
+    "council/FULL_CORPUS_AUDIT.md",
+    "council/FEEDBACK_LOOP.md",
+    "research/gematrix-1024-audit-2026-11-15.md",
+    "research/rovgrid-torah-ends-lev32-1024-d4-genesis28-2026-11-15.md",
+    "ROVGRID_MASTER_CORPUS_2026-11-15.md"
   ],
   "status": "DEBATE",
   "topic": "RG-001",
@@ -128,8 +152,24 @@
     "RG-001-MATTER-20261124-03",
     "RG-001-MATTER-20261124-04",
     "RG-001-MATTER-20261124-05",
-    "RG-007-MATTER-20261124-01"
+    "RG-007-MATTER-20261124-01",
+    "RG-007-MATTER-20261124-02"
   ],
   "last_cycle": "2026-11-24",
-  "schedule_status": "Created enabled hourly at minute 20; first scheduled run not yet verified"
+  "schedule_status": "Created enabled hourly at minute 20; first scheduled run not yet verified",
+  "feedback": {
+    "cycle": "RG-007-MATTER-20261124-02",
+    "coverage": "Targeted re-audit of 12 previously reported packages; selected source sections only; not full corpus inventory.",
+    "grades": "N1–N4 grade 4 scoped proof; N5 grade 3 measured glyph outlines; no grade 5",
+    "expertise": "High integer algebra and graph theory; moderate vector outlines; low historical script paleography",
+    "progress": "High reproducible graph and fixed-font controls, moderate historical glyph comparison if source samples available; no evidence of universal angle linkage",
+    "falsifiers": [
+      "alternate spellings and public matched name controls",
+      "font changes",
+      "failure of gcd criterion",
+      "predeclared targets without postselection"
+    ],
+    "next": "Audit older letter-form corpus, compare matched public 4+4+3 names under fixed maps and face criterion; seek ARCHIVIST sources for stable glyph definitions.",
+    "stalled_cycles": 0
+  }
 }
