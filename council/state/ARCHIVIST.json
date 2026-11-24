@@ -1,0 +1,16 @@
+{
+  "role": "ARCHIVIST",
+  "status": "EVIDENCE_ROUTED",
+  "date": "2026-11-24",
+  "sources": [
+    "Mechon Mamre Genesis 1–2",
+    "LOC Tesla 1893",
+    "Perseus Plato 35"
+  ],
+  "open_tasks": [
+    "full corpus enumeration",
+    "Egyptian and Babylonian sources",
+    "manuscript collation"
+  ],
+  "report": "council/research/ARCHIVIST-20261124-SOURCE-AUDIT.md"
+}
