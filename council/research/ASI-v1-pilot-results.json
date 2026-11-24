@@ -1,0 +1,204 @@
+{
+  "version": "ASI-v1-pilot",
+  "targetList": [
+    1,
+    3,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    24,
+    26,
+    28,
+    32,
+    36,
+    37,
+    42,
+    50,
+    54,
+    55,
+    67,
+    72,
+    73,
+    84,
+    86,
+    103,
+    110,
+    111,
+    126,
+    136,
+    160,
+    208,
+    256,
+    288,
+    323,
+    520,
+    703,
+    888,
+    1008,
+    1024,
+    1998,
+    2701,
+    4160
+  ],
+  "tests": [
+    {
+      "s": "עמית מייק רוב",
+      "lang": "he",
+      "letters": 11,
+      "values": [
+        520,
+        160,
+        208
+      ],
+      "entropy": 2.8453509366224368,
+      "runs": {
+        "n": 55,
+        "ones": 24,
+        "runs": 36,
+        "p": 0.03685357267538429
+      },
+      "permutation": {
+        "score": 0,
+        "n": 6,
+        "ge": 6,
+        "p": 1
+      },
+      "mdl": {
+        "uniform": 49.05374780501027,
+        "unigram": 49.18678713263835,
+        "markov": 47.960855167960624,
+        "netGain": 1.0928926370496441,
+        "modelTagBits": 2,
+        "netGainVsUniformWithEqualTags": 1.0928926370496441
+      },
+      "holdout": {
+        "train": 5,
+        "test": 6,
+        "uniformBits": 26.756589711823786,
+        "modelBits": 26.830074998557688,
+        "gain": -0.0734852867339022,
+        "status": "exploratory, not independent"
+      }
+    },
+    {
+      "s": "Amit Mike Rov",
+      "lang": "en",
+      "letters": 11,
+      "values": [
+        43,
+        38,
+        55
+      ],
+      "entropy": 3.095795255000934,
+      "runs": {
+        "n": 55,
+        "ones": 27,
+        "runs": 35,
+        "p": 0.07798268693769478
+      },
+      "permutation": {
+        "score": 4,
+        "n": 6,
+        "ge": 4,
+        "p": 0.6666666666666666
+      },
+      "mdl": {
+        "uniform": 51.70483689955201,
+        "unigram": 53.447314682861574,
+        "markov": 50.333704806663874,
+        "netGain": 1.371132092888132,
+        "modelTagBits": 2,
+        "netGainVsUniformWithEqualTags": 1.371132092888132
+      },
+      "holdout": {
+        "train": 5,
+        "test": 6,
+        "uniformBits": 28.202638308846552,
+        "modelBits": 29.43458750793272,
+        "gain": -1.2319491990861664,
+        "status": "exploratory, not independent"
+      }
+    },
+    {
+      "s": "בראשית ברא אלהים את השמים ואת הארץ",
+      "lang": "he",
+      "letters": 28,
+      "values": [
+        913,
+        203,
+        86,
+        401,
+        395,
+        407,
+        296
+      ],
+      "entropy": 3.2614901893738795,
+      "runs": {
+        "n": 140,
+        "ones": 56,
+        "runs": 87,
+        "p": 0.0009968953219604418
+      },
+      "permutation": {
+        "score": 8,
+        "n": 5040,
+        "ge": 132,
+        "p": 0.02619047619047619
+      },
+      "mdl": {
+        "uniform": 124.86408532184433,
+        "unigram": 118.7126682784813,
+        "markov": 120.72551913368645,
+        "netGain": 6.1514170433630255,
+        "modelTagBits": 2,
+        "netGainVsUniformWithEqualTags": 6.1514170433630255
+      },
+      "holdout": {
+        "train": 14,
+        "test": 14,
+        "uniformBits": 62.432042660922164,
+        "modelBits": 54.85332819585051,
+        "gain": 7.578714465071656,
+        "status": "exploratory, not independent"
+      }
+    }
+  ],
+  "knownXor": [
+    {
+      "a": 54,
+      "b": 19,
+      "c": 37,
+      "verified": true
+    },
+    {
+      "a": 888,
+      "b": 136,
+      "c": 1008,
+      "verified": true
+    },
+    {
+      "a": 323,
+      "b": 256,
+      "c": 67,
+      "verified": true
+    },
+    {
+      "a": 42,
+      "b": 84,
+      "c": 126,
+      "verified": true
+    }
+  ],
+  "status": "exploratory; no authorship score"
+}
