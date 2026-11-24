@@ -1,0 +1,193 @@
+{
+  "results": {
+    "name": {
+      "text": {
+        "he": "עמית מייק רוב",
+        "en": "Amit Mike Rov",
+        "gr": "ΑΜΙΘ ΜΑΙΧΕ ΡΟΒ"
+      },
+      "totals": {
+        "he": [
+          888,
+          141,
+          33
+        ],
+        "en": [
+          1024,
+          136,
+          55
+        ],
+        "gr": [
+          888,
+          113,
+          42
+        ]
+      },
+      "internal": {
+        "he": {
+          "length": 11,
+          "runs": 36,
+          "runsDeviation": 7.945454545454545,
+          "mdlGain": -0.9071073629503559,
+          "holdoutGain": -0.0734852867339022,
+          "p": {
+            "runsDeviation": 0.7271272872712728,
+            "mdlGain": 0.15458454154584542,
+            "holdoutGain": 0.6564343565643436
+          }
+        },
+        "en": {
+          "length": 11,
+          "runs": 35,
+          "runsDeviation": 6.509090909090908,
+          "mdlGain": -0.6288679071118679,
+          "holdoutGain": -1.2319491990861664,
+          "p": {
+            "runsDeviation": 0.794020597940206,
+            "mdlGain": 0.0341965803419658,
+            "holdoutGain": 0.7961203879612039
+          }
+        },
+        "gr": {
+          "length": 12,
+          "runs": 31,
+          "runsDeviation": 1.6333333333333329,
+          "mdlGain": -2,
+          "holdoutGain": -1.9248125036057822,
+          "p": {
+            "runsDeviation": 0.8596140385961404,
+            "mdlGain": 1,
+            "holdoutGain": 0.9004099590040996
+          }
+        }
+      },
+      "graph": {
+        "score": 1,
+        "hits": [
+          [
+            "136,888,1024",
+            [
+              {
+                "a": {
+                  "l": "he",
+                  "i": 0,
+                  "v": 888
+                },
+                "b": {
+                  "l": "en",
+                  "i": 1,
+                  "v": 136
+                },
+                "c": {
+                  "l": "en",
+                  "i": 0,
+                  "v": 1024
+                },
+                "op": [
+                  "+"
+                ]
+              },
+              {
+                "a": {
+                  "l": "en",
+                  "i": 1,
+                  "v": 136
+                },
+                "b": {
+                  "l": "gr",
+                  "i": 0,
+                  "v": 888
+                },
+                "c": {
+                  "l": "en",
+                  "i": 0,
+                  "v": 1024
+                },
+                "op": [
+                  "+"
+                ]
+              }
+            ]
+          ]
+        ]
+      },
+      "nullMean": 0.8046,
+      "graphP": 0.49555044495550443,
+      "bridge": true,
+      "bridgeNullHits": 3,
+      "N": 10000
+    },
+    "genesis": {
+      "text": {
+        "he": "בראשית ברא אלהים את השמים ואת הארץ",
+        "en": "In the beginning God created the heaven and the earth",
+        "gr": "Εν αρχη εποιησεν ο θεος τον ουρανον και την γην"
+      },
+      "totals": {
+        "he": [
+          2701,
+          298,
+          82
+        ],
+        "en": [
+          1804,
+          411,
+          222
+        ],
+        "gr": [
+          3157,
+          437,
+          178
+        ]
+      },
+      "internal": {
+        "he": {
+          "length": 28,
+          "runs": 87,
+          "runsDeviation": 18.799999999999997,
+          "mdlGain": 4.1514170433630255,
+          "holdoutGain": 7.578714465071656,
+          "p": {
+            "runsDeviation": 0.6271372862713729,
+            "mdlGain": 1,
+            "holdoutGain": 0.12458754124587541
+          }
+        },
+        "en": {
+          "length": 44,
+          "runs": 121,
+          "runsDeviation": 14.809090909090912,
+          "mdlGain": 19.172495390192836,
+          "holdoutGain": 14.564836253418662,
+          "p": {
+            "runsDeviation": 0.5400459954004599,
+            "mdlGain": 1,
+            "holdoutGain": 0.33896610338966104
+          }
+        },
+        "gr": {
+          "length": 38,
+          "runs": 106,
+          "runsDeviation": 10.042105263157893,
+          "mdlGain": 4.9776615144006655,
+          "holdoutGain": 4.999969049620333,
+          "p": {
+            "runsDeviation": 0.5010498950104989,
+            "mdlGain": 1,
+            "holdoutGain": 0.44015598440155984
+          }
+        }
+      },
+      "graph": {
+        "score": 0,
+        "hits": []
+      },
+      "nullMean": 0.2645,
+      "graphP": 1,
+      "bridge": false,
+      "bridgeNullHits": 0,
+      "N": 10000
+    }
+  },
+  "scope": "three scripts; Greek name is selected transliteration; exploratory synthetic controls, not matched natural corpora; no genuine holdout; no authorship score"
+}
