@@ -499,7 +499,8 @@
     {
       "path": "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14.md",
       "sha": "09d2b2360b08c5e4020de5032a473662a091933c",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-d4-independent-20261125.json"
     },
     {
       "path": "research/rovgrid-1024-136-888-symmetry-manuscript-audit-2026-11-14-verify.js",
@@ -1756,7 +1757,8 @@
     {
       "path": "research/rovgrid-lexicon-muchlat-2026-11-11.md",
       "sha": "54afaebc90b5d5f259d263b6b25897d47fd3189a",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-d4-independent-20261125.json"
     },
     {
       "path": "research/rovgrid-linear-axis-cube-choice-2026-11-20.md",
@@ -2253,7 +2255,8 @@
     {
       "path": "research/rovgrid-square-ring-d4-primitive-2026-11-07.md",
       "sha": "cbfec8ce2da345b312a50d9cddc8fa5d40255888",
-      "status": "UNREAD"
+      "status": "IN_REVIEW",
+      "audit": "council/research/WORK-d4-independent-20261125.json"
     },
     {
       "path": "research/rovgrid-sri-yantra-43-44-11-24-888-2026-11-06-verify.py",
