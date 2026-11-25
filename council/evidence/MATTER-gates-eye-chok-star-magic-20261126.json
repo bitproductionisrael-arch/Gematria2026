@@ -1,0 +1,526 @@
+{
+  "id": "RG-GATES-231-221-SYNTHESIS-20261126",
+  "calculator_blob": "a36b65dcb6f228756a6744d5507ab135065a8021",
+  "code": "function run(){\nconst sum=a=>a.reduce((s,x)=>s+x,0),tier=i=>i<9?i+1:i<18?(i-8)*10:(i-17)*100,dr=v=>v?1+(v-1)%9:0,pre=a=>a.map((_,i)=>sum(a.slice(0,i+1))),H=\"אבגדהוזחטיכלמנסעפצקרשת\",E=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",J=[1,2,3,4,5,6,7,8,9,600,10,20,30,40,50,60,70,80,90,100,200,700,900,300,400,500],pi=\"14159265358979323846264338\";\nconst he=s=>{let i=[...s.replace(/[ךםןףץ]/g,c=>\"כמנפצ\"[\"ךםןףץ\".indexOf(c)])].map(c=>H.indexOf(c)).filter(i=>i>=0);return {length:i.length,reg:sum(i.map(tier)),ord:sum(i.map(x=>x+1)),small:sum(i.map(x=>x%9+1)),prefix:[sum(pre(i.map(tier))),sum(pre(i.map(x=>x+1))),sum(pre(i.map(x=>x%9+1)))]}};\nconst en=s=>{let w=s.toUpperCase().split(/\\s+/).map(t=>[...t].map(c=>E.indexOf(c)).filter(x=>x>=0));let a=w.flat(), vals=f=>a.map(f), per=(f,g)=>sum(w.map(t=>sum(g(t.map(f)))));return {simple:sum(vals(x=>x+1)),small:sum(vals(x=>x%9+1)),six:6*sum(vals(x=>x+1)),building:per(x=>x+1,pre),building6:6*per(x=>x+1,pre),jewish:sum(vals(x=>J[x])),jewishSmall:sum(vals(x=>dr(J[x]))),jewishReduced:sum(w.map(t=>dr(sum(t.map(x=>J[x]))))),pi:sum(vals(x=>+pi[x])),positional:per(tier,a=>a.map((v,i)=>v*(i+1))),ladder:per(tier,a=>pre(a).concat(pre(a.slice().reverse()))),equivalence:per(tier,a=>a.map(v=>v*(a.length+1)/2)),ratzo:per(tier,a=>pre(a).concat(pre(a).slice(0,-1).reverse())),albam:sum(vals(x=>tier((x+13)%26))),avgad:sum(vals(x=>tier((x+1)%26))),atbash:sum(vals(x=>tier(25-x))),atbashOrd:sum(vals(x=>26-x)),wordPosition6:per(x=>6*(x+1),a=>a.map(v=>v*a.length))}};\nconst heb=Object.fromEntries([\"עין\",\"אלף\",\"מית\",\"עמית\",\"עיןמית\",\"אלףמית\",\"בראשית ברא אלהים את השמים ואת הארץ\",\"חק\",\"חקק\",\"קו\",\"קוה\",\"עין מים יוד תיו\",\"מפתח\",\"מלכות\",\"ישוע\",\"יהו\"].map(s=>[s,he(s)]));\nconst eng=Object.fromEntries([\"MAGIC\",\"MAGIC NUMBER\",\"THE MAGIC NUMBER\",\"THE MAGIC\",\"THE\",\"NUMBER\",\"AMIT MIKE ROV\",\"November Twenty Two Thousand Twenty-Six\",\"November Twenty-Two Two Thousand Twenty-Six\"].map(s=>[s,en(s)]));\nlet stars=[];for(let r=0;r<=12;r++){let a=0,b=0,inter=0,u=0;for(let x=-2*r;x<=2*r;x++)for(let y=-2*r;y<=2*r;y++){let v=[x,y,-x-y],p=v.every(z=>z>=-r),q=v.every(z=>z<=r);a+=+p;b+=+q;inter+=+(p&&q);u+=+(p||q)}stars.push({r,a,b,inter,u,pass:a===(3*r+1)*(3*r+2)/2&&b===a&&inter===1+3*r*(r+1)&&u===1+6*r*(r+1)})}\nlet primes=[];for(let n=2;n<=300;n++)if(!primes.some(p=>p*p<=n&&n%p===0))primes.push(n);\nlet hits=[];for(let i=0;i<22;i++)for(let j=i;j<22;j++){let next=x=>tier((x+9)%27);if(tier(i)+tier(j)-i-j-2===next(i)+next(j))hits.push(H[i]+H[j])}\nlet sig=0,sigReg=0,sigOrd=0,sets=new Set();for(let i=0;i<22;i++)for(let j=0;j<22;j++)for(let k=0;k<22;k++){let a=[i,j,k];if(sum(a.map(tier))===130){sigReg++;if(sum(a.map(x=>x+1))===40){sigOrd++;if(sum(a.map(x=>x%9+1))===13){sig++;sets.add(a.slice().sort((a,b)=>a-b).join(\",\"))}}}}\nconst digits=[...\"61803398874989484820458\"].map(Number);\nreturn {heb,eng,stars,primeIndices:Object.fromEntries([37,73,137,139,163,181].map(n=>[n,primes.indexOf(n)+1])),bkrAllUnorderedBasePairs:hits,eyeControls:{total:22**3,sigReg,sigOrd,sig,sets:sets.size},golden:{sum:sum(digits),squares:sum(digits.map(x=>x*x))},gate:{internal17:17*16/2,cross:17*5,internal5:5*4/2,all:22*21/2,remaining:22*21/2-10},abc:{sum:1+3+6,pairs:3+6+18,squares:1+9+36},cuboid:{faces:[8*20,8*26,20*26],volume:8*20*26},checks:{starAll:stars.every(x=>x.pass),star181:stars[5].u===181,prime33:primes[32]===137,prime38:primes[37]===163,eyePrefix:heb[\"עין\"].prefix[0]-heb[\"אלף\"].prefix[0]===137,genesis:heb[\"בראשית ברא אלהים את השמים ואת הארץ\"].reg===2701,magic:eng[\"THE MAGIC\"].jewish===163,magicPi:eng[\"THE MAGIC\"].pi===38}};\n}\nconsole.log(JSON.stringify(run(),null,2));",
+  "output": {
+    "heb": {
+      "עין": {
+        "length": 3,
+        "reg": 130,
+        "ord": 40,
+        "small": 13,
+        "prefix": [
+          280,
+          82,
+          28
+        ]
+      },
+      "אלף": {
+        "length": 3,
+        "reg": 111,
+        "ord": 30,
+        "small": 12,
+        "prefix": [
+          143,
+          44,
+          17
+        ]
+      },
+      "מית": {
+        "length": 3,
+        "reg": 450,
+        "ord": 45,
+        "small": 9,
+        "prefix": [
+          540,
+          81,
+          18
+        ]
+      },
+      "עמית": {
+        "length": 4,
+        "reg": 520,
+        "ord": 61,
+        "small": 16,
+        "prefix": [
+          820,
+          145,
+          46
+        ]
+      },
+      "עיןמית": {
+        "length": 6,
+        "reg": 580,
+        "ord": 85,
+        "small": 22,
+        "prefix": [
+          1210,
+          283,
+          85
+        ]
+      },
+      "אלףמית": {
+        "length": 6,
+        "reg": 561,
+        "ord": 75,
+        "small": 21,
+        "prefix": [
+          1016,
+          215,
+          71
+        ]
+      },
+      "בראשית ברא אלהים את השמים ואת הארץ": {
+        "length": 28,
+        "reg": 2701,
+        "ord": 298,
+        "small": 82,
+        "prefix": [
+          40035,
+          4206,
+          1011
+        ]
+      },
+      "חק": {
+        "length": 2,
+        "reg": 108,
+        "ord": 27,
+        "small": 9,
+        "prefix": [
+          116,
+          35,
+          17
+        ]
+      },
+      "חקק": {
+        "length": 3,
+        "reg": 208,
+        "ord": 46,
+        "small": 10,
+        "prefix": [
+          324,
+          81,
+          27
+        ]
+      },
+      "קו": {
+        "length": 2,
+        "reg": 106,
+        "ord": 25,
+        "small": 7,
+        "prefix": [
+          206,
+          44,
+          8
+        ]
+      },
+      "קוה": {
+        "length": 3,
+        "reg": 111,
+        "ord": 30,
+        "small": 12,
+        "prefix": [
+          317,
+          74,
+          20
+        ]
+      },
+      "עין מים יוד תיו": {
+        "length": 12,
+        "reg": 656,
+        "ord": 134,
+        "small": 44,
+        "prefix": [
+          3502,
+          928,
+          289
+        ]
+      },
+      "מפתח": {
+        "length": 4,
+        "reg": 528,
+        "ord": 60,
+        "small": 24,
+        "prefix": [
+          1208,
+          155,
+          56
+        ]
+      },
+      "מלכות": {
+        "length": 5,
+        "reg": 496,
+        "ord": 64,
+        "small": 19,
+        "prefix": [
+          792,
+          180,
+          54
+        ]
+      },
+      "ישוע": {
+        "length": 4,
+        "reg": 386,
+        "ord": 53,
+        "small": 17,
+        "prefix": [
+          1022,
+          131,
+          32
+        ]
+      },
+      "יהו": {
+        "length": 3,
+        "reg": 21,
+        "ord": 21,
+        "small": 12,
+        "prefix": [
+          46,
+          46,
+          19
+        ]
+      }
+    },
+    "eng": {
+      "MAGIC": {
+        "simple": 33,
+        "small": 24,
+        "six": 198,
+        "building": 111,
+        "building6": 666,
+        "jewish": 50,
+        "jewishSmall": 23,
+        "jewishReduced": 5,
+        "pi": 18,
+        "positional": 114,
+        "ladder": 360,
+        "equivalence": 180,
+        "ratzo": 432,
+        "albam": 1520,
+        "avgad": 74,
+        "atbash": 1740,
+        "atbashOrd": 102,
+        "wordPosition6": 990
+      },
+      "MAGIC NUMBER": {
+        "simple": 106,
+        "small": 52,
+        "six": 636,
+        "building": 386,
+        "building6": 2316,
+        "jewish": 407,
+        "jewishSmall": 47,
+        "jewishReduced": 11,
+        "pi": 57,
+        "positional": 1457,
+        "ladder": 3769,
+        "equivalence": 1884.5,
+        "ratzo": 4077,
+        "albam": 2484,
+        "avgad": 693,
+        "atbash": 2945,
+        "atbashOrd": 191,
+        "wordPosition6": 3618
+      },
+      "THE MAGIC NUMBER": {
+        "simple": 139,
+        "small": 67,
+        "six": 834,
+        "building": 467,
+        "building6": 2802,
+        "jewish": 520,
+        "jewishSmall": 61,
+        "jewishReduced": 16,
+        "pi": 77,
+        "positional": 1688,
+        "ladder": 4621,
+        "equivalence": 2310.5,
+        "ratzo": 5106,
+        "albam": 2881,
+        "avgad": 1008,
+        "atbash": 3452,
+        "atbashOrd": 239,
+        "wordPosition6": 4212
+      },
+      "THE MAGIC": {
+        "simple": 66,
+        "small": 39,
+        "six": 396,
+        "building": 192,
+        "building6": 1152,
+        "jewish": 163,
+        "jewishSmall": 37,
+        "jewishReduced": 10,
+        "pi": 38,
+        "positional": 345,
+        "ladder": 1212,
+        "equivalence": 606,
+        "ratzo": 1461,
+        "albam": 1917,
+        "avgad": 389,
+        "atbash": 2247,
+        "atbashOrd": 150,
+        "wordPosition6": 1584
+      },
+      "THE": {
+        "simple": 33,
+        "small": 15,
+        "six": 198,
+        "building": 81,
+        "building6": 486,
+        "jewish": 113,
+        "jewishSmall": 14,
+        "jewishReduced": 5,
+        "pi": 20,
+        "positional": 231,
+        "ladder": 852,
+        "equivalence": 426,
+        "ratzo": 1029,
+        "albam": 397,
+        "avgad": 315,
+        "atbash": 507,
+        "atbashOrd": 48,
+        "wordPosition6": 594
+      },
+      "NUMBER": {
+        "simple": 73,
+        "small": 28,
+        "six": 438,
+        "building": 275,
+        "building6": 1650,
+        "jewish": 357,
+        "jewishSmall": 24,
+        "jewishReduced": 6,
+        "pi": 39,
+        "positional": 1343,
+        "ladder": 3409,
+        "equivalence": 1704.5,
+        "ratzo": 3645,
+        "albam": 964,
+        "avgad": 619,
+        "atbash": 1205,
+        "atbashOrd": 89,
+        "wordPosition6": 2628
+      },
+      "AMIT MIKE ROV": {
+        "simple": 136,
+        "small": 55,
+        "six": 816,
+        "building": 293,
+        "building6": 1758,
+        "jewish": 1024,
+        "jewishSmall": 52,
+        "jewishReduced": 16,
+        "pi": 61,
+        "positional": 2456,
+        "ladder": 3820,
+        "equivalence": 1910,
+        "ratzo": 1854,
+        "albam": 3163,
+        "avgad": 1128,
+        "atbash": 1601,
+        "atbashOrd": 161,
+        "wordPosition6": 2934
+      },
+      "November Twenty Two Thousand Twenty-Six": {
+        "simple": 520,
+        "small": 151,
+        "six": 3120,
+        "building": 2247,
+        "building6": 13482,
+        "jewish": 5944,
+        "jewishSmall": 157,
+        "jewishReduced": 31,
+        "pi": 187,
+        "positional": 25623,
+        "ladder": 50640,
+        "equivalence": 25320,
+        "ratzo": 43880,
+        "albam": 2246,
+        "avgad": 7853,
+        "atbash": 4187,
+        "atbashOrd": 398,
+        "wordPosition6": 22890
+      },
+      "November Twenty-Two Two Thousand Twenty-Six": {
+        "simple": 578,
+        "small": 164,
+        "six": 3468,
+        "building": 2689,
+        "building6": 16134,
+        "jewish": 6994,
+        "jewishSmall": 172,
+        "jewishReduced": 28,
+        "pi": 200,
+        "positional": 31563,
+        "ladder": 63205,
+        "equivalence": 31602.5,
+        "ratzo": 56370,
+        "albam": 2265,
+        "avgad": 8823,
+        "atbash": 4228,
+        "atbashOrd": 421,
+        "wordPosition6": 27948
+      }
+    },
+    "stars": [
+      {
+        "r": 0,
+        "a": 1,
+        "b": 1,
+        "inter": 1,
+        "u": 1,
+        "pass": true
+      },
+      {
+        "r": 1,
+        "a": 10,
+        "b": 10,
+        "inter": 7,
+        "u": 13,
+        "pass": true
+      },
+      {
+        "r": 2,
+        "a": 28,
+        "b": 28,
+        "inter": 19,
+        "u": 37,
+        "pass": true
+      },
+      {
+        "r": 3,
+        "a": 55,
+        "b": 55,
+        "inter": 37,
+        "u": 73,
+        "pass": true
+      },
+      {
+        "r": 4,
+        "a": 91,
+        "b": 91,
+        "inter": 61,
+        "u": 121,
+        "pass": true
+      },
+      {
+        "r": 5,
+        "a": 136,
+        "b": 136,
+        "inter": 91,
+        "u": 181,
+        "pass": true
+      },
+      {
+        "r": 6,
+        "a": 190,
+        "b": 190,
+        "inter": 127,
+        "u": 253,
+        "pass": true
+      },
+      {
+        "r": 7,
+        "a": 253,
+        "b": 253,
+        "inter": 169,
+        "u": 337,
+        "pass": true
+      },
+      {
+        "r": 8,
+        "a": 325,
+        "b": 325,
+        "inter": 217,
+        "u": 433,
+        "pass": true
+      },
+      {
+        "r": 9,
+        "a": 406,
+        "b": 406,
+        "inter": 271,
+        "u": 541,
+        "pass": true
+      },
+      {
+        "r": 10,
+        "a": 496,
+        "b": 496,
+        "inter": 331,
+        "u": 661,
+        "pass": true
+      },
+      {
+        "r": 11,
+        "a": 595,
+        "b": 595,
+        "inter": 397,
+        "u": 793,
+        "pass": true
+      },
+      {
+        "r": 12,
+        "a": 703,
+        "b": 703,
+        "inter": 469,
+        "u": 937,
+        "pass": true
+      }
+    ],
+    "primeIndices": {
+      "37": 12,
+      "73": 21,
+      "137": 33,
+      "139": 34,
+      "163": 38,
+      "181": 42
+    },
+    "bkrAllUnorderedBasePairs": [
+      "חק"
+    ],
+    "eyeControls": {
+      "total": 10648,
+      "sigReg": 63,
+      "sigOrd": 63,
+      "sig": 57,
+      "sets": 12
+    },
+    "golden": {
+      "sum": 126,
+      "squares": 888
+    },
+    "gate": {
+      "internal17": 136,
+      "cross": 85,
+      "internal5": 10,
+      "all": 231,
+      "remaining": 221
+    },
+    "abc": {
+      "sum": 10,
+      "pairs": 27,
+      "squares": 46
+    },
+    "cuboid": {
+      "faces": [
+        160,
+        208,
+        520
+      ],
+      "volume": 4160
+    },
+    "checks": {
+      "starAll": true,
+      "star181": true,
+      "prime33": true,
+      "prime38": true,
+      "eyePrefix": true,
+      "genesis": true,
+      "magic": true,
+      "magicPi": true
+    }
+  },
+  "scope": "Actual independent JS execution in this invocation. No physical or personal claims. BKR uses 27-letter cyclic tier values; base input pairs only. English operations wordwise. No exhaustive corpus audit."
+}
