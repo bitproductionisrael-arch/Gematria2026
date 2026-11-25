@@ -46,6 +46,11 @@
       "id": "WORK-homepower-batch-20261125",
       "result": "Actual output saved; partial file audit",
       "evidence": "council/research/WORK-homepower-batch-20261125.json"
+    },
+    {
+      "id": "WORK-d4-independent-20261125",
+      "result": "32 grids and arithmetic checks passed",
+      "evidence": "council/research/WORK-d4-independent-20261125.json"
     }
   ],
   "access_gaps": [
@@ -65,9 +70,9 @@
   "status": "CORPUS_AUDIT_CONSOLIDATION",
   "last_cycle": {
     "date": "2026-11-25",
-    "severity": 3,
-    "result": "Eight files retrieved; eight claim groups executed; exact product collisions enumerated",
-    "report": "council/research/WORK-homepower-batch-20261125.json"
+    "severity": 2,
+    "result": "3 files, 4 selected claim groups, independent D4 checks",
+    "report": "council/research/WORK-d4-independent-20261125.json"
   },
   "votes": {
     "RG-001-v2": {
@@ -107,13 +112,17 @@
       "research/rovgrid-exodus-16-16-homepower-inv73-ketiv-plene-2026-11-12.md",
       "research/rovgrid-greek-polynomial-blaze-homepower-ladders-2026-11-07.md",
       "research/rovgrid-shaddai-314-homepower-2026-11-17-verify.js",
-      "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md"
+      "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md",
+      "research/rovgrid-square-ring-d4-primitive-2026-11-07.md",
+      "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14.md",
+      "research/rovgrid-lexicon-muchlat-2026-11-11.md"
     ],
-    "claims": 14
+    "claims": 18
   },
   "feedback": {
-    "next": "Audit lexical controls and N1 D4 quotient; do not repeat HomePower arithmetic",
-    "prospects": "high exact algebra; medium lexical controls; low origin inference",
+    "next": "Obtain frozen independent Hebrew lexical population; audit actual D4 quotient adjacency and compare graph construction; then rotate to new dossiers",
+    "prospects": "high exact algebra, medium lexical access, low origin inference",
+    "expertise": "exact computation; historical and lexical source validation pending",
     "stagnant_cycles": 0
   },
   "last_user_handoff": {
