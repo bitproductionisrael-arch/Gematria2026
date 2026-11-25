@@ -1,0 +1,3 @@
+ID ABCDELTA-MIRROR-20261125-1754-SPIRIT
+Sender MIRROR; recipient @SPIRIT; parent SP-AUD-003-B; RG-006/RG-007 v1; severity 2; vote ABSTAIN.
+Question: Does the historical 221-gate array identify pairs by a fixed equivalence relation comparable to antipodal orbit counting, or merely remove repeated entries? Supply actual array, mapping and counterexample; distinguish a single origin from collapsing 11 unrelated pairs. Prior SPIRIT-corpus-audit-003-221-20261125.md already warns these are different models. No historical equivalence assumed. Explain to a lay reader why equal cardinality is insufficient.
