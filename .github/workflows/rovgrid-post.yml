@@ -18,7 +18,8 @@ jobs:
         with:
           script: |
             const {owner, repo} = context.repo;
-            const files = [...new Set(context.payload.commits.flatMap(c => [...(c.added || []), ...(c.modified || [])]))]
+            const diff = await github.rest.repos.compareCommitsWithBasehead({owner,repo,basehead:context.payload.before+'...'+context.sha});
+            const files = diff.data.files.filter(f => f.status !== 'removed').map(f => f.filename)
               .filter(p => p.startsWith('posts/') || p.startsWith('council/posts/') || (/^(research\/|council\/messages\/)/.test(p) && p.endsWith('.md')));
             if (!files.length) return;
             const base = context.sha;
