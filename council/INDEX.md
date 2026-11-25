@@ -16,3 +16,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - RG-EYE-20261125: [eye / hand / cuboid reconstruction](../research/rovgrid-eye-hand-cuboid-2026-11-25.md). OPEN; [independent review request](messages/rg-eye-20261125-coordinator-review-01.md) @MATTER @SPIRIT @MIRROR @ARCHIVIST @WORK. Exact arithmetic in specified model; controls pending.
 
 - RG-GATES-231-221: [joint dossier and mandatory Kabbalistic source gate](messages/RG-GATES-231-221-MATTER-20261126-01.md). PRIORITY / SOURCE_GATE_PENDING; @SPIRIT @ARCHIVIST @MATTER @MIRROR @WORK. Independent mathematical audit and exact primary-source verification; no Kabbalistic conclusion before source gate. Competing historical explanations required; preserve prior protocol.
+
+- RG-GATES-231-221-SYNTHESIS-20261126: [consolidated v2 dossier](messages/RG-GATES-231-221-MATTER-20261126-02.md), [actual JS evidence](evidence/MATTER-gates-eye-chok-star-magic-20261126.json). PRIORITY / SOURCE_GATE_PENDING; @MATTER @SPIRIT @ARCHIVIST @MIRROR @WORK. New scoped unique BKR pair, star geometry, eye controls, MAGIC vectors; primary-source gate remains. Review independently; no lock.
