@@ -1,0 +1,815 @@
+{
+  "sourceCommit": "e472c3a96604b101412ddfdaefc66b319f26858e",
+  "sourceBlob": "a36b65dcb6f228756a6744d5507ab135065a8021",
+  "count": 61,
+  "errors": 0,
+  "a": "אבהוילמצרשת",
+  "b": "גדזחטכנסעפק",
+  "all": "אבגדהוזחטיכלמנסעפצקרשת",
+  "rows": [
+    {
+      "key": "regular",
+      "name": "גימטריה הכרחית / Regular",
+      "a": 1084,
+      "b": 411,
+      "all": 1495,
+      "delta": 673,
+      "additive": true,
+      "reverse": [
+        1084,
+        411
+      ]
+    },
+    {
+      "key": "final",
+      "name": "גימטריה סופית / Final Letters",
+      "a": 1084,
+      "b": 411,
+      "all": 1495,
+      "delta": 673,
+      "additive": true,
+      "reverse": [
+        1084,
+        411
+      ]
+    },
+    {
+      "key": "ordinal",
+      "name": "גימטריה סדרית / Ordinal",
+      "a": 130,
+      "b": 123,
+      "all": 253,
+      "delta": 7,
+      "additive": true,
+      "reverse": [
+        130,
+        123
+      ]
+    },
+    {
+      "key": "reduced",
+      "name": "קטן (צמצום אפס #2) / Small (Zero Reduction #2)",
+      "a": 40,
+      "b": 60,
+      "all": 100,
+      "delta": -20,
+      "additive": true,
+      "reverse": [
+        40,
+        60
+      ]
+    },
+    {
+      "key": "smallFinals",
+      "name": "גימטריה קטנה סופית / Small Finals",
+      "a": 40,
+      "b": 60,
+      "all": 100,
+      "delta": -20,
+      "additive": true,
+      "reverse": [
+        40,
+        60
+      ]
+    },
+    {
+      "key": "wordPositionRegular",
+      "name": "אות × אותיות בערך רגיל / Hebrew Word Position × Regular",
+      "a": 11924,
+      "b": 4521,
+      "all": 32890,
+      "delta": 7403,
+      "additive": false,
+      "reverse": [
+        11924,
+        4521
+      ]
+    },
+    {
+      "key": "wordPositionSmall",
+      "name": "אות × אותיות בערך קטן / Hebrew Word Position × Small",
+      "a": 440,
+      "b": 660,
+      "all": 2200,
+      "delta": -220,
+      "additive": false,
+      "reverse": [
+        440,
+        660
+      ]
+    },
+    {
+      "key": "wordPositionOrdinal",
+      "name": "אות × אותיות בערך סדרי / Hebrew Word Position × Ordinal",
+      "a": 1430,
+      "b": 1353,
+      "all": 5566,
+      "delta": 77,
+      "additive": false,
+      "reverse": [
+        1430,
+        1353
+      ]
+    },
+    {
+      "key": "wordReduced",
+      "name": "צמצום מילים / Word Reduced",
+      "a": 4,
+      "b": 6,
+      "all": 1,
+      "delta": -2,
+      "additive": false,
+      "reverse": [
+        4,
+        6
+      ]
+    },
+    {
+      "key": "wordReducedFinals",
+      "name": "צמצום מילים סופיות / Word Reduced (Finals)",
+      "a": 4,
+      "b": 6,
+      "all": 1,
+      "delta": -2,
+      "additive": false,
+      "reverse": [
+        4,
+        6
+      ]
+    },
+    {
+      "key": "digitReduced",
+      "name": "צמצום דיגיטלי / Digit Reduced",
+      "a": 4,
+      "b": 6,
+      "all": 1,
+      "delta": -2,
+      "additive": false,
+      "reverse": [
+        4,
+        6
+      ]
+    },
+    {
+      "key": "zeroStep",
+      "name": "צמצום אפס #1 / Zero Reduction #1",
+      "a": 121,
+      "b": 69,
+      "all": 190,
+      "delta": 52,
+      "additive": true,
+      "reverse": [
+        121,
+        69
+      ]
+    },
+    {
+      "key": "atbash",
+      "name": "אתב״ש / Atbash",
+      "a": 951,
+      "b": 544,
+      "all": 1495,
+      "delta": 407,
+      "additive": true,
+      "reverse": [
+        951,
+        544
+      ]
+    },
+    {
+      "key": "atbashOrdinal",
+      "name": "אתב״ש סדרי / Atbash Ordinal",
+      "a": 123,
+      "b": 130,
+      "all": 253,
+      "delta": -7,
+      "additive": true,
+      "reverse": [
+        123,
+        130
+      ]
+    },
+    {
+      "key": "albam",
+      "name": "אלב״ם / ALBaM",
+      "a": 569,
+      "b": 926,
+      "all": 1495,
+      "delta": -357,
+      "additive": true,
+      "reverse": [
+        569,
+        926
+      ]
+    },
+    {
+      "key": "albamOrdinal",
+      "name": "אלב״ם סדרי",
+      "a": 119,
+      "b": 134,
+      "all": 253,
+      "delta": -15,
+      "additive": true,
+      "reverse": [
+        119,
+        134
+      ]
+    },
+    {
+      "key": "avgad",
+      "name": "אבג״ד / AVGaD",
+      "a": 929,
+      "b": 566,
+      "all": 1495,
+      "delta": 363,
+      "additive": true,
+      "reverse": [
+        929,
+        566
+      ]
+    },
+    {
+      "key": "ayak",
+      "name": "אי״ק בכ״ר / AIQ BKR",
+      "a": 1849,
+      "b": 3111,
+      "all": 4960,
+      "delta": -1262,
+      "additive": true,
+      "reverse": [
+        1849,
+        3111
+      ]
+    },
+    {
+      "key": "kidmi",
+      "name": "מספר קדמי / Kidmi",
+      "a": 4225,
+      "b": 1975,
+      "all": 6200,
+      "delta": 2250,
+      "additive": true,
+      "reverse": [
+        4225,
+        1975
+      ]
+    },
+    {
+      "key": "peratiOrdinal",
+      "name": "פרטי סדרי / Hebrew Perati — Ordinal²",
+      "a": 2128,
+      "b": 1667,
+      "all": 3795,
+      "delta": 461,
+      "additive": true,
+      "reverse": [
+        2128,
+        1667
+      ]
+    },
+    {
+      "key": "perati",
+      "name": "מספר פרטי / Perati (Regular²)",
+      "a": 300766,
+      "b": 28019,
+      "all": 328785,
+      "delta": 272747,
+      "additive": true,
+      "reverse": [
+        300766,
+        28019
+      ]
+    },
+    {
+      "key": "kolel",
+      "name": "עם הכולל / Kolel (+1)",
+      "a": 1085,
+      "b": 412,
+      "all": 1496,
+      "delta": 673,
+      "additive": false,
+      "reverse": [
+        1085,
+        412
+      ]
+    },
+    {
+      "key": "musafi",
+      "name": "מספר מוספי / Musafi (+letters)",
+      "a": 1095,
+      "b": 422,
+      "all": 1517,
+      "delta": 673,
+      "additive": true,
+      "reverse": [
+        1095,
+        422
+      ]
+    },
+    {
+      "key": "milui",
+      "name": "מילוי רגיל",
+      "a": 2115,
+      "b": 2144,
+      "all": 4259,
+      "delta": -29,
+      "additive": true,
+      "reverse": [
+        2115,
+        2144
+      ]
+    },
+    {
+      "key": "miluiOrdinal",
+      "name": "מילוי רגיל סדרי / Hebrew Spelled-In-Full-Ordinal (תיו)",
+      "a": 333,
+      "b": 389,
+      "all": 722,
+      "delta": -56,
+      "additive": true,
+      "reverse": [
+        333,
+        389
+      ]
+    },
+    {
+      "key": "miluiTalmudic",
+      "name": "מילוי תלמודי",
+      "a": 2105,
+      "b": 2144,
+      "all": 4249,
+      "delta": -39,
+      "additive": true,
+      "reverse": [
+        2105,
+        2144
+      ]
+    },
+    {
+      "key": "miluiHaiViu",
+      "name": "מילוי ע״ד · 74",
+      "a": 2125,
+      "b": 2144,
+      "all": 4269,
+      "delta": -19,
+      "additive": true,
+      "reverse": [
+        2125,
+        2144
+      ]
+    },
+    {
+      "key": "miluiTalmudicOrdinal",
+      "name": "מילוי תלמודי סדרי / Hebrew Spelled-In-Full-Ordinal",
+      "a": 323,
+      "b": 389,
+      "all": 712,
+      "delta": -66,
+      "additive": true,
+      "reverse": [
+        323,
+        389
+      ]
+    },
+    {
+      "key": "miluiMayim",
+      "name": "מילוי מים",
+      "a": 2125,
+      "b": 2144,
+      "all": 4269,
+      "delta": -19,
+      "additive": true,
+      "reverse": [
+        2125,
+        2144
+      ]
+    },
+    {
+      "key": "miluiLegacy",
+      "name": "מילוי אלפין (ואו)",
+      "a": 2106,
+      "b": 2144,
+      "all": 4250,
+      "delta": -38,
+      "additive": true,
+      "reverse": [
+        2106,
+        2144
+      ]
+    },
+    {
+      "key": "miluiPelia",
+      "name": "מילוי פליאה",
+      "a": 2106,
+      "b": 2118,
+      "all": 4224,
+      "delta": -12,
+      "additive": true,
+      "reverse": [
+        2106,
+        2118
+      ]
+    },
+    {
+      "key": "milui2",
+      "name": "מילוי דמילוי / Milui of Milui",
+      "a": 4911,
+      "b": 4535,
+      "all": 9446,
+      "delta": 376,
+      "additive": true,
+      "reverse": [
+        4911,
+        4535
+      ]
+    },
+    {
+      "key": "achorayim",
+      "name": "מספר האחור · תוספת / Achorayim",
+      "a": 2534,
+      "b": 1343,
+      "all": 6200,
+      "delta": 1191,
+      "additive": false,
+      "reverse": [
+        10474,
+        3589
+      ]
+    },
+    {
+      "key": "positional",
+      "name": "גימטריה מיקום · מגרעת / Positional",
+      "a": 10474,
+      "b": 3589,
+      "all": 28185,
+      "delta": 6885,
+      "additive": false,
+      "reverse": [
+        2534,
+        1343
+      ]
+    },
+    {
+      "key": "equivalence",
+      "name": "שווי / Equivalence",
+      "a": 6504,
+      "b": 2466,
+      "all": 17192.5,
+      "delta": 4038,
+      "additive": false,
+      "reverse": [
+        6504,
+        2466
+      ]
+    },
+    {
+      "key": "ratzo",
+      "name": "רצוא ושוב / Running and Returning",
+      "a": 3984,
+      "b": 2275,
+      "all": 10905,
+      "delta": 1709,
+      "additive": false,
+      "reverse": [
+        19864,
+        6767
+      ]
+    },
+    {
+      "key": "addsub",
+      "name": "תוספת ומגרעת / Addition and Subtraction",
+      "a": 13008,
+      "b": 4932,
+      "all": 34385,
+      "delta": 8076,
+      "additive": false,
+      "reverse": [
+        13008,
+        4932
+      ]
+    },
+    {
+      "key": "cycleBkr",
+      "name": "סייקל בכ״ר / Cycle BKR (Σ3)",
+      "a": 4440,
+      "b": 6660,
+      "all": 11100,
+      "delta": -2220,
+      "additive": true,
+      "reverse": [
+        4440,
+        6660
+      ]
+    },
+    {
+      "key": "latinMiluiUserSimple",
+      "name": "מילוי לטיני v0 → English Simple / Research",
+      "a": 401,
+      "b": 412,
+      "all": 813,
+      "delta": -11,
+      "additive": true,
+      "reverse": [
+        401,
+        412
+      ]
+    },
+    {
+      "key": "latinMiluiUserReduced",
+      "name": "Reduced English Filling",
+      "a": 140,
+      "b": 142,
+      "all": 282,
+      "delta": -2,
+      "additive": true,
+      "reverse": [
+        140,
+        142
+      ]
+    },
+    {
+      "key": "latinMiluiUserRegular",
+      "name": "מילוי לטיני v0 → English Regular / Research",
+      "a": 4460,
+      "b": 3535,
+      "all": 7995,
+      "delta": 925,
+      "additive": true,
+      "reverse": [
+        4460,
+        3535
+      ]
+    },
+    {
+      "key": "harmonicHalf",
+      "name": "חצי הרמוני · Harmonic Half / Research",
+      "a": 121,
+      "b": 69,
+      "all": 95,
+      "delta": 52,
+      "additive": false,
+      "reverse": [
+        121,
+        69
+      ]
+    },
+    {
+      "key": "letterProductRegular",
+      "name": "מכפלת אותיות (רגיל) / Letter Product (Regular)",
+      "a": 1555200000000000,
+      "b": 203212800000000,
+      "all": "316036546560000000000000000000",
+      "delta": 1351987200000000,
+      "additive": false,
+      "reverse": [
+        1555200000000000,
+        203212800000000
+      ]
+    },
+    {
+      "key": "letterProductOrdinal",
+      "name": "מכפלת אותיות (סדרי) / Letter Product (Ordinal)",
+      "a": 15567552000,
+      "b": 72201507840,
+      "all": "1124000727777607680000",
+      "delta": -56633955840,
+      "additive": false,
+      "reverse": [
+        15567552000,
+        72201507840
+      ]
+    },
+    {
+      "key": "letterProductSmall",
+      "name": "מכפלת אותיות (קטן) / Letter Product (Small)",
+      "a": 155520,
+      "b": 20321280,
+      "all": 3160365465600,
+      "delta": -20165760,
+      "additive": false,
+      "reverse": [
+        155520,
+        20321280
+      ]
+    },
+    {
+      "key": "letterDivisionRegular",
+      "name": "חילוק אותיות (רגיל) / Letter Division (Regular)",
+      "a": "1/1555200000000000",
+      "b": "1/22579200000000",
+      "all": "1/316036546560000000000000000000",
+      "delta": null,
+      "additive": false,
+      "reverse": [
+        "1/9720000000",
+        "1/20321280000"
+      ]
+    },
+    {
+      "key": "letterDivisionOrdinal",
+      "name": "חילוק אותיות (סדרי) / Letter Division (Ordinal)",
+      "a": "1/15567552000",
+      "b": "1/8022389760",
+      "all": "1/1124000727777607680000",
+      "delta": null,
+      "additive": false,
+      "reverse": [
+        "11/353808000",
+        "19/3800079360"
+      ]
+    },
+    {
+      "key": "letterDivisionSmall",
+      "name": "חילוק אותיות (קטן) / Letter Division (Small)",
+      "a": "1/155520",
+      "b": "1/2257920",
+      "all": "1/3160365465600",
+      "delta": null,
+      "additive": false,
+      "reverse": [
+        "1/9720",
+        "1/20321280"
+      ]
+    },
+    {
+      "key": "homePower_pi",
+      "name": "אלפבית כוח בית · π / Pi",
+      "a": 59,
+      "b": 49,
+      "all": 108,
+      "delta": 10,
+      "additive": true,
+      "reverse": [
+        59,
+        49
+      ]
+    },
+    {
+      "key": "homePower_e",
+      "name": "אלפבית כוח בית · e / Euler",
+      "a": 43,
+      "b": 50,
+      "all": 93,
+      "delta": -7,
+      "additive": true,
+      "reverse": [
+        43,
+        50
+      ]
+    },
+    {
+      "key": "homePower_phi",
+      "name": "אלפבית כוח בית · φ / Golden Ratio",
+      "a": 54,
+      "b": 64,
+      "all": 118,
+      "delta": -10,
+      "additive": true,
+      "reverse": [
+        54,
+        64
+      ]
+    },
+    {
+      "key": "homePower_root2",
+      "name": "אלפבית כוח בית · √2",
+      "a": 30,
+      "b": 52,
+      "all": 82,
+      "delta": -22,
+      "additive": true,
+      "reverse": [
+        30,
+        52
+      ]
+    },
+    {
+      "key": "homePower_root3",
+      "name": "אלפבית כוח בית · √3",
+      "a": 52,
+      "b": 53,
+      "all": 105,
+      "delta": -1,
+      "additive": true,
+      "reverse": [
+        52,
+        53
+      ]
+    },
+    {
+      "key": "homePower_root5",
+      "name": "אלפבית כוח בית · √5",
+      "a": 54,
+      "b": 74,
+      "all": 128,
+      "delta": -20,
+      "additive": true,
+      "reverse": [
+        54,
+        74
+      ]
+    },
+    {
+      "key": "homePower_golden9",
+      "name": "אלפבית כוח בית · זווית הזהב במעגל 9 / Golden 9",
+      "a": 57,
+      "b": 40,
+      "all": 97,
+      "delta": 17,
+      "additive": true,
+      "reverse": [
+        57,
+        40
+      ]
+    },
+    {
+      "key": "homePower_root37",
+      "name": "אלפבית כוח בית · √37",
+      "a": 60,
+      "b": 59,
+      "all": 119,
+      "delta": 1,
+      "additive": true,
+      "reverse": [
+        60,
+        59
+      ]
+    },
+    {
+      "key": "homePower_root73",
+      "name": "אלפבית כוח בית · √73",
+      "a": 48,
+      "b": 40,
+      "all": 88,
+      "delta": 8,
+      "additive": true,
+      "reverse": [
+        48,
+        40
+      ]
+    },
+    {
+      "key": "homePower_root888",
+      "name": "אלפבית כוח בית · √888",
+      "a": 62,
+      "b": 55,
+      "all": 117,
+      "delta": 7,
+      "additive": true,
+      "reverse": [
+        62,
+        55
+      ]
+    },
+    {
+      "key": "homePower_inv2701",
+      "name": "אלפבית כוח בית · 1 / 2701 · 24",
+      "a": 38,
+      "b": 43,
+      "all": 81,
+      "delta": -5,
+      "additive": true,
+      "reverse": [
+        38,
+        43
+      ]
+    },
+    {
+      "key": "homePower_inv37",
+      "name": "אלפבית כוח בית · 1 / 37 · 3",
+      "a": 34,
+      "b": 29,
+      "all": 63,
+      "delta": 5,
+      "additive": true,
+      "reverse": [
+        34,
+        29
+      ]
+    },
+    {
+      "key": "homePower_inv73",
+      "name": "אלפבית כוח בית · 1 / 73 · 8",
+      "a": 58,
+      "b": 41,
+      "all": 99,
+      "delta": 17,
+      "additive": true,
+      "reverse": [
+        58,
+        41
+      ]
+    }
+  ],
+  "checks": {
+    "partition": true,
+    "additivity": true,
+    "cycle": true,
+    "atbash": true,
+    "ordinalMiluiDiff": true,
+    "kidmiSquare": true,
+    "ayakSquare": true,
+    "smallSplit": true,
+    "duplicateAliases": true
+  }
+}
