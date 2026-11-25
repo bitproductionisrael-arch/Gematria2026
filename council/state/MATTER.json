@@ -14,7 +14,7 @@
     "ANCHOR-WORK-20261124-01",
     "DOSSIER-WORK-20261124-MATTER"
   ],
-  "last_commit": "e83cb8d3dfb4e1cb61b6033a2abe1c8519f828ac",
+  "last_commit": "a7272055c3b8f90bbdcac2345a406a4707b3243e",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -28,7 +28,9 @@
     "RG-005: preregister digit-prefix and cross-name controls",
     "Prime candidate registry: mark known composite and reconcile stale corpus pointers before further resource use",
     "Name geometry N1–N5: independent review, compare public 4+4+3 controls and historical glyph sources; no lock during consolidation",
-    "MATTER batch 001 dossier: early-depth discrimination and shadow profile controls; no lock"
+    "MATTER batch 001 dossier: early-depth discrimination and shadow profile controls; no lock",
+    "ABC cycle3: independent review; prior coverage claim corrected",
+    "BKR RESET normalized final-ordinal control; historical provenance pending"
   ],
   "experiments": [
     {
@@ -134,6 +136,15 @@
       "grade": 4,
       "result": "stored proof inspected; independent arithmetic bounds checked",
       "scope": "encoding only"
+    },
+    {
+      "id": "MATTER-RESET-BKR-20261126",
+      "output": "council/evidence/MATTER-reset-bkr-neighbor-20261126.json",
+      "report": "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md",
+      "checks": 1095,
+      "failed": 0,
+      "grade": 4,
+      "scope": "defined graph, extended ordinal pair uniqueness and ABC residue closure only"
     }
   ],
   "access_gaps": [
@@ -201,31 +212,24 @@
     "RG-001-MATTER-20261124-04",
     "RG-001-MATTER-20261124-05",
     "RG-007-MATTER-20261124-01",
-    "RG-007-MATTER-20261124-02"
+    "RG-007-MATTER-20261124-02",
+    "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md"
   ],
-  "last_cycle": "2026-11-25",
+  "last_cycle": "MATTER-RESET-BKR-20261126",
   "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "MATTER-reconcile-batch-005",
-    "coverage": "8 unique repository files fetched; 3 coefficient bounds independently calculated; no new primary source certified",
-    "grades": "4 scoped encoding proof; census not rerun",
-    "expertise": "finite combinatorics and integer arithmetic; no empirical frequency inference",
-    "progress": "high for historical arithmetic audit",
+    "cycle": "MATTER-RESET-BKR-20261126",
+    "coverage": "10 mandatory paths fetched; no new historical file certified; 80/20 not measured",
+    "grades": "4 scoped mathematics, 0 physics",
+    "expertise": "discrete combinatorics and integer arithmetic",
+    "progress": "high for graph proof, low for physical prediction without measurable model",
     "falsifiers": [
-      "radix overflow",
-      "unsafe intermediate",
-      "negative weights"
+      "counterexample to specified second-difference equations",
+      "alternative pair under defined extended ordinal",
+      "different historical wheel adjacency"
     ],
-    "next": "Resume historical corpus audit from inventory; prioritize unread older research and calculator mapping",
-    "stalled_cycles": 0,
-    "checks": {
-      "bounds": [
-        9768,
-        58608,
-        253968
-      ],
-      "match": true
-    }
+    "next": "Audit normalized final ordinal; resume historical inventory audit; ABC independent review remains pending",
+    "stalled_cycles": 0
   },
   "coverage": {
     "inventory": "council/research/MATTER-inventory-20261124-2120.json",
@@ -265,6 +269,15 @@
         "id": "MATTER-batch-005-20261125",
         "output": "council/evidence/MATTER-batch-005-20261125.json",
         "status": "proof inspected; no new primary source coverage"
+      },
+      {
+        "id": "MATTER-RESET-BKR-20261126",
+        "mandatory_paths_fetched": 10,
+        "new_primary_source_files": 0,
+        "checks": 1095,
+        "failed": 0,
+        "report": "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md",
+        "source_coverage_expanded": false
       }
     ]
   }
