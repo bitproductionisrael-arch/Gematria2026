@@ -1,0 +1,236 @@
+{
+  "words": [
+    [
+      "בראשית",
+      {
+        "n": 6,
+        "regular": 913,
+        "ordinal": 76,
+        "small": 13
+      }
+    ],
+    [
+      "ברא",
+      {
+        "n": 3,
+        "regular": 203,
+        "ordinal": 23,
+        "small": 5
+      }
+    ],
+    [
+      "אלהים",
+      {
+        "n": 5,
+        "regular": 86,
+        "ordinal": 41,
+        "small": 14
+      }
+    ],
+    [
+      "את",
+      {
+        "n": 2,
+        "regular": 401,
+        "ordinal": 23,
+        "small": 5
+      }
+    ],
+    [
+      "השמים",
+      {
+        "n": 5,
+        "regular": 395,
+        "ordinal": 62,
+        "small": 17
+      }
+    ],
+    [
+      "ואת",
+      {
+        "n": 3,
+        "regular": 407,
+        "ordinal": 29,
+        "small": 11
+      }
+    ],
+    [
+      "הארץ",
+      {
+        "n": 4,
+        "regular": 296,
+        "ordinal": 44,
+        "small": 17
+      }
+    ]
+  ],
+  "verse": {
+    "n": 28,
+    "regular": 2701,
+    "ordinal": 298,
+    "small": 82
+  },
+  "first": [
+    "בבאאהוה",
+    {
+      "n": 7,
+      "regular": 22,
+      "ordinal": 22,
+      "small": 22
+    }
+  ],
+  "last": [
+    "תאםתםתץ",
+    {
+      "n": 7,
+      "regular": 1371,
+      "ordinal": 111,
+      "small": 30
+    }
+  ],
+  "inner": [
+    "ראשירלהישמיאאר",
+    {
+      "n": 14,
+      "regular": 1308,
+      "ordinal": 165,
+      "small": 30
+    }
+  ],
+  "boundary": {
+    "n": 14,
+    "regular": 1393,
+    "ordinal": 133,
+    "small": 52
+  },
+  "difference": {
+    "regular": 85,
+    "ordinal": 32
+  },
+  "unique": [
+    "ב",
+    "ר",
+    "א",
+    "ש",
+    "י",
+    "ת",
+    "ל",
+    "ה",
+    "מ",
+    "ו",
+    "צ"
+  ],
+  "unused": [
+    "ג",
+    "ד",
+    "ז",
+    "ח",
+    "ט",
+    "כ",
+    "נ",
+    "ס",
+    "ע",
+    "פ",
+    "ק"
+  ],
+  "gates": [
+    55,
+    55,
+    121
+  ],
+  "atbash": {
+    "verse": {
+      "n": 28,
+      "regular": 3541,
+      "ordinal": 346,
+      "small": 103
+    },
+    "difference": 48,
+    "center": 322,
+    "offset": 24,
+    "pairs": 4
+  },
+  "motherCounts": [
+    [
+      "א",
+      6
+    ],
+    [
+      "מ",
+      3
+    ],
+    [
+      "ש",
+      2
+    ]
+  ],
+  "halves": [
+    {
+      "n": 14,
+      "regular": 1202,
+      "ordinal": 140,
+      "small": 32
+    },
+    {
+      "n": 14,
+      "regular": 1499,
+      "ordinal": 158,
+      "small": 50
+    }
+  ],
+  "last2": {
+    "n": 7,
+    "regular": 703,
+    "ordinal": 73,
+    "small": 28
+  },
+  "first5": {
+    "n": 21,
+    "regular": 1998,
+    "ordinal": 225,
+    "small": 54
+  },
+  "abc": {
+    "original": [
+      3,
+      6,
+      9
+    ],
+    "sum": 18,
+    "tri": 72,
+    "complement": 54,
+    "Q": 126,
+    "delta": [
+      1,
+      3,
+      6
+    ],
+    "s": 10,
+    "pairs": 27,
+    "product": 18,
+    "T10": 55,
+    "factors": [
+      37,
+      73
+    ]
+  },
+  "name": {
+    "n": 11,
+    "regular": 888,
+    "ordinal": 141,
+    "small": 33
+  },
+  "control": {
+    "n": 29,
+    "regular": 2707,
+    "ordinal": 304,
+    "small": 88
+  },
+  "checks": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}
