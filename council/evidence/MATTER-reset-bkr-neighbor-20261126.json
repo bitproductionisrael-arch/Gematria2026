@@ -1,0 +1,452 @@
+{
+  "id": "MATTER-RESET-BKR-20261126",
+  "source": "calculator.html",
+  "sourceSha": "a36b65dcb6f228756a6744d5507ab135065a8021",
+  "code": "function run(){\n const V=(d,t)=>d*10**t,wrap=d=>(d+8)%9+1, W=(d,t)=>V(wrap(d),(t+3)%3);\n const letters=[...\"אבגדהוזחטיכלמנסעפצקרשתךםןףץ\"];\n let rows=[],checks=[],fail=[],test=(id,ok)=>{checks.push(id);if(!ok)fail.push(id)};\n for(let d=1;d<=9;d++)for(let t=0;t<3;t++){\n  const v=V(d,t), h=W(d-1,t)+W(d+1,t)-2*v, expected=(d===1?9:d===9?-9:0)*10**t, vert=W(d,t-1)+W(d,t+1)-2*v, all=h+vert;\n  test(`H${d},${t}`,h===expected);test(`V${d},${t}`,vert===111*d-3*v);test(`L${d},${t}`,all===111*d-3*v+expected);\n  rows.push({d,t,letter:letters[t*9+d-1],v,h,vert,all});\n }\n let residual=letters.map((letter,i)=>{let d=i%9+1,t=Math.floor(i/9);return {letter,d,t,delta:V(d,t)-(d+9*t)-W(d,t+1)}});\n let pairs=[];for(let i=0;i<27;i++)for(let j=i;j<27;j++)if(residual[i].delta+residual[j].delta===0)pairs.push(residual[i].letter+residual[j].letter);\n test(\"unique27\",pairs.length===1&&pairs[0]===\"חק\");\n for(let t=0;t<3;t++){let s=rows.filter(x=>x.t===t).reduce((a,x)=>a+x.h,0);test(`horizontal sum ${t}`,s===0)}\n for(let d=1;d<=9;d++)test(`vertical sum ${d}`,rows.filter(x=>x.d===d).reduce((a,x)=>a+x.vert,0)===0);\n const abc=[];for(let k=0;k<=1000;k++){let v=1+9*k;abc.push(v);test(`ABC reach ${k}`,k===0?v===1:abc[k-1]+10-1===v)}\n return {rows,residual,pairs,totalPairs:27*28/2,checks:checks.length,failed:fail,abc:{seed:10,identity:1,first:abc.slice(0,6),last:abc.at(-1)},counterexample:{d:1,t:0,horizontalNeighbors:[9,2],sum:11,twiceCenter:2}};\n}\nconsole.log(JSON.stringify(run(),null,2));",
+  "output": {
+    "rows": [
+      {
+        "d": 1,
+        "t": 0,
+        "letter": "א",
+        "v": 1,
+        "h": 9,
+        "vert": 108,
+        "all": 117
+      },
+      {
+        "d": 1,
+        "t": 1,
+        "letter": "י",
+        "v": 10,
+        "h": 90,
+        "vert": 81,
+        "all": 171
+      },
+      {
+        "d": 1,
+        "t": 2,
+        "letter": "ק",
+        "v": 100,
+        "h": 900,
+        "vert": -189,
+        "all": 711
+      },
+      {
+        "d": 2,
+        "t": 0,
+        "letter": "ב",
+        "v": 2,
+        "h": 0,
+        "vert": 216,
+        "all": 216
+      },
+      {
+        "d": 2,
+        "t": 1,
+        "letter": "כ",
+        "v": 20,
+        "h": 0,
+        "vert": 162,
+        "all": 162
+      },
+      {
+        "d": 2,
+        "t": 2,
+        "letter": "ר",
+        "v": 200,
+        "h": 0,
+        "vert": -378,
+        "all": -378
+      },
+      {
+        "d": 3,
+        "t": 0,
+        "letter": "ג",
+        "v": 3,
+        "h": 0,
+        "vert": 324,
+        "all": 324
+      },
+      {
+        "d": 3,
+        "t": 1,
+        "letter": "ל",
+        "v": 30,
+        "h": 0,
+        "vert": 243,
+        "all": 243
+      },
+      {
+        "d": 3,
+        "t": 2,
+        "letter": "ש",
+        "v": 300,
+        "h": 0,
+        "vert": -567,
+        "all": -567
+      },
+      {
+        "d": 4,
+        "t": 0,
+        "letter": "ד",
+        "v": 4,
+        "h": 0,
+        "vert": 432,
+        "all": 432
+      },
+      {
+        "d": 4,
+        "t": 1,
+        "letter": "מ",
+        "v": 40,
+        "h": 0,
+        "vert": 324,
+        "all": 324
+      },
+      {
+        "d": 4,
+        "t": 2,
+        "letter": "ת",
+        "v": 400,
+        "h": 0,
+        "vert": -756,
+        "all": -756
+      },
+      {
+        "d": 5,
+        "t": 0,
+        "letter": "ה",
+        "v": 5,
+        "h": 0,
+        "vert": 540,
+        "all": 540
+      },
+      {
+        "d": 5,
+        "t": 1,
+        "letter": "נ",
+        "v": 50,
+        "h": 0,
+        "vert": 405,
+        "all": 405
+      },
+      {
+        "d": 5,
+        "t": 2,
+        "letter": "ך",
+        "v": 500,
+        "h": 0,
+        "vert": -945,
+        "all": -945
+      },
+      {
+        "d": 6,
+        "t": 0,
+        "letter": "ו",
+        "v": 6,
+        "h": 0,
+        "vert": 648,
+        "all": 648
+      },
+      {
+        "d": 6,
+        "t": 1,
+        "letter": "ס",
+        "v": 60,
+        "h": 0,
+        "vert": 486,
+        "all": 486
+      },
+      {
+        "d": 6,
+        "t": 2,
+        "letter": "ם",
+        "v": 600,
+        "h": 0,
+        "vert": -1134,
+        "all": -1134
+      },
+      {
+        "d": 7,
+        "t": 0,
+        "letter": "ז",
+        "v": 7,
+        "h": 0,
+        "vert": 756,
+        "all": 756
+      },
+      {
+        "d": 7,
+        "t": 1,
+        "letter": "ע",
+        "v": 70,
+        "h": 0,
+        "vert": 567,
+        "all": 567
+      },
+      {
+        "d": 7,
+        "t": 2,
+        "letter": "ן",
+        "v": 700,
+        "h": 0,
+        "vert": -1323,
+        "all": -1323
+      },
+      {
+        "d": 8,
+        "t": 0,
+        "letter": "ח",
+        "v": 8,
+        "h": 0,
+        "vert": 864,
+        "all": 864
+      },
+      {
+        "d": 8,
+        "t": 1,
+        "letter": "פ",
+        "v": 80,
+        "h": 0,
+        "vert": 648,
+        "all": 648
+      },
+      {
+        "d": 8,
+        "t": 2,
+        "letter": "ף",
+        "v": 800,
+        "h": 0,
+        "vert": -1512,
+        "all": -1512
+      },
+      {
+        "d": 9,
+        "t": 0,
+        "letter": "ט",
+        "v": 9,
+        "h": -9,
+        "vert": 972,
+        "all": 963
+      },
+      {
+        "d": 9,
+        "t": 1,
+        "letter": "צ",
+        "v": 90,
+        "h": -90,
+        "vert": 729,
+        "all": 639
+      },
+      {
+        "d": 9,
+        "t": 2,
+        "letter": "ץ",
+        "v": 900,
+        "h": -900,
+        "vert": -1701,
+        "all": -2601
+      }
+    ],
+    "residual": [
+      {
+        "letter": "א",
+        "d": 1,
+        "t": 0,
+        "delta": -10
+      },
+      {
+        "letter": "ב",
+        "d": 2,
+        "t": 0,
+        "delta": -20
+      },
+      {
+        "letter": "ג",
+        "d": 3,
+        "t": 0,
+        "delta": -30
+      },
+      {
+        "letter": "ד",
+        "d": 4,
+        "t": 0,
+        "delta": -40
+      },
+      {
+        "letter": "ה",
+        "d": 5,
+        "t": 0,
+        "delta": -50
+      },
+      {
+        "letter": "ו",
+        "d": 6,
+        "t": 0,
+        "delta": -60
+      },
+      {
+        "letter": "ז",
+        "d": 7,
+        "t": 0,
+        "delta": -70
+      },
+      {
+        "letter": "ח",
+        "d": 8,
+        "t": 0,
+        "delta": -80
+      },
+      {
+        "letter": "ט",
+        "d": 9,
+        "t": 0,
+        "delta": -90
+      },
+      {
+        "letter": "י",
+        "d": 1,
+        "t": 1,
+        "delta": -100
+      },
+      {
+        "letter": "כ",
+        "d": 2,
+        "t": 1,
+        "delta": -191
+      },
+      {
+        "letter": "ל",
+        "d": 3,
+        "t": 1,
+        "delta": -282
+      },
+      {
+        "letter": "מ",
+        "d": 4,
+        "t": 1,
+        "delta": -373
+      },
+      {
+        "letter": "נ",
+        "d": 5,
+        "t": 1,
+        "delta": -464
+      },
+      {
+        "letter": "ס",
+        "d": 6,
+        "t": 1,
+        "delta": -555
+      },
+      {
+        "letter": "ע",
+        "d": 7,
+        "t": 1,
+        "delta": -646
+      },
+      {
+        "letter": "פ",
+        "d": 8,
+        "t": 1,
+        "delta": -737
+      },
+      {
+        "letter": "צ",
+        "d": 9,
+        "t": 1,
+        "delta": -828
+      },
+      {
+        "letter": "ק",
+        "d": 1,
+        "t": 2,
+        "delta": 80
+      },
+      {
+        "letter": "ר",
+        "d": 2,
+        "t": 2,
+        "delta": 178
+      },
+      {
+        "letter": "ש",
+        "d": 3,
+        "t": 2,
+        "delta": 276
+      },
+      {
+        "letter": "ת",
+        "d": 4,
+        "t": 2,
+        "delta": 374
+      },
+      {
+        "letter": "ך",
+        "d": 5,
+        "t": 2,
+        "delta": 472
+      },
+      {
+        "letter": "ם",
+        "d": 6,
+        "t": 2,
+        "delta": 570
+      },
+      {
+        "letter": "ן",
+        "d": 7,
+        "t": 2,
+        "delta": 668
+      },
+      {
+        "letter": "ף",
+        "d": 8,
+        "t": 2,
+        "delta": 766
+      },
+      {
+        "letter": "ץ",
+        "d": 9,
+        "t": 2,
+        "delta": 864
+      }
+    ],
+    "pairs": [
+      "חק"
+    ],
+    "totalPairs": 378,
+    "checks": 1095,
+    "failed": [],
+    "abc": {
+      "seed": 10,
+      "identity": 1,
+      "first": [
+        1,
+        10,
+        19,
+        28,
+        37,
+        46
+      ],
+      "last": 9001
+    },
+    "counterexample": {
+      "d": 1,
+      "t": 0,
+      "horizontalNeighbors": [
+        9,
+        2
+      ],
+      "sum": 11,
+      "twiceCenter": 2
+    }
+  },
+  "proofs": [
+    "Define d=1..9, t=0..2, v=d*10^t; horizontal cyclic d, vertical cyclic t. H=v(d-1,t)+v(d+1,t)-2v=0 interior, +9*10^t at d=1, -9*10^t at d=9. V=v(d,t-1)+v(d,t+1)-2v=111d-3v because three tiers sum111d. Hence L=H+V and all vertex Laplacians sum zero by edge cancellation. This is a chosen C9×C3 graph, not forced by traditional cipher.",
+    "Residual regular−extended ordinal−BKR-next is -10d at t=0, -91d-9 at t=1, 98d-18 at t=2. Only opposite sign pairs can sum zero. Tier0 with tier2: 98b-18=10a => b=1,a=8 since b>=2 gives >=178>90. Tier1 with tier2: 98b-91a=27 impossible mod7. Thus unique unordered pair חק on all 27 symbols, with ordinal 23..27 for final forms as explicit extension, NOT calculator normalized final ordinals. Base 22 result unaffected. Need separate normalized-final control.",
+    "ABC correction: if 10 is an available seed and 1 identity, X+Y−1 reaches every positive integer congruent1 mod9 by iteration x→x+9. Prior blanket assertion of incomplete coverage within residue class was wrong under this seed assumption. Not all naturals reached."
+  ],
+  "limitations": "Only mandatory paths read (10); historical anchor excerpts reviewed, no new full-source coverage or measured 80/20 split. No physics or historical conclusion. No full corpus duplicate search; local duplicate check against prior synthesis in current conversation and anchor excerpts."
+}
