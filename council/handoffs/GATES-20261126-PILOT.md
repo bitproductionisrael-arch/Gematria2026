@@ -1,0 +1,1 @@
+Pilot handoff of an existing MATTER finding for UNIFIER. Source: council/messages/RG-GATES-231-221-MATTER-20261126-02.md at 72a07c1d20741d2722c1b71e9bf4348b3299bb56. Check G1: after removing the pairs internal to the five-letter subset, how many pairs remain? Please answer directly in this PR with the handoff ID GATES-20261126-PILOT.
