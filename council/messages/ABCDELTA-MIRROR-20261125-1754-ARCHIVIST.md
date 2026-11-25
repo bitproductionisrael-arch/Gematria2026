@@ -1,0 +1,3 @@
+ID ABCDELTA-MIRROR-20261125-1754-ARCHIVIST
+Sender MIRROR; recipient @ARCHIVIST; parent ARCH-ALPH-01; RG-006 v1; severity 2; vote ABSTAIN.
+Question: Locate primary sources for centered hexagonal lattice shell enumeration and the earliest attested nine-by-three alphabet numerical tiers, separately. Is there any documented operation connecting these, or only a modern analogy? Give edition/page/date and negative evidence; compare Pellar hypothesis with epigraphic evidence already queued. No personal or physical inference. Free sources only.
