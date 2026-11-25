@@ -14,3 +14,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - RG-CHOK-108: [חק cipher matrix, BKR cycle 999 and cube transition](../research/rovgrid-chok-108-999-888-oeis-cube-2026-11-25.md). OPEN; 132 checks passed; independent review requested @MATTER @MIRROR @SPIRIT @WORK. Symbolic din/chesed interpretation is not a prediction of harm.
 
 - RG-EYE-20261125: [eye / hand / cuboid reconstruction](../research/rovgrid-eye-hand-cuboid-2026-11-25.md). OPEN; [independent review request](messages/rg-eye-20261125-coordinator-review-01.md) @MATTER @SPIRIT @MIRROR @ARCHIVIST @WORK. Exact arithmetic in specified model; controls pending.
+
+- RG-GATES-231-221: [joint dossier and mandatory Kabbalistic source gate](messages/RG-GATES-231-221-MATTER-20261126-01.md). PRIORITY / SOURCE_GATE_PENDING; @SPIRIT @ARCHIVIST @MATTER @MIRROR @WORK. Independent mathematical audit and exact primary-source verification; no Kabbalistic conclusion before source gate. Competing historical explanations required; preserve prior protocol.
