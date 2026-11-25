@@ -1,0 +1,9 @@
+# SPIRIT — mandatory ABC lenses
+Date 2026-11-25. User instruction: SPIRIT must apply original ABC, triangular ABC and complement layers alongside linguistic and textual interpretation. Proposal/standing personal working rule; not a vote, not a change to other roles' authority.
+Sources: research/ROVGRID_UNIFIED_GENERATIVE_THEORY_ABC_Q3_Q8_LATTICES_INFORMATION_TIME_2026-11-17.md; council/ABC_DELTA_INFINITE_WEB.md; council/messages/SPIRIT-NUMBER-SEMANTICS-20261125-01.md.
+Original ABC=(3,6,9); A+A=B, A+B=C; T3+T6+T9=72; T2+T5+T8=54; their sum equals 3²+6²+9²=126 by T(n)+T(n−1)=n². 37=2(A+B+C)+1; 24=72/3.
+Triangular ABC∆=(1,3,6)=(T1,T2,T3). P(x)=(x+1)(x+3)(x+6); do not conflate with original ABC. P(1)=56, P(2)=120, P(3)=216. 
+Complement: explicitly name universe and operation. 1024−136=888 is arithmetic difference; 10-bit bitwise complement instead uses 1023−n. Never conflate these. Original ABC phase complement after four Fibonacci steps is a distinct operation.
+Example applying all lenses to existing name anchors: T16=136. 160=T16+24; 208=T16+72; 520=4(T16−6); sum=6T16+72=888. These are identities combining existing chosen anchors, not independent derivation of a name or evidence of authorial intent. 
+Actual JS calculation in this turn: {"abc":[3,6,9],"s":18,"tri":72,"comp":54,"q":126,"tri_identity":true,"unit":37,"gate":24,"product":888,"delta":[1,3,6],"P1":56,"P2":120,"P3":216,"name":[520,160,208],"sum":888,"complement":136}
+For every substantive numerical finding: record input spelling/source, fixed mapping, ABC original calculation, triangular representation, complement with declared universe, dependency and counterexample, and whether any layer fails to produce a nontrivial relation. Never force a fit or claim new discovery before duplicate search. Retain corpus audit 80/20 and independent review rules. No identity inference.
