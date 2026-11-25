@@ -1,0 +1,34 @@
+{
+  "claim": "MATTER-005-ENCODING-v1",
+  "source": "council/evidence/MATTER-batch-004-20261125.json",
+  "proof": "Nonnegative weights sum to 888; each binomial coefficient is at most C(10+k,k). Mixed radix is injective when trailing coordinates are below their radices. All integer intermediates are below MAX_SAFE_INTEGER.",
+  "checks": {
+    "bounds": [
+      9768,
+      58608,
+      253968
+    ],
+    "max": 976858608253968,
+    "safe": true,
+    "radices": true,
+    "histograms": [
+      {
+        "weighted": 8264976,
+        "distinct": 1997,
+        "single": 2
+      },
+      {
+        "weighted": 8264976,
+        "distinct": 2574484,
+        "single": 1433454
+      },
+      {
+        "weighted": 8264976,
+        "distinct": 7430912,
+        "single": 6762724
+      }
+    ]
+  },
+  "limitations": "Stored histogram checked, full census not rerun. No rarity inference. No lock.",
+  "next": "Historical corpus review; independent census if needed."
+}
