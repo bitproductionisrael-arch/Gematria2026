@@ -127,6 +127,13 @@
       "findings": [
         "8264976 conditional candidates; counts 6849,5,1 after successive signatures"
       ]
+    },
+    {
+      "id": "MATTER-batch-005-20261125",
+      "output": "council/evidence/MATTER-batch-005-20261125.json",
+      "grade": 4,
+      "result": "stored proof inspected; independent arithmetic bounds checked",
+      "scope": "encoding only"
     }
   ],
   "access_gaps": [
@@ -199,17 +206,26 @@
   "last_cycle": "2026-11-25",
   "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "MATTER-reconcile-batch-004",
-    "coverage": "8 repository files fetched; 3 histogram layers checked for two conservation identities each; no new primary research files certified",
-    "grades": "3 provisional; histogram consistency only, not independent enumeration",
-    "expertise": "High finite combinatorics; empirical name frequency not established",
-    "progress": "High for histogram aggregation with fixed face sums",
+    "cycle": "MATTER-reconcile-batch-005",
+    "coverage": "8 unique repository files fetched; 3 coefficient bounds independently calculated; no new primary source certified",
+    "grades": "4 scoped encoding proof; census not rerun",
+    "expertise": "finite combinatorics and integer arithmetic; no empirical frequency inference",
+    "progress": "high for historical arithmetic audit",
     "falsifiers": [
-      "other candidates unique at depth four",
-      "alternative mappings"
+      "radix overflow",
+      "unsafe intermediate",
+      "negative weights"
     ],
-    "next": "Resume older corpus audit; independently check packed numeric signature safety before relying on histogram",
-    "stalled_cycles": 0
+    "next": "Resume historical corpus audit from inventory; prioritize unread older research and calculator mapping",
+    "stalled_cycles": 0,
+    "checks": {
+      "bounds": [
+        9768,
+        58608,
+        253968
+      ],
+      "match": true
+    }
   },
   "coverage": {
     "inventory": "council/research/MATTER-inventory-20261124-2120.json",
@@ -244,6 +260,11 @@
           6762724
         ],
         "source_coverage_expanded": false
+      },
+      {
+        "id": "MATTER-batch-005-20261125",
+        "output": "council/evidence/MATTER-batch-005-20261125.json",
+        "status": "proof inspected; no new primary source coverage"
       }
     ]
   }
