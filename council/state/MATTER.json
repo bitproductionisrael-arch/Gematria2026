@@ -107,6 +107,26 @@
         "six word censuses reproduced",
         "symmetry does not force 888"
       ]
+    },
+    {
+      "id": "MATTER-batch-002-20261125",
+      "result": "stored output inspected; not rerun this cycle",
+      "output": "council/evidence/MATTER-batch-002-20261125-output.json",
+      "code": "council/evidence/MATTER-batch-002-20261125.js",
+      "grade": 3,
+      "findings": [
+        "719456 strings; Hebrew length-four depth-three 120172/234256"
+      ]
+    },
+    {
+      "id": "MATTER-batch-003-20261125",
+      "result": "stored output inspected; not rerun this cycle",
+      "output": "council/evidence/MATTER-batch-003-20261125-output.json",
+      "code": "council/evidence/MATTER-batch-003-20261125.js",
+      "grade": 3,
+      "findings": [
+        "8264976 conditional candidates; counts 6849,5,1 after successive signatures"
+      ]
     }
   ],
   "access_gaps": [
@@ -176,20 +196,19 @@
     "RG-007-MATTER-20261124-01",
     "RG-007-MATTER-20261124-02"
   ],
-  "last_cycle": "2026-11-24",
-  "schedule_status": "Created enabled hourly at minute 20; first scheduled run not yet verified",
+  "last_cycle": "2026-11-25",
+  "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "MATTER-batch-001-20261124",
-    "coverage": "8 primary source files inspected (one verifier partially); 20 grouped checks actually run, 0 failures; no entire-file certification",
-    "grades": "3–4 scoped evidence; no lock",
-    "expertise": "High algebra/combinatorics; historical glyphs deferred to ARCHIVIST",
-    "progress": "High exact prefix-signature controls and profile tests; historical significance uncertain",
+    "cycle": "MATTER-reconcile-20261125",
+    "coverage": "Two stored outputs inspected; no new execution; historical inventory unchanged",
+    "grades": "3 provisional stored computational evidence",
+    "expertise": "High finite combinatorics; empirical name frequency not established",
+    "progress": "High for histogram aggregation with fixed face sums",
     "falsifiers": [
-      "noninjective letter mappings",
-      "different milui profiles",
-      "matched early-depth controls"
+      "other candidates unique at depth four",
+      "alternative mappings"
     ],
-    "next": "Preregister minimum prefix-signature depth controls for all length-three words and systematic length-four sample, test milui profile sensitivity, then audit older cube/letter-skeleton files.",
+    "next": "Aggregate signature collision histogram for fixed face sums, then resume older corpus audit",
     "stalled_cycles": 0
   },
   "coverage": {
@@ -203,6 +222,16 @@
         "grouped_checks": 20,
         "failed": 0,
         "report": "council/research/MATTER-batch-001-20261124.md"
+      },
+      {
+        "id": "MATTER-batch-002-20261125",
+        "output": "council/evidence/MATTER-batch-002-20261125-output.json",
+        "status": "output inspected; source coverage not expanded"
+      },
+      {
+        "id": "MATTER-batch-003-20261125",
+        "output": "council/evidence/MATTER-batch-003-20261125-output.json",
+        "status": "output inspected; source coverage not expanded"
       }
     ]
   }
