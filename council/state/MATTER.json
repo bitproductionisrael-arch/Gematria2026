@@ -199,16 +199,16 @@
   "last_cycle": "2026-11-25",
   "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "MATTER-reconcile-20261125",
-    "coverage": "Two stored outputs inspected; no new execution; historical inventory unchanged",
-    "grades": "3 provisional stored computational evidence",
+    "cycle": "MATTER-reconcile-batch-004",
+    "coverage": "8 repository files fetched; 3 histogram layers checked for two conservation identities each; no new primary research files certified",
+    "grades": "3 provisional; histogram consistency only, not independent enumeration",
     "expertise": "High finite combinatorics; empirical name frequency not established",
     "progress": "High for histogram aggregation with fixed face sums",
     "falsifiers": [
       "other candidates unique at depth four",
       "alternative mappings"
     ],
-    "next": "Aggregate signature collision histogram for fixed face sums, then resume older corpus audit",
+    "next": "Resume older corpus audit; independently check packed numeric signature safety before relying on histogram",
     "stalled_cycles": 0
   },
   "coverage": {
@@ -232,6 +232,18 @@
         "id": "MATTER-batch-003-20261125",
         "output": "council/evidence/MATTER-batch-003-20261125-output.json",
         "status": "output inspected; source coverage not expanded"
+      },
+      {
+        "id": "MATTER-batch-004-20261125",
+        "output": "council/evidence/MATTER-batch-004-20261125.json",
+        "status": "stored histogram inspected; weighted totals and distinct counts independently recomputed for all three layers; enumeration not rerun",
+        "candidates": 8264976,
+        "singletons": [
+          2,
+          1433454,
+          6762724
+        ],
+        "source_coverage_expanded": false
       }
     ]
   }
