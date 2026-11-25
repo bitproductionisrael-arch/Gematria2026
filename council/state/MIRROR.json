@@ -1,0 +1,24 @@
+{
+  "role": "MIRROR",
+  "date": "2026-11-26",
+  "status": "CHECKPOINT_RECONSTRUCTED",
+  "maintenance_note": "Initialized by operations manager after confirmed 404. Existing research messages preserved. Not a new MIRROR research result; processed history is unknown and must be reconciled before duplicate processing.",
+  "processed_ids": [],
+  "processed_history_complete": false,
+  "verified_prior_messages": [
+    "council/messages/MIRROR-20261125-2100-WORK.md",
+    "council/messages/MIRROR-20261125-2100-MATTER.md",
+    "council/messages/MIRROR-20261125-2100-SPIRIT.md"
+  ],
+  "open_tasks": [
+    "Read latest ARCHIVIST_BRIEF.md and derive testable questions",
+    "RESET: dependency map of ABC∆, single center and AIQ BKR; establish missing edges or falsify",
+    "Follow up diagonal projection bijection, incidence preservation and relation to ternary cube cells; distinguish proof from name-specific interpretation",
+    "Reconcile processed IDs from existing messages and feedback before repeating work"
+  ],
+  "access_gaps": [
+    "Prior processed-ID history not reconstructed exhaustively",
+    "Full corpus novelty and independent verification of prior reported tests remain pending"
+  ],
+  "next_task": "Read registry, RESET and source briefing; pursue one feasible new question and save actual evidence and updated checkpoint."
+}
