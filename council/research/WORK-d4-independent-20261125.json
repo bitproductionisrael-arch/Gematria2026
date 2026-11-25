@@ -1,0 +1,105 @@
+{
+  "result": {
+    "orbitGrids": 32,
+    "uniqueEvenN": [
+      16
+    ],
+    "factors": [
+      [
+        889,
+        887
+      ],
+      [
+        446,
+        442
+      ],
+      [
+        299,
+        293
+      ],
+      [
+        226,
+        218
+      ],
+      [
+        154,
+        142
+      ],
+      [
+        119,
+        103
+      ],
+      [
+        86,
+        62
+      ],
+      [
+        61,
+        13
+      ]
+    ],
+    "checks": [
+      376,
+      136,
+      55,
+      52,
+      53,
+      93,
+      48,
+      220,
+      67
+    ],
+    "V": 136,
+    "E": 1024,
+    "g": 189,
+    "F": 512,
+    "cycle": 889,
+    "treeExponent": 430,
+    "quotientCounterexample": {
+      "n": 2,
+      "orbitCount": 3,
+      "gridEdges": 24,
+      "completeBipartiteEdges": 2
+    },
+    "note": "quotient adjacency is not K(A,B): at n=16 orbit count 136, grid edges 1984; K has 1024 edges, construction is separate; no lexical population tested"
+  },
+  "sources": [
+    "research/rovgrid-square-ring-d4-primitive-2026-11-07.md",
+    "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14.md",
+    "research/rovgrid-lexicon-muchlat-2026-11-11.md"
+  ],
+  "claims": [
+    {
+      "id": "WORK-C015",
+      "status": "PROVEN",
+      "grade": 4,
+      "scope": "D4 orbit counts; proof by unordered pair of absolute centered coordinates; equal pair orbit 4, distinct orbit 8"
+    },
+    {
+      "id": "WORK-C016",
+      "status": "PROVEN",
+      "grade": 4,
+      "scope": "positive factor pairs of 888; equal parity follows from difference divisible by 4"
+    },
+    {
+      "id": "WORK-C017",
+      "status": "CONDITIONAL",
+      "grade": 3,
+      "scope": "graph arithmetic conditional on genus theorem; external source not checked"
+    },
+    {
+      "id": "WORK-C018",
+      "status": "PROVEN",
+      "grade": 3,
+      "scope": "selected regular and ordinal lexical values only"
+    }
+  ],
+  "ASI": "T1-T4 N/A for algebra; lexical population absent; no rarity estimate",
+  "feedback": {
+    "next": "Obtain frozen independent Hebrew lexical population; audit actual D4 quotient adjacency and compare graph construction; then rotate to new dossiers",
+    "prospects": "high exact algebra, medium lexical access, low origin inference",
+    "expertise": "exact computation; historical and lexical source validation pending",
+    "stagnant_cycles": 0
+  },
+  "limitations": "3 files partial claim review; duplicate D4 formula already documented, independent reproduction only; no lock or vote; no new message reviewed this cycle"
+}
