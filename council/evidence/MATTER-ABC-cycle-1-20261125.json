@@ -1,0 +1,176 @@
+{
+  "id": "MATTER-ABC-cycle-1-20261125",
+  "source": "council/ABC_DELTA_INFINITE_WEB.md",
+  "historical": "research/rovgrid-figurate-phase-ladder-55-81-136-271-275-541-816-2026-11-16.md",
+  "code": "const T=n=>n*(n+1)/2, S=n=>1+6*n*(n-1), D=n=>n*(3*n-1)*(3*n-2)/2, Tet=n=>n*(n+1)*(n+2)/6;\nconst checks={}; function check(k,v){checks[k]=!!v}\nconst range=Array.from({length:100},(_,i)=>i+1);\ncheck(\"historical_center\",range.every(n=>S(n)===1+6*(n-1)+6*(n-1)**2));\ncheck(\"historical_unique\",JSON.stringify(range.filter(n=>1+6*(n-1)===T(n)))===\"[1,10]\");\ncheck(\"historical_dod\",range.every(n=>D(n)===Tet(3*n-2)));\ncheck(\"historical_shell\",range.slice(1).every(n=>D(n)-D(n-1)===1+3*T(3*n-3)));\ncheck(\"historical_midpoint\",range.every(n=>S(n)+S(n+1)===2*(6*n*n+1)));\ncheck(\"historical_275\",Tet(16)-S(10)===275);\ncheck(\"ABC_polynomial\",JSON.stringify(range.slice(0,6).map(x=>(x+1)*(x+3)*(x+6)))===\"[56,120,216,350,528,756]\");\ncheck(\"ABC_powers\",range.every(n=>(1n+3n**BigInt(n)+6n**BigInt(n))%9n===1n));\ncheck(\"ABC_shell\",range.every(n=>((1+3*n*(n+1))%9===1)===(n%3!==1)));\nconst alternatives=[]; for(let i=1;i<=12;i++)for(let j=i+1;j<=12;j++)for(let k=j+1;k<=12;k++){let a=T(i),b=T(j),c=T(k);if(a%9===1&&b%3===0&&c%3===0&&(a+b+c)%9===1)alternatives.push([i,j,k,a,b,c]);}\ncheck(\"ABC_nonunique\",alternatives.length>1);\nconst result={checks,alternatives,alternative_count:alternatives.length,passed:Object.values(checks).filter(Boolean).length,failed:Object.values(checks).filter(x=>!x).length};\nconsole.log(JSON.stringify(result,null,2));",
+  "output": {
+    "checks": {
+      "historical_center": true,
+      "historical_unique": true,
+      "historical_dod": true,
+      "historical_shell": true,
+      "historical_midpoint": true,
+      "historical_275": true,
+      "ABC_polynomial": true,
+      "ABC_powers": true,
+      "ABC_shell": true,
+      "ABC_nonunique": true
+    },
+    "alternatives": [
+      [
+        1,
+        2,
+        3,
+        1,
+        3,
+        6
+      ],
+      [
+        1,
+        2,
+        5,
+        1,
+        3,
+        15
+      ],
+      [
+        1,
+        2,
+        12,
+        1,
+        3,
+        78
+      ],
+      [
+        1,
+        3,
+        6,
+        1,
+        6,
+        21
+      ],
+      [
+        1,
+        3,
+        11,
+        1,
+        6,
+        66
+      ],
+      [
+        1,
+        5,
+        6,
+        1,
+        15,
+        21
+      ],
+      [
+        1,
+        5,
+        11,
+        1,
+        15,
+        66
+      ],
+      [
+        1,
+        6,
+        12,
+        1,
+        21,
+        78
+      ],
+      [
+        1,
+        8,
+        9,
+        1,
+        36,
+        45
+      ],
+      [
+        1,
+        11,
+        12,
+        1,
+        66,
+        78
+      ],
+      [
+        4,
+        5,
+        6,
+        10,
+        15,
+        21
+      ],
+      [
+        4,
+        5,
+        11,
+        10,
+        15,
+        66
+      ],
+      [
+        4,
+        6,
+        12,
+        10,
+        21,
+        78
+      ],
+      [
+        4,
+        8,
+        9,
+        10,
+        36,
+        45
+      ],
+      [
+        4,
+        11,
+        12,
+        10,
+        66,
+        78
+      ],
+      [
+        7,
+        8,
+        9,
+        28,
+        36,
+        45
+      ],
+      [
+        7,
+        11,
+        12,
+        28,
+        66,
+        78
+      ],
+      [
+        10,
+        11,
+        12,
+        55,
+        66,
+        78
+      ]
+    ],
+    "alternative_count": 18,
+    "passed": 10,
+    "failed": 0
+  },
+  "proofs": [
+    "For n>=2, powers of multiples of 3 vanish modulo 9; a≡1 mod9 implies a^n≡1. For n=1 require b+c≡0 mod9. Thus infinitely many alternative seeds, e.g. (1,3,6+9t), t>=0; triangular restriction still has alternatives in output.",
+    "Closure under xy and x+y−1 follows by writing x=1+9u,y=1+9v. Closure alone cannot represent 2; additional operations needed.",
+    "Historical center equality reduces to (n−1)(n−10)=0. D(n)=Tet(3n−2) by substitution; shell follows by summing three consecutive triangular numbers."
+  ],
+  "limitations": "No physics inference. Prior art: modular arithmetic and centered polygonal identities; historical source cites OEIS, not independently checked. Calculator fetched but no new gematria claim tested. Ten distinct paths fetched; one historical source partially audited; 10 grouped checks. Time split not instrumented. Full inventory not refreshed; duplicate check against anchor and historical source only.",
+  "next": "ABC cycle 2: explicit axial triangular lattice and intersection counting, then historical audit. Expertise high in discrete math, progress high for finite lattice, low for physical ontology without predictions."
+}
