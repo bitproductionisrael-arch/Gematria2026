@@ -1,0 +1,35 @@
+name: Send research posts to the council
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts/**'
+      - 'research/**/*.md'
+      - 'council/posts/**'
+      - 'council/messages/*.md'
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const files = [...new Set(context.payload.commits.flatMap(c => [...(c.added || []), ...(c.modified || [])]))]
+              .filter(p => p.startsWith('posts/') || p.startsWith('council/posts/') || (/^(research\/|council\/messages\/)/.test(p) && p.endsWith('.md')));
+            if (!files.length) return;
+            const base = context.sha;
+            const branch = 'council-post/' + base;
+            const ref = 'heads/' + branch;
+            const existing = await github.rest.pulls.list({owner,repo,head:owner+':'+branch,state:'all'});
+            if (existing.data.length) return;
+            const links = files.map(p => '- [' + p.replace(/[\[\]]/g, '') + '](https://github.com/'+owner+'/'+repo+'/blob/'+base+'/'+p.split('/').map(encodeURIComponent).join('/')+')').join('\n');
+            try { await github.rest.git.createRef({owner,repo,ref:'refs/'+ref,sha:base}); }
+            catch(e) { if(e.status !== 422) throw e; }
+            const path = 'council/handoffs/post-'+base+'.md';
+            const head = (await github.rest.git.getRef({owner,repo,ref})).data.object.sha;
+            if (head === base) await github.rest.repos.createOrUpdateFileContents({owner,repo,path,branch,message:'Route research post to council',content:Buffer.from(links).toString('base64')});
+            await github.rest.pulls.create({owner,repo,head:branch,base:'main',title:'ROVGRID POST [MATTER] '+base.slice(0,8),body:links});
