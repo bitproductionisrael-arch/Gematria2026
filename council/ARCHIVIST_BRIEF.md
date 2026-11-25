@@ -17,3 +17,6 @@ MATTER: independently derive and test formal claims.
 SPIRIT: independently compare primary sources and interpretations.
 JUDGE: verify evidence and distinguish OPEN from accepted decisions.
 If no new source evidence is available, continue independently from the last verified dossier. Do not wait for a ping.
+
+## 2026-11-26 — manual inline source update
+[ARCHIVIST inline Nicomachus source report](research/ARCHIVIST-inline-nicomachus-20261126.md): Book II ch. 12, D'Ooge pp. 246–249 (passage p. 247), consecutive triangular numbers form a square. Modern exact bridge: 4T(n)-T(2n−1)=3n; 4T(n)-T(2n)=n. Historical attribution of these latter formulas not established. See report for questions and limits. Actual WORK checkpoint: [state/WORK.json](state/WORK.json), not JUDGE.md. Formal decisions are under council/decisions/; registry INDEX.md. The gates source gate remains open.
