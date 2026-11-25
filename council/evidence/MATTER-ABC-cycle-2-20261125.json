@@ -1,0 +1,75 @@
+{
+  "id": "MATTER-ABC-cycle-2-20261125",
+  "code": "const T=n=>n*(n+1)/2;\nconst H=n=>{let s=new Set();for(let x=-n;x<=n;x++)for(let y=-n;y<=n;y++)if(Math.max(Math.abs(x),Math.abs(y),Math.abs(x+y))<=n)s.add(x+\",\"+y);return s};\nconst checks=[];let rows=[];\nfor(let n=0;n<=40;n++){let h=H(n), prev=n?H(n-1):new Set();let shell=[...h].filter(p=>!prev.has(p)).length;let faces=0;for(let x=-n;x<=n;x++)for(let y=-n;y<=n;y++){let a=h.has(x+\",\"+y),b=h.has((x+1)+\",\"+y),c=h.has(x+\",\"+(y+1)),d=h.has((x+1)+\",\"+(y+1));faces+=Number(a&&b&&c)+Number(b&&c&&d)}checks.push(h.size===1+3*n*(n+1)&&shell===(n?6*n:1)&&faces===6*n*n);if(n<=5)rows.push({n,vertices:h.size,shell,faces})}\nlet h=H(1), shifted=new Set([...h].map(p=>{let [x,y]=p.split(\",\").map(Number);return (x+1)+\",\"+y}));let intersection=[...h].filter(p=>shifted.has(p)).length;let union=new Set([...h,...shifted]).size;\nlet anchors=[];for(let n=1;n<=100;n++){let a=1+3*T(n-1),b=1+6*T(n-1),c=1+12*T(n-1);checks.push(b===2*a-1&&c===2*b-1);if(n===10)anchors=[a,b,c]}\nlet coverage=true;for(let k=1;k<=1000;k++){let n=Math.ceil((Math.sqrt(12*k-3)-3)/6);let base=n?1+3*(n-1)*n:0;let shell=n?6*n:1;coverage&&=k>base&&k<=base+shell}\nreturn {rows,intersection,union,naive:13,anchors,coverage,checks:checks.length+2,failed:checks.filter(x=>!x).length+Number(intersection!==4||union!==10)+Number(!coverage)};",
+  "output": {
+    "rows": [
+      {
+        "n": 0,
+        "vertices": 1,
+        "shell": 1,
+        "faces": 0
+      },
+      {
+        "n": 1,
+        "vertices": 7,
+        "shell": 6,
+        "faces": 6
+      },
+      {
+        "n": 2,
+        "vertices": 19,
+        "shell": 12,
+        "faces": 24
+      },
+      {
+        "n": 3,
+        "vertices": 37,
+        "shell": 18,
+        "faces": 54
+      },
+      {
+        "n": 4,
+        "vertices": 61,
+        "shell": 24,
+        "faces": 96
+      },
+      {
+        "n": 5,
+        "vertices": 91,
+        "shell": 30,
+        "faces": 150
+      }
+    ],
+    "intersection": 4,
+    "union": 10,
+    "naive": 13,
+    "anchors": [
+      136,
+      271,
+      541
+    ],
+    "coverage": true,
+    "checks": 143,
+    "failed": 0
+  },
+  "claims": [
+    {
+      "id": "ABC-LATTICE-01",
+      "grade": 4,
+      "proof": "Axial radius n: shell has six sides of n steps, each corner counted once. Summation yields 1+3n(n+1). Six triangular sectors each contain n² elementary faces."
+    },
+    {
+      "id": "ABC-OVERLAP-02",
+      "grade": 4,
+      "proof": "Two radius-one balls shifted by (1,0) intersect in four vertices; union 10, not 13. Inclusion-exclusion requires full intersection."
+    },
+    {
+      "id": "ABC-COVERAGE-03",
+      "grade": 4,
+      "proof": "Order origin first, then shells by increasing radius and fixed cyclic order. Prefixes realize every positive integer as vertex count; empty prefix realizes zero. This is generic enumeration, not a prediction or physical law."
+    }
+  ],
+  "historical": "research/rovgrid-figurate-phase-ladder-55-81-136-271-275-541-816-2026-11-16.md",
+  "limitations": "10 paths fetched, two historical/evidence sources revisited; no calculator mapping tested; 80/20 time not measured; no new full corpus coverage; no physics inference; shell and centered polygon formulas already documented.",
+  "next": "Cycle 3: independent falsification matrix and prediction criteria; then historical audit."
+}
