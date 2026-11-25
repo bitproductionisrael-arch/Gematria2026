@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "sources": {
+    "grid": "Three ternary axes",
+    "projection": "Integral diagonal projection of box",
+    "abc": "Triangular seed 1,3,6",
+    "words": "Standard Hebrew word weights",
+    "q8": "Q8 edge and facet-pair definitions",
+    "bits": "Binary positional notation",
+    "twins": "Historical cuboid pair, equal S and A",
+    "tri": "Triangular number definition"
+  },
+  "bridges": [
+    {
+      "id": "U1",
+      "requires": [
+        "grid"
+      ],
+      "classification": "structural",
+      "statement": "שלושה צירים תלת מצביים → שכבות 8,12,6,1 → ממדים ושיקוף"
+    },
+    {
+      "id": "U2",
+      "requires": [
+        "projection"
+      ],
+      "classification": "structural",
+      "statement": "קצה עליון יחיד בכל סיב → ריצוף המשושה בשלוש פאות → A ו־L(t)"
+    },
+    {
+      "id": "U3",
+      "requires": [
+        "U2"
+      ],
+      "classification": "identity",
+      "statement": "צלעות שוות → מספר משושה מרוכז → סכום טלסקופי לקובייה"
+    },
+    {
+      "id": "U4",
+      "requires": [
+        "U1",
+        "U2"
+      ],
+      "classification": "structural",
+      "statement": "תיבה פרימיטיבית בהגדלה שתיים → 888,108,835,943"
+    },
+    {
+      "id": "U5",
+      "requires": [
+        "words",
+        "U4"
+      ],
+      "classification": "numerical",
+      "statement": "ערכי שלוש מילים → אותם שלושה שטחים"
+    },
+    {
+      "id": "U6",
+      "requires": [
+        "U2",
+        "abc"
+      ],
+      "classification": "identity",
+      "statement": "נפח פחות מספר נקודות פנים בהיטל שווה (a−1)(b−1)(c−1)"
+    },
+    {
+      "id": "U7",
+      "requires": [
+        "tri",
+        "U3"
+      ],
+      "classification": "identity",
+      "statement": "לכל h שלם חיובי, T(2h−1)=h(2h−1)"
+    },
+    {
+      "id": "U8",
+      "requires": [
+        "q8",
+        "U4"
+      ],
+      "classification": "numerical",
+      "statement": "מקצועות Q8 פחות זוגות עם חזרה של 16 פאות מממד 7 שווה לשטח המשושה"
+    },
+    {
+      "id": "U9",
+      "requires": [
+        "bits"
+      ],
+      "classification": "identity",
+      "statement": "x+y=(x XOR y)+2(x AND y)"
+    },
+    {
+      "id": "U10",
+      "requires": [
+        "twins",
+        "U2"
+      ],
+      "classification": "structural",
+      "statement": "אותו היטל מודד גם את עומק הסיבים. בתאומה 187+133=320 מעבר לפרופיל המשותף"
+    }
+  ]
+}

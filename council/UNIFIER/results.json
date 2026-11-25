@@ -1,0 +1,80 @@
+{
+  "depths": {
+    "name": [
+      943,
+      835,
+      733,
+      637,
+      547,
+      463,
+      385,
+      313,
+      247
+    ],
+    "twin": [
+      943,
+      835,
+      733,
+      637,
+      547,
+      463,
+      385,
+      313,
+      247,
+      187,
+      133
+    ]
+  },
+  "triples": 512,
+  "counts": [
+    8,
+    12,
+    6,
+    1
+  ],
+  "sides": [
+    8,
+    20,
+    26
+  ],
+  "words": [
+    520,
+    160,
+    208
+  ],
+  "rows": {
+    "abc": {
+      "area": 27,
+      "closed": 38,
+      "interior": 18,
+      "boundary": 20
+    },
+    "cubeSpanThree": {
+      "area": 27,
+      "closed": 37,
+      "interior": 19,
+      "boundary": 18
+    },
+    "primitive": {
+      "area": 222,
+      "closed": 250,
+      "interior": 196,
+      "boundary": 54
+    },
+    "full": {
+      "area": 888,
+      "closed": 943,
+      "interior": 835,
+      "boundary": 108
+    }
+  },
+  "cubeLayers": 24,
+  "Q8": {
+    "edges": 1024,
+    "pairs": 136
+  },
+  "carry": {
+    "xor": 1008,
+    "and": 8
+  }
+}
