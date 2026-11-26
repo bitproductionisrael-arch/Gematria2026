@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "initialized_on": "2026-11-26",
+  "initial_score": 100,
+  "score_bounds": [
+    0,
+    100
+  ],
+  "status": "INITIALIZED_NO_RUNS_EVALUATED",
+  "policy": "council/OPERATIONS_V2.md#performance-accountability-experiment--2026-11-26",
+  "roles": {
+    "ARCHIVIST": {
+      "score": 100,
+      "evaluated_runs": 0,
+      "history": [],
+      "reviewer": "JUDGE"
+    },
+    "MATTER": {
+      "score": 100,
+      "evaluated_runs": 0,
+      "history": [],
+      "reviewer": "JUDGE"
+    },
+    "MIRROR": {
+      "score": 100,
+      "evaluated_runs": 0,
+      "history": [],
+      "reviewer": "JUDGE"
+    },
+    "SPIRIT": {
+      "score": 100,
+      "evaluated_runs": 0,
+      "history": [],
+      "reviewer": "JUDGE"
+    },
+    "JUDGE": {
+      "score": 100,
+      "evaluated_runs": 0,
+      "history": [],
+      "reviewer": "independent manager or user"
+    }
+  },
+  "note": "Administrative baseline only. No retrospective evaluations or evidence grades assigned. Deduplicate future evaluations by run ID; preserve actual evidence and reviewer."
+}
