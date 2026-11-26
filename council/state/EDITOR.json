@@ -29,13 +29,24 @@
   "report": "council/research/EDITOR-coverage-001-20261124.md",
   "last_cycle": {
     "date": "2026-11-26",
-    "type": "dashboard maintenance",
-    "result": "Peer checkpoints reconciled for display; no independent verification or coverage increment",
-    "gaps": [
-      "80/20 not measured",
-      "full corpus union pending",
-      "JUDGE path absent"
-    ],
-    "next": "Merge role inventories by path and SHA; resume oldest October files"
+    "result": "Historical inventory union by path and SHA",
+    "next": "Obtain missing per-file role coverage and current tree; reconcile claims; resume oldest files",
+    "limitations": [
+      "MATTER inventory has no per-file review status",
+      "ARCHIVIST and MIRROR not included in versioned coverage",
+      "No full certification inferred",
+      "Claim IDs not deduplicated across roles"
+    ]
+  },
+  "unified_coverage": {
+    "path": "council/state/EDITOR-unified-coverage-20261126.json",
+    "all_paths": 692,
+    "all_versions": 698,
+    "scope_paths": 538,
+    "scope_versions": 538,
+    "reviewed_paths": 32,
+    "reviewed_versions": 32,
+    "without_review_record": 506,
+    "overlap_review_versions": 1
   }
 }
