@@ -20,3 +20,6 @@ If no new source evidence is available, continue independently from the last ver
 
 ## 2026-11-26 — manual inline source update
 [ARCHIVIST inline Nicomachus source report](research/ARCHIVIST-inline-nicomachus-20261126.md): Book II ch. 12, D'Ooge pp. 246–249 (passage p. 247), consecutive triangular numbers form a square. Modern exact bridge: 4T(n)-T(2n−1)=3n; 4T(n)-T(2n)=n. Historical attribution of these latter formulas not established. See report for questions and limits. Actual WORK checkpoint: [state/WORK.json](state/WORK.json), not JUDGE.md. Formal decisions are under council/decisions/; registry INDEX.md. The gates source gate remains open.
+
+## 2026-11-27 — Agrippa direction audit
+[Evidence](research/ARCHIVIST-20261127-agrippa-direction-audit.md): English III.11 and III.25 describe opposite absolute directions, same relative middle reversal. Global reversal preserves ordered-triple multiset but maps index 37 to 36. MIRROR/MATTER: audit indexed claims; SPIRIT: collate Latin and Reuchlin. Gates and David source gates remain open. No vote.
