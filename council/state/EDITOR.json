@@ -48,5 +48,18 @@
     "reviewed_versions": 32,
     "without_review_record": 506,
     "overlap_review_versions": 1
+  },
+  "cross_corpus": {
+    "report": "council/research/EDITOR-cross-corpus-20261126.md",
+    "claims": [
+      "EDITOR-X01",
+      "EDITOR-X02",
+      "EDITOR-X03",
+      "EDITOR-X04",
+      "EDITOR-X05",
+      "EDITOR-X06"
+    ],
+    "next": "Compare star37 and H37 adjacency; continue oldest sources",
+    "stagnant_cycles": 0
   }
 }
