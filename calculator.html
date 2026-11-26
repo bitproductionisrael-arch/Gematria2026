@@ -557,6 +557,7 @@ const HE_VAL={},HE_ORD={},HE_SOFIT={},HE_KATAN={},HE_KATAN_SOFIT={},HE_KIDMI={},
 HE_ORDER.forEach((L,i)=>{HE_VAL[L]=tiered(i);HE_ORD[L]=i+1;HE_KATAN[L]=(i%9)+1;HE_PERATI[L]=HE_VAL[L]**2;HE_PERATI_ORD[L]=HE_ORD[L]**2});
 Object.entries(FINAL_TO_BASE).forEach(([f,b])=>{for(const m of [HE_VAL,HE_ORD,HE_KATAN,HE_PERATI,HE_PERATI_ORD])m[f]=m[b]});
 Object.assign(HE_SOFIT,HE_VAL);FINAL_ORDER.forEach((L,i)=>HE_SOFIT[L]=tiered(22+i));
+const HE_ORD_FINAL={...HE_ORD};FINAL_ORDER.forEach((L,i)=>HE_ORD_FINAL[L]=23+i);
 Object.assign(HE_KATAN_SOFIT,HE_KATAN);FINAL_ORDER.forEach((L,i)=>HE_KATAN_SOFIT[L]=((22+i)%9)+1);
 let _kid=0;HE_ORDER.forEach(L=>{_kid+=HE_VAL[L];HE_KIDMI[L]=_kid});Object.entries(FINAL_TO_BASE).forEach(([f,b])=>HE_KIDMI[f]=HE_KIDMI[b]);
 const HE_ZERO_STEP={};Object.keys(HE_VAL).forEach(k=>{const v=HE_VAL[k];HE_ZERO_STEP[k]=(v>=10&&v%10===0)?v/10:v});
@@ -721,6 +722,7 @@ const METHODS={
   {key:'regular',cat:'base',name:'גימטריה הכרחית / Regular',map:HE_VAL},
   {key:'final',cat:'base',name:'גימטריה סופית / Final Letters',map:HE_SOFIT},
   {key:'ordinal',cat:'base',name:'גימטריה סדרית / Ordinal',map:HE_ORD},
+  {key:'finalOrdinal',cat:'base',name:'גימטריה סדרית סופית / Final Ordinal',map:HE_ORD_FINAL},
   {key:'reduced',cat:'base',name:'קטן (צמצום אפס #2) / Small (Zero Reduction #2)',map:HE_KATAN},
   {key:'smallFinals',cat:'base',name:'גימטריה קטנה סופית / Small Finals',map:HE_KATAN_SOFIT},
   {key:'wordPositionRegular',cat:'ops',name:'אות × אותיות בערך רגיל / Hebrew Word Position × Regular',map:HE_VAL,transform:wordPositionWeight,transformName:'letter value × word letter count',research:true},
@@ -871,7 +873,7 @@ const METHOD_EN_NAMES={
  greekMiluiStandard:'Greek Spelled-In-Full · Standard',greekMiluiOrdinal:'Greek Spelled-In-Full · Ordinal',greekMilui2Standard:'Greek Double Letter-Name Expansion · Standard',greekMilui2Ordinal:'Greek Double Letter-Name Expansion · Ordinal',
  piAlphabetHebrew:'Hebrew Pi (π) Alphabet',
  piAlphabet:'Pi π Alphabet',
- regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',reduced:'Small',
+ regular:'Regular / Mispar Hechrachi',final:'Final Letters',ordinal:'Ordinal / Mispar Siduri',finalOrdinal:'Final Ordinal',reduced:'Small',
  smallFinals:'Small Finals',wordReduced:'Reduced',wordReducedFinals:'Word Reduced (Finals)',digitReduced:'Digit Reduced',pythagorean:'English Small / Pythagorean',agrippaReduced:'Jewish Small',agrippaWordReduced:'Jewish Reduced',agrippaDigitReduced:'Jewish Digit Reduced',ruReduced:'Russian Small',ruWordReduced:'Russian Reduced',ruDigitReduced:'Russian Digit Reduced',reverseOrdinal:'Greek Atbash Ordinal',zeroStep:'Zero Reduction #1',
  atbash:'Atbash',atbashOrdinal:'Atbash Ordinal',albam:'ALBaM',albamOrdinal:'ALBaM Ordinal',avgad:'AVGaD',ayak:'AIQ BKR',kidmi:'Kidmi',peratiOrdinal:'Ordinal² / Perati',perati:'Regular² / Perati',
  kolel:'Kolel (+1)',musafi:'Musafi (+letters)',achorayim:'Prefix Building / Mispar Boneh',positional:'Position × Value',
@@ -1161,6 +1163,7 @@ function queueDeferredOperator(key){
 
 /* ---------- method book / transparent naming ---------- */
 const METHOD_BOOK_DOCS={
+  'he:finalOrdinal':{plain:'גימטריה סדרית סופית · Final Ordinal',original:'RovGrid · Extended ordinal 1–27',status:'modern',history:'הרחבת מיפוי הסדרית הקיים ל־27 צורות אותיות, בהמשך לסדר הסופיות במחשבון. האותיות א עד ת שומרות על ערכיהן 1–22; הצורות ך,ם,ן,ף,ץ מקבלות 23,24,25,26,27 בהתאמה. אין שינוי בשיטות הקיימות.',formula:'סכום ערכי המיקומים 1–27. אלף=39; בראשית=76; בראשית א:א=329.'},
  'he:miluiOrdinal':{plain:'מילוי רגיל סדרי · Standard Hebrew Spelled-In-Full-Ordinal',original:'RovGrid Standard · ו=ויו, ת=תיו · Hebrew ordinal 1–22',status:'modern',history:'הרחבת כל אות לפי המילוי הרגיל של האתר (ו=ויו, ת=תיו), וסכימת אותיות השם בגימטריה סדרית א=1 עד ת=22. סופיות מקבלות ערך בסיסי. בראשית א:א=844, לעומת 814 במילוי תלמודי סדרי (ת=תו), בגלל 3 אותיות ת.',formula:'מילוי רגיל (ת→תיו) ואז סדרי 1–22. בראשית א:א=844; יהוה=54.'},
  'he:miluiTalmudicOrdinal':{plain:'מילוי תלמודי סדרי · Spelled-In-Full-Ordinal',original:'Tav=תו · alphabetic expansion ordinal',status:'modern',history:'שיטת מילוי האותיות המוצגת במחקר 37×73: ו→ויו, ת→תו, וסכימת אותיות השמות במיקום 1–22. בראשית א:א=814=22×37, לעומת 5476 במילוי הרגיל המקביל. שיטה נפרדת מהגימטריה הסדרית ללא מילוי.',formula:'הרחב כל אות לשמה התלמודי (ת→תו), ואז חשב לפי א1…ת22. בראשית א:א=814.'},
  'el:greekMiluiStandard':{plain:'מילוי יווני רגיל · Spelled-In-Full',original:'24 Greek letter names + standard isopsephy',status:'modern',history:'כל אות יוונית מוחלפת בשם היווני המלא. מודל 24 אותיות עם יוטה תחתית נספרת כתוספת Ι. נבדק מול John 1:1=22100, Genesis LXX 1:1=21190, וחלקי יוחנן 7033+15067. טבלת שמות האותיות מוצגת ב־greek-milui.html.',formula:'Α→ΑΛΦΑ=532; Ι→ΙΩΤΑ=1111; Σ ערכי האותיות הממולאות לפי איזופספיה.'},
@@ -2564,7 +2567,12 @@ document.getElementById('saveView').addEventListener('click',async()=>{if(state.
 if(new URLSearchParams(location.search).has('selftest')){
 console.assert(['pi','phi','root3','root5','inv37'].every(key=>calculate('אור','he',METHODS.he.find(m=>m.key==='homePower_'+key)).total===9),'HomePower אור five mappings all 9');
 function T(text,script,key){const m=METHODS[script].find(x=>x.key===key);return calculate(text,script,m).total}
-console.assert(Math.abs(T('אלף','he','letterDivisionRegular')-1/2400)<1e-18,'Letter Division Regular Alef 1/2400');
+console.assert(FINAL_ORDER.map(ch=>HE_ORD_FINAL[ch]).join(',')==='23,24,25,26,27'&&HE_ORDER.every(ch=>HE_ORD_FINAL[ch]===HE_ORD[ch]),'Final Ordinal extends ordinal to 27 forms without changing base letters');
+ console.assert(T('אלף','he','finalOrdinal')===39&&T('אלף','he','ordinal')===30,'Final Ordinal Alef 39; ordinary ordinal 30');
+ console.assert(T('בראשית','he','finalOrdinal')===76&&T('בראשית ברא אלהים את השמים ואת הארץ','he','finalOrdinal')===329&&T('בראשית ברא אלהים את השמים ואת הארץ','he','ordinal')===298,'Final Ordinal Genesis 76 / 329; ordinary ordinal 298');
+ console.assert(T('מלך','he','finalOrdinal')===48&&T('מים','he','finalOrdinal')===47,'Final Ordinal distinguishes Melekh and Mayim');
+ console.assert(METHODS.he.findIndex(m=>m.key==='finalOrdinal')===METHODS.he.findIndex(m=>m.key==='ordinal')+1&&METHODS.he.find(m=>m.key==='finalOrdinal').cat==='base','Final Ordinal follows Ordinal in Base');
+ console.assert(Math.abs(T('אלף','he','letterDivisionRegular')-1/2400)<1e-18,'Letter Division Regular Alef 1/2400');
 console.assert(Math.abs(T('אלף','he','letterDivisionOrdinal')-1/204)<1e-16,'Letter Division Ordinal Alef 1/204');
 console.assert(Math.abs(T('אלף','he','letterDivisionSmall')-1/24)<1e-16,'Letter Division Small Alef 1/24');
 console.assert(calculate('אלף','he',METHODS.he.find(m=>m.key==='letterDivisionRegular')).exactFraction==='1/2400','Letter Division exact fraction');
