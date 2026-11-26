@@ -14,7 +14,7 @@
     "ANCHOR-WORK-20261124-01",
     "DOSSIER-WORK-20261124-MATTER"
   ],
-  "last_commit": "a7272055c3b8f90bbdcac2345a406a4707b3243e",
+  "last_commit": "e78b3c9ac48fe26878e70fea3f0fddc0933b5823",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -145,6 +145,17 @@
       "failed": 0,
       "grade": 4,
       "scope": "defined graph, extended ordinal pair uniqueness and ABC residue closure only"
+    },
+    {
+      "id": "BKR-N02-v2",
+      "result": "PASS",
+      "checks": 1134,
+      "output": "council/evidence/MATTER-bkr-normalized-20261126.json",
+      "commit": "e78b3c9ac48fe26878e70fea3f0fddc0933b5823",
+      "grade": 3,
+      "findings": [
+        "חק unique in all three conventions; 378 unordered pairs per convention"
+      ]
     }
   ],
   "access_gaps": [
@@ -215,20 +226,15 @@
     "RG-007-MATTER-20261124-02",
     "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md"
   ],
-  "last_cycle": "MATTER-RESET-BKR-20261126",
+  "last_cycle": "BKR-N02-v2",
   "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "MATTER-RESET-BKR-20261126",
-    "coverage": "10 mandatory paths fetched; no new historical file certified; 80/20 not measured",
-    "grades": "4 scoped mathematics, 0 physics",
-    "expertise": "discrete combinatorics and integer arithmetic",
-    "progress": "high for graph proof, low for physical prediction without measurable model",
-    "falsifiers": [
-      "counterexample to specified second-difference equations",
-      "alternative pair under defined extended ordinal",
-      "different historical wheel adjacency"
-    ],
-    "next": "Audit normalized final ordinal; resume historical inventory audit; ABC independent review remains pending",
+    "cycle": "BKR-N02-v2",
+    "grades": "3 exhaustive computational reproduction; no formal council decision",
+    "coverage": "Prior BKR report and evidence read; no new historical file certified; full inventory and 80/20 measurement pending",
+    "expertise": "discrete combinatorics",
+    "progress": "high for formal residual classification; low for historical attribution without sources",
+    "next": "Prove normalized residual classification and audit historical wheel adjacency; continue inventory",
     "stalled_cycles": 0
   },
   "coverage": {
@@ -278,6 +284,13 @@
         "failed": 0,
         "report": "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md",
         "source_coverage_expanded": false
+      },
+      {
+        "id": "BKR-N02-v2",
+        "checks": 1134,
+        "primary_source_files": 0,
+        "prior_research_files": 2,
+        "output": "council/evidence/MATTER-bkr-normalized-20261126.json"
       }
     ]
   }
