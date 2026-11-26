@@ -1,0 +1,307 @@
+{
+  "id": "BKR-N02-v2",
+  "source": "calculator.html",
+  "sourceSha": "a36b65dcb6f228756a6744d5507ab135065a8021",
+  "code": "function run(){\nconst L=[...\"אבגדהוזחטיכלמנסעפצקרשתךםןףץ\"], base={\"ך\":\"כ\",\"ם\":\"מ\",\"ן\":\"נ\",\"ף\":\"פ\",\"ץ\":\"צ\"};\nconst v=i=>(i%9+1)*10**Math.floor(i/9);\nconst rows=L.map((l,i)=>{const n=L.indexOf(base[l]||l);return {l,extended:v(i),regular:v(n),ordinal:n+1,next:v((i+9)%27)}});\nconst modes={extended:r=>r.extended-(L.indexOf(r.l)+1)-r.next,hybrid:r=>r.extended-r.ordinal-r.next,calculator:r=>r.regular-r.ordinal-r.next};\nconst results={};for(const [mode,f] of Object.entries(modes)){let hits=[],count=0;for(let i=0;i<27;i++)for(let j=i;j<27;j++){count++;if(f(rows[i])+f(rows[j])===0)hits.push(rows[i].l+rows[j].l)}results[mode]={count,hits,residuals:rows.map(f)}}\nreturn {rows,results};}\nconsole.log(JSON.stringify(run(),null,2));",
+  "output": {
+    "rows": [
+      {
+        "l": "א",
+        "extended": 1,
+        "regular": 1,
+        "ordinal": 1,
+        "next": 10
+      },
+      {
+        "l": "ב",
+        "extended": 2,
+        "regular": 2,
+        "ordinal": 2,
+        "next": 20
+      },
+      {
+        "l": "ג",
+        "extended": 3,
+        "regular": 3,
+        "ordinal": 3,
+        "next": 30
+      },
+      {
+        "l": "ד",
+        "extended": 4,
+        "regular": 4,
+        "ordinal": 4,
+        "next": 40
+      },
+      {
+        "l": "ה",
+        "extended": 5,
+        "regular": 5,
+        "ordinal": 5,
+        "next": 50
+      },
+      {
+        "l": "ו",
+        "extended": 6,
+        "regular": 6,
+        "ordinal": 6,
+        "next": 60
+      },
+      {
+        "l": "ז",
+        "extended": 7,
+        "regular": 7,
+        "ordinal": 7,
+        "next": 70
+      },
+      {
+        "l": "ח",
+        "extended": 8,
+        "regular": 8,
+        "ordinal": 8,
+        "next": 80
+      },
+      {
+        "l": "ט",
+        "extended": 9,
+        "regular": 9,
+        "ordinal": 9,
+        "next": 90
+      },
+      {
+        "l": "י",
+        "extended": 10,
+        "regular": 10,
+        "ordinal": 10,
+        "next": 100
+      },
+      {
+        "l": "כ",
+        "extended": 20,
+        "regular": 20,
+        "ordinal": 11,
+        "next": 200
+      },
+      {
+        "l": "ל",
+        "extended": 30,
+        "regular": 30,
+        "ordinal": 12,
+        "next": 300
+      },
+      {
+        "l": "מ",
+        "extended": 40,
+        "regular": 40,
+        "ordinal": 13,
+        "next": 400
+      },
+      {
+        "l": "נ",
+        "extended": 50,
+        "regular": 50,
+        "ordinal": 14,
+        "next": 500
+      },
+      {
+        "l": "ס",
+        "extended": 60,
+        "regular": 60,
+        "ordinal": 15,
+        "next": 600
+      },
+      {
+        "l": "ע",
+        "extended": 70,
+        "regular": 70,
+        "ordinal": 16,
+        "next": 700
+      },
+      {
+        "l": "פ",
+        "extended": 80,
+        "regular": 80,
+        "ordinal": 17,
+        "next": 800
+      },
+      {
+        "l": "צ",
+        "extended": 90,
+        "regular": 90,
+        "ordinal": 18,
+        "next": 900
+      },
+      {
+        "l": "ק",
+        "extended": 100,
+        "regular": 100,
+        "ordinal": 19,
+        "next": 1
+      },
+      {
+        "l": "ר",
+        "extended": 200,
+        "regular": 200,
+        "ordinal": 20,
+        "next": 2
+      },
+      {
+        "l": "ש",
+        "extended": 300,
+        "regular": 300,
+        "ordinal": 21,
+        "next": 3
+      },
+      {
+        "l": "ת",
+        "extended": 400,
+        "regular": 400,
+        "ordinal": 22,
+        "next": 4
+      },
+      {
+        "l": "ך",
+        "extended": 500,
+        "regular": 20,
+        "ordinal": 11,
+        "next": 5
+      },
+      {
+        "l": "ם",
+        "extended": 600,
+        "regular": 40,
+        "ordinal": 13,
+        "next": 6
+      },
+      {
+        "l": "ן",
+        "extended": 700,
+        "regular": 50,
+        "ordinal": 14,
+        "next": 7
+      },
+      {
+        "l": "ף",
+        "extended": 800,
+        "regular": 80,
+        "ordinal": 17,
+        "next": 8
+      },
+      {
+        "l": "ץ",
+        "extended": 900,
+        "regular": 90,
+        "ordinal": 18,
+        "next": 9
+      }
+    ],
+    "results": {
+      "extended": {
+        "count": 378,
+        "hits": [
+          "חק"
+        ],
+        "residuals": [
+          -10,
+          -20,
+          -30,
+          -40,
+          -50,
+          -60,
+          -70,
+          -80,
+          -90,
+          -100,
+          -191,
+          -282,
+          -373,
+          -464,
+          -555,
+          -646,
+          -737,
+          -828,
+          80,
+          178,
+          276,
+          374,
+          472,
+          570,
+          668,
+          766,
+          864
+        ]
+      },
+      "hybrid": {
+        "count": 378,
+        "hits": [
+          "חק"
+        ],
+        "residuals": [
+          -10,
+          -20,
+          -30,
+          -40,
+          -50,
+          -60,
+          -70,
+          -80,
+          -90,
+          -100,
+          -191,
+          -282,
+          -373,
+          -464,
+          -555,
+          -646,
+          -737,
+          -828,
+          80,
+          178,
+          276,
+          374,
+          484,
+          581,
+          679,
+          775,
+          873
+        ]
+      },
+      "calculator": {
+        "count": 378,
+        "hits": [
+          "חק"
+        ],
+        "residuals": [
+          -10,
+          -20,
+          -30,
+          -40,
+          -50,
+          -60,
+          -70,
+          -80,
+          -90,
+          -100,
+          -191,
+          -282,
+          -373,
+          -464,
+          -555,
+          -646,
+          -737,
+          -828,
+          80,
+          178,
+          276,
+          374,
+          4,
+          21,
+          29,
+          55,
+          63
+        ]
+      }
+    }
+  },
+  "limitations": "Three conventions, unordered pairs with repetition, not lexical frequency. Actual calculator uses HE_VAL, HE_ORD, HE_AYAK. No physical claim."
+}
