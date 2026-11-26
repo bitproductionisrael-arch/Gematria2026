@@ -26,5 +26,16 @@
     "prospects": "high mapping, medium novelty, limited historical authentication",
     "stagnant_cycles": 0
   },
-  "report": "council/research/EDITOR-coverage-001-20261124.md"
+  "report": "council/research/EDITOR-coverage-001-20261124.md",
+  "last_cycle": {
+    "date": "2026-11-26",
+    "type": "dashboard maintenance",
+    "result": "Peer checkpoints reconciled for display; no independent verification or coverage increment",
+    "gaps": [
+      "80/20 not measured",
+      "full corpus union pending",
+      "JUDGE path absent"
+    ],
+    "next": "Merge role inventories by path and SHA; resume oldest October files"
+  }
 }
