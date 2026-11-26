@@ -1,0 +1,79 @@
+{
+  "id": "RG-SOLAR-MASK-v1",
+  "source": "research/rovgrid-aiq-bekar-1887-888-agrippa-fideler-solar-square-2026-11-11.md",
+  "sourceSha": "19e73064189ed68498f417785350ab04b65cfacc",
+  "code": "function run(){const A=[[6,32,3,34,35,1],[7,11,27,28,8,30],[19,14,16,15,23,24],[18,20,22,21,17,13],[25,29,10,9,26,12],[36,5,33,4,2,31]];const perms=a=>a.length?a.flatMap((v,i)=>perms(a.filter((_,j)=>i!==j)).map(p=>[v,...p])):[[]];const P=perms([0,1,2,3,4,5]);const hist={},hits=[];for(const p of P){let d=p.filter((v,i)=>v===i).length,e=p.filter((v,i)=>v===5-i).length;hist[d+\",\"+e]=(hist[d+\",\"+e]||0)+1;if(d===1&&e===1)hits.push(p)}const key=p=>p.join(\",\");const orbit=p=>{let a=p.map((v,i)=>[i,v]),s=new Set();for(let t=0;t<8;t++){let b=a.map(([x,y])=>{if(t&1)x=5-x;if(t&2)y=5-y;if(t&4)[x,y]=[y,x];return [x,y]}).sort((a,b)=>a[0]-b[0]);s.add(key(b.map(x=>x[1])))}return [...s]};let seen=new Set(),orbits={};for(const p of hits){if(seen.has(key(p)))continue;let o=orbit(p);o.forEach(x=>seen.add(x));orbits[o.length]=(orbits[o.length]||0)+1}const sums=M=>[...M.map(r=>r.reduce((a,b)=>a+b)),...M[0].map((_,j)=>M.reduce((s,r)=>s+r[j],0)),M.reduce((s,r,i)=>s+r[i],0),M.reduce((s,r,i)=>s+r[5-i],0)];let failed=0;for(const p of hits){const M=A.map((r,i)=>r.map((v,j)=>v+(p[i]===j?37:0)));if(sums(M).some(x=>x!==148)||new Set(M.flat()).size!==36)failed++}return {base:sums(A),permutations:P.length,hist,valid:hits.length,orbits,failed,example:hits[0],publishedOrbit:orbit([0,2,3,1,5,4]),alternative:hits.find(p=>!orbit([0,2,3,1,5,4]).includes(key(p)))}}\nconsole.log(JSON.stringify(run()));",
+  "output": {
+    "base": [
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111
+    ],
+    "permutations": 720,
+    "hist": {
+      "6,0": 1,
+      "4,0": 12,
+      "3,0": 16,
+      "4,2": 3,
+      "2,2": 24,
+      "3,1": 24,
+      "2,1": 48,
+      "2,0": 60,
+      "1,0": 96,
+      "1,1": 96,
+      "1,2": 48,
+      "2,4": 3,
+      "1,3": 24,
+      "0,2": 60,
+      "0,1": 96,
+      "0,0": 80,
+      "0,4": 12,
+      "0,3": 16,
+      "0,6": 1
+    },
+    "valid": 96,
+    "orbits": {
+      "8": 12
+    },
+    "failed": 0,
+    "example": [
+      0,
+      2,
+      3,
+      1,
+      5,
+      4
+    ],
+    "publishedOrbit": [
+      "0,2,3,1,5,4",
+      "4,5,1,3,2,0",
+      "5,3,2,4,0,1",
+      "1,0,4,2,3,5",
+      "0,3,1,2,5,4",
+      "5,2,4,3,0,1",
+      "4,5,2,1,3,0",
+      "1,0,3,4,2,5"
+    ],
+    "alternative": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      1
+    ]
+  },
+  "proof": "Exactly six equal positive increments, one per row and column, force a permutation mask. Each diagonal must contain exactly one selected cell. For increment 37, selected values exceed 36 and remain distinct, so all qualifying masks yield distinct positive magic squares. D4 orbit counts concern masks, not equivalence of resulting labeled squares with base held fixed.",
+  "limitations": "Local novelty check only; no historical priority or physical claim."
+}
