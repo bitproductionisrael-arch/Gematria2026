@@ -25,5 +25,12 @@
     "Descent": 14,
     "37 OT": "complete",
     "37 NT": "complete"
+  },
+  "last_source_audit": {
+    "date": "2026-11-27",
+    "path": "council/research/ARCHIVIST-20261127-agrippa-direction-audit.md",
+    "sha": "beef006db1bad42513dab22d1299c88cddb56e5f",
+    "older_corpus": "research/rovgrid-agrippa-ibn-ezra-48-path-integral-2026-11-12.md",
+    "next": "Collate Latin Agrippa III.11/25 and Reuchlin; preserve prior source tasks and reading cursors."
   }
 }
