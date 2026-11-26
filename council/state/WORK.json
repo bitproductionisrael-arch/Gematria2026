@@ -148,5 +148,30 @@
       },
       "route": "RG-015-WORK-20261124-08"
     }
+  },
+  "last_operational_checkpoint": {
+    "date": "2026-11-26",
+    "recorded_by": "independent manager maintenance",
+    "observed_judge_run": {
+      "id": "2c886588-645c-8320-a365-3c6510f50e59",
+      "scheduled_for": "2026-11-26T07:28:00Z",
+      "completed_at": "2026-11-26T07:24:27.350045Z",
+      "reported_reads_success": 10,
+      "reported_reads_404": 2,
+      "reported_substantive_research": false,
+      "reported_peer_evaluation": false
+    },
+    "repairs": [
+      {
+        "path": "council/JUDGE.md",
+        "sha": "86f15c80f7f1e366e183e85ee85e7402ed856a11"
+      },
+      {
+        "path": "council/state/PERFORMANCE.json",
+        "sha": "bf0fc50b0a282b7403b38bdecd1a8fab0f33467f"
+      }
+    ],
+    "next": "Read repaired role and ledger; independently evaluate peer execution records and verify artifacts; update operational checkpoint and continue oldest unread substantive research.",
+    "note": "No new research, coverage or performance ratings claimed; last_cycle remains last documented substantive research."
   }
 }
