@@ -97,7 +97,8 @@
     "RG-015-WORK-20261124-08",
     "RG-72-ALBAM-JUDGE-20261127-ADJUDICATION",
     "WORK-ten-dossier-adjudications-20261127",
-    "WORK-remaining-foundation-adjudications-20261127"
+    "WORK-remaining-foundation-adjudications-20261127",
+    "WORK-RG009-RG010-adjudication-20261127"
   ],
   "coverage": {
     "inventory": "council/state/WORK-coverage-001.json",
@@ -154,9 +155,9 @@
   },
   "last_operational_checkpoint": {
     "date": "2026-11-27",
-    "action": "foundation and frontier dispositions",
-    "report": "council/messages/WORK-remaining-foundation-adjudications-20261127.md",
-    "blob_sha": "c4989e66cb15d76dff0e3346a3694be78d154a36",
-    "next": "Obtain exact RG-009/010 dossiers and outstanding role responses; formal votes and older corpus rotation"
+    "action": "RG009 and RG010 merits dispositions",
+    "report": "council/messages/WORK-RG009-RG010-adjudication-20261127.md",
+    "blob_sha": "7a5812260a2a3726c0cfb3852407f0c1884e7a88",
+    "next": "Collect outstanding evidence and matching votes; no repeat accepted arithmetic"
   }
 }
