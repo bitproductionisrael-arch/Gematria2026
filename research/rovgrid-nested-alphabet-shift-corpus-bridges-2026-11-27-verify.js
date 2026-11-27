@@ -1,0 +1,25 @@
+const H="אבגדהוזחטיכלמנסעפצקרשת",E="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const names=["והו","ילי","סיט","עלם","מהש","ללה","אכא","כהת","הזי","אלד","לאו","ההע","יזל","מבה","הרי","הקם","לאו","כלי","לוו","פהל","נלך","ייי","מלה","חהו","נתה","האא","ירת","שאה","ריי","אום","לכב","ושר","יחו","להח","כוק","מנד","אני","חעם","רהע","ייז","ההה","מיך","וול","ילה","סאל","ערי","עשל","מיה","והו","דני","החש","עמם","ננא","נית","מבה","פוי","נמם","ייל","הרח","מצר","ומב","יהה","ענו","מחי","דמב","מנק","איע","חבו","ראה","יבם","היי","מום"];
+const norm=s=>s.replace(/[ךםןףץ]/g,c=>"כמנפצ"["ךםןףץ".indexOf(c)]);
+const ord=(s,a=H)=>[...norm(s)].filter(c=>a.includes(c)).map(c=>a.indexOf(c)+1);
+const sum=a=>a.reduce((t,x)=>t+x,0);
+const reg=x=>x<10?x:x<19?(x-9)*10:(x-18)*100;
+const regular=s=>sum(ord(s).map(reg));
+const rot=(a,k)=>sum(a.map(x=>1+(x-1+k)%(2*k)));
+const lift=(a,k)=>a.map(x=>x>11?x+k-11:x);
+const sig=a=>[sum(a.map(x=>(x-1)%11+1)),a.filter(x=>x<=11).length,a.filter(x=>x>11).length];
+let tests=0;const eq=(a,b)=>{if(JSON.stringify(a)!==JSON.stringify(b))throw Error(JSON.stringify([a,b]));tests++};
+const center=ord(names.slice(24,48).join(""));
+eq(names.length,72);eq(sig(center),[426,42,30]);
+eq(sig(ord("קול רוח פה")),[49,4,4]);eq(sig(ord("בקול ברוח בפה")),[55,7,4]);
+for(let k=11;k<=14;k++){for(const [a,z] of [[center,[426,42,30]],[ord("קול רוח פה"),[49,4,4]],[ord("בקול ברוח בפה"),[55,7,4]]]){const v=lift(a,k);eq([sum(v),rot(v,k)],[z[0]+k*z[2],z[0]+k*z[1]])}eq([sum(lift(center,k))/6,rot(lift(center,k),k)/6],[71+5*k,71+7*k])}
+eq(7*9*12,756);eq(sum(ord("AMIT",E)),43);eq(sum(ord("AMITMIKEROV",E)),136);eq(sum(ord("עמית מייק רוב")),141);eq(sum(ord("MIIKROV",E)),97);
+eq(regular("מיכאל"),101);eq(regular("חיים"),68);eq(regular("אל"),31);eq(regular("קול"),136);eq(37+26+32+10,105);
+const pairs=new Set();let count=0;for(const s of names.map(norm))for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)if(s[i]!==s[j]){pairs.add([s[i],s[j]].sort().join(""));count++}eq([pairs.size,count],[93,192]);
+const en=ord("NEH YISRAEL VAYELEKH MEACHAREIHEM VAYISA AM YISRAEL VAYEHI HEANAN VEHACHOSHEKH VAYAER ET H ET HAYAM BERUACH KADIM AZAH KOL HALAILAH",E);
+eq([en.length,sum(en),rot(en,13)],[112,1100,1776]);eq(1100-756,8*43);eq((1776-1100)-(888-756),4*136);eq(680&816,544);eq(344+544,888);
+eq(sum(ord("עד אחדות אהבה ושלום")),132);eq(sum(ord("עד קול אחדות אהבה ושלום")),169);eq(676,26*26);eq(676,4*169);eq(169-132,37);eq(regular("חקוקות"),620);eq(regular("כתר"),620);eq(regular("בינה"),67);
+const lines=["נה ישראל וילך מאחריהם ויסע עמ","ישראל ויהי הענן והחשך ויאר את","ה את הים ברוח קדים עזה כל הלילה"];
+eq(lines.map(s=>[sum(ord(s)),rot(ord(s),11),...sig(ord(s)).slice(1)]),[[268,268,12,12],[255,321,15,9],[233,299,15,9]]);
+eq(321+299,620);eq(268,4*67);
+console.log(tests+" checks passed");
