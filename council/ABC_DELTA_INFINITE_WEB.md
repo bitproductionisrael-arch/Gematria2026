@@ -6,3 +6,6 @@ Standing research framework until user changes it; hypothesis, not established p
 
 ## 27.11.2026 — מרכז α28 / ספר יצירה / פסקל
 [חבילת המחקר המרכזית](research/ALPHA28-CENTRAL-RESEARCH-20261127.md). לפי הנחיית המשתמש לאמץ את חוק הקינון והביטול כעדשה קבועה בצד ABC∆ ולהחיל על הקורפוס הישן במסגרת 80/20. החישובים המותנים נבדקו; אין להסיק מקור כתבים או גזירת קבוע פיזיקלי. ארבע המחשות וקוד זמינים בחבילה. אין לשנות תזמון או למחוק חומר קודם.
+
+
+[עשרה גשרי α28 והקורפוס](../research/rovgrid-alpha28-ten-structural-bridges-2026-11-27.md) · [קוד](../research/rovgrid-alpha28-ten-structural-bridges-2026-11-27-verify.js): 312 בדיקות עברו במחזור האחרון; יש להמשיך בביקורת עצמאית.
