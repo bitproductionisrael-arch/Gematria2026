@@ -1,0 +1,292 @@
+{
+  "claim": "RG-48-WINDOW-ALL-LENGTHS-v1",
+  "source": "45b34d2408071a4aa06ba1ca7e8e69b38bd9925d",
+  "calculator": "53e70a6e12236b8c77e0557ea53da909f55157d0",
+  "code": "const rows=[\"ויסעמלאכהאלהימההלכלפנימחנהישראלוילכמאחריהמויסעעמודהעננמפניהמויעמדמאחריהמ\",\"ויבאבינמחנהמצרימובינמחנהישראלויהיהעננוהחשכויאראתהלילהולאקרבזהאלזהכלהלילה\",\"ויטמשהאתידועלהימויולכיהוהאתהימברוחקדימעזהכלהלילהוישמאתהימלחרבהויבקעוהמימ\"];\nconst abc=\"אבגדהוזחטיכלמנסעפצקרשת\";\nconst perms=[[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]];\nconst states=[];\nfor(let m=0;m<8;m++)for(const p of perms)states.push(Array.from({length:72},(_,i)=>p.map(j=>rows[j][m&(1<<j)?71-i:i]).join(\"\")));\nconst score=w=>[...w].reduce((s,c)=>s+(abc.indexOf(c)+11)%22+1,0);\nconst invariant=[], targets=[], indexed={};\nfor(let k=1;k<=72;k++)for(let s=0;s<=72-k;s++){\n const sums=states.map(a=>a.slice(s,s+k).reduce((v,w)=>v+score(w),0));\n if(new Set(sums).size===1)invariant.push([s+1,k,sums[0],2*s+k===72]);\n if(sums.every(v=>v===888))targets.push([s+1,k]);\n}\nfor(const i of [35,36]){const h={};for(const a of states)h[a[i]]=(h[a[i]]||0)+1;indexed[i+1]=h;}\nconst result={windows:2628,states:48,invariant,targets,indexed,distinctLists:new Set(states.map(a=>a.join(\",\"))).size,distinctMultisets:new Set(states.map(a=>a.slice().sort().join(\",\"))).size};\nconsole.log(JSON.stringify(result,null,2));",
+  "result": {
+    "windows": 2628,
+    "states": 48,
+    "invariant": [
+      [
+        36,
+        2,
+        56,
+        true
+      ],
+      [
+        35,
+        4,
+        129,
+        true
+      ],
+      [
+        34,
+        6,
+        195,
+        true
+      ],
+      [
+        33,
+        8,
+        312,
+        true
+      ],
+      [
+        32,
+        10,
+        396,
+        true
+      ],
+      [
+        31,
+        12,
+        477,
+        true
+      ],
+      [
+        30,
+        14,
+        543,
+        true
+      ],
+      [
+        29,
+        16,
+        632,
+        true
+      ],
+      [
+        28,
+        18,
+        687,
+        true
+      ],
+      [
+        27,
+        20,
+        763,
+        true
+      ],
+      [
+        26,
+        22,
+        819,
+        true
+      ],
+      [
+        25,
+        24,
+        888,
+        true
+      ],
+      [
+        24,
+        26,
+        990,
+        true
+      ],
+      [
+        23,
+        28,
+        1048,
+        true
+      ],
+      [
+        22,
+        30,
+        1156,
+        true
+      ],
+      [
+        21,
+        32,
+        1191,
+        true
+      ],
+      [
+        20,
+        34,
+        1232,
+        true
+      ],
+      [
+        19,
+        36,
+        1302,
+        true
+      ],
+      [
+        18,
+        38,
+        1377,
+        true
+      ],
+      [
+        17,
+        40,
+        1451,
+        true
+      ],
+      [
+        16,
+        42,
+        1484,
+        true
+      ],
+      [
+        15,
+        44,
+        1573,
+        true
+      ],
+      [
+        14,
+        46,
+        1648,
+        true
+      ],
+      [
+        13,
+        48,
+        1706,
+        true
+      ],
+      [
+        12,
+        50,
+        1775,
+        true
+      ],
+      [
+        11,
+        52,
+        1858,
+        true
+      ],
+      [
+        10,
+        54,
+        1911,
+        true
+      ],
+      [
+        9,
+        56,
+        2008,
+        true
+      ],
+      [
+        8,
+        58,
+        2087,
+        true
+      ],
+      [
+        7,
+        60,
+        2146,
+        true
+      ],
+      [
+        6,
+        62,
+        2202,
+        true
+      ],
+      [
+        5,
+        64,
+        2279,
+        true
+      ],
+      [
+        4,
+        66,
+        2324,
+        true
+      ],
+      [
+        3,
+        68,
+        2405,
+        true
+      ],
+      [
+        2,
+        70,
+        2506,
+        true
+      ],
+      [
+        1,
+        72,
+        2577,
+        true
+      ]
+    ],
+    "targets": [
+      [
+        25,
+        24
+      ]
+    ],
+    "indexed": {
+      "36": {
+        "מנד": 2,
+        "מדנ": 2,
+        "נמד": 2,
+        "נדמ": 2,
+        "דמנ": 2,
+        "דנמ": 2,
+        "אנד": 2,
+        "אדנ": 2,
+        "נאד": 2,
+        "נדא": 2,
+        "דאנ": 2,
+        "דנא": 2,
+        "מני": 2,
+        "מינ": 2,
+        "נמי": 2,
+        "נימ": 2,
+        "ימנ": 2,
+        "ינמ": 2,
+        "אני": 2,
+        "אינ": 2,
+        "נאי": 2,
+        "ניא": 2,
+        "יאנ": 2,
+        "ינא": 2
+      },
+      "37": {
+        "אני": 2,
+        "אינ": 2,
+        "נאי": 2,
+        "ניא": 2,
+        "יאנ": 2,
+        "ינא": 2,
+        "מני": 2,
+        "מינ": 2,
+        "נמי": 2,
+        "נימ": 2,
+        "ימנ": 2,
+        "ינמ": 2,
+        "אנד": 2,
+        "אדנ": 2,
+        "נאד": 2,
+        "נדא": 2,
+        "דאנ": 2,
+        "דנא": 2,
+        "מנד": 2,
+        "מדנ": 2,
+        "נמד": 2,
+        "נדמ": 2,
+        "דמנ": 2,
+        "דנמ": 2
+      }
+    },
+    "distinctLists": 48,
+    "distinctMultisets": 24
+  },
+  "proof": "Independent row reversal means a window sum is invariant iff each row's forward and reflected window sums agree separately. Centered windows satisfy this for every additive map. Noncentered windows can agree accidentally for a particular map. All lengths scanned, not only length 24.",
+  "limitations": "No historical or identity inference; novelty checked against November 12 source only. No elapsed 80/20 measurement."
+}
