@@ -2092,7 +2092,7 @@ function permutationData(input){
  permCacheKey=key;
  return permCacheData=computePermutationData(input);
 }
-function hasPermutationInput(){return Boolean(document.getElementById('q')?.value?.trim())}
+function hasPermutationInput(){const q=document.getElementById('q')?.value||'';return Boolean(q.trim())&&parseWordEquation(q)===null}
 function permMagnetText(d){
  if(d.error)return L('חריגה מהמגבלה 500 אותיות','Limit of 500 letters exceeded');
  if(!d.n)return L('לא נמצאו אותיות לחישוב','No letters to calculate');
@@ -2563,9 +2563,9 @@ async function saveSelectedPoster(){
 }
 
 /* ---------- events ---------- */
-document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms'){if(state.methodKey&&state.methodKey.startsWith('homePower_'))state.homePowerMappingKey=state.methodKey;renderForms()}}));
-let lightCalcTimer;
- document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>{renderAll(false);if(state.tab==='forms')renderForms()},220)});
+document.querySelectorAll('.main-tabs button').forEach(b=>b.addEventListener('click',()=>{state.tab=b.dataset.tab;document.querySelectorAll('.main-tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.toggle('active',x.id==='tab-'+state.tab));if(state.tab==='number')renderNumber();if(state.tab==='relations')renderRelations();if(state.tab==='compare')renderCompare();if(state.tab==='repeat')renderRepeat();if(state.tab==='forms'){if(state.methodKey&&state.methodKey.startsWith('homePower_'))state.homePowerMappingKey=state.methodKey;renderForms()}}));
+let lightCalcTimer,lastInputWasWordEquation=false;
+ document.getElementById('q').addEventListener('input',()=>{clearTimeout(lightCalcTimer);clearMatrixComparisonSelections();document.getElementById('compareA').value=document.getElementById('q').value;document.getElementById('repeatPhrase').value=document.getElementById('q').value;lightCalcTimer=setTimeout(()=>{const equationNow=parseWordEquation(document.getElementById('q').value)!==null;const refreshActive=equationNow||lastInputWasWordEquation;lastInputWasWordEquation=equationNow;renderAll(refreshActive);if(!refreshActive&&state.tab==='forms')renderForms()},220)});
  
 document.getElementById('sampleSelect').addEventListener('change',e=>{if(e.target.value){clearMatrixComparisonSelections();document.getElementById('q').value=e.target.value;document.getElementById('compareA').value=e.target.value;document.getElementById('repeatPhrase').value=e.target.value;renderAll()}});
 document.getElementById('repeatPhrase').addEventListener('input',()=>{clearMatrixComparisonSelections();renderRepeat();renderResults()});
