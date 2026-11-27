@@ -14,7 +14,7 @@
     "ANCHOR-WORK-20261124-01",
     "DOSSIER-WORK-20261124-MATTER"
   ],
-  "last_commit": "fcbd5062937260937a0e2aef0e544a1c224bd850",
+  "last_commit": "14d2d922407ad451df4fcc16e1b614be640c4125",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -168,6 +168,21 @@
       "output": "council/evidence/MATTER-shell-bijection-20261127.json",
       "checks": 500045,
       "failed": 0
+    },
+    {
+      "id": "MATTER-ABSORBING-WALK-20261128",
+      "result": "PASS",
+      "checks": 207,
+      "failed": 0,
+      "report": "research/MATTER-absorbing-walk-twin-cuboids-20261128.md",
+      "output": "research/MATTER-absorbing-walk-twin-cuboids-20261128.json",
+      "commit": "14d2d922407ad451df4fcc16e1b614be640c4125",
+      "findings": [
+        "equal e1,e2 implies equal unnormalized cumulative killed-walk counts through min side",
+        "first difference at m+1 equals 2rV/m",
+        "twins differ first at k=9 by 1040; 286 boxes and 24 matched pairs checked"
+      ],
+      "scope": "absorbing discrete lattice; not normalized probability or laboratory evidence"
     }
   ],
   "access_gaps": [
@@ -304,6 +319,15 @@
         "prior_research_files": 2,
         "output": "council/evidence/MATTER-bkr-normalized-20261126.json"
       }
+    ]
+  },
+  "latest_research": {
+    "id": "MATTER-ABSORBING-WALK-20261128",
+    "report": "research/MATTER-absorbing-walk-twin-cuboids-20261128.md",
+    "next_options": [
+      "anisotropic or reflecting diffusion",
+      "continuous-time asymptotics",
+      "independent new question"
     ]
   }
 }
