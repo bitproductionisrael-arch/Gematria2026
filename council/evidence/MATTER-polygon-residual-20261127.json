@@ -1,0 +1,91 @@
+{
+  "id": "MATTER-POLYGON-RESIDUAL-v1",
+  "sources": [
+    "research/rovgrid-figurate-phase-ladder-55-81-136-271-275-541-816-2026-11-16.md",
+    "council/research/ARCHIVIST-inline-nicomachus-20261126.md",
+    "research/rovgrid-david-jesus-7-33-40-logos-simeon-2026-11-26.md"
+  ],
+  "proof": "P_s(n)=((s-2)n²+(4-s)n)/2. Substitution gives residuals (4-s)n and sn+3-s. Thus the even residual is positive only for triangles, zero for squares, negative for s>=5. The odd residual is positive for all n>=1, s>=3. This extends the Nicomachus briefing; corpus-wide novelty not established. No physical claim.",
+  "code": "const P=(s,n)=>n+(s-2)*n*(n-1)/2;\nlet checks=0, failures=[];\nfor(let n=1;n<=200;n++)for(let s=3;s<=20;s++){\n for(const [actual,expected] of [[4*P(s,n)-P(s,2*n),(4-s)*n],[4*P(s,n)-P(s,2*n-1),s*n+3-s]]){checks++;if(actual!==expected)failures.push({s,n,actual,expected});}\n}\nconst cuts=a=>a.slice(0,-1).map((_,i)=>{let l=a.slice(0,i+1).reduce((x,y)=>x+y,0),r=a.slice(i+1).reduce((x,y)=>x+y,0);return {cut:i+1,l,r,delta:l-r}});\nreturn {checks,failures,greek:cuts([380,139,80,730,510,370,1538,670]),hebrew:cuts([30,207,140,401,806])};",
+  "output": {
+    "checks": 7200,
+    "failures": [],
+    "greek": [
+      {
+        "cut": 1,
+        "l": 380,
+        "r": 4037,
+        "delta": -3657
+      },
+      {
+        "cut": 2,
+        "l": 519,
+        "r": 3898,
+        "delta": -3379
+      },
+      {
+        "cut": 3,
+        "l": 599,
+        "r": 3818,
+        "delta": -3219
+      },
+      {
+        "cut": 4,
+        "l": 1329,
+        "r": 3088,
+        "delta": -1759
+      },
+      {
+        "cut": 5,
+        "l": 1839,
+        "r": 2578,
+        "delta": -739
+      },
+      {
+        "cut": 6,
+        "l": 2209,
+        "r": 2208,
+        "delta": 1
+      },
+      {
+        "cut": 7,
+        "l": 3747,
+        "r": 670,
+        "delta": 3077
+      }
+    ],
+    "hebrew": [
+      {
+        "cut": 1,
+        "l": 30,
+        "r": 1554,
+        "delta": -1524
+      },
+      {
+        "cut": 2,
+        "l": 237,
+        "r": 1347,
+        "delta": -1110
+      },
+      {
+        "cut": 3,
+        "l": 377,
+        "r": 1207,
+        "delta": -830
+      },
+      {
+        "cut": 4,
+        "l": 778,
+        "r": 806,
+        "delta": -28
+      }
+    ]
+  },
+  "checkpoint": {
+    "historical_sources_reviewed": 2,
+    "new_docket": "RG-DAVID-7-33",
+    "intake": "word-cut control only; translation and matched controls pending",
+    "next": "construct explicit disjoint lattice bijection; check duplicate general polygon formula",
+    "coverage": "no new full-file certification; 80/20 time not measured"
+  }
+}
