@@ -1,0 +1,390 @@
+{
+  "claim": "RG-72-ALBAM-MATTER-ROT-CONTROL-20261127",
+  "source": "f9a8c878023ad06bc765a1b6ee55acdb2ea2dac3",
+  "rows": [
+    "ויסעמלאכהאלהימההלכלפנימחנהישראלוילכמאחריהמויסעעמודהעננמפניהמויעמדמאחריהמ",
+    "ויבאבינמחנהמצרימובינמחנהישראלויהיהעננוהחשכויאראתהלילהולאקרבזהאלזהכלהלילה",
+    "ויטמשהאתידועלהימויולכיהוהאתהימברוחקדימעזהכלהלילהוישמאתהימלחרבהויבקעוהמימ"
+  ],
+  "variants": [
+    {
+      "mask": 0,
+      "rows": [
+        598,
+        555,
+        616
+      ],
+      "total": 1769
+    },
+    {
+      "mask": 1,
+      "rows": [
+        619,
+        555,
+        616
+      ],
+      "total": 1790
+    },
+    {
+      "mask": 2,
+      "rows": [
+        598,
+        555,
+        602
+      ],
+      "total": 1755
+    },
+    {
+      "mask": 3,
+      "rows": [
+        619,
+        555,
+        602
+      ],
+      "total": 1776
+    },
+    {
+      "mask": 4,
+      "rows": [
+        598,
+        555,
+        598
+      ],
+      "total": 1751
+    },
+    {
+      "mask": 5,
+      "rows": [
+        619,
+        555,
+        598
+      ],
+      "total": 1772
+    },
+    {
+      "mask": 6,
+      "rows": [
+        598,
+        555,
+        584
+      ],
+      "total": 1737
+    },
+    {
+      "mask": 7,
+      "rows": [
+        619,
+        555,
+        584
+      ],
+      "total": 1758
+    },
+    {
+      "mask": 8,
+      "rows": [
+        598,
+        555,
+        641
+      ],
+      "total": 1794
+    },
+    {
+      "mask": 9,
+      "rows": [
+        619,
+        555,
+        641
+      ],
+      "total": 1815
+    },
+    {
+      "mask": 10,
+      "rows": [
+        598,
+        555,
+        627
+      ],
+      "total": 1780
+    },
+    {
+      "mask": 11,
+      "rows": [
+        619,
+        555,
+        627
+      ],
+      "total": 1801
+    },
+    {
+      "mask": 12,
+      "rows": [
+        598,
+        555,
+        623
+      ],
+      "total": 1776
+    },
+    {
+      "mask": 13,
+      "rows": [
+        619,
+        555,
+        623
+      ],
+      "total": 1797
+    },
+    {
+      "mask": 14,
+      "rows": [
+        598,
+        555,
+        609
+      ],
+      "total": 1762
+    },
+    {
+      "mask": 15,
+      "rows": [
+        619,
+        555,
+        609
+      ],
+      "total": 1783
+    }
+  ],
+  "shifts": [
+    {
+      "t": 0,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        268,
+        255,
+        233
+      ]
+    },
+    {
+      "t": 1,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        292,
+        257,
+        235
+      ]
+    },
+    {
+      "t": 2,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        294,
+        237,
+        259
+      ]
+    },
+    {
+      "t": 3,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        274,
+        217,
+        261
+      ]
+    },
+    {
+      "t": 4,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        298,
+        241,
+        263
+      ]
+    },
+    {
+      "t": 5,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        322,
+        265,
+        287
+      ]
+    },
+    {
+      "t": 6,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        346,
+        289,
+        311
+      ]
+    },
+    {
+      "t": 7,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        326,
+        291,
+        313
+      ]
+    },
+    {
+      "t": 8,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        328,
+        315,
+        337
+      ]
+    },
+    {
+      "t": 9,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        330,
+        295,
+        361
+      ]
+    },
+    {
+      "t": 10,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        288,
+        319,
+        341
+      ]
+    },
+    {
+      "t": 11,
+      "inv": 36,
+      "hits": [
+        [
+          25,
+          24
+        ]
+      ],
+      "center": [
+        268,
+        321,
+        299
+      ]
+    },
+    {
+      "t": 12,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        270,
+        323,
+        301
+      ]
+    },
+    {
+      "t": 13,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        206,
+        259,
+        259
+      ]
+    },
+    {
+      "t": 14,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        230,
+        283,
+        283
+      ]
+    },
+    {
+      "t": 15,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        232,
+        285,
+        285
+      ]
+    },
+    {
+      "t": 16,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        256,
+        309,
+        287
+      ]
+    },
+    {
+      "t": 17,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        236,
+        267,
+        289
+      ]
+    },
+    {
+      "t": 18,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        216,
+        225,
+        203
+      ]
+    },
+    {
+      "t": 19,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        240,
+        249,
+        205
+      ]
+    },
+    {
+      "t": 20,
+      "inv": 36,
+      "hits": [
+        [
+          22,
+          30
+        ]
+      ],
+      "center": [
+        264,
+        273,
+        229
+      ]
+    },
+    {
+      "t": 21,
+      "inv": 36,
+      "hits": [],
+      "center": [
+        288,
+        297,
+        231
+      ]
+    }
+  ],
+  "proof": "For shift t, independent reversals preserve a window iff each row forward sum equals reflected sum. Row permutations do not affect additive score. The four binary transliteration edits have deltas +21,-14,-18,+25; all 16 combinations enumerated. These are post-target controls, not linguistic probabilities.",
+  "limitations": "No independent textual witness or linguistic standard established. Full corpus novelty and 80/20 elapsed allocation not verified.",
+  "next": "Independent fixed transliteration convention and held-out text."
+}
