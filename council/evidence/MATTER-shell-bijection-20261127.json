@@ -1,0 +1,11 @@
+{
+  "id": "MATTER-SHELL-BIJECTION-01",
+  "proof": "For n>=3, tetrahedral shell of width 3 is disjoint union T(n),T(n-1),T(n-2). Use tagged coordinates (j,x,y), x,y>=0, x+y<=n-j-1. Move outer diagonal of sector 0: (0,n-1,0) to unique center; remaining (0,x,y) with x+y=n-1 and y>=1 to (2,x,y-1). This fills missing diagonal of sector 2. All other points unchanged. Result exactly three disjoint T(n-1) sectors and center. This proves explicit cardinality bijection, not adjacency or 541 to 816 embedding.",
+  "code": "let checks=0,fail=[];for(let n=3;n<=100;n++){let seen=new Set(),count=0;for(let j=0;j<3;j++)for(let x=0;x<n-j;x++)for(let y=0;y<n-j-x;y++){let target=j===0&&x+y===n-1?(x===n-1?'center':`2,${x},${y-1}`):`${j},${x},${y}`;if(seen.has(target))fail.push([n,target]);seen.add(target);count++}let expected=new Set(['center']);for(let j=0;j<3;j++)for(let x=0;x<n-1;x++)for(let y=0;y<n-1-x;y++)expected.add(`${j},${x},${y}`);if(seen.size!==expected.size||[...seen].some(v=>!expected.has(v)))fail.push(n);checks+=count}",
+  "output": {
+    "checks": 500045,
+    "fail": []
+  },
+  "previous": "council/evidence/MATTER-simplex-shell-difference-20261127.json",
+  "next": "541 to 816 adjacency embedding remains open"
+}
