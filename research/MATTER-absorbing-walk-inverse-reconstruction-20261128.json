@@ -1,0 +1,277 @@
+{
+  "code": "function run(){\n const K=21, choose=Array.from({length:K+1},(_,n)=>Array.from({length:n+1},(_,i)=>{let v=1n;for(let j=1;j<=i;j++)v=v*BigInt(n-j+1)/BigInt(j);return v}));\n const pow=(b,k)=>BigInt(b)**BigInt(k), fact=n=>{let v=1n;for(let i=2;i<=n;i++)v*=BigInt(i);return v};\n const path=n=>{let v=Array(n).fill(1n),w=[];for(let k=0;k<=K;k++){w.push(v.reduce((s,x)=>s+x,0n));v=v.map((_,i)=>(v[i-1]??0n)+(v[i+1]??0n))}return w};\n const paths=Array.from({length:29},(_,n)=>n?path(n):null), g=paths[K+1].map((w,k)=>BigInt(K+1)*pow(2,k)-w);\n const conv=(x,y,z,k)=>{let v=0n;for(let i=0;i<=k;i++)for(let j=0;j<=k-i;j++)v+=choose[k][i]*choose[k-i][j]*x[i]*y[j]*z[k-i-j];return v};\n const t=g.map((_,k)=>pow(2,k));const u=[],v=[],w=[];for(let k=0;k<=K;k++){u.push(conv(g,t,t,k));v.push(conv(g,g,t,k));w.push(conv(g,g,g,k))}\n const base=(S,Q,k)=>u[k]*Q-v[k]*S+w[k];\n const volume=(a,b,c)=>BigInt(a*b*c);\n const loss=(a,b,c,k)=>volume(a,b,c)*pow(6,k)-conv(paths[a],paths[b],paths[c],k);\n let checks=0;function ck(b,s){checks++;if(!b)throw Error(\"check \"+checks+\" \"+s)}\n let count=0, cases={repeatedMinimum:0,allEqual:0},sample=[];\n for(let a=2;a<=20;a++)for(let b=a;b<=20;b++)for(let c=b;c<=20;c++){\n  count++;let L1=loss(a,b,c,1),L2=loss(a,b,c,2),Q=L1/2n,S=(22n*Q-L2)/8n;ck(Q===BigInt(a*b+a*c+b*c)&&S===BigInt(a+b+c),\"S,Q\");\n  let k=0;while(k<=K&&base(S,Q,k)===loss(a,b,c,k))k++;ck(k===a+1,\"first defect\");\n  let m=BigInt(k-1),r=1+Number(b===a)+Number(c===a),P=Q-m*(S-m),d=base(S,Q,k)-loss(a,b,c,k);ck(d===2n*BigInt(r)*P,\"defect magnitude\");\n  let sum=S-m,D=sum*sum-4n*P,root=BigInt(Math.round(Math.sqrt(Number(D))));ck(root*root===D,\"discriminant\");\n  ck(m===BigInt(a)&&(sum-root)/2n===BigInt(b)&&(sum+root)/2n===BigInt(c),\"reconstruction\");\n  if(r>1)cases.repeatedMinimum++;if(r===3)cases.allEqual++;\n }\n for(const a of [[8,20,26],[10,16,28],[2,2,2],[2,2,3]]){const [x,y,z]=a,S=BigInt(x+y+z),Q=BigInt(x*y+x*z+y*z);let k=x+1;sample.push({a,S:String(S),Q:String(Q),k,baseline:String(base(S,Q,k)),actual:String(loss(...a,k)),defect:String(base(S,Q,k)-loss(...a,k))})}\n const deriv=(a,k)=>{let v=0n;for(let i=0;i<=k;i++)v+=choose[k][i]*(-6n)**BigInt(k-i)*loss(...a,i);return v};\n const pder=n=>{let x=Array(n).fill(1n),out=[];for(let k=0;k<=K;k++){out.push(x.reduce((s,x)=>s+x,0n));x=x.map((v,i)=>(x[i-1]??0n)+(x[i+1]??0n)-2n*v)}return out};\n const pA=[8,20,26].map(pder),pB=[10,16,28].map(pder);\n let continuous=[];for(let k=1;k<=18;k++){let A=deriv([8,20,26],k),B=deriv([10,16,28],k);ck(A===-conv(...pA,k)&&B===-conv(...pB,k),\"generator derivatives\");if(k<=8)ck(A===B,\"deriv equality\");if(k===9)ck(B-A===1040n,\"deriv 9\");continuous.push({k,A:String(A),B:String(B),delta:String(B-A),factorial:String(fact(k))})}\n const rates=[1,2,3],first=a=>2*(rates[0]*a[1]*a[2]+rates[1]*a[0]*a[2]+rates[2]*a[0]*a[1]);ck(first([8,20,26])===2832&&first([10,16,28])===2976,\"anisotropic\");\n return {checks,count,cases,sample,universal:u.slice(0,12).map((x,k)=>({k,u:String(x),v:String(v[k]),w:String(w[k])})),continuous,anisotropic:{rates,A:first([8,20,26]),B:first([10,16,28])},method:\"exact BigInt path DP + multinomial interleavings; generator powers independent of Poisson transform\"};\n}\nconsole.log(JSON.stringify(run(),null,2));",
+  "output": {
+    "checks": 6678,
+    "count": 1330,
+    "cases": {
+      "repeatedMinimum": 190,
+      "allEqual": 19
+    },
+    "sample": [
+      {
+        "a": [
+          8,
+          20,
+          26
+        ],
+        "S": "54",
+        "Q": "888",
+        "k": 9,
+        "baseline": "15311854560",
+        "actual": "15311853520",
+        "defect": "1040"
+      },
+      {
+        "a": [
+          10,
+          16,
+          28
+        ],
+        "S": "54",
+        "Q": "888",
+        "k": 11,
+        "baseline": "619571488080",
+        "actual": "619571487184",
+        "defect": "896"
+      },
+      {
+        "a": [
+          2,
+          2,
+          2
+        ],
+        "S": "6",
+        "Q": "12",
+        "k": 3,
+        "baseline": "1536",
+        "actual": "1512",
+        "defect": "24"
+      },
+      {
+        "a": [
+          2,
+          2,
+          3
+        ],
+        "S": "7",
+        "Q": "16",
+        "k": 3,
+        "baseline": "2152",
+        "actual": "2128",
+        "defect": "24"
+      }
+    ],
+    "universal": [
+      {
+        "k": 0,
+        "u": "0",
+        "v": "0",
+        "w": "0"
+      },
+      {
+        "k": 1,
+        "u": "2",
+        "v": "0",
+        "w": "0"
+      },
+      {
+        "k": 2,
+        "u": "22",
+        "v": "8",
+        "w": "0"
+      },
+      {
+        "k": 3,
+        "u": "184",
+        "v": "120",
+        "w": "48"
+      },
+      {
+        "k": 4,
+        "u": "1382",
+        "v": "1240",
+        "w": "864"
+      },
+      {
+        "k": 5,
+        "u": "9808",
+        "v": "10920",
+        "w": "10320"
+      },
+      {
+        "k": 6,
+        "u": "67236",
+        "v": "87992",
+        "w": "102240"
+      },
+      {
+        "k": 7,
+        "u": "450336",
+        "v": "670208",
+        "w": "909552"
+      },
+      {
+        "k": 8,
+        "u": "2966694",
+        "v": "4910744",
+        "w": "7543200"
+      },
+      {
+        "k": 9,
+        "u": "19303216",
+        "v": "34980552",
+        "w": "59548560"
+      },
+      {
+        "k": 10,
+        "u": "124400972",
+        "v": "243891208",
+        "w": "453231360"
+      },
+      {
+        "k": 11,
+        "u": "795621088",
+        "v": "1672110528",
+        "w": "3353930448"
+      }
+    ],
+    "continuous": [
+      {
+        "k": 1,
+        "A": "1776",
+        "B": "1776",
+        "delta": "0",
+        "factorial": "1"
+      },
+      {
+        "k": 2,
+        "A": "-2208",
+        "B": "-2208",
+        "delta": "0",
+        "factorial": "2"
+      },
+      {
+        "k": 3,
+        "A": "4896",
+        "B": "4896",
+        "delta": "0",
+        "factorial": "6"
+      },
+      {
+        "k": 4,
+        "A": "-13920",
+        "B": "-13920",
+        "delta": "0",
+        "factorial": "24"
+      },
+      {
+        "k": 5,
+        "A": "45984",
+        "B": "45984",
+        "delta": "0",
+        "factorial": "120"
+      },
+      {
+        "k": 6,
+        "A": "-170640",
+        "B": "-170640",
+        "delta": "0",
+        "factorial": "720"
+      },
+      {
+        "k": 7,
+        "A": "702480",
+        "B": "702480",
+        "delta": "0",
+        "factorial": "5040"
+      },
+      {
+        "k": 8,
+        "A": "-3189408",
+        "B": "-3189408",
+        "delta": "0",
+        "factorial": "40320"
+      },
+      {
+        "k": 9,
+        "A": "15875728",
+        "B": "15876768",
+        "delta": "1040",
+        "factorial": "362880"
+      },
+      {
+        "k": 10,
+        "A": "-85930464",
+        "B": "-85948944",
+        "delta": "-18480",
+        "factorial": "3628800"
+      },
+      {
+        "k": 11,
+        "A": "500796936",
+        "B": "500996464",
+        "delta": "199528",
+        "factorial": "39916800"
+      },
+      {
+        "k": 12,
+        "A": "-3111672144",
+        "B": "-3113432240",
+        "delta": "-1760096",
+        "factorial": "479001600"
+      },
+      {
+        "k": 13,
+        "A": "20440154376",
+        "B": "20454690672",
+        "delta": "14536296",
+        "factorial": "6227020800"
+      },
+      {
+        "k": 14,
+        "A": "-141040397232",
+        "B": "-141162279696",
+        "delta": "-121882464",
+        "factorial": "87178291200"
+      },
+      {
+        "k": 15,
+        "A": "1017597880872",
+        "B": "1018676063264",
+        "delta": "1078182392",
+        "factorial": "1307674368000"
+      },
+      {
+        "k": 16,
+        "A": "-7651322370144",
+        "B": "-7661407865504",
+        "delta": "-10085495360",
+        "factorial": "20922789888000"
+      },
+      {
+        "k": 17,
+        "A": "59793776816976",
+        "B": "59892001011504",
+        "delta": "98224194528",
+        "factorial": "355687428096000"
+      },
+      {
+        "k": 18,
+        "A": "-484423047012832",
+        "B": "-485403641997472",
+        "delta": "-980594984640",
+        "factorial": "6402373705728000"
+      }
+    ],
+    "anisotropic": {
+      "rates": [
+        1,
+        2,
+        3
+      ],
+      "A": 2832,
+      "B": 2976
+    },
+    "method": "exact BigInt path DP + multinomial interleavings; generator powers independent of Poisson transform"
+  }
+}
