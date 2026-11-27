@@ -95,7 +95,8 @@
     "RG-015-WORK-20261124-06",
     "RG-015-WORK-20261124-07",
     "RG-015-WORK-20261124-08",
-    "RG-72-ALBAM-JUDGE-20261127-ADJUDICATION"
+    "RG-72-ALBAM-JUDGE-20261127-ADJUDICATION",
+    "WORK-ten-dossier-adjudications-20261127"
   ],
   "coverage": {
     "inventory": "council/state/WORK-coverage-001.json",
@@ -152,9 +153,9 @@
   },
   "last_operational_checkpoint": {
     "date": "2026-11-27",
-    "action": "inline scoped adjudication",
-    "report": "council/messages/RG-72-ALBAM-JUDGE-20261127-ADJUDICATION.md",
-    "blob_sha": "25e0de97f04bb87958b8176f409cd2910ee01771",
-    "next": "Review responses and exact scoped votes; rotate older corpus dossiers"
+    "action": "ten scoped dossier adjudications",
+    "report": "council/messages/WORK-ten-dossier-adjudications-20261127.md",
+    "blob_sha": "77dbf5da20bcb643008818e0e943ceb9f3851523",
+    "next": "Collect role responses and scoped votes; continue corpus rotation"
   }
 }
