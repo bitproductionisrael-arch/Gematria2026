@@ -14,7 +14,7 @@
     "ANCHOR-WORK-20261124-01",
     "DOSSIER-WORK-20261124-MATTER"
   ],
-  "last_commit": "14d2d922407ad451df4fcc16e1b614be640c4125",
+  "last_commit": "18f249a07d66cf12d6910e313ca9fa6791ad100a",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -183,6 +183,22 @@
         "twins differ first at k=9 by 1040; 286 boxes and 24 matched pairs checked"
       ],
       "scope": "absorbing discrete lattice; not normalized probability or laboratory evidence"
+    },
+    {
+      "id": "MATTER-ABSORBING-WALK-INVERSE-20261128",
+      "result": "PASS",
+      "checks": 6678,
+      "failed": 0,
+      "report": "research/MATTER-absorbing-walk-inverse-reconstruction-20261128.md",
+      "output": "research/MATTER-absorbing-walk-inverse-reconstruction-20261128.json",
+      "commit": "18f249a07d66cf12d6910e313ca9fa6791ad100a",
+      "findings": [
+        "inverse reconstruction from unnormalized boundary losses for all integer cuboids with min side >=2",
+        "first defect from universal baseline at m+1 equals 2rV/m",
+        "continuous-time difference has leading ninth-order term 1040(lambda t)^9/9! for twins",
+        "anisotropic counterexample and reflecting-boundary nonidentifiability"
+      ],
+      "scope": "exact mathematical model; no experimental validation or noise robustness"
     }
   ],
   "access_gaps": [
@@ -322,12 +338,11 @@
     ]
   },
   "latest_research": {
-    "id": "MATTER-ABSORBING-WALK-20261128",
-    "report": "research/MATTER-absorbing-walk-twin-cuboids-20261128.md",
+    "id": "MATTER-ABSORBING-WALK-INVERSE-20261128",
+    "report": "research/MATTER-absorbing-walk-inverse-reconstruction-20261128.md",
     "next_options": [
-      "anisotropic or reflecting diffusion",
-      "continuous-time asymptotics",
-      "independent new question"
+      "noise robustness and optimal sampling",
+      "independent research question"
     ]
   }
 }
