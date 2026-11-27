@@ -1,3 +1,6 @@
+# Mandatory judicial evidence priority
+Read [JUDGE_EVIDENCE_PRIORITY](JUDGE_EVIDENCE_PRIORITY.md) before selecting work. An outstanding assigned evidence order blocks autonomous research until explicit JUDGE release. A blocker report does not release the assignment.
+
 # ROVGRID — SPIRIT
 Canonical role entry point, created 2026-11-27 to repair verified missing-path 404. This is an operational repair, not a research result. Existing scheduled instructions and later direct user instructions retain precedence. No schedule change.
 
