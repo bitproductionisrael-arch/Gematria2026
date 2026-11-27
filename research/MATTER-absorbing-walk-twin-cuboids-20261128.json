@@ -1,0 +1,501 @@
+{
+  "code": "function run(){\n const K=18;const f=(a,b,c)=>{const N=a*b*c;let v=Array(N).fill(1n);const ns=Array.from({length:N},(_,i)=>{const x=i%a,y=Math.floor(i/a)%b,z=Math.floor(i/(a*b));return [x>0?i-1:-1,x<a-1?i+1:-1,y>0?i-a:-1,y<b-1?i+a:-1,z>0?i-a*b:-1,z<c-1?i+a*b:-1].filter(j=>j>=0)});let W=[];for(let k=0;k<=K;k++){W.push(v.reduce((s,x)=>s+x,0n));v=ns.map(js=>js.reduce((s,j)=>s+v[j],0n))}return W};\n const path=n=>{let v=Array(n).fill(1n),w=[];for(let k=0;k<=K;k++){w.push(v.reduce((s,x)=>s+x,0n));v=v.map((_,i)=>(v[i-1]??0n)+(v[i+1]??0n))}return w};\n const C=Array.from({length:K+1},(_,n)=>Array.from({length:n+1},(_,i)=>{let c=1n;for(let j=1;j<=i;j++)c=c*BigInt(n-j+1)/BigInt(j);return c}));\n const sep=(a,b,c)=>{let x=path(a),y=path(b),z=path(c);return Array.from({length:K+1},(_,k)=>{let s=0n;for(let i=0;i<=k;i++)for(let j=0;j<=k-i;j++)s+=C[k][i]*C[k-i][j]*x[i]*y[j]*z[k-i-j];return s})};\n const A=f(8,20,26),B=f(10,16,28),As=sep(8,20,26),Bs=sep(10,16,28);let checks=0;const check=(b)=>{checks++;if(!b)throw Error(\"failed \"+checks)};\n const rows=A.map((w,k)=>{check(w===As[k]);check(B[k]===Bs[k]);let L=4160n*6n**BigInt(k)-w,M=4480n*6n**BigInt(k)-B[k];if(k<=8)check(L===M);if(k===9)check(M-L===1040n);return {k,WA:String(w),WB:String(B[k]),LA:String(L),LB:String(M),delta:String(M-L)}}); \n // independent census of every small box with equal sum and pair sum; compare first separation at min unequal dimension.\n const groups=new Map();for(let a=2;a<=12;a++)for(let b=a;b<=12;b++)for(let c=b;c<=12;c++){let key=`${a+b+c},${a*b+a*c+b*c}`;if(!groups.has(key))groups.set(key,[]);groups.get(key).push([a,b,c])}\n const pairs=[];for(const g of groups.values())for(let i=0;i<g.length;i++)for(let j=i+1;j<g.length;j++){const a=g[i],b=g[j],x=sep(...a),y=sep(...b),va=BigInt(a[0]*a[1]*a[2]),vb=BigInt(b[0]*b[1]*b[2]);check(a[0]<b[0]);const k0=a[0]+1;for(let k=0;k<k0;k++)check((vb-va)*6n**BigInt(k)===y[k]-x[k]);const multiplicity=a.filter(n=>n===a[0]).length;check((vb-va)*6n**BigInt(k0)-(y[k0]-x[k0])===2n*BigInt(multiplicity)*va/BigInt(a[0]));pairs.push({a,b,k0,delta:String(2n*BigInt(multiplicity)*va/BigInt(a[0]))})}\n return {checks,rows,pairs,boxCount:[...groups.values()].reduce((s,g)=>s+g.length,0),method:\"3D adjacency dynamic programming and independent path-interleaving multinomial, BigInt\",K};\n}\nconsole.log(JSON.stringify(run(),null,2));",
+  "output": {
+    "checks": 207,
+    "rows": [
+      {
+        "k": 0,
+        "WA": "4160",
+        "WB": "4480",
+        "LA": "0",
+        "LB": "0",
+        "delta": "0"
+      },
+      {
+        "k": 1,
+        "WA": "23184",
+        "WB": "25104",
+        "LA": "1776",
+        "LB": "1776",
+        "delta": "0"
+      },
+      {
+        "k": 2,
+        "WA": "130656",
+        "WB": "142176",
+        "LA": "19104",
+        "LB": "19104",
+        "delta": "0"
+      },
+      {
+        "k": 3,
+        "WA": "741600",
+        "WB": "810720",
+        "LA": "156960",
+        "LB": "156960",
+        "delta": "0"
+      },
+      {
+        "k": 4,
+        "WA": "4230240",
+        "WB": "4644960",
+        "LA": "1161120",
+        "LB": "1161120",
+        "delta": "0"
+      },
+      {
+        "k": 5,
+        "WA": "24218016",
+        "WB": "26706336",
+        "LA": "8130144",
+        "LB": "8130144",
+        "delta": "0"
+      },
+      {
+        "k": 6,
+        "WA": "139032720",
+        "WB": "153962640",
+        "LA": "55056240",
+        "LB": "55056240",
+        "delta": "0"
+      },
+      {
+        "k": 7,
+        "WA": "799917072",
+        "WB": "889496592",
+        "LA": "364616688",
+        "LB": "364616688",
+        "delta": "0"
+      },
+      {
+        "k": 8,
+        "WA": "4610415264",
+        "WB": "5147892384",
+        "LA": "2376787296",
+        "LB": "2376787296",
+        "delta": "0"
+      },
+      {
+        "k": 9,
+        "WA": "26611361840",
+        "WB": "29836223520",
+        "LA": "15311853520",
+        "LB": "15311854560",
+        "delta": "1040"
+      },
+      {
+        "k": 10,
+        "WA": "153788166816",
+        "WB": "173137299216",
+        "LA": "97751125344",
+        "LB": "97751169264",
+        "delta": "43920"
+      },
+      {
+        "k": 11,
+        "WA": "889665304824",
+        "WB": "1005759323696",
+        "LA": "619570448136",
+        "LB": "619571487184",
+        "delta": "1039048"
+      },
+      {
+        "k": 12,
+        "WA": "5151262489104",
+        "WB": "5847814718384",
+        "LA": "3904152028656",
+        "LB": "3904170146896",
+        "delta": "18118240"
+      },
+      {
+        "k": 13,
+        "WA": "29849115501720",
+        "WB": "34028277978288",
+        "LA": "24483371604840",
+        "LB": "24483631213392",
+        "delta": "259608552"
+      },
+      {
+        "k": 14,
+        "WA": "173075955478992",
+        "WB": "198149250984336",
+        "LA": "152918967160368",
+        "LB": "152922204165744",
+        "delta": "3237005376"
+      },
+      {
+        "k": 15,
+        "WA": "1004138102492568",
+        "WB": "1154560929549376",
+        "LA": "951831433343592",
+        "LB": "951867801351104",
+        "delta": "36368007512"
+      },
+      {
+        "k": 16,
+        "WA": "5828694615006048",
+        "WB": "6731073033152672",
+        "LA": "5907122600010912",
+        "LB": "5907499352250208",
+        "delta": "376752239296"
+      },
+      {
+        "k": 17,
+        "WA": "33848907430939632",
+        "WB": "39261781067440272",
+        "LA": "36565995859162128",
+        "LB": "36569653244977008",
+        "delta": "3657385814880"
+      },
+      {
+        "k": 18,
+        "WA": "196648963145563552",
+        "WB": "229114482959023840",
+        "LA": "225840456595047008",
+        "LB": "225874122915479840",
+        "delta": "33666320432832"
+      }
+    ],
+    "pairs": [
+      {
+        "a": [
+          2,
+          5,
+          5
+        ],
+        "b": [
+          3,
+          3,
+          6
+        ],
+        "k0": 3,
+        "delta": "50"
+      },
+      {
+        "a": [
+          2,
+          6,
+          7
+        ],
+        "b": [
+          3,
+          4,
+          8
+        ],
+        "k0": 3,
+        "delta": "84"
+      },
+      {
+        "a": [
+          2,
+          7,
+          9
+        ],
+        "b": [
+          3,
+          5,
+          10
+        ],
+        "k0": 3,
+        "delta": "126"
+      },
+      {
+        "a": [
+          2,
+          7,
+          10
+        ],
+        "b": [
+          4,
+          4,
+          11
+        ],
+        "k0": 3,
+        "delta": "140"
+      },
+      {
+        "a": [
+          2,
+          8,
+          8
+        ],
+        "b": [
+          4,
+          4,
+          10
+        ],
+        "k0": 3,
+        "delta": "128"
+      },
+      {
+        "a": [
+          2,
+          8,
+          11
+        ],
+        "b": [
+          3,
+          6,
+          12
+        ],
+        "k0": 3,
+        "delta": "176"
+      },
+      {
+        "a": [
+          2,
+          9,
+          9
+        ],
+        "b": [
+          3,
+          6,
+          11
+        ],
+        "k0": 3,
+        "delta": "162"
+      },
+      {
+        "a": [
+          2,
+          9,
+          10
+        ],
+        "b": [
+          4,
+          5,
+          12
+        ],
+        "k0": 3,
+        "delta": "180"
+      },
+      {
+        "a": [
+          3,
+          6,
+          6
+        ],
+        "b": [
+          4,
+          4,
+          7
+        ],
+        "k0": 4,
+        "delta": "72"
+      },
+      {
+        "a": [
+          3,
+          7,
+          8
+        ],
+        "b": [
+          4,
+          5,
+          9
+        ],
+        "k0": 4,
+        "delta": "112"
+      },
+      {
+        "a": [
+          3,
+          8,
+          10
+        ],
+        "b": [
+          4,
+          6,
+          11
+        ],
+        "k0": 4,
+        "delta": "160"
+      },
+      {
+        "a": [
+          3,
+          8,
+          11
+        ],
+        "b": [
+          5,
+          5,
+          12
+        ],
+        "k0": 4,
+        "delta": "176"
+      },
+      {
+        "a": [
+          3,
+          9,
+          9
+        ],
+        "b": [
+          5,
+          5,
+          11
+        ],
+        "k0": 4,
+        "delta": "162"
+      },
+      {
+        "a": [
+          3,
+          10,
+          10
+        ],
+        "b": [
+          4,
+          7,
+          12
+        ],
+        "k0": 4,
+        "delta": "200"
+      },
+      {
+        "a": [
+          4,
+          7,
+          7
+        ],
+        "b": [
+          5,
+          5,
+          8
+        ],
+        "k0": 5,
+        "delta": "98"
+      },
+      {
+        "a": [
+          4,
+          8,
+          9
+        ],
+        "b": [
+          5,
+          6,
+          10
+        ],
+        "k0": 5,
+        "delta": "144"
+      },
+      {
+        "a": [
+          4,
+          9,
+          11
+        ],
+        "b": [
+          5,
+          7,
+          12
+        ],
+        "k0": 5,
+        "delta": "198"
+      },
+      {
+        "a": [
+          4,
+          10,
+          10
+        ],
+        "b": [
+          6,
+          6,
+          12
+        ],
+        "k0": 5,
+        "delta": "200"
+      },
+      {
+        "a": [
+          5,
+          8,
+          8
+        ],
+        "b": [
+          6,
+          6,
+          9
+        ],
+        "k0": 6,
+        "delta": "128"
+      },
+      {
+        "a": [
+          5,
+          9,
+          10
+        ],
+        "b": [
+          6,
+          7,
+          11
+        ],
+        "k0": 6,
+        "delta": "180"
+      },
+      {
+        "a": [
+          6,
+          9,
+          9
+        ],
+        "b": [
+          7,
+          7,
+          10
+        ],
+        "k0": 7,
+        "delta": "162"
+      },
+      {
+        "a": [
+          6,
+          10,
+          11
+        ],
+        "b": [
+          7,
+          8,
+          12
+        ],
+        "k0": 7,
+        "delta": "220"
+      },
+      {
+        "a": [
+          7,
+          10,
+          10
+        ],
+        "b": [
+          8,
+          8,
+          11
+        ],
+        "k0": 8,
+        "delta": "200"
+      },
+      {
+        "a": [
+          8,
+          11,
+          11
+        ],
+        "b": [
+          9,
+          9,
+          12
+        ],
+        "k0": 9,
+        "delta": "242"
+      }
+    ],
+    "boxCount": 286,
+    "method": "3D adjacency dynamic programming and independent path-interleaving multinomial, BigInt",
+    "K": 18
+  }
+}
