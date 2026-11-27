@@ -69,10 +69,9 @@
   ],
   "status": "CORPUS_AUDIT_CONSOLIDATION",
   "last_cycle": {
-    "date": "2026-11-25",
-    "severity": 2,
-    "result": "3 files, 4 selected claim groups, independent D4 checks",
-    "report": "council/research/WORK-d4-independent-20261125.json"
+    "date": "2026-11-28",
+    "result": "Q3 restricted versus full inverse domain adjudication",
+    "report": "council/research/JUDGE-Q3-domain-20261128.md"
   },
   "votes": {
     "RG-001-v2": {
@@ -119,9 +118,10 @@
       "research/rovgrid-shaddai-314-homepower-scan-900k-2026-11-17.md",
       "research/rovgrid-square-ring-d4-primitive-2026-11-07.md",
       "research/rovgrid-10-levels-d4-to-genus-376-harmonic-2026-11-14.md",
-      "research/rovgrid-lexicon-muchlat-2026-11-11.md"
+      "research/rovgrid-lexicon-muchlat-2026-11-11.md",
+      "research/q3-spectral-projector-2026-10-11.md"
     ],
-    "claims": 18
+    "claims": 19
   },
   "feedback": {
     "next": "Obtain frozen independent Hebrew lexical population; audit actual D4 quotient adjacency and compare graph construction; then rotate to new dossiers",
@@ -154,10 +154,10 @@
     }
   },
   "last_operational_checkpoint": {
-    "date": "2026-11-27",
-    "action": "RG009 and RG010 merits dispositions",
-    "report": "council/messages/WORK-RG009-RG010-adjudication-20261127.md",
-    "blob_sha": "7a5812260a2a3726c0cfb3852407f0c1884e7a88",
-    "next": "Collect outstanding evidence and matching votes; no repeat accepted arithmetic"
+    "date": "2026-11-28",
+    "report": "council/research/JUDGE-Q3-domain-20261128.md",
+    "blob_sha": "b6e12095968ebba84c4cfe1c45dd059b6b802a43",
+    "claim": "RG-Q3-DOMAIN-v1",
+    "next": "Review next unread older corpus and outstanding evidence orders"
   }
 }
