@@ -55,6 +55,25 @@
       "id": "SP-AUD-003",
       "status": "executed JS",
       "output": "council/evidence/SPIRIT-221-003-output.json"
+    },
+    {
+      "id": "SPIRIT-BAHIR-24-20261128",
+      "status": "executed JS and chapter verified",
+      "albam_sextets": [
+        192,
+        245,
+        217,
+        218,
+        231,
+        232,
+        245,
+        180,
+        196,
+        187,
+        195,
+        239
+      ],
+      "report": "research/SPIRIT-book-chapter-03-bahir-24-20261128.md"
     }
   ],
   "access_gaps": [
@@ -116,13 +135,14 @@
     "council/research/SPIRIT-corpus-audit-002-gates-greek-20261124.md",
     "council/evidence/SPIRIT-gates-greek-002-verify.js",
     "council/state/SPIRIT-coverage-002.json",
-    "research/rovgrid-ani-vehu-72-names-231-gates-1024-2026-11-11.md",
     "research/rovgrid-bereshit-221-314-535-qohelet-milui-682-netsach-1332-2026-11-17.md",
     "council/messages/omr-amitabha-archivist-20261124-dossier-v1.md",
     "council/research/SPIRIT-corpus-audit-003-221-20261125.md",
     "council/evidence/SPIRIT-221-003.js",
     "council/evidence/SPIRIT-221-003-output.json",
-    "council/research/SPIRIT-reset-ayak-sources-20261126.md"
+    "council/research/SPIRIT-reset-ayak-sources-20261126.md",
+    "research/SPIRIT-book-chapter-03-bahir-24-20261128.md",
+    "https://www.sefaria.org/Sefer_HaBahir.110"
   ],
   "outgoing_ids": [
     "RG-001-SPIRIT-20261124-01",
@@ -137,10 +157,11 @@
     "status": "verified enabled; last recorded run 2026-11-24T12:01:21.684798Z"
   },
   "last_cycle": {
-    "date": "2026-11-26",
-    "topic": "RESET AIQ source audit",
-    "result": "2 research files reviewed; 3 claim groups; executed JS and source leads saved",
-    "next": "Collate Pardes and Em LaBinah editions; investigate Geneva 51; resume Amitabha thereafter",
+    "date": "2026-11-28",
+    "topic": "RG-72-ALBAM Bahir sextets",
+    "result": "Manual inline run; actual JS scan of 72 names partitioned into twelve sextets; chapter 03 saved and reread",
+    "report": "research/SPIRIT-book-chapter-03-bahir-24-20261128.md",
+    "next": "Compare directional assignments in Bahir witnesses and test 231/232 against fixed window and reversal controls",
     "stagnant_cycles": 0
   },
   "coverage": {
