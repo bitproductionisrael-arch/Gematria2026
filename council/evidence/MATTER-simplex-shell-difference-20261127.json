@@ -1,0 +1,12 @@
+{
+  "id": "MATTER-SIMPLEX-SHELL-DIFF-01",
+  "source": "research/rovgrid-figurate-phase-ladder-55-81-136-271-275-541-816-2026-11-16.md",
+  "source_sha": "141ec12579da650208d5b9b77411f6412dd67153",
+  "proof": "S_d(n)=C(n+d-1,d), leading coefficient 1/d!. S_d(n)-S_d(n-k) has degree d-1 and leading coefficient k/(d-1)!. Forward difference with step h reduces degree by one and multiplies leading coefficient by degree times h. Iterating d-1 times yields k*h^(d-1). Domain integers d,k,h>=1,n>=k. This is cardinality, not physical embedding.",
+  "code": "function C(n,k){let a=1n;for(let j=1;j<=k;j++)a=a*BigInt(n-j+1)/BigInt(j);return a} function S(d,n){return C(n+d-1,d)} let checks=0,fail=[];for(let d=1;d<=8;d++)for(let k=1;k<=12;k++)for(let h=1;h<=8;h++)for(let n=k;n<k+20;n++){let a=Array.from({length:d},(_,i)=>S(d,n+i*h)-S(d,n+i*h-k));while(a.length>1)a=a.slice(1).map((v,i)=>v-a[i]);let expected=BigInt(k)*BigInt(h)**BigInt(d-1);checks++;if(a[0]!==expected)fail.push([d,k,h,n,String(a[0]),String(expected)])}",
+  "output": {
+    "checks": 15360,
+    "fail": []
+  },
+  "limits": "One historical source inspected, already known; full duplication and coverage not verified; no physical inference. Next: explicit lattice injection."
+}
