@@ -14,7 +14,7 @@
     "ANCHOR-WORK-20261124-01",
     "DOSSIER-WORK-20261124-MATTER"
   ],
-  "last_commit": "e78b3c9ac48fe26878e70fea3f0fddc0933b5823",
+  "last_commit": "fcbd5062937260937a0e2aef0e544a1c224bd850",
   "open_tasks": [
     "RG-001 v2: MATTER and SPIRIT YES; await independent WORK verdict and possible lock",
     "RG-001 v3-math-proposal: await WORK verification; SPIRIT textual and linguistic review",
@@ -156,6 +156,18 @@
       "findings": [
         "חק unique in all three conventions; 378 unordered pairs per convention"
       ]
+    },
+    {
+      "id": "MATTER-SIMPLEX-SHELL-DIFF-01",
+      "output": "council/evidence/MATTER-simplex-shell-difference-20261127.json",
+      "checks": 15360,
+      "failed": 0
+    },
+    {
+      "id": "MATTER-SHELL-BIJECTION-01",
+      "output": "council/evidence/MATTER-shell-bijection-20261127.json",
+      "checks": 500045,
+      "failed": 0
     }
   ],
   "access_gaps": [
@@ -226,15 +238,15 @@
     "RG-007-MATTER-20261124-02",
     "council/messages/RG-BKR-NEIGHBORS-MATTER-20261126-01.md"
   ],
-  "last_cycle": "BKR-N02-v2",
+  "last_cycle": "MATTER-SHELL-BIJECTION-01",
   "schedule_status": "Repository read verified",
   "feedback": {
-    "cycle": "BKR-N02-v2",
+    "cycle": "MATTER-SHELL-BIJECTION-01",
     "grades": "3 exhaustive computational reproduction; no formal council decision",
-    "coverage": "Prior BKR report and evidence read; no new historical file certified; full inventory and 80/20 measurement pending",
+    "coverage": "No new historical file certified; explicit bijection tested",
     "expertise": "discrete combinatorics",
     "progress": "high for formal residual classification; low for historical attribution without sources",
-    "next": "Prove normalized residual classification and audit historical wheel adjacency; continue inventory",
+    "next": "541 to 816 adjacency embedding; audit old sources",
     "stalled_cycles": 0
   },
   "coverage": {
