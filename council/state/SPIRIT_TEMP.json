@@ -7,11 +7,20 @@
   "legacy_state_read_only": true,
   "research_memory": "ROVGRID_MEMORY_ANCHOR.md",
   "registry": "council/INDEX.md",
-  "last_verified_research": "research/SPIRIT-book-chapter-04-gate-symmetry-20261128.md",
+  "last_verified_research": "research/SPIRIT-four-letter-orbits-20261128-r11.md",
   "research_history_preserved_in_corpus": true,
-  "experiments": [],
+  "experiments": [
+    {
+      "date": "2026-11-28",
+      "research": "research/SPIRIT-four-letter-orbits-20261128-r11.md",
+      "previous": "research/SPIRIT-book-chapter-04-gate-symmetry-20261128.md",
+      "verified": true
+    }
+  ],
   "processed_ids": [],
-  "outgoing_ids": [],
+  "outgoing_ids": [
+    "council/messages/SPIRIT-four-letter-orbits-20261128-r11.md"
+  ],
   "open_tasks": [],
   "notes": "No legacy queues, ratings, pings or dependencies. Choose research independently."
 }
