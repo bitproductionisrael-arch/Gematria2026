@@ -199,6 +199,14 @@
         "anisotropic counterexample and reflecting-boundary nonidentifiability"
       ],
       "scope": "exact mathematical model; no experimental validation or noise robustness"
+    },
+    {
+      "id": "MATTER-directional-conductance-20261129",
+      "report": "research/MATTER-directional-conductance-20261129.md",
+      "checks": 16000,
+      "failed": 0,
+      "scope": "ideal transport model",
+      "commit": "1e2585fbf90a9ca837b6c6d9c1dca701e51875e6"
     }
   ],
   "access_gaps": [
@@ -338,11 +346,7 @@
     ]
   },
   "latest_research": {
-    "id": "MATTER-ABSORBING-WALK-INVERSE-20261128",
-    "report": "research/MATTER-absorbing-walk-inverse-reconstruction-20261128.md",
-    "next_options": [
-      "noise robustness and optimal sampling",
-      "independent research question"
-    ]
+    "id": "MATTER-directional-conductance-20261129",
+    "report": "research/MATTER-directional-conductance-20261129.md"
   }
 }
