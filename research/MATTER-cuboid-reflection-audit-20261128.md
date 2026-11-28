@@ -6,5 +6,5 @@ Exhaustive positive sorted integer triples with sum 54, executed JS:
 let hits=[],checks=0;for(let a=1;a<=54;a++)for(let b=a;b<=54;b++){let c=54-a-b;if(c<b)continue;checks++;if(a*b+a*c+b*c===888)hits.push([a,b,c]);} console.log(checks,hits);
 ```
 Output: {"checks":243,"hits":[[8,20,26],[10,16,28]]}.
-Continuous volume extrema: two centered coordinates equal, giving uvw=±2*28^(3/2); hence V=4320±56 sqrt(28), approximately 4023.676 and 4616.324. These are real-valued bounds, not integer solutions.
+Continuous volume extrema: two centered coordinates equal, giving uvw=±2*28^(3/2); hence V=4320±56 sqrt(28), approximately 4023.675853 and 4616.324147. These are real-valued bounds, not integer solutions.
 Physical prediction: equal density and specific heat imply mass and heat capacity ratio 4480/4160=14/13. No laboratory measurement performed. Full corpus novelty not established; prior source already includes much of the geometry. Reflection formula is a supplemental derivation.
