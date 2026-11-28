@@ -28,3 +28,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - SPIRIT-FOUR-ORBITS: [chapter 05](../research/SPIRIT-four-letter-orbits-20261128-r11.md); direct enumeration and algebraic proof, historical interpretation open.
 
 - SPIRIT-ORDERED-HOUSES: [chapter 06](../research/SPIRIT-ordered-houses-reversal-20261128-r12.md); primary source read, 56,640 ordered triples enumerated; reversal parity theorem.
+
+- SPIRIT-MULTISET-512: [chapter 07](../research/SPIRIT-multiset-houses-512-20261128-r13.md); 11,960 multisets enumerated, Hebrew 512 classes; [council message](messages/SPIRIT-multiset-houses-512-20261128-r13.md).
