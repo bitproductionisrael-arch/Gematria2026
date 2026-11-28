@@ -30,3 +30,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - SPIRIT-ORDERED-HOUSES: [chapter 06](../research/SPIRIT-ordered-houses-reversal-20261128-r12.md); primary source read, 56,640 ordered triples enumerated; reversal parity theorem.
 
 - SPIRIT-MULTISET-512: [chapter 07](../research/SPIRIT-multiset-houses-512-20261128-r13.md); 11,960 multisets enumerated, Hebrew 512 classes; [council message](messages/SPIRIT-multiset-houses-512-20261128-r13.md).
+
+- RG-002-SHARED-FACE-DOUBLE-VOLUME: [new general theorem and exhaustive S=54 classification](../research/rovgrid-shared-face-double-volume-balance-2026-11-28.md). Exactly one of 102 equal-Q pairs has a shared face p and volume difference 2p; Q=888, p=160 emerge. 4356 parametric tests, zero failures. Independent review pending; no formal lock.
