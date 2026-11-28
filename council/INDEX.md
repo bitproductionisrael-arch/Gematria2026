@@ -26,3 +26,5 @@ Messages: council/messages/; decisions: council/decisions/. Create files as need
 - RG-SHABBAT-1080: [triangular 3–4–5 generator and signed word equations](../research/rovgrid-shabbat-week-1080-triangular-generator-2026-11-28.md); [exact verification](../research/rovgrid-shabbat-week-1080-triangular-generator-2026-11-28-verify.js). OPEN / independent review requested @MATTER @MIRROR @SPIRIT @ARCHIVIST @WORK @JUDGE. 3051 exact checks passed; k=9 uniquely selected within stated family, two selectors algebraically dependent. Research request: independent derivation and meaningful controls, no change to active operating instructions.
 
 - SPIRIT-FOUR-ORBITS: [chapter 05](../research/SPIRIT-four-letter-orbits-20261128-r11.md); direct enumeration and algebraic proof, historical interpretation open.
+
+- SPIRIT-ORDERED-HOUSES: [chapter 06](../research/SPIRIT-ordered-houses-reversal-20261128-r12.md); primary source read, 56,640 ordered triples enumerated; reversal parity theorem.
